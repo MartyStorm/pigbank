@@ -1,0 +1,233 @@
+1. Global auth + roles
+
+Please add a role system to our existing auth:
+
+Global roles:
+
+merchant_pending – merchant signed up but not fully onboarded/approved
+
+merchant – approved merchant using the platform
+
+pigbank_staff – internal PigBank team member
+
+pigbank_admin – superuser for PigBank
+
+Each user record should have:
+
+role
+
+(optional) merchant_id – for users attached to a specific merchant account
+
+Behavior on login:
+
+If role == merchant_pending → redirect to /onboarding
+
+If role == merchant → redirect to /dashboard
+
+If role in (pigbank_staff, pigbank_admin) → redirect to /team/merchants
+
+Add route guards on the backend and frontend so:
+
+/onboarding → only merchant_pending (or merchants who haven’t completed onboarding yet)
+
+Normal app routes like /dashboard, /transactions, /payouts → merchant, pigbank_staff, or pigbank_admin
+
+Internal routes like /team/* → only pigbank_staff or pigbank_admin
+
+If a user without the right role hits a protected route, return 403 and show an appropriate message.
+
+2. Merchant-side roles (inside their own account)
+
+Inside a merchant account, they should be able to have their own team roles separate from PigBank roles.
+
+Per-merchant roles:
+
+owner – full access to everything in that merchant account
+
+manager – can view all data, manage payments, invite/remove staff, but cannot close the account
+
+staff – can view transactions, issue refunds (configurable later), but cannot change merchant settings or banking details
+
+Implementation idea:
+
+Table like merchant_users with columns: user_id, merchant_id, merchant_role (owner | manager | staff)
+
+Only owner and manager should be able to invite/remove staff from their merchant account.
+
+3. Merchant onboarding wizard (TurboTax-style)
+
+When a new merchant signs up from the marketing site and creates an account, set their role to merchant_pending and send them to /onboarding instead of the main dashboard.
+
+On /onboarding, build a multi-step wizard / checklist with progress indicators. The steps can be something like:
+
+Business info
+
+Legal business name
+
+DBA
+
+EIN
+
+Business address
+
+Business type (LLC, Corp, Sole Prop, etc.)
+
+Owners & KYC
+
+List of beneficial owners
+
+For each owner: full name, DOB, home address, SSN (or last 4), upload government ID
+
+Consent to KYC
+
+Bank & payouts
+
+Business bank account details (routing, account number)
+
+Upload voided check or bank letter
+
+Website & products
+
+Website URL
+
+Description of what they sell
+
+MCC category / dropdown
+
+Expected monthly volume and average ticket size
+
+Documents
+
+Upload Articles of Incorporation or equivalent
+
+Any other required docs we specify
+
+Review & submit
+
+Show a summary of all data
+
+Checkbox to confirm accuracy
+
+“Submit for review” button
+
+Requirements:
+
+Show a left-side or top stepper so merchants can see all steps and their completion status.
+
+Let them jump between steps at any time before final submission.
+
+Auto-save after each change.
+
+Each step should have a status: not_started | in_progress | complete.
+
+After “Submit for review,” mark onboarding_status as submitted and prevent editing unless we manually unlock it.
+
+Data model suggestion:
+
+merchants table for main profile data
+
+onboarding_tasks table with merchant_id, task_key, status, updated_at, internal_notes
+
+Once a merchant is approved (see section 4), we flip:
+
+role: merchant_pending → merchant
+
+onboarding_status: approved
+
+And on their next login they should skip /onboarding and go straight to the main dashboard.
+
+4. Internal PigBank console (team-only)
+
+Create a separate PigBank internal console that only pigbank_staff and pigbank_admin can see.
+
+4.1 Entry point
+
+On the public marketing site, add a small text link in the header or footer:
+
+“PigBank Team Login”
+
+This link should go to /team-login (or similar).
+
+/team-login is just a login form, but after a successful login:
+
+If user is pigbank_staff or pigbank_admin → redirect to /team/merchants
+
+Otherwise (normal merchant) → redirect to /dashboard as usual
+
+4.2 Internal merchant list
+
+Create /team/merchants:
+
+Table view of all merchants with columns like:
+
+Merchant name
+
+Email / primary contact
+
+Status: draft, in_onboarding, submitted, approved, rejected, suspended
+
+Risk level (text field for now)
+
+Chargeback rate (if we have it)
+
+Monthly volume / created_at
+
+Filters:
+
+Filter by status
+
+Search by name, email, or merchant ID
+
+Clicking a merchant row → /team/merchants/:merchantId
+
+4.3 Internal merchant detail view
+
+On /team/merchants/:merchantId, show:
+
+All data collected from onboarding (business info, owners, KYC/KYB fields, website, docs, etc.)
+
+A list of uploaded files with download links
+
+Any transaction stats we already track (optional for now)
+
+Internal notes section (PigBank staff can add notes with timestamp + author)
+
+Admin actions:
+
+Buttons to change status:
+
+Approve merchant → sets role to merchant, onboarding_status to approved
+
+Reject merchant → store reason, status rejected
+
+Request more info → optional for now (could just be an internal note + we email them manually)
+
+Ability to mark risk category or risk score (even just a simple dropdown/text field)
+
+This internal console is strictly for PigBank staff and must not be accessible/linked from the merchant UI.
+
+5. Security / access control
+
+Enforce all role checks on the backend, not just in the frontend router.
+
+Any /team/* endpoint should verify role in (pigbank_staff, pigbank_admin) server-side.
+
+Any onboarding-related data should be owned by the merchant and only visible to:
+
+Users tied to that merchant_id
+
+PigBank staff/admin
+
+6. Nice-to-have (if easy)
+
+Add a simple “Status” badge to the merchant dashboard when they first get approved (e.g. “Account approved – live processing enabled”).
+
+In the internal console, show a small timeline of important events (account created, onboarding submitted, approved, etc.).
+
+If anything in this spec conflicts with our existing stack or structure, let me know what we’re using now and propose the cleanest way to integrate it. The main goals are:
+
+Role-based experiences (merchant vs PigBank staff)
+
+TurboTax-style onboarding wizard for merchants
+
+Internal merchant console for PigBank team with a separate “PigBank Team Login” entry point.

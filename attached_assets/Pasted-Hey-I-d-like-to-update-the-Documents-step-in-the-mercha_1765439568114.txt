@@ -1,0 +1,66 @@
+Hey! I’d like to update the Documents step in the merchant application so it matches a more modern Stripe-style flow.
+
+Right now that step has:
+
+“Articles of Incorporation”
+
+“Voided Check or Bank Letter”
+
+I want to:
+
+1. Keep the business formation doc as-is
+
+Card 1 (unchanged, just slightly clearer text)
+
+Title: Articles of Incorporation / Operating Agreement
+
+Subtitle: LLC Operating Agreement, Corporate Bylaws, or equivalent
+
+Keep the Upload button behavior the same.
+
+2. Replace “Voided Check or Bank Letter” with modern bank verification text
+
+Card 2 (edit this one):
+
+New title: Bank Account Verification (Optional Upload)
+
+Subtitle/body text:
+
+Upload any one of the following to help us verify the account where payouts will be sent:
+• Bank letter showing business name, routing number, and account number
+• Recent business bank statement (first page only)
+• Screenshot from online banking that clearly shows business name + routing + account number
+• Optional: voided business check (if you have one)
+
+Keep the Upload button but make this card visually marked as optional (e.g., small “Optional” tag in the top-right corner).
+
+3. Add global explainer text above the cards
+
+Above the two document cards, replace the current description with something like:
+
+Documents
+These documents help us verify your business and payout account for underwriting.
+
+Business formation documents are required.
+Bank account documents are optional because we’ll also verify your bank via two small “micro-deposits.”
+
+4. Add a short note at the bottom of the step about micro-deposits
+
+At the bottom of the Documents step (just above the Previous/Continue buttons), add:
+
+How we verify your bank account
+After you enter your routing and account number in the “Bank & Payouts” step, PigBank will send two small deposits to that account. Once they arrive, you’ll confirm the amounts in your dashboard to complete bank verification.
+
+All uploaded documents are encrypted and stored securely for underwriting only.
+
+No changes needed to navigation (still Step 5 of 6 etc.) — this is just copy + labeling changes on this tab.
+
+That’s all I need on this screen for now. The idea is:
+
+Formation docs = required
+
+Bank docs = optional helper evidence
+
+We explain that micro-deposits are the primary verification method, similar to Stripe.
+
+Let me know if anything in the current layout makes this tricky and suggest the cleanest alternative if so

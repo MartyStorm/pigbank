@@ -1,0 +1,231 @@
+Design a responsive web dashboard UI for a high-risk payment processor and gateway called Templar Payments.
+
+Overall vibe:
+
+Clean, modern fintech style (similar to Stripe / Bankful / Acorns).
+
+Color system based on a green + dark gray palette (I will plug in exact hex codes later).
+
+Use a dark vertical sidebar and a light main content panel with subtle green gradients.
+
+Flat, geometric, minimal style with small, tasteful shadows and smooth rounded corners.
+
+Brand feel:
+
+Templar = knight / shield / protector of merchants.
+
+Interface should feel trustworthy, secure, sharp, and modern.
+
+No cartoony elements; lean toward professional fintech aesthetics.
+
+Layout
+
+1. App Shell
+
+Full-width desktop dashboard layout.
+
+Left: fixed vertical sidebar.
+
+Top of content area: horizontal header bar with:
+
+Page title (e.g., “Transactions” or “Dashboard”).
+
+Date range picker.
+
+User avatar / profile dropdown (company name + email).
+
+Small notification/bell icon.
+
+Main content area below the header with:
+
+Filters and summary cards at the top.
+
+Data table and charts beneath.
+
+2. Sidebar Navigation
+
+Create a dark sidebar with our logo at the top (use a simple knight / shield placeholder icon) and these items in order:
+
+Dashboard
+
+Transactions
+
+Virtual Terminal
+
+Customers
+
+Invoices & Subscriptions
+
+Payouts
+
+Disputes & Chargebacks
+
+Reports & Analytics
+
+Fraud & Risk
+
+Terminals (Coming Soon) → style this as a disabled/inactive item
+
+Crypto Payments (Coming Soon) → also disabled/inactive
+
+Developers / API
+
+Settings
+
+Use a clear “active” state (highlight color or pill) for the selected menu item.
+
+3. Dashboard (high-level view)
+
+Design a dashboard screen with:
+
+A top row of summary cards (4 cards):
+
+Today’s Volume
+
+Month-to-Date Volume
+
+Approval Rate
+
+Chargeback Rate
+
+Each card should:
+
+Use green accents for positive metrics.
+
+Show a small trend indicator (up/down arrow with %).
+
+Below that, two side-by-side sections:
+
+Left: Line or area chart “Processed Volume Over Time”.
+
+Right: Bar chart or donut chart “By Payment Method” (Card, ACH, Terminals, Crypto [placeholder]).
+
+4. Transactions Page (primary working screen)
+
+This is the main page we care about. Build it out in more detail:
+
+Header & filters:
+
+Page title: “Transactions”
+
+Right side button: “Download CSV”
+
+Filter bar with:
+
+Date range picker.
+
+Dropdowns for:
+
+Status (All, Approved, Declined, Refunded, Pending)
+
+Payment Method (Card, ACH, Terminal, Crypto)
+
+Fraud Risk (Low, Medium, High)
+
+Search input for Transaction ID, customer name, or email.
+
+Data table:
+Create a wide transaction table with the following columns:
+
+Transaction ID
+
+Date & Time
+
+Customer Name
+
+Amount
+
+Method (Card / ACH / etc.)
+
+Status (Approved, Declined, Refunded, Pending) with colored pills
+
+Fraud Risk (Low/Med/High) with colored badges
+
+AVS/CVV (Matched / Not Matched)
+
+Actions (View, Refund)
+
+Each row should have:
+
+Hover state.
+
+Clicking a row opens a slide-out drawer or modal on the right with detailed info.
+
+Transaction detail drawer:
+Include grouped sections:
+
+Summary: Amount, status pill, method, last 4 of card, currency.
+
+Customer Info: Name, email, phone, billing address.
+
+Risk & Security: Fraud risk level, AVS/CVV result, IP country, device info.
+
+Actions: Refund button, “Mark as Reviewed”, “Export Receipt”.
+
+5. Customers Page
+
+Simple first version:
+
+Search bar at top.
+
+Table with columns: Customer Name, Email, Total Volume, Total Transactions, First Seen, Last Seen, Risk Level.
+
+Clicking a customer opens a profile drawer with their transactions and notes.
+
+6. Payouts Page
+
+Summary cards: Next Payout Date, Amount in Transit, Last Payout.
+
+Table: Payout ID, Date, Amount, Status, Destination (Bank name / last 4), Type (Daily/Weekly).
+
+7. Fraud & Risk Page
+
+At the top: Risk Score summary + small explanation.
+
+Cards for:
+
+Total flagged transactions this month.
+
+Chargebacks this month.
+
+Table of recent flagged transactions with status, risk level, and reason.
+
+Simple toggle UI for rules (e.g., “Block high-risk countries”, “Require CVV”, etc.) – purely visual for now.
+
+8. Developers / API Page
+
+Simple clean layout with:
+
+API keys (masked with “Reveal” button).
+
+Webhook URL list.
+
+Example code block showing a fake API request.
+
+Design should feel technical and minimal.
+
+9. Visual & Style Details
+
+Typography: clean sans-serif, Stripe-like.
+
+Color:
+
+Sidebar: very dark green / charcoal.
+
+Primary accents: bright medium green.
+
+Gradients: soft circular or diagonal green gradients behind hero sections or header.
+
+Buttons:
+
+Primary: solid green with white text.
+
+Secondary: outline or ghost buttons.
+
+Tables & cards:
+
+Rounded corners.
+
+Subtle borders, not heavy lines.
+
+Icons: simple line icons for navigation and status where helpful.

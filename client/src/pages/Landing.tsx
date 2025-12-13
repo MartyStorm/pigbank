@@ -1,0 +1,1681 @@
+import { Button } from "@/components/ui/button";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useTheme } from "@/components/theme-provider";
+import { 
+  Shield, 
+  TrendingUp, 
+  Zap, 
+  Lock, 
+  BarChart3,
+  CreditCard,
+  CheckCircle2,
+  ArrowRight,
+  FileText,
+  Globe,
+  Wallet,
+  ChevronDown,
+  Play,
+  Smartphone,
+  Store,
+  Globe2,
+  Receipt,
+  RefreshCcw,
+  Monitor,
+  Banknote,
+  ChevronLeft,
+  Bitcoin,
+  MapPin,
+  ShieldCheck,
+  Calendar,
+  Clock,
+  Pause,
+  Play as PlayIcon
+} from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import testimonial1 from "@assets/stock_images/professional_busines_474b617c.jpg";
+import testimonial2 from "@assets/stock_images/professional_busines_a263e9a1.jpg";
+import testimonial3 from "@assets/stock_images/professional_busines_1f8f6e40.jpg";
+import testimonial4 from "@assets/stock_images/professional_busines_8f8097a7.jpg";
+import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
+
+const floatingCards = [
+  {
+    icon: CreditCard,
+    title: "Payments",
+    color: "bg-[#203e22]",
+    position: "left-0 top-24",
+  },
+  {
+    icon: Shield,
+    title: "Fraud Protection",
+    color: "bg-gray-700",
+    position: "left-16 bottom-12",
+  },
+  {
+    icon: FileText,
+    title: "Invoicing",
+    color: "bg-amber-700",
+    position: "left-4 bottom-48",
+  },
+  {
+    icon: Zap,
+    title: "Payouts",
+    color: "bg-violet-600",
+    position: "right-0 top-16",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics",
+    color: "bg-black",
+    position: "right-16 bottom-24",
+  },
+  {
+    icon: Globe,
+    title: "Global",
+    color: "bg-[#73cb43]",
+    position: "right-4 top-56",
+  },
+];
+
+const navItems = [
+  { label: "Products", hasDropdown: true, href: "#" },
+  { label: "Integrations", hasDropdown: false, href: "/public-integrations" },
+  { label: "Pricing", hasDropdown: false, href: "/public-pricing" },
+  { label: "Contact", hasDropdown: false, href: "/public-contact" },
+];
+
+const productMenuItems = {
+  paymentTypes: [
+    { icon: CreditCard, title: "Credit card processing", description: "Secure payments for all merchants" },
+    { icon: Receipt, title: "eCheck", description: "Reliable electronic processing" },
+    { icon: Bitcoin, title: "Crypto", description: "Accept digital currencies globally" },
+    { icon: MapPin, title: "LocalPay", description: "Payments in your market" },
+  ],
+  valueAddedServices: [
+    { icon: Wallet, title: "Digital wallets", description: "Modern mobile payment solutions" },
+    { icon: ShieldCheck, title: "Chargeback management", description: "Advanced revenue protection" },
+    { icon: Calendar, title: "Subscriptions", description: "Scale your recurring revenue" },
+    { icon: Clock, title: "Buy now pay later", description: "Boost sales with flexible options" },
+  ],
+};
+
+
+const featureCards = [
+  { icon: Store, title: "In-Person Payments", color: "bg-[#203e22]", x: -180, y: -120 },
+  { icon: Globe2, title: "Online Checkout", color: "bg-[#73cb43]", x: 180, y: -100 },
+  { icon: Receipt, title: "Invoices & Pay Links", color: "bg-amber-600", x: -200, y: 40 },
+  { icon: RefreshCcw, title: "Subscriptions", color: "bg-violet-600", x: 200, y: 60 },
+  { icon: Monitor, title: "Virtual Terminal", color: "bg-gray-700", x: -160, y: 180 },
+  { icon: Banknote, title: "Fast Payouts", color: "bg-emerald-600", x: 160, y: 160 },
+];
+
+const testimonials = [
+  {
+    id: 1,
+    quote: "PigBank completely transformed how we handle payments. Our chargebacks dropped by 60% and our approval rates went through the roof.",
+    name: "Sarah Mitchell",
+    title: "CEO, TechStart Inc.",
+    image: testimonial1,
+  },
+  {
+    id: 2,
+    quote: "After being rejected by three other processors, PigBank gave us a chance. Now we're processing over $500K monthly with zero issues.",
+    name: "Marcus Chen",
+    title: "Founder, Digital Commerce Co.",
+    image: testimonial2,
+  },
+  {
+    id: 3,
+    quote: "The fraud protection is incredible. We've saved thousands in potential chargebacks. PigBank pays for itself many times over.",
+    name: "Elena Rodriguez",
+    title: "CFO, Global Retail Solutions",
+    image: testimonial3,
+  },
+  {
+    id: 4,
+    quote: "Fast payouts, excellent support, and rates that actually make sense. PigBank is everything we needed in a payment processor.",
+    name: "James Thompson",
+    title: "Owner, Premium Services LLC",
+    image: testimonial4,
+  },
+];
+
+function HorizontalScrollText() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+  const smoothProgress = useSpring(scrollYProgress, springConfig);
+
+  const textX = useTransform(smoothProgress, [0, 1], ["0%", "-50%"]);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="py-24 md:py-32 bg-white overflow-hidden"
+    >
+      <div className="text-center mb-8">
+        <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-[0.2em]">
+          A BETTER WAY TO PAY
+        </p>
+      </div>
+      
+      <div className="relative">
+        <motion.div 
+          className="flex whitespace-nowrap"
+          style={{ x: textX }}
+        >
+          {[...Array(4)].map((_, i) => (
+            <span 
+              key={i}
+              className="text-6xl md:text-8xl lg:text-9xl font-bold text-gray-200 mx-4"
+              style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+            >
+              Why PigBank - 
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function AppleScrollSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+  const smoothProgress = useSpring(scrollYProgress, springConfig);
+
+  const cardOpacity = useTransform(smoothProgress, [0, 0.15, 0.35], [1, 1, 0]);
+  const cardScale = useTransform(smoothProgress, [0, 0.15, 0.35], [1, 1, 0.8]);
+  
+  const circleScale = useTransform(smoothProgress, [0.2, 0.6], [1, 12]);
+  const circleOpacity = useTransform(smoothProgress, [0.2, 0.4, 0.75, 0.85], [0, 1, 1, 0]);
+  
+  const headlineOpacity = useTransform(smoothProgress, [0.45, 0.6], [0, 1]);
+  const headlineY = useTransform(smoothProgress, [0.45, 0.6], [60, 0]);
+
+  const phoneOpacity = useTransform(smoothProgress, [0.35, 0.5], [1, 0]);
+  const phoneScale = useTransform(smoothProgress, [0.35, 0.5], [1, 0.9]);
+
+  const card0X = useTransform(smoothProgress, [0.1, 0.35], [0, -360]);
+  const card0Y = useTransform(smoothProgress, [0.1, 0.35], [0, -180]);
+  const card1X = useTransform(smoothProgress, [0.1, 0.35], [0, 360]);
+  const card1Y = useTransform(smoothProgress, [0.1, 0.35], [0, -150]);
+  const card2X = useTransform(smoothProgress, [0.1, 0.35], [0, -400]);
+  const card2Y = useTransform(smoothProgress, [0.1, 0.35], [0, 60]);
+  const card3X = useTransform(smoothProgress, [0.1, 0.35], [0, 400]);
+  const card3Y = useTransform(smoothProgress, [0.1, 0.35], [0, 90]);
+  const card4X = useTransform(smoothProgress, [0.1, 0.35], [0, -320]);
+  const card4Y = useTransform(smoothProgress, [0.1, 0.35], [0, 270]);
+  const card5X = useTransform(smoothProgress, [0.1, 0.35], [0, 320]);
+  const card5Y = useTransform(smoothProgress, [0.1, 0.35], [0, 240]);
+
+  const cardTransforms = [
+    { x: card0X, y: card0Y },
+    { x: card1X, y: card1Y },
+    { x: card2X, y: card2Y },
+    { x: card3X, y: card3Y },
+    { x: card4X, y: card4Y },
+    { x: card5X, y: card5Y },
+  ];
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="relative bg-white"
+      style={{ height: "300vh" }}
+    >
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
+        <motion.div 
+          className="absolute rounded-full bg-[#f5efe4]"
+          style={{
+            width: 280,
+            height: 280,
+            scale: circleScale,
+            opacity: circleOpacity,
+          }}
+        />
+
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="relative">
+            {featureCards.map((card, index) => {
+              const transforms = cardTransforms[index];
+              return (
+                <motion.div
+                  key={card.title}
+                  className={`absolute ${card.color} rounded-2xl p-4 shadow-lg min-w-[120px]`}
+                  style={{
+                    x: transforms.x,
+                    y: transforms.y,
+                    opacity: cardOpacity,
+                    scale: cardScale,
+                    left: "50%",
+                    top: "50%",
+                    marginLeft: card.x - 60,
+                    marginTop: card.y - 30,
+                  }}
+                >
+                  <card.icon className="h-6 w-6 text-white mb-2" />
+                  <span className="text-white text-sm font-medium whitespace-nowrap">{card.title}</span>
+                </motion.div>
+              );
+            })}
+
+            <motion.div 
+              className="relative bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl z-20"
+              style={{
+                opacity: phoneOpacity,
+                scale: phoneScale,
+              }}
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-30" />
+              <div className="bg-white rounded-[2rem] overflow-hidden w-[220px] md:w-[260px] h-[440px] md:h-[520px]">
+                <div className="bg-[#203e22] p-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-white/60 text-xs">×</span>
+                    <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
+                  </div>
+                  <p className="text-white/70 text-xs mb-1">Your total Balance</p>
+                  <p className="text-white text-2xl md:text-3xl font-bold">$47,892</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="text-xs text-white/60">Return: $12,450</span>
+                  </div>
+                </div>
+                <div className="p-4 bg-white">
+                  <div className="flex items-center justify-between mb-3 text-xs">
+                    <span className="text-gray-500">$47,892 today</span>
+                  </div>
+                  <div className="h-32 flex items-end gap-1">
+                    {[35, 42, 38, 55, 48, 62, 58, 75, 68, 82, 78, 95].map((h, i) => (
+                      <div 
+                        key={i} 
+                        className="flex-1 bg-gradient-to-t from-[#73cb43] to-[#9ee068] rounded-t"
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex justify-between mt-2 text-[10px] text-gray-400">
+                    <span>Jan</span>
+                    <span>Dec</span>
+                  </div>
+                  <div className="flex gap-2 mt-4">
+                    <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
+                      <span className="text-gray-600">Years: </span>
+                      <span className="font-semibold text-[#73cb43]">5</span>
+                    </div>
+                    <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
+                      <span className="text-gray-600">Return: </span>
+                      <span className="font-semibold text-[#73cb43]">12%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-30"
+            style={{
+              opacity: headlineOpacity,
+              y: headlineY,
+            }}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 max-w-4xl mb-6">
+              One platform for every way you get paid
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8">
+              Accept payments in-person, online, or on-the-go. PigBank handles it all.
+            </p>
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8 shadow-lg"
+              data-testid="button-learn-payments"
+            >
+              <a href="/register">
+                Start accepting payments
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const scrollPrev = useCallback(() => {
+    api?.scrollPrev();
+  }, [api]);
+
+  const scrollNext = useCallback(() => {
+    api?.scrollNext();
+  }, [api]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
+  return (
+    <section className="bg-[#1a1a1a] py-16 md:py-24 relative">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <p className="text-xs md:text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em]">
+            TRUSTED BY MERCHANTS
+          </p>
+        </div>
+        
+        <div className="relative">
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
+            data-testid="button-testimonial-prev"
+          >
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+          
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
+            data-testid="button-testimonial-next"
+          >
+            <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-6xl mx-auto px-12 md:px-16"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id}>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div className="order-2 lg:order-1">
+                      <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed mb-8">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div>
+                        <p className="text-[#73cb43] font-semibold uppercase tracking-wider text-sm">
+                          {testimonial.name}, {testimonial.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                      <div 
+                        className="relative w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden"
+                        style={{
+                          background: 'linear-gradient(135deg, #9ee068 0%, #73cb43 50%, #4a9a2a 100%)'
+                        }}
+                      >
+                        <img 
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover object-top mix-blend-luminosity opacity-90"
+                          data-testid={`img-testimonial-${testimonial.id}`}
+                        />
+                        <div className="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+                          <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
+                          <span className="text-xs font-medium text-gray-900">PigBank</span>
+                          <span className="text-xs text-gray-500">Payment Processing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                index === current ? 'bg-[#73cb43]' : 'bg-white/30'
+              }`}
+              data-testid={`button-testimonial-dot-${index}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Landing() {
+  const [transactionVolume, setTransactionVolume] = useState(50000);
+  const [scrollY, setScrollY] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const { setTheme } = useTheme();
+  
+  // Hero carousel state
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
+  const [heroCurrentSlide, setHeroCurrentSlide] = useState(0);
+  const [heroIsPaused, setHeroIsPaused] = useState(false);
+  const [heroProgress, setHeroProgress] = useState(0);
+  const heroSlideCount = 4;
+  const heroSlideDuration = 10000; // 10 seconds
+
+  // Hero carousel slide selection
+  useEffect(() => {
+    if (!heroApi) return;
+
+    setHeroCurrentSlide(heroApi.selectedScrollSnap());
+
+    const onSelect = () => {
+      setHeroCurrentSlide(heroApi.selectedScrollSnap());
+      setHeroProgress(0); // Reset progress when slide changes
+    };
+
+    heroApi.on("select", onSelect);
+
+    return () => {
+      heroApi.off("select", onSelect);
+    };
+  }, [heroApi]);
+
+  // Hero carousel auto-play with progress
+  useEffect(() => {
+    if (!heroApi || heroIsPaused) return;
+
+    const progressInterval = 50; // Update progress every 50ms
+    const progressIncrement = (progressInterval / heroSlideDuration) * 100;
+
+    const timer = setInterval(() => {
+      setHeroProgress((prev) => {
+        if (prev >= 100) {
+          // Move to next slide
+          if (heroApi.canScrollNext()) {
+            heroApi.scrollNext();
+          } else {
+            heroApi.scrollTo(0);
+          }
+          return 0;
+        }
+        return prev + progressIncrement;
+      });
+    }, progressInterval);
+
+    return () => clearInterval(timer);
+  }, [heroApi, heroIsPaused]);
+
+  // Force light theme on landing page
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      if (currentScrollY < 10) {
+        setHeaderVisible(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setHeaderVisible(true);
+      } else {
+        setHeaderVisible(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const calculateFees = (volume: number) => {
+    const rate = 0.029;
+    const perTransaction = 0.30;
+    const avgTransactionSize = 85;
+    const numTransactions = Math.round(volume / avgTransactionSize);
+    const fees = (volume * rate) + (numTransactions * perTransaction);
+    return {
+      fees: fees.toFixed(2),
+      saved: (volume * 0.01).toFixed(2),
+    };
+  };
+
+  const { fees, saved } = calculateFees(transactionVolume);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <header 
+        className={`border-b border-gray-100 bg-white fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+          headerVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
+          <div className="flex items-center gap-10">
+            <img 
+              src="/pig-bank-logo-light.png" 
+              alt="PigBank" 
+              className="h-12 w-auto object-contain" 
+              data-testid="logo-header"
+            />
+            <nav className="hidden lg:flex items-center gap-8">
+              {navItems.map((item) => (
+                <div key={item.label} className="relative group">
+                  {item.hasDropdown ? (
+                    <button 
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-gray-900 transition-colors py-6"
+                      data-testid={`nav-${item.label.toLowerCase()}`}
+                    >
+                      {item.label}
+                      <ChevronDown className="h-4 w-4" />
+                    </button>
+                  ) : (
+                    <a 
+                      href={item.href}
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-gray-900 transition-colors py-6"
+                      data-testid={`nav-${item.label.toLowerCase()}`}
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                  {item.label === "Products" && (
+                    <div className="absolute top-full -left-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="bg-white rounded-b-xl shadow-2xl min-w-[600px]">
+                        <div className="flex justify-center pt-1 pb-3">
+                          <div className="w-[90%] h-0.5 bg-[#73cb43] rounded-full"></div>
+                        </div>
+                        <div className="px-6 pb-6">
+                          <div className="grid grid-cols-2 gap-6">
+                            <div>
+                              <p className="text-xs font-semibold text-[#73cb43] uppercase tracking-wider mb-4">Payment Types</p>
+                              <div className="space-y-3">
+                                {productMenuItems.paymentTypes.map((product) => (
+                                  <a key={product.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                                      <product.icon className="h-5 w-5 text-white" />
+                                    </div>
+                                    <div>
+                                      <p className="text-gray-900 font-medium group-hover/item:text-[#73cb43] transition-colors">{product.title}</p>
+                                      <p className="text-gray-500 text-sm">{product.description}</p>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <p className="text-xs font-semibold text-[#73cb43] uppercase tracking-wider mb-4">Value-Added Services</p>
+                              <div className="space-y-3">
+                                {productMenuItems.valueAddedServices.map((service) => (
+                                  <a key={service.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                                      <service.icon className="h-5 w-5 text-white" />
+                                    </div>
+                                    <div>
+                                      <p className="text-gray-900 font-medium group-hover/item:text-[#73cb43] transition-colors">{service.title}</p>
+                                      <p className="text-gray-500 text-sm">{service.description}</p>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+          <div className="flex items-center gap-5">
+            <a 
+              href="/login" 
+              className="text-base text-gray-700 hover:text-gray-900 transition-colors hidden sm:block"
+              data-testid="link-login"
+            >
+              Log in
+            </a>
+            <a 
+              href="/register"
+              className="bg-[#73cb43] hover:bg-[#65b53b] text-white font-medium px-5 py-2 rounded-md transition-colors"
+              data-testid="button-get-started-header"
+            >
+              Get started
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main className="pt-20">
+        <section className="overflow-hidden relative">
+          <Carousel
+            setApi={setHeroApi}
+            opts={{ loop: true }}
+            className="w-full"
+          >
+            <CarouselContent className="ml-0">
+              {/* Slide 1: Personal service */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
+                  }}
+                >
+                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                      <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                          <span className="whitespace-nowrap">Perfect fit</span><br />
+                          payment processing
+                        </h1>
+                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                          Fast approvals, total data security, transparent rates, and tailored solutions built for you.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                          <Button 
+                            asChild 
+                            size="lg" 
+                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                            data-testid="button-get-started-hero"
+                          >
+                            <a href="/register">Get started</a>
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:w-2/5 relative min-h-[450px] md:min-h-[520px] w-full flex items-end justify-center">
+                        <div className="relative flex items-end justify-center">
+                          <img 
+                            src="/pig-mascot.png" 
+                            alt="PigBank Mascot" 
+                            className="relative w-40 md:w-56 lg:w-64 z-20 drop-shadow-2xl -mr-8 md:-mr-12"
+                            style={{ transform: `translateY(${32 + scrollY * 0.02}px)` }}
+                          />
+                          
+                          <div 
+                            className="relative z-10"
+                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                          >
+                          <div className="relative bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-20" />
+                            <div className="bg-white rounded-[2rem] overflow-hidden w-[200px] md:w-[240px] h-[400px] md:h-[480px]">
+                              <div className="bg-[#203e22] p-4">
+                                <div className="flex items-center justify-between mb-4">
+                                  <span className="text-white/60 text-xs">×</span>
+                                  <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
+                                </div>
+                                <p className="text-white/70 text-xs mb-1">Your total Balance</p>
+                                <p className="text-white text-2xl md:text-3xl font-bold">$47,892</p>
+                                <div className="flex items-center gap-2 mt-2">
+                                  <span className="text-xs text-white/60">Return: $12,450</span>
+                                </div>
+                              </div>
+                              <div className="p-4 bg-white">
+                                <div className="flex items-center justify-between mb-3 text-xs">
+                                  <span className="text-gray-500">$47,892 today</span>
+                                </div>
+                                <div className="h-32 flex items-end gap-1">
+                                  {[35, 42, 38, 55, 48, 62, 58, 75, 68, 82, 78, 95].map((h, i) => (
+                                    <div 
+                                      key={i} 
+                                      className="flex-1 bg-gradient-to-t from-[#73cb43] to-[#9ee068] rounded-t"
+                                      style={{ height: `${h}%` }}
+                                    />
+                                  ))}
+                                </div>
+                                <div className="flex justify-between mt-2 text-[10px] text-gray-400">
+                                  <span>Jan</span>
+                                  <span>Dec</span>
+                                </div>
+                                <div className="flex gap-2 mt-4">
+                                  <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
+                                    <span className="text-gray-600">Years: </span>
+                                    <span className="font-semibold text-[#73cb43]">5</span>
+                                  </div>
+                                  <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
+                                    <span className="text-gray-600">Return: </span>
+                                    <span className="font-semibold text-[#73cb43]">12%</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* Slide 2: Built for high-risk merchants */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #2a2a2a 0%, #222222 40%, #1a1a1a 70%, #141414 100%)'
+                  }}
+                >
+                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                          Built for high-risk merchants
+                        </h2>
+                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                          Where others say no, we say yes. Advanced fraud protection, chargeback management, and dedicated support.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                          <Button 
+                            asChild 
+                            size="lg" 
+                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                            data-testid="button-get-started-hero-2"
+                          >
+                            <a href="/register">Get approved today</a>
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                        <div className="relative">
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-64 h-64 rounded-full border-4 border-white/20 animate-ping" style={{ animationDuration: '3s' }} />
+                          </div>
+                          <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
+                            <div className="flex items-center gap-4 mb-6">
+                              <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
+                                <Shield className="h-8 w-8 text-white" />
+                              </div>
+                              <div>
+                                <p className="font-bold text-xl text-gray-900">Protected</p>
+                                <p className="text-gray-500">Advanced Security</p>
+                              </div>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">99.7% Approval Rate</span>
+                              </div>
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">AI Fraud Detection</span>
+                              </div>
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">Chargeback Protection</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* Slide 3: Fast payouts (beige - light) */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #f5efe4 0%, #e8dfd0 35%, #d9cdb8 70%, #c9bca3 100%)'
+                  }}
+                >
+                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
+                          Get paid faster
+                        </h2>
+                        <p className="text-lg md:text-xl text-gray-700 max-w-xl mx-auto lg:mx-0">
+                          Same-day and next-day payouts. No waiting weeks for your money. Access your funds when you need them.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                          <Button 
+                            asChild 
+                            size="lg" 
+                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                            data-testid="button-get-started-hero-3"
+                          >
+                            <a href="/register">Start earning faster</a>
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                        <div className="relative">
+                          <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
+                            <div className="flex items-center justify-between mb-6">
+                              <span className="text-lg font-semibold text-gray-900">Payout Schedule</span>
+                              <Zap className="h-6 w-6 text-[#73cb43]" />
+                            </div>
+                            <div className="space-y-4">
+                              <div className="flex items-center justify-between p-4 bg-[#73cb43]/10 rounded-xl border-2 border-[#73cb43]">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-3 h-3 rounded-full bg-[#73cb43]" />
+                                  <span className="font-medium text-gray-900">Same Day</span>
+                                </div>
+                                <span className="text-[#73cb43] font-bold">Instant</span>
+                              </div>
+                              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-3 h-3 rounded-full bg-gray-400" />
+                                  <span className="font-medium text-gray-700">Next Day</span>
+                                </div>
+                                <span className="text-gray-500">T+1</span>
+                              </div>
+                              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-3 h-3 rounded-full bg-gray-400" />
+                                  <span className="font-medium text-gray-700">Standard</span>
+                                </div>
+                                <span className="text-gray-500">T+2</span>
+                              </div>
+                            </div>
+                            <div className="mt-6 pt-4 border-t border-gray-100">
+                              <div className="flex items-center gap-2 text-sm text-gray-600">
+                                <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                                <span>No hidden fees on payouts</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* Slide 4: Accept payments everywhere (dark green - dark) */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #203e22 70%, #1a3319 100%)'
+                  }}
+                >
+                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                          Your success is our business
+                        </h2>
+                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                          Cards, ACH, crypto, eChecks, and more. Give your customers the payment options they want.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                          <Button 
+                            asChild 
+                            size="lg" 
+                            className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                            data-testid="button-get-started-hero-4"
+                          >
+                            <a href="/register">Start accepting payments</a>
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                        <div className="relative">
+                          <div className="grid grid-cols-2 gap-4 md:gap-6">
+                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
+                              <div className="w-12 h-12 rounded-xl bg-[#203e22] flex items-center justify-center mb-3">
+                                <CreditCard className="h-6 w-6 text-white" />
+                              </div>
+                              <p className="font-semibold text-gray-900">Credit Cards</p>
+                              <p className="text-sm text-gray-500">Visa, MC, Amex</p>
+                            </div>
+                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
+                              <div className="w-12 h-12 rounded-xl bg-[#73cb43] flex items-center justify-center mb-3">
+                                <Wallet className="h-6 w-6 text-white" />
+                              </div>
+                              <p className="font-semibold text-gray-900">ACH Transfers</p>
+                              <p className="text-sm text-gray-500">Direct bank</p>
+                            </div>
+                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
+                              <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center mb-3">
+                                <Bitcoin className="h-6 w-6 text-white" />
+                              </div>
+                              <p className="font-semibold text-gray-900">Crypto</p>
+                              <p className="text-sm text-gray-500">BTC, ETH, USDC</p>
+                            </div>
+                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
+                              <div className="w-12 h-12 rounded-xl bg-violet-600 flex items-center justify-center mb-3">
+                                <Receipt className="h-6 w-6 text-white" />
+                              </div>
+                              <p className="font-semibold text-gray-900">eChecks</p>
+                              <p className="text-sm text-gray-500">Electronic checks</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
+          
+          {/* Carousel progress indicators with pause button */}
+          <div 
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10"
+          >
+            <div className="flex items-center gap-2">
+              {Array.from({ length: heroSlideCount }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    heroApi?.scrollTo(index);
+                    setHeroProgress(0);
+                  }}
+                  className="relative w-12 h-1.5 rounded-full overflow-hidden bg-white/30 hover:bg-white/40 transition-colors"
+                  data-testid={`button-hero-progress-${index}`}
+                >
+                  <div 
+                    className="absolute left-0 top-0 h-full bg-white rounded-full transition-all duration-75"
+                    style={{ 
+                      width: index === heroCurrentSlide 
+                        ? `${heroProgress}%` 
+                        : index < heroCurrentSlide 
+                          ? '100%' 
+                          : '0%'
+                    }}
+                  />
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => setHeroIsPaused(!heroIsPaused)}
+              className="px-3 py-1.5 rounded-md bg-transparent backdrop-blur-sm border border-white/30 hover:border-white/50 hover:bg-white/10 flex items-center justify-center transition-all"
+              data-testid="button-hero-pause"
+            >
+              {heroIsPaused ? (
+                <PlayIcon className="h-3.5 w-3.5 text-white" />
+              ) : (
+                <Pause className="h-3.5 w-3.5 text-white" />
+              )}
+            </button>
+          </div>
+          
+          <div className="flex justify-center py-2">
+            <p className="text-center text-xs text-gray-500 px-4 py-1">
+              Data shown is for illustrative purposes only. Past performance does not guarantee future results.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-[#15391c] py-8">
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
+              <div className="text-center">
+                <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
+                  TOP PAYMENT PROCESSOR 2025
+                </p>
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                  <span className="text-3xl font-bold text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Forbes</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
+                  BEST FOR HIGH-RISK MERCHANTS
+                </p>
+                <div className="flex items-center justify-center">
+                  <span className="text-3xl font-black text-white tracking-tighter border-y-2 border-white py-1 px-3" style={{ fontFamily: 'Georgia, serif' }}>TIME</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
+                  MOST RELIABLE GATEWAY
+                </p>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                    <span className="text-[#15391c] font-bold text-lg">N</span>
+                  </div>
+                  <span className="text-2xl font-semibold text-white">nerdwallet</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-4 bg-[#2f8a2b] overflow-hidden">
+          <div className="relative flex overflow-hidden h-8">
+            <div className="animate-marquee whitespace-nowrap flex items-center">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    $2B+ PROCESSED WITH PIGBANK
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    10,000+ ACTIVE MERCHANTS
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    HELPING BUSINESSES GROW SINCE 2019
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    4.9 STARS ON TRUSTPILOT
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                </div>
+              ))}
+            </div>
+            <div className="animate-marquee2 whitespace-nowrap flex items-center absolute top-0">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    $2B+ PROCESSED WITH PIGBANK
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    10,000+ ACTIVE MERCHANTS
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    HELPING BUSINESSES GROW SINCE 2019
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
+                    4.9 STARS ON TRUSTPILOT
+                  </span>
+                  <span className="text-white/60 mx-2">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-[#f5f0e8] overflow-hidden">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div 
+              className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #d9d2c7 0%, #c4bdb2 100%)'
+              }}
+            >
+              <div className="flex flex-col lg:flex-row items-center justify-between p-6 md:p-10 lg:p-12 gap-6 lg:gap-8">
+                <div className="lg:w-2/3 relative">
+                  <img 
+                    src="/macbook-dashboard.png" 
+                    alt="PigBank Dashboard on MacBook" 
+                    className="w-full h-auto max-w-[550px] mx-auto"
+                  />
+                </div>
+                
+                <div className="lg:w-1/3 flex flex-col items-center lg:items-start gap-4">
+                  <img 
+                    src={moneyImage} 
+                    alt="Money and success" 
+                    className="w-32 md:w-40 lg:w-48 h-auto drop-shadow-lg rounded-xl object-cover"
+                  />
+                  <div className="text-center lg:text-left">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                      See PigBank in Action
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base">
+                      Watch how easy it is to manage payments, track transactions, and grow your business.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <button 
+                className="absolute inset-0 flex items-center justify-center z-20"
+                data-testid="button-play-video"
+              >
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/90 backdrop-blur shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Play className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 text-gray-900 ml-1" fill="currentColor" />
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <AppleScrollSection />
+
+        <HorizontalScrollText />
+
+        <section className="py-20 md:py-32">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Payment tools for every stage of business
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  Starting out? Scaling up? Going global? Wherever you are on your 
+                  business journey, PigBank's payment tools can help you reach 
+                  your goals.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  data-testid="button-learn-more-1"
+                >
+                  <a href="/register">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-[#73cb43]/20 to-[#203e22]/20 flex items-center justify-center">
+                    <div className="w-48 h-48 md:w-60 md:h-60 rounded-full bg-gradient-to-br from-[#73cb43]/30 to-[#203e22]/30 flex items-center justify-center">
+                      <div className="bg-white rounded-2xl shadow-xl p-6 w-36 md:w-44">
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="w-8 h-8 rounded-full bg-[#73cb43] flex items-center justify-center">
+                            <Shield className="h-4 w-4 text-white" />
+                          </div>
+                          <span className="text-xs font-medium text-gray-600">Protected</span>
+                        </div>
+                        <div className="text-2xl font-bold text-gray-900">100%</div>
+                        <div className="text-xs text-gray-500">Fraud Prevention</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32 bg-gray-50">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-gray-600">Express Payout</span>
+                        <Zap className="h-5 w-5 text-[#73cb43]" />
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-[#73cb43]" />
+                            <span className="text-sm text-gray-700">Available</span>
+                          </div>
+                          <span className="font-semibold text-gray-900">$12,450</span>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-gray-400" />
+                            <span className="text-sm text-gray-700">Pending</span>
+                          </div>
+                          <span className="font-semibold text-gray-900">$3,200</span>
+                        </div>
+                      </div>
+                      <Button 
+                        className="w-full mt-4 bg-[#203e22] hover:bg-[#1a3319] text-white rounded-xl"
+                        size="sm"
+                      >
+                        Transfer now
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Fast and automatic payouts
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  No waiting for your funds. Get same-day or next-day payouts 
+                  directly to your bank account. You can even access funds 
+                  instantly with our Express Payout feature.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  data-testid="button-learn-more-2"
+                >
+                  <a href="/register">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Professional invoicing, simplified
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  Create and send professional invoices in seconds. Track payments, 
+                  send reminders, and get paid faster with built-in payment links 
+                  that your customers can use instantly.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  data-testid="button-learn-more-3"
+                >
+                  <a href="/register">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
+                        <FileText className="h-5 w-5 text-amber-600" />
+                      </div>
+                      <div className="border-b border-gray-100 pb-3 mb-3">
+                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
+                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-500">Due Date</span>
+                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm mt-2">
+                        <span className="text-gray-500">Status</span>
+                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
+                          Pending
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32 bg-gray-50">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="relative">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-32 h-32 rounded-full border-4 border-[#73cb43]/20 animate-ping" style={{ animationDuration: '3s' }} />
+                      </div>
+                      <div className="relative bg-white rounded-full p-8 shadow-xl">
+                        <Lock className="h-16 w-16 text-[#203e22]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Security as strong as a vault
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  From day one, your transactions are protected with bank-level 
+                  encryption, PCI DSS Level 1 compliance, and our advanced 
+                  AI-powered fraud detection system.
+                </p>
+                <ul className="space-y-3 text-left max-w-lg mx-auto lg:mx-0">
+                  {[
+                    "256-bit SSL encryption",
+                    "PCI DSS Level 1 certified",
+                    "Real-time fraud monitoring",
+                    "3D Secure authentication",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#73cb43] flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 md:py-32 bg-white">
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 tracking-tight">
+              No hidden fees. No commissions.
+            </h2>
+          </div>
+        </section>
+
+        <section className="bg-[#203e22] py-16 md:py-24">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+              <div className="space-y-8">
+                <div>
+                  <label className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+                    Monthly Transaction Volume
+                  </label>
+                  <div className="mt-3 text-3xl md:text-4xl font-bold text-[#73cb43]">
+                    ${transactionVolume.toLocaleString()}
+                  </div>
+                  <div className="mt-4 relative">
+                    <input
+                      type="range"
+                      min="5000"
+                      max="500000"
+                      step="5000"
+                      value={transactionVolume}
+                      onChange={(e) => setTransactionVolume(Number(e.target.value))}
+                      className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer slider-green"
+                      data-testid="slider-volume"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+                    Average Transaction Size
+                  </label>
+                  <div className="mt-3 text-3xl md:text-4xl font-bold text-[#73cb43]">
+                    $85
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+                    Current Processor Rate
+                  </label>
+                  <div className="flex items-center gap-4 mt-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded-full border-2 border-[#73cb43] bg-[#73cb43]" />
+                      <span className="text-white text-sm">3.5%</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded-full border-2 border-white/40" />
+                      <span className="text-white/60 text-sm">4.0%</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded-full border-2 border-white/40" />
+                      <span className="text-white/60 text-sm">4.5%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <Button 
+                  className="w-full bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full py-6 text-base font-semibold mt-4"
+                  data-testid="button-calculate"
+                >
+                  Calculate my savings
+                </Button>
+              </div>
+
+              <div>
+                <div className="mb-2">
+                  <span className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+                    Estimated Annual Savings:
+                  </span>
+                </div>
+                <div className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#73cb43] mb-8">
+                  ${(parseFloat(saved) * 12).toLocaleString()}
+                </div>
+                
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#73cb43]" />
+                    <span className="text-sm text-white/80">Your Savings</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-white/40" />
+                    <span className="text-sm text-white/80">Competitor Fees</span>
+                  </div>
+                </div>
+
+                <div className="h-64 flex items-end gap-1">
+                  {[...Array(24)].map((_, i) => {
+                    const baseHeight = 20 + (i * 3);
+                    const savingsHeight = baseHeight * 0.3;
+                    return (
+                      <div key={i} className="flex-1 flex flex-col gap-0.5">
+                        <div 
+                          className="w-full bg-[#73cb43] rounded-t-sm"
+                          style={{ height: `${savingsHeight}%` }}
+                        />
+                        <div 
+                          className="w-full bg-white/30 rounded-t-sm"
+                          style={{ height: `${baseHeight - savingsHeight}%` }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                
+                <div className="flex justify-between mt-4 text-xs text-white/50">
+                  <span>Year 1</span>
+                  <span>Year 2</span>
+                </div>
+
+                <p className="text-xs text-white/50 mt-6 leading-relaxed">
+                  The chart shows an estimate of how much you could save over time based on the transaction volume and current processor rate specified. Changes in these variables can affect the outcome. Results do not predict actual savings and are for illustrative purposes only.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <TestimonialsCarousel />
+
+        <section className="py-20 md:py-32">
+          <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Ready to grow your business?
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Join thousands of merchants who trust PigBank to power their payments. 
+              Start accepting payments in minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-full px-8"
+                data-testid="button-get-started-cta"
+              >
+                <a href="/register">
+                  Get started free
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="rounded-full px-8 border-gray-300"
+                data-testid="button-talk-to-sales"
+              >
+                Talk to sales
+              </Button>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                <span>No setup fees</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                <span>No monthly minimums</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                <span>Cancel anytime</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-gray-200 bg-white py-12">
+        <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Products</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Payments</a></li>
+                <li><a href="#" className="hover:text-gray-900">Invoicing</a></li>
+                <li><a href="#" className="hover:text-gray-900">Payouts</a></li>
+                <li><a href="#" className="hover:text-gray-900">Fraud Protection</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Solutions</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">E-commerce</a></li>
+                <li><a href="#" className="hover:text-gray-900">SaaS</a></li>
+                <li><a href="#" className="hover:text-gray-900">Marketplaces</a></li>
+                <li><a href="#" className="hover:text-gray-900">Platforms</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Developers</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Documentation</a></li>
+                <li><a href="#" className="hover:text-gray-900">API Reference</a></li>
+                <li><a href="#" className="hover:text-gray-900">SDKs</a></li>
+                <li><a href="#" className="hover:text-gray-900">Webhooks</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">About</a></li>
+                <li><a href="/team-login" className="hover:text-gray-900" data-testid="link-team-login">PigBank Team Login</a></li>
+                <li><a href="#" className="hover:text-gray-900">Blog</a></li>
+                <li><a href="#" className="hover:text-gray-900">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
+            <p className="text-sm text-gray-500">
+              © 2024 PigBank Payments. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <div className="fixed bottom-0 left-0 right-0 bg-[#1a1a1a] text-white py-3 px-4 flex items-center justify-between z-50 md:hidden">
+        <div className="flex items-center gap-3">
+          <img 
+            src="/pig-bank-logo-dark.png" 
+            alt="PigBank" 
+            className="h-6 w-auto object-contain" 
+          />
+          <span className="text-sm text-gray-300">Accept payments today</span>
+        </div>
+        <Button 
+          asChild 
+          size="sm" 
+          className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-4"
+          data-testid="button-get-started-sticky"
+        >
+          <a href="/register">Get started</a>
+        </Button>
+      </div>
+
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes marquee2 {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(0%); }
+        }
+        
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+        
+        .animate-marquee2 {
+          animation: marquee2 25s linear infinite;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #73cb43;
+          cursor: pointer;
+          border: 3px solid white;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #73cb43;
+          cursor: pointer;
+          border: 3px solid white;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+      `}</style>
+    </div>
+  );
+}
