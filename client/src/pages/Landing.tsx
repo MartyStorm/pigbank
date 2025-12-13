@@ -710,7 +710,7 @@ export default function Landing() {
                       <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           <span className="whitespace-nowrap">Built-for-you</span><br />
-                          payment solutions
+                          payment processor
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
                           Fast approvals, total data security, transparent rates, and tailored solutions built for you.
