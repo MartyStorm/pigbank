@@ -494,7 +494,11 @@ export default function Dashboard() {
           </div>
 
           {/* Total Payout Balance Widget */}
-          <div className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-4">
+          <button 
+            onClick={() => setLocation("/payouts")}
+            className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-muted/50 transition-colors text-left"
+            data-testid="button-payout-balance-card"
+          >
             <div className="flex items-center gap-3 min-w-0 flex-shrink">
               <DollarSign className="h-6 w-6 text-success-text flex-shrink-0" />
               <h3 className="font-semibold text-foreground">Payout Balance</h3>
@@ -503,7 +507,7 @@ export default function Dashboard() {
               <span className="font-bold text-success-text text-lg">${payoutBalance.toLocaleString("en-US", { maximumFractionDigits: 0 })}</span>
               <span className="text-[10px] text-muted-foreground">{payoutBalance > 0 ? "Processing" : "No balance"}</span>
             </div>
-          </div>
+          </button>
         </div>
 
         {/* Performance Metrics Header & Date Selector */}
