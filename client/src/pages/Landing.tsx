@@ -705,178 +705,191 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  {/* Floating dollar bills - mix of flat and wavy styles */}
+                  {/* Floating dollar bills - mix of flat and wavy styles with falling animation */}
+                  <style>{`
+                    @keyframes fallDown {
+                      0% { transform: translateY(-100%) rotate(var(--rotate)); }
+                      100% { transform: translateY(calc(100vh + 100%)) rotate(var(--rotate)); }
+                    }
+                    @keyframes fallDownSway {
+                      0% { transform: translateY(-100%) translateX(0) rotate(var(--rotate)); }
+                      25% { transform: translateY(25vh) translateX(15px) rotate(var(--rotate)); }
+                      50% { transform: translateY(50vh) translateX(-10px) rotate(var(--rotate)); }
+                      75% { transform: translateY(75vh) translateX(8px) rotate(var(--rotate)); }
+                      100% { transform: translateY(calc(100vh + 100%)) translateX(0) rotate(var(--rotate)); }
+                    }
+                  `}</style>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Row 1 - Flat bill */}
-                    <svg className="absolute top-[5%] left-[3%] w-16 h-9 opacity-25 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 1 - Flat */}
+                    <svg className="absolute left-[3%] w-16 h-9 opacity-25" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-12deg', animation: 'fallDownSway 12s linear infinite', animationDelay: '0s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[8%] left-[22%] w-14 h-10 opacity-22 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 2 - Wavy */}
+                    <svg className="absolute left-[22%] w-14 h-10 opacity-22" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '18deg', animation: 'fallDownSway 14s linear infinite', animationDelay: '-2s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,4 60,15 Q90,26 116,10 L116,58 Q90,68 60,55 Q30,42 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[3%] left-[42%] w-13 h-8 opacity-20 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 3 - Flat */}
+                    <svg className="absolute left-[42%] w-13 h-8 opacity-20" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-8deg', animation: 'fallDown 10s linear infinite', animationDelay: '-4s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[10%] left-[62%] w-17 h-11 opacity-26 rotate-[25deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 4 - Wavy */}
+                    <svg className="absolute left-[62%] w-17 h-11 opacity-26" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '25deg', animation: 'fallDownSway 13s linear infinite', animationDelay: '-1s' } as React.CSSProperties}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[6%] left-[82%] w-14 h-8 opacity-21 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 5 - Flat */}
+                    <svg className="absolute left-[82%] w-14 h-8 opacity-21" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-20deg', animation: 'fallDown 11s linear infinite', animationDelay: '-6s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Row 2 - Wavy bill */}
-                    <svg className="absolute top-[22%] left-[8%] w-14 h-10 opacity-20 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 6 - Wavy */}
+                    <svg className="absolute left-[8%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '15deg', animation: 'fallDownSway 15s linear infinite', animationDelay: '-3s' } as React.CSSProperties}>
                       <path d="M4,14 Q30,4 60,16 Q90,28 116,12 L116,56 Q90,68 60,54 Q30,40 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[28%] left-[32%] w-16 h-9 opacity-24 rotate-[-22deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 7 - Flat */}
+                    <svg className="absolute left-[32%] w-16 h-9 opacity-24" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-22deg', animation: 'fallDown 9s linear infinite', animationDelay: '-7s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[25%] left-[55%] w-13 h-9 opacity-19 rotate-[30deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 8 - Wavy */}
+                    <svg className="absolute left-[55%] w-13 h-9 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '30deg', animation: 'fallDownSway 16s linear infinite', animationDelay: '-5s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,2 60,14 Q90,26 116,8 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[20%] left-[75%] w-14 h-8 opacity-23 rotate-[-5deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 9 - Flat */}
+                    <svg className="absolute left-[75%] w-14 h-8 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-5deg', animation: 'fallDown 12s linear infinite', animationDelay: '-8s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[30%] left-[92%] w-12 h-9 opacity-19 rotate-[12deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 10 - Wavy */}
+                    <svg className="absolute left-[92%] w-12 h-9 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '12deg', animation: 'fallDownSway 11s linear infinite', animationDelay: '-9s' } as React.CSSProperties}>
                       <path d="M4,15 Q30,5 60,18 Q90,31 116,12 L116,55 Q90,66 60,52 Q30,38 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Row 3 - Flat bill */}
-                    <svg className="absolute top-[45%] left-[2%] w-17 h-10 opacity-26 rotate-[-18deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 11 - Flat */}
+                    <svg className="absolute left-[2%] w-17 h-10 opacity-26" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-18deg', animation: 'fallDown 14s linear infinite', animationDelay: '-10s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[48%] left-[18%] w-14 h-10 opacity-21 rotate-[8deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 12 - Wavy */}
+                    <svg className="absolute left-[18%] w-14 h-10 opacity-21" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '8deg', animation: 'fallDownSway 10s linear infinite', animationDelay: '-0.5s' } as React.CSSProperties}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[42%] left-[38%] w-13 h-8 opacity-18 rotate-[-28deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 13 - Flat */}
+                    <svg className="absolute left-[38%] w-13 h-8 opacity-18" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-28deg', animation: 'fallDown 13s linear infinite', animationDelay: '-11s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[50%] left-[58%] w-16 h-11 opacity-24 rotate-[22deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 14 - Wavy */}
+                    <svg className="absolute left-[58%] w-16 h-11 opacity-24" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '22deg', animation: 'fallDownSway 15s linear infinite', animationDelay: '-12s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,70 60,54 Q30,38 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[44%] left-[78%] w-14 h-8 opacity-20 rotate-[-10deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 15 - Flat */}
+                    <svg className="absolute left-[78%] w-14 h-8 opacity-20" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-10deg', animation: 'fallDown 11s linear infinite', animationDelay: '-2.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Row 4 - Wavy bill */}
-                    <svg className="absolute top-[62%] left-[5%] w-14 h-10 opacity-22 rotate-[28deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 16 - Wavy */}
+                    <svg className="absolute left-[5%] w-14 h-10 opacity-22" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '28deg', animation: 'fallDownSway 9s linear infinite', animationDelay: '-4.5s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[68%] left-[25%] w-16 h-9 opacity-25 rotate-[-15deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 17 - Flat */}
+                    <svg className="absolute left-[25%] w-16 h-9 opacity-25" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-15deg', animation: 'fallDown 16s linear infinite', animationDelay: '-6.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[65%] left-[48%] w-14 h-10 opacity-20 rotate-[5deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 18 - Wavy */}
+                    <svg className="absolute left-[48%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '5deg', animation: 'fallDownSway 12s linear infinite', animationDelay: '-8.5s' } as React.CSSProperties}>
                       <path d="M4,14 Q30,4 60,16 Q90,28 116,10 L116,56 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[70%] left-[68%] w-13 h-8 opacity-23 rotate-[-25deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 19 - Flat */}
+                    <svg className="absolute left-[68%] w-13 h-8 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-25deg', animation: 'fallDown 10s linear infinite', animationDelay: '-1.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[63%] left-[88%] w-14 h-10 opacity-19 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 20 - Wavy */}
+                    <svg className="absolute left-[88%] w-14 h-10 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '18deg', animation: 'fallDownSway 14s linear infinite', animationDelay: '-13s' } as React.CSSProperties}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Row 5 - Flat bill */}
-                    <svg className="absolute top-[82%] left-[10%] w-16 h-9 opacity-24 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 21 - Flat */}
+                    <svg className="absolute left-[10%] w-16 h-9 opacity-24" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-8deg', animation: 'fallDown 13s linear infinite', animationDelay: '-3.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[85%] left-[30%] w-13 h-9 opacity-21 rotate-[32deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 22 - Wavy */}
+                    <svg className="absolute left-[30%] w-13 h-9 opacity-21" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '32deg', animation: 'fallDownSway 11s linear infinite', animationDelay: '-5.5s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,68 60,52 Q30,36 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[80%] left-[52%] w-17 h-10 opacity-26 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 23 - Flat */}
+                    <svg className="absolute left-[52%] w-17 h-10 opacity-26" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-20deg', animation: 'fallDown 15s linear infinite', animationDelay: '-7.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Wavy bill */}
-                    <svg className="absolute top-[88%] left-[72%] w-14 h-10 opacity-20 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
+                    {/* Bill 24 - Wavy */}
+                    <svg className="absolute left-[72%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '15deg', animation: 'fallDownSway 10s linear infinite', animationDelay: '-9.5s' } as React.CSSProperties}>
                       <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Flat bill */}
-                    <svg className="absolute top-[83%] left-[92%] w-12 h-7 opacity-23 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
+                    {/* Bill 25 - Flat */}
+                    <svg className="absolute left-[95%] w-12 h-7 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-12deg', animation: 'fallDown 12s linear infinite', animationDelay: '-11.5s' } as React.CSSProperties}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
