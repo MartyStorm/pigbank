@@ -90,7 +90,7 @@ export default function Payouts() {
               <CardTitle className="text-sm font-medium text-muted-foreground">Last Payout</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-foreground">
+              <div className="text-3xl font-bold text-[#39870E]">
                 {lastPayout ? formatAmount(lastPayout.amount) : "—"}
               </div>
               <p className="text-base mt-1 text-muted-foreground">
