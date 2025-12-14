@@ -705,241 +705,364 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  {/* Floating dollar bills with realistic paper flutter animation */}
+                  {/* Falling dollar bills with realistic paper bending animation */}
                   <style>{`
-                    @keyframes paperFall1 {
-                      0% { transform: translateY(-10%) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(-15deg); }
-                      10% { transform: translateY(10vh) translateX(20px) rotateX(25deg) rotateY(-20deg) rotateZ(-5deg); }
-                      20% { transform: translateY(20vh) translateX(-15px) rotateX(-15deg) rotateY(30deg) rotateZ(10deg); }
-                      30% { transform: translateY(30vh) translateX(25px) rotateX(35deg) rotateY(-15deg) rotateZ(-20deg); }
-                      40% { transform: translateY(40vh) translateX(-20px) rotateX(-25deg) rotateY(25deg) rotateZ(15deg); }
-                      50% { transform: translateY(50vh) translateX(15px) rotateX(20deg) rotateY(-35deg) rotateZ(-10deg); }
-                      60% { transform: translateY(60vh) translateX(-25px) rotateX(-30deg) rotateY(20deg) rotateZ(25deg); }
-                      70% { transform: translateY(70vh) translateX(20px) rotateX(15deg) rotateY(-25deg) rotateZ(-15deg); }
-                      80% { transform: translateY(80vh) translateX(-10px) rotateX(-20deg) rotateY(35deg) rotateZ(5deg); }
-                      90% { transform: translateY(90vh) translateX(15px) rotateX(25deg) rotateY(-30deg) rotateZ(-25deg); }
-                      100% { transform: translateY(110vh) translateX(0) rotateX(10deg) rotateY(15deg) rotateZ(-15deg); }
+                    /* Fall pattern 1: Gentle flutter with full flip */
+                    @keyframes fall1 {
+                      0% { transform: translateY(-120px) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(-10deg); }
+                      15% { transform: translateY(calc(15vh)) translateX(25px) rotateX(45deg) rotateY(-30deg) rotateZ(15deg); }
+                      30% { transform: translateY(calc(30vh)) translateX(-20px) rotateX(-30deg) rotateY(60deg) rotateZ(-20deg); }
+                      45% { transform: translateY(calc(45vh)) translateX(30px) rotateX(60deg) rotateY(-45deg) rotateZ(25deg); }
+                      60% { transform: translateY(calc(60vh)) translateX(-25px) rotateX(-45deg) rotateY(90deg) rotateZ(-15deg); }
+                      75% { transform: translateY(calc(75vh)) translateX(20px) rotateX(30deg) rotateY(-60deg) rotateZ(30deg); }
+                      90% { transform: translateY(calc(90vh)) translateX(-15px) rotateX(-60deg) rotateY(45deg) rotateZ(-25deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(10px) rotateX(15deg) rotateY(-30deg) rotateZ(10deg); }
                     }
-                    @keyframes paperFall2 {
-                      0% { transform: translateY(-10%) translateX(0) rotateX(10deg) rotateY(15deg) rotateZ(20deg); }
-                      12% { transform: translateY(12vh) translateX(-25px) rotateX(-30deg) rotateY(40deg) rotateZ(5deg); }
-                      24% { transform: translateY(24vh) translateX(20px) rotateX(40deg) rotateY(-25deg) rotateZ(-15deg); }
-                      36% { transform: translateY(36vh) translateX(-15px) rotateX(-20deg) rotateY(35deg) rotateZ(30deg); }
-                      48% { transform: translateY(48vh) translateX(30px) rotateX(25deg) rotateY(-40deg) rotateZ(-5deg); }
-                      60% { transform: translateY(60vh) translateX(-20px) rotateX(-35deg) rotateY(20deg) rotateZ(20deg); }
-                      72% { transform: translateY(72vh) translateX(15px) rotateX(30deg) rotateY(-30deg) rotateZ(-25deg); }
-                      84% { transform: translateY(84vh) translateX(-25px) rotateX(-15deg) rotateY(25deg) rotateZ(10deg); }
-                      100% { transform: translateY(110vh) translateX(10px) rotateX(20deg) rotateY(-20deg) rotateZ(20deg); }
+                    /* Fall pattern 2: Tumbling with 360 flip */
+                    @keyframes fall2 {
+                      0% { transform: translateY(-100px) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(20deg); }
+                      12% { transform: translateY(calc(12vh)) translateX(-30px) rotateX(90deg) rotateY(45deg) rotateZ(-10deg); }
+                      25% { transform: translateY(calc(25vh)) translateX(25px) rotateX(180deg) rotateY(-30deg) rotateZ(35deg); }
+                      37% { transform: translateY(calc(37vh)) translateX(-20px) rotateX(270deg) rotateY(60deg) rotateZ(-25deg); }
+                      50% { transform: translateY(calc(50vh)) translateX(35px) rotateX(360deg) rotateY(-45deg) rotateZ(15deg); }
+                      62% { transform: translateY(calc(62vh)) translateX(-25px) rotateX(270deg) rotateY(90deg) rotateZ(-30deg); }
+                      75% { transform: translateY(calc(75vh)) translateX(20px) rotateX(180deg) rotateY(-60deg) rotateZ(20deg); }
+                      87% { transform: translateY(calc(87vh)) translateX(-30px) rotateX(90deg) rotateY(45deg) rotateZ(-15deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(15px) rotateX(0deg) rotateY(-30deg) rotateZ(25deg); }
                     }
-                    @keyframes paperFall3 {
-                      0% { transform: translateY(-10%) translateX(0) rotateX(-20deg) rotateY(-10deg) rotateZ(10deg); }
-                      15% { transform: translateY(15vh) translateX(30px) rotateX(35deg) rotateY(25deg) rotateZ(-20deg); }
-                      30% { transform: translateY(30vh) translateX(-25px) rotateX(-25deg) rotateY(-35deg) rotateZ(25deg); }
-                      45% { transform: translateY(45vh) translateX(20px) rotateX(40deg) rotateY(20deg) rotateZ(-10deg); }
-                      60% { transform: translateY(60vh) translateX(-30px) rotateX(-30deg) rotateY(-25deg) rotateZ(30deg); }
-                      75% { transform: translateY(75vh) translateX(25px) rotateX(20deg) rotateY(35deg) rotateZ(-25deg); }
-                      90% { transform: translateY(90vh) translateX(-15px) rotateX(-35deg) rotateY(-20deg) rotateZ(15deg); }
-                      100% { transform: translateY(110vh) translateX(5px) rotateX(15deg) rotateY(10deg) rotateZ(10deg); }
+                    /* Fall pattern 3: Side-heavy drift */
+                    @keyframes fall3 {
+                      0% { transform: translateY(-80px) translateX(0) rotateX(-15deg) rotateY(20deg) rotateZ(-25deg); }
+                      10% { transform: translateY(calc(10vh)) translateX(40px) rotateX(50deg) rotateY(-40deg) rotateZ(30deg); }
+                      25% { transform: translateY(calc(25vh)) translateX(-35px) rotateX(-40deg) rotateY(70deg) rotateZ(-35deg); }
+                      40% { transform: translateY(calc(40vh)) translateX(45px) rotateX(70deg) rotateY(-50deg) rotateZ(25deg); }
+                      55% { transform: translateY(calc(55vh)) translateX(-40px) rotateX(-55deg) rotateY(80deg) rotateZ(-20deg); }
+                      70% { transform: translateY(calc(70vh)) translateX(35px) rotateX(45deg) rotateY(-70deg) rotateZ(40deg); }
+                      85% { transform: translateY(calc(85vh)) translateX(-30px) rotateX(-35deg) rotateY(60deg) rotateZ(-30deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(20px) rotateX(25deg) rotateY(-40deg) rotateZ(15deg); }
                     }
-                    @keyframes paperFall4 {
-                      0% { transform: translateY(-10%) translateX(0) rotateX(25deg) rotateY(-30deg) rotateZ(-25deg); }
-                      8% { transform: translateY(8vh) translateX(-20px) rotateX(-15deg) rotateY(35deg) rotateZ(15deg); }
-                      18% { transform: translateY(18vh) translateX(25px) rotateX(30deg) rotateY(-20deg) rotateZ(-30deg); }
-                      28% { transform: translateY(28vh) translateX(-30px) rotateX(-35deg) rotateY(40deg) rotateZ(10deg); }
-                      40% { transform: translateY(40vh) translateX(20px) rotateX(25deg) rotateY(-35deg) rotateZ(-15deg); }
-                      52% { transform: translateY(52vh) translateX(-15px) rotateX(-20deg) rotateY(25deg) rotateZ(35deg); }
-                      65% { transform: translateY(65vh) translateX(30px) rotateX(40deg) rotateY(-30deg) rotateZ(-20deg); }
-                      78% { transform: translateY(78vh) translateX(-25px) rotateX(-30deg) rotateY(35deg) rotateZ(25deg); }
-                      90% { transform: translateY(90vh) translateX(15px) rotateX(20deg) rotateY(-25deg) rotateZ(-10deg); }
-                      100% { transform: translateY(110vh) translateX(-5px) rotateX(-10deg) rotateY(15deg) rotateZ(-25deg); }
+                    /* Fall pattern 4: Spiraling descent */
+                    @keyframes fall4 {
+                      0% { transform: translateY(-150px) translateX(0) rotateX(30deg) rotateY(-20deg) rotateZ(0deg); }
+                      8% { transform: translateY(calc(8vh)) translateX(20px) rotateX(-45deg) rotateY(45deg) rotateZ(45deg); }
+                      16% { transform: translateY(calc(16vh)) translateX(-25px) rotateX(60deg) rotateY(-60deg) rotateZ(90deg); }
+                      25% { transform: translateY(calc(25vh)) translateX(30px) rotateX(-75deg) rotateY(75deg) rotateZ(135deg); }
+                      33% { transform: translateY(calc(33vh)) translateX(-35px) rotateX(80deg) rotateY(-80deg) rotateZ(180deg); }
+                      42% { transform: translateY(calc(42vh)) translateX(25px) rotateX(-65deg) rotateY(65deg) rotateZ(225deg); }
+                      50% { transform: translateY(calc(50vh)) translateX(-20px) rotateX(50deg) rotateY(-50deg) rotateZ(270deg); }
+                      58% { transform: translateY(calc(58vh)) translateX(35px) rotateX(-40deg) rotateY(40deg) rotateZ(315deg); }
+                      67% { transform: translateY(calc(67vh)) translateX(-30px) rotateX(55deg) rotateY(-55deg) rotateZ(360deg); }
+                      75% { transform: translateY(calc(75vh)) translateX(25px) rotateX(-70deg) rotateY(70deg) rotateZ(315deg); }
+                      83% { transform: translateY(calc(83vh)) translateX(-20px) rotateX(45deg) rotateY(-45deg) rotateZ(270deg); }
+                      92% { transform: translateY(calc(92vh)) translateX(30px) rotateX(-30deg) rotateY(30deg) rotateZ(225deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(-15px) rotateX(20deg) rotateY(-20deg) rotateZ(180deg); }
                     }
-                    @keyframes paperFall5 {
-                      0% { transform: translateY(-10%) translateX(0) rotateX(-10deg) rotateY(20deg) rotateZ(30deg); }
-                      14% { transform: translateY(14vh) translateX(25px) rotateX(30deg) rotateY(-35deg) rotateZ(-15deg); }
-                      28% { transform: translateY(28vh) translateX(-20px) rotateX(-40deg) rotateY(25deg) rotateZ(20deg); }
-                      42% { transform: translateY(42vh) translateX(15px) rotateX(25deg) rotateY(-20deg) rotateZ(-35deg); }
-                      56% { transform: translateY(56vh) translateX(-30px) rotateX(-20deg) rotateY(40deg) rotateZ(10deg); }
-                      70% { transform: translateY(70vh) translateX(20px) rotateX(35deg) rotateY(-30deg) rotateZ(-25deg); }
-                      84% { transform: translateY(84vh) translateX(-15px) rotateX(-25deg) rotateY(20deg) rotateZ(30deg); }
-                      100% { transform: translateY(110vh) translateX(10px) rotateX(15deg) rotateY(-15deg) rotateZ(30deg); }
+                    /* Fall pattern 5: Lazy float */
+                    @keyframes fall5 {
+                      0% { transform: translateY(-130px) translateX(0) rotateX(-20deg) rotateY(15deg) rotateZ(30deg); }
+                      20% { transform: translateY(calc(20vh)) translateX(35px) rotateX(40deg) rotateY(-50deg) rotateZ(-20deg); }
+                      40% { transform: translateY(calc(40vh)) translateX(-30px) rotateX(-50deg) rotateY(65deg) rotateZ(35deg); }
+                      60% { transform: translateY(calc(60vh)) translateX(40px) rotateX(35deg) rotateY(-40deg) rotateZ(-25deg); }
+                      80% { transform: translateY(calc(80vh)) translateX(-25px) rotateX(-40deg) rotateY(55deg) rotateZ(40deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(15px) rotateX(25deg) rotateY(-35deg) rotateZ(-15deg); }
                     }
-                    .bill-container { perspective: 800px; transform-style: preserve-3d; }
-                    .falling-bill { transform-style: preserve-3d; backface-visibility: visible; }
+                    /* Fall pattern 6: Quick tumble with back flip */
+                    @keyframes fall6 {
+                      0% { transform: translateY(-90px) translateX(0) rotateX(0deg) rotateY(180deg) rotateZ(-15deg); }
+                      14% { transform: translateY(calc(14vh)) translateX(-35px) rotateX(120deg) rotateY(120deg) rotateZ(25deg); }
+                      28% { transform: translateY(calc(28vh)) translateX(30px) rotateX(240deg) rotateY(60deg) rotateZ(-35deg); }
+                      42% { transform: translateY(calc(42vh)) translateX(-25px) rotateX(360deg) rotateY(0deg) rotateZ(20deg); }
+                      56% { transform: translateY(calc(56vh)) translateX(40px) rotateX(240deg) rotateY(-60deg) rotateZ(-25deg); }
+                      70% { transform: translateY(calc(70vh)) translateX(-30px) rotateX(120deg) rotateY(-120deg) rotateZ(30deg); }
+                      84% { transform: translateY(calc(84vh)) translateX(25px) rotateX(60deg) rotateY(-180deg) rotateZ(-20deg); }
+                      100% { transform: translateY(calc(115vh)) translateX(-20px) rotateX(0deg) rotateY(-240deg) rotateZ(15deg); }
+                    }
+                    .bill-container { perspective: 1000px; transform-style: preserve-3d; }
+                    .falling-bill { 
+                      transform-style: preserve-3d; 
+                      backface-visibility: visible;
+                      will-change: transform;
+                    }
                   `}</style>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none bill-container">
-                    {/* Bill 1 */}
-                    <svg className="absolute left-[3%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 8s ease-in-out infinite', animationDelay: '0s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    {/* Bending bill 1 - curved edges */}
+                    <svg className="absolute left-[3%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 9s ease-in-out infinite', animationDelay: '0s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
+                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
+                          M4,10 Q30,5 60,10 Q90,15 116,10 L116,60 Q90,55 60,60 Q30,65 4,60 Z;
+                          M4,20 Q30,5 60,25 Q90,10 116,15 L116,55 Q90,70 60,50 Q30,65 4,55 Z;
+                          M4,15 Q30,25 60,8 Q90,20 116,12 L116,58 Q90,48 60,65 Q30,52 4,62 Z;
+                          M4,10 Q30,5 60,10 Q90,15 116,10 L116,60 Q90,55 60,60 Q30,65 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 2 */}
-                    <svg className="absolute left-[22%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 10s ease-in-out infinite', animationDelay: '-2s' }}>
-                      <path d="M4,12 Q30,4 60,15 Q90,26 116,10 L116,58 Q90,68 60,55 Q30,42 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 2 */}
+                    <svg className="absolute left-[18%] w-14 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 11s ease-in-out infinite', animationDelay: '-3s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
+                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z;
+                          M4,18 Q30,28 60,12 Q90,5 116,20 L116,52 Q90,62 60,58 Q30,45 4,55 Z;
+                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
+                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 3 */}
-                    <svg className="absolute left-[42%] w-13 h-8 opacity-25 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall3 9s ease-in-out infinite', animationDelay: '-4s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    {/* Bending bill 3 */}
+                    <svg className="absolute left-[35%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 8s ease-in-out infinite', animationDelay: '-1s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
+                          M4,15 Q30,5 60,18 Q90,28 116,15 L116,55 Q90,68 60,52 Q30,42 4,55 Z;
+                          M4,22 Q30,12 60,8 Q90,18 116,25 L116,48 Q90,58 60,62 Q30,52 4,48 Z;
+                          M4,10 Q30,20 60,25 Q90,15 116,10 L116,60 Q90,50 60,45 Q30,55 4,60 Z;
+                          M4,15 Q30,5 60,18 Q90,28 116,15 L116,55 Q90,68 60,52 Q30,42 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 4 */}
-                    <svg className="absolute left-[62%] w-17 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall4 11s ease-in-out infinite', animationDelay: '-1s' }}>
-                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    {/* Bending bill 4 */}
+                    <svg className="absolute left-[52%] w-17 h-12 opacity-38 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 12s ease-in-out infinite', animationDelay: '-5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
+                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
+                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
+                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 5 */}
-                    <svg className="absolute left-[82%] w-14 h-8 opacity-26 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall5 7s ease-in-out infinite', animationDelay: '-6s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 6 */}
-                    <svg className="absolute left-[8%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 12s ease-in-out infinite', animationDelay: '-3s' }}>
-                      <path d="M4,14 Q30,4 60,16 Q90,28 116,12 L116,56 Q90,68 60,54 Q30,40 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 5 */}
+                    <svg className="absolute left-[70%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 10s ease-in-out infinite', animationDelay: '-7s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
+                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
+                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z;
+                          M4,20 Q30,10 60,25 Q90,15 116,20 L116,50 Q90,60 60,45 Q30,55 4,50 Z;
+                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
+                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 7 */}
-                    <svg className="absolute left-[32%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 6s ease-in-out infinite', animationDelay: '-7s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 8 */}
-                    <svg className="absolute left-[55%] w-13 h-9 opacity-22 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall3 13s ease-in-out infinite', animationDelay: '-5s' }}>
-                      <path d="M4,12 Q30,2 60,14 Q90,26 116,8 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 6 */}
+                    <svg className="absolute left-[88%] w-13 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 7s ease-in-out infinite', animationDelay: '-2s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
+                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
+                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
+                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 9 */}
-                    <svg className="absolute left-[75%] w-14 h-8 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 8s ease-in-out infinite', animationDelay: '-8s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    {/* Bending bill 7 */}
+                    <svg className="absolute left-[8%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 13s ease-in-out infinite', animationDelay: '-9s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
+                        <animate attributeName="d" dur="3.5s" repeatCount="indefinite" values="
+                          M4,10 Q30,20 60,8 Q90,18 116,10 L116,60 Q90,50 60,62 Q30,52 4,60 Z;
+                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
+                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
+                          M4,10 Q30,20 60,8 Q90,18 116,10 L116,60 Q90,50 60,62 Q30,52 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 10 */}
-                    <svg className="absolute left-[92%] w-12 h-9 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 10s ease-in-out infinite', animationDelay: '-9s' }}>
-                      <path d="M4,15 Q30,5 60,18 Q90,31 116,12 L116,55 Q90,66 60,52 Q30,38 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
+                    {/* Bending bill 8 */}
+                    <svg className="absolute left-[25%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 8s ease-in-out infinite', animationDelay: '-4s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
+                        <animate attributeName="d" dur="2.4s" repeatCount="indefinite" values="
+                          M4,12 Q30,5 60,15 Q90,25 116,12 L116,58 Q90,65 60,55 Q30,45 4,58 Z;
+                          M4,20 Q30,12 60,8 Q90,15 116,20 L116,50 Q90,58 60,62 Q30,55 4,50 Z;
+                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
+                          M4,12 Q30,5 60,15 Q90,25 116,12 L116,58 Q90,65 60,55 Q30,45 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 11 */}
-                    <svg className="absolute left-[2%] w-17 h-10 opacity-32 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall2 9s ease-in-out infinite', animationDelay: '-10s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 12 */}
-                    <svg className="absolute left-[18%] w-14 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall1 11s ease-in-out infinite', animationDelay: '-0.5s' }}>
-                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 9 */}
+                    <svg className="absolute left-[42%] w-14 h-10 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 11s ease-in-out infinite', animationDelay: '-6s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
+                          M4,15 Q30,25 60,12 Q90,22 116,15 L116,55 Q90,45 60,58 Q30,48 4,55 Z;
+                          M4,22 Q30,12 60,25 Q90,15 116,22 L116,48 Q90,58 60,45 Q30,55 4,48 Z;
+                          M4,10 Q30,20 60,18 Q90,28 116,10 L116,60 Q90,50 60,52 Q30,42 4,60 Z;
+                          M4,15 Q30,25 60,12 Q90,22 116,15 L116,55 Q90,45 60,58 Q30,48 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 13 */}
-                    <svg className="absolute left-[38%] w-13 h-8 opacity-22 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 7s ease-in-out infinite', animationDelay: '-11s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    {/* Bending bill 10 */}
+                    <svg className="absolute left-[60%] w-15 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 9s ease-in-out infinite', animationDelay: '-8s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
+                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
+                          M4,14 Q30,24 60,12 Q90,22 116,14 L116,56 Q90,46 60,58 Q30,48 4,56 Z;
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 14 */}
-                    <svg className="absolute left-[58%] w-16 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall3 12s ease-in-out infinite', animationDelay: '-12s' }}>
-                      <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,70 60,54 Q30,38 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    {/* Bending bill 11 */}
+                    <svg className="absolute left-[78%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 10s ease-in-out infinite', animationDelay: '-10s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
+                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
+                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z;
+                          M4,18 Q30,28 60,12 Q90,5 116,20 L116,52 Q90,62 60,58 Q30,45 4,55 Z;
+                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
+                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 15 */}
-                    <svg className="absolute left-[78%] w-14 h-8 opacity-25 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall5 8s ease-in-out infinite', animationDelay: '-2.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 16 */}
-                    <svg className="absolute left-[5%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall1 6s ease-in-out infinite', animationDelay: '-4.5s' }}>
-                      <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 17 */}
-                    <svg className="absolute left-[25%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall2 13s ease-in-out infinite', animationDelay: '-6.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 18 */}
-                    <svg className="absolute left-[48%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall4 9s ease-in-out infinite', animationDelay: '-8.5s' }}>
-                      <path d="M4,14 Q30,4 60,16 Q90,28 116,10 L116,56 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 19 */}
-                    <svg className="absolute left-[68%] w-13 h-8 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall3 7s ease-in-out infinite', animationDelay: '-1.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 20 */}
-                    <svg className="absolute left-[88%] w-14 h-10 opacity-22 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 11s ease-in-out infinite', animationDelay: '-13s' }}>
-                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 21 */}
-                    <svg className="absolute left-[10%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 10s ease-in-out infinite', animationDelay: '-3.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 22 */}
-                    <svg className="absolute left-[30%] w-13 h-9 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 8s ease-in-out infinite', animationDelay: '-5.5s' }}>
-                      <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,68 60,52 Q30,36 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 12 */}
+                    <svg className="absolute left-[95%] w-13 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 8s ease-in-out infinite', animationDelay: '-11s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
+                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
+                          M4,15 Q30,22 60,10 Q90,20 116,15 L116,55 Q90,48 60,60 Q30,50 4,55 Z;
+                          M4,22 Q30,12 60,25 Q90,15 116,22 L116,48 Q90,58 60,45 Q30,55 4,48 Z;
+                          M4,10 Q30,20 60,18 Q90,28 116,10 L116,60 Q90,50 60,52 Q30,42 4,60 Z;
+                          M4,15 Q30,22 60,10 Q90,20 116,15 L116,55 Q90,48 60,60 Q30,50 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 23 */}
-                    <svg className="absolute left-[52%] w-17 h-10 opacity-32 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 12s ease-in-out infinite', animationDelay: '-7.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill 24 */}
-                    <svg className="absolute left-[72%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 9s ease-in-out infinite', animationDelay: '-9.5s' }}>
-                      <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                    {/* Bending bill 13 */}
+                    <svg className="absolute left-[12%] w-14 h-11 opacity-33 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 12s ease-in-out infinite', animationDelay: '-12s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
+                        <animate attributeName="d" dur="2.9s" repeatCount="indefinite" values="
+                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z;
+                          M4,18 Q30,12 60,8 Q90,15 116,18 L116,52 Q90,58 60,62 Q30,55 4,52 Z;
+                          M4,14 Q30,22 60,18 Q90,10 116,14 L116,56 Q90,48 60,52 Q30,60 4,56 Z;
+                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 25 */}
-                    <svg className="absolute left-[95%] w-12 h-7 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 11s ease-in-out infinite', animationDelay: '-11.5s' }}>
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
-                      <circle cx="60" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="60" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    {/* Bending bill 14 */}
+                    <svg className="absolute left-[30%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 7s ease-in-out infinite', animationDelay: '-0.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
+                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
+                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z;
+                          M4,20 Q30,10 60,22 Q90,12 116,20 L116,50 Q90,60 60,48 Q30,58 4,50 Z;
+                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
+                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 15 */}
+                    <svg className="absolute left-[48%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 14s ease-in-out infinite', animationDelay: '-13s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
+                        <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
+                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
+                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 16 */}
+                    <svg className="absolute left-[65%] w-14 h-10 opacity-29 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 6s ease-in-out infinite', animationDelay: '-2.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
+                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
+                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
+                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
+                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 17 */}
+                    <svg className="absolute left-[82%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 9s ease-in-out infinite', animationDelay: '-4.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
+                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z;
+                          M4,20 Q30,10 60,25 Q90,15 116,20 L116,50 Q90,60 60,45 Q30,55 4,50 Z;
+                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
+                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 18 */}
+                    <svg className="absolute left-[5%] w-13 h-10 opacity-27 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 11s ease-in-out infinite', animationDelay: '-6.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
+                        <animate attributeName="d" dur="2.7s" repeatCount="indefinite" values="
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
+                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
+                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
+                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 19 */}
+                    <svg className="absolute left-[22%] w-14 h-11 opacity-31 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 10s ease-in-out infinite', animationDelay: '-8.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
+                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z;
+                          M4,18 Q30,12 60,8 Q90,15 116,18 L116,52 Q90,58 60,62 Q30,55 4,52 Z;
+                          M4,14 Q30,22 60,18 Q90,10 116,14 L116,56 Q90,48 60,52 Q30,60 4,56 Z;
+                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bending bill 20 */}
+                    <svg className="absolute left-[55%] w-16 h-12 opacity-37 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 13s ease-in-out infinite', animationDelay: '-10.5s' }}>
+                      <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
+                        <animate attributeName="d" dur="3.1s" repeatCount="indefinite" values="
+                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z;
+                          M4,20 Q30,10 60,22 Q90,12 116,20 L116,50 Q90,60 60,48 Q30,58 4,50 Z;
+                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
+                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z"
+                        />
+                      </path>
+                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                   </div>
                   
