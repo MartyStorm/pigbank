@@ -113,6 +113,18 @@ export default function Payouts() {
               </div>
             ) : (
               <>
+                <div className="flex justify-end px-4 py-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowExtraColumns(!showExtraColumns)}
+                    className="gap-2"
+                    data-testid="button-toggle-columns"
+                  >
+                    <Settings2 className="h-4 w-4" />
+                    {showExtraColumns ? "Hide Details" : "Show Details"}
+                  </Button>
+                </div>
                 <Table>
                   <TableHeader className="bg-[#2b4e2d] dark:bg-[#262626] [&_tr]:hover:bg-[#2b4e2d] dark:[&_tr]:hover:bg-[#262626]">
                     <TableRow className="border-none hover:bg-[#2b4e2d] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
@@ -125,18 +137,6 @@ export default function Payouts() {
                           <TableHead className="text-white">Payout ID</TableHead>
                         </>
                       )}
-                      <TableHead className="text-right">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => setShowExtraColumns(!showExtraColumns)}
-                          className="gap-1 text-white hover:text-white hover:bg-white/10 h-7 px-2"
-                          data-testid="button-toggle-columns"
-                        >
-                          <Settings2 className="h-3.5 w-3.5" />
-                          <span className="text-xs">{showExtraColumns ? "Less" : "More"}</span>
-                        </Button>
-                      </TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -169,7 +169,6 @@ export default function Payouts() {
                             <TableCell className="font-mono text-xs font-medium">{p.payoutId}</TableCell>
                           </>
                         )}
-                        <TableCell></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
