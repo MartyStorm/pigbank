@@ -55,6 +55,9 @@ export default function Payouts() {
 
   const pendingPayouts = payouts.filter(p => p.status === "Pending");
   const nextPayout = pendingPayouts.length > 0 ? pendingPayouts[0] : null;
+  
+  const processingPayouts = payouts.filter(p => p.status === "Processing");
+  const processingTotal = processingPayouts.reduce((sum, p) => sum + parseFloat(p.amount), 0);
 
   return (
     <Layout title="Payouts">
@@ -80,7 +83,7 @@ export default function Payouts() {
                 {nextPayout ? formatDate(nextPayout.arrivalDate) : "—"}
               </div>
               <p className="text-lg mt-1 text-[#39870E] font-semibold">
-                {nextPayout ? `Processing ${formatAmount(nextPayout.amount)}` : "No pending payouts"}
+                {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
               </p>
             </CardContent>
           </Card>
