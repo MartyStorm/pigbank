@@ -785,25 +785,25 @@ export default function Landing() {
                     }
                   `}</style>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none bill-container">
-                    {/* Bill 1 - smooth paper curl with all edges and synced ellipse */}
+                    {/* Bill 1 - smooth paper curl with all 4 edges and synced ellipse */}
                     <svg className="absolute left-[3%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 9s ease-in-out infinite', animationDelay: '0s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
                         <animate attributeName="cx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
-                        <animate attributeName="cy" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
-                        <animate attributeName="rx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
-                        <animate attributeName="ry" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                        <animate attributeName="cy" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;35;35;35;35;35;35;35"/>
+                        <animate attributeName="rx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13;11;9;9;11;13;14"/>
+                        <animate attributeName="ry" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11;9;7;7;9;11;12"/>
                       </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
@@ -812,14 +812,14 @@ export default function Landing() {
                     <svg className="absolute left-[18%] w-14 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 11s ease-in-out infinite', animationDelay: '-3s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -835,14 +835,14 @@ export default function Landing() {
                     <svg className="absolute left-[35%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 8s ease-in-out infinite', animationDelay: '-1s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M8,13 Q60,7 112,13 L112,53 Q60,49 8,53 Z;
-                          M8,13 Q60,7 112,13 L112,53 Q60,49 8,53 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -858,14 +858,14 @@ export default function Landing() {
                     <svg className="absolute left-[52%] w-17 h-12 opacity-38 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 12s ease-in-out infinite', animationDelay: '-5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
-                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
-                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
-                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M10,16 Q60,3 110,16 Q121,35 110,54 Q60,67 10,54 Q-3,35 10,16 Z;
+                          M10,16 Q60,3 110,16 Q121,35 110,54 Q60,67 10,54 Q-3,35 10,16 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -881,14 +881,14 @@ export default function Landing() {
                     <svg className="absolute left-[70%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 10s ease-in-out infinite', animationDelay: '-7s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M9,14 Q60,4 111,14 Q121,35 111,56 Q60,66 9,56 Q-3,35 9,14 Z;
+                          M13,17 Q60,2 107,17 Q123,35 107,53 Q60,68 13,53 Q-5,35 13,17 Z;
+                          M13,17 Q60,2 107,17 Q123,35 107,53 Q60,68 13,53 Q-5,35 13,17 Z;
+                          M9,14 Q60,4 111,14 Q121,35 111,56 Q60,66 9,56 Q-3,35 9,14 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -904,14 +904,14 @@ export default function Landing() {
                     <svg className="absolute left-[88%] w-13 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 7s ease-in-out infinite', animationDelay: '-2s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,13 Q60,7 111,13 L111,52 Q60,48 9,52 Z;
-                          M9,13 Q60,7 111,13 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -927,14 +927,14 @@ export default function Landing() {
                     <svg className="absolute left-[8%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 13s ease-in-out infinite', animationDelay: '-9s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
-                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
-                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
-                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M9,15 Q60,4 111,15 Q120,35 111,55 Q60,66 9,55 Q-2,35 9,15 Z;
+                          M9,15 Q60,4 111,15 Q120,35 111,55 Q60,66 9,55 Q-2,35 9,15 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -950,14 +950,14 @@ export default function Landing() {
                     <svg className="absolute left-[25%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 8s ease-in-out infinite', animationDelay: '-4s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -973,14 +973,14 @@ export default function Landing() {
                     <svg className="absolute left-[42%] w-14 h-10 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 11s ease-in-out infinite', animationDelay: '-6s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -996,14 +996,14 @@ export default function Landing() {
                     <svg className="absolute left-[60%] w-15 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 9s ease-in-out infinite', animationDelay: '-8s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1019,14 +1019,14 @@ export default function Landing() {
                     <svg className="absolute left-[78%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 10s ease-in-out infinite', animationDelay: '-10s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1042,14 +1042,14 @@ export default function Landing() {
                     <svg className="absolute left-[95%] w-13 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 8s ease-in-out infinite', animationDelay: '-11s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
-                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
-                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
-                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M10,15 Q60,4 110,15 Q120,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M10,15 Q60,4 110,15 Q120,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1065,14 +1065,14 @@ export default function Landing() {
                     <svg className="absolute left-[12%] w-14 h-11 opacity-33 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 12s ease-in-out infinite', animationDelay: '-12s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1088,14 +1088,14 @@ export default function Landing() {
                     <svg className="absolute left-[30%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 7s ease-in-out infinite', animationDelay: '-0.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1111,14 +1111,14 @@ export default function Landing() {
                     <svg className="absolute left-[48%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 14s ease-in-out infinite', animationDelay: '-13s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1134,14 +1134,14 @@ export default function Landing() {
                     <svg className="absolute left-[65%] w-14 h-10 opacity-29 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 6s ease-in-out infinite', animationDelay: '-2.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
-                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
-                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
-                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M10,15 Q60,4 110,15 Q120,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M10,15 Q60,4 110,15 Q120,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M7,13 Q60,5 113,13 Q119,35 113,57 Q60,65 7,57 Q-1,35 7,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1157,14 +1157,14 @@ export default function Landing() {
                     <svg className="absolute left-[82%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 9s ease-in-out infinite', animationDelay: '-4.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M11,17 Q60,3 109,17 Q122,35 109,53 Q60,67 11,53 Q-4,35 11,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1180,14 +1180,14 @@ export default function Landing() {
                     <svg className="absolute left-[5%] w-13 h-10 opacity-27 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 11s ease-in-out infinite', animationDelay: '-6.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M12,17 Q60,3 108,17 Q122,35 108,53 Q60,67 12,53 Q-4,35 12,17 Z;
+                          M8,14 Q60,5 112,14 Q120,35 112,56 Q60,65 8,56 Q-2,35 8,14 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1203,14 +1203,14 @@ export default function Landing() {
                     <svg className="absolute left-[22%] w-14 h-11 opacity-31 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 10s ease-in-out infinite', animationDelay: '-8.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
-                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
-                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M11,16 Q60,3 109,16 Q121,35 109,54 Q60,67 11,54 Q-3,35 11,16 Z;
+                          M8,13 Q60,5 112,13 Q119,35 112,57 Q60,65 8,57 Q-1,35 8,13 Z;
+                          M5,11 Q60,7 115,11 Q117,35 115,59 Q60,63 5,59 Q1,35 5,11 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1226,14 +1226,14 @@ export default function Landing() {
                     <svg className="absolute left-[55%] w-16 h-12 opacity-37 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 13s ease-in-out infinite', animationDelay: '-10.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
-                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
-                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
-                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M14,18 Q60,2 106,18 Q124,35 106,52 Q60,68 14,52 Q-4,35 14,18 Z;
+                          M10,15 Q60,4 110,15 Q122,35 110,55 Q60,66 10,55 Q-2,35 10,15 Z;
+                          M6,12 Q60,6 114,12 Q120,35 114,58 Q60,64 6,58 Q0,35 6,12 Z;
+                          M4,10 Q60,8 116,10 Q118,35 116,60 Q60,62 4,60 Q2,35 4,10 Z"
                         />
                       </path>
                       <ellipse stroke="white" strokeWidth="1.5" fill="none">
@@ -1254,7 +1254,7 @@ export default function Landing() {
                           payment processor
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
-                          Fast approvals, total data security, transparent rates, and tailored solutions built for you.
+                          Fast approvals, total data security, transparent rates, real American customer service, and tailored solutions built for you.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                           <Button 
