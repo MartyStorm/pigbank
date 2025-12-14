@@ -785,283 +785,463 @@ export default function Landing() {
                     }
                   `}</style>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none bill-container">
-                    {/* Bill 1 - bottom curls up */}
+                    {/* Bill 1 - smooth paper curl with all edges and synced ellipse */}
                     <svg className="absolute left-[3%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 9s ease-in-out infinite', animationDelay: '0s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
-                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
-                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
+                        <animate attributeName="ry" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 2 */}
                     <svg className="absolute left-[18%] w-14 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 11s ease-in-out infinite', animationDelay: '-3s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
-                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
-                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34;33;32;32;33;34;35"/>
+                        <animate attributeName="rx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9;8;8;9;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 3 */}
                     <svg className="absolute left-[35%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 8s ease-in-out infinite', animationDelay: '-1s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
-                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
-                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M8,13 Q60,7 112,13 L112,53 Q60,49 8,53 Z;
+                          M8,13 Q60,7 112,13 L112,53 Q60,49 8,53 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="13;12.5;12;11;11;12;12.5;13"/>
+                        <animate attributeName="ry" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 4 */}
                     <svg className="absolute left-[52%] w-17 h-12 opacity-38 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 12s ease-in-out infinite', animationDelay: '-5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
-                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
-                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
+                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
+                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
+                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;12.5;11.5;11.5;12.5;13.5;14"/>
+                        <animate attributeName="ry" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10.5;9.5;9.5;10.5;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 5 */}
                     <svg className="absolute left-[70%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 10s ease-in-out infinite', animationDelay: '-7s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
-                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
-                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34;33;32;32;33;34;35"/>
+                        <animate attributeName="rx" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 6 */}
                     <svg className="absolute left-[88%] w-13 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 7s ease-in-out infinite', animationDelay: '-2s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
-                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
-                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,13 Q60,7 111,13 L111,52 Q60,48 9,52 Z;
+                          M9,13 Q60,7 111,13 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;10;9;9;10;10.5;11"/>
+                        <animate attributeName="ry" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 7 */}
                     <svg className="absolute left-[8%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 13s ease-in-out infinite', animationDelay: '-9s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
-                        <animate attributeName="d" dur="3.5s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
-                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
+                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
+                          M8,12 Q60,7 112,12 L112,53 Q60,49 8,53 Z;
+                          M6,12 Q60,8 114,12 L114,56 Q60,53 6,56 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="13;12.5;12;11;11;12;12.5;13"/>
+                        <animate attributeName="ry" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 8 */}
                     <svg className="absolute left-[25%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 8s ease-in-out infinite', animationDelay: '-4s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
-                        <animate attributeName="d" dur="2.4s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
-                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
+                        <animate attributeName="ry" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 9 */}
                     <svg className="absolute left-[42%] w-14 h-10 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 11s ease-in-out infinite', animationDelay: '-6s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
-                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
-                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34;33;32;32;33;34;35"/>
+                        <animate attributeName="rx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 10 */}
                     <svg className="absolute left-[60%] w-15 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 9s ease-in-out infinite', animationDelay: '-8s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
-                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
-                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="13;12.5;12;11;11;12;12.5;13"/>
+                        <animate attributeName="ry" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 11 */}
                     <svg className="absolute left-[78%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 10s ease-in-out infinite', animationDelay: '-10s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
-                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
-                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
+                        <animate attributeName="ry" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 12 */}
                     <svg className="absolute left-[95%] w-13 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 8s ease-in-out infinite', animationDelay: '-11s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
-                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
-                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
+                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
+                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
+                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;10;9;9;10;10.5;11"/>
+                        <animate attributeName="ry" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 13 */}
                     <svg className="absolute left-[12%] w-14 h-11 opacity-33 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 12s ease-in-out infinite', animationDelay: '-12s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
-                        <animate attributeName="d" dur="2.9s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
-                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 14 */}
                     <svg className="absolute left-[30%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 7s ease-in-out infinite', animationDelay: '-0.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
-                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
-                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="13;12.5;12;11;11;12;12.5;13"/>
+                        <animate attributeName="ry" dur="2.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 15 */}
                     <svg className="absolute left-[48%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 14s ease-in-out infinite', animationDelay: '-13s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
-                        <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
-                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
+                        <animate attributeName="ry" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 16 */}
                     <svg className="absolute left-[65%] w-14 h-10 opacity-29 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 6s ease-in-out infinite', animationDelay: '-2.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
-                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
-                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
+                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
+                          M8,12 Q60,7 112,12 L112,52 Q60,48 8,52 Z;
+                          M7,12 Q60,8 113,12 L113,54 Q60,51 7,54 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 17 */}
                     <svg className="absolute left-[82%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 9s ease-in-out infinite', animationDelay: '-4.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
-                        <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
-                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="13;12.5;12;11;11;12;12.5;13"/>
+                        <animate attributeName="ry" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 18 */}
                     <svg className="absolute left-[5%] w-13 h-10 opacity-27 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 11s ease-in-out infinite', animationDelay: '-6.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
-                        <animate attributeName="d" dur="2.7s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
-                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33.5;32.5;32.5;33.5;34.5;35"/>
+                        <animate attributeName="rx" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;10;9;9;10;10.5;11"/>
+                        <animate attributeName="ry" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="10;9.5;8.5;7.5;7.5;8.5;9.5;10"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 19 */}
                     <svg className="absolute left-[22%] w-14 h-11 opacity-31 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 10s ease-in-out infinite', animationDelay: '-8.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
-                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
-                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M9,12 Q60,7 111,12 L111,52 Q60,48 9,52 Z;
+                          M7,12 Q60,8 113,12 L113,55 Q60,52 7,55 Z;
+                          M5,11 Q60,9 115,11 L115,58 Q60,56 5,58 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;11;10;10;11;11.5;12"/>
+                        <animate attributeName="ry" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="11;10.5;9.5;8.5;8.5;9.5;10.5;11"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Bill 20 */}
                     <svg className="absolute left-[55%] w-16 h-12 opacity-37 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 13s ease-in-out infinite', animationDelay: '-10.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
-                        <animate attributeName="d" dur="3.1s" repeatCount="indefinite" values="
-                          M4,10 L116,10 L116,60 L4,60 Z;
-                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
-                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
-                          M4,10 L116,10 L116,60 L4,60 Z"
+                        <animate attributeName="d" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M10,13 Q60,7 110,13 L110,51 Q60,46 10,51 Z;
+                          M8,12 Q60,8 112,12 L112,54 Q60,50 8,54 Z;
+                          M6,11 Q60,9 114,11 L114,57 Q60,55 6,57 Z;
+                          M4,10 Q60,10 116,10 L116,60 Q60,60 4,60 Z"
                         />
                       </path>
-                      <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <ellipse stroke="white" strokeWidth="1.5" fill="none">
+                        <animate attributeName="cx" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="60;60;60;60;60;60;60;60"/>
+                        <animate attributeName="cy" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="35;34.5;33;32;32;33;34.5;35"/>
+                        <animate attributeName="rx" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="14;13.5;13;12;12;13;13.5;14"/>
+                        <animate attributeName="ry" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" values="12;11.5;10;9;9;10;11.5;12"/>
+                      </ellipse>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                   </div>
