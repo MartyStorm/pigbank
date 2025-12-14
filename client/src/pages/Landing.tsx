@@ -705,173 +705,161 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  {/* Floating dollar bills - organic wind-affected shapes */}
+                  {/* Floating dollar bills - subtle wind-affected shapes */}
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Bill style 1: Gentle wave bend */}
-                    <svg className="absolute top-[5%] left-[3%] w-16 h-12 opacity-20 rotate-[-12deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,10 Q25,5 50,12 Q75,19 95,8 L98,52 Q75,60 50,55 Q25,50 2,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="32" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="37" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 2: Corner fold up */}
-                    <svg className="absolute top-[8%] left-[22%] w-14 h-11 opacity-18 rotate-[18deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,8 L70,5 L95,5 Q92,20 75,18 L75,55 Q50,62 25,58 L5,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.12"/>
-                      <path d="M70,5 L75,18 L95,5" stroke="white" strokeWidth="1.5" fill="white" fillOpacity="0.2"/>
-                      <text x="42" y="38" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 3: S-curve wind */}
-                    <svg className="absolute top-[3%] left-[42%] w-12 h-10 opacity-16 rotate-[-8deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M8,15 Q30,5 50,18 Q70,31 92,12 L95,50 Q70,65 50,52 Q30,39 5,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="50" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 4: Twisted flutter */}
-                    <svg className="absolute top-[10%] left-[62%] w-18 h-12 opacity-22 rotate-[25deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M3,20 Q20,8 45,15 Q70,22 97,10 L95,45 Q70,58 45,50 Q20,42 5,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="32" rx="15" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="37" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 5: Crumpled wave */}
-                    <svg className="absolute top-[6%] left-[82%] w-14 h-10 opacity-17 rotate-[-20deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,12 Q25,20 40,10 Q55,0 70,15 Q85,30 95,18 L92,55 Q75,48 55,58 Q35,68 15,55 Q5,45 8,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="50" y="38" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 6: Soft curl */}
-                    <svg className="absolute top-[22%] left-[8%] w-13 h-10 opacity-16 rotate-[15deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M10,18 Q35,8 60,15 Q85,22 95,12 L92,48 Q85,58 60,52 Q35,46 10,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="52" cy="33" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="52" y="38" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 7: Diagonal fold */}
-                    <svg className="absolute top-[28%] left-[32%] w-16 h-11 opacity-20 rotate-[-22deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,15 L65,8 L95,25 L90,55 L30,62 L5,45 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <path d="M65,8 L60,35 L95,25" stroke="white" strokeWidth="1" fill="white" fillOpacity="0.15"/>
-                      <text x="45" y="42" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 8: Ripple effect */}
-                    <svg className="absolute top-[25%] left-[55%] w-14 h-10 opacity-15 rotate-[30deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,25 Q20,15 35,22 Q50,29 65,18 Q80,7 95,20 L92,50 Q77,60 62,52 Q47,44 32,55 Q17,66 5,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="50" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 9: Gentle arc */}
-                    <svg className="absolute top-[20%] left-[75%] w-15 h-11 opacity-19 rotate-[-5deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,30 Q50,5 95,25 L92,50 Q50,70 8,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="38" rx="14" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="43" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 10: Floating flutter */}
-                    <svg className="absolute top-[30%] left-[92%] w-12 h-9 opacity-15 rotate-[12deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M8,18 Q30,10 55,20 Q80,30 92,15 L88,52 Q65,62 40,55 Q15,48 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="48" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 11: Deep wave */}
-                    <svg className="absolute top-[45%] left-[2%] w-18 h-12 opacity-22 rotate-[-18deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M3,35 Q25,10 50,30 Q75,50 97,25 L95,55 Q70,75 45,58 Q20,41 5,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="42" rx="14" ry="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="46" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
-                    </svg>
-                    
-                    {/* Bill style 12: Corner curl down */}
-                    <svg className="absolute top-[48%] left-[18%] w-14 h-10 opacity-17 rotate-[8deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,10 L90,8 L95,45 Q80,50 70,48 L25,55 L5,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <path d="M5,50 Q15,60 25,55" stroke="white" strokeWidth="1.5" fill="white" fillOpacity="0.15"/>
+                    {/* Row 1 */}
+                    <svg className="absolute top-[5%] left-[3%] w-14 h-8 opacity-20 rotate-[-12deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,4 96,10 L96,52 Q50,56 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 13: Wind gust */}
-                    <svg className="absolute top-[42%] left-[38%] w-13 h-9 opacity-14 rotate-[-28deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,20 Q40,5 60,25 Q80,45 95,30 L90,55 Q60,70 35,52 Q10,34 5,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="48" y="42" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
+                    <svg className="absolute top-[8%] left-[22%] w-12 h-7 opacity-18 rotate-[18deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,12 Q50,6 96,8 L96,48 Q50,54 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 14: Twisted wave */}
-                    <svg className="absolute top-[50%] left-[58%] w-16 h-11 opacity-20 rotate-[22deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M8,25 Q25,12 50,22 Q75,32 92,18 L90,48 Q72,60 48,52 Q24,44 8,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="36" rx="13" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="41" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    <svg className="absolute top-[3%] left-[42%] w-11 h-7 opacity-16 rotate-[-8deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,6 Q50,12 96,8 L96,54 Q50,48 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 15: Soft flutter */}
-                    <svg className="absolute top-[44%] left-[78%] w-14 h-10 opacity-16 rotate-[-10deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,15 Q30,25 55,12 Q80,0 95,18 L92,52 Q65,62 40,55 Q15,48 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="50" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    <svg className="absolute top-[10%] left-[62%] w-15 h-9 opacity-22 rotate-[25deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,10 Q50,4 96,12 L96,50 Q50,56 4,48 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 16: Breezy curve */}
-                    <svg className="absolute top-[62%] left-[5%] w-14 h-10 opacity-18 rotate-[28deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M8,22 Q35,8 60,20 Q85,32 95,18 L90,52 Q60,65 30,55 Q10,48 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="50" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    <svg className="absolute top-[6%] left-[82%] w-13 h-8 opacity-17 rotate-[-20deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,14 Q50,6 96,10 L96,46 Q50,54 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 17: Double fold */}
-                    <svg className="absolute top-[68%] left-[25%] w-17 h-11 opacity-21 rotate-[-15deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,18 L40,10 L75,15 L95,8 L92,25 L95,55 L60,60 L25,55 L5,62 L8,32 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <path d="M40,10 L42,32 M75,15 L73,35" stroke="white" strokeWidth="1" strokeOpacity="0.3"/>
-                      <text x="50" y="42" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    {/* Row 2 */}
+                    <svg className="absolute top-[22%] left-[8%] w-12 h-7 opacity-16 rotate-[15deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,14 96,6 L96,52 Q50,46 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 18: Wavy edge */}
-                    <svg className="absolute top-[65%] left-[48%] w-14 h-10 opacity-16 rotate-[5deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,15 Q15,10 25,18 Q35,26 45,12 Q55,0 65,15 Q75,30 85,15 Q95,5 95,20 L92,55 Q82,60 70,52 Q58,44 45,55 Q32,66 18,52 Q5,40 5,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="50" y="38" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    <svg className="absolute top-[28%] left-[32%] w-14 h-8 opacity-20 rotate-[-22deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,12 Q50,4 96,10 L96,48 Q50,56 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 19: Caught in wind */}
-                    <svg className="absolute top-[70%] left-[68%] w-13 h-9 opacity-19 rotate-[-25deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M10,28 Q40,5 70,25 Q100,45 90,55 L70,60 Q40,55 15,62 L5,55 Q0,40 10,28 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="48" y="42" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
+                    <svg className="absolute top-[25%] left-[55%] w-11 h-7 opacity-15 rotate-[30deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,6 Q50,14 96,8 L96,54 Q50,46 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 20: Tumbling */}
-                    <svg className="absolute top-[63%] left-[88%] w-15 h-11 opacity-15 rotate-[18deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M15,12 Q45,5 75,15 Q95,22 95,35 L88,58 Q55,68 25,58 Q5,50 8,35 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="52" cy="38" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="52" y="43" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    <svg className="absolute top-[20%] left-[75%] w-13 h-8 opacity-19 rotate-[-5deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,10 Q50,6 96,12 L96,50 Q50,54 4,48 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 21: Swooping */}
-                    <svg className="absolute top-[82%] left-[10%] w-16 h-11 opacity-20 rotate-[-8deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,32 Q25,10 55,25 Q85,40 95,22 L92,50 Q70,65 40,55 Q10,45 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="40" rx="14" ry="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="45" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    <svg className="absolute top-[30%] left-[92%] w-10 h-6 opacity-15 rotate-[12deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,12 96,6 L96,52 Q50,48 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 22: Spiraling edge */}
-                    <svg className="absolute top-[85%] left-[30%] w-14 h-10 opacity-17 rotate-[32deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M8,20 Q30,8 50,18 Q70,28 90,15 L88,45 Q90,55 80,55 L20,58 Q10,58 12,48 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <path d="M88,45 Q85,52 80,55" stroke="white" strokeWidth="1.5" fill="none" strokeOpacity="0.3"/>
-                      <text x="50" y="38" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    {/* Row 3 */}
+                    <svg className="absolute top-[45%] left-[2%] w-15 h-9 opacity-22 rotate-[-18deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,14 Q50,4 96,8 L96,46 Q50,56 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 23: Big wave */}
-                    <svg className="absolute top-[80%] left-[52%] w-18 h-12 opacity-22 rotate-[-20deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M3,30 Q30,5 55,28 Q80,51 97,25 L95,50 Q75,70 50,55 Q25,40 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <ellipse cx="50" cy="40" rx="15" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="45" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
+                    <svg className="absolute top-[48%] left-[18%] w-12 h-7 opacity-17 rotate-[8deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,6 Q50,12 96,10 L96,54 Q50,48 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 24: Floating gently */}
-                    <svg className="absolute top-[88%] left-[72%] w-14 h-10 opacity-16 rotate-[15deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M5,22 Q25,15 50,25 Q75,35 95,20 L90,50 Q65,60 40,52 Q15,44 5,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="50" cy="38" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <text x="50" y="42" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
+                    <svg className="absolute top-[42%] left-[38%] w-11 h-7 opacity-14 rotate-[-28deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,10 Q50,6 96,14 L96,50 Q50,54 4,46 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill style 25: Wind catch */}
-                    <svg className="absolute top-[83%] left-[92%] w-12 h-9 opacity-19 rotate-[-12deg]" viewBox="0 0 100 70" fill="none">
-                      <path d="M10,25 Q35,10 60,22 Q85,34 95,18 L88,52 Q60,65 30,55 Q8,48 5,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <text x="50" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
+                    <svg className="absolute top-[50%] left-[58%] w-14 h-8 opacity-20 rotate-[22deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,14 96,6 L96,52 Q50,46 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[44%] left-[78%] w-12 h-7 opacity-16 rotate-[-10deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,12 Q50,4 96,10 L96,48 Q50,56 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Row 4 */}
+                    <svg className="absolute top-[62%] left-[5%] w-12 h-7 opacity-18 rotate-[28deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,6 Q50,12 96,8 L96,54 Q50,48 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[68%] left-[25%] w-14 h-8 opacity-21 rotate-[-15deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,10 Q50,4 96,12 L96,50 Q50,56 4,48 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[65%] left-[48%] w-12 h-7 opacity-16 rotate-[5deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,14 Q50,6 96,10 L96,46 Q50,54 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[70%] left-[68%] w-11 h-7 opacity-19 rotate-[-25deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,14 96,6 L96,52 Q50,46 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[63%] left-[88%] w-13 h-8 opacity-15 rotate-[18deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,12 Q50,6 96,14 L96,48 Q50,54 4,46 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Row 5 */}
+                    <svg className="absolute top-[82%] left-[10%] w-14 h-8 opacity-20 rotate-[-8deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,10 Q50,4 96,8 L96,50 Q50,56 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[85%] left-[30%] w-11 h-7 opacity-17 rotate-[32deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,6 Q50,12 96,10 L96,54 Q50,48 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[80%] left-[52%] w-15 h-9 opacity-22 rotate-[-20deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,14 Q50,4 96,10 L96,46 Q50,56 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[88%] left-[72%] w-12 h-7 opacity-16 rotate-[15deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,8 Q50,14 96,6 L96,52 Q50,46 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    <svg className="absolute top-[83%] left-[92%] w-10 h-6 opacity-19 rotate-[-12deg]" viewBox="0 0 100 60" fill="none">
+                      <path d="M4,12 Q50,6 96,10 L96,48 Q50,54 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
                     </svg>
                   </div>
                   
