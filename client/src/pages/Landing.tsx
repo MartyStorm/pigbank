@@ -708,226 +708,176 @@ export default function Landing() {
                   {/* Floating dollar bills - mix of flat and wavy styles */}
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     {/* Row 1 - Flat bill */}
-                    <svg className="absolute top-[5%] left-[3%] w-16 h-9 opacity-20 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[5%] left-[3%] w-16 h-9 opacity-25 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[8%] left-[22%] w-14 h-9 opacity-18 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,20 Q30,8 60,20 Q90,32 116,15 L116,50 Q90,62 60,50 Q30,38 4,55 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="32" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[8%] left-[22%] w-14 h-10 opacity-22 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,4 60,15 Q90,26 116,10 L116,58 Q90,68 60,55 Q30,42 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[3%] left-[42%] w-13 h-8 opacity-16 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[3%] left-[42%] w-13 h-8 opacity-20 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[10%] left-[62%] w-17 h-10 opacity-22 rotate-[25deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,18 Q30,6 60,22 Q90,38 116,18 L116,52 Q90,66 60,48 Q30,30 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="35" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[10%] left-[62%] w-17 h-11 opacity-26 rotate-[25deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[6%] left-[82%] w-14 h-8 opacity-17 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[6%] left-[82%] w-14 h-8 opacity-21 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Row 2 - Wavy bill */}
-                    <svg className="absolute top-[22%] left-[8%] w-14 h-9 opacity-16 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,22 Q30,10 60,25 Q90,40 116,20 L116,48 Q90,62 60,45 Q30,28 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[22%] left-[8%] w-14 h-10 opacity-20 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,14 Q30,4 60,16 Q90,28 116,12 L116,56 Q90,68 60,54 Q30,40 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[28%] left-[32%] w-16 h-9 opacity-20 rotate-[-22deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[28%] left-[32%] w-16 h-9 opacity-24 rotate-[-22deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[25%] left-[55%] w-13 h-8 opacity-15 rotate-[30deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,20 Q30,8 60,18 Q90,28 116,12 L116,50 Q90,60 60,52 Q30,44 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="31" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[25%] left-[55%] w-13 h-9 opacity-19 rotate-[30deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,2 60,14 Q90,26 116,8 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[20%] left-[75%] w-14 h-8 opacity-19 rotate-[-5deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[20%] left-[75%] w-14 h-8 opacity-23 rotate-[-5deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[30%] left-[92%] w-12 h-8 opacity-15 rotate-[12deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,25 Q30,12 60,22 Q90,32 116,18 L116,45 Q90,58 60,48 Q30,38 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="34" r="7" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="32" r="7" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[30%] left-[92%] w-12 h-9 opacity-19 rotate-[12deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,15 Q30,5 60,18 Q90,31 116,12 L116,55 Q90,66 60,52 Q30,38 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Row 3 - Flat bill */}
-                    <svg className="absolute top-[45%] left-[2%] w-17 h-10 opacity-22 rotate-[-18deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[45%] left-[2%] w-17 h-10 opacity-26 rotate-[-18deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[48%] left-[18%] w-14 h-9 opacity-17 rotate-[8deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,18 Q30,8 60,20 Q90,32 116,16 L116,52 Q90,64 60,50 Q30,36 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[48%] left-[18%] w-14 h-10 opacity-21 rotate-[8deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[42%] left-[38%] w-13 h-8 opacity-14 rotate-[-28deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[42%] left-[38%] w-13 h-8 opacity-18 rotate-[-28deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[50%] left-[58%] w-16 h-10 opacity-20 rotate-[22deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,22 Q30,8 60,24 Q90,40 116,20 L116,48 Q90,64 60,46 Q30,28 4,50 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="34" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[50%] left-[58%] w-16 h-11 opacity-24 rotate-[22deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,70 60,54 Q30,38 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[44%] left-[78%] w-14 h-8 opacity-16 rotate-[-10deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[44%] left-[78%] w-14 h-8 opacity-20 rotate-[-10deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Row 4 - Wavy bill */}
-                    <svg className="absolute top-[62%] left-[5%] w-14 h-9 opacity-18 rotate-[28deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,20 Q30,10 60,22 Q90,34 116,18 L116,50 Q90,62 60,48 Q30,34 4,52 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[62%] left-[5%] w-14 h-10 opacity-22 rotate-[28deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[68%] left-[25%] w-16 h-9 opacity-21 rotate-[-15deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[68%] left-[25%] w-16 h-9 opacity-25 rotate-[-15deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[65%] left-[48%] w-14 h-9 opacity-16 rotate-[5deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,24 Q30,12 60,20 Q90,28 116,14 L116,46 Q90,58 60,50 Q30,42 4,56 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="32" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[65%] left-[48%] w-14 h-10 opacity-20 rotate-[5deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,14 Q30,4 60,16 Q90,28 116,10 L116,56 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[70%] left-[68%] w-13 h-8 opacity-19 rotate-[-25deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[70%] left-[68%] w-13 h-8 opacity-23 rotate-[-25deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[63%] left-[88%] w-14 h-9 opacity-15 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,18 Q30,6 60,18 Q90,30 116,14 L116,52 Q90,64 60,52 Q30,40 4,56 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="33" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[63%] left-[88%] w-14 h-10 opacity-19 rotate-[18deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Row 5 - Flat bill */}
-                    <svg className="absolute top-[82%] left-[10%] w-16 h-9 opacity-20 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[82%] left-[10%] w-16 h-9 opacity-24 rotate-[-8deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[85%] left-[30%] w-13 h-8 opacity-17 rotate-[32deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,22 Q30,10 60,24 Q90,38 116,20 L116,48 Q90,60 60,44 Q30,28 4,48 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="34" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[85%] left-[30%] w-13 h-9 opacity-21 rotate-[32deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,68 60,52 Q30,36 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[80%] left-[52%] w-17 h-10 opacity-22 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[80%] left-[52%] w-17 h-10 opacity-26 rotate-[-20deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Wavy bill */}
-                    <svg className="absolute top-[88%] left-[72%] w-14 h-9 opacity-16 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
-                      <path d="M4,20 Q30,8 60,20 Q90,32 116,16 L116,50 Q90,62 60,50 Q30,38 4,54 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="28" cy="35" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="92" cy="33" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[88%] left-[72%] w-14 h-10 opacity-20 rotate-[15deg]" viewBox="0 0 120 70" fill="none">
+                      <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
                     {/* Flat bill */}
-                    <svg className="absolute top-[83%] left-[92%] w-12 h-7 opacity-19 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
-                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
-                      <circle cx="25" cy="30" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
-                      <circle cx="95" cy="30" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+                    <svg className="absolute top-[83%] left-[92%] w-12 h-7 opacity-23 rotate-[-12deg]" viewBox="0 0 120 60" fill="none">
+                      <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
