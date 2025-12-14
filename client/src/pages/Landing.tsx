@@ -705,191 +705,238 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  {/* Floating dollar bills - mix of flat and wavy styles with falling animation */}
+                  {/* Floating dollar bills with realistic paper flutter animation */}
                   <style>{`
-                    @keyframes fallDown {
-                      0% { transform: translateY(-100%) rotate(var(--rotate)); }
-                      100% { transform: translateY(calc(100vh + 100%)) rotate(var(--rotate)); }
+                    @keyframes paperFall1 {
+                      0% { transform: translateY(-10%) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(-15deg); }
+                      10% { transform: translateY(10vh) translateX(20px) rotateX(25deg) rotateY(-20deg) rotateZ(-5deg); }
+                      20% { transform: translateY(20vh) translateX(-15px) rotateX(-15deg) rotateY(30deg) rotateZ(10deg); }
+                      30% { transform: translateY(30vh) translateX(25px) rotateX(35deg) rotateY(-15deg) rotateZ(-20deg); }
+                      40% { transform: translateY(40vh) translateX(-20px) rotateX(-25deg) rotateY(25deg) rotateZ(15deg); }
+                      50% { transform: translateY(50vh) translateX(15px) rotateX(20deg) rotateY(-35deg) rotateZ(-10deg); }
+                      60% { transform: translateY(60vh) translateX(-25px) rotateX(-30deg) rotateY(20deg) rotateZ(25deg); }
+                      70% { transform: translateY(70vh) translateX(20px) rotateX(15deg) rotateY(-25deg) rotateZ(-15deg); }
+                      80% { transform: translateY(80vh) translateX(-10px) rotateX(-20deg) rotateY(35deg) rotateZ(5deg); }
+                      90% { transform: translateY(90vh) translateX(15px) rotateX(25deg) rotateY(-30deg) rotateZ(-25deg); }
+                      100% { transform: translateY(110vh) translateX(0) rotateX(10deg) rotateY(15deg) rotateZ(-15deg); }
                     }
-                    @keyframes fallDownSway {
-                      0% { transform: translateY(-100%) translateX(0) rotate(var(--rotate)); }
-                      25% { transform: translateY(25vh) translateX(15px) rotate(var(--rotate)); }
-                      50% { transform: translateY(50vh) translateX(-10px) rotate(var(--rotate)); }
-                      75% { transform: translateY(75vh) translateX(8px) rotate(var(--rotate)); }
-                      100% { transform: translateY(calc(100vh + 100%)) translateX(0) rotate(var(--rotate)); }
+                    @keyframes paperFall2 {
+                      0% { transform: translateY(-10%) translateX(0) rotateX(10deg) rotateY(15deg) rotateZ(20deg); }
+                      12% { transform: translateY(12vh) translateX(-25px) rotateX(-30deg) rotateY(40deg) rotateZ(5deg); }
+                      24% { transform: translateY(24vh) translateX(20px) rotateX(40deg) rotateY(-25deg) rotateZ(-15deg); }
+                      36% { transform: translateY(36vh) translateX(-15px) rotateX(-20deg) rotateY(35deg) rotateZ(30deg); }
+                      48% { transform: translateY(48vh) translateX(30px) rotateX(25deg) rotateY(-40deg) rotateZ(-5deg); }
+                      60% { transform: translateY(60vh) translateX(-20px) rotateX(-35deg) rotateY(20deg) rotateZ(20deg); }
+                      72% { transform: translateY(72vh) translateX(15px) rotateX(30deg) rotateY(-30deg) rotateZ(-25deg); }
+                      84% { transform: translateY(84vh) translateX(-25px) rotateX(-15deg) rotateY(25deg) rotateZ(10deg); }
+                      100% { transform: translateY(110vh) translateX(10px) rotateX(20deg) rotateY(-20deg) rotateZ(20deg); }
                     }
+                    @keyframes paperFall3 {
+                      0% { transform: translateY(-10%) translateX(0) rotateX(-20deg) rotateY(-10deg) rotateZ(10deg); }
+                      15% { transform: translateY(15vh) translateX(30px) rotateX(35deg) rotateY(25deg) rotateZ(-20deg); }
+                      30% { transform: translateY(30vh) translateX(-25px) rotateX(-25deg) rotateY(-35deg) rotateZ(25deg); }
+                      45% { transform: translateY(45vh) translateX(20px) rotateX(40deg) rotateY(20deg) rotateZ(-10deg); }
+                      60% { transform: translateY(60vh) translateX(-30px) rotateX(-30deg) rotateY(-25deg) rotateZ(30deg); }
+                      75% { transform: translateY(75vh) translateX(25px) rotateX(20deg) rotateY(35deg) rotateZ(-25deg); }
+                      90% { transform: translateY(90vh) translateX(-15px) rotateX(-35deg) rotateY(-20deg) rotateZ(15deg); }
+                      100% { transform: translateY(110vh) translateX(5px) rotateX(15deg) rotateY(10deg) rotateZ(10deg); }
+                    }
+                    @keyframes paperFall4 {
+                      0% { transform: translateY(-10%) translateX(0) rotateX(25deg) rotateY(-30deg) rotateZ(-25deg); }
+                      8% { transform: translateY(8vh) translateX(-20px) rotateX(-15deg) rotateY(35deg) rotateZ(15deg); }
+                      18% { transform: translateY(18vh) translateX(25px) rotateX(30deg) rotateY(-20deg) rotateZ(-30deg); }
+                      28% { transform: translateY(28vh) translateX(-30px) rotateX(-35deg) rotateY(40deg) rotateZ(10deg); }
+                      40% { transform: translateY(40vh) translateX(20px) rotateX(25deg) rotateY(-35deg) rotateZ(-15deg); }
+                      52% { transform: translateY(52vh) translateX(-15px) rotateX(-20deg) rotateY(25deg) rotateZ(35deg); }
+                      65% { transform: translateY(65vh) translateX(30px) rotateX(40deg) rotateY(-30deg) rotateZ(-20deg); }
+                      78% { transform: translateY(78vh) translateX(-25px) rotateX(-30deg) rotateY(35deg) rotateZ(25deg); }
+                      90% { transform: translateY(90vh) translateX(15px) rotateX(20deg) rotateY(-25deg) rotateZ(-10deg); }
+                      100% { transform: translateY(110vh) translateX(-5px) rotateX(-10deg) rotateY(15deg) rotateZ(-25deg); }
+                    }
+                    @keyframes paperFall5 {
+                      0% { transform: translateY(-10%) translateX(0) rotateX(-10deg) rotateY(20deg) rotateZ(30deg); }
+                      14% { transform: translateY(14vh) translateX(25px) rotateX(30deg) rotateY(-35deg) rotateZ(-15deg); }
+                      28% { transform: translateY(28vh) translateX(-20px) rotateX(-40deg) rotateY(25deg) rotateZ(20deg); }
+                      42% { transform: translateY(42vh) translateX(15px) rotateX(25deg) rotateY(-20deg) rotateZ(-35deg); }
+                      56% { transform: translateY(56vh) translateX(-30px) rotateX(-20deg) rotateY(40deg) rotateZ(10deg); }
+                      70% { transform: translateY(70vh) translateX(20px) rotateX(35deg) rotateY(-30deg) rotateZ(-25deg); }
+                      84% { transform: translateY(84vh) translateX(-15px) rotateX(-25deg) rotateY(20deg) rotateZ(30deg); }
+                      100% { transform: translateY(110vh) translateX(10px) rotateX(15deg) rotateY(-15deg) rotateZ(30deg); }
+                    }
+                    .bill-container { perspective: 800px; transform-style: preserve-3d; }
+                    .falling-bill { transform-style: preserve-3d; backface-visibility: visible; }
                   `}</style>
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Bill 1 - Flat */}
-                    <svg className="absolute left-[3%] w-16 h-9 opacity-25" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-12deg', animation: 'fallDownSway 12s linear infinite', animationDelay: '0s' } as React.CSSProperties}>
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none bill-container">
+                    {/* Bill 1 */}
+                    <svg className="absolute left-[3%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 8s ease-in-out infinite', animationDelay: '0s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 2 - Wavy */}
-                    <svg className="absolute left-[22%] w-14 h-10 opacity-22" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '18deg', animation: 'fallDownSway 14s linear infinite', animationDelay: '-2s' } as React.CSSProperties}>
+                    {/* Bill 2 */}
+                    <svg className="absolute left-[22%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 10s ease-in-out infinite', animationDelay: '-2s' }}>
                       <path d="M4,12 Q30,4 60,15 Q90,26 116,10 L116,58 Q90,68 60,55 Q30,42 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 3 - Flat */}
-                    <svg className="absolute left-[42%] w-13 h-8 opacity-20" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-8deg', animation: 'fallDown 10s linear infinite', animationDelay: '-4s' } as React.CSSProperties}>
+                    {/* Bill 3 */}
+                    <svg className="absolute left-[42%] w-13 h-8 opacity-25 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall3 9s ease-in-out infinite', animationDelay: '-4s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 4 - Wavy */}
-                    <svg className="absolute left-[62%] w-17 h-11 opacity-26" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '25deg', animation: 'fallDownSway 13s linear infinite', animationDelay: '-1s' } as React.CSSProperties}>
+                    {/* Bill 4 */}
+                    <svg className="absolute left-[62%] w-17 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall4 11s ease-in-out infinite', animationDelay: '-1s' }}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 5 - Flat */}
-                    <svg className="absolute left-[82%] w-14 h-8 opacity-21" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-20deg', animation: 'fallDown 11s linear infinite', animationDelay: '-6s' } as React.CSSProperties}>
+                    {/* Bill 5 */}
+                    <svg className="absolute left-[82%] w-14 h-8 opacity-26 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall5 7s ease-in-out infinite', animationDelay: '-6s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 6 - Wavy */}
-                    <svg className="absolute left-[8%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '15deg', animation: 'fallDownSway 15s linear infinite', animationDelay: '-3s' } as React.CSSProperties}>
+                    {/* Bill 6 */}
+                    <svg className="absolute left-[8%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 12s ease-in-out infinite', animationDelay: '-3s' }}>
                       <path d="M4,14 Q30,4 60,16 Q90,28 116,12 L116,56 Q90,68 60,54 Q30,40 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 7 - Flat */}
-                    <svg className="absolute left-[32%] w-16 h-9 opacity-24" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-22deg', animation: 'fallDown 9s linear infinite', animationDelay: '-7s' } as React.CSSProperties}>
+                    {/* Bill 7 */}
+                    <svg className="absolute left-[32%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 6s ease-in-out infinite', animationDelay: '-7s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 8 - Wavy */}
-                    <svg className="absolute left-[55%] w-13 h-9 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '30deg', animation: 'fallDownSway 16s linear infinite', animationDelay: '-5s' } as React.CSSProperties}>
+                    {/* Bill 8 */}
+                    <svg className="absolute left-[55%] w-13 h-9 opacity-22 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall3 13s ease-in-out infinite', animationDelay: '-5s' }}>
                       <path d="M4,12 Q30,2 60,14 Q90,26 116,8 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 9 - Flat */}
-                    <svg className="absolute left-[75%] w-14 h-8 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-5deg', animation: 'fallDown 12s linear infinite', animationDelay: '-8s' } as React.CSSProperties}>
+                    {/* Bill 9 */}
+                    <svg className="absolute left-[75%] w-14 h-8 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 8s ease-in-out infinite', animationDelay: '-8s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 10 - Wavy */}
-                    <svg className="absolute left-[92%] w-12 h-9 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '12deg', animation: 'fallDownSway 11s linear infinite', animationDelay: '-9s' } as React.CSSProperties}>
+                    {/* Bill 10 */}
+                    <svg className="absolute left-[92%] w-12 h-9 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 10s ease-in-out infinite', animationDelay: '-9s' }}>
                       <path d="M4,15 Q30,5 60,18 Q90,31 116,12 L116,55 Q90,66 60,52 Q30,38 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 11 - Flat */}
-                    <svg className="absolute left-[2%] w-17 h-10 opacity-26" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-18deg', animation: 'fallDown 14s linear infinite', animationDelay: '-10s' } as React.CSSProperties}>
+                    {/* Bill 11 */}
+                    <svg className="absolute left-[2%] w-17 h-10 opacity-32 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall2 9s ease-in-out infinite', animationDelay: '-10s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 12 - Wavy */}
-                    <svg className="absolute left-[18%] w-14 h-10 opacity-21" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '8deg', animation: 'fallDownSway 10s linear infinite', animationDelay: '-0.5s' } as React.CSSProperties}>
+                    {/* Bill 12 */}
+                    <svg className="absolute left-[18%] w-14 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall1 11s ease-in-out infinite', animationDelay: '-0.5s' }}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 13 - Flat */}
-                    <svg className="absolute left-[38%] w-13 h-8 opacity-18" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-28deg', animation: 'fallDown 13s linear infinite', animationDelay: '-11s' } as React.CSSProperties}>
+                    {/* Bill 13 */}
+                    <svg className="absolute left-[38%] w-13 h-8 opacity-22 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 7s ease-in-out infinite', animationDelay: '-11s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 14 - Wavy */}
-                    <svg className="absolute left-[58%] w-16 h-11 opacity-24" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '22deg', animation: 'fallDownSway 15s linear infinite', animationDelay: '-12s' } as React.CSSProperties}>
+                    {/* Bill 14 */}
+                    <svg className="absolute left-[58%] w-16 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall3 12s ease-in-out infinite', animationDelay: '-12s' }}>
                       <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,70 60,54 Q30,38 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="41" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 15 - Flat */}
-                    <svg className="absolute left-[78%] w-14 h-8 opacity-20" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-10deg', animation: 'fallDown 11s linear infinite', animationDelay: '-2.5s' } as React.CSSProperties}>
+                    {/* Bill 15 */}
+                    <svg className="absolute left-[78%] w-14 h-8 opacity-25 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall5 8s ease-in-out infinite', animationDelay: '-2.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 16 - Wavy */}
-                    <svg className="absolute left-[5%] w-14 h-10 opacity-22" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '28deg', animation: 'fallDownSway 9s linear infinite', animationDelay: '-4.5s' } as React.CSSProperties}>
+                    {/* Bill 16 */}
+                    <svg className="absolute left-[5%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall1 6s ease-in-out infinite', animationDelay: '-4.5s' }}>
                       <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 17 - Flat */}
-                    <svg className="absolute left-[25%] w-16 h-9 opacity-25" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-15deg', animation: 'fallDown 16s linear infinite', animationDelay: '-6.5s' } as React.CSSProperties}>
+                    {/* Bill 17 */}
+                    <svg className="absolute left-[25%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall2 13s ease-in-out infinite', animationDelay: '-6.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 18 - Wavy */}
-                    <svg className="absolute left-[48%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '5deg', animation: 'fallDownSway 12s linear infinite', animationDelay: '-8.5s' } as React.CSSProperties}>
+                    {/* Bill 18 */}
+                    <svg className="absolute left-[48%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall4 9s ease-in-out infinite', animationDelay: '-8.5s' }}>
                       <path d="M4,14 Q30,4 60,16 Q90,28 116,10 L116,56 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 19 - Flat */}
-                    <svg className="absolute left-[68%] w-13 h-8 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-25deg', animation: 'fallDown 10s linear infinite', animationDelay: '-1.5s' } as React.CSSProperties}>
+                    {/* Bill 19 */}
+                    <svg className="absolute left-[68%] w-13 h-8 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall3 7s ease-in-out infinite', animationDelay: '-1.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 20 - Wavy */}
-                    <svg className="absolute left-[88%] w-14 h-10 opacity-19" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '18deg', animation: 'fallDownSway 14s linear infinite', animationDelay: '-13s' } as React.CSSProperties}>
+                    {/* Bill 20 */}
+                    <svg className="absolute left-[88%] w-14 h-10 opacity-22 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 11s ease-in-out infinite', animationDelay: '-13s' }}>
                       <path d="M4,10 Q30,2 60,14 Q90,26 116,8 L116,60 Q90,70 60,56 Q30,42 4,62 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 21 - Flat */}
-                    <svg className="absolute left-[10%] w-16 h-9 opacity-24" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-8deg', animation: 'fallDown 13s linear infinite', animationDelay: '-3.5s' } as React.CSSProperties}>
+                    {/* Bill 21 */}
+                    <svg className="absolute left-[10%] w-16 h-9 opacity-30 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 10s ease-in-out infinite', animationDelay: '-3.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 22 - Wavy */}
-                    <svg className="absolute left-[30%] w-13 h-9 opacity-21" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '32deg', animation: 'fallDownSway 11s linear infinite', animationDelay: '-5.5s' } as React.CSSProperties}>
+                    {/* Bill 22 */}
+                    <svg className="absolute left-[30%] w-13 h-9 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall2 8s ease-in-out infinite', animationDelay: '-5.5s' }}>
                       <path d="M4,12 Q30,2 60,16 Q90,30 116,10 L116,58 Q90,68 60,52 Q30,36 4,58 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 23 - Flat */}
-                    <svg className="absolute left-[52%] w-17 h-10 opacity-26" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-20deg', animation: 'fallDown 15s linear infinite', animationDelay: '-7.5s' } as React.CSSProperties}>
+                    {/* Bill 23 */}
+                    <svg className="absolute left-[52%] w-17 h-10 opacity-32 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall4 12s ease-in-out infinite', animationDelay: '-7.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="14" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 24 - Wavy */}
-                    <svg className="absolute left-[72%] w-14 h-10 opacity-20" viewBox="0 0 120 70" fill="none" style={{ '--rotate': '15deg', animation: 'fallDownSway 10s linear infinite', animationDelay: '-9.5s' } as React.CSSProperties}>
+                    {/* Bill 24 */}
+                    <svg className="absolute left-[72%] w-14 h-10 opacity-24 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'paperFall5 9s ease-in-out infinite', animationDelay: '-9.5s' }}>
                       <path d="M4,12 Q30,4 60,16 Q90,28 116,10 L116,58 Q90,68 60,54 Q30,40 4,60 Z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="35" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bill 25 - Flat */}
-                    <svg className="absolute left-[95%] w-12 h-7 opacity-23" viewBox="0 0 120 60" fill="none" style={{ '--rotate': '-12deg', animation: 'fallDown 12s linear infinite', animationDelay: '-11.5s' } as React.CSSProperties}>
+                    {/* Bill 25 */}
+                    <svg className="absolute left-[95%] w-12 h-7 opacity-28 falling-bill" viewBox="0 0 120 60" fill="none" style={{ animation: 'paperFall1 11s ease-in-out infinite', animationDelay: '-11.5s' }}>
                       <rect x="4" y="4" width="112" height="52" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15"/>
                       <circle cx="60" cy="30" r="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
