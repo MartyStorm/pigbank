@@ -705,62 +705,141 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  {/* Floating decorative elements */}
+                  {/* Floating dollar bills - evenly distributed */}
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Dollar bills */}
-                    <svg className="absolute top-[10%] left-[5%] w-16 h-10 opacity-20 rotate-[-15deg]" viewBox="0 0 100 60" fill="none">
+                    {/* Top row */}
+                    <svg className="absolute top-[5%] left-[3%] w-14 h-9 opacity-20 rotate-[-12deg]" viewBox="0 0 100 60" fill="none">
                       <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
                       <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute top-[25%] left-[15%] w-12 h-8 opacity-15 rotate-[20deg]" viewBox="0 0 100 60" fill="none">
+                    <svg className="absolute top-[8%] left-[22%] w-12 h-8 opacity-15 rotate-[18deg]" viewBox="0 0 100 60" fill="none">
                       <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
                       <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute bottom-[20%] left-[8%] w-20 h-12 opacity-25 rotate-[10deg]" viewBox="0 0 100 60" fill="none">
+                    <svg className="absolute top-[3%] left-[42%] w-10 h-6 opacity-18 rotate-[-8deg]" viewBox="0 0 100 60" fill="none">
                       <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
                       <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute top-[15%] right-[8%] w-14 h-9 opacity-20 rotate-[-25deg]" viewBox="0 0 100 60" fill="none">
+                    <svg className="absolute top-[10%] left-[62%] w-16 h-10 opacity-22 rotate-[25deg]" viewBox="0 0 100 60" fill="none">
                       <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
                       <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute bottom-[35%] right-[3%] w-10 h-6 opacity-15 rotate-[35deg]" viewBox="0 0 100 60" fill="none">
+                    <svg className="absolute top-[6%] left-[82%] w-13 h-8 opacity-17 rotate-[-20deg]" viewBox="0 0 100 60" fill="none">
                       <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
                       <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
                       <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Piggy bank silhouettes */}
-                    <svg className="absolute top-[40%] left-[2%] w-20 h-16 opacity-15 rotate-[-5deg]" viewBox="0 0 100 80" fill="white">
-                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
-                      <circle cx="75" cy="35" r="8"/>
-                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
-                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
-                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    {/* Upper-middle row */}
+                    <svg className="absolute top-[22%] left-[8%] w-11 h-7 opacity-16 rotate-[15deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute bottom-[15%] right-[12%] w-16 h-12 opacity-20 rotate-[10deg]" viewBox="0 0 100 80" fill="white">
-                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
-                      <circle cx="75" cy="35" r="8"/>
-                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
-                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
-                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    <svg className="absolute top-[28%] left-[32%] w-14 h-9 opacity-20 rotate-[-22deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
-                    <svg className="absolute top-[60%] right-[25%] w-12 h-10 opacity-10 rotate-[-15deg]" viewBox="0 0 100 80" fill="white">
-                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
-                      <circle cx="75" cy="35" r="8"/>
-                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
-                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
-                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
-                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    <svg className="absolute top-[25%] left-[55%] w-12 h-8 opacity-14 rotate-[30deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[20%] left-[75%] w-15 h-9 opacity-19 rotate-[-5deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[30%] left-[92%] w-10 h-6 opacity-15 rotate-[12deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Middle row */}
+                    <svg className="absolute top-[45%] left-[2%] w-16 h-10 opacity-22 rotate-[-18deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[48%] left-[18%] w-13 h-8 opacity-17 rotate-[8deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[42%] left-[38%] w-11 h-7 opacity-14 rotate-[-28deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[50%] left-[58%] w-14 h-9 opacity-20 rotate-[22deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[44%] left-[78%] w-12 h-8 opacity-16 rotate-[-10deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Lower-middle row */}
+                    <svg className="absolute top-[62%] left-[5%] w-12 h-8 opacity-18 rotate-[28deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[68%] left-[25%] w-15 h-9 opacity-21 rotate-[-15deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[65%] left-[48%] w-13 h-8 opacity-16 rotate-[5deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[70%] left-[68%] w-11 h-7 opacity-19 rotate-[-25deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[63%] left-[88%] w-14 h-9 opacity-15 rotate-[18deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Bottom row */}
+                    <svg className="absolute top-[82%] left-[10%] w-14 h-9 opacity-20 rotate-[-8deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[85%] left-[30%] w-12 h-8 opacity-17 rotate-[32deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[80%] left-[52%] w-16 h-10 opacity-22 rotate-[-20deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[88%] left-[72%] w-13 h-8 opacity-16 rotate-[15deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[83%] left-[92%] w-11 h-7 opacity-19 rotate-[-12deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                   </div>
                   
