@@ -705,7 +705,66 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
                   }}
                 >
-                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
+                  {/* Floating decorative elements */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {/* Dollar bills */}
+                    <svg className="absolute top-[10%] left-[5%] w-16 h-10 opacity-20 rotate-[-15deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[25%] left-[15%] w-12 h-8 opacity-15 rotate-[20deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute bottom-[20%] left-[8%] w-20 h-12 opacity-25 rotate-[10deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute top-[15%] right-[8%] w-14 h-9 opacity-20 rotate-[-25deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    <svg className="absolute bottom-[35%] right-[3%] w-10 h-6 opacity-15 rotate-[35deg]" viewBox="0 0 100 60" fill="none">
+                      <rect x="2" y="2" width="96" height="56" rx="4" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.1"/>
+                      <circle cx="50" cy="30" r="15" stroke="white" strokeWidth="2" fill="none"/>
+                      <text x="50" y="35" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
+                    </svg>
+                    
+                    {/* Piggy bank silhouettes */}
+                    <svg className="absolute top-[40%] left-[2%] w-20 h-16 opacity-15 rotate-[-5deg]" viewBox="0 0 100 80" fill="white">
+                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
+                      <circle cx="75" cy="35" r="8"/>
+                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
+                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
+                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    </svg>
+                    <svg className="absolute bottom-[15%] right-[12%] w-16 h-12 opacity-20 rotate-[10deg]" viewBox="0 0 100 80" fill="white">
+                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
+                      <circle cx="75" cy="35" r="8"/>
+                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
+                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
+                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    </svg>
+                    <svg className="absolute top-[60%] right-[25%] w-12 h-10 opacity-10 rotate-[-15deg]" viewBox="0 0 100 80" fill="white">
+                      <ellipse cx="50" cy="45" rx="35" ry="25"/>
+                      <circle cx="75" cy="35" r="8"/>
+                      <ellipse cx="25" cy="55" rx="6" ry="10"/>
+                      <ellipse cx="40" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="60" cy="60" rx="5" ry="8"/>
+                      <ellipse cx="75" cy="55" rx="6" ry="10"/>
+                      <rect x="40" y="15" width="8" height="12" rx="2"/>
+                    </svg>
+                  </div>
+                  
+                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                       <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
