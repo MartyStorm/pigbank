@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2, Settings2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -23,6 +23,7 @@ interface Payout {
 export default function Payouts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
+  const [showExtraColumns, setShowExtraColumns] = useState(false);
 
   const { data: payouts = [], isLoading } = useQuery<Payout[]>({
     queryKey: ["/api/payouts"],
@@ -49,9 +50,6 @@ export default function Payouts() {
     return `$${num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   };
 
-  const inTransitPayouts = payouts.filter(p => p.status === "Processing" || p.status === "Pending");
-  const inTransitAmount = inTransitPayouts.reduce((sum, p) => sum + parseFloat(p.amount), 0);
-  
   const completedPayouts = payouts.filter(p => p.status === "Completed");
   const lastPayout = completedPayouts.length > 0 ? completedPayouts[0] : null;
 
@@ -72,18 +70,7 @@ export default function Payouts() {
           </div>
         </div>
         
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card className="border-none shadow-sm">
-            <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Amount in Transit</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-foreground">
-                {formatAmount(inTransitAmount.toString())}
-              </div>
-            </CardContent>
-          </Card>
-
+        <div className="grid gap-4 md:grid-cols-2">
           <Card className="border-none shadow-sm">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
               <CardTitle className="text-sm font-medium text-muted-foreground">Next Payout</CardTitle>
@@ -126,14 +113,30 @@ export default function Payouts() {
               </div>
             ) : (
               <>
+                <div className="flex justify-end p-3 border-b">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowExtraColumns(!showExtraColumns)}
+                    className="gap-2"
+                    data-testid="button-toggle-columns"
+                  >
+                    <Settings2 className="h-4 w-4" />
+                    {showExtraColumns ? "Hide Details" : "Show Details"}
+                  </Button>
+                </div>
                 <Table>
                   <TableHeader className="bg-[#2b4e2d] dark:bg-[#262626] [&_tr]:hover:bg-[#2b4e2d] dark:[&_tr]:hover:bg-[#262626]">
                     <TableRow className="border-none hover:bg-[#2b4e2d] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
                       <TableHead className="text-white">Date</TableHead>
                       <TableHead className="text-white">Amount</TableHead>
                       <TableHead className="text-white">Status</TableHead>
-                      <TableHead className="text-white">Destination</TableHead>
-                      <TableHead className="text-white">Payout ID</TableHead>
+                      {showExtraColumns && (
+                        <>
+                          <TableHead className="text-white">Destination</TableHead>
+                          <TableHead className="text-white">Payout ID</TableHead>
+                        </>
+                      )}
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -155,11 +158,15 @@ export default function Payouts() {
                             {p.status}
                           </span>
                         </TableCell>
-                        <TableCell className="text-muted-foreground flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-slate-400"></span>
-                          {p.destination}
-                        </TableCell>
-                        <TableCell className="font-mono text-xs font-medium">{p.payoutId}</TableCell>
+                        {showExtraColumns && (
+                          <>
+                            <TableCell className="text-muted-foreground flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-slate-400"></span>
+                              {p.destination}
+                            </TableCell>
+                            <TableCell className="font-mono text-xs font-medium">{p.payoutId}</TableCell>
+                          </>
+                        )}
                       </TableRow>
                     ))}
                   </TableBody>
