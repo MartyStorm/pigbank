@@ -785,280 +785,280 @@ export default function Landing() {
                     }
                   `}</style>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none bill-container">
-                    {/* Bending bill 1 - curved edges */}
+                    {/* Bill 1 - bottom curls up */}
                     <svg className="absolute left-[3%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 9s ease-in-out infinite', animationDelay: '0s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
-                          M4,10 Q30,5 60,10 Q90,15 116,10 L116,60 Q90,55 60,60 Q30,65 4,60 Z;
-                          M4,20 Q30,5 60,25 Q90,10 116,15 L116,55 Q90,70 60,50 Q30,65 4,55 Z;
-                          M4,15 Q30,25 60,8 Q90,20 116,12 L116,58 Q90,48 60,65 Q30,52 4,62 Z;
-                          M4,10 Q30,5 60,10 Q90,15 116,10 L116,60 Q90,55 60,60 Q30,65 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
+                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 2 */}
+                    {/* Bill 2 */}
                     <svg className="absolute left-[18%] w-14 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 11s ease-in-out infinite', animationDelay: '-3s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z;
-                          M4,18 Q30,28 60,12 Q90,5 116,20 L116,52 Q90,62 60,58 Q30,45 4,55 Z;
-                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
-                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
+                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 3 */}
+                    {/* Bill 3 */}
                     <svg className="absolute left-[35%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 8s ease-in-out infinite', animationDelay: '-1s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,15 Q30,5 60,18 Q90,28 116,15 L116,55 Q90,68 60,52 Q30,42 4,55 Z;
-                          M4,22 Q30,12 60,8 Q90,18 116,25 L116,48 Q90,58 60,62 Q30,52 4,48 Z;
-                          M4,10 Q30,20 60,25 Q90,15 116,10 L116,60 Q90,50 60,45 Q30,55 4,60 Z;
-                          M4,15 Q30,5 60,18 Q90,28 116,15 L116,55 Q90,68 60,52 Q30,42 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
+                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 4 */}
+                    {/* Bill 4 */}
                     <svg className="absolute left-[52%] w-17 h-12 opacity-38 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 12s ease-in-out infinite', animationDelay: '-5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
-                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
-                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
+                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 5 */}
+                    {/* Bill 5 */}
                     <svg className="absolute left-[70%] w-14 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 10s ease-in-out infinite', animationDelay: '-7s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
-                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z;
-                          M4,20 Q30,10 60,25 Q90,15 116,20 L116,50 Q90,60 60,45 Q30,55 4,50 Z;
-                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
-                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
+                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 6 */}
+                    {/* Bill 6 */}
                     <svg className="absolute left-[88%] w-13 h-10 opacity-26 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 7s ease-in-out infinite', animationDelay: '-2s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
-                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
-                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
+                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 7 */}
+                    {/* Bill 7 */}
                     <svg className="absolute left-[8%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 13s ease-in-out infinite', animationDelay: '-9s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3.5s" repeatCount="indefinite" values="
-                          M4,10 Q30,20 60,8 Q90,18 116,10 L116,60 Q90,50 60,62 Q30,52 4,60 Z;
-                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
-                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
-                          M4,10 Q30,20 60,8 Q90,18 116,10 L116,60 Q90,50 60,62 Q30,52 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
+                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 8 */}
+                    {/* Bill 8 */}
                     <svg className="absolute left-[25%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 8s ease-in-out infinite', animationDelay: '-4s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.4s" repeatCount="indefinite" values="
-                          M4,12 Q30,5 60,15 Q90,25 116,12 L116,58 Q90,65 60,55 Q30,45 4,58 Z;
-                          M4,20 Q30,12 60,8 Q90,15 116,20 L116,50 Q90,58 60,62 Q30,55 4,50 Z;
-                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
-                          M4,12 Q30,5 60,15 Q90,25 116,12 L116,58 Q90,65 60,55 Q30,45 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
+                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 9 */}
+                    {/* Bill 9 */}
                     <svg className="absolute left-[42%] w-14 h-10 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 11s ease-in-out infinite', animationDelay: '-6s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,15 Q30,25 60,12 Q90,22 116,15 L116,55 Q90,45 60,58 Q30,48 4,55 Z;
-                          M4,22 Q30,12 60,25 Q90,15 116,22 L116,48 Q90,58 60,45 Q30,55 4,48 Z;
-                          M4,10 Q30,20 60,18 Q90,28 116,10 L116,60 Q90,50 60,52 Q30,42 4,60 Z;
-                          M4,15 Q30,25 60,12 Q90,22 116,15 L116,55 Q90,45 60,58 Q30,48 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
+                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 10 */}
+                    {/* Bill 10 */}
                     <svg className="absolute left-[60%] w-15 h-11 opacity-32 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 9s ease-in-out infinite', animationDelay: '-8s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
-                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
-                          M4,14 Q30,24 60,12 Q90,22 116,14 L116,56 Q90,46 60,58 Q30,48 4,56 Z;
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
+                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 11 */}
+                    {/* Bill 11 */}
                     <svg className="absolute left-[78%] w-16 h-12 opacity-35 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 10s ease-in-out infinite', animationDelay: '-10s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="
-                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z;
-                          M4,18 Q30,28 60,12 Q90,5 116,20 L116,52 Q90,62 60,58 Q30,45 4,55 Z;
-                          M4,8 Q30,18 60,22 Q90,12 116,8 L116,62 Q90,52 60,48 Q30,58 4,62 Z;
-                          M4,12 Q30,8 60,15 Q90,22 116,12 L116,58 Q90,52 60,55 Q30,62 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
+                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 12 */}
+                    {/* Bill 12 */}
                     <svg className="absolute left-[95%] w-13 h-10 opacity-28 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 8s ease-in-out infinite', animationDelay: '-11s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="
-                          M4,15 Q30,22 60,10 Q90,20 116,15 L116,55 Q90,48 60,60 Q30,50 4,55 Z;
-                          M4,22 Q30,12 60,25 Q90,15 116,22 L116,48 Q90,58 60,45 Q30,55 4,48 Z;
-                          M4,10 Q30,20 60,18 Q90,28 116,10 L116,60 Q90,50 60,52 Q30,42 4,60 Z;
-                          M4,15 Q30,22 60,10 Q90,20 116,15 L116,55 Q90,48 60,60 Q30,50 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
+                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 13 */}
+                    {/* Bill 13 */}
                     <svg className="absolute left-[12%] w-14 h-11 opacity-33 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 12s ease-in-out infinite', animationDelay: '-12s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.9s" repeatCount="indefinite" values="
-                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z;
-                          M4,18 Q30,12 60,8 Q90,15 116,18 L116,52 Q90,58 60,62 Q30,55 4,52 Z;
-                          M4,14 Q30,22 60,18 Q90,10 116,14 L116,56 Q90,48 60,52 Q30,60 4,56 Z;
-                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
+                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 14 */}
+                    {/* Bill 14 */}
                     <svg className="absolute left-[30%] w-15 h-11 opacity-30 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall3 7s ease-in-out infinite', animationDelay: '-0.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="
-                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z;
-                          M4,20 Q30,10 60,22 Q90,12 116,20 L116,50 Q90,60 60,48 Q30,58 4,50 Z;
-                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
-                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
+                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 15 */}
+                    {/* Bill 15 */}
                     <svg className="absolute left-[48%] w-16 h-12 opacity-36 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 14s ease-in-out infinite', animationDelay: '-13s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
-                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
-                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
+                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 16 */}
+                    {/* Bill 16 */}
                     <svg className="absolute left-[65%] w-14 h-10 opacity-29 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall2 6s ease-in-out infinite', animationDelay: '-2.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.15">
                         <animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z;
-                          M4,18 Q30,8 60,22 Q90,12 116,18 L116,52 Q90,62 60,48 Q30,58 4,52 Z;
-                          M4,14 Q30,24 60,10 Q90,20 116,14 L116,56 Q90,46 60,60 Q30,50 4,56 Z;
-                          M4,10 Q30,18 60,8 Q90,18 116,10 L116,60 Q90,52 60,62 Q30,52 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
+                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 17 */}
+                    {/* Bill 17 */}
                     <svg className="absolute left-[82%] w-15 h-11 opacity-34 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall4 9s ease-in-out infinite', animationDelay: '-4.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.17">
                         <animate attributeName="d" dur="3s" repeatCount="indefinite" values="
-                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z;
-                          M4,20 Q30,10 60,25 Q90,15 116,20 L116,50 Q90,60 60,45 Q30,55 4,50 Z;
-                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
-                          M4,12 Q30,22 60,10 Q90,20 116,12 L116,58 Q90,48 60,60 Q30,50 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L114,52 Q60,45 6,52 Z;
+                          M4,10 L116,10 L110,48 Q60,40 10,48 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="13" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 18 */}
+                    {/* Bill 18 */}
                     <svg className="absolute left-[5%] w-13 h-10 opacity-27 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall5 11s ease-in-out infinite', animationDelay: '-6.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.14">
                         <animate attributeName="d" dur="2.7s" repeatCount="indefinite" values="
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z;
-                          M4,22 Q30,15 60,10 Q90,18 116,22 L116,48 Q90,55 60,60 Q30,52 4,48 Z;
-                          M4,10 Q30,20 60,22 Q90,12 116,10 L116,60 Q90,50 60,48 Q30,58 4,60 Z;
-                          M4,15 Q30,8 60,18 Q90,28 116,15 L116,55 Q90,62 60,52 Q30,42 4,55 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L112,50 Q60,42 8,50 Z;
+                          M4,10 L116,10 L108,46 Q60,38 12,46 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="11" ry="10" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 19 */}
+                    {/* Bill 19 */}
                     <svg className="absolute left-[22%] w-14 h-11 opacity-31 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall6 10s ease-in-out infinite', animationDelay: '-8.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.16">
                         <animate attributeName="d" dur="2.8s" repeatCount="indefinite" values="
-                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z;
-                          M4,18 Q30,12 60,8 Q90,15 116,18 L116,52 Q90,58 60,62 Q30,55 4,52 Z;
-                          M4,14 Q30,22 60,18 Q90,10 116,14 L116,56 Q90,48 60,52 Q30,60 4,56 Z;
-                          M4,10 Q30,5 60,12 Q90,20 116,10 L116,60 Q90,65 60,58 Q30,50 4,60 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L113,51 Q60,44 7,51 Z;
+                          M4,10 L116,10 L109,47 Q60,39 11,47 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="12" ry="11" stroke="white" strokeWidth="1.5" fill="none"/>
                       <text x="60" y="40" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">$</text>
                     </svg>
                     
-                    {/* Bending bill 20 */}
+                    {/* Bill 20 */}
                     <svg className="absolute left-[55%] w-16 h-12 opacity-37 falling-bill" viewBox="0 0 120 70" fill="none" style={{ animation: 'fall1 13s ease-in-out infinite', animationDelay: '-10.5s' }}>
                       <path stroke="white" strokeWidth="2" fill="white" fillOpacity="0.18">
                         <animate attributeName="d" dur="3.1s" repeatCount="indefinite" values="
-                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z;
-                          M4,20 Q30,10 60,22 Q90,12 116,20 L116,50 Q90,60 60,48 Q30,58 4,50 Z;
-                          M4,8 Q30,18 60,15 Q90,25 116,8 L116,62 Q90,52 60,55 Q30,45 4,62 Z;
-                          M4,12 Q30,20 60,8 Q90,18 116,12 L116,58 Q90,50 60,62 Q30,52 4,58 Z"
+                          M4,10 L116,10 L116,60 L4,60 Z;
+                          M4,10 L116,10 L115,53 Q60,46 5,53 Z;
+                          M4,10 L116,10 L111,49 Q60,41 9,49 Z;
+                          M4,10 L116,10 L116,60 L4,60 Z"
                         />
                       </path>
                       <ellipse cx="60" cy="35" rx="14" ry="12" stroke="white" strokeWidth="1.5" fill="none"/>
