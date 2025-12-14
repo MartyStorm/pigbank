@@ -81,9 +81,6 @@ export default function Payouts() {
               <div className="text-3xl font-bold text-foreground">
                 {formatAmount(inTransitAmount.toString())}
               </div>
-              <p className="text-xs mt-1 text-muted-foreground">
-                {inTransitPayouts.length} payout{inTransitPayouts.length !== 1 ? 's' : ''} pending
-              </p>
             </CardContent>
           </Card>
 
