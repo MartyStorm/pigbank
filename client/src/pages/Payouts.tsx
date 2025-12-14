@@ -100,6 +100,19 @@ export default function Payouts() {
           </Card>
         </div>
 
+        <div className="flex justify-end">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowExtraColumns(!showExtraColumns)}
+            className="gap-2"
+            data-testid="button-toggle-columns"
+          >
+            <Settings2 className="h-4 w-4" />
+            Customize Columns
+          </Button>
+        </div>
+
         <Card className="border-none shadow-sm">
           <CardContent className="p-0">
             {isLoading ? (
@@ -113,18 +126,6 @@ export default function Payouts() {
               </div>
             ) : (
               <>
-                <div className="flex justify-end px-4 py-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setShowExtraColumns(!showExtraColumns)}
-                    className="gap-2"
-                    data-testid="button-toggle-columns"
-                  >
-                    <Settings2 className="h-4 w-4" />
-                    {showExtraColumns ? "Hide Details" : "Show Details"}
-                  </Button>
-                </div>
                 <Table>
                   <TableHeader className="bg-[#2b4e2d] dark:bg-[#262626] [&_tr]:hover:bg-[#2b4e2d] dark:[&_tr]:hover:bg-[#262626]">
                     <TableRow className="border-none hover:bg-[#2b4e2d] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
