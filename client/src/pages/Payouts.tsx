@@ -79,7 +79,7 @@ export default function Payouts() {
               <div className="text-3xl font-bold text-foreground">
                 {nextPayout ? formatDate(nextPayout.arrivalDate) : "—"}
               </div>
-              <p className="text-xs mt-1 text-muted-foreground">
+              <p className="text-sm mt-1 text-[#39870E] font-medium">
                 {nextPayout ? `Pending ${formatAmount(nextPayout.amount)}` : "No pending payouts"}
               </p>
             </CardContent>
