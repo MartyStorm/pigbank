@@ -1254,7 +1254,7 @@ export default function Landing() {
                           payment processor
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
-                          Fast approvals, total data security, transparent rates, real American customer service, and tailored solutions built for you.
+                          Fast approvals, total data security, transparent rates, dedicated account representative customer support, and tailored solutions built for you.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                           <Button 
