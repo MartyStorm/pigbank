@@ -24,6 +24,7 @@ import {
   Monitor,
   Banknote,
   ChevronLeft,
+  ChevronRight,
   Bitcoin,
   MapPin,
   ShieldCheck,
@@ -1530,7 +1531,7 @@ export default function Landing() {
             className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity"
             data-testid="button-hero-next"
           >
-            <ArrowRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
+            <ChevronRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
           </button>
           
           {/* Carousel progress indicators with pause button */}
