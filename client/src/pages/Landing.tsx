@@ -1523,7 +1523,11 @@ export default function Landing() {
                     heroApi?.scrollTo(index);
                     setHeroProgress(0);
                   }}
-                  className="relative w-12 h-1.5 rounded-full overflow-hidden bg-white/30 hover:bg-white/40 transition-colors"
+                  className={`relative w-12 h-1.5 rounded-full overflow-hidden transition-colors ${
+                    index === heroCurrentSlide 
+                      ? 'bg-white/50' 
+                      : 'bg-white/30 hover:bg-white/40'
+                  }`}
                   data-testid={`button-hero-progress-${index}`}
                 >
                   <div 
