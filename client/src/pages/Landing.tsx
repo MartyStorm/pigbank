@@ -1269,7 +1269,7 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-start">
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
                         <div className="relative flex items-end justify-center">
                           <img 
                             src="/pig-mascot.png" 
