@@ -88,7 +88,7 @@ export default function Payouts() {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-sm bg-[#73cb43]/10 dark:bg-green-950/30">
+          <Card className="border-none shadow-sm bg-[#73cb43]/20 dark:bg-green-950/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
               <CardTitle className="text-sm font-medium text-[#39870E] dark:text-green-400">Last Payout</CardTitle>
             </CardHeader>
