@@ -7,6 +7,8 @@ import { ChevronLeft, ChevronRight, Loader2, Settings2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface Payout {
   id: string;
@@ -23,7 +25,17 @@ interface Payout {
 export default function Payouts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
-  const [showExtraColumns, setShowExtraColumns] = useState(false);
+  const [columns, setColumns] = useState({
+    date: true,
+    amount: true,
+    status: true,
+    destination: false,
+    payoutId: false,
+  });
+
+  const toggleColumn = (column: keyof typeof columns) => {
+    setColumns(prev => ({ ...prev, [column]: !prev[column] }));
+  };
 
   const { data: payouts = [], isLoading } = useQuery<Payout[]>({
     queryKey: ["/api/payouts"],
@@ -104,16 +116,44 @@ export default function Payouts() {
         </div>
 
         <div className="flex justify-start">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowExtraColumns(!showExtraColumns)}
-            className="gap-2"
-            data-testid="button-toggle-columns"
-          >
-            <Settings2 className="h-4 w-4" />
-            Customize Columns
-          </Button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                data-testid="button-toggle-columns"
+              >
+                <Settings2 className="h-4 w-4" />
+                Customize Columns
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-48" align="start">
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-muted-foreground mb-2">Show columns</p>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="col-date" checked={columns.date} onCheckedChange={() => toggleColumn('date')} />
+                  <label htmlFor="col-date" className="text-sm cursor-pointer">Date</label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="col-amount" checked={columns.amount} onCheckedChange={() => toggleColumn('amount')} />
+                  <label htmlFor="col-amount" className="text-sm cursor-pointer">Amount</label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="col-status" checked={columns.status} onCheckedChange={() => toggleColumn('status')} />
+                  <label htmlFor="col-status" className="text-sm cursor-pointer">Status</label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="col-destination" checked={columns.destination} onCheckedChange={() => toggleColumn('destination')} />
+                  <label htmlFor="col-destination" className="text-sm cursor-pointer">Destination</label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="col-payoutId" checked={columns.payoutId} onCheckedChange={() => toggleColumn('payoutId')} />
+                  <label htmlFor="col-payoutId" className="text-sm cursor-pointer">Payout ID</label>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
 
         <Card className="border-none shadow-sm">
@@ -132,47 +172,43 @@ export default function Payouts() {
                 <Table>
                   <TableHeader className="bg-[#2b4e2d] dark:bg-[#262626] [&_tr]:hover:bg-[#2b4e2d] dark:[&_tr]:hover:bg-[#262626]">
                     <TableRow className="border-none hover:bg-[#2b4e2d] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
-                      <TableHead className="text-white">Date</TableHead>
-                      <TableHead className="text-white">Amount</TableHead>
-                      <TableHead className="text-white">Status</TableHead>
-                      {showExtraColumns && (
-                        <>
-                          <TableHead className="text-white">Destination</TableHead>
-                          <TableHead className="text-white">Payout ID</TableHead>
-                        </>
-                      )}
+                      {columns.date && <TableHead className="text-white">Date</TableHead>}
+                      {columns.amount && <TableHead className="text-white">Amount</TableHead>}
+                      {columns.status && <TableHead className="text-white">Status</TableHead>}
+                      {columns.destination && <TableHead className="text-white">Destination</TableHead>}
+                      {columns.payoutId && <TableHead className="text-white">Payout ID</TableHead>}
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {currentPayouts.map((p) => (
                       <TableRow key={p.id} className="hover:bg-muted/30" data-testid={`row-payout-${p.id}`}>
-                        <TableCell className="text-muted-foreground">{formatDate(p.date)}</TableCell>
-                        <TableCell className="font-medium">{formatAmount(p.amount)}</TableCell>
-                        <TableCell>
-                          <span className={cn(
-                            "px-2.5 py-0.5 rounded-md text-xs font-medium border inline-block w-[90px] text-center",
-                            p.status === "Completed" 
-                              ? "bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700"
-                              : p.status === "Processing"
-                              ? "bg-blue-100 text-blue-700 border-blue-700 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700"
-                              : p.status === "Pending"
-                              ? "bg-[#f0b100]/20 text-[#f0b100] border-[#f0b100] dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700"
-                              : "bg-[#b91c1c]/20 text-[#b91c1c] border-[#b91c1c] dark:bg-red-900/30 dark:text-red-400 dark:border-red-700"
-                          )}>
-                            {p.status}
-                          </span>
-                        </TableCell>
-                        {showExtraColumns && (
-                          <>
-                            <TableCell className="text-muted-foreground">
-                              <div className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-slate-400"></span>
-                                {p.destination}
-                              </div>
-                            </TableCell>
-                            <TableCell className="font-mono text-xs font-medium">{p.payoutId}</TableCell>
-                          </>
+                        {columns.date && <TableCell className="text-muted-foreground">{formatDate(p.date)}</TableCell>}
+                        {columns.amount && <TableCell className="font-medium">{formatAmount(p.amount)}</TableCell>}
+                        {columns.status && (
+                          <TableCell>
+                            <span className={cn(
+                              "px-2.5 py-0.5 rounded-md text-xs font-medium border inline-block w-[90px] text-center",
+                              p.status === "Completed" 
+                                ? "bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700"
+                                : p.status === "Processing"
+                                ? "bg-blue-100 text-blue-700 border-blue-700 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700"
+                                : p.status === "Pending"
+                                ? "bg-[#f0b100]/20 text-[#f0b100] border-[#f0b100] dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700"
+                                : "bg-[#b91c1c]/20 text-[#b91c1c] border-[#b91c1c] dark:bg-red-900/30 dark:text-red-400 dark:border-red-700"
+                            )}>
+                              {p.status}
+                            </span>
+                          </TableCell>
                         )}
+                        {columns.destination && (
+                          <TableCell className="text-muted-foreground">
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-slate-400"></span>
+                              {p.destination}
+                            </div>
+                          </TableCell>
+                        )}
+                        {columns.payoutId && <TableCell className="font-mono text-xs font-medium">{p.payoutId}</TableCell>}
                       </TableRow>
                     ))}
                   </TableBody>
