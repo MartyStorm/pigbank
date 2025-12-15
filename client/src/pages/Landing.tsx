@@ -1523,17 +1523,15 @@ export default function Landing() {
                     heroApi?.scrollTo(index);
                     setHeroProgress(0);
                   }}
-                  className={`relative rounded-full overflow-hidden transition-all duration-200 ${
+                  className={`relative w-12 h-1.5 rounded-full overflow-hidden transition-colors ${
                     index === heroCurrentSlide 
-                      ? 'w-14 h-2.5 bg-[#73cb43]/40 scale-105 shadow-[0_0_8px_rgba(115,203,67,0.5)]' 
-                      : 'w-12 h-1.5 bg-white/20 hover:bg-white/30'
+                      ? 'bg-white/50' 
+                      : 'bg-white/30 hover:bg-white/40'
                   }`}
                   data-testid={`button-hero-progress-${index}`}
                 >
                   <div 
-                    className={`absolute left-0 top-0 h-full rounded-full transition-all duration-75 ${
-                      index === heroCurrentSlide ? 'bg-[#73cb43]' : 'bg-white'
-                    }`}
+                    className="absolute left-0 top-0 h-full bg-white rounded-full transition-all duration-75"
                     style={{ 
                       width: index === heroCurrentSlide 
                         ? `${heroProgress}%` 
