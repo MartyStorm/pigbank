@@ -1247,9 +1247,9 @@ export default function Landing() {
                   </div>
                   
                   <div className="flex h-[520px] md:h-[600px] items-center">
-                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative z-10">
-                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                        <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
+                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                             <span className="whitespace-nowrap">Built-for-you</span><br />
                             payment processor
@@ -1269,7 +1269,7 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-2/5 relative w-full flex items-center justify-center">
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-start">
                         <div className="relative flex items-end justify-center">
                           <img 
                             src="/pig-mascot.png" 
