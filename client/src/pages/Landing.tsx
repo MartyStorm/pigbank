@@ -1284,7 +1284,7 @@ export default function Landing() {
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="w-[340px] min-w-[340px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[280px] min-w-[280px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
