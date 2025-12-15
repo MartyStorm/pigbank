@@ -185,6 +185,17 @@ export default function Dashboard() {
     const totalTxns = transactions.length;
     const approvalRate = totalTxns > 0 ? (approved.length / totalTxns) * 100 : 0;
     
+    // If no transactions, show demo data with realistic numbers
+    if (transactions.length === 0) {
+      return [
+        { title: "Today's Gross Sales", value: "$47,892", trend: "+12.4%", trendUp: true, icon: DollarSign },
+        { title: "Approval Rate", value: "89%", trend: "+2.1%", trendUp: true, icon: CreditCard },
+        { title: "Chargeback Rate", value: "0%", trend: "0%", trendUp: true, icon: TrendingUp },
+        { title: "Declined Amount", value: "$4,231", trend: "-8.3%", trendUp: false, icon: ArrowDownRight },
+        { title: "Refund Amount", value: "$1,847", trend: "-3.2%", trendUp: false, icon: ArrowUpRight },
+      ];
+    }
+    
     return [
       { title: "Today's Gross Sales", value: `$${totalSales.toLocaleString("en-US", { maximumFractionDigits: 0 })}`, trend: "—", trendUp: true, icon: DollarSign },
       { title: "Approval Rate", value: totalTxns > 0 ? `${Math.round(approvalRate)}%` : "—", trend: "—", trendUp: true, icon: CreditCard },
@@ -199,6 +210,20 @@ export default function Dashboard() {
     const start = dateRange?.from || startOfMonth(new Date());
     const end = dateRange?.to || endOfMonth(new Date());
     const days = eachDayOfInterval({ start, end });
+    
+    // If no transactions, show demo data with steady upward growth (deterministic)
+    if (transactions.length === 0) {
+      return days.map((day, index) => {
+        const baseValue = 15000;
+        const growth = index * 1200;
+        return { 
+          date: format(day, "MMM d"), 
+          current: baseValue + growth, 
+          previous: Math.round((baseValue + growth) * 0.85) 
+        };
+      });
+    }
+    
     return days.map(day => {
       const dayStart = startOfDay(day);
       const dayTxns = transactions.filter(t => {
@@ -217,25 +242,29 @@ export default function Dashboard() {
     const errors = transactions.filter(t => t.status === "Error").length;
     const total = transactions.length || 1;
     
-    // If no data at all, show error color (orange) as placeholder
+    // If no data at all, show demo data with realistic percentages
     if (transactions.length === 0) {
       return [
-        { name: "Charges", value: 0, percentage: 0, color: "#73cb43", chartValue: 0 },
-        { name: "Refunds", value: 0, percentage: 0, color: "#7c3aed", chartValue: 0 },
-        { name: "Declines", value: 0, percentage: 0, color: "#b91c1c", chartValue: 0 },
-        { name: "Errors", value: 0, percentage: 100, color: "#f0b100", chartValue: 1 },
+        { name: "Charges", value: 892, percentage: 89, color: "#73cb43", chartValue: 89 },
+        { name: "Refunds", value: 34, percentage: 3, color: "#1877F2", chartValue: 3 },
+        { name: "Declines", value: 67, percentage: 7, color: "#b91c1c", chartValue: 7 },
+        { name: "Errors", value: 8, percentage: 1, color: "#f0b100", chartValue: 1 },
       ];
     }
     
     return [
       { name: "Charges", value: approved, percentage: Math.round((approved / total) * 100), color: "#73cb43", chartValue: approved },
-      { name: "Refunds", value: refunded, percentage: Math.round((refunded / total) * 100), color: "#7c3aed", chartValue: refunded },
+      { name: "Refunds", value: refunded, percentage: Math.round((refunded / total) * 100), color: "#1877F2", chartValue: refunded },
       { name: "Declines", value: declined, percentage: Math.round((declined / total) * 100), color: "#b91c1c", chartValue: declined },
       { name: "Errors", value: errors, percentage: Math.round((errors / total) * 100), color: "#f0b100", chartValue: errors },
     ];
   }, [transactions]);
 
   const payoutBalance = useMemo(() => {
+    // If no transactions, show demo payout balance
+    if (transactions.length === 0) {
+      return 47892;
+    }
     return transactions
       .filter(t => t.status === "Approved")
       .reduce((sum, t) => sum + parseFloat(t.amount), 0);
