@@ -1270,7 +1270,7 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-center pr-4 md:pr-8 lg:pr-12">
                         <div className="relative flex items-end justify-center">
                           <img 
                             src="/pig-suit-new.png" 
@@ -1286,7 +1286,7 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[450px] md:w-[550px] lg:w-[680px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[500px] md:w-[620px] lg:w-[750px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
