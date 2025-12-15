@@ -1305,8 +1305,8 @@ export default function Landing() {
                   }}
                 >
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
-                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           Built for high-risk merchants
@@ -1326,7 +1326,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
                         <div className="relative">
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-64 h-64 rounded-full border-4 border-white/20 animate-ping" style={{ animationDuration: '3s' }} />
@@ -1373,8 +1373,8 @@ export default function Landing() {
                   }}
                 >
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
-                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
                           Get paid faster
@@ -1394,7 +1394,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
                         <div className="relative">
                           <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
                             <div className="flex items-center justify-between mb-6">
@@ -1448,8 +1448,8 @@ export default function Landing() {
                   }}
                 >
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
-                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           Your success is our business
@@ -1469,7 +1469,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
                         <div className="relative">
                           <div className="grid grid-cols-2 gap-4 md:gap-6">
                             <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
@@ -1517,20 +1517,20 @@ export default function Landing() {
               heroApi?.scrollPrev();
               setHeroProgress(0);
             }}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-lg transition-all"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity"
             data-testid="button-hero-prev"
           >
-            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-white" />
+            <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
           </button>
           <button
             onClick={() => {
               heroApi?.scrollNext();
               setHeroProgress(0);
             }}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-lg transition-all"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity"
             data-testid="button-hero-next"
           >
-            <ArrowRight className="h-5 w-5 md:h-6 md:w-6 text-white" />
+            <ArrowRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
           </button>
           
           {/* Carousel progress indicators with pause button */}
