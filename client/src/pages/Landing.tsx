@@ -1281,50 +1281,11 @@ export default function Landing() {
                             className="relative z-10"
                             style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                           >
-                          <div className="relative bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-20" />
-                            <div className="bg-white rounded-[2rem] overflow-hidden w-[200px] md:w-[240px] h-[400px] md:h-[480px]">
-                              <div className="bg-[#203e22] p-4">
-                                <div className="flex items-center justify-between mb-4">
-                                  <span className="text-white/60 text-xs">×</span>
-                                  <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
-                                </div>
-                                <p className="text-white/70 text-xs mb-1">Your total Balance</p>
-                                <p className="text-white text-2xl md:text-3xl font-bold">$47,892</p>
-                                <div className="flex items-center gap-2 mt-2">
-                                  <span className="text-xs text-white/60">Return: $12,450</span>
-                                </div>
-                              </div>
-                              <div className="p-4 bg-white">
-                                <div className="flex items-center justify-between mb-3 text-xs">
-                                  <span className="text-gray-500">$47,892 today</span>
-                                </div>
-                                <div className="h-32 flex items-end gap-1">
-                                  {[35, 42, 38, 55, 48, 62, 58, 75, 68, 82, 78, 95].map((h, i) => (
-                                    <div 
-                                      key={i} 
-                                      className="flex-1 bg-gradient-to-t from-[#73cb43] to-[#9ee068] rounded-t"
-                                      style={{ height: `${h}%` }}
-                                    />
-                                  ))}
-                                </div>
-                                <div className="flex justify-between mt-2 text-[10px] text-gray-400">
-                                  <span>Jan</span>
-                                  <span>Dec</span>
-                                </div>
-                                <div className="flex gap-2 mt-4">
-                                  <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
-                                    <span className="text-gray-600">Years: </span>
-                                    <span className="font-semibold text-[#73cb43]">5</span>
-                                  </div>
-                                  <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
-                                    <span className="text-gray-600">Return: </span>
-                                    <span className="font-semibold text-[#73cb43]">12%</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                            <img 
+                              src="/iphone-payouts.png" 
+                              alt="PigBank Payouts on iPhone" 
+                              className="w-[280px] md:w-[340px] h-auto drop-shadow-2xl"
+                            />
                           </div>
                         </div>
                       </div>
