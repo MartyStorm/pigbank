@@ -202,7 +202,7 @@ export default function Payouts() {
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <div className="text-sm text-muted-foreground mr-2">
+                    <div className="text-sm text-muted-foreground mr-2 whitespace-nowrap">
                       Page {currentPage} of {totalPages}
                     </div>
                     <Button
