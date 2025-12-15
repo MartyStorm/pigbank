@@ -1275,7 +1275,7 @@ export default function Landing() {
                           <img 
                             src="/pig-suit-new.png" 
                             alt="PigBank Mascot" 
-                            className="relative w-32 md:w-40 lg:w-48 z-20 drop-shadow-2xl -mr-4 md:-mr-8"
+                            className="relative w-48 md:w-60 lg:w-72 z-20 drop-shadow-2xl -mr-6 md:-mr-12"
                             style={{ transform: `translateY(${scrollY * 0.02}px)` }}
                           />
                           
@@ -1286,7 +1286,7 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[280px] md:w-[350px] lg:w-[420px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[380px] md:w-[480px] lg:w-[560px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
