@@ -1511,6 +1511,28 @@ export default function Landing() {
             </CarouselContent>
           </Carousel>
           
+          {/* Navigation arrows */}
+          <button
+            onClick={() => {
+              heroApi?.scrollPrev();
+              setHeroProgress(0);
+            }}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-lg transition-all"
+            data-testid="button-hero-prev"
+          >
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-white" />
+          </button>
+          <button
+            onClick={() => {
+              heroApi?.scrollNext();
+              setHeroProgress(0);
+            }}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-lg transition-all"
+            data-testid="button-hero-next"
+          >
+            <ArrowRight className="h-5 w-5 md:h-6 md:w-6 text-white" />
+          </button>
+          
           {/* Carousel progress indicators with pause button */}
           <div 
             className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10"
