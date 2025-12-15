@@ -1286,7 +1286,7 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[380px] md:w-[480px] lg:w-[560px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[450px] md:w-[550px] lg:w-[680px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
