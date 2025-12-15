@@ -1248,7 +1248,7 @@ export default function Landing() {
                   
                   <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                      <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           <span className="whitespace-nowrap">Built-for-you</span><br />
                           payment processor
@@ -1268,12 +1268,12 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[600px] w-full flex items-end justify-center overflow-visible">
+                      <div className="lg:w-2/5 relative min-h-[450px] md:min-h-[520px] w-full flex items-end justify-center">
                         <div className="relative flex items-end justify-center">
                           <img 
                             src="/pig-mascot.png" 
                             alt="PigBank Mascot" 
-                            className="relative w-48 md:w-64 lg:w-80 z-20 drop-shadow-2xl -mr-12 md:-mr-16"
+                            className="relative w-40 md:w-56 lg:w-64 z-20 drop-shadow-2xl -mr-8 md:-mr-12"
                             style={{ transform: `translateY(${32 + scrollY * 0.02}px)` }}
                           />
                           
@@ -1284,7 +1284,7 @@ export default function Landing() {
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="h-[70vh] md:h-[80vh] lg:h-[85vh] w-auto drop-shadow-2xl"
+                              className="w-[280px] md:w-[340px] h-auto drop-shadow-2xl"
                             />
                           </div>
                         </div>
