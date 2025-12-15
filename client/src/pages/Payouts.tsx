@@ -80,7 +80,7 @@ export default function Payouts() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-blue-900 dark:text-blue-100">
-                {nextPayout ? formatDate(nextPayout.arrivalDate) : "—"}
+                {processingPayouts.length > 0 ? formatDate(processingPayouts[0].arrivalDate) : (nextPayout ? formatDate(nextPayout.arrivalDate) : "—")}
               </div>
               <p className="text-lg mt-1 text-blue-600 dark:text-blue-400 font-semibold">
                 {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
