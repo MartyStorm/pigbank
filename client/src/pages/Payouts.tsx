@@ -82,7 +82,7 @@ export default function Payouts() {
               <div className="text-3xl font-bold text-foreground">
                 {nextPayout ? formatDate(nextPayout.arrivalDate) : "—"}
               </div>
-              <p className="text-lg mt-1 text-[#39870E] font-semibold">
+              <p className="text-lg mt-1 text-blue-600 font-semibold">
                 {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
               </p>
             </CardContent>
