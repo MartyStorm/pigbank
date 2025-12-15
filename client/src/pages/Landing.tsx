@@ -1471,39 +1471,26 @@ export default function Landing() {
                       </div>
                       
                       <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
-                        <div className="relative">
-                          <div className="grid grid-cols-2 gap-4 md:gap-6">
-                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
-                              <div className="w-12 h-12 rounded-xl bg-[#203e22] flex items-center justify-center mb-3">
-                                <CreditCard className="h-6 w-6 text-white" />
-                              </div>
-                              <p className="font-semibold text-gray-900">Credit Cards</p>
-                              <p className="text-sm text-gray-500">Visa, MC, Amex</p>
-                            </div>
-                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
-                              <div className="w-12 h-12 rounded-xl bg-[#73cb43] flex items-center justify-center mb-3">
-                                <Wallet className="h-6 w-6 text-white" />
-                              </div>
-                              <p className="font-semibold text-gray-900">ACH Transfers</p>
-                              <p className="text-sm text-gray-500">Direct bank</p>
-                            </div>
-                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
-                              <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center mb-3">
-                                <Bitcoin className="h-6 w-6 text-white" />
-                              </div>
-                              <p className="font-semibold text-gray-900">Crypto</p>
-                              <p className="text-sm text-gray-500">BTC, ETH, USDC</p>
-                            </div>
-                            <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
-                              <div className="w-12 h-12 rounded-xl bg-violet-600 flex items-center justify-center mb-3">
-                                <Receipt className="h-6 w-6 text-white" />
-                              </div>
-                              <p className="font-semibold text-gray-900">eChecks</p>
-                              <p className="text-sm text-gray-500">Electronic checks</p>
-                            </div>
+                        <div className="relative flex items-end justify-center">
+                          <img 
+                            src="/pig-mascot.png" 
+                            alt="PigBank Mascot" 
+                            className="relative w-40 md:w-52 lg:w-60 z-20 drop-shadow-2xl -mr-6 md:-mr-10"
+                            style={{ transform: `translateY(${scrollY * 0.02}px)` }}
+                          />
+                          
+                          <div 
+                            className="relative z-10 flex-shrink-0"
+                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                          >
+                            <img 
+                              src="/iphone-payouts.png" 
+                              alt="PigBank Payouts on iPhone" 
+                              className="w-[200px] md:w-[240px] h-auto drop-shadow-2xl flex-shrink-0"
+                            />
                           </div>
                         </div>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
