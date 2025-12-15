@@ -88,15 +88,15 @@ export default function Payouts() {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-sm bg-[#73cb43]/20 dark:bg-green-950/30">
+          <Card className="border-none shadow-sm bg-green-100 dark:bg-green-950/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-green-700 dark:text-green-400">Last Payout</CardTitle>
+              <CardTitle className="text-sm font-medium text-[#15803d] dark:text-green-400">Last Payout</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-green-700 dark:text-green-300">
+              <div className="text-3xl font-bold text-[#15803d] dark:text-green-300">
                 {lastPayout ? formatAmount(lastPayout.amount) : "—"}
               </div>
-              <p className="text-lg mt-1 text-green-700 dark:text-green-400 font-semibold">
+              <p className="text-lg mt-1 text-[#15803d] dark:text-green-400 font-semibold">
                 {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
               </p>
             </CardContent>
