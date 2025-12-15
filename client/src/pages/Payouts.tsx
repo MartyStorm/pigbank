@@ -74,15 +74,15 @@ export default function Payouts() {
         </div>
         
         <div className="grid gap-4 md:grid-cols-2">
-          <Card className="border-none shadow-sm bg-blue-50 dark:bg-blue-950/30">
+          <Card className="border-none shadow-sm bg-blue-100 dark:bg-blue-950/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-blue-600 dark:text-blue-400">Next Payout</CardTitle>
+              <CardTitle className="text-sm font-medium text-blue-700 dark:text-blue-400">Next Payout</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-blue-900 dark:text-blue-100">
+              <div className="text-3xl font-bold text-blue-700 dark:text-blue-100">
                 {processingPayouts.length > 0 ? formatDate(processingPayouts[0].arrivalDate) : (nextPayout ? formatDate(nextPayout.arrivalDate) : "—")}
               </div>
-              <p className="text-lg mt-1 text-blue-600 dark:text-blue-400 font-semibold">
+              <p className="text-lg mt-1 text-blue-700 dark:text-blue-400 font-semibold">
                 {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
               </p>
             </CardContent>
