@@ -150,7 +150,7 @@ export default function Payouts() {
                         <TableCell className="font-medium">{formatAmount(p.amount)}</TableCell>
                         <TableCell>
                           <span className={cn(
-                            "px-2.5 py-0.5 rounded-md text-xs font-medium border",
+                            "px-2.5 py-0.5 rounded-md text-xs font-medium border inline-block w-[90px] text-center",
                             p.status === "Completed" 
                               ? "bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700"
                               : p.status === "Processing"
