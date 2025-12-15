@@ -74,29 +74,29 @@ export default function Payouts() {
         </div>
         
         <div className="grid gap-4 md:grid-cols-2">
-          <Card className="border-none shadow-sm">
+          <Card className="border-none shadow-sm bg-blue-50 dark:bg-blue-950/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Next Payout</CardTitle>
+              <CardTitle className="text-sm font-medium text-blue-600 dark:text-blue-400">Next Payout</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-foreground">
+              <div className="text-3xl font-bold text-blue-900 dark:text-blue-100">
                 {nextPayout ? formatDate(nextPayout.arrivalDate) : "—"}
               </div>
-              <p className="text-lg mt-1 text-blue-600 font-semibold">
+              <p className="text-lg mt-1 text-blue-600 dark:text-blue-400 font-semibold">
                 {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-sm">
+          <Card className="border-none shadow-sm bg-[#73cb43]/10 dark:bg-green-950/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Last Payout</CardTitle>
+              <CardTitle className="text-sm font-medium text-[#39870E] dark:text-green-400">Last Payout</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-[#39870E]">
+              <div className="text-3xl font-bold text-[#39870E] dark:text-green-300">
                 {lastPayout ? formatAmount(lastPayout.amount) : "—"}
               </div>
-              <p className="text-base mt-1 text-muted-foreground">
+              <p className="text-base mt-1 text-[#39870E]/80 dark:text-green-400/80">
                 {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
               </p>
             </CardContent>
