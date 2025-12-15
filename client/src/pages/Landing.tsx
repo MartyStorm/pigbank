@@ -1525,7 +1525,7 @@ export default function Landing() {
                   }}
                   className={`relative w-12 h-1.5 rounded-full overflow-hidden transition-colors ${
                     index === heroCurrentSlide 
-                      ? 'bg-white/50' 
+                      ? 'bg-white/70 hover:bg-white/80' 
                       : 'bg-white/30 hover:bg-white/40'
                   }`}
                   data-testid={`button-hero-progress-${index}`}
