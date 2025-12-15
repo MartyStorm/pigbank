@@ -1246,30 +1246,31 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative z-10">
-                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                      <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                          <span className="whitespace-nowrap">Built-for-you</span><br />
-                          payment processor
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
-                          Fast approvals, total data security, transparent rates, dedicated account representative customer support, and tailored solutions built for you.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                          <Button 
-                            asChild 
-                            size="lg" 
-                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                            data-testid="button-get-started-hero"
-                          >
-                            <a href="/register">Get started</a>
-                          </Button>
+                  <div className="flex h-[520px] md:h-[600px] items-center">
+                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                        <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
+                          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                            <span className="whitespace-nowrap">Built-for-you</span><br />
+                            payment processor
+                          </h1>
+                          <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                            Fast approvals, total data security, transparent rates, dedicated account representative customer support, and tailored solutions built for you.
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <Button 
+                              asChild 
+                              size="lg" 
+                              className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              data-testid="button-get-started-hero"
+                            >
+                              <a href="/register">Get started</a>
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                      
-                      <div className="lg:w-2/5 relative min-h-[450px] md:min-h-[520px] w-full flex items-end justify-center">
-                        <div className="relative flex items-end justify-center">
+                        
+                        <div className="lg:w-2/5 relative w-full flex items-center justify-center">
+                        <div className="relative flex items-center justify-center">
                           <img 
                             src="/pig-mascot.png" 
                             alt="PigBank Mascot" 
@@ -1288,6 +1289,7 @@ export default function Landing() {
                             />
                           </div>
                         </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1302,8 +1304,9 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #2a2a2a 0%, #222222 40%, #1a1a1a 70%, #141414 100%)'
                   }}
                 >
-                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
-                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                  <div className="flex h-[520px] md:h-[600px] items-center">
+                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           Built for high-risk merchants
@@ -1323,7 +1326,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
                         <div className="relative">
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-64 h-64 rounded-full border-4 border-white/20 animate-ping" style={{ animationDuration: '3s' }} />
@@ -1354,6 +1357,7 @@ export default function Landing() {
                             </div>
                           </div>
                         </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1368,8 +1372,9 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #f5efe4 0%, #e8dfd0 35%, #d9cdb8 70%, #c9bca3 100%)'
                   }}
                 >
-                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
-                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                  <div className="flex h-[520px] md:h-[600px] items-center">
+                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
                           Get paid faster
@@ -1389,7 +1394,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
                         <div className="relative">
                           <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
                             <div className="flex items-center justify-between mb-6">
@@ -1427,6 +1432,7 @@ export default function Landing() {
                             </div>
                           </div>
                         </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1441,8 +1447,9 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #203e22 70%, #1a3319 100%)'
                   }}
                 >
-                  <div className="container px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto relative">
-                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                  <div className="flex h-[520px] md:h-[600px] items-center">
+                    <div className="container px-6 md:px-12 max-w-7xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                           Your success is our business
@@ -1462,7 +1469,7 @@ export default function Landing() {
                         </div>
                       </div>
                       
-                      <div className="lg:w-1/2 relative min-h-[450px] md:min-h-[520px] w-full flex items-center justify-center">
+                      <div className="lg:w-1/2 relative w-full flex items-center justify-center">
                         <div className="relative">
                           <div className="grid grid-cols-2 gap-4 md:gap-6">
                             <div className="bg-white/95 rounded-2xl p-5 shadow-xl transform hover:scale-105 transition-transform">
@@ -1494,6 +1501,7 @@ export default function Landing() {
                               <p className="text-sm text-gray-500">Electronic checks</p>
                             </div>
                           </div>
+                        </div>
                         </div>
                       </div>
                     </div>
