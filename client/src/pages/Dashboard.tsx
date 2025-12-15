@@ -211,15 +211,23 @@ export default function Dashboard() {
     const end = dateRange?.to || endOfMonth(new Date());
     const days = eachDayOfInterval({ start, end });
     
-    // If demo mode is active or no transactions, show demo data with steady upward growth (deterministic)
+    // If demo mode is active or no transactions, show demo data with organic upward growth
     if (user?.demoActive || transactions.length === 0) {
+      // Pre-defined organic growth pattern with natural variation
+      const organicMultipliers = [
+        1.00, 0.92, 1.08, 1.15, 1.03, 1.22, 1.18, 1.31, 1.25, 1.38,
+        1.42, 1.35, 1.52, 1.48, 1.61, 1.55, 1.68, 1.72, 1.65, 1.78,
+        1.85, 1.79, 1.92, 1.88, 2.01, 1.95, 2.12, 2.08, 2.21, 2.28,
+        2.18, 2.35, 2.42, 2.38, 2.52, 2.48, 2.61, 2.58, 2.72, 2.68
+      ];
       return days.map((day, index) => {
-        const baseValue = 15000;
-        const growth = index * 1200;
+        const baseValue = 18000;
+        const multiplier = organicMultipliers[index % organicMultipliers.length];
+        const current = Math.round(baseValue * multiplier);
         return { 
           date: format(day, "MMM d"), 
-          current: baseValue + growth, 
-          previous: Math.round((baseValue + growth) * 0.85) 
+          current: current, 
+          previous: Math.round(current * 0.82) 
         };
       });
     }
@@ -649,6 +657,12 @@ export default function Dashboard() {
                 <ResponsiveContainer width="100%" height="100%">
                   {chartType === 'bar' ? (
                     <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }} barGap={4}>
+                      <defs>
+                        <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#73cb43" stopOpacity={1} />
+                          <stop offset="100%" stopColor="#8fdc65" stopOpacity={1} />
+                        </linearGradient>
+                      </defs>
                       <CartesianGrid stroke="#e5e7eb" vertical={false} strokeDasharray="0" />
                       <XAxis 
                         dataKey="date" 
@@ -677,7 +691,7 @@ export default function Dashboard() {
                         formatter={(value: number) => `$${(value / 1000).toFixed(0)}k`}
                         cursor={{ fill: 'transparent' }}
                       />
-                      <Bar dataKey="current" fill="#73cb43" name="Current Period" radius={[0, 0, 0, 0]} barSize={12} />
+                      <Bar dataKey="current" fill="url(#barGradient)" name="Current Period" radius={[0, 0, 0, 0]} barSize={12} />
                     </BarChart>
                   ) : (
                     <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
