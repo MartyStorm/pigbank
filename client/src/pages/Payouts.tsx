@@ -96,7 +96,7 @@ export default function Payouts() {
               <div className="text-3xl font-bold text-[#39870E] dark:text-green-300">
                 {lastPayout ? formatAmount(lastPayout.amount) : "—"}
               </div>
-              <p className="text-base mt-1 text-[#39870E]/80 dark:text-green-400/80">
+              <p className="text-lg mt-1 text-[#39870E] dark:text-green-400 font-semibold">
                 {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
               </p>
             </CardContent>
