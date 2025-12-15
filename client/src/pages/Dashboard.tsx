@@ -185,8 +185,8 @@ export default function Dashboard() {
     const totalTxns = transactions.length;
     const approvalRate = totalTxns > 0 ? (approved.length / totalTxns) * 100 : 0;
     
-    // If no transactions, show demo data with realistic numbers
-    if (transactions.length === 0) {
+    // If demo mode is active or no transactions, show demo data with realistic numbers
+    if (user?.demoActive || transactions.length === 0) {
       return [
         { title: "Today's Gross Sales", value: "$47,892", trend: "+12.4%", trendUp: true, icon: DollarSign },
         { title: "Approval Rate", value: "89%", trend: "+2.1%", trendUp: true, icon: CreditCard },
@@ -203,7 +203,7 @@ export default function Dashboard() {
       { title: "Declined Amount", value: `$${declinedAmount.toLocaleString("en-US", { maximumFractionDigits: 0 })}`, trend: "—", trendUp: false, icon: ArrowDownRight },
       { title: "Refund Amount", value: `$${refundedAmount.toLocaleString("en-US", { maximumFractionDigits: 0 })}`, trend: "—", trendUp: true, icon: ArrowUpRight },
     ];
-  }, [transactions]);
+  }, [transactions, user?.demoActive]);
 
   const chartData = useMemo(() => {
     // Use the selected date range
@@ -211,8 +211,8 @@ export default function Dashboard() {
     const end = dateRange?.to || endOfMonth(new Date());
     const days = eachDayOfInterval({ start, end });
     
-    // If no transactions, show demo data with steady upward growth (deterministic)
-    if (transactions.length === 0) {
+    // If demo mode is active or no transactions, show demo data with steady upward growth (deterministic)
+    if (user?.demoActive || transactions.length === 0) {
       return days.map((day, index) => {
         const baseValue = 15000;
         const growth = index * 1200;
@@ -233,7 +233,7 @@ export default function Dashboard() {
       const total = dayTxns.reduce((sum, t) => sum + parseFloat(t.amount), 0);
       return { date: format(day, "MMM d"), current: total, previous: 0 };
     });
-  }, [transactions, dateRange]);
+  }, [transactions, dateRange, user?.demoActive]);
 
   const transactionStatusData = useMemo(() => {
     const approved = transactions.filter(t => t.status === "Approved").length;
@@ -242,8 +242,8 @@ export default function Dashboard() {
     const errors = transactions.filter(t => t.status === "Error").length;
     const total = transactions.length || 1;
     
-    // If no data at all, show demo data with realistic percentages
-    if (transactions.length === 0) {
+    // If demo mode is active or no data, show demo data with realistic percentages
+    if (user?.demoActive || transactions.length === 0) {
       return [
         { name: "Charges", value: 892, percentage: 89, color: "#73cb43", chartValue: 89 },
         { name: "Refunds", value: 34, percentage: 3, color: "#1877F2", chartValue: 3 },
@@ -258,21 +258,25 @@ export default function Dashboard() {
       { name: "Declines", value: declined, percentage: Math.round((declined / total) * 100), color: "#b91c1c", chartValue: declined },
       { name: "Errors", value: errors, percentage: Math.round((errors / total) * 100), color: "#f0b100", chartValue: errors },
     ];
-  }, [transactions]);
+  }, [transactions, user?.demoActive]);
 
   const payoutBalance = useMemo(() => {
-    // If no transactions, show demo payout balance
-    if (transactions.length === 0) {
+    // If demo mode is active or no transactions, show demo payout balance
+    if (user?.demoActive || transactions.length === 0) {
       return 47892;
     }
     return transactions
       .filter(t => t.status === "Approved")
       .reduce((sum, t) => sum + parseFloat(t.amount), 0);
-  }, [transactions]);
+  }, [transactions, user?.demoActive]);
 
   const chargebackCount = useMemo(() => {
+    // If demo mode is active, always show 0 chargebacks
+    if (user?.demoActive) {
+      return 0;
+    }
     return transactions.filter(t => t.status === "Chargeback").length;
-  }, [transactions]);
+  }, [transactions, user?.demoActive]);
   
   // Use CSS variable for grid color to handle dark mode
   const gridColor = "var(--border)";
