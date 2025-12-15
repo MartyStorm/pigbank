@@ -1278,13 +1278,13 @@ export default function Landing() {
                           />
                           
                           <div 
-                            className="relative z-10"
+                            className="relative z-10 flex-shrink-0"
                             style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                           >
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="w-[340px] h-auto drop-shadow-2xl"
+                              className="w-[340px] min-w-[340px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
