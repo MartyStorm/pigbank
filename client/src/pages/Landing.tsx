@@ -1270,12 +1270,12 @@ export default function Landing() {
                         </div>
                         
                         <div className="lg:w-2/5 relative w-full flex items-center justify-center">
-                        <div className="relative flex items-center justify-center">
+                        <div className="relative flex items-end justify-center">
                           <img 
                             src="/pig-mascot.png" 
                             alt="PigBank Mascot" 
-                            className="relative w-32 md:w-44 lg:w-52 z-20 drop-shadow-2xl -mr-6 md:-mr-10"
-                            style={{ transform: `translateY(${32 + scrollY * 0.02}px)` }}
+                            className="relative w-40 md:w-52 lg:w-60 z-20 drop-shadow-2xl -mr-6 md:-mr-10"
+                            style={{ transform: `translateY(${scrollY * 0.02}px)` }}
                           />
                           
                           <div 
