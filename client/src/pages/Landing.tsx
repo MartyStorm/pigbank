@@ -1248,14 +1248,14 @@ export default function Landing() {
                   </div>
                   
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
-                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                    <div className="w-full px-8 md:px-16 lg:px-24 max-w-[1600px] mx-auto relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                        <div className="lg:w-[45%] lg:max-w-[480px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                             <span className="whitespace-nowrap">Built-for-you</span><br />
                             payment processor
                           </h1>
-                          <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                          <p className="text-lg md:text-xl text-white/90">
                             Fast approvals, comprehensive data security, transparent rates, dedicated account representative customer support, and tailored integrations built to fit your existing systems.
                           </p>
                           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
@@ -1270,7 +1270,7 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end min-w-0">
+                        <div className="lg:w-[55%] relative flex items-center justify-center lg:justify-end">
                           <div 
                             className="relative flex items-end"
                             style={{ transform: `translateY(${scrollY * 0.015}px)` }}
@@ -1278,12 +1278,12 @@ export default function Landing() {
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="w-24 md:w-32 lg:w-44 h-auto drop-shadow-2xl flex-shrink-0 -mr-6 md:-mr-8 lg:-mr-10 z-20 self-end mb-2"
+                              className="w-28 md:w-40 lg:w-56 xl:w-64 h-auto drop-shadow-2xl flex-shrink-0 -mr-8 md:-mr-12 lg:-mr-16 z-20 self-end mb-4"
                             />
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[300px] md:w-[400px] lg:w-[500px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[340px] md:w-[480px] lg:w-[580px] xl:w-[680px] h-auto drop-shadow-2xl flex-shrink-0"
                             />
                           </div>
                         </div>
@@ -1532,7 +1532,7 @@ export default function Landing() {
                   className={`relative w-12 h-1.5 rounded-full overflow-hidden transition-colors ${
                     index === heroCurrentSlide 
                       ? 'bg-white hover:bg-white' 
-                      : 'bg-white/90 hover:bg-white'
+                      : 'bg-white/40 hover:bg-white/60'
                   }`}
                   data-testid={`button-hero-progress-${index}`}
                 >
