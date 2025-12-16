@@ -1248,9 +1248,9 @@ export default function Landing() {
                   </div>
                   
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
-                      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-                        <div className="lg:w-[45%] lg:max-w-[480px] space-y-6 text-center lg:text-left flex-shrink-0">
+                    <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+                        <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                             <span className="whitespace-nowrap">Built-for-you</span><br />
                             payment processor
@@ -1270,25 +1270,25 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-[55%] relative flex items-center justify-center lg:justify-end">
+                        <div className="lg:w-[60%] relative flex items-center justify-center lg:justify-end">
                           <div 
-                            className="relative flex items-end"
+                            className="relative"
                             style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                           >
                             <img 
-                              src="/pig-suit-new.png" 
-                              alt="PigBank Mascot" 
-                              className="w-20 md:w-28 lg:w-36 xl:w-44 h-auto drop-shadow-2xl flex-shrink-0 -mr-4 md:-mr-6 lg:-mr-8 z-30 self-end mb-4"
+                              src="/macbook-dashboard-new.png" 
+                              alt="PigBank Dashboard on MacBook" 
+                              className="w-[360px] md:w-[480px] lg:w-[580px] xl:w-[680px] h-auto drop-shadow-2xl"
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="w-[60px] md:w-[80px] lg:w-[100px] xl:w-[120px] h-auto drop-shadow-2xl flex-shrink-0 -mr-6 md:-mr-10 lg:-mr-14 z-20 self-end"
+                              className="absolute w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto drop-shadow-2xl z-20 bottom-0 left-[5%]"
                             />
                             <img 
-                              src="/macbook-dashboard-new.png" 
-                              alt="PigBank Dashboard on MacBook" 
-                              className="w-[260px] md:w-[360px] lg:w-[440px] xl:w-[520px] h-auto drop-shadow-2xl flex-shrink-0"
+                              src="/pig-suit-new.png" 
+                              alt="PigBank Mascot" 
+                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 -left-[8%]"
                             />
                           </div>
                         </div>
