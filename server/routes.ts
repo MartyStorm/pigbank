@@ -553,10 +553,18 @@ export async function registerRoutes(
         });
       }
       
-      // Create payouts
-      const payoutStatuses = ["Completed", "Completed", "Completed", "Processing", "Pending"];
-      for (let i = 0; i < 8; i++) {
-        const amount = (Math.random() * 15000 + 1000).toFixed(2);
+      // Create payouts - ensure Processing payouts total around $11k
+      const payoutData = [
+        { status: "Processing", amount: "6847.52" },
+        { status: "Processing", amount: "4589.23" },
+        { status: "Completed", amount: "7320.08" },
+        { status: "Completed", amount: "5420.15" },
+        { status: "Completed", amount: "8932.44" },
+        { status: "Completed", amount: "3156.89" },
+        { status: "Pending", amount: "4210.67" },
+        { status: "Pending", amount: "2890.33" },
+      ];
+      for (let i = 0; i < payoutData.length; i++) {
         const daysAgo = i * 7 + Math.floor(Math.random() * 7);
         const payoutDate = new Date(now.getTime() - daysAgo * 24 * 60 * 60 * 1000);
         const arrivalDate = new Date(payoutDate.getTime() + 2 * 24 * 60 * 60 * 1000);
@@ -564,8 +572,8 @@ export async function registerRoutes(
         await storage.createPayoutWithDate({
           userId,
           payoutId: `PAY-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
-          amount,
-          status: payoutStatuses[Math.floor(Math.random() * payoutStatuses.length)],
+          amount: payoutData[i].amount,
+          status: payoutData[i].status,
           destination: "Bank Account ****4521",
           type: "Standard",
           arrivalDate,
