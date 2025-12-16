@@ -1500,27 +1500,29 @@ export default function Landing() {
             </CarouselContent>
           </Carousel>
           
-          {/* Navigation arrows */}
-          <button
-            onClick={() => {
-              heroApi?.scrollPrev();
-              setHeroProgress(0);
-            }}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity"
-            data-testid="button-hero-prev"
-          >
-            <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
-          </button>
-          <button
-            onClick={() => {
-              heroApi?.scrollNext();
-              setHeroProgress(0);
-            }}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity"
-            data-testid="button-hero-next"
-          >
-            <ChevronRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
-          </button>
+          {/* Navigation arrows - aligned with header max-w-7xl container */}
+          <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none">
+            <button
+              onClick={() => {
+                heroApi?.scrollPrev();
+                setHeroProgress(0);
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto"
+              data-testid="button-hero-prev"
+            >
+              <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
+            </button>
+            <button
+              onClick={() => {
+                heroApi?.scrollNext();
+                setHeroProgress(0);
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto"
+              data-testid="button-hero-next"
+            >
+              <ChevronRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
+            </button>
+          </div>
           
           {/* Carousel progress indicators with pause button */}
           <div 
