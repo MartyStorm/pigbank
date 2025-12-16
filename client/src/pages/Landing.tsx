@@ -1531,14 +1531,15 @@ export default function Landing() {
                   }}
                   className={`relative w-12 h-1.5 rounded-full overflow-hidden transition-colors ${
                     index === heroCurrentSlide 
-                      ? 'bg-white/70 hover:bg-white/80' 
-                      : 'bg-white/30 hover:bg-white/40'
+                      ? 'bg-white hover:bg-white' 
+                      : 'bg-white/90 hover:bg-white'
                   }`}
                   data-testid={`button-hero-progress-${index}`}
                 >
                   <div 
-                    className="absolute left-0 top-0 h-full bg-white rounded-full transition-all duration-75"
+                    className="absolute left-0 top-0 h-full rounded-full transition-all duration-75"
                     style={{ 
+                      backgroundColor: '#1877F2',
                       width: index === heroCurrentSlide 
                         ? `${heroProgress}%` 
                         : index < heroCurrentSlide 
