@@ -1278,12 +1278,17 @@ export default function Landing() {
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="w-28 md:w-40 lg:w-56 xl:w-64 h-auto drop-shadow-2xl flex-shrink-0 -mr-8 md:-mr-12 lg:-mr-16 z-20 self-end mb-4"
+                              className="w-20 md:w-28 lg:w-36 xl:w-44 h-auto drop-shadow-2xl flex-shrink-0 -mr-6 md:-mr-8 lg:-mr-10 z-20 self-end mb-4"
                             />
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[340px] md:w-[480px] lg:w-[580px] xl:w-[680px] h-auto drop-shadow-2xl flex-shrink-0"
+                              className="w-[260px] md:w-[360px] lg:w-[440px] xl:w-[520px] h-auto drop-shadow-2xl flex-shrink-0"
+                            />
+                            <img 
+                              src="/iphone-payouts.png" 
+                              alt="PigBank Payouts on iPhone" 
+                              className="w-[80px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-auto drop-shadow-2xl flex-shrink-0 -ml-8 md:-ml-12 lg:-ml-16 z-30 self-end"
                             />
                           </div>
                         </div>
