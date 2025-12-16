@@ -1248,7 +1248,7 @@ export default function Landing() {
                   </div>
                   
                   <div className="flex h-[560px] md:h-[650px] items-center">
-                    <div className="w-full px-8 md:px-16 lg:px-24 max-w-[1600px] mx-auto relative z-10">
+                    <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
                         <div className="lg:w-[45%] lg:max-w-[480px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
