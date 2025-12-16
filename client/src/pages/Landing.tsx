@@ -1270,26 +1270,26 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-center pr-4 md:pr-8 lg:pr-12">
-                        <div className="relative flex items-end justify-center">
-                          <img 
-                            src="/pig-suit-new.png" 
-                            alt="PigBank Mascot" 
-                            className="relative w-48 md:w-60 lg:w-72 z-20 drop-shadow-2xl -mr-6 md:-mr-12"
-                            style={{ transform: `translateY(${scrollY * 0.02}px)` }}
-                          />
-                          
-                          <div 
-                            className="relative z-10 flex-shrink-0"
-                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
-                          >
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center overflow-visible">
+                          <div className="relative flex items-end justify-center">
                             <img 
-                              src="/macbook-dashboard-new.png" 
-                              alt="PigBank Dashboard on MacBook" 
-                              className="w-[500px] md:w-[620px] lg:w-[750px] h-auto drop-shadow-2xl flex-shrink-0"
+                              src="/pig-suit-new.png" 
+                              alt="PigBank Mascot" 
+                              className="absolute left-0 bottom-0 w-32 md:w-44 lg:w-56 z-20 drop-shadow-2xl -translate-x-[70%]"
+                              style={{ transform: `translateX(-70%) translateY(${scrollY * 0.02}px)` }}
                             />
+                            
+                            <div 
+                              className="relative z-10"
+                              style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                            >
+                              <img 
+                                src="/macbook-dashboard-new.png" 
+                                alt="PigBank Dashboard on MacBook" 
+                                className="w-[320px] md:w-[420px] lg:w-[520px] h-auto drop-shadow-2xl"
+                              />
+                            </div>
                           </div>
-                        </div>
                         </div>
                       </div>
                     </div>
