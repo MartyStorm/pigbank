@@ -1270,13 +1270,13 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center overflow-visible">
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
                           <div className="relative flex items-end justify-center">
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute left-0 bottom-0 w-32 md:w-44 lg:w-56 z-20 drop-shadow-2xl -translate-x-[70%]"
-                              style={{ transform: `translateX(-70%) translateY(${scrollY * 0.02}px)` }}
+                              className="relative w-28 md:w-36 lg:w-44 z-20 drop-shadow-2xl -mr-4 md:-mr-6 lg:-mr-8 self-end"
+                              style={{ transform: `translateY(${scrollY * 0.02}px)` }}
                             />
                             
                             <div 
@@ -1286,7 +1286,7 @@ export default function Landing() {
                               <img 
                                 src="/macbook-dashboard-new.png" 
                                 alt="PigBank Dashboard on MacBook" 
-                                className="w-[320px] md:w-[420px] lg:w-[520px] h-auto drop-shadow-2xl"
+                                className="w-[280px] md:w-[380px] lg:w-[480px] h-auto drop-shadow-2xl"
                               />
                             </div>
                           </div>

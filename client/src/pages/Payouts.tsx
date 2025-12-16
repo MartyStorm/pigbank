@@ -86,31 +86,59 @@ export default function Payouts() {
         </div>
         
         <div className="grid gap-4 md:grid-cols-2">
-          <Card className="border-none shadow-sm bg-blue-100 dark:bg-blue-950/30">
-            <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-blue-700 dark:text-blue-400">Next Payout</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-blue-700 dark:text-blue-100">
-                {processingPayouts.length > 0 ? formatDate(processingPayouts[0].arrivalDate) : (nextPayout ? formatDate(nextPayout.arrivalDate) : "—")}
+          <Card className="border-2 border-blue-400 shadow-sm bg-blue-50 dark:bg-blue-950/30 dark:border-blue-700 rounded-xl">
+            <CardContent className="p-5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-gray-900 dark:text-white">Next Payout</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {processingPayouts.length > 0 ? formatDate(processingPayouts[0].arrivalDate) : (nextPayout ? formatDate(nextPayout.arrivalDate) : "—")}
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {processingTotal > 0 ? `$${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "—"}
+                  </p>
+                  <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                    {processingTotal > 0 ? "Processing" : "No pending payouts"}
+                  </p>
+                </div>
               </div>
-              <p className="text-lg mt-1 text-blue-700 dark:text-blue-400 font-semibold">
-                {processingTotal > 0 ? `Processing $${processingTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "No pending payouts"}
-              </p>
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-sm bg-[#73cb43]/20 dark:bg-green-950/30">
-            <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium text-[#39870E] dark:text-green-400">Last Payout</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-[#39870E] dark:text-green-300">
-                {lastPayout ? formatAmount(lastPayout.amount) : "—"}
+          <Card className="border-2 border-[#39870E] shadow-sm bg-[#e8f5e0] dark:bg-green-950/30 dark:border-green-700 rounded-xl">
+            <CardContent className="p-5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#d4edda] dark:bg-green-900/50 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#39870E] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-gray-900 dark:text-white">Last Payout</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {lastPayout ? formatAmount(lastPayout.amount) : "—"}
+                  </p>
+                  <p className="text-sm text-[#39870E] dark:text-green-400 font-medium">
+                    Completed
+                  </p>
+                </div>
               </div>
-              <p className="text-lg mt-1 text-[#39870E] dark:text-green-400 font-semibold">
-                {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
-              </p>
             </CardContent>
           </Card>
         </div>
