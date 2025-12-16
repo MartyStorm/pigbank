@@ -86,7 +86,7 @@ export default function Payouts() {
         </div>
         
         <div className="grid gap-4 md:grid-cols-2">
-          <Card className="border-2 border-blue-400 shadow-sm bg-blue-50 dark:bg-blue-950/30 dark:border-blue-700 rounded-xl">
+          <Card className="border border-blue-400 shadow-sm bg-blue-50 dark:bg-blue-950/30 dark:border-blue-700 rounded-xl">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -114,14 +114,12 @@ export default function Payouts() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-[#39870E] shadow-sm bg-[#e8f5e0] dark:bg-green-950/30 dark:border-green-700 rounded-xl">
+          <Card className="border border-[#39870E] shadow-sm bg-[#73cb43]/10 dark:bg-green-950/30 dark:border-green-700 rounded-xl">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#d4edda] dark:bg-green-900/50 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#39870E] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                  <div className="w-10 h-10 rounded-full bg-[#73cb43]/20 dark:bg-green-900/50 flex items-center justify-center">
+                    <span className="text-lg font-bold text-[#39870E] dark:text-green-400">$</span>
                   </div>
                   <div>
                     <p className="text-lg font-semibold text-gray-900 dark:text-white">Last Payout</p>
