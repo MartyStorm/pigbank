@@ -1271,24 +1271,21 @@ export default function Landing() {
                         </div>
                         
                         <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
-                          <div className="relative flex items-end justify-center">
+                          <div 
+                            className="relative"
+                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                          >
+                            <img 
+                              src="/macbook-dashboard-new.png" 
+                              alt="PigBank Dashboard on MacBook" 
+                              className="w-[320px] md:w-[420px] lg:w-[520px] h-auto drop-shadow-2xl"
+                            />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="relative w-28 md:w-36 lg:w-44 z-20 drop-shadow-2xl -mr-4 md:-mr-6 lg:-mr-8 self-end"
-                              style={{ transform: `translateY(${scrollY * 0.02}px)` }}
+                              className="absolute w-32 md:w-40 lg:w-52 z-20 drop-shadow-2xl bottom-0 -left-12 md:-left-16 lg:-left-20"
+                              style={{ transform: `translateY(${scrollY * 0.005}px)` }}
                             />
-                            
-                            <div 
-                              className="relative z-10"
-                              style={{ transform: `translateY(${scrollY * 0.015}px)` }}
-                            >
-                              <img 
-                                src="/macbook-dashboard-new.png" 
-                                alt="PigBank Dashboard on MacBook" 
-                                className="w-[280px] md:w-[380px] lg:w-[480px] h-auto drop-shadow-2xl"
-                              />
-                            </div>
                           </div>
                         </div>
                       </div>
