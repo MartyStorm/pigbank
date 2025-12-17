@@ -1577,11 +1577,6 @@ export default function Landing() {
             </button>
           </div>
           
-          <div className="flex justify-center py-2">
-            <p className="text-center text-xs text-gray-500 px-4 py-1">
-              Data shown is for illustrative purposes only. Past performance does not guarantee future results.
-            </p>
-          </div>
         </section>
 
         <section className="bg-[#15391c] py-8">
