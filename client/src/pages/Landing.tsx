@@ -686,7 +686,7 @@ export default function Landing() {
         </div>
       </header>
 
-      <main className="pt-20">
+      <main>
         <section className="overflow-hidden relative">
           <Carousel
             setApi={setHeroApi}
