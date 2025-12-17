@@ -1243,7 +1243,7 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[850px] md:min-h-[800px] lg:h-[650px] items-center pt-20 pb-24 md:pt-24 md:pb-28 lg:py-0">
+                  <div className="flex min-h-[850px] md:min-h-[800px] lg:h-[650px] items-center pt-8 pb-16 md:pt-16 md:pb-20 lg:py-0">
                     <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
@@ -1254,7 +1254,7 @@ export default function Landing() {
                           <p className="text-lg md:text-xl text-white/90">
                             Fast approvals, comprehensive data security, transparent rates, dedicated account representative customer support, and tailored integrations built to fit your existing systems.
                           </p>
-                          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                          <div className="flex gap-4 justify-center lg:justify-start pt-4">
                             <Button 
                               asChild 
                               size="lg" 
