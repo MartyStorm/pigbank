@@ -689,7 +689,7 @@ export default function Landing() {
       </header>
 
       <main>
-        <section className="overflow-hidden relative">
+        <section className="overflow-hidden relative bg-[#4a9a2a]">
           <Carousel
             setApi={setHeroApi}
             opts={{ loop: true }}
