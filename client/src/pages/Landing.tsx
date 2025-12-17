@@ -1731,6 +1731,8 @@ export default function Landing() {
           </div>
         </section>
 
+        <AppleScrollSection />
+
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
             <div className="mb-12">
@@ -1993,8 +1995,6 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
-        <AppleScrollSection />
 
         <HorizontalScrollText />
 
