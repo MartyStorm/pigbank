@@ -1578,6 +1578,8 @@ export default function Landing() {
           
         </section>
 
+        <div className="h-12 md:h-16 bg-white"></div>
+
         <section className="bg-[#15391c] py-8">
           <div className="container px-4 md:px-6 max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
