@@ -1247,9 +1247,9 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex h-[560px] md:h-[650px] items-center">
+                  <div className="flex min-h-[850px] md:min-h-[800px] lg:h-[650px] items-center py-16 lg:py-0">
                     <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
-                      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+                      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                             <span className="whitespace-nowrap">Built-for-you</span><br />
