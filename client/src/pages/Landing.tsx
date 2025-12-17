@@ -1512,8 +1512,7 @@ export default function Landing() {
                 heroApi?.scrollPrev();
                 setHeroProgress(0);
               }}
-              className="absolute top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto"
-              style={{ left: '6px' }}
+              className="absolute top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto left-[6px] lg:left-[16px] xl:left-[26px] 2xl:left-[36px]"
               data-testid="button-hero-prev"
             >
               <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
@@ -1523,8 +1522,7 @@ export default function Landing() {
                 heroApi?.scrollNext();
                 setHeroProgress(0);
               }}
-              className="absolute top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto"
-              style={{ right: '6px' }}
+              className="absolute top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto right-[6px] lg:right-[16px] xl:right-[26px] 2xl:right-[36px]"
               data-testid="button-hero-next"
             >
               <ChevronRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
