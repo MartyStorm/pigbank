@@ -1244,7 +1244,7 @@ export default function Landing() {
                   </div>
                   
                   <div className="flex min-h-[750px] md:min-h-[730px] lg:h-[580px] items-center pt-0 pb-8 md:pt-4 md:pb-8 lg:py-4">
-                    <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
+                    <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10" style={{ marginTop: '-7px' }}>
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-4 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
