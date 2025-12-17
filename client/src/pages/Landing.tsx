@@ -1252,7 +1252,7 @@ export default function Landing() {
                             payment processor
                           </h1>
                           <p className="text-lg md:text-xl text-white/90">
-                            Fast approvals, comprehensive data security, transparent rates, dedicated account representative customer support, and tailored integrations built to fit your existing systems.
+                            Fast approvals, secure data, real customer support, & custom built to fit your business.
                           </p>
                           <div className="flex gap-4 justify-center lg:justify-start pt-2">
                             <Button 
