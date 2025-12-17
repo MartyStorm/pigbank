@@ -1261,7 +1261,8 @@ export default function Landing() {
                           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                             <Button 
                               asChild 
-                              className="bg-[#203e22] hover:bg-[#1a3319] text-white font-medium px-5 py-2 rounded-md transition-colors"
+                              size="lg" 
+                              className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
                               data-testid="button-get-started-hero"
                             >
                               <a href="/register">Get started</a>
