@@ -1282,18 +1282,18 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[430px] md:w-[520px] lg:w-[650px] xl:w-[750px] h-auto"
+                              className="w-[430px] md:w-[520px] lg:w-[650px] xl:w-[750px] 2xl:w-[850px] h-auto"
                               style={{ marginTop: '15px' }}
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[70px] md:w-[88px] lg:w-[110px] xl:w-[130px] h-auto z-20 bottom-0 left-0"
+                              className="absolute w-[73px] md:w-[88px] lg:w-[110px] xl:w-[127px] 2xl:w-[144px] h-auto z-20 bottom-0 left-0"
                             />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[100px] md:w-[135px] lg:w-[180px] xl:w-[200px] h-auto z-30 bottom-0 right-[-5%]"
+                              className="absolute w-[116px] md:w-[140px] lg:w-[175px] xl:w-[200px] 2xl:w-[230px] h-auto z-30 bottom-0 right-[-5%]"
                             />
                           </div>
                         </div>
