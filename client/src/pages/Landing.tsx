@@ -34,7 +34,9 @@ import {
   Clock,
   Pause,
   Play as PlayIcon,
-  Settings
+  Settings,
+  Headphones,
+  Users
 } from "lucide-react";
 import {
   Carousel,
@@ -1308,7 +1310,108 @@ export default function Landing() {
                 </div>
               </CarouselItem>
 
-              {/* Slide 2: Built for high-risk merchants */}
+              {/* Slide 2: Video - What is payment processing */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #1a1a1a 0%, #141414 40%, #0f0f0f 70%, #0a0a0a 100%)'
+                  }}
+                >
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                            See how payment processing works
+                          </h2>
+                          <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0">
+                            Watch how PigBank simplifies payments for your business. From checkout to payout in seconds.
+                          </p>
+                        </div>
+                        
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center">
+                          <div className="relative w-full max-w-md aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+                              <div className="text-center">
+                                <div className="w-20 h-20 rounded-full bg-[#73cb43] flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-[#65b53b] transition-colors shadow-lg">
+                                  <Play className="h-8 w-8 text-white ml-1" />
+                                </div>
+                                <p className="text-white/60 text-sm">Video coming soon</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* Slide 3: Customer Service */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #f0fdf4 0%, #dcfce7 35%, #bbf7d0 70%, #86efac 100%)'
+                  }}
+                >
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
+                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
+                            Real humans, real support
+                          </h2>
+                          <p className="text-lg md:text-xl text-gray-700 max-w-xl mx-auto lg:mx-0">
+                            No bots, no runaround. Talk to dedicated account managers who know your business and answer your calls.
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <Button 
+                              asChild 
+                              size="lg" 
+                              className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              data-testid="button-get-started-hero-3"
+                            >
+                              <a href="/register">Get personal support</a>
+                            </Button>
+                          </div>
+                        </div>
+                        
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
+                          <div className="relative bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
+                            <div className="flex items-center gap-4 mb-6">
+                              <div className="w-14 h-14 rounded-full bg-[#73cb43] flex items-center justify-center">
+                                <Smartphone className="h-7 w-7 text-white" />
+                              </div>
+                              <div>
+                                <p className="font-bold text-xl text-gray-900">24/7 Support</p>
+                                <p className="text-gray-500">Always here for you</p>
+                              </div>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">Dedicated account manager</span>
+                              </div>
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">Direct phone line</span>
+                              </div>
+                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                                <span className="text-gray-700">Average response: 2 minutes</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              {/* Slide 4: Security */}
               <CarouselItem className="pl-0">
                 <div 
                   className="relative overflow-hidden"
@@ -1319,56 +1422,56 @@ export default function Landing() {
                   <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                          Built for high-risk merchants
-                        </h2>
-                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
-                          Where others say no, we say yes. Advanced fraud protection, chargeback management, and dedicated support.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                          <Button 
-                            asChild 
-                            size="lg" 
-                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                            data-testid="button-get-started-hero-2"
-                          >
-                            <a href="/register">Get approved today</a>
-                          </Button>
-                        </div>
-                      </div>
-                      
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
-                        <div className="relative">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-64 h-64 rounded-full border-4 border-white/20 animate-ping" style={{ animationDuration: '3s' }} />
-                          </div>
-                          <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
-                            <div className="flex items-center gap-4 mb-6">
-                              <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
-                                <Shield className="h-8 w-8 text-white" />
-                              </div>
-                              <div>
-                                <p className="font-bold text-xl text-gray-900">Protected</p>
-                                <p className="text-gray-500">Advanced Security</p>
-                              </div>
-                            </div>
-                            <div className="space-y-3">
-                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                                <span className="text-gray-700">99.7% Approval Rate</span>
-                              </div>
-                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                                <span className="text-gray-700">AI Fraud Detection</span>
-                              </div>
-                              <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                                <span className="text-gray-700">Chargeback Protection</span>
-                              </div>
-                            </div>
+                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                            Bank-level security
+                          </h2>
+                          <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
+                            256-bit encryption, PCI DSS Level 1 compliance, and we never sell your data. Your security is our priority.
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <Button 
+                              asChild 
+                              size="lg" 
+                              className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              data-testid="button-get-started-hero-4"
+                            >
+                              <a href="/register">Secure your payments</a>
+                            </Button>
                           </div>
                         </div>
+                        
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
+                          <div className="relative">
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-64 h-64 rounded-full border-4 border-[#73cb43]/20 animate-ping" style={{ animationDuration: '3s' }} />
+                            </div>
+                            <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
+                              <div className="flex items-center gap-4 mb-6">
+                                <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
+                                  <Lock className="h-8 w-8 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-bold text-xl text-gray-900">Protected</p>
+                                  <p className="text-gray-500">Enterprise Security</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3">
+                                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                  <Shield className="h-5 w-5 text-[#73cb43]" />
+                                  <span className="text-gray-700">256-bit encryption</span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                  <Shield className="h-5 w-5 text-[#73cb43]" />
+                                  <span className="text-gray-700">PCI DSS Level 1</span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                                  <Shield className="h-5 w-5 text-[#73cb43]" />
+                                  <span className="text-gray-700">We never sell your data</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1376,7 +1479,7 @@ export default function Landing() {
                 </div>
               </CarouselItem>
 
-              {/* Slide 3: Fast payouts (beige - light) */}
+              {/* Slide 5: Get paid fast */}
               <CarouselItem className="pl-0">
                 <div 
                   className="relative overflow-hidden"
@@ -1387,121 +1490,64 @@ export default function Landing() {
                   <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-                          Get paid faster
-                        </h2>
-                        <p className="text-lg md:text-xl text-gray-700 max-w-xl mx-auto lg:mx-0">
-                          Same-day and next-day payouts. No waiting weeks for your money. Access your funds when you need them.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                          <Button 
-                            asChild 
-                            size="lg" 
-                            className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                            data-testid="button-get-started-hero-3"
-                          >
-                            <a href="/register">Start earning faster</a>
-                          </Button>
+                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
+                            Get paid faster
+                          </h2>
+                          <p className="text-lg md:text-xl text-gray-700 max-w-xl mx-auto lg:mx-0">
+                            Same-day and next-day payouts. No waiting weeks for your money. Access your funds when you need them.
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <Button 
+                              asChild 
+                              size="lg" 
+                              className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              data-testid="button-get-started-hero-5"
+                            >
+                              <a href="/register">Start earning faster</a>
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                      
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
-                        <div className="relative">
-                          <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
-                            <div className="flex items-center justify-between mb-6">
-                              <span className="text-lg font-semibold text-gray-900">Payout Schedule</span>
-                              <Zap className="h-6 w-6 text-[#73cb43]" />
-                            </div>
-                            <div className="space-y-4">
-                              <div className="flex items-center justify-between p-4 bg-[#73cb43]/10 rounded-xl border-2 border-[#73cb43]">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-3 h-3 rounded-full bg-[#73cb43]" />
-                                  <span className="font-medium text-gray-900">Same Day</span>
-                                </div>
-                                <span className="text-[#73cb43] font-bold">Instant</span>
+                        
+                        <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
+                          <div className="relative">
+                            <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
+                              <div className="flex items-center justify-between mb-6">
+                                <span className="text-lg font-semibold text-gray-900">Payout Schedule</span>
+                                <Zap className="h-6 w-6 text-[#73cb43]" />
                               </div>
-                              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-3 h-3 rounded-full bg-gray-400" />
-                                  <span className="font-medium text-gray-700">Next Day</span>
+                              <div className="space-y-4">
+                                <div className="flex items-center justify-between p-4 bg-[#73cb43]/10 rounded-xl border-2 border-[#73cb43]">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-3 h-3 rounded-full bg-[#73cb43]" />
+                                    <span className="font-medium text-gray-900">Same Day</span>
+                                  </div>
+                                  <span className="text-[#73cb43] font-bold">Instant</span>
                                 </div>
-                                <span className="text-gray-500">T+1</span>
-                              </div>
-                              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-3 h-3 rounded-full bg-gray-400" />
-                                  <span className="font-medium text-gray-700">Standard</span>
+                                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-3 h-3 rounded-full bg-gray-400" />
+                                    <span className="font-medium text-gray-700">Next Day</span>
+                                  </div>
+                                  <span className="text-gray-500">T+1</span>
                                 </div>
-                                <span className="text-gray-500">T+2</span>
+                                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-3 h-3 rounded-full bg-gray-400" />
+                                    <span className="font-medium text-gray-700">Standard</span>
+                                  </div>
+                                  <span className="text-gray-500">T+2</span>
+                                </div>
                               </div>
-                            </div>
-                            <div className="mt-6 pt-4 border-t border-gray-100">
-                              <div className="flex items-center gap-2 text-sm text-gray-600">
-                                <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
-                                <span>No hidden fees on payouts</span>
+                              <div className="mt-6 pt-4 border-t border-gray-100">
+                                <div className="flex items-center gap-2 text-sm text-gray-600">
+                                  <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                                  <span>No hidden fees on payouts</span>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-
-              {/* Slide 4: Accept payments everywhere (dark green - dark) */}
-              <CarouselItem className="pl-0">
-                <div 
-                  className="relative overflow-hidden"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #203e22 70%, #1a3319 100%)'
-                  }}
-                >
-                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
-                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
-                      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-                      <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                          Your success is our business
-                        </h2>
-                        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0">
-                          Cards, ACH, crypto, eChecks, and more. Give your customers the payment options they want.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                          <Button 
-                            asChild 
-                            size="lg" 
-                            className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                            data-testid="button-get-started-hero-4"
-                          >
-                            <a href="/register">Start accepting payments</a>
-                          </Button>
-                        </div>
-                      </div>
-                      
-                      <div className="lg:w-1/2 relative w-full flex items-center justify-center lg:justify-end">
-                        <div className="relative flex items-end justify-center">
-                          <img 
-                            src="/pig-mascot.png" 
-                            alt="PigBank Mascot" 
-                            className="relative w-40 md:w-52 lg:w-60 z-20 drop-shadow-2xl -mr-6 md:-mr-10"
-                            style={{ transform: `translateY(${scrollY * 0.02}px)` }}
-                          />
-                          
-                          <div 
-                            className="relative z-10 flex-shrink-0"
-                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
-                          >
-                            <img 
-                              src="/iphone-payouts.png" 
-                              alt="PigBank Payouts on iPhone" 
-                              className="w-[200px] md:w-[240px] h-auto drop-shadow-2xl flex-shrink-0"
-                            />
-                          </div>
-                        </div>
-                      </div>
                       </div>
                     </div>
                   </div>
@@ -1627,6 +1673,103 @@ export default function Landing() {
           </div>
         </section>
 
+        <section className="bg-[#e8f5e0]">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Payment processing for every risk level
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                We specialize in providing tailored payment solutions for merchants operating across all risk levels.
+              </p>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
+              <div 
+                className="group relative flex-1 bg-[#203e22] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                data-testid="card-high-risk"
+              >
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </div>
+                
+                <div className="mt-16 space-y-6">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    High risk industries
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {[
+                      "CBD & Hemp",
+                      "Adult products",
+                      "Bail bonds",
+                      "Guns & firearms",
+                      "Nutraceuticals",
+                      "Fantasy sports",
+                      "Tech support",
+                      "Kratom",
+                      "Vape & E-cig",
+                      "Collections",
+                    ].map((industry) => (
+                      <div key={industry} className="flex items-center gap-2 text-white/90">
+                        <CheckCircle2 className="h-4 w-4 text-[#9be870]" />
+                        <span className="text-sm">{industry}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-white/70 text-sm">
+                    Specialized underwriting for merchants others can't approve
+                  </span>
+                </div>
+              </div>
+
+              <div 
+                className="group relative flex-1 bg-[#c8e6b9] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                data-testid="card-low-risk"
+              >
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-[#203e22]/10 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-[#203e22]" />
+                </div>
+                
+                <div className="mt-16 space-y-6">
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#203e22]">
+                    Medium & Low risk
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {[
+                      "E-commerce",
+                      "SaaS",
+                      "Professional services",
+                      "Restaurants",
+                      "Healthcare",
+                      "Education",
+                      "Travel",
+                      "Retail",
+                      "Subscription",
+                      "Non-profit",
+                    ].map((industry) => (
+                      <div key={industry} className="flex items-center gap-2 text-[#203e22]/90">
+                        <CheckCircle2 className="h-4 w-4 text-[#203e22]" />
+                        <span className="text-sm">{industry}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-[#203e22]/70 text-sm">
+                    Competitive rates for traditional business models
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-4 bg-[#2f8a2b] overflow-hidden">
           <div className="relative flex overflow-hidden h-10">
             <div className="animate-marquee whitespace-nowrap flex items-center">
@@ -1744,97 +1887,120 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Payment processing for every risk level
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl">
-                We specialize in providing tailored payment solutions for merchants operating across all risk levels.
-              </p>
-            </div>
-            
-            <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
-              <div 
-                className="group relative flex-1 bg-[#203e22] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
-                data-testid="card-high-risk"
-              >
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                  <ArrowUpRight className="h-5 w-5 text-white" />
-                </div>
-                
-                <div className="mt-16 space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
-                    High risk industries
-                  </h3>
-                  
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {[
-                      "CBD & Hemp",
-                      "Adult products",
-                      "Bail bonds",
-                      "Guns & firearms",
-                      "Nutraceuticals",
-                      "Fantasy sports",
-                      "Tech support",
-                      "Kratom",
-                      "Vape & E-cig",
-                      "Collections",
-                    ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-white/90">
-                        <CheckCircle2 className="h-4 w-4 text-[#9be870]" />
-                        <span className="text-sm">{industry}</span>
-                      </div>
-                    ))}
+        {/* Customer Service Strip */}
+        <section className="bg-[#203e22] py-12 md:py-16">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+                  Real people. Real support.
+                </h3>
+                <p className="text-lg text-white/80 max-w-xl">
+                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Headphones className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">24/7 Support</p>
+                    <p className="text-white/70 text-sm">Always available</p>
                   </div>
                 </div>
-
-                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white/70 text-sm">
-                    Specialized underwriting for merchants others can't approve
-                  </span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">Dedicated Team</p>
+                    <p className="text-white/70 text-sm">Knows your business</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">2 Min Response</p>
+                    <p className="text-white/70 text-sm">Average wait time</p>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div 
-                className="group relative flex-1 bg-[#c8e6b9] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
-                data-testid="card-low-risk"
-              >
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-[#203e22]/10 flex items-center justify-center">
-                  <ArrowUpRight className="h-5 w-5 text-[#203e22]" />
-                </div>
-                
-                <div className="mt-16 space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#203e22]">
-                    Medium & Low risk
-                  </h3>
-                  
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {[
-                      "E-commerce",
-                      "SaaS",
-                      "Professional services",
-                      "Restaurants",
-                      "Healthcare",
-                      "Education",
-                      "Travel",
-                      "Retail",
-                      "Subscription",
-                      "Non-profit",
-                    ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-[#203e22]/90">
-                        <CheckCircle2 className="h-4 w-4 text-[#203e22]" />
-                        <span className="text-sm">{industry}</span>
-                      </div>
-                    ))}
+        {/* Security Section */}
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="lg:w-1/2 space-y-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Bank-level security you can trust
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
+                </p>
+                <div className="space-y-4 pt-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <Lock className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">256-bit encryption</h4>
+                      <p className="text-gray-600 text-sm">Every transaction is protected with military-grade encryption</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <ShieldCheck className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">PCI DSS Level 1</h4>
+                      <p className="text-gray-600 text-sm">The highest security certification in the payments industry</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">We never sell your data</h4>
+                      <p className="text-gray-600 text-sm">Your business data stays private—period. No exceptions.</p>
+                    </div>
                   </div>
                 </div>
-
-                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-[#203e22]/70 text-sm">
-                    Competitive rates for traditional business models
-                  </span>
+              </div>
+              <div className="lg:w-1/2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-[#73cb43]/20 rounded-full blur-3xl scale-150" />
+                  <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
+                        <Lock className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-xl text-gray-900">Fully Protected</p>
+                        <p className="text-gray-500">Enterprise Security</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">SOC 2 Type II Certified</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">99.99% Uptime SLA</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">Fraud Monitoring 24/7</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
