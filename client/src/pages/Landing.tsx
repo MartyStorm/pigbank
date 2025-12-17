@@ -1533,7 +1533,7 @@ export default function Landing() {
           
           {/* Carousel progress indicators with pause button */}
           <div 
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10"
           >
             <div className="flex items-center gap-2">
               {Array.from({ length: heroSlideCount }).map((_, index) => (
