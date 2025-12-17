@@ -1243,7 +1243,7 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[750px] md:min-h-[700px] lg:h-[580px] items-center pt-6 pb-8 md:pt-12 md:pb-8 lg:py-4">
+                  <div className="flex min-h-[750px] md:min-h-[730px] lg:h-[580px] items-center pt-6 pb-8 md:pt-12 md:pb-8 lg:py-4">
                     <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-4 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
@@ -1282,18 +1282,18 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[430px] md:w-[560px] lg:w-[650px] xl:w-[750px] h-auto"
+                              className="w-[430px] md:w-[520px] lg:w-[650px] xl:w-[750px] h-auto"
                               style={{ marginTop: '15px' }}
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[70px] md:w-[95px] lg:w-[110px] xl:w-[130px] h-auto z-20 bottom-0 left-0"
+                              className="absolute w-[70px] md:w-[88px] lg:w-[110px] xl:w-[130px] h-auto z-20 bottom-0 left-0"
                             />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[100px] md:w-[145px] lg:w-[180px] xl:w-[200px] h-auto z-30 bottom-0 right-[-5%]"
+                              className="absolute w-[100px] md:w-[135px] lg:w-[180px] xl:w-[200px] h-auto z-30 bottom-0 right-[-5%]"
                             />
                           </div>
                         </div>
