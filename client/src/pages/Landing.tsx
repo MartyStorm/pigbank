@@ -1284,12 +1284,12 @@ export default function Landing() {
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto drop-shadow-2xl z-20 bottom-0 left-[5%]"
+                              className="absolute w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto drop-shadow-2xl z-20 bottom-0 left-0"
                             />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 -left-[8%]"
+                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 -left-[13%]"
                             />
                           </div>
                         </div>
