@@ -1289,7 +1289,7 @@ export default function Landing() {
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 -left-[13%]"
+                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 right-[-5%]"
                             />
                           </div>
                         </div>
