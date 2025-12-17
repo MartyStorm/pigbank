@@ -1243,17 +1243,17 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-start md:items-center pt-10 pb-8 md:-mt-[5px] md:pt-4 md:pb-8 lg:mt-0 lg:py-4">
-                    <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
-                      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-4 lg:gap-12">
-                        <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-6 pb-8">
+                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
+                      <div className="flex flex-col items-center text-center gap-6">
+                        <div className="space-y-4 max-w-3xl">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                             The last payment processor you'll ever need
                           </h1>
-                          <p className="text-lg md:text-xl text-white/90">
+                          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
                             Fast approvals, secure data, real customer support, & custom built to fit your business.
                           </p>
-                          <div className="flex gap-4 justify-center lg:justify-start pt-2">
+                          <div className="flex gap-4 justify-center pt-2">
                             <Button 
                               asChild 
                               size="lg" 
@@ -1265,12 +1265,11 @@ export default function Landing() {
                           </div>
                         </div>
                         
-                        <div className="lg:w-[60%] relative flex items-center justify-center lg:justify-end">
+                        <div className="relative flex items-center justify-center mt-4">
                           <div 
                             className="relative"
-                            style={{ transform: `translateX(-22px) translateY(${scrollY * 0.015}px)` }}
+                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                           >
-                            {/* Unified shadow underneath all devices */}
                             <div 
                               className="absolute bottom-[-8px] left-[-10%] right-[-10%] h-[30px] rounded-[50%]"
                               style={{ 
@@ -1281,18 +1280,17 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[430px] md:w-[520px] lg:w-[650px] xl:w-[750px] 2xl:w-[850px] h-auto"
-                              style={{ marginTop: '15px' }}
+                              className="w-[380px] md:w-[500px] lg:w-[600px] xl:w-[700px] h-auto"
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[70px] md:w-[85px] lg:w-[105px] xl:w-[120px] 2xl:w-[135px] h-auto z-20 bottom-0 left-0"
+                              className="absolute w-[65px] md:w-[80px] lg:w-[100px] xl:w-[115px] h-auto z-20 bottom-0 left-0"
                             />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[95px] md:w-[115px] lg:w-[145px] xl:w-[165px] 2xl:w-[190px] h-auto z-30 bottom-0 right-[-5%]"
+                              className="absolute w-[90px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-auto z-30 bottom-0 right-[-5%]"
                             />
                           </div>
                         </div>
