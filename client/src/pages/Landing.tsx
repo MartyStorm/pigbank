@@ -1243,7 +1243,7 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[850px] md:min-h-[800px] lg:h-[650px] items-center pt-8 pb-16 md:pt-16 md:pb-20 lg:py-0">
+                  <div className="flex min-h-[750px] md:min-h-[700px] lg:h-[580px] items-center pt-6 pb-8 md:pt-8 md:pb-12 lg:py-4">
                     <div className="container px-12 md:px-16 max-w-7xl mx-auto relative z-10">
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
@@ -2147,24 +2147,6 @@ export default function Landing() {
         </div>
       </footer>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-[#1a1a1a] text-white py-3 px-4 flex items-center justify-between z-50 md:hidden">
-        <div className="flex items-center gap-3">
-          <img 
-            src="/pig-bank-logo-dark.png" 
-            alt="PigBank" 
-            className="h-6 w-auto object-contain" 
-          />
-          <span className="text-sm text-gray-300">Accept payments today</span>
-        </div>
-        <Button 
-          asChild 
-          size="sm" 
-          className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-4"
-          data-testid="button-get-started-sticky"
-        >
-          <a href="/register">Get started</a>
-        </Button>
-      </div>
 
       <style>{`
         @keyframes float {
