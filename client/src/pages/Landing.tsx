@@ -1311,7 +1311,7 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #2a2a2a 0%, #222222 40%, #1a1a1a 70%, #141414 100%)'
                   }}
                 >
-                  <div className="flex h-[560px] md:h-[650px] items-center">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
@@ -1379,7 +1379,7 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #f5efe4 0%, #e8dfd0 35%, #d9cdb8 70%, #c9bca3 100%)'
                   }}
                 >
-                  <div className="flex h-[560px] md:h-[650px] items-center">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
@@ -1454,7 +1454,7 @@ export default function Landing() {
                     background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #203e22 70%, #1a3319 100%)'
                   }}
                 >
-                  <div className="flex h-[560px] md:h-[650px] items-center">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
                       <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
