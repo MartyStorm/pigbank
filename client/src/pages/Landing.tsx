@@ -508,7 +508,7 @@ export default function Landing() {
   const [heroCurrentSlide, setHeroCurrentSlide] = useState(0);
   const [heroIsPaused, setHeroIsPaused] = useState(false);
   const [heroProgress, setHeroProgress] = useState(0);
-  const heroSlideCount = 4;
+  const heroSlideCount = 5;
   const heroSlideDuration = 10000; // 10 seconds
 
   // Hero carousel slide selection
