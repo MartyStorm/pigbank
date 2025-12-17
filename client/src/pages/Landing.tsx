@@ -1248,8 +1248,7 @@ export default function Landing() {
                       <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-4 lg:gap-12">
                         <div className="lg:w-[40%] lg:max-w-[420px] space-y-6 text-center lg:text-left flex-shrink-0">
                           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                            <span className="whitespace-nowrap">Built-for-you</span><br />
-                            payment processor
+                            The last payment processor you'll ever need
                           </h1>
                           <p className="text-lg md:text-xl text-white/90">
                             Fast approvals, secure data, real customer support, & custom built to fit your business.
