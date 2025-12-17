@@ -689,7 +689,12 @@ export default function Landing() {
       </header>
 
       <main>
-        <section className="overflow-hidden relative bg-[#4a9a2a]">
+        <section 
+          className="overflow-hidden relative"
+          style={{
+            background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
+          }}
+        >
           <Carousel
             setApi={setHeroApi}
             opts={{ loop: true }}
