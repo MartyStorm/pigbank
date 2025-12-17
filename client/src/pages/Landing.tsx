@@ -1278,7 +1278,7 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[380px] md:w-[500px] lg:w-[600px] xl:w-[700px] h-auto drop-shadow-2xl"
+                              className="w-[430px] md:w-[550px] lg:w-[650px] xl:w-[750px] h-auto drop-shadow-2xl"
                               style={{ marginTop: '30px' }}
                             />
                             <img 
