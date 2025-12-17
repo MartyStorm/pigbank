@@ -1668,6 +1668,12 @@ export default function Landing() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 bg-[#f5f0e8]">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            {/* Placeholder section - content coming soon */}
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 bg-[#f5f0e8] overflow-hidden">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div 
