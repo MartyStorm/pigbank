@@ -1746,7 +1746,7 @@ export default function Landing() {
               </div>
               
               <div 
-                className="group relative flex-1 bg-[#e8f5e0] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                className="group relative flex-1 bg-[#c8e6b9] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
                 data-testid="card-low-risk"
               >
                 <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-[#203e22]/10 flex items-center justify-center">
