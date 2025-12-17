@@ -1670,7 +1670,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="bg-white">
+        <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
             <div className="mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
