@@ -1581,26 +1581,38 @@ export default function Landing() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  FEATURED IN
+                  TOP PAYMENT PROCESSOR FOR HIGH-RISK
                 </p>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl font-bold text-white tracking-tight">Digital Transactions</span>
+                  <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                  </svg>
+                  <span className="text-xl font-bold text-white tracking-tight">Digital Transactions</span>
                 </div>
               </div>
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  FEATURED IN
+                  BEST MERCHANT SERVICES 2025
                 </p>
-                <div className="flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white tracking-tight">PaymentsJournal</span>
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.5L19 8l-7 3.5L5 8l7-3.5z"/>
+                  </svg>
+                  <span className="text-xl font-bold text-white tracking-tight">PaymentsJournal</span>
                 </div>
               </div>
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  FEATURED IN
+                  TRUSTED PAYMENT GATEWAY
                 </p>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl font-bold text-white tracking-tight">Business.com</span>
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <span className="text-[#15391c] font-bold text-sm">B</span>
+                  </div>
+                  <span className="text-xl font-bold text-white tracking-tight">Business.com</span>
                 </div>
               </div>
             </div>
