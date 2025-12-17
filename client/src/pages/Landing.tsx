@@ -1646,6 +1646,10 @@ export default function Landing() {
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">MAGENTO</span>
                   <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">SEZZLE</span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">QUICKBOOKS</span>
+                  <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">CUSTOM INTEGRATION</span>
                   <span className="text-white/60 mx-2">•</span>
                 </div>
@@ -1667,6 +1671,10 @@ export default function Landing() {
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">BIGCOMMERCE</span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">MAGENTO</span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">SEZZLE</span>
+                  <span className="text-white/60 mx-2">•</span>
+                  <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">QUICKBOOKS</span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">CUSTOM INTEGRATION</span>
                   <span className="text-white/60 mx-2">•</span>
