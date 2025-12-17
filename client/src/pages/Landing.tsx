@@ -589,11 +589,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header 
-        className={`border-b border-gray-100 bg-white fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-          headerVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
+      <header className="border-b border-gray-100 bg-white">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-10">
             <img 
