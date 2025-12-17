@@ -1273,7 +1273,7 @@ export default function Landing() {
                         <div className="lg:w-[60%] relative flex items-center justify-center lg:justify-end">
                           <div 
                             className="relative"
-                            style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                            style={{ transform: `translateX(-22px) translateY(${scrollY * 0.015}px)` }}
                           >
                             <img 
                               src="/macbook-dashboard-new.png" 
