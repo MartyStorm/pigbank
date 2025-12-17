@@ -1275,21 +1275,29 @@ export default function Landing() {
                             className="relative"
                             style={{ transform: `translateX(-22px) translateY(${scrollY * 0.015}px)` }}
                           >
+                            {/* Unified shadow underneath all devices */}
+                            <div 
+                              className="absolute bottom-[-8px] left-[-10%] right-[-10%] h-[30px] rounded-[50%]"
+                              style={{ 
+                                background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, transparent 70%)',
+                                filter: 'blur(8px)'
+                              }}
+                            />
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[430px] md:w-[550px] lg:w-[650px] xl:w-[750px] h-auto drop-shadow-2xl"
-                              style={{ marginTop: '30px' }}
+                              className="w-[430px] md:w-[550px] lg:w-[650px] xl:w-[750px] h-auto"
+                              style={{ marginTop: '35px' }}
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto drop-shadow-2xl z-20 bottom-0 left-0"
+                              className="absolute w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto z-20 bottom-0 left-0"
                             />
                             <img 
                               src="/pig-suit-new.png" 
                               alt="PigBank Mascot" 
-                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto drop-shadow-2xl z-30 bottom-0 right-[-5%]"
+                              className="absolute w-[100px] md:w-[140px] lg:w-[180px] xl:w-[200px] h-auto z-30 bottom-0 right-[-5%]"
                             />
                           </div>
                         </div>
