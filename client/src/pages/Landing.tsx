@@ -1673,6 +1673,123 @@ export default function Landing() {
           </div>
         </section>
 
+        <section className="py-4 bg-[#2f8a2b] overflow-hidden">
+          <div className="relative flex overflow-hidden h-10">
+            <div className="animate-marquee whitespace-nowrap flex items-center">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M15.337 3.415c-.084-.076-.196-.112-.306-.102-.114.008-.22.057-.297.143L6.742 12.23l5.692 1.566 2.903-10.381zm6.542 5.46l-3.107-2.94a.42.42 0 00-.288-.114.422.422 0 00-.288.114l-1.073 1.014 4.756 4.5V6.875zM5.61 13.622l-1.073-1.014a.422.422 0 00-.576 0l-3.107 2.94v4.576l4.756-4.5v-2.002zm12.78 1.206l-5.692-1.566-2.903 10.381c.084.076.196.112.306.102.114-.008.22-.057.297-.143l7.992-8.774z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SHOPIFY</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M2.289 4.729c-.217.644-.341 1.477-.341 2.547 0 3.398 2.106 5.746 5.461 5.746.241 0 .471-.012.698-.035v1.795c-.227.023-.457.035-.698.035-4.354 0-7.409-3.003-7.409-7.541 0-1.253.158-2.341.479-3.237l1.81.69zm19.371 11.555c.217-.644.341-1.477.341-2.547 0-3.398-2.106-5.746-5.461-5.746-.241 0-.471.012-.698.035V6.231c.227-.023.457-.035.698-.035 4.354 0 7.409 3.003 7.409 7.541 0 1.253-.158 2.341-.479 3.237l-1.81-.69zM12 3c-2.392 0-4.575.894-6.231 2.368l1.283 1.283C8.474 5.482 10.143 4.8 12 4.8s3.526.682 4.948 1.851l1.283-1.283C16.575 3.894 14.392 3 12 3zm0 18c2.392 0 4.575-.894 6.231-2.368l-1.283-1.283c-1.422 1.169-3.091 1.851-4.948 1.851s-3.526-.682-4.948-1.851l-1.283 1.283C7.425 20.106 9.608 21 12 21z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WOOCOMMERCE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18.5c-4.687 0-8.5-3.813-8.5-8.5S7.313 3.5 12 3.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5zm-2-12.5l4 4-4 4V8z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WORDPRESS</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M13.5 2L3 7v10l10.5 5 10.5-5V7L13.5 2zm0 2.18L21 8l-7.5 3.82L6 8l7.5-3.82zM5 9.5l7 3.5v7.5l-7-3.5V9.5zm9 11v-7.5l7-3.5v7.5l-7 3.5z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WIX</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l3 2v6l7 4 7-4V9l3-2-10-5zm0 15l-5-3v-4l5 3 5-3v4l-5 3z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SQUARESPACE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">BIGCOMMERCE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.18L18 8v8l-6 3-6-3V8l6-3.82z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">MAGENTO</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SEZZLE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">QUICKBOOKS</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <Settings className="h-5 w-5 text-white" />
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">CUSTOM INTEGRATION</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                </div>
+              ))}
+            </div>
+            <div className="animate-marquee2 whitespace-nowrap flex items-center absolute top-0">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M15.337 3.415c-.084-.076-.196-.112-.306-.102-.114.008-.22.057-.297.143L6.742 12.23l5.692 1.566 2.903-10.381zm6.542 5.46l-3.107-2.94a.42.42 0 00-.288-.114.422.422 0 00-.288.114l-1.073 1.014 4.756 4.5V6.875zM5.61 13.622l-1.073-1.014a.422.422 0 00-.576 0l-3.107 2.94v4.576l4.756-4.5v-2.002zm12.78 1.206l-5.692-1.566-2.903 10.381c.084.076.196.112.306.102.114-.008.22-.057.297-.143l7.992-8.774z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SHOPIFY</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M2.289 4.729c-.217.644-.341 1.477-.341 2.547 0 3.398 2.106 5.746 5.461 5.746.241 0 .471-.012.698-.035v1.795c-.227.023-.457.035-.698.035-4.354 0-7.409-3.003-7.409-7.541 0-1.253.158-2.341.479-3.237l1.81.69zm19.371 11.555c.217-.644.341-1.477.341-2.547 0-3.398-2.106-5.746-5.461-5.746-.241 0-.471.012-.698.035V6.231c.227-.023.457-.035.698-.035 4.354 0 7.409 3.003 7.409 7.541 0 1.253-.158 2.341.479-3.237l-1.81-.69zM12 3c-2.392 0-4.575.894-6.231 2.368l1.283 1.283C8.474 5.482 10.143 4.8 12 4.8s3.526.682 4.948 1.851l1.283-1.283C16.575 3.894 14.392 3 12 3zm0 18c2.392 0 4.575-.894 6.231-2.368l-1.283-1.283c-1.422 1.169-3.091 1.851-4.948 1.851s-3.526-.682-4.948-1.851l-1.283 1.283C7.425 20.106 9.608 21 12 21z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WOOCOMMERCE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18.5c-4.687 0-8.5-3.813-8.5-8.5S7.313 3.5 12 3.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5zm-2-12.5l4 4-4 4V8z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WORDPRESS</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M13.5 2L3 7v10l10.5 5 10.5-5V7L13.5 2zm0 2.18L21 8l-7.5 3.82L6 8l7.5-3.82zM5 9.5l7 3.5v7.5l-7-3.5V9.5zm9 11v-7.5l7-3.5v7.5l-7 3.5z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">WIX</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l3 2v6l7 4 7-4V9l3-2-10-5zm0 15l-5-3v-4l5 3 5-3v4l-5 3z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SQUARESPACE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">BIGCOMMERCE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.18L18 8v8l-6 3-6-3V8l6-3.82z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">MAGENTO</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">SEZZLE</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">QUICKBOOKS</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                  <div className="flex items-center gap-2 mx-6">
+                    <Settings className="h-5 w-5 text-white" />
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">CUSTOM INTEGRATION</span>
+                  </div>
+                  <span className="text-white/60 mx-2">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
             <div className="mb-12">
@@ -1766,123 +1883,6 @@ export default function Landing() {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-4 bg-[#2f8a2b] overflow-hidden">
-          <div className="relative flex overflow-hidden h-10">
-            <div className="animate-marquee whitespace-nowrap flex items-center">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="flex items-center">
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M15.337 3.415c-.084-.076-.196-.112-.306-.102-.114.008-.22.057-.297.143L6.742 12.23l5.692 1.566 2.903-10.381zm6.542 5.46l-3.107-2.94a.42.42 0 00-.288-.114.422.422 0 00-.288.114l-1.073 1.014 4.756 4.5V6.875zM5.61 13.622l-1.073-1.014a.422.422 0 00-.576 0l-3.107 2.94v4.576l4.756-4.5v-2.002zm12.78 1.206l-5.692-1.566-2.903 10.381c.084.076.196.112.306.102.114-.008.22-.057.297-.143l7.992-8.774z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SHOPIFY</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M2.289 4.729c-.217.644-.341 1.477-.341 2.547 0 3.398 2.106 5.746 5.461 5.746.241 0 .471-.012.698-.035v1.795c-.227.023-.457.035-.698.035-4.354 0-7.409-3.003-7.409-7.541 0-1.253.158-2.341.479-3.237l1.81.69zm19.371 11.555c.217-.644.341-1.477.341-2.547 0-3.398-2.106-5.746-5.461-5.746-.241 0-.471.012-.698.035V6.231c.227-.023.457-.035.698-.035 4.354 0 7.409 3.003 7.409 7.541 0 1.253-.158 2.341-.479 3.237l-1.81-.69zM12 3c-2.392 0-4.575.894-6.231 2.368l1.283 1.283C8.474 5.482 10.143 4.8 12 4.8s3.526.682 4.948 1.851l1.283-1.283C16.575 3.894 14.392 3 12 3zm0 18c2.392 0 4.575-.894 6.231-2.368l-1.283-1.283c-1.422 1.169-3.091 1.851-4.948 1.851s-3.526-.682-4.948-1.851l-1.283 1.283C7.425 20.106 9.608 21 12 21z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WOOCOMMERCE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18.5c-4.687 0-8.5-3.813-8.5-8.5S7.313 3.5 12 3.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5zm-2-12.5l4 4-4 4V8z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WORDPRESS</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M13.5 2L3 7v10l10.5 5 10.5-5V7L13.5 2zm0 2.18L21 8l-7.5 3.82L6 8l7.5-3.82zM5 9.5l7 3.5v7.5l-7-3.5V9.5zm9 11v-7.5l7-3.5v7.5l-7 3.5z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WIX</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l3 2v6l7 4 7-4V9l3-2-10-5zm0 15l-5-3v-4l5 3 5-3v4l-5 3z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SQUARESPACE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">BIGCOMMERCE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.18L18 8v8l-6 3-6-3V8l6-3.82z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">MAGENTO</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SEZZLE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">QUICKBOOKS</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <Settings className="h-5 w-5 text-white" />
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">CUSTOM INTEGRATION</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                </div>
-              ))}
-            </div>
-            <div className="animate-marquee2 whitespace-nowrap flex items-center absolute top-0">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="flex items-center">
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M15.337 3.415c-.084-.076-.196-.112-.306-.102-.114.008-.22.057-.297.143L6.742 12.23l5.692 1.566 2.903-10.381zm6.542 5.46l-3.107-2.94a.42.42 0 00-.288-.114.422.422 0 00-.288.114l-1.073 1.014 4.756 4.5V6.875zM5.61 13.622l-1.073-1.014a.422.422 0 00-.576 0l-3.107 2.94v4.576l4.756-4.5v-2.002zm12.78 1.206l-5.692-1.566-2.903 10.381c.084.076.196.112.306.102.114-.008.22-.057.297-.143l7.992-8.774z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SHOPIFY</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M2.289 4.729c-.217.644-.341 1.477-.341 2.547 0 3.398 2.106 5.746 5.461 5.746.241 0 .471-.012.698-.035v1.795c-.227.023-.457.035-.698.035-4.354 0-7.409-3.003-7.409-7.541 0-1.253.158-2.341.479-3.237l1.81.69zm19.371 11.555c.217-.644.341-1.477.341-2.547 0-3.398-2.106-5.746-5.461-5.746-.241 0-.471.012-.698.035V6.231c.227-.023.457-.035.698-.035 4.354 0 7.409 3.003 7.409 7.541 0 1.253-.158 2.341-.479 3.237l-1.81-.69zM12 3c-2.392 0-4.575.894-6.231 2.368l1.283 1.283C8.474 5.482 10.143 4.8 12 4.8s3.526.682 4.948 1.851l1.283-1.283C16.575 3.894 14.392 3 12 3zm0 18c2.392 0 4.575-.894 6.231-2.368l-1.283-1.283c-1.422 1.169-3.091 1.851-4.948 1.851s-3.526-.682-4.948-1.851l-1.283 1.283C7.425 20.106 9.608 21 12 21z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WOOCOMMERCE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18.5c-4.687 0-8.5-3.813-8.5-8.5S7.313 3.5 12 3.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5zm-2-12.5l4 4-4 4V8z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WORDPRESS</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M13.5 2L3 7v10l10.5 5 10.5-5V7L13.5 2zm0 2.18L21 8l-7.5 3.82L6 8l7.5-3.82zM5 9.5l7 3.5v7.5l-7-3.5V9.5zm9 11v-7.5l7-3.5v7.5l-7 3.5z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">WIX</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l3 2v6l7 4 7-4V9l3-2-10-5zm0 15l-5-3v-4l5 3 5-3v4l-5 3z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SQUARESPACE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">BIGCOMMERCE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.18L18 8v8l-6 3-6-3V8l6-3.82z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">MAGENTO</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">SEZZLE</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">QUICKBOOKS</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                  <div className="flex items-center gap-2 mx-6">
-                    <Settings className="h-5 w-5 text-white" />
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">CUSTOM INTEGRATION</span>
-                  </div>
-                  <span className="text-white/60 mx-2">•</span>
-                </div>
-              ))}
             </div>
           </div>
         </section>
