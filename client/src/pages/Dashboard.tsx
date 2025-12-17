@@ -502,52 +502,52 @@ export default function Dashboard() {
         </div>
 
         {/* Account Health & Payout Widgets */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Chargeback Alert Widget */}
           <div className={cn(
-            "w-full rounded-xl p-4 flex items-center justify-between gap-4",
+            "w-full rounded-xl p-4 flex items-center justify-between gap-3",
             chargebackCount > 0 
               ? "bg-[#f0b100]/20 border border-[#f0b100]" 
               : "bg-[#73cb43]/20 border border-[#39870E]"
           )}>
-            <div className="flex items-center gap-3 min-w-0 flex-shrink">
-              <AlertTriangle className={cn("h-6 w-6 flex-shrink-0", chargebackCount > 0 ? "text-warning-text" : "text-success-text")} />
-              <h3 className="font-semibold text-foreground">Chargeback Alert</h3>
+            <div className="flex items-center gap-2 min-w-0">
+              <AlertTriangle className={cn("h-5 w-5 flex-shrink-0", chargebackCount > 0 ? "text-warning-text" : "text-success-text")} />
+              <div className="min-w-0">
+                <h3 className="font-semibold text-foreground text-sm truncate">Chargeback Alert</h3>
+                <span className={cn("text-[10px] font-medium block", chargebackCount > 0 ? "text-warning-text" : "text-success-text")}>
+                  {chargebackCount > 0 ? "Action Required" : "No Action Required"}
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col items-end flex-shrink-0">
-               <span className="font-bold text-foreground">{chargebackCount}</span>
-               <span className={cn("text-[10px] font-medium", chargebackCount > 0 ? "text-warning-text" : "text-success-text")}>
-                 {chargebackCount > 0 ? "Action Required" : "No Action Required"}
-               </span>
-            </div>
+            <span className="font-bold text-foreground text-lg flex-shrink-0">{chargebackCount}</span>
           </div>
 
           {/* Account Health Widget */}
-          <div className="w-full bg-[#73cb43]/20 border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 min-w-0 flex-shrink">
-              <ShieldCheck className="h-6 w-6 text-success-text flex-shrink-0" />
-              <h3 className="font-semibold text-foreground">Account Health</h3>
+          <div className="w-full bg-[#73cb43]/20 border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 min-w-0">
+              <ShieldCheck className="h-5 w-5 text-success-text flex-shrink-0" />
+              <div className="min-w-0">
+                <h3 className="font-semibold text-foreground text-sm truncate">Account Health</h3>
+                <span className="text-[10px] text-success-text font-medium block">Status</span>
+              </div>
             </div>
-            <div className="flex flex-col items-end flex-shrink-0">
-               <span className="font-bold text-foreground">Good</span>
-               <span className="text-[10px] text-success-text font-medium">Status</span>
-            </div>
+            <span className="font-bold text-foreground text-lg flex-shrink-0">Good</span>
           </div>
 
           {/* Total Payout Balance Widget */}
           <button 
             onClick={() => setLocation("/payouts")}
-            className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-muted/50 transition-colors text-left"
+            className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:bg-muted/50 transition-colors text-left"
             data-testid="button-payout-balance-card"
           >
-            <div className="flex items-center gap-3 min-w-0 flex-shrink">
-              <DollarSign className="h-6 w-6 text-success-text flex-shrink-0" />
-              <h3 className="font-semibold text-foreground">Payout Balance</h3>
+            <div className="flex items-center gap-2 min-w-0">
+              <DollarSign className="h-5 w-5 text-success-text flex-shrink-0" />
+              <div className="min-w-0">
+                <h3 className="font-semibold text-foreground text-sm truncate">Payout Balance</h3>
+                <span className="text-[10px] text-muted-foreground block">{payoutBalance > 0 ? "Processing" : "No balance"}</span>
+              </div>
             </div>
-            <div className="flex flex-col items-end flex-shrink-0">
-              <span className="font-bold text-success-text text-lg">${payoutBalance.toLocaleString("en-US", { maximumFractionDigits: 0 })}</span>
-              <span className="text-[10px] text-muted-foreground">{payoutBalance > 0 ? "Processing" : "No balance"}</span>
-            </div>
+            <span className="font-bold text-success-text text-lg flex-shrink-0">${payoutBalance.toLocaleString("en-US", { maximumFractionDigits: 0 })}</span>
           </button>
         </div>
 
