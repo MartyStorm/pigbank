@@ -1581,32 +1581,26 @@ export default function Landing() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  TOP PAYMENT PROCESSOR 2025
+                  FEATURED IN
                 </p>
                 <div className="flex items-center justify-center gap-2">
-                  <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                  <span className="text-3xl font-bold text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Forbes</span>
+                  <span className="text-2xl font-bold text-white tracking-tight">Digital Transactions</span>
                 </div>
               </div>
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  BEST FOR HIGH-RISK MERCHANTS
+                  FEATURED IN
                 </p>
                 <div className="flex items-center justify-center">
-                  <span className="text-3xl font-black text-white tracking-tighter border-y-2 border-white py-1 px-3" style={{ fontFamily: 'Georgia, serif' }}>TIME</span>
+                  <span className="text-2xl font-bold text-white tracking-tight">PaymentsJournal</span>
                 </div>
               </div>
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
-                  MOST RELIABLE GATEWAY
+                  FEATURED IN
                 </p>
                 <div className="flex items-center justify-center gap-2">
-                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                    <span className="text-[#15391c] font-bold text-lg">N</span>
-                  </div>
-                  <span className="text-2xl font-semibold text-white">nerdwallet</span>
+                  <span className="text-2xl font-bold text-white tracking-tight">Business.com</span>
                 </div>
               </div>
             </div>
@@ -1619,19 +1613,19 @@ export default function Landing() {
               {[...Array(3)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    $2B+ PROCESSED WITH PIGBANK
+                    5 STARS ON GOOGLE
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    10,000+ ACTIVE MERCHANTS
+                    SERVING MERCHANTS SINCE 2019
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    HELPING BUSINESSES GROW SINCE 2019
+                    TRUSTED BY INDUSTRY LEADERS
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    4.9 STARS ON TRUSTPILOT
+                    DEDICATED CUSTOMER SUPPORT
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                 </div>
@@ -1641,19 +1635,19 @@ export default function Landing() {
               {[...Array(3)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    $2B+ PROCESSED WITH PIGBANK
+                    5 STARS ON GOOGLE
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    10,000+ ACTIVE MERCHANTS
+                    SERVING MERCHANTS SINCE 2019
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    HELPING BUSINESSES GROW SINCE 2019
+                    TRUSTED BY INDUSTRY LEADERS
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                   <span className="text-base font-semibold text-white uppercase tracking-wider mx-6">
-                    4.9 STARS ON TRUSTPILOT
+                    DEDICATED CUSTOMER SUPPORT
                   </span>
                   <span className="text-white/60 mx-2">•</span>
                 </div>
