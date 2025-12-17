@@ -11,6 +11,8 @@ import {
   CreditCard,
   CheckCircle2,
   ArrowRight,
+  ArrowUpRight,
+  ArrowDown,
   FileText,
   Globe,
   Wallet,
@@ -1668,9 +1670,135 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-[#f5f0e8]">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            {/* Placeholder section - content coming soon */}
+        <section className="bg-[#f5f0e8]">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Payment processing for every risk level
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                We specialize in providing tailored payment solutions for merchants operating across all risk levels.
+              </p>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
+              <div 
+                className="group relative flex-1 bg-[#203e22] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                data-testid="card-high-risk"
+              >
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </div>
+                
+                <div className="mt-16 space-y-6">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    High risk industries
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {[
+                      "CBD & Hemp",
+                      "Adult products",
+                      "Bail bonds",
+                      "Guns & firearms",
+                      "Nutraceuticals",
+                      "Tech support",
+                      "Dating sites",
+                      "Tobacco & vape",
+                      "Travel agencies",
+                      "Supplements",
+                      "E-cigarettes",
+                      "Fantasy sports"
+                    ].map((industry) => (
+                      <div key={industry} className="flex items-center gap-2 text-white/90">
+                        <CheckCircle2 className="h-4 w-4 text-[#73cb43] flex-shrink-0" />
+                        <span className="text-sm">{industry}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="text-white/70 text-sm max-w-sm pt-4">
+                    Just because a bank deems your business risky, doesn't mean you can't prosper.
+                  </p>
+                </div>
+                
+                <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="bg-white/10 backdrop-blur rounded-xl p-4 space-y-2">
+                    <div className="flex items-center gap-2 text-white text-sm">
+                      <div className="w-6 h-6 rounded-full bg-[#73cb43] flex items-center justify-center">
+                        <ArrowDown className="h-3 w-3 text-white" />
+                      </div>
+                      <span>$29.52 received from Henry</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white text-sm">
+                      <div className="w-6 h-6 rounded-full bg-[#73cb43] flex items-center justify-center">
+                        <ArrowDown className="h-3 w-3 text-white" />
+                      </div>
+                      <span>$213.05 received from Stella</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div 
+                className="group relative flex-1 bg-[#e8e0f0] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                data-testid="card-low-risk"
+              >
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-[#203e22]/10 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-[#203e22]" />
+                </div>
+                
+                <div className="mt-16 space-y-6">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Medium & low risk industries
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {[
+                      "Subscription",
+                      "Accounting",
+                      "Dropshipping",
+                      "High volume",
+                      "Apparel",
+                      "Home goods",
+                      "Pet supplies",
+                      "Beauty products",
+                      "SaaS",
+                      "E-commerce",
+                      "Professional services",
+                      "Food & beverage"
+                    ].map((industry) => (
+                      <div key={industry} className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle2 className="h-4 w-4 text-[#203e22] flex-shrink-0" />
+                        <span className="text-sm">{industry}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-600 text-sm max-w-sm pt-4">
+                    Your business will be supported by a dedicated team of merchant service specialists.
+                  </p>
+                </div>
+                
+                <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="bg-white rounded-xl shadow-lg p-4">
+                    <div className="text-xs text-gray-500 mb-2">Payout Frequency</div>
+                    <div className="space-y-1">
+                      <div className="text-sm text-gray-400">Every week</div>
+                      <div className="text-sm text-gray-400">Every 2 weeks</div>
+                      <div className="flex items-center gap-2 text-sm text-gray-900 font-medium">
+                        <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                        Every month
+                      </div>
+                      <div className="text-sm text-gray-400">Every 2 months</div>
+                    </div>
+                    <button className="w-full mt-3 py-2 bg-[#203e22] text-white text-sm rounded-lg">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
