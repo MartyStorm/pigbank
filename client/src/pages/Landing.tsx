@@ -667,7 +667,7 @@ export default function Landing() {
               ))}
             </nav>
           </div>
-          <div className="flex items-center gap-5" style={{ marginRight: '-5px' }}>
+          <div className="flex items-center gap-5" style={{ marginRight: '15px' }}>
             <a 
               href="/login" 
               className="text-base text-gray-700 hover:text-gray-900 transition-colors hidden sm:block"
@@ -1524,7 +1524,7 @@ export default function Landing() {
                 setHeroProgress(0);
               }}
               className="absolute top-1/2 -translate-y-1/2 z-10 hover:opacity-70 transition-opacity pointer-events-auto"
-              style={{ right: '-10px' }}
+              style={{ right: '10px' }}
               data-testid="button-hero-next"
             >
               <ChevronRight className="h-8 w-8 md:h-10 md:w-10" style={{ color: '#1877F2' }} />
