@@ -1703,6 +1703,8 @@ export default function Landing() {
           </div>
         </section>
 
+        <HorizontalScrollText />
+
         {/* Security Section */}
         <section className="py-16 md:py-24 bg-gray-50">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
@@ -1823,8 +1825,6 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
-        <HorizontalScrollText />
 
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
