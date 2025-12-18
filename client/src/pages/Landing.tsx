@@ -1694,8 +1694,63 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Professional Invoicing Section */}
+        <section className="py-20 md:py-32 bg-[#ffffff]">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Professional invoicing, simplified
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  Create and send professional invoices in seconds. Track payments, 
+                  send reminders, and get paid faster with built-in payment links 
+                  that your customers can use instantly.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-learn-more-invoicing"
+                >
+                  <a href="/register">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
+                        <FileText className="h-5 w-5 text-amber-600" />
+                      </div>
+                      <div className="border-b border-gray-100 pb-3 mb-3">
+                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
+                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-500">Due Date</span>
+                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm mt-2">
+                        <span className="text-gray-500">Status</span>
+                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
+                          Pending
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 overflow-hidden bg-[#ffffff]">
+        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1">
@@ -1768,8 +1823,8 @@ export default function Landing() {
                       ))}
                     </div>
                   </div>
-                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f8f9fa] to-transparent pointer-events-none" />
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f8f9fa] to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f9fafb] to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f9fafb] to-transparent pointer-events-none" />
                 </div>
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
@@ -1792,61 +1847,6 @@ export default function Landing() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Invoicing Section */}
-        <section className="py-20 md:py-32 bg-[#f9fafb]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Professional invoicing, simplified
-                </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  Create and send professional invoices in seconds. Track payments, 
-                  send reminders, and get paid faster with built-in payment links 
-                  that your customers can use instantly.
-                </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-learn-more-invoicing"
-                >
-                  <a href="/register">
-                    Learn more
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
-                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
-                        <FileText className="h-5 w-5 text-amber-600" />
-                      </div>
-                      <div className="border-b border-gray-100 pb-3 mb-3">
-                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
-                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-gray-500">Due Date</span>
-                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm mt-2">
-                        <span className="text-gray-500">Status</span>
-                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
-                          Pending
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
