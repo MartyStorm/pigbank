@@ -1467,10 +1467,15 @@ export default function Landing() {
                 <p className="text-white/60 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
+                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
+                  <img 
+                    src="/attached_assets/sales_darth_maul.png" 
+                    alt="Darth Maul - Sales" 
+                    className="w-full h-full object-cover object-top grayscale"
+                  />
                 </div>
-                <h4 className="text-lg font-bold text-white">Sales</h4>
-                <p className="text-white/60 text-sm">Your partner</p>
+                <h4 className="text-lg font-bold text-white">Darth Maul</h4>
+                <p className="text-white/60 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
