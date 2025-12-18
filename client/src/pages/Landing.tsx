@@ -520,7 +520,6 @@ export default function Landing() {
           </div>
         </div>
       </header>
-
       <main>
         <section 
           className="overflow-hidden relative"
@@ -1569,7 +1568,7 @@ export default function Landing() {
         <HorizontalScrollText />
 
         <section className="bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24 bg-[#ffffff]">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Payment processing for every risk level
@@ -2094,7 +2093,6 @@ export default function Landing() {
           </div>
         </section>
       </main>
-
       <footer className="border-t border-gray-200 bg-white py-12">
         <div className="container px-4 md:px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -2142,8 +2140,6 @@ export default function Landing() {
           </div>
         </div>
       </footer>
-
-
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
