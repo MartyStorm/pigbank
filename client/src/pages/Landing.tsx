@@ -41,7 +41,8 @@ import {
   Building2,
   Coins,
   FileCheck,
-  Link
+  Link,
+  Check
 } from "lucide-react";
 import {
   Carousel,
@@ -1328,7 +1329,15 @@ export default function Landing() {
                 style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}
                 data-testid="card-high-risk"
               >
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                {/* Decorative image - shows on hover */}
+                <div className="absolute top-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="w-full h-full bg-gradient-to-bl from-[#75C947]/20 to-transparent rounded-bl-[100px]" />
+                  <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <TrendingUp className="h-8 w-8 text-[#75C947]" />
+                  </div>
+                </div>
+
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
@@ -1369,16 +1378,77 @@ export default function Landing() {
                 className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
                 data-testid="card-low-risk"
               >
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                {/* Decorative elements - image placeholder and UI mockup */}
+                <div className="absolute top-0 right-0 w-72 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#75C947] via-transparent to-transparent z-10" />
+                  
+                  {/* Photo placeholder with gradient */}
+                  <div className="absolute top-0 right-0 w-48 h-64 rounded-bl-3xl overflow-hidden">
+                    <div className="w-full h-full bg-gradient-to-br from-white/30 to-white/10" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Users className="h-16 w-16 text-white/40" />
+                    </div>
+                  </div>
+                  
+                  {/* UI Mockup Card */}
+                  <div className="absolute bottom-16 right-4 w-44 bg-white rounded-xl shadow-xl p-3 z-20">
+                    <div className="text-xs font-medium text-gray-600 mb-2">Frequency</div>
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2 text-xs text-gray-500 py-1">
+                        <div className="w-3 h-3 rounded-full border border-gray-300" />
+                        <span>Every week</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-500 py-1">
+                        <div className="w-3 h-3 rounded-full border border-gray-300" />
+                        <span>Every 2 weeks</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-900 font-medium py-1">
+                        <div className="w-3 h-3 rounded-full bg-gray-900 flex items-center justify-center">
+                          <Check className="h-2 w-2 text-white" />
+                        </div>
+                        <span>Every month</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-500 py-1">
+                        <div className="w-3 h-3 rounded-full border border-gray-300" />
+                        <span>Every 2 months</span>
+                      </div>
+                    </div>
+                    <button className="w-full mt-2 py-1.5 bg-gray-900 text-white text-xs rounded-lg font-medium">
+                      Update
+                    </button>
+                  </div>
+                </div>
+
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
-                <div className="mt-16 space-y-6">
+                <div className="mt-16 space-y-6 relative z-10">
                   <h3 className="text-3xl md:text-4xl font-bold text-white">
                     Medium & Low risk
                   </h3>
                   
-                  <p className="text-white/80 text-sm">
+                  {/* Industry list - visible on hover */}
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {[
+                      "Subscription",
+                      "Accounting",
+                      "Dropshipping",
+                      "High volume",
+                      "Apparel",
+                      "Home goods",
+                      "Pet supplies",
+                      "Beauty products",
+                    ].map((industry) => (
+                      <div key={industry} className="flex items-center gap-2 text-white/90">
+                        <Check className="h-4 w-4 text-white" />
+                        <span className="text-sm">{industry}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="text-white/80 text-sm max-w-xs">
                     Your business will be supported by a dedicated team of merchant service specialists.
                   </p>
                 </div>
