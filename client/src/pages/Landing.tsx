@@ -1461,6 +1461,111 @@ export default function Landing() {
 
         <HorizontalScrollText />
 
+        {/* Integrations Section */}
+        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb] relative">
+          <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
+          <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+                  <div className="flex gap-4 md:gap-6 justify-center">
+                    {/* Left Column - Scrolls Up */}
+                    <div className="flex flex-col gap-4 animate-scroll-up">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <span className="text-purple-600 font-bold text-lg">WOO</span>
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Store className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <span className="text-black font-bold text-lg">WIX</span>
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Globe className="h-8 w-8 text-blue-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Bitcoin className="h-8 w-8 text-orange-500" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Middle Column - Scrolls Down */}
+                    <div className="flex flex-col gap-4 animate-scroll-down">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Monitor className="h-8 w-8 text-gray-800" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Wallet className="h-8 w-8 text-black" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Receipt className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <CreditCard className="h-8 w-8 text-blue-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <BarChart3 className="h-8 w-8 text-purple-600" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Right Column - Scrolls Up */}
+                    <div className="flex flex-col gap-4 animate-scroll-up-slow">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Smartphone className="h-8 w-8 text-gray-800" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <RefreshCcw className="h-8 w-8 text-blue-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Banknote className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Globe2 className="h-8 w-8 text-orange-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Shield className="h-8 w-8 text-indigo-600" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f9fafb] to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f9fafb] to-transparent pointer-events-none" />
+                </div>
+              </div>
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Integrations that power your growth
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                  Connect with the industry's leading platforms instantly. Whether you need 
+                  plug-and-play solutions or custom connections, our payment technology 
+                  fits seamlessly into your existing workflow.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-view-integrations"
+                >
+                  <a href="/register">
+                    View integrations
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Customer Service Strip */}
         <section className="py-12 md:py-16 relative overflow-hidden bg-[#173c1d]">
           <div className="absolute inset-0 opacity-15">
@@ -1781,111 +1886,6 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Integrations Section */}
-        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb] relative">
-          <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
-          <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="relative h-[400px] md:h-[500px] overflow-hidden">
-                  <div className="flex gap-4 md:gap-6 justify-center">
-                    {/* Left Column - Scrolls Up */}
-                    <div className="flex flex-col gap-4 animate-scroll-up">
-                      {[...Array(2)].map((_, setIndex) => (
-                        <div key={setIndex} className="flex flex-col gap-4">
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <span className="text-purple-600 font-bold text-lg">WOO</span>
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Store className="h-8 w-8 text-green-600" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <span className="text-black font-bold text-lg">WIX</span>
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Globe className="h-8 w-8 text-blue-500" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Bitcoin className="h-8 w-8 text-orange-500" />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Middle Column - Scrolls Down */}
-                    <div className="flex flex-col gap-4 animate-scroll-down">
-                      {[...Array(2)].map((_, setIndex) => (
-                        <div key={setIndex} className="flex flex-col gap-4">
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Monitor className="h-8 w-8 text-gray-800" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Wallet className="h-8 w-8 text-black" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Receipt className="h-8 w-8 text-green-600" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <CreditCard className="h-8 w-8 text-blue-600" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <BarChart3 className="h-8 w-8 text-purple-600" />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Right Column - Scrolls Up */}
-                    <div className="flex flex-col gap-4 animate-scroll-up-slow">
-                      {[...Array(2)].map((_, setIndex) => (
-                        <div key={setIndex} className="flex flex-col gap-4">
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Smartphone className="h-8 w-8 text-gray-800" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <RefreshCcw className="h-8 w-8 text-blue-500" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Banknote className="h-8 w-8 text-green-600" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Globe2 className="h-8 w-8 text-orange-500" />
-                          </div>
-                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                            <Shield className="h-8 w-8 text-indigo-600" />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f9fafb] to-transparent pointer-events-none" />
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f9fafb] to-transparent pointer-events-none" />
-                </div>
-              </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Integrations that power your growth
-                </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  Connect with the industry's leading platforms instantly. Whether you need 
-                  plug-and-play solutions or custom connections, our payment technology 
-                  fits seamlessly into your existing workflow.
-                </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-view-integrations"
-                >
-                  <a href="/register">
-                    View integrations
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>
