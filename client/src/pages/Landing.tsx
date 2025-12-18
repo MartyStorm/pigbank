@@ -1119,7 +1119,7 @@ export default function Landing() {
           </Carousel>
         </section>
 
-        <section className="bg-[#1a4320] py-8">
+        <section className="bg-[#173c1d] py-8">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
               <div className="text-center">
