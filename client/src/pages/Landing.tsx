@@ -1666,45 +1666,41 @@ export default function Landing() {
         </section>
 
         {/* Customer Service Strip */}
-        <section className="bg-[#203e22] py-20 md:py-32">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                  Real people. Real support.
-                </h3>
-                <p className="text-lg text-white/80 max-w-xl">
-                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
-                </p>
+        <section className="bg-[#203e22] py-20 md:py-32 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
+          </div>
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Real people. Real support.
+              </h3>
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+                Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/10 hover:bg-white/15 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <Headphones className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">24/7 Support</h4>
+                <p className="text-white/60">Always available when you need us, day or night</p>
               </div>
-              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Headphones className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">24/7 Support</p>
-                    <p className="text-white/70 text-sm">Always available</p>
-                  </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/10 hover:bg-white/15 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">Dedicated Team</p>
-                    <p className="text-white/70 text-sm">Knows your business</p>
-                  </div>
+                <h4 className="text-xl font-bold text-white mb-2">Dedicated Team</h4>
+                <p className="text-white/60">A team that knows your business inside and out</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-white/10 hover:bg-white/15 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-white" />
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">2 Min Response</p>
-                    <p className="text-white/70 text-sm">Average wait time</p>
-                  </div>
-                </div>
+                <h4 className="text-xl font-bold text-white mb-2">2 Min Response</h4>
+                <p className="text-white/60">Average wait time—no long holds, ever</p>
               </div>
             </div>
           </div>
