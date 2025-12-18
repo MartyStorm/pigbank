@@ -1128,7 +1128,7 @@ export default function Landing() {
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 left-0"
+                              className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                             />
                             {/* Free Gateway Badge - Certificate Seal */}
                             <div className="absolute -top-6 -right-4 md:-top-4 md:-right-2 z-30">
