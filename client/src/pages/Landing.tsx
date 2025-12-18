@@ -1780,52 +1780,6 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-[#f5f0e8] overflow-hidden">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            <div 
-              className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                background: 'linear-gradient(135deg, #d9d2c7 0%, #c4bdb2 100%)'
-              }}
-            >
-              <div className="flex flex-col lg:flex-row items-center justify-between p-6 md:p-10 lg:p-12 gap-6 lg:gap-8">
-                <div className="lg:w-2/3 relative">
-                  <img 
-                    src="/macbook-dashboard.png" 
-                    alt="PigBank Dashboard on MacBook" 
-                    className="w-full h-auto max-w-[550px] mx-auto"
-                  />
-                </div>
-                
-                <div className="lg:w-1/3 flex flex-col items-center lg:items-start gap-4">
-                  <img 
-                    src={moneyImage} 
-                    alt="Money and success" 
-                    className="w-32 md:w-40 lg:w-48 h-auto drop-shadow-lg rounded-xl object-cover"
-                  />
-                  <div className="text-center lg:text-left">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
-                      See PigBank in Action
-                    </h3>
-                    <p className="text-gray-600 text-sm md:text-base">
-                      Watch how easy it is to manage payments, track transactions, and grow your business.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <button 
-                className="absolute inset-0 flex items-center justify-center z-20"
-                data-testid="button-play-video"
-              >
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/90 backdrop-blur shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Play className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 text-gray-900 ml-1" fill="currentColor" />
-                </div>
-              </button>
-            </div>
-          </div>
-        </section>
-
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -2037,6 +1991,52 @@ export default function Landing() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 tracking-tight">
               No hidden fees. No commissions.
             </h2>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-[#f5f0e8] overflow-hidden">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div 
+              className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, #d9d2c7 0%, #c4bdb2 100%)'
+              }}
+            >
+              <div className="flex flex-col lg:flex-row items-center justify-between p-6 md:p-10 lg:p-12 gap-6 lg:gap-8">
+                <div className="lg:w-2/3 relative">
+                  <img 
+                    src="/macbook-dashboard.png" 
+                    alt="PigBank Dashboard on MacBook" 
+                    className="w-full h-auto max-w-[550px] mx-auto"
+                  />
+                </div>
+                
+                <div className="lg:w-1/3 flex flex-col items-center lg:items-start gap-4">
+                  <img 
+                    src={moneyImage} 
+                    alt="Money and success" 
+                    className="w-32 md:w-40 lg:w-48 h-auto drop-shadow-lg rounded-xl object-cover"
+                  />
+                  <div className="text-center lg:text-left">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                      See PigBank in Action
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base">
+                      Watch how easy it is to manage payments, track transactions, and grow your business.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <button 
+                className="absolute inset-0 flex items-center justify-center z-20"
+                data-testid="button-play-video"
+              >
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/90 backdrop-blur shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Play className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 text-gray-900 ml-1" fill="currentColor" />
+                </div>
+              </button>
+            </div>
           </div>
         </section>
 
