@@ -1675,12 +1675,12 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Professional invoicing, simplified
+                  Fast and automatic payouts
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  Create and send professional invoices in seconds. Track payments, 
-                  send reminders, and get paid faster with built-in payment links 
-                  that your customers can use instantly.
+                  No waiting for your funds. Get same-day or next-day payouts 
+                  directly to your bank account. You can even access funds 
+                  instantly with our Express Payout feature.
                 </p>
                 <Button 
                   asChild
@@ -1696,26 +1696,34 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
-                        <FileText className="h-5 w-5 text-amber-600" />
+                        <span className="text-sm font-medium text-gray-600">Express Payout</span>
+                        <Zap className="h-5 w-5 text-[#73cb43]" />
                       </div>
-                      <div className="border-b border-gray-100 pb-3 mb-3">
-                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
-                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-[#73cb43]" />
+                            <span className="text-sm text-gray-700">Available</span>
+                          </div>
+                          <span className="font-semibold text-gray-900">$12,450</span>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-gray-400" />
+                            <span className="text-sm text-gray-700">Pending</span>
+                          </div>
+                          <span className="font-semibold text-gray-900">$3,200</span>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-gray-500">Due Date</span>
-                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm mt-2">
-                        <span className="text-gray-500">Status</span>
-                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
-                          Pending
-                        </span>
-                      </div>
+                      <Button 
+                        className="w-full mt-4 bg-[#203e22] hover:bg-[#1a3319] text-white rounded-xl"
+                        size="sm"
+                      >
+                        Transfer now
+                      </Button>
                     </div>
                   </div>
                 </div>
