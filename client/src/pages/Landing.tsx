@@ -1956,7 +1956,6 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2 flex justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-[#73cb43]/20 rounded-full blur-3xl scale-150" />
                   <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
