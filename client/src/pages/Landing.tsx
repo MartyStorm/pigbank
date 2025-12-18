@@ -1673,11 +1673,11 @@ export default function Landing() {
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+              <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   Professional invoicing, simplified
                 </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg text-gray-600 max-w-lg">
                   Create and send professional invoices in seconds. Track payments, 
                   send reminders, and get paid faster with built-in payment links 
                   that your customers can use instantly.
