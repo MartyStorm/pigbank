@@ -1666,6 +1666,51 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Customer Service Strip */}
+        <section className="bg-[#203e22] py-12 md:py-16">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+                  Real people. Real support.
+                </h3>
+                <p className="text-lg text-white/80 max-w-xl">
+                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Headphones className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">24/7 Support</p>
+                    <p className="text-white/70 text-sm">Always available</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">Dedicated Team</p>
+                    <p className="text-white/70 text-sm">Knows your business</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">2 Min Response</p>
+                    <p className="text-white/70 text-sm">Average wait time</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -1866,51 +1911,6 @@ export default function Landing() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Customer Service Strip */}
-        <section className="bg-[#203e22] py-12 md:py-16">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                  Real people. Real support.
-                </h3>
-                <p className="text-lg text-white/80 max-w-xl">
-                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Headphones className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">24/7 Support</p>
-                    <p className="text-white/70 text-sm">Always available</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">Dedicated Team</p>
-                    <p className="text-white/70 text-sm">Knows your business</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">2 Min Response</p>
-                    <p className="text-white/70 text-sm">Average wait time</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
