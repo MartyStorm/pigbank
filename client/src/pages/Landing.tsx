@@ -1652,36 +1652,37 @@ export default function Landing() {
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
           </div>
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                Real people. Real support.
+                A small team that gives you big attention
               </h3>
               <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-                Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
+                We're a focused team that actually knows your business. Fast responses, personal service, 
+                and an AI assistant to help you anytime—even when we're closed.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 text-center border border-white/10 hover:bg-white/15 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-3">
-                  <Headphones className="h-6 w-6 text-white" />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                  <span className="text-3xl md:text-4xl font-bold text-white">J</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-1">24/7 Support</h4>
-                <p className="text-white/60 text-sm">Always available when you need us</p>
+                <h4 className="text-lg font-bold text-white">Founder</h4>
+                <p className="text-white/60 text-sm">Your account manager</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 text-center border border-white/10 hover:bg-white/15 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-6 w-6 text-white" />
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                  <span className="text-3xl md:text-4xl font-bold text-white">M</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-1">Dedicated Team</h4>
-                <p className="text-white/60 text-sm">A team that knows your business</p>
+                <h4 className="text-lg font-bold text-white">Operations</h4>
+                <p className="text-white/60 text-sm">Keeps things running</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 text-center border border-white/10 hover:bg-white/15 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-3">
-                  <Clock className="h-6 w-6 text-white" />
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                  <Zap className="h-10 w-10 md:h-12 md:w-12 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-white mb-1">2 Min Response</h4>
-                <p className="text-white/60 text-sm">Average wait time—no long holds</p>
+                <h4 className="text-lg font-bold text-white">AI Assistant</h4>
+                <p className="text-white/60 text-sm">Available 24/7</p>
               </div>
             </div>
           </div>
