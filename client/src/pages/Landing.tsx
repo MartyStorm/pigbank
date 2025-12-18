@@ -1571,11 +1571,11 @@ export default function Landing() {
 
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Payment processing for every risk level
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 We specialize in providing tailored payment solutions for merchants operating across all risk levels.
               </p>
             </div>
