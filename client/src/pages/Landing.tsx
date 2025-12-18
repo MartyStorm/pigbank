@@ -1462,8 +1462,8 @@ export default function Landing() {
         </section>
 
         <section className="bg-[#15391c] py-8">
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
               <div className="text-center">
                 <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
                   TOP PAYMENT PROCESSOR FOR HIGH-RISK
@@ -1475,7 +1475,7 @@ export default function Landing() {
                     <rect x="3" y="14" width="7" height="7" rx="1"/>
                     <rect x="14" y="14" width="7" height="7" rx="1"/>
                   </svg>
-                  <span className="text-xl font-bold text-white tracking-tight">Digital Transactions</span>
+                  <span className="text-lg font-bold text-white tracking-tight">Digital Transactions</span>
                 </div>
               </div>
               <div className="text-center">
@@ -1486,7 +1486,7 @@ export default function Landing() {
                   <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.5L19 8l-7 3.5L5 8l7-3.5z"/>
                   </svg>
-                  <span className="text-xl font-bold text-white tracking-tight">PaymentsJournal</span>
+                  <span className="text-lg font-bold text-white tracking-tight">PaymentsJournal</span>
                 </div>
               </div>
               <div className="text-center">
@@ -1497,7 +1497,18 @@ export default function Landing() {
                   <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
                     <span className="text-[#15391c] font-bold text-sm">B</span>
                   </div>
-                  <span className="text-xl font-bold text-white tracking-tight">Business.com</span>
+                  <span className="text-lg font-bold text-white tracking-tight">Business.com</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] font-semibold text-[#9be870] uppercase tracking-widest mb-3">
+                  RECOMMENDED PROVIDER
+                </p>
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span className="text-lg font-bold text-white tracking-tight italic">Payment Review</span>
                 </div>
               </div>
             </div>
