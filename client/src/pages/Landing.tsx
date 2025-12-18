@@ -1532,7 +1532,7 @@ export default function Landing() {
                 <p className="text-white/60 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
+                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3 bg-gray-200">
                   <img 
                     src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_24_34_AM_1766053520274.png" 
                     alt="Oink - AI Team Lead" 
