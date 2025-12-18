@@ -1509,7 +1509,8 @@ export default function Landing() {
                     <img 
                       src="/attached_assets/4080994360202994240_1766076263672.png" 
                       alt="Patricia - Operations" 
-                      className="w-full h-full object-cover object-top grayscale"
+                      className="w-full h-full object-cover grayscale"
+                      style={{ objectPosition: 'center 15%' }}
                     />
                   </div>
                 </div>
