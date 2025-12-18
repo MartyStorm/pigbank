@@ -1780,6 +1780,7 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Payment Gateway Section */}
         <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
@@ -1787,55 +1788,58 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Express Payout</span>
-                        <Zap className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-sm font-medium text-gray-600">Dashboard</span>
+                        <BarChart3 className="h-5 w-5 text-[#73cb43]" />
                       </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-[#73cb43]" />
-                            <span className="text-sm text-gray-700">Available</span>
-                          </div>
-                          <span className="font-semibold text-gray-900">$12,450</span>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500">Today's Revenue</span>
+                          <span className="font-semibold text-gray-900">$4,285</span>
                         </div>
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-gray-400" />
-                            <span className="text-sm text-gray-700">Pending</span>
-                          </div>
-                          <span className="font-semibold text-gray-900">$3,200</span>
+                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full w-3/4 bg-[#73cb43] rounded-full" />
                         </div>
                       </div>
-                      <Button 
-                        className="w-full mt-4 bg-[#203e22] hover:bg-[#1a3319] text-white rounded-xl"
-                        size="sm"
-                      >
-                        Transfer now
-                      </Button>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between p-2 bg-green-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <CheckCircle2 className="h-3 w-3 text-[#73cb43]" />
+                            <span className="text-xs text-gray-700">Approved</span>
+                          </div>
+                          <span className="text-xs font-semibold text-gray-900">142</span>
+                        </div>
+                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-3 w-3 text-gray-400" />
+                            <span className="text-xs text-gray-700">Pending</span>
+                          </div>
+                          <span className="text-xs font-semibold text-gray-900">8</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Fast and automatic payouts
+                  Payment processing, all in one place
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  No waiting for your funds. Get same-day or next-day payouts 
-                  directly to your bank account. You can even access funds 
-                  instantly with our Express Payout feature.
+                  Track every transaction, monitor your revenue in real-time, 
+                  and manage disputes from one powerful dashboard. Built for 
+                  merchants who want complete visibility over their payments.
                 </p>
                 <Button 
                   asChild
                   size="lg" 
                   className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-learn-more-2"
+                  data-testid="button-learn-more-gateway"
                 >
                   <a href="/register">
-                    Learn more
+                    Explore dashboard
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -1844,52 +1848,64 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Professional Invoicing Section */}
-        <section className="py-20 md:py-32 bg-[#ffffff]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        {/* POS Terminals Section */}
+        <section className="py-20 md:py-32 bg-[#f9fafb] relative overflow-hidden">
+          <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Professional invoicing, simplified
+                  In-person payment processing hardware
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  Create and send professional invoices in seconds. Track payments, 
-                  send reminders, and get paid faster with built-in payment links 
-                  that your customers can use instantly.
+                  From sleek countertop terminals to portable card readers and 
+                  iPad swivel stands, we've got the hardware for every business. 
+                  Tap, swipe, or dip—we accept it all.
                 </p>
                 <Button 
                   asChild
                   size="lg" 
                   className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-learn-more-invoicing"
+                  data-testid="button-learn-more-terminals"
                 >
                   <a href="/register">
-                    Learn more
+                    View hardware
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
-                        <FileText className="h-5 w-5 text-amber-600" />
+                        <span className="text-sm font-medium text-gray-600">POS Terminal</span>
+                        <Smartphone className="h-5 w-5 text-[#73cb43]" />
                       </div>
-                      <div className="border-b border-gray-100 pb-3 mb-3">
-                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
-                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
+                      <div className="bg-gray-900 rounded-xl p-4 mb-3">
+                        <div className="flex items-center justify-center gap-2 text-white">
+                          <CreditCard className="h-5 w-5" />
+                          <span className="text-sm font-medium">Tap to Pay</span>
+                        </div>
+                        <div className="mt-3 text-center">
+                          <div className="text-2xl font-bold text-white">$47.50</div>
+                          <div className="text-xs text-gray-400 mt-1">Ready for payment</div>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-gray-500">Due Date</span>
-                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm mt-2">
-                        <span className="text-gray-500">Status</span>
-                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
-                          Pending
-                        </span>
+                      <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
+                        <div className="flex items-center gap-1">
+                          <CreditCard className="h-3 w-3" />
+                          <span>Card</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Smartphone className="h-3 w-3" />
+                          <span>NFC</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Wallet className="h-3 w-3" />
+                          <span>Wallet</span>
+                        </div>
                       </div>
                     </div>
                   </div>
