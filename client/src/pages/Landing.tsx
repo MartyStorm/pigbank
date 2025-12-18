@@ -1643,6 +1643,30 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Features Strip */}
+        <section className="py-6 bg-gray-100 border-y border-gray-200">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm md:text-base text-gray-600">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Simple, transparent pricing</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Same-day approvals</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>No long-term contracts</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Free account setup</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Customer Service Strip */}
         <section className="bg-[#203e22] py-12 md:py-16 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -1679,30 +1703,6 @@ export default function Landing() {
                 </div>
                 <h4 className="text-lg font-bold text-white mb-1">2 Min Response</h4>
                 <p className="text-white/60 text-sm">Average wait time—no long holds</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Strip */}
-        <section className="py-6 bg-gray-100 border-y border-gray-200">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm md:text-base text-gray-600">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Simple, transparent pricing</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Same-day approvals</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>No long-term contracts</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Free account setup</span>
               </div>
             </div>
           </div>
