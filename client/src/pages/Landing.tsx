@@ -1671,12 +1671,11 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Payment tools for every stage of business
+                  Real people who answer the phone
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  Starting out? Scaling up? Going global? Wherever you are on your 
-                  business journey, PigBank's payment tools can help you reach 
-                  your goals.
+                  No bots, no runaround, no waiting on hold for hours. Your dedicated 
+                  account manager knows your business and picks up when you call.
                 </p>
                 <Button 
                   asChild
@@ -1697,12 +1696,12 @@ export default function Landing() {
                       <div className="bg-white rounded-2xl shadow-xl p-6 w-36 md:w-44">
                         <div className="flex items-center gap-2 mb-3">
                           <div className="w-8 h-8 rounded-full bg-[#73cb43] flex items-center justify-center">
-                            <Shield className="h-4 w-4 text-white" />
+                            <Headphones className="h-4 w-4 text-white" />
                           </div>
-                          <span className="text-xs font-medium text-gray-600">Protected</span>
+                          <span className="text-xs font-medium text-gray-600">Response</span>
                         </div>
-                        <div className="text-2xl font-bold text-gray-900">100%</div>
-                        <div className="text-xs text-gray-500">Fraud Prevention</div>
+                        <div className="text-2xl font-bold text-gray-900">&lt;2 min</div>
+                        <div className="text-xs text-gray-500">Average Wait Time</div>
                       </div>
                     </div>
                   </div>
