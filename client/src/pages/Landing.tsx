@@ -1708,15 +1708,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Value Proposition Strip */}
-        <section className="py-10 md:py-14 bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
-            <p className="text-xl md:text-2xl lg:text-3xl font-medium text-[#203e22]">
-              We believe every business deserves a fair chance to accept payments
-            </p>
-          </div>
-        </section>
-
         <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -1858,6 +1849,15 @@ export default function Landing() {
                 <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Value Proposition Strip */}
+        <section className="py-10 md:py-14 bg-[#e8f5e0]">
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
+            <p className="text-xl md:text-2xl lg:text-3xl font-medium text-[#203e22]">
+              We believe every business deserves a fair chance to accept payments
+            </p>
           </div>
         </section>
 
