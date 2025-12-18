@@ -1136,44 +1136,6 @@ export default function Landing() {
                   </div>
                 </div>
               </CarouselItem>
-
-              {/* Slide 2: Video - What is payment processing */}
-              <CarouselItem className="pl-0">
-                <div 
-                  className="relative overflow-hidden"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, #1a1a1a 0%, #141414 40%, #0f0f0f 70%, #0a0a0a 100%)'
-                  }}
-                >
-                  <div className="flex min-h-[650px] md:min-h-[730px] lg:h-[580px] items-center">
-                    <div className="container px-6 md:px-12 max-w-6xl mx-auto relative">
-                      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
-                        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-                          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-                            See how payment processing works
-                          </h2>
-                          <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0">
-                            Watch how PigBank simplifies payments for your business. From checkout to payout in seconds.
-                          </p>
-                        </div>
-                        
-                        <div className="lg:w-1/2 relative w-full flex items-center justify-center">
-                          <div className="relative w-full max-w-md aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                              <div className="text-center">
-                                <div className="w-20 h-20 rounded-full bg-[#73cb43] flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-[#65b53b] transition-colors shadow-lg">
-                                  <Play className="h-8 w-8 text-white ml-1" />
-                                </div>
-                                <p className="text-white/60 text-sm">Video coming soon</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
             </CarouselContent>
           </Carousel>
           
