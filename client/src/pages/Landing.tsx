@@ -1727,52 +1727,52 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Transparent Pricing Section */}
+        {/* Professional Invoicing Section */}
         <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Transparent pricing, no surprises
+                  Professional invoicing, simplified
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  Know exactly what you're paying before you sign up. Our straightforward 
-                  pricing means no hidden fees, no surprise charges, and no confusing rate 
-                  structures. What you see is what you get.
+                  Create and send professional invoices in seconds. Track payments, 
+                  send reminders, and get paid faster with built-in payment links 
+                  that your customers can use instantly.
                 </p>
                 <Button 
                   asChild
                   size="lg" 
                   className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-view-pricing"
+                  data-testid="button-learn-more-invoicing"
                 >
                   <a href="/register">
-                    View pricing
+                    Learn more
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Your Rate</span>
-                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-sm font-medium text-gray-600">Invoice #1234</span>
+                        <FileText className="h-5 w-5 text-amber-600" />
                       </div>
-                      <div className="text-center py-3">
-                        <div className="text-3xl font-bold text-gray-900">2.9% + 30¢</div>
-                        <div className="text-sm text-gray-500 mt-1">per transaction</div>
+                      <div className="border-b border-gray-100 pb-3 mb-3">
+                        <div className="text-xs text-gray-500 mb-1">Amount Due</div>
+                        <div className="text-2xl font-bold text-gray-900">$2,450.00</div>
                       </div>
-                      <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
-                          <span>No monthly fees</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
-                          <span>No hidden charges</span>
-                        </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-500">Due Date</span>
+                        <span className="font-medium text-gray-900">Dec 15, 2024</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm mt-2">
+                        <span className="text-gray-500">Status</span>
+                        <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
+                          Pending
+                        </span>
                       </div>
                     </div>
                   </div>
