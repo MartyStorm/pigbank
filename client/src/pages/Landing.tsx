@@ -1343,8 +1343,8 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24 bg-[#f9fafb]">
+        <section className="bg-[#f9fafb]">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Payment processing for every risk level
