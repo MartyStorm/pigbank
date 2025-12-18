@@ -169,14 +169,13 @@ function HorizontalScrollText() {
   return (
     <section 
       ref={sectionRef}
-      className="py-12 md:py-16 bg-white overflow-hidden"
+      className="py-12 md:py-16 overflow-hidden bg-[#e8f5e0]"
     >
       <div className="text-center mb-4">
         <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-[0.2em]">
           A BETTER WAY TO PAY
         </p>
       </div>
-      
       <div className="relative">
         <motion.div 
           className="flex whitespace-nowrap"
