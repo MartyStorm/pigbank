@@ -1442,7 +1442,7 @@ export default function Landing() {
                   />
                 </div>
                 <h4 className="text-lg font-bold text-white">Marty</h4>
-                <p className="text-white/60 text-sm">Your account manager</p>
+                <p className="text-white/60 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
@@ -1453,7 +1453,7 @@ export default function Landing() {
                   />
                 </div>
                 <h4 className="text-lg font-bold text-white">Patricia</h4>
-                <p className="text-white/60 text-sm">Keeps things running</p>
+                <p className="text-white/60 text-sm">Operations Manager</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
