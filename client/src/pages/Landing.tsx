@@ -1643,11 +1643,11 @@ export default function Landing() {
                   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f9fafb] to-transparent pointer-events-none" />
                 </div>
               </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   Integrations that power your growth
                 </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg text-gray-600 max-w-lg">
                   Connect with the industry's leading platforms instantly. Whether you need 
                   plug-and-play solutions or custom connections, our payment technology 
                   fits seamlessly into your existing workflow.
