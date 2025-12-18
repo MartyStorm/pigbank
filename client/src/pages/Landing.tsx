@@ -1130,6 +1130,22 @@ export default function Landing() {
                               alt="PigBank Payouts on iPhone" 
                               className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 left-0"
                             />
+                            {/* Free Gateway Badge */}
+                            <div className="absolute -top-2 -right-2 md:top-0 md:right-0 z-30">
+                              <div className="relative">
+                                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-[#f7c948] rounded-full flex items-center justify-center shadow-lg transform rotate-12 animate-pulse-slow">
+                                  <div className="text-center transform -rotate-12">
+                                    <Star className="h-4 w-4 md:h-5 md:w-5 text-[#203e22] mx-auto mb-0.5" fill="currentColor" />
+                                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-[#203e22] leading-tight block">
+                                      GATEWAY
+                                    </span>
+                                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-[#203e22] leading-tight block">
+                                      INCLUDED
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1907,6 +1923,15 @@ export default function Landing() {
         
         .animate-scroll-up-slow {
           animation: scroll-up 25s linear infinite;
+        }
+        
+        @keyframes pulse-slow {
+          0%, 100% { transform: rotate(12deg) scale(1); }
+          50% { transform: rotate(12deg) scale(1.05); }
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse-slow 2s ease-in-out infinite;
         }
         
         input[type="range"]::-webkit-slider-thumb {
