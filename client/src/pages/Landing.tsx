@@ -1086,7 +1086,7 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-8 md:pt-10 pb-8">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-12 md:pt-16 pb-12 md:pb-16">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
                       <div className="flex flex-col items-center text-center gap-6">
                         <div className="space-y-4 max-w-3xl">
