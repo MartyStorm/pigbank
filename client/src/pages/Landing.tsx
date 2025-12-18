@@ -1427,7 +1427,7 @@ export default function Landing() {
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
           </div>
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
                 A small team that gives you big attention
