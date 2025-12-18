@@ -132,14 +132,14 @@ const testimonials = [
     quote: "As a nutraceuticals company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
     name: "TN Scientific",
     title: "Nutraceuticals & Research Products",
-    image: "/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1766041753185.png",
+    image: "/attached_assets/tn_scientific_logo.png",
   },
   {
     id: 2,
     quote: "Other processors treated us like a liability. PigBank treated us like a partner. Fast approvals, fair rates, and they actually answer the phone when we call.",
     name: "TN Scientific",
     title: "Nutraceuticals & Research Products",
-    image: "/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1766041753185.png",
+    image: "/attached_assets/tn_scientific_logo.png",
   },
 ];
 
