@@ -282,11 +282,6 @@ function TestimonialsCarousel() {
                           className="max-w-full max-h-full object-contain"
                           data-testid={`img-testimonial-${testimonial.id}`}
                         />
-                        <div className="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
-                          <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
-                          <span className="text-xs font-medium text-gray-900">PigBank</span>
-                          <span className="text-xs text-gray-500">Payment Processing</span>
-                        </div>
                       </div>
                     </div>
                   </div>
