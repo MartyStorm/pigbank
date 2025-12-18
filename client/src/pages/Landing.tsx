@@ -1658,6 +1658,8 @@ export default function Landing() {
           </div>
         </section>
 
+        <HorizontalScrollText />
+
         {/* Customer Service Strip */}
         <section className="bg-[#203e22] py-12 md:py-16">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
@@ -1702,8 +1704,6 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
-        <HorizontalScrollText />
 
         {/* Security Section */}
         <section className="py-16 md:py-24 bg-gray-50">
