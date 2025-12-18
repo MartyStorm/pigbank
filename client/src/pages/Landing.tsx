@@ -1483,7 +1483,7 @@ export default function Landing() {
               </h3>
               <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, 
-                and an AI assistant to help you anytime—even when we're closed.
+                and Oink—our AI-powered team lead who handles the heavy lifting 24/7.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
@@ -1535,8 +1535,8 @@ export default function Landing() {
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl bg-gradient-to-br from-[#75C947] via-[#4db87c] to-blue-400 flex items-center justify-center border-4 border-white shadow-xl mb-3">
                   <Zap className="h-14 w-14 md:h-16 md:w-16 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-white">AI Assistant</h4>
-                <p className="text-white/60 text-sm">Available 24/7</p>
+                <h4 className="text-lg font-bold text-white">Oink</h4>
+                <p className="text-white/60 text-sm">AI Team Lead</p>
               </div>
             </div>
           </div>
