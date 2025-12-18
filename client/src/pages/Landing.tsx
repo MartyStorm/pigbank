@@ -1513,52 +1513,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Security Section */}
-        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Bank-level security you can trust
-              </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
-                  <Lock className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
-                <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheck className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Level 1</h4>
-                <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">We never sell your data</h4>
-                <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Value Proposition Strip */}
-        <section className="py-10 md:py-14 bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
-            <p className="text-xl md:text-2xl lg:text-3xl font-medium text-[#203e22]">
-              We believe every business deserves a fair chance to accept payments
-            </p>
-          </div>
-        </section>
-
         <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -1610,6 +1564,52 @@ export default function Landing() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Security Section */}
+        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Bank-level security you can trust
+              </h2>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <Lock className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
+                <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <ShieldCheck className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Level 1</h4>
+                <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#73cb43] flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">We never sell your data</h4>
+                <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Value Proposition Strip */}
+        <section className="py-10 md:py-14 bg-[#e8f5e0]">
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
+            <p className="text-xl md:text-2xl lg:text-3xl font-medium text-[#203e22]">
+              We believe every business deserves a fair chance to accept payments
+            </p>
           </div>
         </section>
 
