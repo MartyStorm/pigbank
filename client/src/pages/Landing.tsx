@@ -1774,7 +1774,7 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32 bg-[#1d441f]">
+        <section className="py-20 md:py-32 bg-[#1a4320]">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to bring home the bacon?
