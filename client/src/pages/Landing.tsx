@@ -1482,7 +1482,7 @@ export default function Landing() {
                 Your success is our business
               </h3>
               <p className="text-base md:text-lg text-white/70 max-w-4xl mx-auto">
-                We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built by PigBank, trained on our ecosystem and ready to help 24/7.
+                We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
