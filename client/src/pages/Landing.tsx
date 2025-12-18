@@ -1645,7 +1645,7 @@ export default function Landing() {
 
         {/* Customer Service Strip */}
         <section className="bg-[#203e22] py-12 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 bg-[#e8f5e0]">
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
           </div>
