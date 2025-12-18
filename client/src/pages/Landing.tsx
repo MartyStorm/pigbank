@@ -1451,27 +1451,24 @@ export default function Landing() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <span className="text-4xl md:text-5xl font-bold text-white">M</span>
                 </div>
                 <h4 className="text-lg font-bold text-white">Operations</h4>
                 <p className="text-white/60 text-sm">Keeps things running</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <span className="text-4xl md:text-5xl font-bold text-white">S</span>
+                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
                 </div>
                 <h4 className="text-lg font-bold text-white">Support</h4>
                 <p className="text-white/60 text-sm">Here to help</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <span className="text-4xl md:text-5xl font-bold text-white">R</span>
+                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
                 </div>
                 <h4 className="text-lg font-bold text-white">Sales</h4>
                 <p className="text-white/60 text-sm">Your partner</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
+                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
                   <Zap className="h-12 w-12 md:h-14 md:w-14 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-white">AI Assistant</h4>
