@@ -1168,6 +1168,8 @@ export default function Landing() {
           </Carousel>
         </section>
 
+        <HorizontalScrollText />
+
         <section className="bg-[#15391c] py-8">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
@@ -1278,8 +1280,6 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
-        <HorizontalScrollText />
 
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24 bg-[#f9fafb]">
