@@ -1624,15 +1624,15 @@ export default function Landing() {
               </div>
 
               <div 
-                className="group relative flex-1 bg-[#c8e6b9] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                className="group relative flex-1 bg-[#73cb43] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
                 data-testid="card-low-risk"
               >
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-[#203e22]/10 flex items-center justify-center">
-                  <ArrowUpRight className="h-5 w-5 text-[#203e22]" />
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
                 <div className="mt-16 space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#203e22]">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
                     Medium & Low risk
                   </h3>
                   
@@ -1649,8 +1649,8 @@ export default function Landing() {
                       "Subscription",
                       "Non-profit",
                     ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-[#203e22]/90">
-                        <CheckCircle2 className="h-4 w-4 text-[#203e22]" />
+                      <div key={industry} className="flex items-center gap-2 text-white/90">
+                        <CheckCircle2 className="h-4 w-4 text-white" />
                         <span className="text-sm">{industry}</span>
                       </div>
                     ))}
@@ -1658,7 +1658,7 @@ export default function Landing() {
                 </div>
 
                 <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-[#203e22]/70 text-sm">
+                  <span className="text-white/70 text-sm">
                     Competitive rates for traditional business models
                   </span>
                 </div>
