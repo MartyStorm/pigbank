@@ -1108,33 +1108,6 @@ export default function Landing() {
                               alt="PigBank Payouts on iPhone" 
                               className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                             />
-                            {/* Free Gateway Badge - Certificate Seal */}
-                            <div className="absolute -top-6 -right-4 md:-top-4 md:-right-2 z-30">
-                              <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-                                  <defs>
-                                    <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                      <stop offset="0%" stopColor="#73cb43" />
-                                      <stop offset="100%" stopColor="#203e22" />
-                                    </linearGradient>
-                                  </defs>
-                                  <path 
-                                    d="M50,5 L55,18 L65,8 L66,22 L78,15 L76,29 L90,26 L84,38 L97,42 L88,52 L97,62 L84,66 L90,78 L76,75 L78,89 L66,82 L65,96 L55,86 L50,99 L45,86 L35,96 L34,82 L22,89 L24,75 L10,78 L16,66 L3,62 L12,52 L3,42 L16,38 L10,26 L24,29 L22,15 L34,22 L35,8 L45,18 Z" 
-                                    fill="url(#sealGradient)"
-                                  />
-                                </svg>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="text-center">
-                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-black text-white leading-tight block" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
-                                      GATEWAY
-                                    </span>
-                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-black text-white leading-tight block" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
-                                      INCLUDED
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
