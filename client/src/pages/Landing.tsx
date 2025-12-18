@@ -1446,7 +1446,7 @@ export default function Landing() {
                     className="w-full h-full object-cover object-top grayscale"
                   />
                 </div>
-                <h4 className="text-lg font-bold text-white">Founder</h4>
+                <h4 className="text-lg font-bold text-white">Marty</h4>
                 <p className="text-white/60 text-sm">Your account manager</p>
               </div>
               <div className="flex flex-col items-center">
