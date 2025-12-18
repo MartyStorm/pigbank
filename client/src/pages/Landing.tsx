@@ -1593,7 +1593,7 @@ export default function Landing() {
                     High risk industries
                   </h3>
                   
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                     {[
                       "CBD & Hemp",
                       "Adult products",
@@ -1614,9 +1614,9 @@ export default function Landing() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white/70 text-sm">
-                    Specialized underwriting for merchants others can't approve
+                <div className="absolute bottom-8 left-8 right-8">
+                  <span className="text-white/60 text-sm italic">
+                    Just because a bank deems your business risky, doesn't mean you can't prosper.
                   </span>
                 </div>
               </div>
@@ -1634,31 +1634,9 @@ export default function Landing() {
                     Medium & Low risk
                   </h3>
                   
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {[
-                      "E-commerce",
-                      "SaaS",
-                      "Professional services",
-                      "Restaurants",
-                      "Healthcare",
-                      "Education",
-                      "Travel",
-                      "Retail",
-                      "Subscription",
-                      "Non-profit",
-                    ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-white/90">
-                        <CheckCircle2 className="h-4 w-4 text-white" />
-                        <span className="text-sm">{industry}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white/70 text-sm">
-                    Competitive rates for traditional business models
-                  </span>
+                  <p className="text-white/80 text-sm">
+                    Your business will be supported by a dedicated team of merchant service specialists.
+                  </p>
                 </div>
               </div>
             </div>
