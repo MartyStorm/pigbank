@@ -1468,8 +1468,8 @@ export default function Landing() {
                     className="w-full h-full object-cover object-top grayscale"
                   />
                 </div>
-                <h4 className="text-lg font-bold text-white">Accounting</h4>
-                <p className="text-white/60 text-sm">Here to help</p>
+                <h4 className="text-lg font-bold text-white">Kat</h4>
+                <p className="text-white/60 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
