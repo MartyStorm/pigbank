@@ -1505,8 +1505,8 @@ export default function Landing() {
         </section>
 
         <section className="py-4 bg-[#2f8a2b] overflow-hidden">
-          <div className="relative flex overflow-hidden h-10">
-            <div className="animate-marquee whitespace-nowrap flex items-center">
+          <div className="relative flex items-center overflow-hidden h-10">
+            <div className="animate-marquee whitespace-nowrap flex items-center h-full">
               {[...Array(4)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   <div className="flex items-center gap-2 mx-8">
@@ -1532,7 +1532,7 @@ export default function Landing() {
                 </div>
               ))}
             </div>
-            <div className="animate-marquee2 whitespace-nowrap flex items-center absolute top-0">
+            <div className="animate-marquee2 whitespace-nowrap flex items-center h-full absolute left-0 top-0">
               {[...Array(4)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   <div className="flex items-center gap-2 mx-8">
