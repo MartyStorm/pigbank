@@ -274,15 +274,12 @@ function TestimonialsCarousel() {
                     </div>
                     <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                       <div 
-                        className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden"
-                        style={{
-                          background: 'linear-gradient(135deg, #9ee068 0%, #73cb43 50%, #4a9a2a 100%)'
-                        }}
+                        className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-6"
                       >
                         <img 
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-full h-full object-cover object-top mix-blend-luminosity opacity-90"
+                          className="max-w-full max-h-full object-contain"
                           data-testid={`img-testimonial-${testimonial.id}`}
                         />
                         <div className="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
