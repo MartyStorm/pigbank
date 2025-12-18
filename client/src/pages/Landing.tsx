@@ -155,6 +155,13 @@ const testimonials = [
     title: "Owner, Premium Services LLC",
     image: testimonial4,
   },
+  {
+    id: 5,
+    quote: "As a nutraceuticals company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
+    name: "TN Scientific",
+    title: "Nutraceuticals & Research Products",
+    image: "/attached_assets/No_White_Boarder_PSD_New_TN_Square_logo_Gray__1766041564044.png",
+  },
 ];
 
 function HorizontalScrollText() {
@@ -239,9 +246,9 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="bg-[#1a1a1a] py-16 md:py-24 relative">
+    <section className="bg-[#1a1a1a] py-10 md:py-14 relative">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <p className="text-xs md:text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em]">
             TRUSTED BY MERCHANTS
           </p>
@@ -277,7 +284,7 @@ function TestimonialsCarousel() {
                 <CarouselItem key={testimonial.id}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div className="order-2 lg:order-1">
-                      <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed mb-8">
+                      <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-6">
                         "{testimonial.quote}"
                       </blockquote>
                       <div>
@@ -288,7 +295,7 @@ function TestimonialsCarousel() {
                     </div>
                     <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                       <div 
-                        className="relative w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden"
+                        className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden"
                         style={{
                           background: 'linear-gradient(135deg, #9ee068 0%, #73cb43 50%, #4a9a2a 100%)'
                         }}
@@ -313,7 +320,7 @@ function TestimonialsCarousel() {
           </Carousel>
         </div>
 
-        <div className="flex items-center justify-center gap-2 mt-8">
+        <div className="flex items-center justify-center gap-2 mt-6">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
