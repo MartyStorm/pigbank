@@ -1506,7 +1506,7 @@ export default function Landing() {
                   />
                 </div>
                 <h4 className="text-lg font-bold text-white">Patricia</h4>
-                <p className="text-white/60 text-sm">Operations Manager</p>
+                <p className="text-white/60 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
