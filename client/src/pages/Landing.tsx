@@ -160,8 +160,10 @@ function HorizontalScrollText() {
   return (
     <section 
       ref={sectionRef}
-      className="py-12 md:py-16 overflow-hidden bg-[#f3f4f6]"
+      className="py-12 md:py-16 overflow-hidden bg-[#f3f4f6] relative"
     >
+      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-[#75C947]/8 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-gradient-to-l from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-x-1/2 -translate-y-1/2" />
       <div className="text-center mb-4">
         <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-[0.2em]">
           A BETTER WAY TO PAY
@@ -1545,8 +1547,10 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-[#ffffff]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="relative">
@@ -1607,8 +1611,10 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-[#f9fafb]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-20 md:py-32 bg-[#f9fafb] relative overflow-hidden">
+          <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
@@ -1765,8 +1771,10 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb] relative">
+          <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
+          <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="relative h-[400px] md:h-[500px] overflow-hidden">
