@@ -1304,40 +1304,40 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <CreditCard className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">Credit Cards</h4>
-                <p className="text-gray-500 text-sm">Visa, Mastercard, Amex, Discover</p>
+                <h4 className="font-semibold text-white mb-1">Credit Cards</h4>
+                <p className="text-white/70 text-sm">Visa, Mastercard, Amex, Discover</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #73cb43 0%, #5ab334 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">ACH Transfers</h4>
-                <p className="text-gray-500 text-sm">Direct bank payments</p>
+                <h4 className="font-semibold text-white mb-1">ACH Transfers</h4>
+                <p className="text-white/80 text-sm">Direct bank payments</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Coins className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">Cryptocurrency</h4>
-                <p className="text-gray-500 text-sm">Bitcoin, Ethereum & more</p>
+                <h4 className="font-semibold text-white mb-1">Cryptocurrency</h4>
+                <p className="text-white/70 text-sm">Bitcoin, Ethereum & more</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #73cb43 0%, #5ab334 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
                   <FileCheck className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">eChecks</h4>
-                <p className="text-gray-500 text-sm">Digital check processing</p>
+                <h4 className="font-semibold text-white mb-1">eChecks</h4>
+                <p className="text-white/80 text-sm">Digital check processing</p>
               </div>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Link className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">Click to Pay</h4>
-                <p className="text-gray-500 text-sm">Send payment links via text or email</p>
+                <h4 className="font-semibold text-white mb-1">Click to Pay</h4>
+                <p className="text-white/70 text-sm">Send payment links via text or email</p>
               </div>
             </div>
           </div>
