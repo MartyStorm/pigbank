@@ -1131,25 +1131,26 @@ export default function Landing() {
                               className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 left-0"
                             />
                             {/* Free Gateway Badge - Certificate Seal */}
-                            <div className="absolute -top-4 -right-4 md:-top-2 md:-right-2 z-30">
+                            <div className="absolute -top-6 -right-4 md:-top-4 md:-right-2 z-30">
                               <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
                                 <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
                                   <defs>
-                                    <clipPath id="sealClip">
-                                      <path d="M50,2 L54,15 L60,2 L62,16 L70,5 L70,18 L80,10 L78,22 L88,17 L84,28 L95,26 L88,35 L98,38 L90,44 L98,50 L90,56 L98,62 L88,65 L95,74 L84,72 L88,83 L78,78 L80,90 L70,82 L70,95 L62,84 L60,98 L54,85 L50,98 L46,85 L40,98 L38,84 L30,95 L30,82 L20,90 L22,78 L12,83 L16,72 L5,74 L12,65 L2,62 L10,56 L2,50 L10,44 L2,38 L12,35 L5,26 L16,28 L12,17 L22,22 L20,10 L30,18 L30,5 L38,16 L40,2 L46,15 Z" />
-                                    </clipPath>
+                                    <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                      <stop offset="0%" stopColor="#73cb43" />
+                                      <stop offset="100%" stopColor="#203e22" />
+                                    </linearGradient>
                                   </defs>
                                   <path 
-                                    d="M50,2 L54,15 L60,2 L62,16 L70,5 L70,18 L80,10 L78,22 L88,17 L84,28 L95,26 L88,35 L98,38 L90,44 L98,50 L90,56 L98,62 L88,65 L95,74 L84,72 L88,83 L78,78 L80,90 L70,82 L70,95 L62,84 L60,98 L54,85 L50,98 L46,85 L40,98 L38,84 L30,95 L30,82 L20,90 L22,78 L12,83 L16,72 L5,74 L12,65 L2,62 L10,56 L2,50 L10,44 L2,38 L12,35 L5,26 L16,28 L12,17 L22,22 L20,10 L30,18 L30,5 L38,16 L40,2 L46,15 Z" 
-                                    fill="#203e22"
+                                    d="M50,5 L55,18 L65,8 L66,22 L78,15 L76,29 L90,26 L84,38 L97,42 L88,52 L97,62 L84,66 L90,78 L76,75 L78,89 L66,82 L65,96 L55,86 L50,99 L45,86 L35,96 L34,82 L22,89 L24,75 L10,78 L16,66 L3,62 L12,52 L3,42 L16,38 L10,26 L24,29 L22,15 L34,22 L35,8 L45,18 Z" 
+                                    fill="url(#sealGradient)"
                                   />
                                 </svg>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                   <div className="text-center">
-                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-extrabold text-white leading-tight block drop-shadow-sm">
+                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-black text-white leading-tight block" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                                       GATEWAY
                                     </span>
-                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-extrabold text-white leading-tight block drop-shadow-sm">
+                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-black text-white leading-tight block" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                                       INCLUDED
                                     </span>
                                   </div>
