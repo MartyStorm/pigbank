@@ -1666,126 +1666,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Customer Service Strip */}
-        <section className="bg-[#203e22] py-12 md:py-16">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                  Real people. Real support.
-                </h3>
-                <p className="text-lg text-white/80 max-w-xl">
-                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Headphones className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">24/7 Support</p>
-                    <p className="text-white/70 text-sm">Always available</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">Dedicated Team</p>
-                    <p className="text-white/70 text-sm">Knows your business</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-white">
-                    <p className="font-semibold">2 Min Response</p>
-                    <p className="text-white/70 text-sm">Average wait time</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Security Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-              <div className="lg:w-1/2 space-y-6">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Bank-level security you can trust
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
-                </p>
-                <div className="space-y-4 pt-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
-                      <Lock className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">256-bit encryption</h4>
-                      <p className="text-gray-600 text-sm">Every transaction is protected with military-grade encryption</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">PCI DSS Level 1</h4>
-                      <p className="text-gray-600 text-sm">The highest security certification in the payments industry</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
-                      <Shield className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">We never sell your data</h4>
-                      <p className="text-gray-600 text-sm">Your business data stays private—period. No exceptions.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/2 flex justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-[#73cb43]/20 rounded-full blur-3xl scale-150" />
-                  <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
-                        <Lock className="h-8 w-8 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-xl text-gray-900">Fully Protected</p>
-                        <p className="text-gray-500">Enterprise Security</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                        <span className="text-gray-700">SOC 2 Type II Certified</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                        <span className="text-gray-700">99.99% Uptime SLA</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                        <span className="text-gray-700">Fraud Monitoring 24/7</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -1987,6 +1867,126 @@ export default function Landing() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Service Strip */}
+        <section className="bg-[#203e22] py-12 md:py-16">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+                  Real people. Real support.
+                </h3>
+                <p className="text-lg text-white/80 max-w-xl">
+                  Your dedicated account manager picks up the phone. No bots, no runaround, no waiting on hold for hours.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Headphones className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">24/7 Support</p>
+                    <p className="text-white/70 text-sm">Always available</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">Dedicated Team</p>
+                    <p className="text-white/70 text-sm">Knows your business</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#73cb43] flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-white">
+                    <p className="font-semibold">2 Min Response</p>
+                    <p className="text-white/70 text-sm">Average wait time</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security Section */}
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="lg:w-1/2 space-y-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Bank-level security you can trust
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
+                </p>
+                <div className="space-y-4 pt-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <Lock className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">256-bit encryption</h4>
+                      <p className="text-gray-600 text-sm">Every transaction is protected with military-grade encryption</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <ShieldCheck className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">PCI DSS Level 1</h4>
+                      <p className="text-gray-600 text-sm">The highest security certification in the payments industry</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">We never sell your data</h4>
+                      <p className="text-gray-600 text-sm">Your business data stays private—period. No exceptions.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-[#73cb43]/20 rounded-full blur-3xl scale-150" />
+                  <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-[#203e22] flex items-center justify-center">
+                        <Lock className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-xl text-gray-900">Fully Protected</p>
+                        <p className="text-gray-500">Enterprise Security</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">SOC 2 Type II Certified</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">99.99% Uptime SLA</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-gray-700">Fraud Monitoring 24/7</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
