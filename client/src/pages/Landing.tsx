@@ -2412,11 +2412,11 @@ export default function Landing() {
         }
         
         .animate-marquee {
-          animation: marquee 25s linear infinite;
+          animation: marquee 120s linear infinite;
         }
         
         .animate-marquee2 {
-          animation: marquee2 25s linear infinite;
+          animation: marquee2 120s linear infinite;
         }
         
         input[type="range"]::-webkit-slider-thumb {
