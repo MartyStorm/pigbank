@@ -197,7 +197,20 @@ function HorizontalScrollText() {
   );
 }
 
-function AppleScrollSection() {
+const integrationCards = [
+  { name: "Shopify", color: "bg-[#96bf48]" },
+  { name: "WooCommerce", color: "bg-[#7f54b3]" },
+  { name: "Wix", color: "bg-[#0c6efc]" },
+  { name: "Squarespace", color: "bg-[#1a1a1a]" },
+  { name: "BigCommerce", color: "bg-[#34313f]" },
+  { name: "Magento", color: "bg-[#f26322]" },
+  { name: "WordPress", color: "bg-[#21759b]" },
+  { name: "QuickBooks", color: "bg-[#2ca01c]" },
+  { name: "Sezzle", color: "bg-[#382757]" },
+  { name: "PrestaShop", color: "bg-[#df0067]" },
+];
+
+function IntegrationsScrollSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -205,163 +218,119 @@ function AppleScrollSection() {
     offset: ["start start", "end start"]
   });
 
-  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+  const springConfig = { stiffness: 80, damping: 25, restDelta: 0.001 };
   const smoothProgress = useSpring(scrollYProgress, springConfig);
 
-  const cardOpacity = useTransform(smoothProgress, [0, 0.15, 0.35], [1, 1, 0]);
-  const cardScale = useTransform(smoothProgress, [0, 0.15, 0.35], [1, 1, 0.8]);
+  const introTextOpacity = useTransform(smoothProgress, [0, 0.1, 0.3], [0, 1, 1]);
+  const introTextY = useTransform(smoothProgress, [0, 0.1], [40, 0]);
   
-  const circleScale = useTransform(smoothProgress, [0.2, 0.6], [1, 12]);
-  const circleOpacity = useTransform(smoothProgress, [0.2, 0.4, 0.75, 0.85], [0, 1, 1, 0]);
+  const cardsContainerOpacity = useTransform(smoothProgress, [0.2, 0.3, 0.55, 0.65], [0, 1, 1, 0]);
   
-  const headlineOpacity = useTransform(smoothProgress, [0.45, 0.6], [0, 1]);
-  const headlineY = useTransform(smoothProgress, [0.45, 0.6], [60, 0]);
+  const ctaOpacity = useTransform(smoothProgress, [0.65, 0.8], [0, 1]);
+  const ctaY = useTransform(smoothProgress, [0.65, 0.8], [60, 0]);
+  const ctaScale = useTransform(smoothProgress, [0.65, 0.8], [0.9, 1]);
 
-  const phoneOpacity = useTransform(smoothProgress, [0.35, 0.5], [1, 0]);
-  const phoneScale = useTransform(smoothProgress, [0.35, 0.5], [1, 0.9]);
+  const cardYOffsets = integrationCards.map((_, index) => {
+    const staggerDelay = index * 0.012;
+    const startY = 0.2 + staggerDelay;
+    const endY = 0.4 + staggerDelay;
+    return useTransform(smoothProgress, [startY, endY], [500, 0]);
+  });
 
-  const card0X = useTransform(smoothProgress, [0.1, 0.35], [0, -360]);
-  const card0Y = useTransform(smoothProgress, [0.1, 0.35], [0, -180]);
-  const card1X = useTransform(smoothProgress, [0.1, 0.35], [0, 360]);
-  const card1Y = useTransform(smoothProgress, [0.1, 0.35], [0, -150]);
-  const card2X = useTransform(smoothProgress, [0.1, 0.35], [0, -400]);
-  const card2Y = useTransform(smoothProgress, [0.1, 0.35], [0, 60]);
-  const card3X = useTransform(smoothProgress, [0.1, 0.35], [0, 400]);
-  const card3Y = useTransform(smoothProgress, [0.1, 0.35], [0, 90]);
-  const card4X = useTransform(smoothProgress, [0.1, 0.35], [0, -320]);
-  const card4Y = useTransform(smoothProgress, [0.1, 0.35], [0, 270]);
-  const card5X = useTransform(smoothProgress, [0.1, 0.35], [0, 320]);
-  const card5Y = useTransform(smoothProgress, [0.1, 0.35], [0, 240]);
+  const cardExplodeX = integrationCards.map((_, index) => {
+    const angle = (index / integrationCards.length) * Math.PI * 2;
+    const explodeDistance = 600 + (index % 3) * 100;
+    const targetX = Math.cos(angle) * explodeDistance;
+    return useTransform(smoothProgress, [0.5, 0.65], [0, targetX]);
+  });
 
-  const cardTransforms = [
-    { x: card0X, y: card0Y },
-    { x: card1X, y: card1Y },
-    { x: card2X, y: card2Y },
-    { x: card3X, y: card3Y },
-    { x: card4X, y: card4Y },
-    { x: card5X, y: card5Y },
-  ];
+  const cardExplodeY = integrationCards.map((_, index) => {
+    const angle = (index / integrationCards.length) * Math.PI * 2;
+    const explodeDistance = 400 + (index % 3) * 80;
+    const targetY = Math.sin(angle) * explodeDistance;
+    return useTransform(smoothProgress, [0.5, 0.65], [0, targetY]);
+  });
+
+  const cardRotations = integrationCards.map((_, index) => {
+    const targetRotation = (index % 2 === 0 ? 1 : -1) * (30 + (index * 10));
+    return useTransform(smoothProgress, [0.5, 0.65], [0, targetRotation]);
+  });
 
   return (
     <section 
       ref={sectionRef}
-      className="relative bg-white"
-      style={{ height: "300vh" }}
+      className="relative bg-gray-100"
+      style={{ height: "350vh" }}
     >
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
         <motion.div 
-          className="absolute rounded-full bg-[#f5efe4]"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10"
           style={{
-            width: 280,
-            height: 280,
-            scale: circleScale,
-            opacity: circleOpacity,
+            opacity: introTextOpacity,
+            y: introTextY,
           }}
-        />
+        >
+          <p className="text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em] mb-4">
+            SEAMLESS INTEGRATIONS
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 max-w-4xl mb-6">
+            Connect with platforms you already use
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
+            PigBank integrates with all major e-commerce platforms, so you can start accepting payments in minutes.
+          </p>
+        </motion.div>
 
-        <div className="relative z-10 flex flex-col items-center">
-          <div className="relative">
-            {featureCards.map((card, index) => {
-              const transforms = cardTransforms[index];
-              return (
-                <motion.div
-                  key={card.title}
-                  className={`absolute ${card.color} rounded-2xl p-4 shadow-lg min-w-[120px]`}
-                  style={{
-                    x: transforms.x,
-                    y: transforms.y,
-                    opacity: cardOpacity,
-                    scale: cardScale,
-                    left: "50%",
-                    top: "50%",
-                    marginLeft: card.x - 60,
-                    marginTop: card.y - 30,
-                  }}
-                >
-                  <card.icon className="h-6 w-6 text-white mb-2" />
-                  <span className="text-white text-sm font-medium whitespace-nowrap">{card.title}</span>
-                </motion.div>
-              );
-            })}
-
-            <motion.div 
-              className="relative bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl z-20"
-              style={{
-                opacity: phoneOpacity,
-                scale: phoneScale,
-              }}
-            >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-b-xl z-30" />
-              <div className="bg-white rounded-[2rem] overflow-hidden w-[220px] md:w-[260px] h-[440px] md:h-[520px]">
-                <div className="bg-[#203e22] p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-white/60 text-xs">×</span>
-                    <img src="/favicon.png" alt="PigBank" className="h-5 w-5" />
-                  </div>
-                  <p className="text-white/70 text-xs mb-1">Your total Balance</p>
-                  <p className="text-white text-2xl md:text-3xl font-bold">$47,892</p>
-                  <div className="flex items-center gap-2 mt-2">
-                    <span className="text-xs text-white/60">Return: $12,450</span>
-                  </div>
-                </div>
-                <div className="p-4 bg-white">
-                  <div className="flex items-center justify-between mb-3 text-xs">
-                    <span className="text-gray-500">$47,892 today</span>
-                  </div>
-                  <div className="h-32 flex items-end gap-1">
-                    {[35, 42, 38, 55, 48, 62, 58, 75, 68, 82, 78, 95].map((h, i) => (
-                      <div 
-                        key={i} 
-                        className="flex-1 bg-gradient-to-t from-[#73cb43] to-[#9ee068] rounded-t"
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex justify-between mt-2 text-[10px] text-gray-400">
-                    <span>Jan</span>
-                    <span>Dec</span>
-                  </div>
-                  <div className="flex gap-2 mt-4">
-                    <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
-                      <span className="text-gray-600">Years: </span>
-                      <span className="font-semibold text-[#73cb43]">5</span>
-                    </div>
-                    <div className="flex-1 bg-gray-100 rounded-full py-2 px-3 text-xs text-center">
-                      <span className="text-gray-600">Return: </span>
-                      <span className="font-semibold text-[#73cb43]">12%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        <motion.div 
+          className="absolute inset-0 flex items-center justify-center z-20"
+          style={{ opacity: cardsContainerOpacity }}
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-6 max-w-6xl px-4">
+            {integrationCards.map((card, index) => (
+              <motion.div
+                key={card.name}
+                className={`${card.color} rounded-2xl p-4 md:p-6 shadow-lg flex flex-col items-center justify-center min-h-[100px] md:min-h-[120px]`}
+                style={{
+                  y: cardYOffsets[index],
+                  x: cardExplodeX[index],
+                  rotate: cardRotations[index],
+                }}
+              >
+                <span className="text-white text-sm md:text-base font-semibold text-center">{card.name}</span>
+              </motion.div>
+            ))}
           </div>
+        </motion.div>
 
-          <motion.div 
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-30"
-            style={{
-              opacity: headlineOpacity,
-              y: headlineY,
-            }}
+        <motion.div 
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-30"
+          style={{
+            opacity: ctaOpacity,
+            y: ctaY,
+            scale: ctaScale,
+          }}
+        >
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#203e22] flex items-center justify-center mb-6">
+            <Settings className="h-10 w-10 md:h-12 md:w-12 text-white" />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 max-w-4xl mb-4">
+            Need a custom integration?
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8">
+            Our team can build a custom solution for any platform. Let's talk about your needs.
+          </p>
+          <Button 
+            asChild
+            size="lg" 
+            className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8 shadow-lg"
+            data-testid="button-custom-integration"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 max-w-4xl mb-6">
-              One platform for every way you get paid
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8">
-              Accept payments in-person, online, or on-the-go. PigBank handles it all.
-            </p>
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8 shadow-lg"
-              data-testid="button-learn-payments"
-            >
-              <a href="/register">
-                Start accepting payments
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </motion.div>
-        </div>
+            <a href="/register">
+              Contact us for custom integration
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
@@ -1685,11 +1654,6 @@ export default function Landing() {
                   </div>
                   <span className="text-white/60 mx-4">|</span>
                   <div className="flex items-center gap-2 mx-8">
-                    <Clock className="h-5 w-5 text-white" />
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">6+ Years Processing Experience</span>
-                  </div>
-                  <span className="text-white/60 mx-4">|</span>
-                  <div className="flex items-center gap-2 mx-8">
                     <TrendingUp className="h-5 w-5 text-white" />
                     <span className="text-base font-semibold text-white uppercase tracking-wider">Processing Millions for Partners</span>
                   </div>
@@ -1697,6 +1661,11 @@ export default function Landing() {
                   <div className="flex items-center gap-2 mx-8">
                     <CheckCircle2 className="h-5 w-5 text-white" />
                     <span className="text-base font-semibold text-white uppercase tracking-wider">Trustpilot Verified</span>
+                  </div>
+                  <span className="text-white/60 mx-4">|</span>
+                  <div className="flex items-center gap-2 mx-8">
+                    <Clock className="h-5 w-5 text-white" />
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">6+ Years Processing Experience</span>
                   </div>
                   <span className="text-white/60 mx-4">|</span>
                 </div>
@@ -1711,11 +1680,6 @@ export default function Landing() {
                   </div>
                   <span className="text-white/60 mx-4">|</span>
                   <div className="flex items-center gap-2 mx-8">
-                    <Clock className="h-5 w-5 text-white" />
-                    <span className="text-base font-semibold text-white uppercase tracking-wider">6+ Years Processing Experience</span>
-                  </div>
-                  <span className="text-white/60 mx-4">|</span>
-                  <div className="flex items-center gap-2 mx-8">
                     <TrendingUp className="h-5 w-5 text-white" />
                     <span className="text-base font-semibold text-white uppercase tracking-wider">Processing Millions for Partners</span>
                   </div>
@@ -1725,13 +1689,18 @@ export default function Landing() {
                     <span className="text-base font-semibold text-white uppercase tracking-wider">Trustpilot Verified</span>
                   </div>
                   <span className="text-white/60 mx-4">|</span>
+                  <div className="flex items-center gap-2 mx-8">
+                    <Clock className="h-5 w-5 text-white" />
+                    <span className="text-base font-semibold text-white uppercase tracking-wider">6+ Years Processing Experience</span>
+                  </div>
+                  <span className="text-white/60 mx-4">|</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <AppleScrollSection />
+        <IntegrationsScrollSection />
 
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24">
