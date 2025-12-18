@@ -169,9 +169,9 @@ function HorizontalScrollText() {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 md:py-32 bg-white overflow-hidden"
+      className="py-12 md:py-16 bg-white overflow-hidden"
     >
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-[0.2em]">
           A BETTER WAY TO PAY
         </p>
@@ -185,7 +185,7 @@ function HorizontalScrollText() {
           {[...Array(4)].map((_, i) => (
             <span 
               key={i}
-              className="text-6xl md:text-8xl lg:text-9xl font-bold text-gray-200 mx-4"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-300 mx-4"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               Why PigBank - 
