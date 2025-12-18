@@ -1128,11 +1128,6 @@ export default function Landing() {
                               alt="PigBank Payouts on iPhone" 
                               className="absolute w-[65px] md:w-[80px] lg:w-[100px] xl:w-[115px] h-auto z-20 bottom-0 left-0"
                             />
-                            <img 
-                              src="/pig-suit-new.png" 
-                              alt="PigBank Mascot" 
-                              className="absolute w-[90px] md:w-[110px] lg:w-[140px] xl:w-[160px] h-auto z-30 bottom-0 right-[-5%]"
-                            />
                           </div>
                         </div>
                       </div>
