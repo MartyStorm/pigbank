@@ -1330,42 +1330,42 @@ export default function Landing() {
         </section>
 
         {/* Customer Service Strip */}
-        <section className="bg-[#203e22] py-12 md:py-16 relative overflow-hidden">
+        <section className="bg-[#e8f5e0] py-12 md:py-16 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
           </div>
           <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                 A small team that gives you big attention
               </h3>
-              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, 
                 and an AI assistant to help you anytime—even when we're closed.
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
                   <span className="text-3xl md:text-4xl font-bold text-white">J</span>
                 </div>
-                <h4 className="text-lg font-bold text-white">Founder</h4>
-                <p className="text-white/60 text-sm">Your account manager</p>
+                <h4 className="text-lg font-bold text-gray-900">Founder</h4>
+                <p className="text-gray-500 text-sm">Your account manager</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
                   <span className="text-3xl md:text-4xl font-bold text-white">M</span>
                 </div>
-                <h4 className="text-lg font-bold text-white">Operations</h4>
-                <p className="text-white/60 text-sm">Keeps things running</p>
+                <h4 className="text-lg font-bold text-gray-900">Operations</h4>
+                <p className="text-gray-500 text-sm">Keeps things running</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white/20 shadow-xl mb-3">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
                   <Zap className="h-10 w-10 md:h-12 md:w-12 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-white">AI Assistant</h4>
-                <p className="text-white/60 text-sm">Available 24/7</p>
+                <h4 className="text-lg font-bold text-gray-900">AI Assistant</h4>
+                <p className="text-gray-500 text-sm">Available 24/7</p>
               </div>
             </div>
           </div>
