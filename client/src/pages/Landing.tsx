@@ -1568,7 +1568,7 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 bg-[#f8f9fa] overflow-hidden">
+        <section className="py-20 md:py-32 overflow-hidden bg-[#ffffff]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1">
