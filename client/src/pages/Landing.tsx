@@ -1481,9 +1481,8 @@ export default function Landing() {
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
                 A small team that gives you big attention
               </h3>
-              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-                We're a focused team that actually knows your business. Fast responses, personal service, 
-                and Oink—our AI-powered team lead who handles the heavy lifting 24/7.
+              <p className="text-base md:text-lg text-white/70 max-w-4xl mx-auto">
+                We're a focused team that actually knows your business. Fast responses, personal service, and Oink—our AI-powered team lead who handles the heavy lifting 24/7.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
