@@ -1919,45 +1919,104 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-[#ffffff]">
+        {/* Integrations Section */}
+        <section className="py-20 md:py-32 bg-[#f8f9fa] overflow-hidden">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-32 h-32 rounded-full border-4 border-[#73cb43]/20 animate-ping" style={{ animationDuration: '3s' }} />
-                      </div>
-                      <div className="relative bg-white rounded-full p-8 shadow-xl">
-                        <Lock className="h-16 w-16 text-[#203e22]" />
-                      </div>
+                <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+                  <div className="flex gap-4 md:gap-6 justify-center">
+                    {/* Left Column - Scrolls Up */}
+                    <div className="flex flex-col gap-4 animate-scroll-up">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <span className="text-purple-600 font-bold text-lg">WOO</span>
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Store className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <span className="text-black font-bold text-lg">WIX</span>
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Globe className="h-8 w-8 text-blue-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Bitcoin className="h-8 w-8 text-orange-500" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Middle Column - Scrolls Down */}
+                    <div className="flex flex-col gap-4 animate-scroll-down">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Monitor className="h-8 w-8 text-gray-800" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Wallet className="h-8 w-8 text-black" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Receipt className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <CreditCard className="h-8 w-8 text-blue-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <BarChart3 className="h-8 w-8 text-purple-600" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Right Column - Scrolls Up */}
+                    <div className="flex flex-col gap-4 animate-scroll-up-slow">
+                      {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex flex-col gap-4">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Smartphone className="h-8 w-8 text-gray-800" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <RefreshCcw className="h-8 w-8 text-blue-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Banknote className="h-8 w-8 text-green-600" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Globe2 className="h-8 w-8 text-orange-500" />
+                          </div>
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                            <Shield className="h-8 w-8 text-indigo-600" />
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
+                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f8f9fa] to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#f8f9fa] to-transparent pointer-events-none" />
                 </div>
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Security as strong as a vault
+                  Integrations that power your growth
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  From day one, your transactions are protected with bank-level 
-                  encryption, PCI DSS Level 1 compliance, and our advanced 
-                  AI-powered fraud detection system.
+                  Connect with the industry's leading platforms instantly. Whether you need 
+                  plug-and-play solutions or custom connections, our payment technology 
+                  fits seamlessly into your existing workflow.
                 </p>
-                <ul className="space-y-3 text-left max-w-lg mx-auto lg:mx-0">
-                  {[
-                    "256-bit SSL encryption",
-                    "PCI DSS Level 1 certified",
-                    "Real-time fraud monitoring",
-                    "3D Secure authentication",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-[#73cb43] flex-shrink-0" />
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  data-testid="button-view-integrations"
+                >
+                  <a href="/register">
+                    View integrations
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -2135,6 +2194,28 @@ export default function Landing() {
         
         .animate-marquee2 {
           animation: marquee2 120s linear infinite;
+        }
+        
+        @keyframes scroll-up {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); }
+        }
+        
+        @keyframes scroll-down {
+          0% { transform: translateY(-50%); }
+          100% { transform: translateY(0); }
+        }
+        
+        .animate-scroll-up {
+          animation: scroll-up 20s linear infinite;
+        }
+        
+        .animate-scroll-down {
+          animation: scroll-down 20s linear infinite;
+        }
+        
+        .animate-scroll-up-slow {
+          animation: scroll-up 25s linear infinite;
         }
         
         input[type="range"]::-webkit-slider-thumb {
