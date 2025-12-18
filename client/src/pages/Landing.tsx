@@ -1489,56 +1489,71 @@ export default function Landing() {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
-                  <img 
-                    src="/attached_assets/founder_photo.png" 
-                    alt="Founder" 
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
+                <div className="relative mb-3">
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#75C947]/30 to-lime-400/20 blur-xl rounded-full scale-110" />
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
+                    <img 
+                      src="/attached_assets/founder_photo.png" 
+                      alt="Founder" 
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-bold text-white">Marty</h4>
                 <p className="text-white/60 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
-                  <img 
-                    src="/attached_assets/patricia_photo.png" 
-                    alt="Patricia - Operations" 
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
+                <div className="relative mb-3">
+                  <div className="absolute inset-0 bg-gradient-to-b from-lime-400/25 to-[#75C947]/20 blur-xl rounded-full scale-110" />
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
+                    <img 
+                      src="/attached_assets/patricia_photo.png" 
+                      alt="Patricia - Operations" 
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-bold text-white">Patricia</h4>
                 <p className="text-white/60 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
-                  <img 
-                    src="/attached_assets/accounting_team.png" 
-                    alt="Accounting" 
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
+                <div className="relative mb-3">
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#75C947]/30 to-emerald-400/20 blur-xl rounded-full scale-110" />
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
+                    <img 
+                      src="/attached_assets/accounting_team.png" 
+                      alt="Accounting" 
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-bold text-white">Kat</h4>
                 <p className="text-white/60 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
-                  <img 
-                    src="/attached_assets/sales_darth_maul.png" 
-                    alt="Darth Maul - Sales" 
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
+                <div className="relative mb-3">
+                  <div className="absolute inset-0 bg-gradient-to-b from-lime-400/25 to-emerald-400/20 blur-xl rounded-full scale-110" />
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
+                    <img 
+                      src="/attached_assets/sales_darth_maul.png" 
+                      alt="Darth Maul - Sales" 
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-bold text-white">Darth Maul</h4>
                 <p className="text-white/60 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
-                  <img 
-                    src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_31_02_AM_1766053868295.png" 
-                    alt="Oink - AI Team Lead" 
-                    className="w-full h-full object-cover object-top grayscale"
-                  />
+                <div className="relative mb-3">
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#75C947]/35 to-lime-400/25 blur-xl rounded-full scale-110" />
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
+                    <img 
+                      src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_31_02_AM_1766053868295.png" 
+                      alt="Oink - AI Team Lead" 
+                      className="w-full h-full object-cover object-top grayscale"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-bold text-white">Oink</h4>
                 <p className="text-white/60 text-sm">AI Team Lead</p>
