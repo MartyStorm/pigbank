@@ -129,38 +129,17 @@ const featureCards = [
 const testimonials = [
   {
     id: 1,
-    quote: "PigBank completely transformed how we handle payments. Our chargebacks dropped by 60% and our approval rates went through the roof.",
-    name: "Sarah Mitchell",
-    title: "CEO, TechStart Inc.",
-    image: testimonial1,
-  },
-  {
-    id: 2,
-    quote: "After being rejected by three other processors, PigBank gave us a chance. Now we're processing over $500K monthly with zero issues.",
-    name: "Marcus Chen",
-    title: "Founder, Digital Commerce Co.",
-    image: testimonial2,
-  },
-  {
-    id: 3,
-    quote: "The fraud protection is incredible. We've saved thousands in potential chargebacks. PigBank pays for itself many times over.",
-    name: "Elena Rodriguez",
-    title: "CFO, Global Retail Solutions",
-    image: testimonial3,
-  },
-  {
-    id: 4,
-    quote: "Fast payouts, excellent support, and rates that actually make sense. PigBank is everything we needed in a payment processor.",
-    name: "James Thompson",
-    title: "Owner, Premium Services LLC",
-    image: testimonial4,
-  },
-  {
-    id: 5,
     quote: "As a nutraceuticals company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
     name: "TN Scientific",
     title: "Nutraceuticals & Research Products",
-    image: "/attached_assets/No_White_Boarder_PSD_New_TN_Square_logo_Gray__1766041564044.png",
+    image: "/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1766041753185.png",
+  },
+  {
+    id: 2,
+    quote: "Other processors treated us like a liability. PigBank treated us like a partner. Fast approvals, fair rates, and they actually answer the phone when we call.",
+    name: "TN Scientific",
+    title: "Nutraceuticals & Research Products",
+    image: "/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1766041753185.png",
   },
 ];
 
