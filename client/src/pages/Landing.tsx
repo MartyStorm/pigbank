@@ -1439,7 +1439,7 @@ export default function Landing() {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
+                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
                   <img 
                     src="/attached_assets/founder_photo.png" 
                     alt="Founder" 
