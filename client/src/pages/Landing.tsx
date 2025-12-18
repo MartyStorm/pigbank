@@ -1438,7 +1438,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/founder_photo.png" 
                     alt="Founder" 
-                    className="w-full h-full object-cover object-top grayscale"
+                    className="w-full h-full object-cover object-top grayscale scale-90"
                   />
                 </div>
                 <h4 className="text-lg font-bold text-white">Marty</h4>
