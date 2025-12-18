@@ -1396,16 +1396,13 @@ export default function Landing() {
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
           </div>
           <div 
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-15"
             style={{
               backgroundImage: `
-                repeating-radial-gradient(circle at 50% 50%, transparent 0px, transparent 30px, rgba(117, 201, 71, 0.15) 31px, transparent 32px),
-                repeating-radial-gradient(circle at 30% 70%, transparent 0px, transparent 50px, rgba(117, 201, 71, 0.1) 51px, transparent 52px),
-                repeating-radial-gradient(circle at 70% 30%, transparent 0px, transparent 40px, rgba(117, 201, 71, 0.12) 41px, transparent 42px),
-                repeating-radial-gradient(circle at 20% 20%, transparent 0px, transparent 60px, rgba(117, 201, 71, 0.08) 61px, transparent 62px),
-                repeating-radial-gradient(circle at 80% 80%, transparent 0px, transparent 45px, rgba(117, 201, 71, 0.1) 46px, transparent 47px)
+                linear-gradient(rgba(117, 201, 71, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(117, 201, 71, 0.3) 1px, transparent 1px)
               `,
-              backgroundSize: '200px 200px, 300px 300px, 250px 250px, 350px 350px, 280px 280px'
+              backgroundSize: '40px 40px'
             }}
           />
           <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
