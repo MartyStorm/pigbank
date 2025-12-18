@@ -1507,7 +1507,7 @@ export default function Landing() {
                   <div className="absolute inset-0 bg-gradient-to-b from-lime-400/25 to-[#75C947]/20 blur-xl rounded-full scale-110" />
                   <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl relative">
                     <img 
-                      src="/attached_assets/patricia_photo.png" 
+                      src="/attached_assets/4080994360202994240_1766076263672.png" 
                       alt="Patricia - Operations" 
                       className="w-full h-full object-cover object-top grayscale"
                     />
