@@ -1439,26 +1439,26 @@ export default function Landing() {
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-xl mb-3">
+                <div className="w-32 h-40 md:w-36 md:h-44 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
                   <img 
                     src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_01_24_22_AM_1766042864220.png" 
                     alt="Founder" 
-                    className="w-full h-full object-cover grayscale"
+                    className="w-full h-full object-contain grayscale bg-gray-800"
                   />
                 </div>
                 <h4 className="text-lg font-bold text-white">Founder</h4>
                 <p className="text-white/60 text-sm">Your account manager</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <span className="text-3xl md:text-4xl font-bold text-white">M</span>
+                <div className="w-32 h-40 md:w-36 md:h-44 rounded-xl bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
+                  <span className="text-4xl md:text-5xl font-bold text-white">M</span>
                 </div>
                 <h4 className="text-lg font-bold text-white">Operations</h4>
                 <p className="text-white/60 text-sm">Keeps things running</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <Zap className="h-10 w-10 md:h-12 md:w-12 text-white" />
+                <div className="w-32 h-40 md:w-36 md:h-44 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-4 border-white shadow-xl mb-3">
+                  <Zap className="h-12 w-12 md:h-14 md:w-14 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-white">AI Assistant</h4>
                 <p className="text-white/60 text-sm">Available 24/7</p>
