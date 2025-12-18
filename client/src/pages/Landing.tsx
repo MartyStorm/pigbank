@@ -1309,7 +1309,7 @@ export default function Landing() {
         </section>
 
         {/* Payment Methods Section */}
-        <section className="py-12 md:py-16 bg-[#e8f5e0]">
+        <section className="py-12 md:py-16 bg-[#d4edda]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -1791,39 +1791,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 bg-[#e8f5e0]">
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 tracking-tight">
-              No hidden fees. No commissions.
-            </h2>
-          </div>
-        </section>
-
         <TestimonialsCarousel />
-
-        {/* Features Strip */}
-        <section className="py-6 bg-gray-100 border-y border-gray-200">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm md:text-base text-gray-600">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Simple, transparent pricing</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Same-day approvals</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>No long-term contracts</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
-                <span>Free account setup</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
