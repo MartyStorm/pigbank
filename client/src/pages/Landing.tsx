@@ -1295,7 +1295,7 @@ export default function Landing() {
         </section>
 
         {/* Payment Methods Section */}
-        <section className="py-12 md:py-16 bg-[#f9fafb]">
+        <section className="py-12 md:py-16 bg-[#ffffff]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
