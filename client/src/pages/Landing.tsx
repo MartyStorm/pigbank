@@ -1311,12 +1311,12 @@ export default function Landing() {
                 <h4 className="font-semibold text-white mb-1">Credit Cards</h4>
                 <p className="text-white/70 text-sm">Visa, Mastercard, Amex, Discover</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #73cb43 0%, #5ab334 100%)' }}>
-                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">ACH Transfers</h4>
-                <p className="text-white/80 text-sm">Direct bank payments</p>
+                <p className="text-white/70 text-sm">Direct bank payments</p>
               </div>
               <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
@@ -1325,12 +1325,12 @@ export default function Landing() {
                 <h4 className="font-semibold text-white mb-1">Cryptocurrency</h4>
                 <p className="text-white/70 text-sm">Bitcoin, Ethereum & more</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #73cb43 0%, #5ab334 100%)' }}>
-                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <FileCheck className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">eChecks</h4>
-                <p className="text-white/80 text-sm">Digital check processing</p>
+                <p className="text-white/70 text-sm">Digital check processing</p>
               </div>
               <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow" style={{ background: 'linear-gradient(135deg, #1d441f 0%, #2a5a2e 100%)' }}>
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
