@@ -1706,6 +1706,30 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Features Strip */}
+        <section className="py-6 bg-gray-100 border-y border-gray-200">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm md:text-base text-gray-600">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Simple, transparent pricing</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Same-day approvals</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>No long-term contracts</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                <span>Free account setup</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-32">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
