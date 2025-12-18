@@ -1779,7 +1779,7 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32">
+        <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Ready to grow your business?
