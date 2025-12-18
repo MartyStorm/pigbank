@@ -1532,8 +1532,12 @@ export default function Landing() {
                 <p className="text-white/60 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl bg-gradient-to-br from-[#75C947] via-[#4db87c] to-blue-400 flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <Zap className="h-14 w-14 md:h-16 md:w-16 text-white" />
+                <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
+                  <img 
+                    src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_24_34_AM_1766053520274.png" 
+                    alt="Oink - AI Team Lead" 
+                    className="w-full h-full object-cover object-top grayscale"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-white">Oink</h4>
                 <p className="text-white/60 text-sm">AI Team Lead</p>
