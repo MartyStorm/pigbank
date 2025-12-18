@@ -177,7 +177,7 @@ function HorizontalScrollText() {
               className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-400 mx-4"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
-              PigBank - 
+              PigBank Payments - 
             </span>
           ))}
         </motion.div>
@@ -1441,7 +1441,7 @@ export default function Landing() {
               <div className="flex flex-col items-center">
                 <div className="w-28 h-36 md:w-32 md:h-40 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
                   <img 
-                    src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_01_24_22_AM_1766042864220.png" 
+                    src="/attached_assets/founder_photo.png" 
                     alt="Founder" 
                     className="w-full h-full object-contain grayscale bg-gray-800"
                   />
