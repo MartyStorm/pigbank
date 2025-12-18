@@ -1355,8 +1355,6 @@ export default function Landing() {
           </div>
         </section>
 
-        <HorizontalScrollText />
-
         {/* Payment Methods Section */}
         <section className="py-12 md:py-16 bg-[#16391c]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
@@ -1450,6 +1448,8 @@ export default function Landing() {
             </div>
           </div>
         </section>
+
+        <HorizontalScrollText />
 
         <section className="py-20 md:py-32 bg-[#ffffff]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
