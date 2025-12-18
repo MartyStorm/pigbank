@@ -1130,28 +1130,26 @@ export default function Landing() {
                               alt="PigBank Payouts on iPhone" 
                               className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 left-0"
                             />
-                            {/* Free Gateway Badge - Starburst Seal */}
+                            {/* Free Gateway Badge - Certificate Seal */}
                             <div className="absolute -top-4 -right-4 md:-top-2 md:-right-2 z-30">
                               <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
                                 <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-                                  <polygon 
-                                    points="50,0 58,35 95,35 65,55 75,90 50,70 25,90 35,55 5,35 42,35" 
-                                    fill="#f7c948"
-                                    stroke="#d4a835"
-                                    strokeWidth="1"
-                                  />
-                                  <polygon 
-                                    points="50,8 56,38 88,38 62,54 70,82 50,66 30,82 38,54 12,38 44,38" 
-                                    fill="#f7c948"
-                                    stroke="none"
+                                  <defs>
+                                    <clipPath id="sealClip">
+                                      <path d="M50,2 L54,15 L60,2 L62,16 L70,5 L70,18 L80,10 L78,22 L88,17 L84,28 L95,26 L88,35 L98,38 L90,44 L98,50 L90,56 L98,62 L88,65 L95,74 L84,72 L88,83 L78,78 L80,90 L70,82 L70,95 L62,84 L60,98 L54,85 L50,98 L46,85 L40,98 L38,84 L30,95 L30,82 L20,90 L22,78 L12,83 L16,72 L5,74 L12,65 L2,62 L10,56 L2,50 L10,44 L2,38 L12,35 L5,26 L16,28 L12,17 L22,22 L20,10 L30,18 L30,5 L38,16 L40,2 L46,15 Z" />
+                                    </clipPath>
+                                  </defs>
+                                  <path 
+                                    d="M50,2 L54,15 L60,2 L62,16 L70,5 L70,18 L80,10 L78,22 L88,17 L84,28 L95,26 L88,35 L98,38 L90,44 L98,50 L90,56 L98,62 L88,65 L95,74 L84,72 L88,83 L78,78 L80,90 L70,82 L70,95 L62,84 L60,98 L54,85 L50,98 L46,85 L40,98 L38,84 L30,95 L30,82 L20,90 L22,78 L12,83 L16,72 L5,74 L12,65 L2,62 L10,56 L2,50 L10,44 L2,38 L12,35 L5,26 L16,28 L12,17 L22,22 L20,10 L30,18 L30,5 L38,16 L40,2 L46,15 Z" 
+                                    fill="#203e22"
                                   />
                                 </svg>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                   <div className="text-center">
-                                    <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-[#203e22] leading-tight block">
+                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-extrabold text-white leading-tight block drop-shadow-sm">
                                       GATEWAY
                                     </span>
-                                    <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-[#203e22] leading-tight block">
+                                    <span className="text-[9px] md:text-[11px] lg:text-[13px] font-extrabold text-white leading-tight block drop-shadow-sm">
                                       INCLUDED
                                     </span>
                                   </div>
