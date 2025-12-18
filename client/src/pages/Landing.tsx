@@ -1708,7 +1708,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32">
+        <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
