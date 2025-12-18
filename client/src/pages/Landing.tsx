@@ -1282,18 +1282,20 @@ export default function Landing() {
         {/* Video Section */}
         <section className="py-12 md:py-16 bg-white">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Payment processing made simple
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Learn how PigBank helps merchants like you accept payments, grow your business, and get the support you deserve.
+              </p>
+            </div>
             <div 
               className="relative w-full aspect-video cursor-pointer group rounded-2xl overflow-hidden shadow-xl"
               style={{
                 background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
               }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-white/60 text-sm mb-2 uppercase tracking-wider">See PigBank in Action</p>
-                  <p className="text-white text-lg md:text-xl font-medium">Watch a quick demo</p>
-                </div>
-              </div>
               <button 
                 className="absolute inset-0 flex items-center justify-center z-20"
                 data-testid="button-play-video"
