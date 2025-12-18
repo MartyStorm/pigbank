@@ -1811,11 +1811,11 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   Fast and automatic payouts
                 </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg text-gray-600 max-w-lg">
                   No waiting for your funds. Get same-day or next-day payouts 
                   directly to your bank account. You can even access funds 
                   instantly with our Express Payout feature.
@@ -1840,11 +1840,11 @@ export default function Landing() {
         <section className="py-20 md:py-32 bg-[#ffffff]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+              <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   Professional invoicing, simplified
                 </h2>
-                <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg text-gray-600 max-w-lg">
                   Create and send professional invoices in seconds. Track payments, 
                   send reminders, and get paid faster with built-in payment links 
                   that your customers can use instantly.
