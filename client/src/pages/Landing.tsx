@@ -1439,8 +1439,12 @@ export default function Landing() {
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
               <div className="flex flex-col items-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#73cb43] to-[#5ab334] flex items-center justify-center border-4 border-white shadow-xl mb-3">
-                  <span className="text-3xl md:text-4xl font-bold text-white">J</span>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-xl mb-3">
+                  <img 
+                    src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_01_24_22_AM_1766042864220.png" 
+                    alt="Founder" 
+                    className="w-full h-full object-cover grayscale"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-white">Founder</h4>
                 <p className="text-white/60 text-sm">Your account manager</p>
