@@ -1084,7 +1084,7 @@ export default function Landing() {
                     </svg>
                   </div>
                   
-                  <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-6 pb-8">
+                  <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-12 md:pt-16 pb-8">
                     <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
                       <div className="flex flex-col items-center text-center gap-6">
                         <div className="space-y-4 max-w-3xl">
@@ -1121,12 +1121,12 @@ export default function Landing() {
                             <img 
                               src="/macbook-dashboard-new.png" 
                               alt="PigBank Dashboard on MacBook" 
-                              className="w-[380px] md:w-[500px] lg:w-[600px] xl:w-[700px] h-auto"
+                              className="w-[300px] md:w-[400px] lg:w-[480px] xl:w-[550px] h-auto"
                             />
                             <img 
                               src="/iphone-payouts.png" 
                               alt="PigBank Payouts on iPhone" 
-                              className="absolute w-[65px] md:w-[80px] lg:w-[100px] xl:w-[115px] h-auto z-20 bottom-0 left-0"
+                              className="absolute w-[50px] md:w-[60px] lg:w-[75px] xl:w-[85px] h-auto z-20 bottom-0 left-0"
                             />
                           </div>
                         </div>
