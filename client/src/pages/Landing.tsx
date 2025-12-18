@@ -1736,52 +1736,56 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Placeholder Feature Section */}
+        {/* Transparent Pricing Section */}
         <section className="py-20 md:py-32 bg-[#f9fafb]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Placeholder</span>
-                        <BarChart3 className="h-5 w-5 text-purple-600" />
-                      </div>
-                      <div className="space-y-3">
-                        <div className="h-3 bg-gray-200 rounded-full w-full" />
-                        <div className="h-3 bg-gray-200 rounded-full w-3/4" />
-                        <div className="h-3 bg-gray-200 rounded-full w-5/6" />
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-gray-500">Coming soon</span>
-                          <span className="text-xs font-medium text-purple-600">Details TBD</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+              <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Feature title placeholder
+                  Transparent pricing, no surprises
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-                  This is a placeholder section for an upcoming feature or product highlight. 
-                  The content will be updated once the specific feature is determined.
+                  Know exactly what you're paying before you sign up. Our straightforward 
+                  pricing means no hidden fees, no surprise charges, and no confusing rate 
+                  structures. What you see is what you get.
                 </p>
                 <Button 
                   asChild
                   size="lg" 
                   className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
-                  data-testid="button-learn-more-placeholder"
+                  data-testid="button-view-pricing"
                 >
                   <a href="/register">
-                    Learn more
+                    View pricing
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
+              </div>
+              <div className="lg:w-1/2">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-gray-600">Your Rate</span>
+                        <CheckCircle2 className="h-5 w-5 text-[#73cb43]" />
+                      </div>
+                      <div className="text-center py-3">
+                        <div className="text-3xl font-bold text-gray-900">2.9% + 30¢</div>
+                        <div className="text-sm text-gray-500 mt-1">per transaction</div>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                          <span>No monthly fees</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
+                          <span>No hidden charges</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
