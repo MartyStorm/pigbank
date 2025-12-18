@@ -1724,6 +1724,54 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Security Section */}
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
+          <div 
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '100% 100%, 40px 40px, 40px 40px'
+            }}
+          />
+          <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Bank-level security you can trust
+              </h2>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
+                  <Lock className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
+                <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
+                  <ShieldCheck className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Level 1</h4>
+                <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-7 w-7 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-lg mb-2">We never sell your data</h4>
+                <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
@@ -1783,54 +1831,6 @@ export default function Landing() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Security Section */}
-        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '100% 100%, 40px 40px, 40px 40px'
-            }}
-          />
-          <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Bank-level security you can trust
-              </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
-                  <Lock className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
-                <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheck className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Level 1</h4>
-                <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-7 w-7 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-lg mb-2">We never sell your data</h4>
-                <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
               </div>
             </div>
           </div>
