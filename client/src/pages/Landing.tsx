@@ -1917,42 +1917,42 @@ export default function Landing() {
         </section>
 
         {/* Security Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
+        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 space-y-6">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   Bank-level security you can trust
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-white/70">
                   Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
                 </p>
                 <div className="space-y-4 pt-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#73cb43] flex items-center justify-center flex-shrink-0">
                       <Lock className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">256-bit encryption</h4>
-                      <p className="text-gray-600 text-sm">Every transaction is protected with military-grade encryption</p>
+                      <h4 className="font-semibold text-white">256-bit encryption</h4>
+                      <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#73cb43] flex items-center justify-center flex-shrink-0">
                       <ShieldCheck className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">PCI DSS Level 1</h4>
-                      <p className="text-gray-600 text-sm">The highest security certification in the payments industry</p>
+                      <h4 className="font-semibold text-white">PCI DSS Level 1</h4>
+                      <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#203e22] flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#73cb43] flex items-center justify-center flex-shrink-0">
                       <Shield className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">We never sell your data</h4>
-                      <p className="text-gray-600 text-sm">Your business data stays private—period. No exceptions.</p>
+                      <h4 className="font-semibold text-white">We never sell your data</h4>
+                      <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
                     </div>
                   </div>
                 </div>
