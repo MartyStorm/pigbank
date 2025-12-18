@@ -494,7 +494,7 @@ export default function Landing() {
             </a>
             <a 
               href="/register"
-              className="bg-[#73cb43] hover:bg-[#65b53b] text-white font-medium px-5 py-2 rounded-md transition-colors"
+              className="bg-[#75C947] hover:bg-[#67b83c] text-white font-medium px-5 py-2 rounded-md transition-colors"
               data-testid="button-get-started-header"
             >
               Get started
@@ -1510,7 +1510,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-full px-8"
                   data-testid="button-learn-more-2"
                 >
                   <a href="/register">
@@ -1538,7 +1538,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-full px-8"
                   data-testid="button-learn-more-3"
                 >
                   <a href="/register">
@@ -1704,7 +1704,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-full px-8"
                   data-testid="button-view-integrations"
                 >
                   <a href="/register">
@@ -1733,7 +1733,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-full px-8"
                   data-testid="button-view-pricing"
                 >
                   <a href="/register">
@@ -1787,7 +1787,7 @@ export default function Landing() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[#73cb43] hover:bg-[#65b53b] text-white rounded-full px-8"
+                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-full px-8"
                 data-testid="button-get-started-cta"
               >
                 <a href="/register">
