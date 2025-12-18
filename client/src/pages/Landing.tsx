@@ -191,7 +191,7 @@ function HorizontalScrollText() {
               className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-400 mx-4"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
-              Why PigBank - 
+              PigBank Powers Payments - 
             </span>
           ))}
         </motion.div>
