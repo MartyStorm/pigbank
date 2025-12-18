@@ -1130,16 +1130,28 @@ export default function Landing() {
                               alt="PigBank Payouts on iPhone" 
                               className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 left-0"
                             />
-                            {/* Free Gateway Badge */}
-                            <div className="absolute -top-2 -right-2 md:top-0 md:right-0 z-30">
-                              <div className="relative">
-                                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-[#f7c948] rounded-full flex items-center justify-center shadow-lg transform rotate-12 animate-pulse-slow">
-                                  <div className="text-center transform -rotate-12">
-                                    <Star className="h-4 w-4 md:h-5 md:w-5 text-[#203e22] mx-auto mb-0.5" fill="currentColor" />
-                                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-[#203e22] leading-tight block">
+                            {/* Free Gateway Badge - Starburst Seal */}
+                            <div className="absolute -top-4 -right-4 md:-top-2 md:-right-2 z-30">
+                              <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
+                                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
+                                  <polygon 
+                                    points="50,0 58,35 95,35 65,55 75,90 50,70 25,90 35,55 5,35 42,35" 
+                                    fill="#f7c948"
+                                    stroke="#d4a835"
+                                    strokeWidth="1"
+                                  />
+                                  <polygon 
+                                    points="50,8 56,38 88,38 62,54 70,82 50,66 30,82 38,54 12,38 44,38" 
+                                    fill="#f7c948"
+                                    stroke="none"
+                                  />
+                                </svg>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <div className="text-center">
+                                    <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-[#203e22] leading-tight block">
                                       GATEWAY
                                     </span>
-                                    <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-[#203e22] leading-tight block">
+                                    <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-[#203e22] leading-tight block">
                                       INCLUDED
                                     </span>
                                   </div>
