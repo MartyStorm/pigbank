@@ -1865,6 +1865,10 @@ export default function Landing() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
             <p className="text-sm text-gray-500">© 2026 PigBank Payments. All rights reserved.</p>
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span>Made in the USA</span>
+              <span className="text-lg">🇺🇸</span>
+            </div>
           </div>
         </div>
       </footer>
