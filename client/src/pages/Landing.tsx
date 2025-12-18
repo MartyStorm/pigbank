@@ -1447,7 +1447,7 @@ export default function Landing() {
               <div className="flex flex-col items-center">
                 <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl mb-3">
                   <img 
-                    src="/attached_assets/operations_patricia.png" 
+                    src="/attached_assets/patricia_photo.png" 
                     alt="Patricia - Operations" 
                     className="w-full h-full object-cover object-top grayscale"
                   />
