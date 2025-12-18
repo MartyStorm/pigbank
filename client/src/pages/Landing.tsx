@@ -1279,6 +1279,33 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Video Section */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container px-4 md:px-6 max-w-4xl mx-auto">
+            <div 
+              className="relative w-full aspect-video cursor-pointer group rounded-2xl overflow-hidden shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
+              }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-white/60 text-sm mb-2 uppercase tracking-wider">See PigBank in Action</p>
+                  <p className="text-white text-lg md:text-xl font-medium">Watch a quick demo</p>
+                </div>
+              </div>
+              <button 
+                className="absolute inset-0 flex items-center justify-center z-20"
+                data-testid="button-play-video"
+              >
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#73cb43] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Play className="h-6 w-6 md:h-8 md:w-8 text-white ml-1" fill="currentColor" />
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#e8f5e0]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto py-16 md:py-24 bg-[#f9fafb]">
             <div className="mb-12 text-center">
