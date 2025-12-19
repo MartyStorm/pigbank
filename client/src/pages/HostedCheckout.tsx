@@ -185,7 +185,7 @@ export default function HostedCheckout() {
         
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
-          <div className="p-4 border-b border-border">
+          <div className="p-4 border-b border-border bg-[#e8f5e0]">
             <div className="flex items-center justify-between mb-1">
               <h2 className="font-semibold text-lg">Customize Checkout</h2>
               <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-[#73cb43e6] hover:bg-[#65b538] text-white">
