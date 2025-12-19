@@ -64,30 +64,59 @@ export default function HostedCheckout() {
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [isDragging, setIsDragging] = useState(false);
+
+  const processFile = (file: File) => {
+    if (file.size > 2 * 1024 * 1024) {
+      toast({ title: "File too large", description: "Please select an image under 2MB", variant: "destructive" });
+      return;
+    }
+    if (!file.type.match(/^image\/(png|jpeg|jpg)$/)) {
+      toast({ title: "Invalid file type", description: "Please upload a PNG or JPG image", variant: "destructive" });
+      return;
+    }
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const img = new Image();
+      img.onload = () => {
+        if (img.width < 200 || img.height < 200) {
+          toast({ 
+            title: "Image too small", 
+            description: "Please upload an image at least 200x200 pixels for best quality", 
+            variant: "destructive" 
+          });
+          return;
+        }
+        setLogoUrl(reader.result as string);
+      };
+      img.src = reader.result as string;
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 2 * 1024 * 1024) {
-        toast({ title: "File too large", description: "Please select an image under 2MB", variant: "destructive" });
-        return;
-      }
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const img = new Image();
-        img.onload = () => {
-          if (img.width < 200 || img.height < 200) {
-            toast({ 
-              title: "Image too small", 
-              description: "Please upload an image at least 200x200 pixels for best quality", 
-              variant: "destructive" 
-            });
-            return;
-          }
-          setLogoUrl(reader.result as string);
-        };
-        img.src = reader.result as string;
-      };
-      reader.readAsDataURL(file);
+      processFile(file);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      processFile(file);
     }
   };
   
@@ -252,8 +281,11 @@ export default function HostedCheckout() {
                       <Input value={brandName} onChange={(e) => setBrandName(e.target.value)}  />
                     </div>
                     <div 
-                      className="border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-muted/50 transition-colors cursor-pointer"
+                      className={`border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors cursor-pointer ${isDragging ? 'border-[#73cb43] bg-[#73cb43]/10' : 'border-border hover:bg-muted/50'}`}
                       onClick={() => fileInputRef.current?.click()}
+                      onDragOver={handleDragOver}
+                      onDragLeave={handleDragLeave}
+                      onDrop={handleDrop}
                     >
                       <input
                         ref={fileInputRef}
