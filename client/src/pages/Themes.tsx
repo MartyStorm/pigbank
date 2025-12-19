@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useTheme } from "@/components/theme-provider";
-import { Monitor, Moon, Sun, SunMoon } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 export default function Themes() {
   const { theme, setTheme } = useTheme();
@@ -33,7 +33,7 @@ export default function Themes() {
           <CardContent>
             <RadioGroup
               defaultValue={theme}
-              onValueChange={(value) => setTheme(value as "light" | "dark" | "green" | "system")}
+              onValueChange={(value) => setTheme(value as "light" | "dark" | "system")}
               className="grid grid-cols-2 md:grid-cols-4 gap-4"
             >
               {/* Light */}
@@ -45,18 +45,6 @@ export default function Themes() {
                 >
                   <Sun className="mb-3 h-6 w-6" />
                   Light
-                </Label>
-              </div>
-
-              {/* Green */}
-              <div>
-                <RadioGroupItem value="green" id="green" className="peer sr-only" />
-                <Label
-                  htmlFor="green"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer"
-                >
-                  <SunMoon className="mb-3 h-6 w-6" />
-                  Green
                 </Label>
               </div>
 
@@ -89,7 +77,6 @@ export default function Themes() {
               <p className="mb-2">Theme Details:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong>Light:</strong> Standard high-contrast light mode.</li>
-                <li><strong>Green:</strong> Light mode with green accents.</li>
                 <li><strong>Dark:</strong> Designed for low light conditions.</li>
               </ul>
             </div>
