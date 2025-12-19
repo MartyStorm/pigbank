@@ -196,8 +196,8 @@ export default function Payouts() {
             ) : (
               <>
                 <Table>
-                  <TableHeader className="bg-[#1a4320] dark:bg-[#262626] [&_tr]:hover:bg-[#1a4320] dark:[&_tr]:hover:bg-[#262626]">
-                    <TableRow className="border-none hover:bg-[#1a4320] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
+                  <TableHeader className="bg-[#256726] dark:bg-[#262626] [&_tr]:hover:bg-[#256726] dark:[&_tr]:hover:bg-[#262626]">
+                    <TableRow className="border-none hover:bg-[#256726] dark:hover:bg-[#262626] [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg">
                       {columns.date && <TableHead className="text-white">Date</TableHead>}
                       {columns.amount && <TableHead className="text-white">Amount</TableHead>}
                       {columns.status && <TableHead className="text-white">Status</TableHead>}
