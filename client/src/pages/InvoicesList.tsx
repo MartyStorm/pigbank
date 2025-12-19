@@ -19,7 +19,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Badge } from "@/components/ui/badge";
 
 interface Invoice {
   id: string;
@@ -174,10 +173,10 @@ export default function InvoicesList() {
                       </TableCell>
                       <TableCell className="font-semibold">{formatCurrency(invoice.total)}</TableCell>
                       <TableCell>
-                        <Badge variant="outline" className={cn("gap-1 font-medium", statusConfig.color)}>
+                        <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border inline-flex items-center gap-1", statusConfig.color)}>
                           <StatusIcon className="h-3 w-3" />
                           {invoice.status}
-                        </Badge>
+                        </span>
                       </TableCell>
                       <TableCell className="text-muted-foreground text-sm">{formatDate(invoice.dueDate)}</TableCell>
                       <TableCell className="text-muted-foreground text-sm">{formatDate(invoice.createdAt)}</TableCell>
