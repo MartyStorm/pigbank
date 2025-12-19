@@ -617,7 +617,7 @@ export default function Dashboard() {
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <div>
                 <CardTitle className="text-lg font-semibold">Processed Volume Over Time</CardTitle>
-                <p className="text-sm text-muted-foreground">Daily transaction volume</p>
+                <p className="text-sm text-gray-600">Daily transaction volume</p>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center border rounded-md overflow-hidden bg-muted">
