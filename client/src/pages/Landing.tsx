@@ -414,7 +414,7 @@ export default function Landing() {
         <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-10">
             <img 
-              src="/pig-bank-logo.png" 
+              src="/pig-bank-logo-dark.png" 
               alt="PigBank" 
               className="h-12 w-auto object-contain" 
               data-testid="logo-header"
