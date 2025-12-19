@@ -260,13 +260,13 @@ export default function TeamMerchants() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          <Badge className={statusColors[merchant.status] || "bg-gray-100"}>
+                          <Badge className={`min-w-[90px] justify-center ${statusColors[merchant.status] || "bg-gray-100"}`}>
                             {statusLabels[merchant.status] || merchant.status}
                           </Badge>
                         </TableCell>
                         <TableCell>
                           {merchant.riskLevel ? (
-                            <Badge className={riskColors[merchant.riskLevel] || "bg-gray-100"}>
+                            <Badge className={`min-w-[70px] justify-center ${riskColors[merchant.riskLevel] || "bg-gray-100"}`}>
                               {merchant.riskLevel}
                             </Badge>
                           ) : (
