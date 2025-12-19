@@ -120,7 +120,7 @@ export default function PayByLink() {
               Create and manage payment links for your products and services
             </p>
           </div>
-          <Button className="bg-[#1a4320] hover:bg-[#143318] dark:bg-[#73cb43] dark:hover:bg-[#65b538] text-white gap-2">
+          <Button className="bg-[#1a4320] hover:bg-[#143318] text-white gap-2">
             <Plus className="h-4 w-4" />
             Create New Link
           </Button>
@@ -231,7 +231,7 @@ export default function PayByLink() {
               <p className="text-muted-foreground mb-4">
                 Create your first payment link to start accepting payments
               </p>
-              <Button className="bg-[#1a4320] hover:bg-[#143318] dark:bg-[#73cb43] dark:hover:bg-[#65b538] text-white gap-2">
+              <Button className="bg-[#1a4320] hover:bg-[#143318] text-white gap-2">
                 <Plus className="h-4 w-4" />
                 Create New Link
               </Button>

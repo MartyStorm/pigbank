@@ -627,7 +627,7 @@ export default function Dashboard() {
                     className={cn(
                       "h-8 w-8 rounded-none px-0 transition-colors border-transparent",
                       chartType === 'bar' 
-                        ? "bg-[#73cb43] text-white hover:bg-[#73cb43]/90" 
+                        ? "bg-[#1a4320] dark:bg-[#73cb43] text-white hover:bg-[#143318] dark:hover:bg-[#73cb43]/90" 
                         : "bg-[#d1d5db] text-gray-600 hover:bg-[#c4c9cf]"
                     )}
                     onClick={() => setChartType('bar')}
@@ -641,7 +641,7 @@ export default function Dashboard() {
                     className={cn(
                       "h-8 w-8 rounded-none px-0 transition-colors border-transparent",
                       chartType === 'line' 
-                        ? "bg-[#73cb43] text-white hover:bg-[#73cb43]/90" 
+                        ? "bg-[#1a4320] dark:bg-[#73cb43] text-white hover:bg-[#143318] dark:hover:bg-[#73cb43]/90" 
                         : "bg-[#d1d5db] text-gray-600 hover:bg-[#c4c9cf]"
                     )}
                     onClick={() => setChartType('line')}
