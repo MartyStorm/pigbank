@@ -13,7 +13,7 @@ export default function ChargebackAlerts() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-chargeback-alerts-title">
               Chargeback Alerts
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Preempt chargebacks with early warning alerts
             </p>
           </div>

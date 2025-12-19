@@ -312,7 +312,7 @@ export default function AdminConsole() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-admin-title">
               Admin Console
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Manage your account settings and preferences
             </p>
           </div>

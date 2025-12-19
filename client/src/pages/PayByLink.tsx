@@ -116,7 +116,7 @@ export default function PayByLink() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-pay-by-link-title">
               Pay by Link
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Create and manage payment links for your products and services
             </p>
           </div>

@@ -205,7 +205,7 @@ export default function CustomerSupport() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold" data-testid="text-support-title">Customer Support</h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               View and manage your conversations with PigBank support
             </p>
           </div>

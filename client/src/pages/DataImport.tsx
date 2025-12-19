@@ -259,7 +259,7 @@ export default function DataImport() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-data-import-title">
               Data Import
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Connect to your payment processor and import transaction history into PigBank
             </p>
           </div>

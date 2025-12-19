@@ -13,7 +13,7 @@ export default function Subscriptions() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-subscriptions-title">
               Subscription Billing
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Manage recurring payments and subscription plans
             </p>
           </div>

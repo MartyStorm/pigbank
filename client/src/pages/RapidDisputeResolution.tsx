@@ -13,7 +13,7 @@ export default function RapidDisputeResolution() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-rdr-title">
               Rapid Dispute Resolution
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Automate refunds for qualified transactions before disputes occur
             </p>
           </div>

@@ -79,7 +79,7 @@ export default function Payouts() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-payouts-title">
               Payouts
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Track and manage your bank payouts
             </p>
           </div>

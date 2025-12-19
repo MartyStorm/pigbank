@@ -187,7 +187,7 @@ export default function WixIntegration() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-wix-integration-title">
               Wix Integration
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Connect your Wix store to accept payments through PigBank
             </p>
           </div>

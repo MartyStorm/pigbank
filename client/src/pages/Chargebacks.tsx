@@ -221,7 +221,7 @@ export default function Chargebacks() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-chargebacks-title">
               Chargebacks
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Manage alerts, disputes, and resolutions in one place
             </p>
           </div>

@@ -182,7 +182,7 @@ export default function Team() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-team-title">
               Team
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Manage your team members and their access levels
             </p>
           </div>
