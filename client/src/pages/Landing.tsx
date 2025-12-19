@@ -1082,7 +1082,7 @@ export default function Landing() {
                             <Button 
                               asChild 
                               size="lg" 
-                              className="bg-[#203e22] hover:bg-[#1a3319] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              className="bg-white hover:bg-gray-100 text-[#173c1d] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
                               data-testid="button-get-started-hero"
                             >
                               <a href="/register">Get started</a>
