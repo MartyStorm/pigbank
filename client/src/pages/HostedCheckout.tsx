@@ -404,8 +404,8 @@ export default function HostedCheckout() {
             </div>
           </div>
 
-          <div className="p-4 border-t border-border">
-            <Button onClick={handleSave} disabled={saveMutation.isPending} className="w-full bg-[#73cb43] hover:bg-[#65b53a] text-white font-semibold">
+          <div className="p-4 border-t border-border flex justify-end">
+            <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-[#73cb43] hover:bg-[#65b53a] text-white font-semibold">
               {saveMutation.isPending ? "Saving..." : "Save Changes"}
             </Button>
           </div>
