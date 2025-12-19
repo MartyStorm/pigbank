@@ -186,17 +186,19 @@ export default function HostedCheckout() {
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
           <div className="p-4 border-b border-border bg-[#636363] rounded-t-xl">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-1">
-              <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
-              <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-white hover:bg-gray-100 text-[#636363] font-semibold w-full sm:w-auto">
-                {saveMutation.isPending ? "Saving..." : "Save Changes"}
-              </Button>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
+                <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-white hover:bg-gray-100 text-[#636363] font-semibold shrink-0">
+                  {saveMutation.isPending ? "Saving..." : "Save Changes"}
+                </Button>
+              </div>
+              <p className="text-sm text-white/80">
+                {isStaffViewingMerchant 
+                  ? `Editing checkout for ${merchantDisplayName}` 
+                  : "Design your payment page experience"}
+              </p>
             </div>
-            <p className="text-sm text-white/80">
-              {isStaffViewingMerchant 
-                ? `Editing checkout for ${merchantDisplayName}` 
-                : "Design your payment page experience"}
-            </p>
           </div>
 
           <div className="w-full xl:flex-1 flex flex-col min-h-0">
