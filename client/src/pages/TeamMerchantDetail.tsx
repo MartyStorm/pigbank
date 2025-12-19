@@ -428,7 +428,7 @@ export default function TeamMerchantDetail() {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">EIN / Tax ID</label>
-                    <p className="text-gray-900" data-testid="text-ein">{maskValue(merchant.ein)}</p>
+                    <p className="text-gray-900" data-testid="text-ein">{merchant.ein || "Not provided"}</p>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">Business Type</label>
