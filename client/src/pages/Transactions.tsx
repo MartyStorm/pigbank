@@ -196,19 +196,21 @@ export default function Transactions() {
         </div>
 
         {/* Toolbar */}
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-card p-4 rounded-lg shadow-sm border border-border/50">
-          <div className="relative w-full md:w-96">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search Transaction ID, name, or email..."
-              className="pl-9 bg-background border-muted-foreground/20"
-              value={searchQuery}
-              onChange={(e) => handleSearchChange(e.target.value)}
-              data-testid="input-transactions-search"
-            />
+        <div className="flex flex-col gap-4 bg-card p-4 rounded-lg shadow-sm border border-border/50">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div className="relative w-full md:w-96">
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search Transaction ID, name, or email..."
+                className="pl-9 bg-background border-muted-foreground/20"
+                value={searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                data-testid="input-transactions-search"
+              />
+            </div>
           </div>
           
-          <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="outline" size="sm" className="gap-2 border-dashed hidden md:flex" data-testid="button-daterange-transactions">
               <Calendar className="h-4 w-4" />
               <span>Oct 24 - Nov 24</span>
