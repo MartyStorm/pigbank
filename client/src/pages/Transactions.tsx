@@ -522,7 +522,7 @@ export default function Transactions() {
                   </span>
                 </div>
                 <SheetDescription>
-                  Processed on {format(new Date(selectedTxn.date), "MMM d, yyyy h:mm a")} via Templar Gateway
+                  Processed on {format(new Date(selectedTxn.date), "MMM d, yyyy h:mm a")} via PigBank Gateway
                 </SheetDescription>
               </SheetHeader>
 
