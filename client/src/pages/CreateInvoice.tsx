@@ -523,24 +523,28 @@ export default function CreateInvoice() {
 
         {/* Bottom Notes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <Label>Note to Recipient</Label>
-            <Textarea 
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              placeholder="For Example, 'Thank you for your business'" 
-              className="h-32" 
-            />
-          </div>
-          <div className="space-y-2">
-            <Label>Terms and Conditions</Label>
-            <Textarea 
-              value={terms}
-              onChange={(e) => setTerms(e.target.value)}
-              placeholder="Include your return or cancellation policy" 
-              className="h-32" 
-            />
-          </div>
+          <Card className="border-border shadow-sm">
+            <CardContent className="p-6 space-y-2">
+              <Label>Note to Recipient</Label>
+              <Textarea 
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="For Example, 'Thank you for your business'" 
+                className="h-32" 
+              />
+            </CardContent>
+          </Card>
+          <Card className="border-border shadow-sm">
+            <CardContent className="p-6 space-y-2">
+              <Label>Terms and Conditions</Label>
+              <Textarea 
+                value={terms}
+                onChange={(e) => setTerms(e.target.value)}
+                placeholder="Include your return or cancellation policy" 
+                className="h-32" 
+              />
+            </CardContent>
+          </Card>
         </div>
 
         {/* Action Buttons */}
