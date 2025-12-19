@@ -26,7 +26,7 @@ const statusLabels: Record<string, string> = {
   draft: "Draft",
   submitted: "Submitted",
   action_required: "Action Required",
-  in_onboarding: "In Onboarding",
+  in_onboarding: "Onboarding",
   approved: "Approved",
   rejected: "Rejected",
   suspended: "Suspended",
