@@ -403,7 +403,7 @@ export default function PigBankTeam() {
           <CardContent>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Badge variant="outline" className="bg-[#b91c1c]/20 text-[#b91c1c] border-[#b91c1c] dark:bg-red-900/30 dark:text-red-400 dark:border-red-700 mt-0.5">
+                <Badge variant="outline" className="bg-[#1a4320]/20 text-[#1a4320] border-[#1a4320] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700 mt-0.5">
                   Admin
                 </Badge>
                 <div>
@@ -414,7 +414,7 @@ export default function PigBankTeam() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Badge variant="outline" className="bg-[#f0b100]/20 text-[#f0b100] border-[#f0b100] dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700 mt-0.5">
+                <Badge variant="outline" className="bg-blue-100 text-blue-700 border-blue-300 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700 mt-0.5">
                   Staff
                 </Badge>
                 <div>
