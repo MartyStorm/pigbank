@@ -38,7 +38,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Search, Download, Filter, Eye, RefreshCw, Share, CreditCard, ShieldAlert, Loader2, Calendar, ChevronDown, ChevronUp } from "lucide-react";
+import { Search, Download, Filter, Eye, RefreshCw, Share, CreditCard, ShieldAlert, Loader2, Calendar, ChevronDown, ChevronUp, Settings2 } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 
@@ -61,6 +63,21 @@ export default function Transactions() {
   const [isProcessing, setIsProcessing] = useState(false);
   const { getApiUrl, getQueryKey, isStaffViewingMerchant, isInitialized } = useStaffApi();
   const { isPigBankStaff } = useAuth();
+  
+  const [columns, setColumns] = useState({
+    customer: true,
+    date: true,
+    amount: true,
+    status: true,
+    risk: true,
+    transactionId: true,
+  });
+
+  const toggleColumn = (column: keyof typeof columns) => {
+    setColumns(prev => ({ ...prev, [column]: !prev[column] }));
+  };
+
+  const visibleColumnCount = Object.values(columns).filter(Boolean).length;
   
   // Search State
   const searchString = useSearch();
@@ -211,6 +228,45 @@ export default function Transactions() {
               </SelectContent>
             </Select>
 
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Settings2 className="h-4 w-4" />
+                  <span className="hidden sm:inline">Columns</span>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="end" className="w-48">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium">Toggle Columns</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-customer" checked={columns.customer} onCheckedChange={() => toggleColumn('customer')} />
+                      <label htmlFor="col-customer" className="text-sm cursor-pointer">Customer</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-date" checked={columns.date} onCheckedChange={() => toggleColumn('date')} />
+                      <label htmlFor="col-date" className="text-sm cursor-pointer">Date & Time</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-amount" checked={columns.amount} onCheckedChange={() => toggleColumn('amount')} />
+                      <label htmlFor="col-amount" className="text-sm cursor-pointer">Amount</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-status" checked={columns.status} onCheckedChange={() => toggleColumn('status')} />
+                      <label htmlFor="col-status" className="text-sm cursor-pointer">Status</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-risk" checked={columns.risk} onCheckedChange={() => toggleColumn('risk')} />
+                      <label htmlFor="col-risk" className="text-sm cursor-pointer">Risk</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-transactionId" checked={columns.transactionId} onCheckedChange={() => toggleColumn('transactionId')} />
+                      <label htmlFor="col-transactionId" className="text-sm cursor-pointer">Transaction ID</label>
+                    </div>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
 
@@ -367,18 +423,18 @@ export default function Transactions() {
           <Table>
             <TableHeader className="bg-[#2d7438] dark:bg-[#262626] [&_tr]:hover:bg-[#2d7438] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
               <TableRow className="border-b-[#2d7438] dark:border-b-gray-700">
-                <TableHead className="text-white">Customer</TableHead>
-                <TableHead className="text-white">Date & Time</TableHead>
-                <TableHead className="text-white">Amount</TableHead>
-                <TableHead className="text-white">Status</TableHead>
-                <TableHead className="text-white">Risk</TableHead>
-                <TableHead className="text-white">Transaction ID</TableHead>
+                {columns.customer && <TableHead className="text-white">Customer</TableHead>}
+                {columns.date && <TableHead className="text-white">Date & Time</TableHead>}
+                {columns.amount && <TableHead className="text-white">Amount</TableHead>}
+                {columns.status && <TableHead className="text-white">Status</TableHead>}
+                {columns.risk && <TableHead className="text-white">Risk</TableHead>}
+                {columns.transactionId && <TableHead className="text-white">Transaction ID</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
               {isLoading ? (
                 <TableRow>
-                  <TableCell colSpan={6} className="h-24 text-center">
+                  <TableCell colSpan={visibleColumnCount} className="h-24 text-center">
                     <div className="flex flex-col items-center justify-center text-muted-foreground">
                       <Loader2 className="h-8 w-8 mb-2 animate-spin" />
                       <p className="text-sm">Loading transactions...</p>
@@ -387,7 +443,7 @@ export default function Transactions() {
                 </TableRow>
               ) : formattedTransactions.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={6} className="h-32 text-center">
+                  <TableCell colSpan={visibleColumnCount} className="h-32 text-center">
                     <div className="flex flex-col items-center justify-center text-muted-foreground">
                       {searchQuery ? (
                         <>
@@ -420,25 +476,31 @@ export default function Transactions() {
                     onClick={() => setSelectedTxn(txn)}
                     data-testid={`row-transaction-${txn.transactionId}`}
                   >
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-sm">{txn.customerName}</span>
-                        <span className="text-xs text-muted-foreground">{txn.customerEmail}</span>
-                      </div>
-                    </TableCell>
-                    <TableCell className="text-muted-foreground text-sm">{txn.displayDate}</TableCell>
-                    <TableCell className="font-medium">{txn.displayAmount}</TableCell>
-                    <TableCell>
-                      <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getStatusColor(txn.status))}>
-                        {txn.status}
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getRiskColor(txn.risk))}>
-                        {txn.risk}
-                      </span>
-                    </TableCell>
-                    <TableCell className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>
+                    {columns.customer && (
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-sm">{txn.customerName}</span>
+                          <span className="text-xs text-muted-foreground">{txn.customerEmail}</span>
+                        </div>
+                      </TableCell>
+                    )}
+                    {columns.date && <TableCell className="text-muted-foreground text-sm">{txn.displayDate}</TableCell>}
+                    {columns.amount && <TableCell className="font-medium">{txn.displayAmount}</TableCell>}
+                    {columns.status && (
+                      <TableCell>
+                        <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getStatusColor(txn.status))}>
+                          {txn.status}
+                        </span>
+                      </TableCell>
+                    )}
+                    {columns.risk && (
+                      <TableCell>
+                        <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getRiskColor(txn.risk))}>
+                          {txn.risk}
+                        </span>
+                      </TableCell>
+                    )}
+                    {columns.transactionId && <TableCell className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>}
                   </TableRow>
                 ))
               )}
