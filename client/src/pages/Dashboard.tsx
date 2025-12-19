@@ -683,7 +683,7 @@ export default function Dashboard() {
                         tickFormatter={(value) => `${value / 1000}k`}
                         tick={{ fill: "#9ca3af" }}
                         width={35}
-                        domain={[0, (dataMax: number) => Math.ceil(dataMax * 1.15)]}
+                        domain={[0, 'auto']}
                       />
                       <Tooltip 
                         contentStyle={{ backgroundColor: "hsl(var(--card))", borderRadius: "8px", border: "1px solid hsl(var(--border))" }}
@@ -715,7 +715,7 @@ export default function Dashboard() {
                         tickFormatter={(value) => `${value / 1000}k`}
                         tick={{ fill: "#9ca3af" }}
                         width={35}
-                        domain={[0, (dataMax: number) => Math.ceil(dataMax * 1.15)]}
+                        domain={[0, 'auto']}
                       />
                       <Tooltip 
                         contentStyle={{ backgroundColor: "hsl(var(--card))", borderRadius: "8px", border: "1px solid hsl(var(--border))" }}
