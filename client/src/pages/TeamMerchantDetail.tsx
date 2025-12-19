@@ -316,19 +316,6 @@ export default function TeamMerchantDetail() {
                   Reject
                 </Button>
                 <Button 
-                  className="bg-orange-500 hover:bg-orange-600 text-white" 
-                  data-testid="button-action-required"
-                  onClick={() => actionRequiredMutation.mutate()}
-                  disabled={actionRequiredMutation.isPending}
-                >
-                  {actionRequiredMutation.isPending ? (
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  ) : (
-                    <AlertCircle className="h-4 w-4 mr-2" />
-                  )}
-                  Action Required
-                </Button>
-                <Button 
                   className="bg-[#73cb43] hover:bg-[#65b53b]" 
                   data-testid="button-approve"
                   onClick={() => approveMutation.mutate()}
