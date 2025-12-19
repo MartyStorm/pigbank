@@ -367,7 +367,6 @@ export default function Transactions() {
           <Table>
             <TableHeader className="bg-[#2d7438] dark:bg-[#262626] [&_tr]:hover:bg-[#2d7438] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
               <TableRow className="border-b-[#2d7438] dark:border-b-gray-700">
-                <TableHead className="w-[50px] text-white"></TableHead>
                 <TableHead className="text-white">Customer</TableHead>
                 <TableHead className="text-white">Date & Time</TableHead>
                 <TableHead className="text-white">Amount</TableHead>
@@ -379,7 +378,7 @@ export default function Transactions() {
             <TableBody>
               {isLoading ? (
                 <TableRow>
-                  <TableCell colSpan={7} className="h-24 text-center">
+                  <TableCell colSpan={6} className="h-24 text-center">
                     <div className="flex flex-col items-center justify-center text-muted-foreground">
                       <Loader2 className="h-8 w-8 mb-2 animate-spin" />
                       <p className="text-sm">Loading transactions...</p>
@@ -388,7 +387,7 @@ export default function Transactions() {
                 </TableRow>
               ) : formattedTransactions.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={7} className="h-32 text-center">
+                  <TableCell colSpan={6} className="h-32 text-center">
                     <div className="flex flex-col items-center justify-center text-muted-foreground">
                       {searchQuery ? (
                         <>
@@ -421,11 +420,6 @@ export default function Transactions() {
                     onClick={() => setSelectedTxn(txn)}
                     data-testid={`row-transaction-${txn.transactionId}`}
                   >
-                    <TableCell>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-[#73cb43]">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                    </TableCell>
                     <TableCell>
                       <div className="flex flex-col">
                         <span className="font-medium text-sm">{txn.customerName}</span>
