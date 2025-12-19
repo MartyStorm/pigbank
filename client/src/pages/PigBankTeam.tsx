@@ -25,8 +25,8 @@ type PigBankTeamMember = {
 
 function getRoleBadge(role: string) {
   const styles: Record<string, string> = {
-    pigbank_admin: "bg-[#b91c1c]/20 text-[#b91c1c] border border-[#b91c1c] dark:bg-red-900/30 dark:text-red-400 dark:border-red-700",
-    pigbank_staff: "bg-[#f0b100]/20 text-[#f0b100] border border-[#f0b100] dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700",
+    pigbank_admin: "bg-[#1a4320]/20 text-[#1a4320] border border-[#1a4320] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700",
+    pigbank_staff: "bg-blue-500/20 text-blue-600 border border-blue-500 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700",
   };
   return styles[role] || "bg-gray-100 text-gray-600 border border-gray-600 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600";
 }
