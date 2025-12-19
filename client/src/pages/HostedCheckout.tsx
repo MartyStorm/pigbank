@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -61,6 +61,22 @@ export default function HostedCheckout() {
   const [showSecureSsl, setShowSecureSsl] = useState(true);
   const [backgroundStyle, setBackgroundStyle] = useState("light");
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        toast({ title: "File too large", description: "Please select an image under 2MB", variant: "destructive" });
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLogoUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   
   // Load settings when data is fetched
   useEffect(() => {
@@ -225,10 +241,29 @@ export default function HostedCheckout() {
                       <Label>Brand Name</Label>
                       <Input value={brandName} onChange={(e) => setBrandName(e.target.value)}  />
                     </div>
-                    <div className="border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-muted/50 transition-colors cursor-pointer">
-                      <Upload className="h-8 w-8 text-muted-foreground mb-2" />
-                      <span className="text-sm text-muted-foreground font-medium">Upload Logo</span>
-                      <span className="text-xs text-muted-foreground/70 mt-1">PNG, JPG up to 2MB</span>
+                    <div 
+                      className="border-2 border-dashed border-border rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-muted/50 transition-colors cursor-pointer"
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/png,image/jpeg,image/jpg"
+                        className="hidden"
+                        onChange={handleLogoUpload}
+                      />
+                      {logoUrl ? (
+                        <>
+                          <img src={logoUrl} alt="Logo" className="h-12 w-12 object-contain mb-2" />
+                          <span className="text-sm text-muted-foreground font-medium">Change Logo</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="h-8 w-8 text-muted-foreground mb-2" />
+                          <span className="text-sm text-muted-foreground font-medium">Upload Logo</span>
+                          <span className="text-xs text-muted-foreground/70 mt-1">PNG, JPG up to 2MB</span>
+                        </>
+                      )}
                     </div>
                     <div className="flex items-center gap-2">
                       <Switch id="show-logo" defaultChecked  />
