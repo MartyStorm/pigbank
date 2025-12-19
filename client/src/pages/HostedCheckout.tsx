@@ -63,6 +63,18 @@ export default function HostedCheckout() {
   const [backgroundStyle, setBackgroundStyle] = useState("light");
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  
+  // Extended color customization
+  const [backgroundColor, setBackgroundColor] = useState("#f8f9fa");
+  const [formBackgroundColor, setFormBackgroundColor] = useState("#ffffff");
+  const [headingTextColor, setHeadingTextColor] = useState("#111827");
+  const [bodyTextColor, setBodyTextColor] = useState("#6b7280");
+  const [labelTextColor, setLabelTextColor] = useState("#6b7280");
+  const [buttonColor, setButtonColor] = useState("#73cb43");
+  const [buttonTextColor, setButtonTextColor] = useState("#ffffff");
+  const [inputBackgroundColor, setInputBackgroundColor] = useState("#ffffff");
+  const [inputBorderColor, setInputBorderColor] = useState("#e5e7eb");
+  const [summaryBackgroundColor, setSummaryBackgroundColor] = useState("#f9fafb");
 
   const [isDragging, setIsDragging] = useState(false);
 
@@ -236,34 +248,91 @@ export default function HostedCheckout() {
                       <span>Themes & Colors</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="space-y-4 pt-2">
+                  <AccordionContent className="space-y-4 pt-2 pb-4">
                     <div className="space-y-2">
-                      <Label>Brand Color</Label>
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500">Page Background</Label>
                       <div className="flex items-center gap-3">
-                        <div 
-                          className="w-10 h-10 rounded-md border border-border shadow-sm"
-                          style={{ backgroundColor: primaryColor }}
-                        />
-                        <Input 
-                          value={primaryColor} 
-                          onChange={(e) => setPrimaryColor(e.target.value)} 
-                          className="font-mono"
-                          
-                        />
+                        <input type="color" value={backgroundColor} onChange={(e) => setBackgroundColor(e.target.value)} className="w-10 h-10 rounded-md border border-border shadow-sm cursor-pointer" />
+                        <Input value={backgroundColor} onChange={(e) => setBackgroundColor(e.target.value)} className="font-mono text-sm" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label>Background Style</Label>
-                      <Select value={backgroundStyle} onValueChange={setBackgroundStyle} >
-                        <SelectTrigger>
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="light">Light Clean</SelectItem>
-                          <SelectItem value="dark">Dark Modern</SelectItem>
-                          <SelectItem value="gradient">Soft Gradient</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500">Form Background</Label>
+                      <div className="flex items-center gap-3">
+                        <input type="color" value={formBackgroundColor} onChange={(e) => setFormBackgroundColor(e.target.value)} className="w-10 h-10 rounded-md border border-border shadow-sm cursor-pointer" />
+                        <Input value={formBackgroundColor} onChange={(e) => setFormBackgroundColor(e.target.value)} className="font-mono text-sm" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500">Order Summary Background</Label>
+                      <div className="flex items-center gap-3">
+                        <input type="color" value={summaryBackgroundColor} onChange={(e) => setSummaryBackgroundColor(e.target.value)} className="w-10 h-10 rounded-md border border-border shadow-sm cursor-pointer" />
+                        <Input value={summaryBackgroundColor} onChange={(e) => setSummaryBackgroundColor(e.target.value)} className="font-mono text-sm" />
+                      </div>
+                    </div>
+                    <div className="border-t border-border pt-4 mt-4">
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3 block">Text Colors</Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Headings</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={headingTextColor} onChange={(e) => setHeadingTextColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={headingTextColor} onChange={(e) => setHeadingTextColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Body Text</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={bodyTextColor} onChange={(e) => setBodyTextColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={bodyTextColor} onChange={(e) => setBodyTextColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Labels</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={labelTextColor} onChange={(e) => setLabelTextColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={labelTextColor} onChange={(e) => setLabelTextColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t border-border pt-4 mt-4">
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3 block">Button Styling</Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Button Color</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={buttonColor} onChange={(e) => setButtonColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={buttonColor} onChange={(e) => setButtonColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Button Text</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={buttonTextColor} onChange={(e) => setButtonTextColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={buttonTextColor} onChange={(e) => setButtonTextColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t border-border pt-4 mt-4">
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3 block">Input Fields</Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Background</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={inputBackgroundColor} onChange={(e) => setInputBackgroundColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={inputBackgroundColor} onChange={(e) => setInputBackgroundColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-xs text-gray-600">Border</Label>
+                          <div className="flex items-center gap-2">
+                            <input type="color" value={inputBorderColor} onChange={(e) => setInputBorderColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                            <Input value={inputBorderColor} onChange={(e) => setInputBorderColor(e.target.value)} className="font-mono text-xs h-8" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -469,131 +538,133 @@ export default function HostedCheckout() {
             </div>
           </div>
 
-          <div className="xl:flex-1 xl:overflow-y-auto p-4 md:p-8 flex items-start justify-center bg-[#bababa80]">
+          <div className="xl:flex-1 xl:overflow-y-auto p-4 md:p-8 flex items-start justify-center" style={{ backgroundColor }}>
             <div 
               className={cn(
-                "bg-white shadow-xl rounded-lg transition-all duration-300 overflow-hidden border border-gray-200",
+                "shadow-xl rounded-lg transition-all duration-300 overflow-hidden",
                 previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2" : "w-[375px] flex flex-col"
               )}
+              style={{ borderColor: inputBorderColor, borderWidth: '1px' }}
             >
               {/* Checkout Left: Order Summary */}
-              <div className={cn("bg-gray-50/80 p-6 md:p-8 space-y-6 border-gray-100", previewMode === "mobile" ? "order-1 border-b" : "order-1 border-r")}>
+              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-1 border-b" : "order-1 border-r")} style={{ backgroundColor: summaryBackgroundColor, borderColor: inputBorderColor }}>
                 <div className="flex items-center gap-3 mb-8">
                   {logoUrl ? (
                     <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px` }} className="object-contain" />
                   ) : (
-                    <div className="h-8 w-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm">
-                      <LayoutTemplate className="h-5 w-5 text-gray-900" style={{ color: primaryColor }} />
+                    <div className="h-8 w-8 rounded-lg flex items-center justify-center shadow-sm" style={{ backgroundColor: formBackgroundColor, borderColor: inputBorderColor, borderWidth: '1px' }}>
+                      <LayoutTemplate className="h-5 w-5" style={{ color: buttonColor }} />
                     </div>
                   )}
-                  <span className="font-bold text-lg text-gray-900">{brandName}</span>
+                  <span className="font-bold text-lg" style={{ color: headingTextColor }}>{brandName}</span>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex gap-4">
-                    <div className="h-16 w-16 bg-white rounded-md border border-gray-200 flex items-center justify-center shadow-sm">
+                    <div className="h-16 w-16 rounded-md flex items-center justify-center shadow-sm" style={{ backgroundColor: formBackgroundColor, borderColor: inputBorderColor, borderWidth: '1px' }}>
                       <span className="text-2xl">📦</span>
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900">Premium Subscription</h3>
-                      <p className="text-sm text-gray-500">Monthly Plan</p>
-                      <p className="font-semibold mt-1 text-gray-900">$49.00</p>
+                      <h3 className="font-medium" style={{ color: headingTextColor }}>Premium Subscription</h3>
+                      <p className="text-sm" style={{ color: bodyTextColor }}>Monthly Plan</p>
+                      <p className="font-semibold mt-1" style={{ color: headingTextColor }}>$49.00</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-4 space-y-2">
+                <div className="pt-4 space-y-2" style={{ borderTopWidth: '1px', borderColor: inputBorderColor }}>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Subtotal</span>
-                    <span className="text-gray-900">$49.00</span>
+                    <span style={{ color: bodyTextColor }}>Subtotal</span>
+                    <span style={{ color: headingTextColor }}>$49.00</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Tax</span>
-                    <span className="text-gray-900">$0.00</span>
+                    <span style={{ color: bodyTextColor }}>Tax</span>
+                    <span style={{ color: headingTextColor }}>$0.00</span>
                   </div>
-                  <div className="flex justify-between font-semibold text-lg pt-2 border-t border-gray-200 mt-2">
-                    <span className="text-gray-900">Total</span>
-                    <span className="text-gray-900">$49.00</span>
+                  <div className="flex justify-between font-semibold text-lg pt-2 mt-2" style={{ borderTopWidth: '1px', borderColor: inputBorderColor }}>
+                    <span style={{ color: headingTextColor }}>Total</span>
+                    <span style={{ color: headingTextColor }}>$49.00</span>
                   </div>
                 </div>
               </div>
 
               {/* Checkout Right: Payment Form */}
-              <div className={cn("p-6 md:p-8 space-y-6 bg-white", previewMode === "mobile" ? "order-2" : "order-2")}>
+              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-2" : "order-2")} style={{ backgroundColor: formBackgroundColor }}>
                 <div className="space-y-4">
-                  <h2 className="font-semibold text-lg text-gray-900">Payment Details</h2>
+                  <h2 className="font-semibold text-lg" style={{ color: headingTextColor }}>Payment Details</h2>
                   
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Full Name</Label>
-                      <Input placeholder="John Doe" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Full Name</Label>
+                      <Input placeholder="John Doe" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Email Address</Label>
-                      <Input placeholder="you@example.com" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Email Address</Label>
+                      <Input placeholder="you@example.com" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                     </div>
 
                     {showPhone && (
                       <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Phone Number</Label>
-                        <Input placeholder="+1 (555) 000-0000" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Phone Number</Label>
+                        <Input placeholder="+1 (555) 000-0000" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                       </div>
                     )}
 
                     {showBillingAddress && (
                       <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Billing Address</Label>
-                        <Input placeholder="Street Address" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Billing Address</Label>
+                        <Input placeholder="Street Address" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                         <div className="grid grid-cols-3 gap-2">
-                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="State" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="City" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Input placeholder="State" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Input placeholder="ZIP" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                         </div>
                       </div>
                     )}
 
                     {collectShipping && (
                       <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Shipping Address</Label>
-                        <Input placeholder="123 Main St" className="mb-2 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Shipping Address</Label>
+                        <Input placeholder="123 Main St" className="mb-2" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                         <div className="grid grid-cols-2 gap-2">
-                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="ZIP Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="City" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Input placeholder="ZIP Code" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                         </div>
                       </div>
                     )}
 
                     <div className="space-y-2">
-                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Card Information</Label>
+                      <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Card Information</Label>
                       <div className="relative">
-                        <CreditCard className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-                        <Input placeholder="Card number" className="pl-9 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <CreditCard className="absolute left-3 top-2.5 h-4 w-4" style={{ color: bodyTextColor }} />
+                        <Input placeholder="Card number" className="pl-9" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                       </div>
                       <div className="grid grid-cols-2 gap-2">
-                        <Input placeholder="MM / YY" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <Input placeholder="CVC" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Input placeholder="MM / YY" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                        <Input placeholder="CVC" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                       </div>
                     </div>
 
                     {showCoupons && (
                        <div className="space-y-2 pt-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Discount Code</Label>
+                        <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Discount Code</Label>
                         <div className="flex gap-2">
-                          <Input placeholder="Promo Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Button variant="outline" className="border-gray-200 text-gray-700 hover:bg-gray-50">Apply</Button>
+                          <Input placeholder="Promo Code" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Button variant="outline" style={{ borderColor: inputBorderColor, color: headingTextColor }}>Apply</Button>
                         </div>
                       </div>
                     )}
 
                     <Button 
-                      className="w-full h-12 text-base font-semibold mt-4 text-white shadow-sm hover:opacity-90 transition-opacity border-0 bg-[#72cb43]"
+                      className="w-full h-12 text-base font-semibold mt-4 shadow-sm hover:opacity-90 transition-opacity border-0"
+                      style={{ backgroundColor: buttonColor, color: buttonTextColor }}
                     >
                       {showLockIcon && <Lock className="h-4 w-4 mr-1" />}
                       {buttonText} $49.00
                     </Button>
 
-                    <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4">
+                    <div className="flex items-center justify-center gap-2 text-xs mt-4" style={{ color: bodyTextColor }}>
                       <Lock className="h-3 w-3" />
                       <span>Payments are secure and encrypted</span>
                     </div>
