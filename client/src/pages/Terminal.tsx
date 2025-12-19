@@ -180,7 +180,7 @@ export default function Terminal() {
             <Button 
               type="submit" 
               form="payment-form" 
-              className="w-full md:w-auto" 
+              className="w-full md:w-auto bg-[#1a4320] hover:bg-[#143318] text-white" 
               size="lg"
               disabled={isLoading}
             >
