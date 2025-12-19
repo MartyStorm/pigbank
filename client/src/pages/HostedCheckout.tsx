@@ -49,6 +49,7 @@ export default function HostedCheckout() {
   const [brandName, setBrandName] = useState(merchantDisplayName);
   const [primaryColor, setPrimaryColor] = useState("#0f172a");
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
+  const [logoSize, setLogoSize] = useState(40);
   const [showPhone, setShowPhone] = useState(true);
   const [showBillingAddress, setShowBillingAddress] = useState(true);
   const [showCoupons, setShowCoupons] = useState(false);
@@ -277,6 +278,21 @@ export default function HostedCheckout() {
                         </>
                       )}
                     </div>
+                    {logoUrl && (
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <Label>Logo Size</Label>
+                          <span className="text-sm text-muted-foreground">{logoSize}px</span>
+                        </div>
+                        <Slider 
+                          value={[logoSize]} 
+                          onValueChange={(v) => setLogoSize(v[0])} 
+                          min={24} 
+                          max={80} 
+                          step={4}
+                        />
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
                       <Switch id="show-logo" defaultChecked  />
                       <Label htmlFor="show-logo">Show Logo</Label>
@@ -504,7 +520,7 @@ export default function HostedCheckout() {
               <div className={cn("bg-gray-50/80 p-6 md:p-8 space-y-6 border-gray-100", previewMode === "mobile" ? "order-1 border-b" : "order-2 border-l")}>
                 <div className="flex items-center gap-3 mb-8">
                   {logoUrl ? (
-                    <img src={logoUrl} alt="Logo" className="h-10 max-w-32 object-contain" />
+                    <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px` }} className="max-w-40 object-contain" />
                   ) : (
                     <div className="h-8 w-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm">
                       <LayoutTemplate className="h-5 w-5 text-gray-900" style={{ color: primaryColor }} />
