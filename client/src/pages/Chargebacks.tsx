@@ -232,8 +232,8 @@ export default function Chargebacks() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <Bell className="h-5 w-5 text-[#1a4320] dark:text-[#75C947]" />
+                <div className="p-2 bg-[#e8f5e0] dark:bg-[#2d7438]/30 rounded-lg">
+                  <Bell className="h-5 w-5 text-[#2d7438] dark:text-[#75C947]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Pending Alerts</p>
@@ -245,8 +245,8 @@ export default function Chargebacks() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <Scale className="h-5 w-5 text-[#1a4320] dark:text-[#75C947]" />
+                <div className="p-2 bg-[#e8f5e0] dark:bg-[#2d7438]/30 rounded-lg">
+                  <Scale className="h-5 w-5 text-[#2d7438] dark:text-[#75C947]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Active Disputes</p>
@@ -258,8 +258,8 @@ export default function Chargebacks() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <DollarSign className="h-5 w-5 text-[#1a4320] dark:text-[#75C947]" />
+                <div className="p-2 bg-[#e8f5e0] dark:bg-[#2d7438]/30 rounded-lg">
+                  <DollarSign className="h-5 w-5 text-[#2d7438] dark:text-[#75C947]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Total at Risk</p>
@@ -304,7 +304,7 @@ export default function Chargebacks() {
         <Card className="overflow-hidden">
           <CardContent className="p-0">
             <Table>
-              <TableHeader className="bg-[#1a4320] dark:bg-[#262626] [&_tr]:hover:bg-[#1a4320] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableHeader className="bg-[#2d7438] dark:bg-[#262626] [&_tr]:hover:bg-[#2d7438] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
                 <TableRow className="border-b-[#0f2912] dark:border-b-gray-700">
                   <TableHead className="text-white">Case ID</TableHead>
                   <TableHead className="text-white">Customer</TableHead>

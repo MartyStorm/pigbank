@@ -61,7 +61,7 @@ const floatingCards = [
   {
     icon: CreditCard,
     title: "Payments",
-    color: "bg-[#1a4320]",
+    color: "bg-[#2d7438]",
     position: "left-0 top-24",
   },
   {
@@ -120,7 +120,7 @@ const productMenuItems = {
 
 
 const featureCards = [
-  { icon: Store, title: "In-Person Payments", color: "bg-[#1a4320]", x: -180, y: -120 },
+  { icon: Store, title: "In-Person Payments", color: "bg-[#2d7438]", x: -180, y: -120 },
   { icon: Globe2, title: "Online Checkout", color: "bg-[#73cb43]", x: 180, y: -100 },
   { icon: Receipt, title: "Invoices & Pay Links", color: "bg-amber-600", x: -200, y: 40 },
   { icon: RefreshCcw, title: "Subscriptions", color: "bg-violet-600", x: 200, y: 60 },
@@ -424,7 +424,7 @@ export default function Landing() {
                 <div key={item.label} className="relative group">
                   {item.hasDropdown ? (
                     <button 
-                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#1a4320] transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#2d7438] transition-colors py-6"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
@@ -433,7 +433,7 @@ export default function Landing() {
                   ) : (
                     <a 
                       href={item.href}
-                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#1a4320] transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#2d7438] transition-colors py-6"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
@@ -452,7 +452,7 @@ export default function Landing() {
                               <div className="space-y-3">
                                 {productMenuItems.paymentTypes.map((product) => (
                                   <a key={product.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                                    <div className="w-10 h-10 rounded-lg bg-[#1a4320] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-10 h-10 rounded-lg bg-[#2d7438] flex items-center justify-center flex-shrink-0">
                                       <product.icon className="h-5 w-5 text-white" />
                                     </div>
                                     <div>
@@ -468,7 +468,7 @@ export default function Landing() {
                               <div className="space-y-3">
                                 {productMenuItems.valueAddedServices.map((service) => (
                                   <a key={service.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                                    <div className="w-10 h-10 rounded-lg bg-[#1a4320] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-10 h-10 rounded-lg bg-[#2d7438] flex items-center justify-center flex-shrink-0">
                                       <service.icon className="h-5 w-5 text-white" />
                                     </div>
                                     <div>
@@ -491,7 +491,7 @@ export default function Landing() {
           <div className="flex items-center gap-5" style={{ marginRight: '11px' }}>
             <a 
               href="/login" 
-              className="text-base text-gray-700 hover:text-[#1a4320] transition-colors hidden sm:block"
+              className="text-base text-gray-700 hover:text-[#2d7438] transition-colors hidden sm:block"
               data-testid="link-login"
             >
               Log in
@@ -1082,7 +1082,7 @@ export default function Landing() {
                             <Button 
                               asChild 
                               size="lg" 
-                              className="bg-white hover:bg-gray-100 text-[#1a4320] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              className="bg-white hover:bg-gray-100 text-[#2d7438] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
                               data-testid="button-get-started-hero"
                             >
                               <a href="/register">Get started</a>
@@ -1123,7 +1123,7 @@ export default function Landing() {
           </Carousel>
         </section>
 
-        <section className="py-8 bg-[#1a4320]">
+        <section className="py-8 bg-[#2d7438]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
               <div className="text-center">
@@ -1276,35 +1276,35 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#1a4320]">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#2d7438]">
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <CreditCard className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">Credit Cards</h4>
                 <p className="text-white/70 text-sm">Visa, Mastercard, Amex, Discover</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#1a4320]">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#2d7438]">
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">ACH Transfers</h4>
                 <p className="text-white/70 text-sm">Direct bank payments</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#1a4320]">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#2d7438]">
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Coins className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">Cryptocurrency</h4>
                 <p className="text-white/70 text-sm">Bitcoin, Ethereum & more</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#1a4320]">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#2d7438]">
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <FileCheck className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">eChecks</h4>
                 <p className="text-white/70 text-sm">Digital check processing</p>
               </div>
-              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#1a4320]">
+              <div className="rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow bg-[#2d7438]">
                 <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <Link className="h-7 w-7 text-white" />
                 </div>
@@ -1463,7 +1463,7 @@ export default function Landing() {
         <HorizontalScrollText />
 
         {/* Customer Service Strip */}
-        <section className="py-12 md:py-16 bg-[#1a4320]">
+        <section className="py-12 md:py-16 bg-[#2d7438]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
@@ -1705,7 +1705,7 @@ export default function Landing() {
                         </div>
                       </div>
                       <Button 
-                        className="w-full mt-4 bg-[#1a4320] hover:bg-[#1a3319] text-white rounded-xl"
+                        className="w-full mt-4 bg-[#2d7438] hover:bg-[#1a3319] text-white rounded-xl"
                         size="sm"
                       >
                         Transfer now
@@ -1878,7 +1878,7 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32 bg-[#1a4320]">
+        <section className="py-20 md:py-32 bg-[#2d7438]">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to bring home the bacon?

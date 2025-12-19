@@ -108,7 +108,7 @@ export default function PublicContact() {
               {contactOptions.map((option) => (
                 <div 
                   key={option.title}
-                  className="bg-[#1a4320] rounded-2xl p-6 text-white"
+                  className="bg-[#2d7438] rounded-2xl p-6 text-white"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#73cb43]/20 flex items-center justify-center mb-6">
                     <option.icon className="h-6 w-6 text-[#73cb43]" />
@@ -279,7 +279,7 @@ export default function PublicContact() {
             <Button 
               asChild
               size="lg" 
-              className="bg-[#1a4320] hover:bg-[#1a3319] text-white rounded-md px-8"
+              className="bg-[#2d7438] hover:bg-[#1a3319] text-white rounded-md px-8"
             >
               <a href="/register">Get started</a>
             </Button>
@@ -287,7 +287,7 @@ export default function PublicContact() {
         </section>
       </main>
 
-      <footer className="bg-[#1a4320] py-12">
+      <footer className="bg-[#2d7438] py-12">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <img 
