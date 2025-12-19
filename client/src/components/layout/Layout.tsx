@@ -67,7 +67,7 @@ export function Layout({ children, title }: LayoutProps) {
           </AnimatePresence>
         </div>
 
-        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-200 dark:bg-background text-[#d9d9d9]">
+        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-200 dark:bg-background text-gray-900 dark:text-gray-100">
           {children}
         </main>
       </div>
