@@ -39,32 +39,32 @@ const getStatusConfig = (status: string) => {
   switch (status) {
     case "Paid":
       return { 
-        color: "bg-[#73cb43]/20 text-[#4a9c22] border-[#73cb43]/30", 
+        color: "bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700", 
         icon: CheckCircle 
       };
     case "Pending":
       return { 
-        color: "bg-[#f0b100]/20 text-[#d49900] border-[#f0b100]/30", 
+        color: "bg-[#f0b100]/20 text-[#f0b100] border-[#f0b100] dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700", 
         icon: Clock 
       };
     case "Overdue":
       return { 
-        color: "bg-red-100 text-red-700 border-red-200 dark:bg-red-900/30 dark:text-red-400 dark:border-red-800", 
+        color: "bg-[#b91c1c]/20 text-[#b91c1c] border-[#b91c1c] dark:bg-red-900/30 dark:text-red-400 dark:border-red-700", 
         icon: AlertCircle 
       };
     case "Draft":
       return { 
-        color: "bg-gray-100 text-gray-600 border-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-700", 
+        color: "bg-gray-100 text-gray-600 border-gray-600 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600", 
         icon: FileText 
       };
     case "Cancelled":
       return { 
-        color: "bg-gray-100 text-gray-500 border-gray-200", 
+        color: "bg-gray-100 text-gray-500 border-gray-500 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600", 
         icon: XCircle 
       };
     default:
       return { 
-        color: "bg-gray-100 text-gray-600 border-gray-200", 
+        color: "bg-gray-100 text-gray-600 border-gray-600 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600", 
         icon: FileText 
       };
   }
