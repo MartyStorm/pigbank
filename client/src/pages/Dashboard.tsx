@@ -185,8 +185,8 @@ export default function Dashboard() {
     const totalTxns = transactions.length;
     const approvalRate = totalTxns > 0 ? (approved.length / totalTxns) * 100 : 0;
     
-    // If demo mode is active or no transactions, show demo data with realistic numbers
-    if (user?.demoActive || transactions.length === 0) {
+    // Only show demo data when demo mode is explicitly active
+    if (user?.demoActive) {
       return [
         { title: "Today's Gross Sales", value: "$47,892", trend: "+12.4%", trendUp: true, icon: DollarSign },
         { title: "Approval Rate", value: "89%", trend: "+2.1%", trendUp: true, icon: CreditCard },
@@ -211,8 +211,8 @@ export default function Dashboard() {
     const end = dateRange?.to || endOfMonth(new Date());
     const days = eachDayOfInterval({ start, end });
     
-    // If demo mode is active or no transactions, show demo data with organic upward growth
-    if (user?.demoActive || transactions.length === 0) {
+    // Only show demo chart data when demo mode is explicitly active
+    if (user?.demoActive) {
       // Pre-defined organic growth pattern with natural variation
       const organicMultipliers = [
         1.00, 0.92, 1.08, 1.15, 1.03, 1.22, 1.18, 1.31, 1.25, 1.38,
@@ -250,8 +250,8 @@ export default function Dashboard() {
     const errors = transactions.filter(t => t.status === "Error").length;
     const total = transactions.length || 1;
     
-    // If demo mode is active or no data, show demo data with realistic percentages
-    if (user?.demoActive || transactions.length === 0) {
+    // Only show demo data when demo mode is explicitly active
+    if (user?.demoActive) {
       return [
         { name: "Charges", value: 892, percentage: 89, color: "#73cb43", chartValue: 89 },
         { name: "Refunds", value: 34, percentage: 3, color: "#1877F2", chartValue: 3 },
@@ -269,8 +269,8 @@ export default function Dashboard() {
   }, [transactions, user?.demoActive]);
 
   const payoutBalance = useMemo(() => {
-    // If demo mode is active or no transactions, show demo payout balance
-    if (user?.demoActive || transactions.length === 0) {
+    // Only show demo payout balance when demo mode is explicitly active
+    if (user?.demoActive) {
       return 47892;
     }
     return transactions
