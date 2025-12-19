@@ -229,7 +229,7 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="py-10 md:py-14 relative bg-[#232323]">
+    <section className="py-10 md:py-14 relative bg-[#e8f5e0]">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-6">
           <p className="text-xs md:text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em]">
@@ -240,7 +240,7 @@ function TestimonialsCarousel() {
         <div className="relative">
           <button
             onClick={scrollPrev}
-            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
+            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:border-gray-400 transition-colors"
             data-testid="button-testimonial-prev"
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
@@ -248,7 +248,7 @@ function TestimonialsCarousel() {
           
           <button
             onClick={scrollNext}
-            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors"
+            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:border-gray-400 transition-colors"
             data-testid="button-testimonial-next"
           >
             <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
@@ -267,7 +267,7 @@ function TestimonialsCarousel() {
                 <CarouselItem key={testimonial.id}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div className="order-2 lg:order-1">
-                      <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-6">
+                      <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-gray-800 leading-relaxed mb-6">
                         "{testimonial.quote}"
                       </blockquote>
                       <div>
@@ -301,7 +301,7 @@ function TestimonialsCarousel() {
               key={index}
               onClick={() => scrollTo(index)}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                index === current ? 'bg-[#73cb43]' : 'bg-white/30'
+                index === current ? 'bg-[#73cb43]' : 'bg-gray-400/40'
               }`}
               data-testid={`button-testimonial-dot-${index}`}
             />
