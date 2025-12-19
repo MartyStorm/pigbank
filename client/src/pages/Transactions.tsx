@@ -197,7 +197,7 @@ export default function Transactions() {
 
         {/* Toolbar */}
         <div className="flex flex-wrap gap-4 items-center justify-between bg-card p-4 rounded-lg shadow-sm border border-border/50">
-          <div className="relative w-full sm:w-auto sm:flex-1 sm:max-w-96">
+          <div className="relative w-full sm:w-auto sm:min-w-72 sm:max-w-96">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search Transaction ID, name, or email..."
