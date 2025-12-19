@@ -97,7 +97,7 @@ export default function PublicPricing() {
       <main className="pt-20">
         <section 
           className="py-16 md:py-24"
-          style={{ background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #2d7438 70%, #1a3319 100%)' }}
+          style={{ background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #1a4320 70%, #1a3319 100%)' }}
         >
           <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -113,7 +113,7 @@ export default function PublicPricing() {
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex justify-center mb-12">
               <div className="inline-flex bg-gray-100 rounded-full p-1">
-                <button className="px-6 py-2 rounded-full bg-[#2d7438] text-white font-medium text-sm">
+                <button className="px-6 py-2 rounded-full bg-[#1a4320] text-white font-medium text-sm">
                   Standard plans
                 </button>
                 <button className="px-6 py-2 rounded-full text-gray-600 font-medium text-sm hover:text-gray-900">
@@ -189,7 +189,7 @@ export default function PublicPricing() {
         </section>
       </main>
 
-      <footer className="bg-[#2d7438] py-12">
+      <footer className="bg-[#1a4320] py-12">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <img 

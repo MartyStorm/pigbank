@@ -319,7 +319,7 @@ export default function AdminConsole() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full h-auto bg-[#2d7438] dark:bg-[#262626] p-1 grid grid-cols-4 md:grid-cols-7 gap-1">
+          <TabsList className="w-full h-auto bg-[#1a4320] dark:bg-[#262626] p-1 grid grid-cols-4 md:grid-cols-7 gap-1">
             <TabsTrigger value="account" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-account">Account</TabsTrigger>
             <TabsTrigger value="users" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-users">Users</TabsTrigger>
             <TabsTrigger value="documents" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-documents">Documents</TabsTrigger>
@@ -771,7 +771,7 @@ export default function AdminConsole() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border rounded-lg overflow-hidden">
-                  <div className="bg-[#2d7438] text-white px-4 py-3 grid grid-cols-2 rounded-t-lg">
+                  <div className="bg-[#1a4320] text-white px-4 py-3 grid grid-cols-2 rounded-t-lg">
                     <span className="font-medium text-sm">NECESSARY ITEMS</span>
                     <span className="font-medium text-sm text-right">STATUS</span>
                   </div>
