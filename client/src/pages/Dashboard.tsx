@@ -613,14 +613,14 @@ export default function Dashboard() {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Volume Chart */}
-          <div className="lg:col-span-2 -mx-6 md:mx-0">
-            <div className="flex flex-row items-center justify-between mb-2 px-6 md:px-0 md:pr-5">
+          <Card className="lg:col-span-2 border-none shadow-sm">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
               <div>
-                <h3 className="text-lg font-semibold text-foreground">Processed Volume Over Time</h3>
+                <CardTitle className="text-lg font-semibold">Processed Volume Over Time</CardTitle>
                 <p className="text-sm text-muted-foreground">Daily transaction volume</p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center border rounded-md overflow-hidden bg-card">
+                <div className="flex items-center border rounded-md overflow-hidden bg-muted">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -651,9 +651,9 @@ export default function Dashboard() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </CardHeader>
             
-            <div className="h-[300px] w-full">
+            <CardContent className="h-[300px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   {chartType === 'bar' ? (
                     <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }} barGap={4}>
@@ -726,21 +726,20 @@ export default function Dashboard() {
                     </AreaChart>
                   )}
                 </ResponsiveContainer>
-              </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Transactions by Status */}
-          <div className="w-full lg:col-span-1">
-            <div className="mb-4 flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Transactions by status</h3>
-                <p className="text-sm text-muted-foreground">
-                  {transactions.length > 0 
-                    ? "Showing: All transactions Jan 1 - Dec 25, 2025" 
-                    : "No transactions yet"}
-                </p>
-              </div>
-            </div>
+          <Card className="w-full lg:col-span-1 border-none shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg font-semibold">Transactions by status</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                {transactions.length > 0 
+                  ? "Showing: All transactions Jan 1 - Dec 25, 2025" 
+                  : "No transactions yet"}
+              </p>
+            </CardHeader>
+            <CardContent>
             
             {transactions.length > 0 ? (
               <div className="flex flex-col xl:flex-row items-center gap-4">
@@ -809,7 +808,8 @@ export default function Dashboard() {
                 </p>
               </div>
             )}
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </Layout>
