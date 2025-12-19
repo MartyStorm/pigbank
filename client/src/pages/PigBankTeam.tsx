@@ -25,10 +25,10 @@ type PigBankTeamMember = {
 
 function getRoleBadge(role: string) {
   const styles: Record<string, string> = {
-    pigbank_admin: "bg-[#1a4320]/20 text-[#1a4320] border border-[#1a4320] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700",
-    pigbank_staff: "bg-blue-500/20 text-blue-600 border border-blue-500 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700",
+    pigbank_admin: "bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700",
+    pigbank_staff: "bg-blue-100 text-blue-700 border-blue-700 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700",
   };
-  return styles[role] || "bg-gray-100 text-gray-600 border border-gray-600 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600";
+  return styles[role] || "bg-gray-100 text-gray-600 border-gray-600 dark:bg-gray-700/30 dark:text-gray-400 dark:border-gray-600";
 }
 
 function getRoleLabel(role: string) {
@@ -296,7 +296,7 @@ export default function PigBankTeam() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          <Badge variant="outline" className={getRoleBadge(member.role)} data-testid={`badge-pigbank-role-${member.id}`}>
+                          <Badge variant="outline" className={`min-w-[70px] justify-center ${getRoleBadge(member.role)}`} data-testid={`badge-pigbank-role-${member.id}`}>
                             {getRoleLabel(member.role)}
                           </Badge>
                         </TableCell>
@@ -403,7 +403,7 @@ export default function PigBankTeam() {
           <CardContent>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Badge variant="outline" className="bg-[#1a4320]/20 text-[#1a4320] border-[#1a4320] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700 mt-0.5">
+                <Badge variant="outline" className="min-w-[70px] justify-center bg-[#73cb43]/20 text-[#39870E] border-[#39870E] dark:bg-green-900/30 dark:text-green-400 dark:border-green-700 mt-0.5">
                   Admin
                 </Badge>
                 <div>
@@ -414,7 +414,7 @@ export default function PigBankTeam() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Badge variant="outline" className="bg-blue-100 text-blue-700 border-blue-300 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700 mt-0.5">
+                <Badge variant="outline" className="min-w-[70px] justify-center bg-blue-100 text-blue-700 border-blue-700 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700 mt-0.5">
                   Staff
                 </Badge>
                 <div>
