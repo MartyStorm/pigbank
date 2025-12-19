@@ -613,7 +613,7 @@ export default function Dashboard() {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Volume Chart */}
-          <Card className="lg:col-span-2 border-none shadow-sm">
+          <Card className="lg:col-span-2 border-none shadow-sm flex flex-col h-full">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <div>
                 <CardTitle className="text-lg font-semibold">Processed Volume Over Time</CardTitle>
@@ -653,10 +653,10 @@ export default function Dashboard() {
               </div>
             </CardHeader>
             
-            <CardContent className="h-[260px] w-full px-4 py-0 overflow-hidden">
-                <ResponsiveContainer width="100%" height="100%" className="-mb-4">
+            <CardContent className="flex-1 min-h-[260px] w-full px-4 pb-4 pt-0">
+                <ResponsiveContainer width="100%" height="100%">
                   {chartType === 'bar' ? (
-                    <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: -10 }} barGap={4}>
+                    <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 5 }} barGap={4}>
                       <defs>
                         <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#73cb43" stopOpacity={1} />
@@ -695,7 +695,7 @@ export default function Dashboard() {
                       <Bar dataKey="current" fill="url(#barGradient)" name="Current Period" radius={[0, 0, 0, 0]} barSize={12} />
                     </BarChart>
                   ) : (
-                    <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: -10 }}>
+                    <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>
                       <CartesianGrid stroke="#e5e7eb" vertical={false} strokeDasharray="0" />
                       <XAxis 
                         dataKey="date" 
