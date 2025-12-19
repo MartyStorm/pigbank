@@ -201,7 +201,7 @@ export default function HostedCheckout() {
                 <Accordion type="single" collapsible className="w-full">
                 
                 <AccordionItem value="themes" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <Palette className="h-4 w-4" />
                       <span>Themes & Colors</span>
@@ -240,7 +240,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                 <AccordionItem value="logo" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                      <div className="flex items-center gap-2">
                       <ImageIcon className="h-4 w-4" />
                       <span>Logo</span>
@@ -265,13 +265,13 @@ export default function HostedCheckout() {
                       {logoUrl ? (
                         <>
                           <img src={logoUrl} alt="Logo" className="h-16 max-w-48 object-contain mb-2" />
-                          <span className="text-sm text-muted-foreground font-medium">Change Logo</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Change Logo</span>
                         </>
                       ) : (
                         <>
-                          <Upload className="h-8 w-8 text-muted-foreground mb-2" />
-                          <span className="text-sm text-muted-foreground font-medium">Upload Logo</span>
-                          <span className="text-xs text-muted-foreground/70 mt-1">PNG, JPG up to 2MB</span>
+                          <Upload className="h-8 w-8 text-gray-500 dark:text-gray-400 mb-2" />
+                          <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Upload Logo</span>
+                          <span className="text-xs text-gray-500 dark:text-gray-500 mt-1">PNG, JPG up to 2MB</span>
                         </>
                       )}
                     </div>
@@ -279,7 +279,7 @@ export default function HostedCheckout() {
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
                           <Label>Logo Size</Label>
-                          <span className="text-sm text-muted-foreground">{logoSize}px</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">{logoSize}px</span>
                         </div>
                         <Slider 
                           value={[logoSize]} 
@@ -298,7 +298,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                 <AccordionItem value="header" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <LayoutTemplate className="h-4 w-4" />
                       <span>Header</span>
@@ -317,7 +317,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                 <AccordionItem value="fields" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <FileText className="h-4 w-4" />
                       <span>Form Fields</span>
@@ -344,7 +344,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                 <AccordionItem value="button" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <CreditCard className="h-4 w-4" />
                       <span>Payment Button</span>
@@ -363,7 +363,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                 <AccordionItem value="timer" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <Timer className="h-4 w-4" />
                       <span>Timer Box</span>
@@ -382,7 +382,7 @@ export default function HostedCheckout() {
                 </AccordionItem>
 
                  <AccordionItem value="badges" className="px-4">
-                  <AccordionTrigger className="hover:no-underline">
+                  <AccordionTrigger className="hover:no-underline text-gray-900 dark:text-gray-100">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="h-4 w-4" />
                       <span>Trust Badges</span>
