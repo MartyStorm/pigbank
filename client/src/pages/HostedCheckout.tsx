@@ -529,9 +529,15 @@ export default function HostedCheckout() {
                     </div>
 
                     {showBillingAddress && (
-                       <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Name on Card</Label>
+                      <div className="space-y-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Billing Address</Label>
                         <Input placeholder="Full Name" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Input placeholder="Street Address" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <div className="grid grid-cols-3 gap-2">
+                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="State" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        </div>
                       </div>
                     )}
 
