@@ -61,7 +61,7 @@ export function ChatWidget() {
       {isOpen ? (
         <div className="w-96 h-[500px] bg-card border border-border rounded-lg shadow-lg flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
-          <div className="bg-[#203E22] text-white px-4 py-4 flex items-center justify-between">
+          <div className="bg-[#1a4320] text-white px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
               <h3 className="font-semibold text-sm">PigBank Support</h3>

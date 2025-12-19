@@ -87,7 +87,7 @@ export default function PublicIntegrations() {
               {integrations.map((integration) => (
                 <div 
                   key={integration.name}
-                  className="bg-[#203e22] rounded-2xl p-6 text-white hover:bg-[#1a3319] transition-colors group"
+                  className="bg-[#1a4320] rounded-2xl p-6 text-white hover:bg-[#1a3319] transition-colors group"
                 >
                   <div className={`w-14 h-14 ${integration.logoColor} rounded-xl flex items-center justify-center mb-6 text-white font-bold text-lg`}>
                     {integration.logo}
@@ -138,7 +138,7 @@ export default function PublicIntegrations() {
         </section>
       </main>
 
-      <footer className="bg-[#203e22] py-12">
+      <footer className="bg-[#1a4320] py-12">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <img 
