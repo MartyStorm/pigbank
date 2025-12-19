@@ -121,8 +121,8 @@ export default function InvoicesList() {
 
         <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-[#256726] dark:bg-[#262626]">
-              <TableRow className="border-b-[#1a4320] dark:border-b-gray-700 hover:bg-[#256726] dark:hover:bg-[#262626]">
+            <TableHeader className="bg-[#386a1d] dark:bg-[#262626]">
+              <TableRow className="border-b-[#1a4320] dark:border-b-gray-700 hover:bg-[#386a1d] dark:hover:bg-[#262626]">
                 <TableHead className="text-white w-[50px]"></TableHead>
                 <TableHead className="text-white">Invoice</TableHead>
                 <TableHead className="text-white">Customer</TableHead>
