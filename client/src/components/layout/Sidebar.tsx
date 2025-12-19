@@ -476,7 +476,7 @@ export function Sidebar({ className }: { className?: string }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="w-full flex items-center gap-3 px-2 hover:bg-white/10 dark:hover:bg-white/10 text-white dark:text-gray-300 justify-start h-auto py-3">
-              <Avatar className="h-8 w-8 bg-gray-200 dark:bg-gray-700 text-[#73cb43] border-none font-black">
+              <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
                 {!isAuthenticated ? (
                   <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
                 ) : user?.profileImageUrl ? (
