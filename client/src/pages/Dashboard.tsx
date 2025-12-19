@@ -190,7 +190,7 @@ export default function Dashboard() {
       return [
         { title: "Today's Gross Sales", value: "$47,892", trend: "+12.4%", trendUp: true, icon: DollarSign },
         { title: "Approval Rate", value: "89%", trend: "+2.1%", trendUp: true, icon: CreditCard },
-        { title: "Chargeback Rate", value: "0%", trend: "0%", trendUp: true, icon: TrendingUp },
+        { title: "Chargeback Rate", value: "0.05%", trend: "-0.02%", trendUp: true, icon: TrendingUp },
         { title: "Declined Amount", value: "$4,231", trend: "-8.3%", trendUp: false, icon: ArrowDownRight },
         { title: "Refund Amount", value: "$1,847", trend: "-3.2%", trendUp: false, icon: ArrowUpRight },
       ];
