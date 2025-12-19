@@ -185,14 +185,14 @@ export default function HostedCheckout() {
         
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
-          <div className="p-4 border-b border-border bg-[#e8f5e0]">
+          <div className="p-4 border-b border-border bg-[#2f8a2b]">
             <div className="flex items-center justify-between mb-1">
-              <h2 className="font-semibold text-lg">Customize Checkout</h2>
+              <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
               <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-[#73cb43e6] hover:bg-[#65b538] text-white">
                 {saveMutation.isPending ? "Saving..." : "Save Changes"}
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white/80">
               {isStaffViewingMerchant 
                 ? `Editing checkout for ${merchantDisplayName}` 
                 : "Design your payment page experience"}
