@@ -72,7 +72,19 @@ export default function HostedCheckout() {
       }
       const reader = new FileReader();
       reader.onloadend = () => {
-        setLogoUrl(reader.result as string);
+        const img = new Image();
+        img.onload = () => {
+          if (img.width < 200 || img.height < 200) {
+            toast({ 
+              title: "Image too small", 
+              description: "Please upload an image at least 200x200 pixels for best quality", 
+              variant: "destructive" 
+            });
+            return;
+          }
+          setLogoUrl(reader.result as string);
+        };
+        img.src = reader.result as string;
       };
       reader.readAsDataURL(file);
     }
@@ -254,7 +266,7 @@ export default function HostedCheckout() {
                       />
                       {logoUrl ? (
                         <>
-                          <img src={logoUrl} alt="Logo" className="h-12 w-12 object-contain mb-2" />
+                          <img src={logoUrl} alt="Logo" className="h-16 max-w-48 object-contain mb-2" />
                           <span className="text-sm text-muted-foreground font-medium">Change Logo</span>
                         </>
                       ) : (
