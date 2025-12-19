@@ -653,10 +653,10 @@ export default function Dashboard() {
               </div>
             </CardHeader>
             
-            <CardContent className="h-[260px] w-full px-4 py-0">
-                <ResponsiveContainer width="100%" height="100%" className="-mb-2">
+            <CardContent className="h-[260px] w-full px-4 py-0 overflow-hidden">
+                <ResponsiveContainer width="100%" height="100%" className="-mb-4">
                   {chartType === 'bar' ? (
-                    <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }} barGap={4}>
+                    <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: -10 }} barGap={4}>
                       <defs>
                         <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#73cb43" stopOpacity={1} />
@@ -672,7 +672,8 @@ export default function Dashboard() {
                         axisLine={false}
                         tick={{ fill: "#9ca3af" }}
                         interval={4}
-                        dy={5}
+                        dy={0}
+                        tickMargin={-4}
                         padding={{ left: 10, right: 10 }}
                       />
                       <YAxis 
@@ -694,7 +695,7 @@ export default function Dashboard() {
                       <Bar dataKey="current" fill="url(#barGradient)" name="Current Period" radius={[0, 0, 0, 0]} barSize={12} />
                     </BarChart>
                   ) : (
-                    <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+                    <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: -10 }}>
                       <CartesianGrid stroke="#e5e7eb" vertical={false} strokeDasharray="0" />
                       <XAxis 
                         dataKey="date" 
@@ -704,7 +705,8 @@ export default function Dashboard() {
                         axisLine={false}
                         tick={{ fill: "#9ca3af" }}
                         interval={4}
-                        dy={5}
+                        dy={0}
+                        tickMargin={-4}
                         padding={{ left: 10, right: 10 }}
                       />
                       <YAxis 
