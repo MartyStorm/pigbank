@@ -186,8 +186,8 @@ export default function Settings() {
             {/* Email Notifications */}
             <div className="flex items-center justify-between">
               <div className="flex items-start gap-3">
-                <div className="bg-blue-100 p-2 rounded-lg">
-                  <Mail className="h-5 w-5 text-blue-600" />
+                <div className="bg-[#73cb43]/20 p-2 rounded-lg">
+                  <Mail className="h-5 w-5 text-[#73cb43]" />
                 </div>
                 <div>
                   <Label htmlFor="email-notifications" className="text-base font-medium">
@@ -255,7 +255,7 @@ export default function Settings() {
                   variant="outline"
                   size="sm"
                   onClick={addAdditionalEmail}
-                  className="text-blue-600 border-blue-200 hover:bg-blue-50"
+                  className="text-[#73cb43] border-[#73cb43]/30 hover:bg-[#73cb43]/10"
                   data-testid="button-add-email"
                 >
                   <Plus className="h-4 w-4 mr-1" />
