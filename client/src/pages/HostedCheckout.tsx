@@ -60,6 +60,10 @@ export default function HostedCheckout() {
   const [timerMinutes, setTimerMinutes] = useState(10);
   const [showPciCompliant, setShowPciCompliant] = useState(true);
   const [showSecureSsl, setShowSecureSsl] = useState(true);
+  const [showAcceptedCards, setShowAcceptedCards] = useState(true);
+  const [showMoneyBackGuarantee, setShowMoneyBackGuarantee] = useState(false);
+  const [showSecureMessage, setShowSecureMessage] = useState(true);
+  const [showPoweredByPigBank, setShowPoweredByPigBank] = useState(true);
   const [backgroundStyle, setBackgroundStyle] = useState("light");
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -489,14 +493,30 @@ export default function HostedCheckout() {
                       <span>Trust Badges</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="space-y-4 pt-2">
+                  <AccordionContent className="space-y-3 pt-2">
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="show-pci">Show PCI Compliant</Label>
-                      <Switch id="show-pci" checked={showPciCompliant} onCheckedChange={setShowPciCompliant}  />
+                      <Label htmlFor="show-pci">PCI Compliant Badge</Label>
+                      <Switch id="show-pci" checked={showPciCompliant} onCheckedChange={setShowPciCompliant} />
                     </div>
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="show-secure">Show Secure SSL</Label>
-                      <Switch id="show-secure" checked={showSecureSsl} onCheckedChange={setShowSecureSsl}  />
+                      <Label htmlFor="show-secure">SSL Encrypted Badge</Label>
+                      <Switch id="show-secure" checked={showSecureSsl} onCheckedChange={setShowSecureSsl} />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="show-cards">Accepted Cards</Label>
+                      <Switch id="show-cards" checked={showAcceptedCards} onCheckedChange={setShowAcceptedCards} />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="show-moneyback">Money-Back Guarantee</Label>
+                      <Switch id="show-moneyback" checked={showMoneyBackGuarantee} onCheckedChange={setShowMoneyBackGuarantee} />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="show-secure-msg">Secure Payment Message</Label>
+                      <Switch id="show-secure-msg" checked={showSecureMessage} onCheckedChange={setShowSecureMessage} />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="show-pigbank">Powered by PigBank</Label>
+                      <Switch id="show-pigbank" checked={showPoweredByPigBank} onCheckedChange={setShowPoweredByPigBank} />
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -665,9 +685,63 @@ export default function HostedCheckout() {
                       {buttonText} $49.00
                     </Button>
 
-                    <div className="flex items-center justify-center gap-2 text-xs mt-4" style={{ color: bodyTextColor }}>
-                      <Lock className="h-3 w-3" />
-                      <span>Payments are secure and encrypted</span>
+                    {/* Trust Badges Section */}
+                    <div className="space-y-3 mt-4">
+                      {showSecureMessage && (
+                        <div className="flex items-center justify-center gap-2 text-xs" style={{ color: bodyTextColor }}>
+                          <Lock className="h-3 w-3" />
+                          <span>Payments are secure and encrypted</span>
+                        </div>
+                      )}
+
+                      {/* Badge Row */}
+                      {(showPciCompliant || showSecureSsl || showMoneyBackGuarantee) && (
+                        <div className="flex items-center justify-center gap-3 flex-wrap">
+                          {showPciCompliant && (
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                              <ShieldCheck className="h-3.5 w-3.5" />
+                              <span>PCI Compliant</span>
+                            </div>
+                          )}
+                          {showSecureSsl && (
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                              <Lock className="h-3.5 w-3.5" />
+                              <span>SSL Encrypted</span>
+                            </div>
+                          )}
+                          {showMoneyBackGuarantee && (
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                              <BadgeCheck className="h-3.5 w-3.5" />
+                              <span>Money-Back Guarantee</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Accepted Cards */}
+                      {showAcceptedCards && (
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="flex items-center gap-1.5 px-2 py-1 rounded border text-xs" style={{ borderColor: inputBorderColor, color: bodyTextColor }}>
+                            <span className="font-bold text-blue-600">VISA</span>
+                            <span className="font-bold text-red-500">MC</span>
+                            <span className="font-bold text-blue-500">AMEX</span>
+                            <span className="font-bold text-orange-500">DISC</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Powered by PigBank */}
+                      {showPoweredByPigBank && (
+                        <div className="flex items-center justify-center gap-1.5 pt-2 border-t" style={{ borderColor: inputBorderColor }}>
+                          <span className="text-xs" style={{ color: bodyTextColor }}>Payment processed by</span>
+                          <div className="flex items-center gap-1">
+                            <div className="w-4 h-4 rounded-full bg-[#73cb43] flex items-center justify-center">
+                              <span className="text-white text-[8px] font-bold">P</span>
+                            </div>
+                            <span className="text-xs font-semibold" style={{ color: headingTextColor }}>PigBank</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
