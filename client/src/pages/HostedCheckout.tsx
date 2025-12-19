@@ -186,13 +186,8 @@ export default function HostedCheckout() {
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
           <div className="p-4 border-b border-border bg-[#535359] rounded-t-xl">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-between">
-                <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
-                <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-white hover:bg-gray-100 text-[#535359] font-semibold shrink-0">
-                  {saveMutation.isPending ? "Saving..." : "Save Changes"}
-                </Button>
-              </div>
+            <div className="flex flex-col gap-1">
+              <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
               <p className="text-sm text-white/80">
                 {isStaffViewingMerchant 
                   ? `Editing checkout for ${merchantDisplayName}` 
@@ -409,6 +404,12 @@ export default function HostedCheckout() {
             </div>
           </div>
 
+          <div className="p-4 border-t border-border bg-[#535359] rounded-b-xl">
+            <Button onClick={handleSave} disabled={saveMutation.isPending} className="w-full bg-white hover:bg-gray-100 text-[#535359] font-semibold">
+              {saveMutation.isPending ? "Saving..." : "Save Changes"}
+            </Button>
+          </div>
+
         </div>
 
         {/* Preview Panel */}
@@ -438,7 +439,7 @@ export default function HostedCheckout() {
             </div>
           </div>
 
-          <div className="xl:flex-1 xl:overflow-y-auto p-4 md:p-8 flex items-start justify-center bg-gray-100/50">
+          <div className="xl:flex-1 xl:overflow-y-auto p-4 md:p-8 flex items-start justify-center bg-[#bababa80]">
             <div 
               className={cn(
                 "bg-white shadow-xl rounded-lg transition-all duration-300 overflow-hidden border border-gray-200",
