@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Building2, AlertTriangle, Clock, CheckCircle, Loader2, Eye, UserCheck, Trash2 } from "lucide-react";
+import { Search, Building2, AlertTriangle, Clock, CheckCircle, Loader2, Eye, UserCheck, Trash2, FileEdit } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -156,6 +156,15 @@ export default function TeamMerchants() {
     },
   });
 
+  const { data: draftData } = useQuery<MerchantsResponse>({
+    queryKey: ["/api/team/merchants", "draft", "count"],
+    queryFn: async () => {
+      const res = await fetch("/api/team/merchants?status=draft&limit=1", { credentials: "include" });
+      if (!res.ok) throw new Error("Failed to fetch");
+      return res.json();
+    },
+  });
+
   const merchants = data?.merchants || [];
 
   const formatDate = (date: string | Date | null) => {
@@ -182,7 +191,18 @@ export default function TeamMerchants() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-4">
+                <FileEdit className="h-6 w-6 text-gray-500" />
+                <div>
+                  <p className="text-2xl font-bold" data-testid="count-draft">{draftData?.total || 0}</p>
+                  <p className="text-sm text-muted-foreground">Draft</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-center gap-4">
