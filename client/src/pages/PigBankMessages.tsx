@@ -247,7 +247,7 @@ export default function PigBankMessages() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="bg-[#256726] dark:bg-[#262626]">
+          <TabsList className="bg-[#386a1d] dark:bg-[#262626]">
             <TabsTrigger value="all" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-all">All Messages</TabsTrigger>
             <TabsTrigger value="unread" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-unread">
               Unread {unreadCount > 0 && `(${unreadCount})`}
