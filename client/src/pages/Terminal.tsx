@@ -47,7 +47,7 @@ export default function Terminal() {
         </div>
 
         <Card className="border-border shadow-sm">
-          <CardHeader className="py-4 bg-[#535359] rounded-t-xl flex flex-row items-center justify-between">
+          <CardHeader className="py-4 bg-[#74747d] rounded-t-xl flex flex-row items-center justify-between">
             <div>
               <CardTitle className="text-white">New Transaction</CardTitle>
               <CardDescription className="text-white/80">Enter payment details to process a charge manually.</CardDescription>

@@ -304,7 +304,7 @@ export default function Chargebacks() {
         <Card className="overflow-hidden">
           <CardContent className="p-0">
             <Table>
-              <TableHeader className="bg-[#535359] dark:bg-[#262626] [&_tr]:hover:bg-[#535359] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableHeader className="bg-[#74747d] dark:bg-[#262626] [&_tr]:hover:bg-[#74747d] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
                 <TableRow className="border-b-[#535359] dark:border-b-gray-700">
                   <TableHead className="text-white">Case ID</TableHead>
                   <TableHead className="text-white">Customer</TableHead>
