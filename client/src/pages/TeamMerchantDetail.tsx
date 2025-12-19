@@ -517,11 +517,11 @@ export default function TeamMerchantDetail() {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">Routing Number</label>
-                    <p className="text-gray-900" data-testid="text-routing">{maskValue(merchant.bankRoutingNumber)}</p>
+                    <p className="text-gray-900" data-testid="text-routing">{merchant.bankRoutingNumber || "Not provided"}</p>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">Account Number</label>
-                    <p className="text-gray-900" data-testid="text-account">{maskValue(merchant.bankAccountNumber)}</p>
+                    <p className="text-gray-900" data-testid="text-account">{merchant.bankAccountNumber || "Not provided"}</p>
                   </div>
                 </div>
               </CardContent>
