@@ -114,7 +114,7 @@ export default function Payouts() {
             </CardContent>
           </Card>
 
-          <Card className="border border-[#39870E] shadow-sm bg-[#73cb43]/10 dark:bg-green-950/30 dark:border-green-700 rounded-xl">
+          <Card className="border border-[#39870E] shadow-sm bg-white dark:bg-green-950/30 dark:border-green-700 rounded-xl">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
