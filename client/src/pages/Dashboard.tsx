@@ -476,7 +476,7 @@ export default function Dashboard() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-dashboard-title">
               Dashboard
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-gray-600 mt-1">
               Overview of your payment processing activity and performance
             </p>
           </div>
