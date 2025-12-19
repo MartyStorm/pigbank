@@ -140,9 +140,9 @@
 }
 
 .green {
-  /* Green Mode - Copy of light mode with green accents */
+  /* Green Mode - Light mode with soft green background */
   /* Backgrounds */
-  --background: 0 0% 98%; /* Clean light gray */
+  --background: 98 50% 92%; /* #e8f5e0 - Soft green */
   --foreground: 0 0% 15%; /* Dark neutral */
 
   /* Cards */
