@@ -7,7 +7,20 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Building2, AlertTriangle, Clock, CheckCircle, Loader2, Eye, UserCheck } from "lucide-react";
+import { Search, Building2, AlertTriangle, Clock, CheckCircle, Loader2, Eye, UserCheck, Trash2 } from "lucide-react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Layout } from "@/components/layout/Layout";
 import { useMerchantView } from "@/hooks/useMerchantView";
 import type { Merchant } from "@shared/schema";
@@ -53,11 +66,34 @@ export default function TeamMerchants() {
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const { enterMerchantView } = useMerchantView();
   const [, setLocation] = useLocation();
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
 
   const handleViewAccount = (merchant: Merchant) => {
     enterMerchantView(merchant);
     setLocation("/dashboard");
   };
+
+  const deleteMutation = useMutation({
+    mutationFn: async (merchantId: string) => {
+      const res = await fetch(`/api/team/merchants/${merchantId}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || "Failed to delete");
+      }
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({ title: "Application deleted successfully" });
+      queryClient.invalidateQueries({ queryKey: ["/api/team/merchants"] });
+    },
+    onError: (error: Error) => {
+      toast({ title: "Failed to delete", description: error.message, variant: "destructive" });
+    },
+  });
   
   useEffect(() => {
     const params = new URLSearchParams(searchString);
@@ -276,12 +312,43 @@ export default function TeamMerchants() {
                         <TableCell>{formatVolume(merchant.expectedMonthlyVolume)}</TableCell>
                         <TableCell>{formatDate(merchant.submittedAt)}</TableCell>
                         <TableCell>
+                          <div className="flex items-center gap-1">
                             <Link href={`/team/merchants/${merchant.id}`}>
                               <Button variant="ghost" size="sm" data-testid={`button-view-${merchant.id}`}>
                                 <Eye className="h-4 w-4 mr-1" />
                                 Details
                               </Button>
                             </Link>
+                            <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <Button 
+                                  variant="ghost" 
+                                  size="sm" 
+                                  className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                  data-testid={`button-delete-${merchant.id}`}
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent>
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>Delete Application</AlertDialogTitle>
+                                  <AlertDialogDescription>
+                                    Are you sure you want to delete the application for "{merchant.legalBusinessName || "Unnamed"}"? This action cannot be undone and will permanently remove all associated data.
+                                  </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction
+                                    onClick={() => deleteMutation.mutate(merchant.id)}
+                                    className="bg-red-500 hover:bg-red-600"
+                                  >
+                                    Delete
+                                  </AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </div>
                         </TableCell>
                       </TableRow>
                     ))

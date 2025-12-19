@@ -75,6 +75,7 @@ export interface IStorage {
   getMerchantCount(status?: string, excludeApproved?: boolean): Promise<number>;
   createMerchant(data: InsertMerchant): Promise<Merchant>;
   updateMerchant(id: string, data: Partial<Merchant>): Promise<Merchant | undefined>;
+  deleteMerchant(id: string): Promise<boolean>;
 
   // Merchant Owners
   getMerchantOwners(merchantId: string): Promise<MerchantOwner[]>;
@@ -581,6 +582,19 @@ export class DatabaseStorage implements IStorage {
       .where(eq(merchants.id, id))
       .returning();
     return updated || undefined;
+  }
+
+  async deleteMerchant(id: string): Promise<boolean> {
+    // Delete related records first (cascade)
+    await db.delete(merchantOwners).where(eq(merchantOwners.merchantId, id));
+    await db.delete(merchantUsers).where(eq(merchantUsers.merchantId, id));
+    await db.delete(onboardingTasks).where(eq(onboardingTasks.merchantId, id));
+    await db.delete(merchantNotes).where(eq(merchantNotes.merchantId, id));
+    await db.delete(merchantEvents).where(eq(merchantEvents.merchantId, id));
+    
+    // Delete the merchant
+    const result = await db.delete(merchants).where(eq(merchants.id, id));
+    return result.rowCount !== null && result.rowCount > 0;
   }
 
   // Merchant Owners

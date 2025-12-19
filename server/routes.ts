@@ -1168,6 +1168,26 @@ export async function registerRoutes(
     }
   });
 
+  app.delete("/api/team/merchants/:id", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Only admins can delete merchants" });
+      }
+      
+      const deleted = await storage.deleteMerchant(req.params.id);
+      
+      if (!deleted) {
+        return res.status(404).json({ error: "Merchant not found" });
+      }
+      
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error deleting merchant:", error);
+      res.status(500).json({ error: "Failed to delete merchant" });
+    }
+  });
+
   app.post("/api/team/merchants/:id/action-required", isAuthenticated, async (req, res) => {
     try {
       const user = (req as any).user;
