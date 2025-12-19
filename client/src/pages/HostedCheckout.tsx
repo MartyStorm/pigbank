@@ -423,7 +423,7 @@ export default function HostedCheckout() {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "desktop" && "bg-white text-[#535359] shadow-sm hover:bg-white")}
+                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "desktop" && "bg-white text-[#74747d] shadow-sm hover:bg-white")}
                 onClick={() => setPreviewMode("desktop")}
               >
                 <Monitor className="h-4 w-4" />
@@ -431,7 +431,7 @@ export default function HostedCheckout() {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "mobile" && "bg-white text-[#535359] shadow-sm hover:bg-white")}
+                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "mobile" && "bg-white text-[#74747d] shadow-sm hover:bg-white")}
                 onClick={() => setPreviewMode("mobile")}
               >
                 <Smartphone className="h-4 w-4" />
