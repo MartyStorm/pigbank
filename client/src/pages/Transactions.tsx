@@ -513,85 +513,86 @@ export default function Transactions() {
       <Sheet open={!!selectedTxn} onOpenChange={() => setSelectedTxn(null)}>
         <SheetContent className="w-[400px] sm:w-[540px] overflow-y-auto">
           {selectedTxn && (
-            <div className="space-y-8 mt-6">
-              <SheetHeader>
+            <div className="space-y-4 mt-4">
+              <SheetHeader className="pb-2">
                 <div className="flex items-center justify-between">
-                  <SheetTitle className="text-xl font-mono">{selectedTxn.transactionId}</SheetTitle>
-                  <span className={cn("px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider border", getStatusColor(selectedTxn.status))}>
+                  <SheetTitle className="text-lg font-mono">{selectedTxn.transactionId}</SheetTitle>
+                  <span className={cn("px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-wider border", getStatusColor(selectedTxn.status))}>
                     {selectedTxn.status}
                   </span>
                 </div>
-                <SheetDescription>
-                  Processed on {format(new Date(selectedTxn.date), "MMM d, yyyy h:mm a")} via PigBank Gateway
+                <SheetDescription className="text-xs">
+                  {format(new Date(selectedTxn.date), "MMM d, yyyy h:mm a")} via PigBank Gateway
                 </SheetDescription>
               </SheetHeader>
 
               {/* Summary Section */}
-              <div className="grid grid-cols-2 gap-4 p-4 rounded-lg bg-muted/30 border border-border">
+              <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/30 border border-border">
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Amount</p>
-                  <p className="text-2xl font-bold text-foreground">${parseFloat(selectedTxn.amount).toLocaleString("en-US", { minimumFractionDigits: 2 })}</p>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Amount</p>
+                  <p className="text-xl font-bold text-foreground">${parseFloat(selectedTxn.amount).toLocaleString("en-US", { minimumFractionDigits: 2 })}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Method</p>
-                  <p className="text-base font-medium text-foreground flex items-center gap-2">
-                    <CreditCard className="h-4 w-4" /> {selectedTxn.method} •••• 4242
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Method</p>
+                  <p className="text-sm font-medium text-foreground flex items-center gap-1.5 mt-1">
+                    <CreditCard className="h-3.5 w-3.5" /> {selectedTxn.method} •••• 4242
                   </p>
                 </div>
               </div>
 
-              {/* Customer Info */}
-              <div className="space-y-3">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Customer Details</h3>
-                <div className="grid grid-cols-2 gap-y-4 text-sm">
+              {/* Customer Info - Compact */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-semibold text-foreground uppercase tracking-wider">Customer</h3>
+                <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm">
                   <div>
-                    <p className="text-muted-foreground">Name</p>
-                    <p className="font-medium">{selectedTxn.customerName}</p>
+                    <p className="text-xs text-muted-foreground">Name</p>
+                    <p className="font-medium text-sm">{selectedTxn.customerName}</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">Email</p>
-                    <p className="font-medium">{selectedTxn.customerEmail}</p>
+                    <p className="text-xs text-muted-foreground">Email</p>
+                    <p className="font-medium text-sm truncate">{selectedTxn.customerEmail}</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">IP Address</p>
-                    <p className="font-medium">192.168.1.42 (US)</p>
+                    <p className="text-xs text-muted-foreground">IP</p>
+                    <p className="font-medium text-sm">192.168.1.42 (US)</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">Phone</p>
-                    <p className="font-medium">+1 (555) 123-4567</p>
+                    <p className="text-xs text-muted-foreground">Phone</p>
+                    <p className="font-medium text-sm">+1 (555) 123-4567</p>
                   </div>
                 </div>
               </div>
 
-              {/* Risk Analysis */}
-              <div className="space-y-3">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Security & Risk</h3>
-                <div className="p-4 rounded-lg border border-border bg-card">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">Fraud Risk Score</span>
-                    <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getRiskColor(selectedTxn.risk))}>
+              {/* Risk Analysis - Compact */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-semibold text-foreground uppercase tracking-wider">Security & Risk</h3>
+                <div className="p-3 rounded-lg border border-border bg-card">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium">Fraud Risk</span>
+                    <span className={cn("px-2 py-0.5 rounded-md text-xs font-medium border", getRiskColor(selectedTxn.risk))}>
                       {selectedTxn.risk}
                     </span>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">AVS Check</span>
-                      <span className="text-emerald-600 font-medium">Matched</span>
+                  <div className="grid grid-cols-3 gap-2 text-xs">
+                    <div className="flex flex-col">
+                      <span className="text-muted-foreground">AVS</span>
+                      <span className="text-emerald-600 font-medium">Match</span>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">CVV Check</span>
-                      <span className="text-emerald-600 font-medium">Matched</span>
+                    <div className="flex flex-col">
+                      <span className="text-muted-foreground">CVV</span>
+                      <span className="text-emerald-600 font-medium">Match</span>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Device Fingerprint</span>
-                      <span className="font-mono text-xs">f4a2...9b12</span>
+                    <div className="flex flex-col">
+                      <span className="text-muted-foreground">Device</span>
+                      <span className="font-mono">f4a2...9b12</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <SheetFooter className="flex-col sm:flex-col sm:space-x-0 gap-3 pt-4 border-t border-border">
-                <div className="space-y-2 w-full mb-2">
+              {/* Refund Section */}
+              <div className="pt-3 border-t border-border space-y-3">
+                <div className="space-y-1.5">
                    <Label htmlFor="refund-amount" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Refund Amount</Label>
                    <div className="relative">
                      <span className="absolute left-3 top-2.5 text-muted-foreground">$</span>
@@ -599,29 +600,31 @@ export default function Transactions() {
                        id="refund-amount"
                        value={refundAmount}
                        onChange={(e) => setRefundAmount(e.target.value)}
-                       className="pl-7"
+                       className="pl-7 h-9"
                        placeholder="0.00"
                      />
                    </div>
                 </div>
-                <Button className="w-full hover:bg-primary/10 hover:border-primary transition-all duration-200" variant="outline" onClick={handleEmailReceipt} data-testid="button-email-receipt">
-                  <Share className="mr-2 h-4 w-4" /> Email Receipt
-                </Button>
-                <Button 
-                  className="w-full hover:shadow-lg hover:opacity-90 transition-all duration-200 bg-[#dc2626] text-white hover:bg-[#b91c1c]" 
-                  variant="default" 
-                  onClick={handleProcessRefund}
-                  disabled={isLoading}
-                  data-testid="button-refund-transaction"
-                >
-                  {isLoading ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <RefreshCw className="mr-2 h-4 w-4" />
-                  )}
-                  Refund Transaction
-                </Button>
-              </SheetFooter>
+                <div className="flex gap-2">
+                  <Button className="flex-1 h-9 hover:bg-primary/10 hover:border-primary transition-all duration-200" variant="outline" onClick={handleEmailReceipt} data-testid="button-email-receipt">
+                    <Share className="mr-1.5 h-3.5 w-3.5" /> Email Receipt
+                  </Button>
+                  <Button 
+                    className="flex-1 h-9 hover:shadow-lg hover:opacity-90 transition-all duration-200 bg-[#dc2626] text-white hover:bg-[#b91c1c]" 
+                    variant="default" 
+                    onClick={handleProcessRefund}
+                    disabled={isLoading}
+                    data-testid="button-refund-transaction"
+                  >
+                    {isLoading ? (
+                      <Loader2 className="mr-1.5 h-3.5 w-3.5 animate-spin" />
+                    ) : (
+                      <RefreshCw className="mr-1.5 h-3.5 w-3.5" />
+                    )}
+                    Refund
+                  </Button>
+                </div>
+              </div>
             </div>
           )}
         </SheetContent>
