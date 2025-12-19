@@ -376,36 +376,36 @@ export default function TeamMerchantDetail() {
         </div>
 
         <Tabs defaultValue="business" className="space-y-4">
-          <TabsList className="bg-[#1a4320] dark:bg-[#262626] w-full h-auto grid grid-cols-4 lg:grid-cols-8 gap-2 p-2">
-            <TabsTrigger value="business" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-business">
+          <TabsList className="bg-[#1a4320] dark:bg-[#262626] w-full h-auto grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-2 p-2">
+            <TabsTrigger value="business" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-business">
               <Building2 className="h-4 w-4 mr-2" />
               Business Info
             </TabsTrigger>
-            <TabsTrigger value="owners" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-owners">
+            <TabsTrigger value="owners" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-owners">
               <User className="h-4 w-4 mr-2" />
               Owners & KYC
             </TabsTrigger>
-            <TabsTrigger value="bank" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-bank">
+            <TabsTrigger value="bank" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-bank">
               <Banknote className="h-4 w-4 mr-2" />
               Bank Details
             </TabsTrigger>
-            <TabsTrigger value="website" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-website">
+            <TabsTrigger value="website" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-website">
               <Globe className="h-4 w-4 mr-2" />
               Website & Products
             </TabsTrigger>
-            <TabsTrigger value="documents" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-documents">
+            <TabsTrigger value="documents" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-documents">
               <FileText className="h-4 w-4 mr-2" />
               Documents
             </TabsTrigger>
-            <TabsTrigger value="underwriting" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-underwriting">
+            <TabsTrigger value="underwriting" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-underwriting">
               <Scale className="h-4 w-4 mr-2" />
               Underwriting
             </TabsTrigger>
-            <TabsTrigger value="onboarding" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-onboarding">
+            <TabsTrigger value="onboarding" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-onboarding">
               <ClipboardCheck className="h-4 w-4 mr-2" />
               Onboarding
             </TabsTrigger>
-            <TabsTrigger value="notes" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-notes">
+            <TabsTrigger value="notes" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white justify-center w-full" data-testid="tab-notes">
               <MessageSquare className="h-4 w-4 mr-2" />
               Notes
             </TabsTrigger>
