@@ -410,11 +410,11 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-[#0f2912] bg-[#1a4320]">
+      <header className="border-b border-gray-200 bg-white">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-10">
             <img 
-              src="/pig-bank-logo-white.png" 
+              src="/pig-bank-logo.png" 
               alt="PigBank" 
               className="h-12 w-auto object-contain" 
               data-testid="logo-header"
@@ -424,7 +424,7 @@ export default function Landing() {
                 <div key={item.label} className="relative group">
                   {item.hasDropdown ? (
                     <button 
-                      className="flex items-center gap-1 text-base text-white/90 hover:text-white transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#1a4320] transition-colors py-6"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
@@ -433,7 +433,7 @@ export default function Landing() {
                   ) : (
                     <a 
                       href={item.href}
-                      className="flex items-center gap-1 text-base text-white/90 hover:text-white transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-gray-700 hover:text-[#1a4320] transition-colors py-6"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
@@ -491,7 +491,7 @@ export default function Landing() {
           <div className="flex items-center gap-5" style={{ marginRight: '11px' }}>
             <a 
               href="/login" 
-              className="text-base text-white/90 hover:text-white transition-colors hidden sm:block"
+              className="text-base text-gray-700 hover:text-[#1a4320] transition-colors hidden sm:block"
               data-testid="link-login"
             >
               Log in
