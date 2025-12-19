@@ -159,7 +159,7 @@ export default function HostedCheckout() {
           <div className="p-4 border-b border-border">
             <div className="flex items-center justify-between mb-1">
               <h2 className="font-semibold text-lg">Customize Checkout</h2>
-              <Button onClick={handleSave} disabled={saveMutation.isPending}>
+              <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-[#1a4320] hover:bg-[#143318] text-white">
                 {saveMutation.isPending ? "Saving..." : "Save Changes"}
               </Button>
             </div>
