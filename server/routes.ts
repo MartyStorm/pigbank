@@ -802,31 +802,35 @@ export async function registerRoutes(
         }
       }
       
-      // Add demo team members for the user's merchant
+      // Add demo team members for the user's merchant (only if merchant exists)
       const user = (req as any).user;
       if (user.merchantId) {
-        const demoTeamMembers = [
-          { firstName: "Jessica", lastName: "Parker", email: "jessica.parker@company.com", role: "manager" as const },
-          { firstName: "Marcus", lastName: "Thompson", email: "marcus.t@company.com", role: "staff" as const },
-          { firstName: "Amanda", lastName: "Rivera", email: "amanda.rivera@company.com", role: "staff" as const },
-        ];
-        
-        for (const member of demoTeamMembers) {
-          // Create demo user
-          const demoUser = await storage.createUser({
-            email: member.email,
-            password: "demo-user-no-login",
-            firstName: member.firstName,
-            lastName: member.lastName,
-            role: 'merchant',
-          });
+        // Check if the merchant actually exists before creating team members
+        const merchantExists = await storage.getMerchant(user.merchantId);
+        if (merchantExists) {
+          const demoTeamMembers = [
+            { firstName: "Jessica", lastName: "Parker", email: "jessica.parker@company.com", role: "manager" as const },
+            { firstName: "Marcus", lastName: "Thompson", email: "marcus.t@company.com", role: "staff" as const },
+            { firstName: "Amanda", lastName: "Rivera", email: "amanda.rivera@company.com", role: "staff" as const },
+          ];
           
-          // Link to user's merchant
-          await storage.createMerchantUser({
-            userId: demoUser.id,
-            merchantId: user.merchantId,
-            merchantRole: member.role,
-          });
+          for (const member of demoTeamMembers) {
+            // Create demo user
+            const demoUser = await storage.createUser({
+              email: member.email,
+              password: "demo-user-no-login",
+              firstName: member.firstName,
+              lastName: member.lastName,
+              role: 'merchant',
+            });
+            
+            // Link to user's merchant
+            await storage.createMerchantUser({
+              userId: demoUser.id,
+              merchantId: user.merchantId,
+              merchantRole: member.role,
+            });
+          }
         }
       }
       
