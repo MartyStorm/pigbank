@@ -47,9 +47,29 @@ export default function Terminal() {
         </div>
 
         <Card className="border-border shadow-sm">
-          <CardHeader className="py-4">
-            <CardTitle>New Transaction</CardTitle>
-            <CardDescription>Enter payment details to process a charge manually.</CardDescription>
+          <CardHeader className="py-4 bg-[#535359] rounded-t-xl flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="text-white">New Transaction</CardTitle>
+              <CardDescription className="text-white/80">Enter payment details to process a charge manually.</CardDescription>
+            </div>
+            <Button 
+              type="submit" 
+              form="payment-form" 
+              className="bg-[#73cb43] hover:bg-[#65b53a] text-white font-semibold" 
+              size="lg"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Processing...
+                </>
+              ) : (
+                <>
+                  Charge {amount ? `$${amount}` : "Card"}
+                </>
+              )}
+            </Button>
           </CardHeader>
           <CardContent className="py-0 pb-4">
             <form id="payment-form" onSubmit={handleProcess} className="grid grid-cols-12 gap-6">
@@ -176,26 +196,6 @@ export default function Terminal() {
 
             </form>
           </CardContent>
-          <CardFooter className="bg-[#535359] border-t border-border px-6 py-4 flex justify-end rounded-b-xl">
-            <Button 
-              type="submit" 
-              form="payment-form" 
-              className="w-full md:w-auto bg-white hover:bg-gray-100 text-[#535359] font-semibold" 
-              size="lg"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Processing...
-                </>
-              ) : (
-                <>
-                  Charge {amount ? `$${amount}` : "Card"}
-                </>
-              )}
-            </Button>
-          </CardFooter>
         </Card>
       </div>
     </Layout>
