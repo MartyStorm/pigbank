@@ -27,7 +27,6 @@ export function Layout({ children, title }: LayoutProps) {
       <div className="hidden md:flex">
         <Sidebar />
       </div>
-
       <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
         {/* Mobile Header - Visible only on Mobile */}
         <div className="md:hidden sticky top-0 z-50 bg-[#1a4320] border-b border-[#1a331c]">
@@ -68,7 +67,7 @@ export function Layout({ children, title }: LayoutProps) {
           </AnimatePresence>
         </div>
 
-        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-200 dark:bg-background">
+        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-200 dark:bg-background text-[#d9d9d9]">
           {children}
         </main>
       </div>
