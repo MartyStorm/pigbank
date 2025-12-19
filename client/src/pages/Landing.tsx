@@ -1082,7 +1082,7 @@ export default function Landing() {
                             <Button 
                               asChild 
                               size="lg" 
-                              className="bg-white hover:bg-gray-100 text-[#173c1d] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                              className="bg-white hover:bg-gray-100 text-[#1a4320] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
                               data-testid="button-get-started-hero"
                             >
                               <a href="/register">Get started</a>
@@ -1463,7 +1463,7 @@ export default function Landing() {
         <HorizontalScrollText />
 
         {/* Customer Service Strip */}
-        <section className="py-12 md:py-16 relative overflow-hidden bg-[#173c1d]">
+        <section className="py-12 md:py-16 relative overflow-hidden bg-[#1a4320]">
           <div className="absolute inset-0 opacity-15">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
