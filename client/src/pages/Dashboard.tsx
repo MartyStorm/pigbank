@@ -653,7 +653,7 @@ export default function Dashboard() {
               </div>
             </CardHeader>
             
-            <CardContent className="h-[300px] w-full">
+            <CardContent className="h-[280px] w-full pb-4">
                 <ResponsiveContainer width="100%" height="100%">
                   {chartType === 'bar' ? (
                     <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }} barGap={4}>
