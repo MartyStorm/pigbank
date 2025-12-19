@@ -214,7 +214,7 @@ export async function setupAuth(app: Express) {
       }
 
       if (!user.password || user.password === '') {
-        return res.status(401).json({ message: "Account requires password reset. Please contact support." });
+        return res.status(401).json({ message: "This account was created with Google. Please use 'Continue with Google' to sign in." });
       }
 
       const isValidPassword = await bcrypt.compare(validatedData.password, user.password);
