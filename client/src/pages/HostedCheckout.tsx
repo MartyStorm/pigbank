@@ -185,11 +185,11 @@ export default function HostedCheckout() {
         
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
-          <div className="p-4 border-b border-border bg-[#5b5b5e] rounded-t-xl">
+          <div className="p-4 border-b border-border bg-[#535359] rounded-t-xl">
             <div className="flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
-                <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-white hover:bg-gray-100 text-[#5b5b5e] font-semibold shrink-0">
+                <Button onClick={handleSave} disabled={saveMutation.isPending} className="bg-white hover:bg-gray-100 text-[#535359] font-semibold shrink-0">
                   {saveMutation.isPending ? "Saving..." : "Save Changes"}
                 </Button>
               </div>
@@ -413,7 +413,7 @@ export default function HostedCheckout() {
 
         {/* Preview Panel */}
         <div className="flex-1 bg-muted/30 rounded-xl border border-border flex flex-col xl:overflow-hidden min-h-[600px] xl:min-h-0">
-          <div className="h-12 border-b border-border bg-[#5b5b5e] rounded-t-xl flex items-center justify-between px-4">
+          <div className="h-12 border-b border-border bg-[#535359] rounded-t-xl flex items-center justify-between px-4">
             <div className="flex items-center gap-2 text-sm text-white">
               <Globe className="h-4 w-4" />
               <span className="font-mono">checkout.pigbank.com/pay/demo-123</span>
@@ -422,7 +422,7 @@ export default function HostedCheckout() {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "desktop" && "bg-white text-[#5b5b5e] shadow-sm hover:bg-white")}
+                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "desktop" && "bg-white text-[#535359] shadow-sm hover:bg-white")}
                 onClick={() => setPreviewMode("desktop")}
               >
                 <Monitor className="h-4 w-4" />
@@ -430,7 +430,7 @@ export default function HostedCheckout() {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "mobile" && "bg-white text-[#5b5b5e] shadow-sm hover:bg-white")}
+                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "mobile" && "bg-white text-[#535359] shadow-sm hover:bg-white")}
                 onClick={() => setPreviewMode("mobile")}
               >
                 <Smartphone className="h-4 w-4" />
