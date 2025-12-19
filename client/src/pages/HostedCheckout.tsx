@@ -626,10 +626,11 @@ export default function HostedCheckout() {
                     {collectShipping && (
                       <div className="space-y-2">
                         <Label className="text-xs uppercase font-bold tracking-wider" style={{ color: labelTextColor }}>Shipping Address</Label>
-                        <Input placeholder="123 Main St" className="mb-2" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
-                        <div className="grid grid-cols-2 gap-2">
+                        <Input placeholder="Street Address" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                        <div className="grid grid-cols-3 gap-2">
                           <Input placeholder="City" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
-                          <Input placeholder="ZIP Code" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Input placeholder="State" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
+                          <Input placeholder="ZIP" style={{ backgroundColor: inputBackgroundColor, borderColor: inputBorderColor, color: headingTextColor }} />
                         </div>
                       </div>
                     )}
