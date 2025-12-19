@@ -30,8 +30,8 @@ export function Layout({ children, title }: LayoutProps) {
 
       <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
         {/* Mobile Header - Visible only on Mobile */}
-        <div className="md:hidden sticky top-0 z-50 bg-[#203e22] border-b border-[#1a331c]">
-          <div className="flex items-center justify-between p-3 relative z-50 bg-[#203e22]">
+        <div className="md:hidden sticky top-0 z-50 bg-[#1a4320] border-b border-[#1a331c]">
+          <div className="flex items-center justify-between p-3 relative z-50 bg-[#1a4320]">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer">
                 <img 
