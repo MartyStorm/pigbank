@@ -114,25 +114,25 @@ export default function Payouts() {
             </CardContent>
           </Card>
 
-          <Card className="border border-[#39870E] shadow-sm bg-green-50 dark:bg-green-950/30 dark:border-green-700 rounded-xl">
+          <Card className="border border-[#39870E] shadow-sm bg-[#73cb43] dark:bg-green-950/30 dark:border-green-700 rounded-xl">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#73cb43]/20 dark:bg-green-900/50 flex items-center justify-center">
-                    <span className="text-lg font-bold text-[#39870E] dark:text-green-400">$</span>
+                  <div className="w-10 h-10 rounded-full bg-white/30 dark:bg-green-900/50 flex items-center justify-center">
+                    <span className="text-lg font-bold text-[#1a4320] dark:text-green-400">$</span>
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-white">Last Payout</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-lg font-semibold text-[#1a4320] dark:text-white">Last Payout</p>
+                    <p className="text-sm text-[#1a4320] dark:text-gray-400">
                       {lastPayout ? `Paid on ${formatDate(lastPayout.date)}` : "No completed payouts"}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <p className="text-2xl font-bold text-[#1a4320] dark:text-white">
                     {lastPayout ? formatAmount(lastPayout.amount) : "—"}
                   </p>
-                  <p className="text-sm text-[#39870E] dark:text-green-400 font-medium">
+                  <p className="text-sm text-[#1a4320] dark:text-green-400 font-medium">
                     Completed
                   </p>
                 </div>
