@@ -55,7 +55,7 @@ export default function Terminal() {
             <Button 
               type="submit" 
               form="payment-form" 
-              className="bg-[#73cb43] hover:bg-[#65b53a] text-white font-semibold" 
+              className="bg-[#73cb43] hover:bg-[#65b53a] text-white font-semibold border-0 ring-0 focus-visible:ring-0 focus-visible:ring-offset-0" 
               size="lg"
               disabled={isLoading}
             >
