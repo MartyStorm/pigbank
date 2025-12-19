@@ -495,7 +495,7 @@ export default function ComplianceHub() {
         </div>
 
         <Tabs defaultValue="policies" className="w-full">
-          <TabsList className="bg-[#1a4320] dark:bg-[#262626]">
+          <TabsList className="bg-[#256726] dark:bg-[#262626]">
             <TabsTrigger value="policies" className="flex items-center gap-2 text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-policies">
               <Shield className="h-4 w-4" />
               Policies
