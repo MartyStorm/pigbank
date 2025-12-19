@@ -730,7 +730,7 @@ export default function Dashboard() {
           </Card>
 
           {/* Transactions by Status */}
-          <Card className="w-full lg:col-span-1 border-none shadow-sm">
+          <Card className="w-full lg:col-span-1 border-none shadow-sm overflow-hidden">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg font-semibold">Transactions by status</CardTitle>
               <p className="text-sm text-muted-foreground">
@@ -739,20 +739,20 @@ export default function Dashboard() {
                   : "No transactions yet"}
               </p>
             </CardHeader>
-            <CardContent>
+            <CardContent className="overflow-hidden">
             
             {transactions.length > 0 ? (
               <div className="flex flex-col xl:flex-row items-center gap-4">
                 {/* Donut Chart */}
-                <div className="h-[220px] w-[220px] flex-shrink-0 relative">
+                <div className="h-[180px] w-[180px] flex-shrink-0 relative">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie
                         data={transactionStatusData}
                         cx="50%"
                         cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
+                        innerRadius={50}
+                        outerRadius={70}
                         paddingAngle={0}
                         dataKey="chartValue"
                         startAngle={90}
@@ -777,19 +777,19 @@ export default function Dashboard() {
                 </div>
 
                 {/* Legend Table */}
-                <div className="flex-1 w-full xl:w-auto">
+                <div className="flex-1 w-full xl:w-auto min-w-0 overflow-hidden">
                   <div className="flex items-center justify-between border-b border-border pb-2 mb-2">
                     <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Status</span>
                     <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Count</span>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {transactionStatusData.map((item, i) => (
-                      <div key={i} className="flex items-center justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-[2px]" style={{ backgroundColor: item.color }} />
-                          <span className="text-sm font-medium text-foreground">{item.name}</span>
+                      <div key={i} className="flex items-center justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0 gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <div className="w-3 h-3 rounded-[2px] flex-shrink-0" style={{ backgroundColor: item.color }} />
+                          <span className="text-sm font-medium text-foreground truncate">{item.name}</span>
                         </div>
-                        <span className="text-sm text-muted-foreground font-mono">
+                        <span className="text-sm text-muted-foreground font-mono flex-shrink-0">
                           {item.value} ({item.percentage}%)
                         </span>
                       </div>
