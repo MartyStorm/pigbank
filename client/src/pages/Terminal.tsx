@@ -176,11 +176,11 @@ export default function Terminal() {
 
             </form>
           </CardContent>
-          <CardFooter className="bg-[#85BB65] border-t border-border px-6 py-4 flex justify-end rounded-b-xl">
+          <CardFooter className="bg-[#1a4320] border-t border-border px-6 py-4 flex justify-end rounded-b-xl">
             <Button 
               type="submit" 
               form="payment-form" 
-              className="w-full md:w-auto bg-white hover:bg-gray-100 text-[#85BB65] font-semibold" 
+              className="w-full md:w-auto bg-white hover:bg-gray-100 text-[#1a4320] font-semibold" 
               size="lg"
               disabled={isLoading}
             >
