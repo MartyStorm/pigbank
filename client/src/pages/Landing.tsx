@@ -410,7 +410,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-[#0f2912] bg-[#203e22]">
+      <header className="border-b border-[#0f2912] bg-[#1a4320]">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-10">
             <img 
