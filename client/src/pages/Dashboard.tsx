@@ -653,8 +653,8 @@ export default function Dashboard() {
               </div>
             </CardHeader>
             
-            <CardContent className="h-[280px] w-full px-4 pt-0 pb-2">
-                <ResponsiveContainer width="100%" height="100%">
+            <CardContent className="h-[260px] w-full px-4 py-0">
+                <ResponsiveContainer width="100%" height="100%" className="-mb-2">
                   {chartType === 'bar' ? (
                     <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }} barGap={4}>
                       <defs>
@@ -672,7 +672,7 @@ export default function Dashboard() {
                         axisLine={false}
                         tick={{ fill: "#9ca3af" }}
                         interval={4}
-                        dy={10}
+                        dy={5}
                         padding={{ left: 10, right: 10 }}
                       />
                       <YAxis 
@@ -704,7 +704,7 @@ export default function Dashboard() {
                         axisLine={false}
                         tick={{ fill: "#9ca3af" }}
                         interval={4}
-                        dy={10}
+                        dy={5}
                         padding={{ left: 10, right: 10 }}
                       />
                       <YAxis 
