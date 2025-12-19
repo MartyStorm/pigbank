@@ -1463,23 +1463,8 @@ export default function Landing() {
         <HorizontalScrollText />
 
         {/* Customer Service Strip */}
-        <section className="py-12 md:py-16 relative overflow-hidden bg-[#1a4320]">
-          <div className="absolute inset-0 opacity-15">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#73cb43] blur-3xl -translate-y-1/2 translate-x-1/3" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#73cb43] blur-3xl translate-y-1/2 -translate-x-1/3" />
-          </div>
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle at 50% 50%, rgba(117, 201, 71, 0.4) 0%, transparent 60%),
-                linear-gradient(rgba(117, 201, 71, 0.25) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(117, 201, 71, 0.25) 1px, transparent 1px)
-              `,
-              backgroundSize: '100% 100%, 40px 40px, 40px 40px'
-            }}
-          />
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
+        <section className="py-12 md:py-16 bg-[#1a4320]">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
                 Your success is our business
