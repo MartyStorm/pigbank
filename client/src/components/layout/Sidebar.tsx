@@ -259,8 +259,8 @@ export function Sidebar({ className }: { className?: string }) {
   const isLightMode = !isDark;
 
   return (
-    <div className={cn("flex h-screen w-64 flex-col bg-[#1a4320] dark:bg-[#262626] text-sidebar-foreground", className)}>
-      <div className="hidden md:flex h-20 items-center justify-center bg-[#1a4320] dark:bg-[#262626]">
+    <div className={cn("flex h-screen w-64 flex-col bg-[#256726] dark:bg-[#262626] text-sidebar-foreground", className)}>
+      <div className="hidden md:flex h-20 items-center justify-center bg-[#256726] dark:bg-[#262626]">
         <Link href="/dashboard">
           <img 
             src="/pig-bank-logo-dark.png" 
@@ -274,7 +274,7 @@ export function Sidebar({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <div className="flex-1 overflow-y-auto pb-4 pt-0 bg-[#1a4320] dark:bg-[#262626]">
+      <div className="flex-1 overflow-y-auto pb-4 pt-0 bg-[#256726] dark:bg-[#262626]">
         <nav className="space-y-1 px-3 mt-4 md:mt-0">
           {navItems.map((item) => {
             const isActive = location === item.href;
@@ -375,7 +375,7 @@ export function Sidebar({ className }: { className?: string }) {
 
       {/* PigBank Staff Section */}
       {pigBankItems.length > 0 && (
-        <div className="border-t border-white/10 px-3 py-3 bg-[#1a4320] dark:bg-[#262626]">
+        <div className="border-t border-white/10 px-3 py-3 bg-[#256726] dark:bg-[#262626]">
           <div className="text-[10px] uppercase tracking-wider text-white/40 font-semibold mb-2 px-3">
             PigBank Staff
           </div>
@@ -456,7 +456,7 @@ export function Sidebar({ className }: { className?: string }) {
         </div>
       )}
 
-      <div className="border-t border-white/10 p-2 bg-[#1a4320] dark:bg-[#262626]">
+      <div className="border-t border-white/10 p-2 bg-[#256726] dark:bg-[#262626]">
         <a 
           href="/landing" 
           className="flex items-center gap-2 px-3 py-2 mb-1 text-xs text-white/60 hover:text-white hover:bg-white/10 rounded-md transition-colors"
