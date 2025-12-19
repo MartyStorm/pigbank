@@ -233,7 +233,7 @@ export default function Chargebacks() {
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <Bell className="h-5 w-5 text-[#73cb43]" />
+                  <Bell className="h-5 w-5 text-[#39870E]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Pending Alerts</p>
@@ -246,7 +246,7 @@ export default function Chargebacks() {
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <Scale className="h-5 w-5 text-[#73cb43]" />
+                  <Scale className="h-5 w-5 text-[#39870E]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Active Disputes</p>
@@ -259,7 +259,7 @@ export default function Chargebacks() {
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[#e8f5e0] dark:bg-[#1a4320]/30 rounded-lg">
-                  <DollarSign className="h-5 w-5 text-[#73cb43]" />
+                  <DollarSign className="h-5 w-5 text-[#39870E]" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Total at Risk</p>
