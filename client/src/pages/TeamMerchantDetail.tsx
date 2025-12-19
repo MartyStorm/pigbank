@@ -303,8 +303,7 @@ export default function TeamMerchantDetail() {
             {canApproveReject && (
               <>
                 <Button 
-                  variant="outline" 
-                  className="text-red-600 border-red-200 hover:bg-red-50" 
+                  className="bg-red-500 hover:bg-red-600 text-white" 
                   data-testid="button-reject"
                   onClick={() => rejectMutation.mutate()}
                   disabled={rejectMutation.isPending}
@@ -317,8 +316,7 @@ export default function TeamMerchantDetail() {
                   Reject
                 </Button>
                 <Button 
-                  variant="outline"
-                  className="text-orange-600 border-orange-200 hover:bg-orange-50" 
+                  className="bg-orange-500 hover:bg-orange-600 text-white" 
                   data-testid="button-action-required"
                   onClick={() => actionRequiredMutation.mutate()}
                   disabled={actionRequiredMutation.isPending}
