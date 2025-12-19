@@ -378,7 +378,7 @@ export default function TeamMerchantDetail() {
         </div>
 
         <Tabs defaultValue="business" className="space-y-4">
-          <TabsList className="bg-[#1a4320] dark:bg-[#262626] w-full h-auto flex-wrap justify-start gap-1 p-1">
+          <TabsList className="bg-[#1a4320] dark:bg-[#262626] w-full h-auto flex-wrap justify-start gap-2 p-2">
             <TabsTrigger value="business" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-business">
               <Building2 className="h-4 w-4 mr-2" />
               Business Info
