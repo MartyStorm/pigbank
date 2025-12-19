@@ -421,8 +421,8 @@ export default function Transactions() {
         {/* Table */}
         <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-[#2d7438] dark:bg-[#262626] [&_tr]:hover:bg-[#2d7438] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
-              <TableRow className="border-b-[#2d7438] dark:border-b-gray-700">
+            <TableHeader className="bg-[#72cb43] dark:bg-[#262626] [&_tr]:hover:bg-[#72cb43] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableRow className="border-b-[#72cb43] dark:border-b-gray-700">
                 {columns.customer && <TableHead className="text-white">Customer</TableHead>}
                 {columns.date && <TableHead className="text-white">Date & Time</TableHead>}
                 {columns.amount && <TableHead className="text-white">Amount</TableHead>}
