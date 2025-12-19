@@ -142,7 +142,7 @@ export default function Integrations() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-integrations-title">
               Integrations
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-gray-600 dark:text-gray-400 mt-1">
               Connect your favorite apps and services to streamline your workflow
             </p>
           </div>

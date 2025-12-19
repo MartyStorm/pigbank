@@ -17,7 +17,7 @@ export default function Fraud() {
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-fraud-title">
               Fraud & Risk
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-gray-600 dark:text-gray-400 mt-1">
               Monitor account health and configure fraud protection rules
             </p>
           </div>
