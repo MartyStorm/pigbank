@@ -439,7 +439,7 @@ export default function HostedCheckout() {
                     )}
 
                     <Button 
-                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover-elevate active-elevate-2 min-h-9 px-4 py-2 w-full h-12 text-base font-semibold mt-4 text-white shadow-sm hover:opacity-90 transition-opacity bg-[#1a4320] border-0"
+                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover-elevate active-elevate-2 min-h-9 px-4 py-2 w-full h-12 text-base font-semibold mt-4 text-white shadow-sm hover:opacity-90 transition-opacity bg-[#2f8a2b] border-0"
                     >
                       {showLockIcon && <Lock className="h-4 w-4 mr-1" />}
                       {buttonText} $49.00
