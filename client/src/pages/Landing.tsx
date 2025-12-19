@@ -1959,7 +1959,6 @@ export default function Landing() {
               <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="#" className="hover:text-gray-900">About</a></li>
-                <li><a href="/team-login" className="hover:text-gray-900" data-testid="link-team-login">PigBank Team Login</a></li>
                 <li><a href="#" className="hover:text-gray-900">Blog</a></li>
                 <li><a href="#" className="hover:text-gray-900">Contact</a></li>
               </ul>
