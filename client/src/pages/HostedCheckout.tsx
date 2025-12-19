@@ -444,81 +444,8 @@ export default function HostedCheckout() {
                 previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2" : "w-[375px] flex flex-col"
               )}
             >
-              {/* Checkout Left: Payment Form */}
-              <div className={cn("p-6 md:p-8 space-y-6 bg-white", previewMode === "mobile" ? "order-2" : "order-1")}>
-                <div className="space-y-4">
-                  <h2 className="font-semibold text-lg text-gray-900">Payment Details</h2>
-                  
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Email Address</Label>
-                      <Input placeholder="you@example.com" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                    </div>
-
-                    {showPhone && (
-                      <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Phone Number</Label>
-                        <Input placeholder="+1 (555) 000-0000" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                      </div>
-                    )}
-
-                    {collectShipping && (
-                      <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Shipping Address</Label>
-                        <Input placeholder="123 Main St" className="mb-2 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <div className="grid grid-cols-2 gap-2">
-                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="ZIP Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="space-y-2">
-                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Card Information</Label>
-                      <div className="relative">
-                        <CreditCard className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-                        <Input placeholder="Card number" className="pl-9 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        <Input placeholder="MM / YY" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <Input placeholder="CVC" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                      </div>
-                    </div>
-
-                    {showBillingAddress && (
-                       <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Name on Card</Label>
-                        <Input placeholder="Full Name" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                      </div>
-                    )}
-
-                    {showCoupons && (
-                       <div className="space-y-2 pt-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Discount Code</Label>
-                        <div className="flex gap-2">
-                          <Input placeholder="Promo Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Button variant="outline" className="border-gray-200 text-gray-700 hover:bg-gray-50">Apply</Button>
-                        </div>
-                      </div>
-                    )}
-
-                    <Button 
-                      className="hover-elevate active-elevate-2 border-primary-border inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover-elevate active-elevate-2 min-h-9 px-4 py-2 w-full h-12 text-base font-semibold mt-4 text-white shadow-sm hover:opacity-90 transition-opacity border-0 bg-[#72cb43]"
-                    >
-                      {showLockIcon && <Lock className="h-4 w-4 mr-1" />}
-                      {buttonText} $49.00
-                    </Button>
-
-                    <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4">
-                      <Lock className="h-3 w-3" />
-                      <span>Payments are secure and encrypted</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Checkout Right: Order Summary */}
-              <div className={cn("bg-gray-50/80 p-6 md:p-8 space-y-6 border-gray-100", previewMode === "mobile" ? "order-1 border-b" : "order-2 border-l")}>
+              {/* Checkout Left: Order Summary */}
+              <div className={cn("bg-gray-50/80 p-6 md:p-8 space-y-6 border-gray-100", previewMode === "mobile" ? "order-1 border-b" : "order-1 border-r")}>
                 <div className="flex items-center gap-3 mb-8">
                   {logoUrl ? (
                     <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px` }} className="object-contain" />
@@ -555,6 +482,80 @@ export default function HostedCheckout() {
                   <div className="flex justify-between font-semibold text-lg pt-2 border-t border-gray-200 mt-2">
                     <span className="text-gray-900">Total</span>
                     <span className="text-gray-900">$49.00</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Checkout Right: Payment Form */}
+              <div className={cn("p-6 md:p-8 space-y-6 bg-white", previewMode === "mobile" ? "order-2" : "order-2")}>
+                <div className="space-y-4">
+                  <h2 className="font-semibold text-lg text-gray-900">Payment Details</h2>
+                  
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Email Address</Label>
+                      <Input placeholder="you@example.com" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                    </div>
+
+                    {showPhone && (
+                      <div className="space-y-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Phone Number</Label>
+                        <Input placeholder="+1 (555) 000-0000" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      </div>
+                    )}
+
+                    {collectShipping && (
+                      <div className="space-y-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Shipping Address</Label>
+                        <Input placeholder="123 Main St" className="mb-2 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <div className="grid grid-cols-2 gap-2">
+                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="ZIP Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="space-y-2">
+                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Card Information</Label>
+                      <div className="relative">
+                        <CreditCard className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                        <Input placeholder="Card number" className="pl-9 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      </div>
+                      <div className="grid grid-cols-3 gap-2">
+                        <Input placeholder="MM / YY" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Input placeholder="CVC" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      </div>
+                    </div>
+
+                    {showBillingAddress && (
+                       <div className="space-y-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Name on Card</Label>
+                        <Input placeholder="Full Name" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      </div>
+                    )}
+
+                    {showCoupons && (
+                       <div className="space-y-2 pt-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Discount Code</Label>
+                        <div className="flex gap-2">
+                          <Input placeholder="Promo Code" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Button variant="outline" className="border-gray-200 text-gray-700 hover:bg-gray-50">Apply</Button>
+                        </div>
+                      </div>
+                    )}
+
+                    <Button 
+                      className="w-full h-12 text-base font-semibold mt-4 text-white shadow-sm hover:opacity-90 transition-opacity border-0 bg-[#72cb43]"
+                    >
+                      {showLockIcon && <Lock className="h-4 w-4 mr-1" />}
+                      {buttonText} $49.00
+                    </Button>
+
+                    <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4">
+                      <Lock className="h-3 w-3" />
+                      <span>Payments are secure and encrypted</span>
+                    </div>
                   </div>
                 </div>
               </div>
