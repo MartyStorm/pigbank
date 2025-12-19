@@ -419,23 +419,21 @@ export default function HostedCheckout() {
               <Globe className="h-4 w-4" />
               <span className="font-mono">checkout.pigbank.com/pay/demo-123</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/20 p-1 rounded-lg border border-white/30">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "desktop" && "bg-white text-[#74747d] shadow-sm hover:bg-white")}
+            <div className="flex items-center gap-1 bg-white/15 rounded-md p-0.5">
+              <button 
+                type="button"
+                className={cn("h-6 w-6 flex items-center justify-center rounded text-white/70 hover:text-white transition-colors", previewMode === "desktop" && "bg-white text-[#74747d]")}
                 onClick={() => setPreviewMode("desktop")}
               >
-                <Monitor className="h-4 w-4" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className={cn("h-7 px-2 text-white hover:bg-white/20", previewMode === "mobile" && "bg-white text-[#74747d] shadow-sm hover:bg-white")}
+                <Monitor className="h-3.5 w-3.5" />
+              </button>
+              <button 
+                type="button"
+                className={cn("h-6 w-6 flex items-center justify-center rounded text-white/70 hover:text-white transition-colors", previewMode === "mobile" && "bg-white text-[#74747d]")}
                 onClick={() => setPreviewMode("mobile")}
               >
-                <Smartphone className="h-4 w-4" />
-              </Button>
+                <Smartphone className="h-3.5 w-3.5" />
+              </button>
             </div>
           </div>
 
