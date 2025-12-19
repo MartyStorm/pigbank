@@ -232,7 +232,7 @@ export default function Transactions() {
               <PopoverTrigger asChild>
                 <Button variant="outline" size="sm" className="gap-2">
                   <Settings2 className="h-4 w-4" />
-                  <span className="hidden sm:inline">Columns</span>
+                  <span className="hidden sm:inline">Customize Columns</span>
                 </Button>
               </PopoverTrigger>
               <PopoverContent align="end" className="w-48">
