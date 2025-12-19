@@ -71,7 +71,7 @@ export default function Terminal() {
               )}
             </Button>
           </CardHeader>
-          <CardContent className="py-0 pb-4">
+          <CardContent className="pt-6 pb-4">
             <form id="payment-form" onSubmit={handleProcess} className="grid grid-cols-12 gap-6">
               
               {/* Left Column: Amount & Payment Method */}
