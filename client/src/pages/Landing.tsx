@@ -55,6 +55,7 @@ import testimonial2 from "@assets/stock_images/professional_busines_a263e9a1.jpg
 import testimonial3 from "@assets/stock_images/professional_busines_1f8f6e40.jpg";
 import testimonial4 from "@assets/stock_images/professional_busines_8f8097a7.jpg";
 import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
+import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_with_Person_Visitor_1766103263637.webp";
 
 const floatingCards = [
   {
@@ -1877,37 +1878,12 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">POS Terminal</span>
-                        <Smartphone className="h-5 w-5 text-[#73cb43]" />
-                      </div>
-                      <div className="bg-gray-900 rounded-xl p-4 mb-3">
-                        <div className="flex items-center justify-center gap-2 text-white">
-                          <CreditCard className="h-5 w-5" />
-                          <span className="text-sm font-medium">Tap to Pay</span>
-                        </div>
-                        <div className="mt-3 text-center">
-                          <div className="text-2xl font-bold text-white">$47.50</div>
-                          <div className="text-xs text-gray-400 mt-1">Ready for payment</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
-                        <div className="flex items-center gap-1">
-                          <CreditCard className="h-3 w-3" />
-                          <span>Card</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Smartphone className="h-3 w-3" />
-                          <span>NFC</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Wallet className="h-3 w-3" />
-                          <span>Wallet</span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="w-72 h-72 md:w-96 md:h-96 mx-auto rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={posTerminalImage} 
+                      alt="iPad POS terminal swivel stand for in-person payment processing" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
