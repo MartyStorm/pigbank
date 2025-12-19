@@ -493,6 +493,11 @@ export default function HostedCheckout() {
                   
                   <div className="space-y-4">
                     <div className="space-y-2">
+                      <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Full Name</Label>
+                      <Input placeholder="John Doe" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                    </div>
+
+                    <div className="space-y-2">
                       <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Email Address</Label>
                       <Input placeholder="you@example.com" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
                     </div>
@@ -501,6 +506,18 @@ export default function HostedCheckout() {
                       <div className="space-y-2">
                         <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Phone Number</Label>
                         <Input placeholder="+1 (555) 000-0000" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                      </div>
+                    )}
+
+                    {showBillingAddress && (
+                      <div className="space-y-2">
+                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Billing Address</Label>
+                        <Input placeholder="Street Address" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        <div className="grid grid-cols-3 gap-2">
+                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="State" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                          <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
+                        </div>
                       </div>
                     )}
 
@@ -521,25 +538,11 @@ export default function HostedCheckout() {
                         <CreditCard className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                         <Input placeholder="Card number" className="pl-9 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
                       </div>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         <Input placeholder="MM / YY" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
                         <Input placeholder="CVC" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
                       </div>
                     </div>
-
-                    {showBillingAddress && (
-                      <div className="space-y-2">
-                        <Label className="text-xs uppercase text-gray-500 font-bold tracking-wider">Billing Address</Label>
-                        <Input placeholder="Full Name" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <Input placeholder="Street Address" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        <div className="grid grid-cols-3 gap-2">
-                          <Input placeholder="City" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="State" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                          <Input placeholder="ZIP" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus-visible:ring-gray-400" />
-                        </div>
-                      </div>
-                    )}
 
                     {showCoupons && (
                        <div className="space-y-2 pt-2">
