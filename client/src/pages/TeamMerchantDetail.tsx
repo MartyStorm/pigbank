@@ -348,7 +348,7 @@ export default function TeamMerchantDetail() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-center gap-2 mb-2">
@@ -378,7 +378,7 @@ export default function TeamMerchantDetail() {
         </div>
 
         <Tabs defaultValue="business" className="space-y-4">
-          <TabsList className="bg-[#1a4320] dark:bg-[#262626]">
+          <TabsList className="bg-[#1a4320] dark:bg-[#262626] w-full overflow-x-auto flex-nowrap justify-start">
             <TabsTrigger value="business" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-business">
               <Building2 className="h-4 w-4 mr-2" />
               Business Info
