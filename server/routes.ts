@@ -1662,8 +1662,10 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Invalid role" });
       }
       
+      const normalizedEmail = email.toLowerCase().trim();
+      
       // Check if user already exists
-      let existingUser = await storage.getUserByEmail(email);
+      let existingUser = await storage.getUserByEmail(normalizedEmail);
       let isNewUser = false;
       
       if (existingUser) {
@@ -1672,12 +1674,12 @@ export async function registerRoutes(
           return res.status(400).json({ error: "User is already a PigBank team member" });
         }
         await storage.updateUserRole(existingUser.id, role);
-        existingUser = await storage.getUserByEmail(email);
+        existingUser = await storage.getUserByEmail(normalizedEmail);
       } else {
         // Create new user
         isNewUser = true;
         existingUser = await storage.createUser({
-          email,
+          email: normalizedEmail,
           firstName: firstName || null,
           lastName: lastName || null,
           role,
