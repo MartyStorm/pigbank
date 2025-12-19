@@ -319,7 +319,7 @@ export default function AdminConsole() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full h-auto bg-[#2d7438] dark:bg-[#262626] p-1 grid grid-cols-4 md:grid-cols-7 gap-1">
+          <TabsList className="w-full h-auto bg-[#535359] dark:bg-[#262626] p-1 grid grid-cols-4 md:grid-cols-7 gap-1">
             <TabsTrigger value="account" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-account">Account</TabsTrigger>
             <TabsTrigger value="users" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-users">Users</TabsTrigger>
             <TabsTrigger value="documents" className="text-white data-[state=active]:bg-[#73cb43] data-[state=active]:text-white" data-testid="tab-documents">Documents</TabsTrigger>
