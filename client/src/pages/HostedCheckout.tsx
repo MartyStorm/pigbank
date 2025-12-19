@@ -520,7 +520,7 @@ export default function HostedCheckout() {
               <div className={cn("bg-gray-50/80 p-6 md:p-8 space-y-6 border-gray-100", previewMode === "mobile" ? "order-1 border-b" : "order-2 border-l")}>
                 <div className="flex items-center gap-3 mb-8">
                   {logoUrl ? (
-                    <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px` }} className="max-w-40 object-contain" />
+                    <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px`, maxWidth: '200px' }} className="object-contain" />
                   ) : (
                     <div className="h-8 w-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm">
                       <LayoutTemplate className="h-5 w-5 text-gray-900" style={{ color: primaryColor }} />
