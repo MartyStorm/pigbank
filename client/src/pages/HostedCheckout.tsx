@@ -64,6 +64,7 @@ export default function HostedCheckout() {
   const [showMoneyBackGuarantee, setShowMoneyBackGuarantee] = useState(false);
   const [showSecureMessage, setShowSecureMessage] = useState(true);
   const [showPoweredByPigBank, setShowPoweredByPigBank] = useState(true);
+  const [badgeColor, setBadgeColor] = useState("#6b7280");
   const [backgroundStyle, setBackgroundStyle] = useState("light");
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -494,6 +495,13 @@ export default function HostedCheckout() {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="space-y-3 pt-2">
+                    <div className="space-y-2 pb-2 border-b border-border">
+                      <Label className="text-xs font-semibold uppercase tracking-wide text-gray-500">Badge Color</Label>
+                      <div className="flex items-center gap-2">
+                        <input type="color" value={badgeColor} onChange={(e) => setBadgeColor(e.target.value)} className="w-8 h-8 rounded border border-border cursor-pointer" />
+                        <Input value={badgeColor} onChange={(e) => setBadgeColor(e.target.value)} className="font-mono text-xs h-8" />
+                      </div>
+                    </div>
                     <div className="flex items-center justify-between">
                       <Label htmlFor="show-pci">PCI Compliant Badge</Label>
                       <Switch id="show-pci" checked={showPciCompliant} onCheckedChange={setShowPciCompliant} />
@@ -698,19 +706,19 @@ export default function HostedCheckout() {
                       {(showPciCompliant || showSecureSsl || showMoneyBackGuarantee) && (
                         <div className="flex items-center justify-center gap-3 flex-wrap">
                           {showPciCompliant && (
-                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ color: badgeColor }}>
                               <ShieldCheck className="h-3.5 w-3.5" />
                               <span>PCI Compliant</span>
                             </div>
                           )}
                           {showSecureSsl && (
-                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ color: badgeColor }}>
                               <Lock className="h-3.5 w-3.5" />
                               <span>SSL Encrypted</span>
                             </div>
                           )}
                           {showMoneyBackGuarantee && (
-                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ backgroundColor: `${buttonColor}15`, color: buttonColor }}>
+                            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium" style={{ color: badgeColor }}>
                               <BadgeCheck className="h-3.5 w-3.5" />
                               <span>Money-Back Guarantee</span>
                             </div>
