@@ -89,7 +89,7 @@ const statusLabels: Record<string, string> = {
   action_required: "Action Required",
   in_onboarding: "In Onboarding",
   under_review: "Under Review",
-  approved: "Approved",
+  approved: "Active",
   rejected: "Rejected",
   suspended: "Suspended",
 };
@@ -664,7 +664,7 @@ export default function TeamMerchantDetail() {
                       <label className="text-sm font-medium text-muted-foreground">Recommended Action</label>
                       <p className="text-lg font-medium mt-1">
                         {merchant.status === "approved" ? (
-                          <span className="text-green-600">Approved</span>
+                          <span className="text-green-600">Active</span>
                         ) : merchant.status === "rejected" ? (
                           <span className="text-red-600">Rejected</span>
                         ) : (

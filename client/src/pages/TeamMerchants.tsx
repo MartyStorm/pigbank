@@ -40,7 +40,7 @@ const statusLabels: Record<string, string> = {
   submitted: "Submitted",
   action_required: "Action Required",
   in_onboarding: "Onboarding",
-  approved: "Approved",
+  approved: "Active",
   rejected: "Rejected",
   suspended: "Suspended",
 };
@@ -231,7 +231,7 @@ export default function TeamMerchants() {
                 <Building2 className="h-6 w-6 text-blue-500" />
                 <div>
                   <p className="text-2xl font-bold" data-testid="count-onboarding">{onboardingData?.total || 0}</p>
-                  <p className="text-sm text-muted-foreground">In Onboarding</p>
+                  <p className="text-sm text-muted-foreground">Onboarding</p>
                 </div>
               </div>
             </CardContent>
@@ -241,8 +241,8 @@ export default function TeamMerchants() {
               <div className="flex items-center gap-4">
                 <CheckCircle className="h-6 w-6 text-[#73cb43]" />
                 <div>
-                  <p className="text-2xl font-bold" data-testid="count-approved">{approvedData?.total || 0}</p>
-                  <p className="text-sm text-muted-foreground">Approved</p>
+                  <p className="text-2xl font-bold" data-testid="count-active">{approvedData?.total || 0}</p>
+                  <p className="text-sm text-muted-foreground">Active</p>
                 </div>
               </div>
             </CardContent>
@@ -271,7 +271,7 @@ export default function TeamMerchants() {
                   <SelectItem value="submitted">Submitted</SelectItem>
                   <SelectItem value="action_required">Action Required</SelectItem>
                   <SelectItem value="in_onboarding">In Onboarding</SelectItem>
-                  <SelectItem value="approved">Approved</SelectItem>
+                  <SelectItem value="approved">Active</SelectItem>
                   <SelectItem value="draft">Draft</SelectItem>
                   <SelectItem value="rejected">Rejected</SelectItem>
                 </SelectContent>

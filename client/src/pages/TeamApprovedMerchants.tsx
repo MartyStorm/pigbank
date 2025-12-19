@@ -68,10 +68,10 @@ export default function TeamApprovedMerchants() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white" data-testid="text-approved-title">
-              Approved Merchants
+              Active Merchants
             </h1>
             <p className="text-muted-foreground mt-1">
-              View and manage approved merchant accounts
+              View and manage active merchant accounts
             </p>
           </div>
         </div>
@@ -84,8 +84,8 @@ export default function TeamApprovedMerchants() {
                   <CheckCircle className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold" data-testid="count-total-approved">{data?.total || 0}</p>
-                  <p className="text-sm text-muted-foreground">Total Approved</p>
+                  <p className="text-2xl font-bold" data-testid="count-total-active">{data?.total || 0}</p>
+                  <p className="text-sm text-muted-foreground">Total Active</p>
                 </div>
               </div>
             </CardContent>
@@ -138,7 +138,7 @@ export default function TeamApprovedMerchants() {
                     <TableHead>Business Name</TableHead>
                     <TableHead>Risk Level</TableHead>
                     <TableHead>Monthly Volume</TableHead>
-                    <TableHead>Approved Date</TableHead>
+                    <TableHead>Active Since</TableHead>
                     <TableHead></TableHead>
                   </TableRow>
                 </TableHeader>
@@ -146,7 +146,7 @@ export default function TeamApprovedMerchants() {
                   {merchants.length === 0 ? (
                     <TableRow>
                       <TableCell colSpan={5} className="text-center py-12 text-gray-500">
-                        No approved merchants found.
+                        No active merchants found.
                       </TableCell>
                     </TableRow>
                   ) : (
