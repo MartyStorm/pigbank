@@ -161,7 +161,7 @@ export async function setupAuth(app: Express) {
   }
 
   app.get("/api/auth/google/available", (req, res) => {
-    res.json({ available: googleConfigured });
+    res.json({ available: false });
   });
 
   app.post("/api/auth/register", async (req, res) => {
