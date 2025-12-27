@@ -47,6 +47,7 @@ import {
   Headset,
   MessageSquare,
   Shield,
+  MousePointer2,
 } from "lucide-react";
 
 interface NavItem {
@@ -124,6 +125,12 @@ const pigBankComplianceItem: NavItem = {
   icon: Shield,
   label: "Compliance Hub",
   href: "/compliance-hub",
+};
+
+const pigBankHeatmapsItem: NavItem = {
+  icon: MousePointer2,
+  label: "Heatmaps",
+  href: "/heatmaps",
 };
 
 export function Sidebar({ className }: { className?: string }) {
@@ -226,7 +233,7 @@ export function Sidebar({ className }: { className?: string }) {
   
   // PigBank staff items are rendered in a separate section at the bottom
   const navItems = baseNavItems;
-  const pigBankItems = isTeamMember ? [pigBankTeamItem, pigBankMerchantsItem, pigBankMessagesItem, pigBankComplianceItem] : [];
+  const pigBankItems = isTeamMember ? [pigBankTeamItem, pigBankMerchantsItem, pigBankMessagesItem, pigBankComplianceItem, pigBankHeatmapsItem] : [];
 
   useEffect(() => {
     setMounted(true);

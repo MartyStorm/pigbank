@@ -8,7 +8,8 @@ import {
   insertInvoiceSchema,
   insertInvoiceItemSchema,
   insertPayoutSchema,
-  insertWixIntegrationSchema
+  insertWixIntegrationSchema,
+  insertAnalyticsEventSchema
 } from "@shared/schema";
 import { z } from "zod";
 import { testBankfulConnection, fetchBankfulTransactions } from "./bankful";
@@ -1793,6 +1794,81 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Error removing PigBank team member:", error);
       res.status(500).json({ error: "Failed to remove team member" });
+    }
+  });
+
+  // Analytics Events (public endpoint for tracking, staff-only for viewing)
+  app.post("/api/analytics/events", async (req, res) => {
+    try {
+      const events = req.body.events;
+      if (!Array.isArray(events) || events.length === 0) {
+        return res.status(400).json({ error: "Events array is required" });
+      }
+      
+      const validatedEvents = events.map((event: any) => 
+        insertAnalyticsEventSchema.parse(event)
+      );
+      
+      const count = await storage.createAnalyticsEventsBatch(validatedEvents);
+      res.json({ success: true, count });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: "Invalid event data", details: error.errors });
+      }
+      console.error("Error storing analytics events:", error);
+      res.status(500).json({ error: "Failed to store analytics events" });
+    }
+  });
+
+  app.get("/api/analytics/events", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const pageUrl = req.query.pageUrl as string | undefined;
+      const limit = parseInt(req.query.limit as string) || 1000;
+      const offset = parseInt(req.query.offset as string) || 0;
+      
+      const events = await storage.getAnalyticsEvents(pageUrl, limit, offset);
+      res.json(events);
+    } catch (error) {
+      console.error("Error fetching analytics events:", error);
+      res.status(500).json({ error: "Failed to fetch analytics events" });
+    }
+  });
+
+  app.get("/api/analytics/pages", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const limit = parseInt(req.query.limit as string) || 50;
+      const pages = await storage.getAnalyticsEventsByPage(limit);
+      res.json(pages);
+    } catch (error) {
+      console.error("Error fetching analytics pages:", error);
+      res.status(500).json({ error: "Failed to fetch analytics pages" });
+    }
+  });
+
+  app.get("/api/analytics/stats", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const totalEvents = await storage.getAnalyticsEventsCount();
+      const pages = await storage.getAnalyticsEventsByPage(10);
+      
+      res.json({ totalEvents, topPages: pages });
+    } catch (error) {
+      console.error("Error fetching analytics stats:", error);
+      res.status(500).json({ error: "Failed to fetch analytics stats" });
     }
   });
 

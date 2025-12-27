@@ -46,6 +46,8 @@ import CustomerSupport from "@/pages/CustomerSupport";
 import PigBankMessages from "@/pages/PigBankMessages";
 import ComplianceHub from "@/pages/ComplianceHub";
 import Settings from "@/pages/Settings";
+import Heatmaps from "@/pages/Heatmaps";
+import { useAnalyticsTracker } from "@/hooks/use-analytics-tracker";
 
 function Router() {
   const { isAuthenticated, isLoading, isMerchantPending, isPigBankStaff } = useAuth();
@@ -134,6 +136,7 @@ function Router() {
         <Route path="/pigbank-messages" component={PigBankMessages} />
         <Route path="/compliance-hub" component={ComplianceHub} />
         <Route path="/pigbank-team" component={PigBankTeam} />
+        <Route path="/heatmaps" component={Heatmaps} />
         <Route path="/landing" component={Landing} />
         <Route>
           <Redirect to="/dashboard" />
@@ -200,6 +203,8 @@ function Router() {
 function AppContent() {
   const { isAuthenticated, isPigBankStaff } = useAuth();
   const { isViewingMerchant } = useMerchantView();
+  
+  useAnalyticsTracker();
   
   return (
     <>

@@ -713,7 +713,7 @@ export class DatabaseStorage implements IStorage {
   async updateUserRole(userId: string, role: string | null): Promise<User | undefined> {
     const [user] = await db
       .update(users)
-      .set({ role, updatedAt: new Date() })
+      .set({ role: role ?? undefined, updatedAt: new Date() })
       .where(eq(users.id, userId))
       .returning();
     return user || undefined;
@@ -794,7 +794,7 @@ export class DatabaseStorage implements IStorage {
     
     return await db.select().from(customers)
       .where(and(...conditions))
-      .orderBy(desc(customers.createdAt))
+      .orderBy(desc(customers.firstSeen))
       .limit(limit)
       .offset(offset);
   }
