@@ -1,6 +1,7 @@
 import { 
   users, transactions, customers, invoices, invoiceItems, payouts, bankfulImports, wixIntegrations,
   merchants, merchantOwners, merchantUsers, onboardingTasks, merchantNotes, merchantEvents, checkoutSettings,
+  analyticsEvents,
   type User, type UpsertUser,
   type Transaction, type InsertTransaction,
   type Customer, type InsertCustomer,
@@ -15,7 +16,8 @@ import {
   type OnboardingTask, type InsertOnboardingTask,
   type MerchantNote, type InsertMerchantNote,
   type MerchantEvent, type InsertMerchantEvent,
-  type CheckoutSettings, type InsertCheckoutSettings
+  type CheckoutSettings, type InsertCheckoutSettings,
+  type AnalyticsEvent, type InsertAnalyticsEvent
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, like, sql, ne } from "drizzle-orm";
@@ -117,6 +119,13 @@ export interface IStorage {
 
   // Demo Management
   setUserDemoActive(userId: string, active: boolean): Promise<User | undefined>;
+
+  // Analytics Events
+  createAnalyticsEvent(event: InsertAnalyticsEvent): Promise<AnalyticsEvent>;
+  createAnalyticsEventsBatch(events: InsertAnalyticsEvent[]): Promise<number>;
+  getAnalyticsEvents(pageUrl?: string, limit?: number, offset?: number): Promise<AnalyticsEvent[]>;
+  getAnalyticsEventsByPage(limit?: number): Promise<{ pageUrl: string; count: number }[]>;
+  getAnalyticsEventsCount(): Promise<number>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -821,6 +830,49 @@ export class DatabaseStorage implements IStorage {
       .where(eq(users.id, userId))
       .returning();
     return user || undefined;
+  }
+
+  // Analytics Events
+  async createAnalyticsEvent(event: InsertAnalyticsEvent): Promise<AnalyticsEvent> {
+    const [created] = await db.insert(analyticsEvents).values(event).returning();
+    return created;
+  }
+
+  async createAnalyticsEventsBatch(events: InsertAnalyticsEvent[]): Promise<number> {
+    if (events.length === 0) return 0;
+    await db.insert(analyticsEvents).values(events);
+    return events.length;
+  }
+
+  async getAnalyticsEvents(pageUrl?: string, limit: number = 1000, offset: number = 0): Promise<AnalyticsEvent[]> {
+    if (pageUrl) {
+      return await db.select().from(analyticsEvents)
+        .where(eq(analyticsEvents.pageUrl, pageUrl))
+        .orderBy(desc(analyticsEvents.createdAt))
+        .limit(limit)
+        .offset(offset);
+    }
+    return await db.select().from(analyticsEvents)
+      .orderBy(desc(analyticsEvents.createdAt))
+      .limit(limit)
+      .offset(offset);
+  }
+
+  async getAnalyticsEventsByPage(limit: number = 50): Promise<{ pageUrl: string; count: number }[]> {
+    const result = await db.select({
+      pageUrl: analyticsEvents.pageUrl,
+      count: sql<number>`count(*)::int`
+    })
+    .from(analyticsEvents)
+    .groupBy(analyticsEvents.pageUrl)
+    .orderBy(desc(sql`count(*)`))
+    .limit(limit);
+    return result;
+  }
+
+  async getAnalyticsEventsCount(): Promise<number> {
+    const result = await db.select({ count: sql<number>`count(*)::int` }).from(analyticsEvents);
+    return result[0]?.count || 0;
   }
 }
 

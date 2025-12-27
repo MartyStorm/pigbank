@@ -258,6 +258,25 @@ export const wixIntegrations = pgTable("wix_integrations", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
+// Analytics events - heatmap click/tap tracking
+export const analyticsEvents = pgTable("analytics_events", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  sessionId: varchar("session_id").notNull(),
+  pageUrl: text("page_url").notNull(),
+  pageTitle: text("page_title"),
+  eventType: text("event_type").notNull().default('click'),
+  x: integer("x").notNull(),
+  y: integer("y").notNull(),
+  viewportWidth: integer("viewport_width").notNull(),
+  viewportHeight: integer("viewport_height").notNull(),
+  elementTag: text("element_tag"),
+  elementId: text("element_id"),
+  elementClass: text("element_class"),
+  elementText: text("element_text"),
+  userAgent: text("user_agent"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
 // Checkout settings - merchant checkout page customization
 export const checkoutSettings = pgTable("checkout_settings", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -374,6 +393,11 @@ export const insertCheckoutSettingsSchema = createInsertSchema(checkoutSettings)
   updatedAt: true,
 });
 
+export const insertAnalyticsEventSchema = createInsertSchema(analyticsEvents).omit({
+  id: true,
+  createdAt: true,
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -420,3 +444,6 @@ export type InsertMerchantEvent = z.infer<typeof insertMerchantEventSchema>;
 
 export type CheckoutSettings = typeof checkoutSettings.$inferSelect;
 export type InsertCheckoutSettings = z.infer<typeof insertCheckoutSettingsSchema>;
+
+export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
+export type InsertAnalyticsEvent = z.infer<typeof insertAnalyticsEventSchema>;
