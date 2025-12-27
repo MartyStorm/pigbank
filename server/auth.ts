@@ -2,8 +2,6 @@ import session from "express-session";
 import type { Express, RequestHandler } from "express";
 import connectPg from "connect-pg-simple";
 import bcrypt from "bcryptjs";
-import passport from "passport";
-import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { storage } from "./storage";
 import { z } from "zod";
 
@@ -56,113 +54,9 @@ function getRedirectUrlForRole(role: string | null): string {
   }
 }
 
-function setupGoogleAuth() {
-  const clientId = process.env.GOOGLE_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-  
-  if (!clientId || !clientSecret) {
-    console.log("Google OAuth not configured - GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET required");
-    return false;
-  }
-
-  let callbackURL: string;
-  if (process.env.GOOGLE_CALLBACK_URL) {
-    callbackURL = process.env.GOOGLE_CALLBACK_URL;
-  } else if (process.env.REPLIT_DEPLOYMENT && process.env.REPLIT_DEPLOYMENT_URL) {
-    callbackURL = `https://${process.env.REPLIT_DEPLOYMENT_URL}/api/auth/google/callback`;
-  } else if (process.env.REPLIT_DEV_DOMAIN) {
-    callbackURL = `https://${process.env.REPLIT_DEV_DOMAIN}/api/auth/google/callback`;
-  } else {
-    callbackURL = `http://localhost:5000/api/auth/google/callback`;
-  }
-
-  passport.use(new GoogleStrategy({
-    clientID: clientId,
-    clientSecret: clientSecret,
-    callbackURL: callbackURL,
-  }, async (accessToken, refreshToken, profile, done) => {
-    try {
-      const email = profile.emails?.[0]?.value;
-      if (!email) {
-        return done(new Error("No email found in Google profile"), undefined);
-      }
-
-      const profileImageUrl = profile.photos?.[0]?.value;
-      let user = await storage.getUserByEmail(email);
-      
-      if (!user) {
-        user = await storage.createUser({
-          email: email,
-          password: null,
-          firstName: profile.name?.givenName,
-          lastName: profile.name?.familyName,
-          profileImageUrl: profileImageUrl,
-        });
-      } else {
-        // Update profile picture and name if changed
-        user = await storage.updateUser(user.id, {
-          firstName: profile.name?.givenName,
-          lastName: profile.name?.familyName,
-          profileImageUrl: profileImageUrl,
-        }) || user;
-      }
-
-      return done(null, user);
-    } catch (error) {
-      return done(error as Error, undefined);
-    }
-  }));
-
-  passport.serializeUser((user: any, done) => {
-    done(null, user.id);
-  });
-
-  passport.deserializeUser(async (id: string, done) => {
-    try {
-      const user = await storage.getUser(id);
-      done(null, user || null);
-    } catch (error) {
-      done(error, null);
-    }
-  });
-
-  return true;
-}
-
 export async function setupAuth(app: Express) {
   app.set("trust proxy", 1);
   app.use(getSession());
-
-  const googleConfigured = setupGoogleAuth();
-  
-  if (googleConfigured) {
-    app.use(passport.initialize());
-    app.use(passport.session());
-
-    app.get("/api/auth/google", passport.authenticate("google", {
-      scope: ["profile", "email"],
-    }));
-
-    app.get("/api/auth/google/callback", 
-      passport.authenticate("google", { 
-        failureRedirect: "/login?error=google_auth_failed",
-      }),
-      (req, res) => {
-        const user = req.user as any;
-        if (user) {
-          (req.session as any).userId = user.id;
-          const redirectUrl = getRedirectUrlForRole(user.role);
-          res.redirect(redirectUrl);
-        } else {
-          res.redirect("/");
-        }
-      }
-    );
-  }
-
-  app.get("/api/auth/google/available", (req, res) => {
-    res.json({ available: false });
-  });
 
   app.post("/api/auth/register", async (req, res) => {
     try {
@@ -214,7 +108,7 @@ export async function setupAuth(app: Express) {
       }
 
       if (!user.password || user.password === '') {
-        return res.status(401).json({ message: "This account was created with Google. Please use 'Continue with Google' to sign in." });
+        return res.status(401).json({ message: "This account does not have a password set. Please contact support." });
       }
 
       const isValidPassword = await bcrypt.compare(validatedData.password, user.password);
