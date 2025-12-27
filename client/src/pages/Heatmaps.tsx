@@ -165,12 +165,12 @@ export default function Heatmaps() {
           <Card className="md:col-span-2">
             <CardContent className="pt-6">
               <label className="text-sm font-medium text-gray-500 block mb-2">Select Page</label>
-              <Select value={selectedPage} onValueChange={setSelectedPage}>
+              <Select value={selectedPage || "all"} onValueChange={(v) => setSelectedPage(v === "all" ? "" : v)}>
                 <SelectTrigger data-testid="select-page">
                   <SelectValue placeholder="All pages" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All pages</SelectItem>
+                  <SelectItem value="all">All pages</SelectItem>
                   {stats?.topPages?.map((page) => (
                     <SelectItem key={page.pageUrl} value={page.pageUrl}>
                       {page.pageUrl} ({page.count} clicks)
