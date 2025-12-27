@@ -40,6 +40,11 @@ export default function Heatmaps() {
 
   const { data: stats, isLoading: isLoadingStats } = useQuery<{ totalEvents: number; topPages: PageStats[] }>({
     queryKey: ["/api/analytics/stats"],
+    queryFn: async () => {
+      const res = await fetch("/api/analytics/stats", { credentials: "include" });
+      if (!res.ok) throw new Error("Failed to fetch stats");
+      return res.json();
+    },
     enabled: isStaff,
   });
 
