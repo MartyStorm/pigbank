@@ -505,7 +505,28 @@ export default function Landing() {
         </div>
       </header>
       <main>
-        <HeroSection scrollY={scrollY} />
+        <section 
+          className="overflow-hidden relative"
+          style={{
+            background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
+          }}
+        >
+          <Carousel
+            setApi={setHeroApi}
+            opts={{ loop: true }}
+            className="w-full"
+          >
+            <CarouselContent className="ml-0">
+              {/* Slide 1: Personal service */}
+              <CarouselItem className="pl-0">
+                <div 
+                  className="relative overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
+                  }}
+                >
+                  {/* Falling dollar bills with realistic paper bending animation */}
+                  <style>{`
                     /* Fall pattern 1: Gentle flutter with full flip */
                     @keyframes fall1 {
                       0% { transform: translateY(-120px) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(-10deg); }
