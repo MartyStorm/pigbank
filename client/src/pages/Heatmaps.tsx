@@ -218,8 +218,8 @@ export default function Heatmaps() {
       <div className="space-y-6 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Heatmaps</h1>
-            <p className="text-gray-500">Visualize where users click and tap on your pages</p>
+            <h1 className="text-2xl font-bold text-foreground">Heatmaps</h1>
+            <p className="text-muted-foreground">Visualize where users click and tap on your pages</p>
           </div>
           <Button onClick={handleRefreshAll} variant="outline" data-testid="button-refresh">
             <RefreshCw className="h-4 w-4 mr-2" />
@@ -236,7 +236,7 @@ export default function Heatmaps() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{stats?.totalEvents?.toLocaleString() || 0}</p>
-                  <p className="text-sm text-gray-500">Total Clicks</p>
+                  <p className="text-sm text-muted-foreground">Total Clicks</p>
                 </div>
               </div>
             </CardContent>
@@ -250,7 +250,7 @@ export default function Heatmaps() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{stats?.topPages?.length || 0}</p>
-                  <p className="text-sm text-gray-500">Pages Tracked</p>
+                  <p className="text-sm text-muted-foreground">Pages Tracked</p>
                 </div>
               </div>
             </CardContent>
@@ -264,7 +264,7 @@ export default function Heatmaps() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{trackedUsers?.length || 0}</p>
-                  <p className="text-sm text-gray-500">Total Sessions</p>
+                  <p className="text-sm text-muted-foreground">Total Sessions</p>
                 </div>
               </div>
             </CardContent>
@@ -337,8 +337,8 @@ export default function Heatmaps() {
                 ) : events && events.length === 0 ? (
                   <div className="flex flex-col items-center justify-center h-[500px] text-center">
                     <MousePointer2 className="h-16 w-16 text-gray-300 mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">No click data yet</h3>
-                    <p className="text-gray-500 max-w-md">
+                    <h3 className="text-lg font-medium text-foreground mb-1">No click data yet</h3>
+                    <p className="text-muted-foreground max-w-md">
                       {selectedUser 
                         ? "This user hasn't generated any click data yet."
                         : "Click data will appear here as users interact with your site."
@@ -456,7 +456,7 @@ export default function Heatmaps() {
                             <p className="text-sm font-medium truncate">
                               {getUserDisplayName(session)}
                             </p>
-                            <p className="text-xs text-gray-500 truncate">
+                            <p className="text-xs text-muted-foreground truncate">
                               {session.lastPageUrl || "Unknown page"}
                             </p>
                           </div>
@@ -465,7 +465,7 @@ export default function Heatmaps() {
                     </div>
                   </ScrollArea>
                 ) : (
-                  <p className="text-sm text-gray-500 text-center py-4">No users online</p>
+                  <p className="text-sm text-muted-foreground text-center py-4">No users online</p>
                 )}
               </CardContent>
             </Card>
@@ -498,7 +498,7 @@ export default function Heatmaps() {
                             className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-colors ${
                               isSelected 
                                 ? "bg-[#73cb43]/20 border border-[#73cb43]/30" 
-                                : "bg-gray-50 hover:bg-gray-100 border border-transparent"
+                                : "bg-muted hover:bg-muted/80 border border-transparent"
                             }`}
                             onClick={() => handleUserClick(trackedUser)}
                             data-testid={`tracked-user-${trackedUser.sessionId.slice(0, 6)}`}
@@ -507,7 +507,7 @@ export default function Heatmaps() {
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium ${
                                 trackedUser.isAuthenticated 
                                   ? "bg-[#73cb43]/20 text-[#73cb43]" 
-                                  : "bg-gray-200 text-gray-600"
+                                  : "bg-muted text-muted-foreground"
                               }`}>
                                 {trackedUser.isAuthenticated ? (
                                   trackedUser.user?.firstName?.charAt(0) || trackedUser.user?.email?.charAt(0).toUpperCase() || "U"
@@ -528,7 +528,7 @@ export default function Heatmaps() {
                                   <Badge variant="secondary" className="text-[10px] px-1 py-0 h-4">Auth</Badge>
                                 )}
                               </div>
-                              <div className="flex items-center gap-2 text-xs text-gray-500">
+                              <div className="flex items-center gap-2 text-xs text-muted-foreground">
                                 <span>{trackedUser.clickCount} clicks</span>
                                 <span>•</span>
                                 <span className="flex items-center gap-0.5">
@@ -543,7 +543,7 @@ export default function Heatmaps() {
                     </div>
                   </ScrollArea>
                 ) : (
-                  <p className="text-sm text-gray-500 text-center py-4">No tracked users yet</p>
+                  <p className="text-sm text-muted-foreground text-center py-4">No tracked users yet</p>
                 )}
               </CardContent>
             </Card>
@@ -560,7 +560,7 @@ export default function Heatmaps() {
                 {stats.topPages.slice(0, 10).map((page, index) => (
                   <div 
                     key={page.pageUrl} 
-                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="flex items-center justify-between p-3 bg-muted rounded-lg cursor-pointer hover:bg-muted/80 transition-colors"
                     onClick={() => {
                       setSelectedPage(page.pageUrl);
                       setSelectedUser(null);
@@ -568,8 +568,8 @@ export default function Heatmaps() {
                     data-testid={`page-row-${index}`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium text-gray-400 w-6">{index + 1}</span>
-                      <span className="font-medium">{page.pageUrl}</span>
+                      <span className="text-sm font-medium text-muted-foreground w-6">{index + 1}</span>
+                      <span className="font-medium text-foreground">{page.pageUrl}</span>
                     </div>
                     <Badge variant="secondary">{page.count.toLocaleString()} clicks</Badge>
                   </div>
