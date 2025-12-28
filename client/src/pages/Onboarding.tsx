@@ -678,10 +678,33 @@ export default function Onboarding() {
                       </Select>
                     </div>
                     
-                    {owner.governmentIdType && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label>{owner.governmentIdType === "passport" ? "Passport Photo Page *" : "Front of ID *"}</Label>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Input
+                            type="file"
+                            accept="image/*,.pdf"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                const newOwners = [...owners];
+                                newOwners[index] = { ...owner, governmentIdFrontUrl: file.name };
+                                setOwners(newOwners);
+                              }
+                            }}
+                            className="flex-1"
+                            data-testid={`input-owner-id-front-${index}`}
+                          />
+                          {owner.governmentIdFrontUrl && (
+                            <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                          )}
+                        </div>
+                      </div>
+                      
+                      {owner.governmentIdType !== "passport" && (
                         <div>
-                          <Label>{owner.governmentIdType === "passport" ? "Passport Photo Page *" : "Front of ID *"}</Label>
+                          <Label>Back of ID *</Label>
                           <div className="flex items-center gap-2 mt-1">
                             <Input
                               type="file"
@@ -690,45 +713,20 @@ export default function Onboarding() {
                                 const file = e.target.files?.[0];
                                 if (file) {
                                   const newOwners = [...owners];
-                                  newOwners[index] = { ...owner, governmentIdFrontUrl: file.name };
+                                  newOwners[index] = { ...owner, governmentIdBackUrl: file.name };
                                   setOwners(newOwners);
                                 }
                               }}
                               className="flex-1"
-                              data-testid={`input-owner-id-front-${index}`}
+                              data-testid={`input-owner-id-back-${index}`}
                             />
-                            {owner.governmentIdFrontUrl && (
+                            {owner.governmentIdBackUrl && (
                               <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
                             )}
                           </div>
                         </div>
-                        
-                        {owner.governmentIdType !== "passport" && (
-                          <div>
-                            <Label>Back of ID *</Label>
-                            <div className="flex items-center gap-2 mt-1">
-                              <Input
-                                type="file"
-                                accept="image/*,.pdf"
-                                onChange={(e) => {
-                                  const file = e.target.files?.[0];
-                                  if (file) {
-                                    const newOwners = [...owners];
-                                    newOwners[index] = { ...owner, governmentIdBackUrl: file.name };
-                                    setOwners(newOwners);
-                                  }
-                                }}
-                                className="flex-1"
-                                data-testid={`input-owner-id-back-${index}`}
-                              />
-                              {owner.governmentIdBackUrl && (
-                                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
                 
