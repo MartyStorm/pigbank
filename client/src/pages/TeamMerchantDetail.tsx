@@ -341,7 +341,7 @@ export default function TeamMerchantDetail() {
                   {statusLabels[merchant.status] || merchant.status}
                 </Badge>
               </div>
-              <p className="text-sm text-gray-500">Application Status</p>
+              <p className="text-sm text-muted-foreground">Application Status</p>
             </CardContent>
           </Card>
           <Card>
@@ -351,13 +351,13 @@ export default function TeamMerchantDetail() {
                   {merchant.riskLevel || "Not Set"}
                 </Badge>
               </div>
-              <p className="text-sm text-gray-500">Risk Level</p>
+              <p className="text-sm text-muted-foreground">Risk Level</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="pt-6">
               <p className="text-2xl font-bold">{formatCurrency(merchant.expectedMonthlyVolume)}</p>
-              <p className="text-sm text-gray-500">Expected Monthly Volume</p>
+              <p className="text-sm text-muted-foreground">Expected Monthly Volume</p>
             </CardContent>
           </Card>
         </div>
@@ -406,24 +406,24 @@ export default function TeamMerchantDetail() {
               <CardContent>
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Legal Business Name</label>
-                    <p className="text-gray-900" data-testid="text-legal-name">{merchant.legalBusinessName || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Legal Business Name</label>
+                    <p className="text-foreground" data-testid="text-legal-name">{merchant.legalBusinessName || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">DBA (Doing Business As)</label>
-                    <p className="text-gray-900" data-testid="text-dba">{merchant.dba || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">DBA (Doing Business As)</label>
+                    <p className="text-foreground" data-testid="text-dba">{merchant.dba || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">EIN / Tax ID</label>
-                    <p className="text-gray-900" data-testid="text-ein">{merchant.ein || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">EIN / Tax ID</label>
+                    <p className="text-foreground" data-testid="text-ein">{merchant.ein || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Business Type</label>
-                    <p className="text-gray-900" data-testid="text-business-type">{merchant.businessType || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Business Type</label>
+                    <p className="text-foreground" data-testid="text-business-type">{merchant.businessType || "Not provided"}</p>
                   </div>
                   <div className="col-span-2">
-                    <label className="text-sm font-medium text-gray-500">Business Address</label>
-                    <p className="text-gray-900" data-testid="text-address">
+                    <label className="text-sm font-medium text-muted-foreground">Business Address</label>
+                    <p className="text-foreground" data-testid="text-address">
                       {merchant.businessAddress ? (
                         `${merchant.businessAddress}, ${merchant.businessCity || ""}, ${merchant.businessState || ""} ${merchant.businessZip || ""} ${merchant.businessCountry || ""}`
                       ) : (
@@ -443,36 +443,36 @@ export default function TeamMerchantDetail() {
               </CardHeader>
               <CardContent>
                 {owners.length === 0 ? (
-                  <p className="text-gray-500 text-center py-12">No owner data available</p>
+                  <p className="text-muted-foreground text-center py-12">No owner data available</p>
                 ) : (
                   <div className="space-y-6">
                     {owners.map((owner, index) => (
                       <div key={owner.id} className="border rounded-lg p-4" data-testid={`card-owner-${owner.id}`}>
-                        <h3 className="font-medium text-gray-900 mb-4">Owner {index + 1}: {owner.fullName}</h3>
+                        <h3 className="font-medium text-foreground mb-4">Owner {index + 1}: {owner.fullName}</h3>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
-                            <label className="text-sm font-medium text-gray-500">Date of Birth</label>
-                            <p className="text-gray-900">{owner.dateOfBirth || "Not provided"}</p>
+                            <label className="text-sm font-medium text-muted-foreground">Date of Birth</label>
+                            <p className="text-foreground">{owner.dateOfBirth || "Not provided"}</p>
                           </div>
                           <div>
-                            <label className="text-sm font-medium text-gray-500">Ownership %</label>
-                            <p className="text-gray-900">{owner.ownershipPercentage ? `${owner.ownershipPercentage}%` : "Not provided"}</p>
+                            <label className="text-sm font-medium text-muted-foreground">Ownership %</label>
+                            <p className="text-foreground">{owner.ownershipPercentage ? `${owner.ownershipPercentage}%` : "Not provided"}</p>
                           </div>
                           <div>
-                            <label className="text-sm font-medium text-gray-500">SSN (Last 4)</label>
-                            <p className="text-gray-900">{owner.ssnLast4 ? `****${owner.ssnLast4}` : "Not provided"}</p>
+                            <label className="text-sm font-medium text-muted-foreground">SSN (Last 4)</label>
+                            <p className="text-foreground">{owner.ssnLast4 ? `****${owner.ssnLast4}` : "Not provided"}</p>
                           </div>
                           <div>
-                            <label className="text-sm font-medium text-gray-500">KYC Consent</label>
-                            <p className="text-gray-900">{owner.kycConsent ? "Yes" : "No"}</p>
+                            <label className="text-sm font-medium text-muted-foreground">KYC Consent</label>
+                            <p className="text-foreground">{owner.kycConsent ? "Yes" : "No"}</p>
                           </div>
                           <div className="col-span-2">
-                            <label className="text-sm font-medium text-gray-500">Home Address</label>
-                            <p className="text-gray-900">{owner.homeAddress || "Not provided"}</p>
+                            <label className="text-sm font-medium text-muted-foreground">Home Address</label>
+                            <p className="text-foreground">{owner.homeAddress || "Not provided"}</p>
                           </div>
                           {owner.governmentIdUrl && (
                             <div className="col-span-2">
-                              <label className="text-sm font-medium text-gray-500">Government ID</label>
+                              <label className="text-sm font-medium text-muted-foreground">Government ID</label>
                               <a href={owner.governmentIdUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">
                                 View Document
                               </a>
@@ -495,20 +495,20 @@ export default function TeamMerchantDetail() {
               <CardContent>
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Bank Name</label>
-                    <p className="text-gray-900" data-testid="text-bank-name">{merchant.bankName || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Bank Name</label>
+                    <p className="text-foreground" data-testid="text-bank-name">{merchant.bankName || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Account Type</label>
-                    <p className="text-gray-900" data-testid="text-account-type">{merchant.bankAccountType || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Account Type</label>
+                    <p className="text-foreground" data-testid="text-account-type">{merchant.bankAccountType || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Routing Number</label>
-                    <p className="text-gray-900" data-testid="text-routing">{merchant.bankRoutingNumber || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Routing Number</label>
+                    <p className="text-foreground" data-testid="text-routing">{merchant.bankRoutingNumber || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Account Number</label>
-                    <p className="text-gray-900" data-testid="text-account">{merchant.bankAccountNumber || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Account Number</label>
+                    <p className="text-foreground" data-testid="text-account">{merchant.bankAccountNumber || "Not provided"}</p>
                   </div>
                 </div>
               </CardContent>
@@ -523,30 +523,30 @@ export default function TeamMerchantDetail() {
               <CardContent>
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Website URL</label>
+                    <label className="text-sm font-medium text-muted-foreground">Website URL</label>
                     {merchant.websiteUrl ? (
                       <a href={merchant.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block" data-testid="link-website">
                         {merchant.websiteUrl}
                       </a>
                     ) : (
-                      <p className="text-gray-900">Not provided</p>
+                      <p className="text-foreground">Not provided</p>
                     )}
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">MCC Category</label>
-                    <p className="text-gray-900" data-testid="text-mcc">{merchant.mccCategory || "Not provided"}</p>
+                    <label className="text-sm font-medium text-muted-foreground">MCC Category</label>
+                    <p className="text-foreground" data-testid="text-mcc">{merchant.mccCategory || "Not provided"}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Expected Monthly Volume</label>
-                    <p className="text-gray-900">{formatCurrency(merchant.expectedMonthlyVolume)}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Expected Monthly Volume</label>
+                    <p className="text-foreground">{formatCurrency(merchant.expectedMonthlyVolume)}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Average Ticket Size</label>
-                    <p className="text-gray-900">{formatCurrency(merchant.averageTicketSize)}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Average Ticket Size</label>
+                    <p className="text-foreground">{formatCurrency(merchant.averageTicketSize)}</p>
                   </div>
                   <div className="col-span-2">
-                    <label className="text-sm font-medium text-gray-500">Product Description</label>
-                    <p className="text-gray-900 whitespace-pre-wrap" data-testid="text-product-desc">
+                    <label className="text-sm font-medium text-muted-foreground">Product Description</label>
+                    <p className="text-foreground whitespace-pre-wrap" data-testid="text-product-desc">
                       {merchant.productDescription || "Not provided"}
                     </p>
                   </div>
@@ -565,7 +565,7 @@ export default function TeamMerchantDetail() {
                   <div className="flex items-center justify-between p-4 border rounded-lg">
                     <div>
                       <p className="font-medium">Articles of Incorporation</p>
-                      <p className="text-sm text-gray-500">Business formation documents</p>
+                      <p className="text-sm text-muted-foreground">Business formation documents</p>
                     </div>
                     {merchant.articlesOfIncorporationUrl ? (
                       <a href={merchant.articlesOfIncorporationUrl} target="_blank" rel="noopener noreferrer">
@@ -578,7 +578,7 @@ export default function TeamMerchantDetail() {
                   <div className="flex items-center justify-between p-4 border rounded-lg">
                     <div>
                       <p className="font-medium">Voided Check</p>
-                      <p className="text-sm text-gray-500">Bank account verification</p>
+                      <p className="text-sm text-muted-foreground">Bank account verification</p>
                     </div>
                     {merchant.voidedCheckUrl ? (
                       <a href={merchant.voidedCheckUrl} target="_blank" rel="noopener noreferrer">
@@ -815,13 +815,13 @@ export default function TeamMerchantDetail() {
                 </div>
                 
                 {notes.length === 0 ? (
-                  <p className="text-gray-500 text-center py-8">No internal notes yet</p>
+                  <p className="text-muted-foreground text-center py-8">No internal notes yet</p>
                 ) : (
                   <div className="space-y-4">
                     {notes.map((note) => (
                       <div key={note.id} className="border rounded-lg p-4" data-testid={`card-note-${note.id}`}>
-                        <p className="text-gray-900 whitespace-pre-wrap">{note.content}</p>
-                        <p className="text-sm text-gray-500 mt-2">
+                        <p className="text-foreground whitespace-pre-wrap">{note.content}</p>
+                        <p className="text-sm text-muted-foreground mt-2">
                           {format(new Date(note.createdAt), "MMM d, yyyy 'at' h:mm a")}
                         </p>
                       </div>
