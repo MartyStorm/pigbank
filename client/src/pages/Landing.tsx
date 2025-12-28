@@ -1247,10 +1247,13 @@ export default function Landing() {
             </div>
             <div 
               className="relative w-full aspect-video cursor-pointer group rounded-2xl overflow-hidden shadow-xl"
-              style={{
-                background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
-              }}
             >
+              <img 
+                src="/attached_assets/ChatGPT_Image_Dec_28,_2025,_03_13_36_AM_1766913248786.png"
+                alt="Payment Processing Flow Diagram"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
               <button 
                 className="absolute inset-0 flex items-center justify-center z-20"
                 data-testid="button-play-video"
