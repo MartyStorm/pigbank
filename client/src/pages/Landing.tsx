@@ -1248,7 +1248,7 @@ export default function Landing() {
             <div 
               className="relative w-full aspect-video cursor-pointer group rounded-2xl overflow-hidden shadow-xl"
             >
-              <div className="absolute inset-0 bg-[#f5f3ef]" />
+              <div className="absolute inset-0 bg-[#d9d7d3]" />
               <img 
                 src="/attached_assets/ChatGPT_Image_Dec_28,_2025,_03_13_36_AM_1766913248786.png"
                 alt="Payment Processing Flow Diagram"
