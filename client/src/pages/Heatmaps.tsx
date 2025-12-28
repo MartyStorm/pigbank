@@ -347,7 +347,7 @@ export default function Heatmaps() {
                   </div>
                 ) : (
                   <div 
-                    className="relative bg-gray-100 rounded-lg overflow-hidden"
+                    className="relative bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
                     style={{ width: "100%", height: viewportHeight, maxWidth: viewportWidth }}
                     data-testid="heatmap-canvas"
                   >
@@ -356,13 +356,13 @@ export default function Heatmaps() {
                         src={selectedPage}
                         className="absolute inset-0 w-full h-full border-0 pointer-events-none"
                         title="Page Preview"
-                        sandbox="allow-same-origin"
+                        style={{ transform: "scale(1)", transformOrigin: "top left" }}
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-200 flex flex-col items-center justify-center">
-                        <Eye className="h-12 w-12 text-gray-400 mb-3" />
-                        <p className="text-gray-600 font-medium">Select a specific page above</p>
-                        <p className="text-gray-400 text-sm">to see the heatmap overlaid on the actual page</p>
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center">
+                        <Eye className="h-12 w-12 text-muted-foreground mb-3" />
+                        <p className="text-foreground font-medium">Select a specific page above</p>
+                        <p className="text-muted-foreground text-sm">to see the heatmap overlaid on the actual page</p>
                       </div>
                     )}
                     
