@@ -702,7 +702,7 @@ export default function Onboarding() {
                         </div>
                       </div>
                       
-                      {owner.governmentIdType !== "passport" && (
+                      {(owner.governmentIdType === "drivers_license" || owner.governmentIdType === "state_id") && (
                         <div>
                           <Label>Back of ID *</Label>
                           <div className="flex items-center gap-2 mt-1">
