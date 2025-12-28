@@ -231,8 +231,8 @@ export default function Heatmaps() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-blue-100">
-                  <MousePointer2 className="h-6 w-6 text-blue-600" />
+                <div className="p-3 rounded-lg bg-[#73cb43]/20">
+                  <MousePointer2 className="h-6 w-6 text-[#73cb43]" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{stats?.totalEvents?.toLocaleString() || 0}</p>
@@ -245,8 +245,8 @@ export default function Heatmaps() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-green-100">
-                  <Eye className="h-6 w-6 text-green-600" />
+                <div className="p-3 rounded-lg bg-[#73cb43]/20">
+                  <Eye className="h-6 w-6 text-[#73cb43]" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{stats?.topPages?.length || 0}</p>
@@ -259,8 +259,8 @@ export default function Heatmaps() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-purple-100">
-                  <Users className="h-6 w-6 text-purple-600" />
+                <div className="p-3 rounded-lg bg-[#73cb43]/20">
+                  <Users className="h-6 w-6 text-[#73cb43]" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{trackedUsers?.length || 0}</p>
@@ -487,7 +487,7 @@ export default function Heatmaps() {
                             key={trackedUser.sessionId}
                             className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-colors ${
                               isSelected 
-                                ? "bg-blue-100 border border-blue-300" 
+                                ? "bg-[#73cb43]/20 border border-[#73cb43]/30" 
                                 : "bg-gray-50 hover:bg-gray-100 border border-transparent"
                             }`}
                             onClick={() => handleUserClick(trackedUser)}
@@ -496,7 +496,7 @@ export default function Heatmaps() {
                             <div className="relative shrink-0">
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium ${
                                 trackedUser.isAuthenticated 
-                                  ? "bg-blue-100 text-blue-700" 
+                                  ? "bg-[#73cb43]/20 text-[#73cb43]" 
                                   : "bg-gray-200 text-gray-600"
                               }`}>
                                 {trackedUser.isAuthenticated ? (
