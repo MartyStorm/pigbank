@@ -84,12 +84,14 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-[#1a4320]">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
         <div className="flex flex-col items-center space-y-6">
-          <img 
-            src="/pig-bank-logo-light.png" 
-            alt="PigBank" 
-            className="h-14 w-auto"
-            data-testid="logo-login"
-          />
+          <a href="/">
+            <img 
+              src="/pig-bank-logo-light.png" 
+              alt="PigBank" 
+              className="h-14 w-auto cursor-pointer"
+              data-testid="logo-login"
+            />
+          </a>
           
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-bold text-gray-900" data-testid="text-login-title">
