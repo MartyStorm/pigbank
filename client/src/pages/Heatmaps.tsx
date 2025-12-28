@@ -270,16 +270,16 @@ export default function Heatmaps() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 bg-green-50/50">
+          <Card className="border-[#73cb43]/30 bg-[#73cb43]/10">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-green-100 relative">
-                  <User className="h-6 w-6 text-green-600" />
-                  <Circle className="h-3 w-3 text-green-500 fill-green-500 absolute -top-1 -right-1 animate-pulse" />
+                <div className="p-3 rounded-lg bg-[#73cb43]/20 relative">
+                  <User className="h-6 w-6 text-[#73cb43]" />
+                  <Circle className="h-3 w-3 text-[#73cb43] fill-[#73cb43] absolute -top-1 -right-1 animate-pulse" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-green-700">{stats?.activeUsers || 0}</p>
-                  <p className="text-sm text-green-600">Online Now</p>
+                  <p className="text-2xl font-bold text-[#73cb43]">{stats?.activeUsers || 0}</p>
+                  <p className="text-sm text-[#73cb43]">Online Now</p>
                 </div>
               </div>
             </CardContent>
