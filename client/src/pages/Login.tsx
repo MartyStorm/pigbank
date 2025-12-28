@@ -81,7 +81,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'radial-gradient(circle at center, #5aa55a 0%, #3d6b3d 35%, #1a3d1a 100%)' }}>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[#73cb43]">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
         <div className="flex flex-col items-center space-y-6">
           <img 
