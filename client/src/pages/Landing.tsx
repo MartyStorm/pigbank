@@ -1887,12 +1887,12 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32 bg-[#1a4320]">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Ready to bring home the bacon?
             </h2>
-            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of merchants who trust PigBank to power their payments. 
               Start accepting payments in minutes.
             </p>
@@ -1911,13 +1911,13 @@ export default function Landing() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="rounded-lg px-8 border-white/30 text-white hover:bg-white/10"
+                className="rounded-lg px-8 border-gray-300 text-gray-700 hover:bg-gray-50"
                 data-testid="button-talk-to-sales"
               >
                 Talk to sales
               </Button>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-sm text-white/60">
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-[#73cb43]" />
                 <span>No setup fees</span>
