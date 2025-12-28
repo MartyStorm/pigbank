@@ -161,12 +161,10 @@ function HorizontalScrollText() {
   return (
     <section 
       ref={sectionRef}
-      className="py-12 md:py-16 overflow-hidden bg-[#f3f4f6] relative"
+      className="py-12 md:py-16 overflow-hidden bg-[#1a4320] relative"
     >
-      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-[#75C947]/8 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-gradient-to-l from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-x-1/2 -translate-y-1/2" />
       <div className="text-center mb-4">
-        <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-[0.2em]">
+        <p className="text-xs md:text-sm font-semibold text-white/80 uppercase tracking-[0.2em]">
           A BETTER WAY TO PAY
         </p>
       </div>
@@ -178,7 +176,7 @@ function HorizontalScrollText() {
           {[...Array(4)].map((_, i) => (
             <span 
               key={i}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-400 mx-4"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white/30 mx-4"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               PigBank Payments - 
