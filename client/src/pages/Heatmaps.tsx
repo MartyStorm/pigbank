@@ -287,7 +287,7 @@ export default function Heatmaps() {
 
           <Card>
             <CardContent className="pt-6">
-              <label className="text-sm font-medium text-gray-500 block mb-2">Filter by Page</label>
+              <label className="text-sm font-medium text-muted-foreground block mb-2">Filter by Page</label>
               <Select 
                 value={selectedPage || "all"} 
                 onValueChange={(v) => {
@@ -351,17 +351,20 @@ export default function Heatmaps() {
                     style={{ width: "100%", height: viewportHeight, maxWidth: viewportWidth }}
                     data-testid="heatmap-canvas"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-200">
-                      <div className="absolute top-4 left-4 right-4 h-12 bg-white rounded shadow-sm flex items-center px-4">
-                        <div className="w-3 h-3 rounded-full bg-red-400 mr-2" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2" />
-                        <div className="w-3 h-3 rounded-full bg-green-400 mr-4" />
-                        <div className="flex-1 h-6 bg-gray-100 rounded text-xs flex items-center justify-center text-gray-400">
-                          {selectedPage || "All Pages"}
-                        </div>
+                    {selectedPage ? (
+                      <iframe
+                        src={selectedPage}
+                        className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+                        title="Page Preview"
+                        sandbox="allow-same-origin"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-200 flex flex-col items-center justify-center">
+                        <Eye className="h-12 w-12 text-gray-400 mb-3" />
+                        <p className="text-gray-600 font-medium">Select a specific page above</p>
+                        <p className="text-gray-400 text-sm">to see the heatmap overlaid on the actual page</p>
                       </div>
-                      <div className="absolute top-20 left-4 right-4 bottom-4 bg-white rounded shadow-sm" />
-                    </div>
+                    )}
                     
                     <svg 
                       className="absolute inset-0 pointer-events-none"
@@ -369,6 +372,7 @@ export default function Heatmaps() {
                       height="100%"
                       viewBox={`0 0 ${viewportWidth} ${viewportHeight}`}
                       preserveAspectRatio="xMidYMid meet"
+                      style={{ mixBlendMode: "multiply" }}
                     >
                       <defs>
                         <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
@@ -387,7 +391,7 @@ export default function Heatmaps() {
                       ))}
                     </svg>
 
-                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm z-10">
                       <p className="text-xs font-medium text-gray-700 mb-2">Intensity</p>
                       <div className="flex items-center gap-1">
                         <div className="w-4 h-4 rounded" style={{ background: "rgba(0, 255, 100, 0.5)" }} />
@@ -402,9 +406,15 @@ export default function Heatmaps() {
                       </div>
                     </div>
 
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm">
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm z-10">
                       <p className="text-sm font-medium text-gray-900">{events?.length.toLocaleString()} clicks</p>
                     </div>
+                    
+                    {selectedPage && (
+                      <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm z-10">
+                        <p className="text-sm font-medium text-white">{selectedPage}</p>
+                      </div>
+                    )}
                   </div>
                 )}
               </CardContent>
