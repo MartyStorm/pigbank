@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { queryClient } from "@/lib/queryClient";
 import { Loader2, Shield, Eye, EyeOff } from "lucide-react";
+import { identifyAnalyticsSession } from "@/hooks/use-analytics-tracker";
 
 export default function TeamLogin() {
   const [, setLocation] = useLocation();
@@ -45,6 +46,9 @@ export default function TeamLogin() {
       }
 
       await queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+
+      // Link analytics session to authenticated user
+      await identifyAnalyticsSession();
 
       const redirectUrl = data.redirectUrl || "/team/merchants";
       setLocation(redirectUrl);

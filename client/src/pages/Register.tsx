@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { identifyAnalyticsSession } from "@/hooks/use-analytics-tracker";
 
 export default function Register() {
   const [, setLocation] = useLocation();
@@ -80,6 +81,9 @@ export default function Register() {
       }
 
       await queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+      
+      // Link analytics session to authenticated user
+      await identifyAnalyticsSession();
       
       // Store email and show confirmation dialog
       setRegisteredEmail(formData.email);

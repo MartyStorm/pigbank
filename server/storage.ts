@@ -1,7 +1,7 @@
 import { 
   users, transactions, customers, invoices, invoiceItems, payouts, bankfulImports, wixIntegrations,
   merchants, merchantOwners, merchantUsers, onboardingTasks, merchantNotes, merchantEvents, checkoutSettings,
-  analyticsEvents,
+  analyticsEvents, analyticsSessions,
   type User, type UpsertUser,
   type Transaction, type InsertTransaction,
   type Customer, type InsertCustomer,
@@ -17,7 +17,8 @@ import {
   type MerchantNote, type InsertMerchantNote,
   type MerchantEvent, type InsertMerchantEvent,
   type CheckoutSettings, type InsertCheckoutSettings,
-  type AnalyticsEvent, type InsertAnalyticsEvent
+  type AnalyticsEvent, type InsertAnalyticsEvent,
+  type AnalyticsSession, type InsertAnalyticsSession
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, like, sql, ne } from "drizzle-orm";
@@ -126,6 +127,15 @@ export interface IStorage {
   getAnalyticsEvents(pageUrl?: string, limit?: number, offset?: number): Promise<AnalyticsEvent[]>;
   getAnalyticsEventsByPage(limit?: number): Promise<{ pageUrl: string; count: number }[]>;
   getAnalyticsEventsCount(): Promise<number>;
+  
+  // Analytics Sessions
+  upsertAnalyticsSession(session: InsertAnalyticsSession & { lastPageUrl?: string }): Promise<AnalyticsSession>;
+  getAnalyticsSession(sessionId: string): Promise<AnalyticsSession | undefined>;
+  linkSessionToUser(sessionId: string, userId: string): Promise<void>;
+  getActiveSessions(sinceMinutes?: number): Promise<(AnalyticsSession & { user?: User | null })[]>;
+  getAnalyticsEventsBySession(sessionId: string, limit?: number): Promise<AnalyticsEvent[]>;
+  getAnalyticsEventsByUser(userId: string, limit?: number): Promise<AnalyticsEvent[]>;
+  getTrackedUsers(): Promise<{ userId: string | null; sessionId: string; isAuthenticated: boolean; user?: User | null; clickCount: number; lastSeen: Date }[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -873,6 +883,105 @@ export class DatabaseStorage implements IStorage {
   async getAnalyticsEventsCount(): Promise<number> {
     const result = await db.select({ count: sql<number>`count(*)::int` }).from(analyticsEvents);
     return result[0]?.count || 0;
+  }
+
+  // Analytics Sessions
+  async upsertAnalyticsSession(session: InsertAnalyticsSession & { lastPageUrl?: string }): Promise<AnalyticsSession> {
+    const existing = await db.select().from(analyticsSessions)
+      .where(eq(analyticsSessions.sessionId, session.sessionId))
+      .limit(1);
+    
+    if (existing.length > 0) {
+      const [updated] = await db.update(analyticsSessions)
+        .set({
+          lastSeen: new Date(),
+          lastPageUrl: session.lastPageUrl || existing[0].lastPageUrl,
+          userId: session.userId || existing[0].userId,
+          isAuthenticated: session.isAuthenticated || existing[0].isAuthenticated,
+        })
+        .where(eq(analyticsSessions.sessionId, session.sessionId))
+        .returning();
+      return updated;
+    } else {
+      const [created] = await db.insert(analyticsSessions)
+        .values({
+          sessionId: session.sessionId,
+          userId: session.userId || null,
+          isAuthenticated: session.isAuthenticated || false,
+          userAgent: session.userAgent || null,
+          lastPageUrl: session.lastPageUrl || null,
+        })
+        .returning();
+      return created;
+    }
+  }
+
+  async getAnalyticsSession(sessionId: string): Promise<AnalyticsSession | undefined> {
+    const [session] = await db.select().from(analyticsSessions)
+      .where(eq(analyticsSessions.sessionId, sessionId));
+    return session || undefined;
+  }
+
+  async linkSessionToUser(sessionId: string, userId: string): Promise<void> {
+    await db.update(analyticsSessions)
+      .set({ userId, isAuthenticated: true, lastSeen: new Date() })
+      .where(eq(analyticsSessions.sessionId, sessionId));
+    
+    await db.update(analyticsEvents)
+      .set({ userId, isAuthenticated: true })
+      .where(eq(analyticsEvents.sessionId, sessionId));
+  }
+
+  async getActiveSessions(sinceMinutes: number = 5): Promise<(AnalyticsSession & { user?: User | null })[]> {
+    const cutoff = new Date(Date.now() - sinceMinutes * 60 * 1000);
+    
+    const sessions = await db.select({
+      session: analyticsSessions,
+      user: users,
+    })
+    .from(analyticsSessions)
+    .leftJoin(users, eq(analyticsSessions.userId, users.id))
+    .where(sql`${analyticsSessions.lastSeen} > ${cutoff}`)
+    .orderBy(desc(analyticsSessions.lastSeen));
+    
+    return sessions.map(s => ({
+      ...s.session,
+      user: s.user,
+    }));
+  }
+
+  async getAnalyticsEventsBySession(sessionId: string, limit: number = 1000): Promise<AnalyticsEvent[]> {
+    return await db.select().from(analyticsEvents)
+      .where(eq(analyticsEvents.sessionId, sessionId))
+      .orderBy(desc(analyticsEvents.createdAt))
+      .limit(limit);
+  }
+
+  async getAnalyticsEventsByUser(userId: string, limit: number = 1000): Promise<AnalyticsEvent[]> {
+    return await db.select().from(analyticsEvents)
+      .where(eq(analyticsEvents.userId, userId))
+      .orderBy(desc(analyticsEvents.createdAt))
+      .limit(limit);
+  }
+
+  async getTrackedUsers(): Promise<{ userId: string | null; sessionId: string; isAuthenticated: boolean; user?: User | null; clickCount: number; lastSeen: Date }[]> {
+    const sessionsWithCounts = await db.select({
+      session: analyticsSessions,
+      user: users,
+      clickCount: sql<number>`(SELECT count(*)::int FROM analytics_events WHERE analytics_events.session_id = ${analyticsSessions.sessionId})`,
+    })
+    .from(analyticsSessions)
+    .leftJoin(users, eq(analyticsSessions.userId, users.id))
+    .orderBy(desc(analyticsSessions.lastSeen));
+
+    return sessionsWithCounts.map(s => ({
+      userId: s.session.userId,
+      sessionId: s.session.sessionId,
+      isAuthenticated: s.session.isAuthenticated,
+      user: s.user,
+      clickCount: s.clickCount,
+      lastSeen: s.session.lastSeen,
+    }));
   }
 }
 

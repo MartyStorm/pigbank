@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { queryClient } from "@/lib/queryClient";
 import { Loader2, Eye, EyeOff } from "lucide-react";
+import { identifyAnalyticsSession } from "@/hooks/use-analytics-tracker";
 
 const REMEMBER_ME_KEY = "pigbank_remember_me";
 const SAVED_USERNAME_KEY = "pigbank_saved_username";
@@ -52,6 +53,9 @@ export default function Login() {
       }
 
       await queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+
+      // Link analytics session to authenticated user
+      await identifyAnalyticsSession();
 
       // Save or clear remembered credentials
       if (rememberMe) {

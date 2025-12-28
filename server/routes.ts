@@ -1801,13 +1801,31 @@ export async function registerRoutes(
   app.post("/api/analytics/events", async (req, res) => {
     try {
       const events = req.body.events;
+      const sessionId = req.body.sessionId;
+      const userAgent = req.body.userAgent;
+      
       if (!Array.isArray(events) || events.length === 0) {
         return res.status(400).json({ error: "Events array is required" });
       }
       
+      if (!sessionId) {
+        return res.status(400).json({ error: "Session ID is required" });
+      }
+      
       const validatedEvents = events.map((event: any) => 
-        insertAnalyticsEventSchema.parse(event)
+        insertAnalyticsEventSchema.parse({
+          ...event,
+          sessionId,
+        })
       );
+      
+      // Upsert the session with the last page URL
+      const lastPageUrl = events[events.length - 1]?.pageUrl;
+      await storage.upsertAnalyticsSession({
+        sessionId,
+        userAgent,
+        lastPageUrl,
+      });
       
       const count = await storage.createAnalyticsEventsBatch(validatedEvents);
       res.json({ success: true, count });
@@ -1817,6 +1835,24 @@ export async function registerRoutes(
       }
       console.error("Error storing analytics events:", error);
       res.status(500).json({ error: "Failed to store analytics events" });
+    }
+  });
+
+  // Identify session with user (call after login)
+  app.post("/api/analytics/identify", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      const { sessionId } = req.body;
+      
+      if (!sessionId) {
+        return res.status(400).json({ error: "Session ID is required" });
+      }
+      
+      await storage.linkSessionToUser(sessionId, user.id);
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error identifying analytics session:", error);
+      res.status(500).json({ error: "Failed to identify session" });
     }
   });
 
@@ -1864,11 +1900,82 @@ export async function registerRoutes(
       
       const totalEvents = await storage.getAnalyticsEventsCount();
       const pages = await storage.getAnalyticsEventsByPage(10);
+      const activeSessions = await storage.getActiveSessions(5);
       
-      res.json({ totalEvents, topPages: pages });
+      res.json({ 
+        totalEvents, 
+        topPages: pages,
+        activeUsers: activeSessions.length,
+      });
     } catch (error) {
       console.error("Error fetching analytics stats:", error);
       res.status(500).json({ error: "Failed to fetch analytics stats" });
+    }
+  });
+
+  // Get all tracked users/sessions
+  app.get("/api/analytics/users", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const trackedUsers = await storage.getTrackedUsers();
+      res.json(trackedUsers);
+    } catch (error) {
+      console.error("Error fetching tracked users:", error);
+      res.status(500).json({ error: "Failed to fetch tracked users" });
+    }
+  });
+
+  // Get active sessions (online users)
+  app.get("/api/analytics/active", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const sinceMinutes = parseInt(req.query.minutes as string) || 5;
+      const activeSessions = await storage.getActiveSessions(sinceMinutes);
+      res.json(activeSessions);
+    } catch (error) {
+      console.error("Error fetching active sessions:", error);
+      res.status(500).json({ error: "Failed to fetch active sessions" });
+    }
+  });
+
+  // Get events by session or user
+  app.get("/api/analytics/events/session/:sessionId", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const limit = parseInt(req.query.limit as string) || 1000;
+      const events = await storage.getAnalyticsEventsBySession(req.params.sessionId, limit);
+      res.json(events);
+    } catch (error) {
+      console.error("Error fetching session events:", error);
+      res.status(500).json({ error: "Failed to fetch session events" });
+    }
+  });
+
+  app.get("/api/analytics/events/user/:userId", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+      
+      const limit = parseInt(req.query.limit as string) || 1000;
+      const events = await storage.getAnalyticsEventsByUser(req.params.userId, limit);
+      res.json(events);
+    } catch (error) {
+      console.error("Error fetching user events:", error);
+      res.status(500).json({ error: "Failed to fetch user events" });
     }
   });
 

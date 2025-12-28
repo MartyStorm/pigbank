@@ -258,10 +258,23 @@ export const wixIntegrations = pgTable("wix_integrations", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
+// Analytics sessions - track user sessions for heatmap
+export const analyticsSessions = pgTable("analytics_sessions", {
+  sessionId: varchar("session_id").primaryKey(),
+  userId: varchar("user_id").references(() => users.id, { onDelete: 'set null' }),
+  isAuthenticated: boolean("is_authenticated").notNull().default(false),
+  userAgent: text("user_agent"),
+  lastPageUrl: text("last_page_url"),
+  firstSeen: timestamp("first_seen").notNull().defaultNow(),
+  lastSeen: timestamp("last_seen").notNull().defaultNow(),
+});
+
 // Analytics events - heatmap click/tap tracking
 export const analyticsEvents = pgTable("analytics_events", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   sessionId: varchar("session_id").notNull(),
+  userId: varchar("user_id").references(() => users.id, { onDelete: 'set null' }),
+  isAuthenticated: boolean("is_authenticated").notNull().default(false),
   pageUrl: text("page_url").notNull(),
   pageTitle: text("page_title"),
   eventType: text("event_type").notNull().default('click'),
@@ -398,6 +411,11 @@ export const insertAnalyticsEventSchema = createInsertSchema(analyticsEvents).om
   createdAt: true,
 });
 
+export const insertAnalyticsSessionSchema = createInsertSchema(analyticsSessions).omit({
+  firstSeen: true,
+  lastSeen: true,
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -447,3 +465,6 @@ export type InsertCheckoutSettings = z.infer<typeof insertCheckoutSettingsSchema
 
 export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
 export type InsertAnalyticsEvent = z.infer<typeof insertAnalyticsEventSchema>;
+
+export type AnalyticsSession = typeof analyticsSessions.$inferSelect;
+export type InsertAnalyticsSession = z.infer<typeof insertAnalyticsSessionSchema>;

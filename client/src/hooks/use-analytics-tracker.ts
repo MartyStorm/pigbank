@@ -1,7 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 
 interface AnalyticsEvent {
-  sessionId: string;
   pageUrl: string;
   pageTitle: string | null;
   eventType: string;
@@ -13,16 +12,35 @@ interface AnalyticsEvent {
   elementId: string | null;
   elementClass: string | null;
   elementText: string | null;
-  userAgent: string | null;
 }
 
+const SESSION_KEY = 'pigbank_analytics_session_id';
+
 const getSessionId = (): string => {
-  let sessionId = sessionStorage.getItem('pigbank_session_id');
+  let sessionId = sessionStorage.getItem(SESSION_KEY);
   if (!sessionId) {
     sessionId = crypto.randomUUID();
-    sessionStorage.setItem('pigbank_session_id', sessionId);
+    sessionStorage.setItem(SESSION_KEY, sessionId);
   }
   return sessionId;
+};
+
+export const getAnalyticsSessionId = (): string => {
+  return getSessionId();
+};
+
+export const identifyAnalyticsSession = async (): Promise<void> => {
+  const sessionId = getSessionId();
+  try {
+    await fetch('/api/analytics/identify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ sessionId }),
+    });
+  } catch (error) {
+    console.error('Failed to identify analytics session:', error);
+  }
 };
 
 export function useAnalyticsTracker() {
@@ -40,7 +58,11 @@ export function useAnalyticsTracker() {
       await fetch('/api/analytics/events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ events: eventsToSend }),
+        body: JSON.stringify({ 
+          events: eventsToSend,
+          sessionId: sessionId.current,
+          userAgent: navigator.userAgent,
+        }),
       });
     } catch (error) {
       console.error('Failed to send analytics events:', error);
@@ -68,7 +90,6 @@ export function useAnalyticsTracker() {
     }
 
     const event: AnalyticsEvent = {
-      sessionId: sessionId.current,
       pageUrl: window.location.pathname,
       pageTitle: document.title,
       eventType,
@@ -80,7 +101,6 @@ export function useAnalyticsTracker() {
       elementId: target.id || null,
       elementClass: target.className?.toString()?.slice(0, 200) || null,
       elementText: target.textContent?.slice(0, 100) || null,
-      userAgent: navigator.userAgent,
     };
 
     eventsBuffer.current.push(event);
@@ -101,7 +121,11 @@ export function useAnalyticsTracker() {
 
     const handleBeforeUnload = () => {
       if (eventsBuffer.current.length > 0) {
-        const data = JSON.stringify({ events: eventsBuffer.current });
+        const data = JSON.stringify({ 
+          events: eventsBuffer.current,
+          sessionId: sessionId.current,
+          userAgent: navigator.userAgent,
+        });
         navigator.sendBeacon('/api/analytics/events', new Blob([data], { type: 'application/json' }));
       }
     };
