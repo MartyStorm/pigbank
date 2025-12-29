@@ -461,18 +461,20 @@ export default function Landing() {
             background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
           }}
         >
-                    
-          <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-12 md:pt-16 pb-12 md:pb-16">
-            <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
-              <div className="flex flex-col items-center text-center gap-6">
-                <div className="space-y-4 max-w-3xl">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+          <div className="min-h-[650px] md:min-h-[700px] flex items-center py-12 md:py-16">
+            <div 
+              className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto relative z-10"
+              style={{ containerType: 'inline-size' }}
+            >
+              <div className="hero-grid">
+                <div className="hero-text">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
                     The last payment processor you'll ever need
                   </h1>
-                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                  <p className="text-lg md:text-xl text-white/90 mb-6">
                     Fast approvals, secure data, real customer support, & custom built to fit your business.
                   </p>
-                  <div className="flex gap-4 justify-center pt-2">
+                  <div className="hero-cta">
                     <Button 
                       asChild 
                       size="lg" 
@@ -484,9 +486,9 @@ export default function Landing() {
                   </div>
                 </div>
                 
-                <div className="relative flex items-center justify-center mt-4">
+                <div className="hero-image">
                   <div 
-                    className="relative"
+                    className="relative max-w-[680px] mx-auto"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                   >
                     <div 
@@ -499,12 +501,12 @@ export default function Landing() {
                     <img 
                       src="/macbook-dashboard-new.png" 
                       alt="PigBank Dashboard on MacBook" 
-                      className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
+                      className="w-full max-w-[620px] h-auto mx-auto"
                     />
                     <img 
                       src="/iphone-payouts.png" 
                       alt="PigBank Payouts on iPhone" 
-                      className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
+                      className="absolute w-[15%] max-w-[100px] h-auto z-20 bottom-0 right-0"
                     />
                   </div>
                 </div>
@@ -1322,6 +1324,63 @@ export default function Landing() {
         </div>
       </footer>
       <style>{`
+        /* Hero Container Query Styles */
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          align-items: center;
+        }
+        
+        .hero-text {
+          text-align: center;
+          max-width: 48rem;
+          margin: 0 auto;
+        }
+        
+        .hero-text p {
+          max-width: 40rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        .hero-cta {
+          display: flex;
+          justify-content: center;
+        }
+        
+        .hero-image {
+          display: flex;
+          justify-content: center;
+        }
+        
+        @container (min-width: 980px) {
+          .hero-grid {
+            grid-template-columns: 55fr 45fr;
+            gap: 3rem;
+          }
+          
+          .hero-text {
+            text-align: left;
+            max-width: none;
+            margin: 0;
+          }
+          
+          .hero-text p {
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0;
+          }
+          
+          .hero-cta {
+            justify-content: flex-start;
+          }
+          
+          .hero-image {
+            justify-content: flex-end;
+          }
+        }
+        
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }
