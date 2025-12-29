@@ -460,18 +460,35 @@ export default function Landing() {
             background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
           }}
         >
-                    
-          <div className="flex min-h-[650px] md:min-h-[730px] lg:min-h-[700px] items-center pt-12 md:pt-16 pb-12 md:pb-16">
+          <div className="flex min-h-[100vh] md:min-h-[100vh] lg:min-h-[100vh] flex-col justify-center pt-12 md:pt-16 pb-12 md:pb-16">
             <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4 max-w-3xl">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                  <h1 
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white transition-all duration-700 ease-out"
+                    style={{ 
+                      transform: `translateY(${Math.max(0, 120 - scrollY * 0.4)}px)`,
+                      opacity: 1
+                    }}
+                  >
                     The last payment processor you'll ever need
                   </h1>
-                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                  <p 
+                    className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto transition-all duration-700 ease-out"
+                    style={{ 
+                      opacity: Math.min(1, Math.max(0, (scrollY - 80) / 120)),
+                      transform: `translateY(${Math.max(0, 40 - scrollY * 0.3)}px)`
+                    }}
+                  >
                     Fast approvals, secure data, real customer support, & custom built to fit your business.
                   </p>
-                  <div className="flex gap-4 justify-center pt-2">
+                  <div 
+                    className="flex gap-4 justify-center pt-2 transition-all duration-700 ease-out"
+                    style={{ 
+                      opacity: Math.min(1, Math.max(0, (scrollY - 120) / 120)),
+                      transform: `translateY(${Math.max(0, 30 - scrollY * 0.25)}px)`
+                    }}
+                  >
                     <Button 
                       asChild 
                       size="lg" 
@@ -483,7 +500,13 @@ export default function Landing() {
                   </div>
                 </div>
                 
-                <div className="relative flex items-center justify-center mt-4">
+                <div 
+                  className="relative flex items-center justify-center mt-4 transition-all duration-700 ease-out"
+                  style={{ 
+                    opacity: Math.min(1, Math.max(0, (scrollY - 160) / 150)),
+                    transform: `translateY(${Math.max(0, 60 - scrollY * 0.25)}px)`
+                  }}
+                >
                   <div 
                     className="relative"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
