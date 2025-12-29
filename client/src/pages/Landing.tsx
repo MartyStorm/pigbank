@@ -470,10 +470,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-gray-800">
+                  <h1 className="hero-title font-bold tracking-tight text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
                     Business Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-gray-700 font-medium">
+                  <p className="text-xl md:text-2xl text-white font-medium" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.25)' }}>
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
