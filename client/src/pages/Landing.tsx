@@ -470,17 +470,17 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-white">
+                  <h1 className="hero-title font-bold tracking-tight text-[#1a4320]">
                     Business Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/95 font-medium">
+                  <p className="text-xl md:text-2xl text-[#1a4320]/90 font-medium">
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
                     <Button 
                       asChild 
                       size="lg" 
-                      className="bg-white hover:bg-gray-100 text-[#1a4320] rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                      className="bg-[#1a4320] hover:bg-[#0f2912] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
                       data-testid="button-get-started-hero"
                     >
                       <a href="/register">Get started</a>
