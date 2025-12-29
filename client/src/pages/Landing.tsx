@@ -468,7 +468,7 @@ export default function Landing() {
             >
               <div className="hero-grid">
                 <div className="hero-text">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2 whitespace-nowrap">
                     Business Payment Processing
                   </h1>
                   <p className="text-xl md:text-2xl text-white/95 font-medium mb-6">
