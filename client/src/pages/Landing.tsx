@@ -469,11 +469,11 @@ export default function Landing() {
               style={{ containerType: 'inline-size' }}
             >
               <div className="flex flex-col items-center text-center gap-6">
-                <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-white" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3)' }}>
+                <div className="space-y-4 bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 md:px-12 md:py-8">
+                  <h1 className="hero-title font-bold tracking-tight text-white">
                     Business Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-white font-semibold" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3)' }}>
+                  <p className="text-xl md:text-2xl text-white/90 font-medium">
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
