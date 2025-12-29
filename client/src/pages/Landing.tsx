@@ -470,22 +470,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 
-                    className="hero-title font-bold tracking-tight text-white"
-                    style={{ 
-                      WebkitTextStroke: '1px rgba(26,67,32,0.7)',
-                      paintOrder: 'stroke fill'
-                    }}
-                  >
+                  <h1 className="hero-title font-bold tracking-tight text-[#2f8a2b]">
                     Business Payment Processing
                   </h1>
-                  <p 
-                    className="text-xl md:text-2xl text-white font-semibold"
-                    style={{ 
-                      WebkitTextStroke: '0.5px rgba(26,67,32,0.6)',
-                      paintOrder: 'stroke fill'
-                    }}
-                  >
+                  <p className="text-xl md:text-2xl text-[#2f8a2b] font-semibold">
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
