@@ -1326,8 +1326,9 @@ export default function Landing() {
       <style>{`
         /* Hero Container Query Styles */
         .hero-title {
-          font-size: clamp(2rem, 6cqi, 3.75rem);
-          line-height: 1.1;
+          font-size: clamp(1.75rem, 5cqi, 3.5rem);
+          line-height: 1.05;
+          letter-spacing: -0.015em;
         }
         
         .hero-grid {
@@ -1339,7 +1340,7 @@ export default function Landing() {
         
         .hero-text {
           text-align: center;
-          max-width: 48rem;
+          max-width: 100%;
           margin: 0 auto;
         }
         
@@ -1359,9 +1360,9 @@ export default function Landing() {
           justify-content: center;
         }
         
-        @container (min-width: 1150px) {
+        @container (min-width: 980px) {
           .hero-grid {
-            grid-template-columns: 55fr 45fr;
+            grid-template-columns: 60fr 40fr;
             gap: 3rem;
           }
           
