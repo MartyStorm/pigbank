@@ -317,10 +317,96 @@ export default function Landing() {
   const lastScrollY = useRef(0);
   const { setTheme } = useTheme();
   
+  const [animationProgress, setAnimationProgress] = useState(0);
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+  
   // Force light theme on landing page
   useEffect(() => {
     setTheme("light");
   }, [setTheme]);
+
+  // Scroll-lock: prevent page scrolling during animation
+  useEffect(() => {
+    if (!animationComplete) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [animationComplete]);
+
+  // Scroll-lock animation handler
+  useEffect(() => {
+    if (animationComplete) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        setAnimationProgress(prev => {
+          const newProgress = Math.min(1, prev + e.deltaY * 0.003);
+          if (newProgress >= 1) {
+            setAnimationComplete(true);
+          }
+          return newProgress;
+        });
+      } else if (e.deltaY < 0 && animationProgress > 0) {
+        setAnimationProgress(prev => Math.max(0, prev + e.deltaY * 0.003));
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const scrollKeys = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Space', ' '];
+      if (scrollKeys.includes(e.key)) {
+        e.preventDefault();
+        const delta = ['ArrowDown', 'PageDown', 'Space', ' '].includes(e.key) ? 50 : -50;
+        setAnimationProgress(prev => {
+          const newProgress = Math.min(1, Math.max(0, prev + delta * 0.003));
+          if (newProgress >= 1) {
+            setAnimationComplete(true);
+          }
+          return newProgress;
+        });
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      (window as any).lastTouchY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      const lastTouchY = (window as any).lastTouchY || e.touches[0].clientY;
+      const deltaY = lastTouchY - e.touches[0].clientY;
+      (window as any).lastTouchY = e.touches[0].clientY;
+      
+      if (deltaY > 0) {
+        setAnimationProgress(prev => {
+          const newProgress = Math.min(1, prev + deltaY * 0.005);
+          if (newProgress >= 1) {
+            setAnimationComplete(true);
+          }
+          return newProgress;
+        });
+      } else if (deltaY < 0 && animationProgress > 0) {
+        setAnimationProgress(prev => Math.max(0, prev + deltaY * 0.005));
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [animationComplete, animationProgress]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -455,38 +541,32 @@ export default function Landing() {
       </header>
       <main>
         <section 
+          ref={heroRef}
           className="overflow-hidden relative"
           style={{
             background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
           }}
         >
-          <div className="flex min-h-[100vh] md:min-h-[100vh] lg:min-h-[100vh] flex-col justify-center pt-12 md:pt-16 pb-12 md:pb-16">
+          <div className="flex min-h-[100vh] flex-col justify-center items-center">
             <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
               <div className="flex flex-col items-center text-center gap-6">
-                <div className="space-y-4 max-w-3xl">
-                  <h1 
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white transition-all duration-700 ease-out"
-                    style={{ 
-                      transform: `translateY(${Math.max(0, 120 - scrollY * 0.4)}px)`,
-                      opacity: 1
-                    }}
-                  >
+                <div 
+                  className="space-y-4 max-w-3xl transition-transform duration-300 ease-out"
+                  style={{ 
+                    transform: `translateY(${-animationProgress * 80}px)`
+                  }}
+                >
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                     The last payment processor you'll ever need
                   </h1>
-                  <p 
-                    className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto transition-all duration-700 ease-out"
-                    style={{ 
-                      opacity: Math.min(1, Math.max(0, (scrollY - 80) / 120)),
-                      transform: `translateY(${Math.max(0, 40 - scrollY * 0.3)}px)`
-                    }}
-                  >
+                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
                     Fast approvals, secure data, real customer support, & custom built to fit your business.
                   </p>
                   <div 
-                    className="flex gap-4 justify-center pt-2 transition-all duration-700 ease-out"
+                    className="flex gap-4 justify-center pt-2 transition-all duration-300 ease-out"
                     style={{ 
-                      opacity: Math.min(1, Math.max(0, (scrollY - 120) / 120)),
-                      transform: `translateY(${Math.max(0, 30 - scrollY * 0.25)}px)`
+                      opacity: Math.min(1, Math.max(0, (animationProgress - 0.3) / 0.3)),
+                      transform: `translateY(${Math.max(0, 20 * (1 - Math.min(1, (animationProgress - 0.3) / 0.3)))}px)`
                     }}
                   >
                     <Button 
@@ -501,16 +581,13 @@ export default function Landing() {
                 </div>
                 
                 <div 
-                  className="relative flex items-center justify-center mt-4 transition-all duration-700 ease-out"
+                  className="relative flex items-center justify-center mt-4 transition-all duration-300 ease-out"
                   style={{ 
-                    opacity: Math.min(1, Math.max(0, (scrollY - 160) / 150)),
-                    transform: `translateY(${Math.max(0, 60 - scrollY * 0.25)}px)`
+                    opacity: Math.min(1, Math.max(0, (animationProgress - 0.5) / 0.4)),
+                    transform: `translateY(${Math.max(0, 60 * (1 - Math.min(1, (animationProgress - 0.5) / 0.4)))}px)`
                   }}
                 >
-                  <div 
-                    className="relative"
-                    style={{ transform: `translateY(${scrollY * 0.015}px)` }}
-                  >
+                  <div className="relative">
                     <div 
                       className="absolute bottom-[-8px] left-[-10%] right-[-10%] h-[30px] rounded-[50%]"
                       style={{ 
