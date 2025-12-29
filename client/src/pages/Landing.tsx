@@ -473,7 +473,7 @@ export default function Landing() {
                   <h1 className="hero-title font-bold tracking-tight text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
                     Business Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-white font-medium" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.25)' }}>
+                  <p className="text-xl md:text-2xl text-white font-semibold" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3)' }}>
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
