@@ -463,13 +463,19 @@ export default function Landing() {
             backgroundPosition: 'center bottom'
           }}
         >
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 35%, transparent 60%)'
+            }}
+          />
           <div className="min-h-[650px] md:min-h-[700px] flex items-center py-12 md:py-16">
             <div 
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto relative z-10"
               style={{ containerType: 'inline-size' }}
             >
               <div className="flex flex-col items-center text-center gap-6">
-                <div className="space-y-4 bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 md:px-12 md:py-8">
+                <div className="space-y-4">
                   <h1 className="hero-title font-bold tracking-tight text-white">
                     Business Payment Processing
                   </h1>
