@@ -465,30 +465,13 @@ export default function Landing() {
             <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4 max-w-3xl">
-                  <h1 
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white transition-transform duration-300 ease-out"
-                    style={{ 
-                      transform: `translateY(${Math.max(0, 60 - scrollY * 0.5)}px)` 
-                    }}
-                  >
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                     The last payment processor you'll ever need
                   </h1>
-                  <p 
-                    className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto transition-all duration-300 ease-out"
-                    style={{ 
-                      opacity: Math.min(1, Math.max(0, (scrollY - 40) / 80)),
-                      transform: `translateY(${Math.max(0, 30 - scrollY * 0.3)}px)`
-                    }}
-                  >
+                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
                     Fast approvals, secure data, real customer support, & custom built to fit your business.
                   </p>
-                  <div 
-                    className="flex gap-4 justify-center pt-2 transition-all duration-300 ease-out"
-                    style={{ 
-                      opacity: Math.min(1, Math.max(0, (scrollY - 60) / 80)),
-                      transform: `translateY(${Math.max(0, 25 - scrollY * 0.25)}px)`
-                    }}
-                  >
+                  <div className="flex gap-4 justify-center pt-2">
                     <Button 
                       asChild 
                       size="lg" 
@@ -500,13 +483,7 @@ export default function Landing() {
                   </div>
                 </div>
                 
-                <div 
-                  className="relative flex items-center justify-center mt-4 transition-all duration-300 ease-out"
-                  style={{ 
-                    opacity: Math.min(1, Math.max(0, (scrollY - 80) / 100)),
-                    transform: `translateY(${Math.max(0, 40 - scrollY * 0.35)}px)`
-                  }}
-                >
+                <div className="relative flex items-center justify-center mt-4">
                   <div 
                     className="relative"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
