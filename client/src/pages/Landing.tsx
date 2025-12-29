@@ -470,7 +470,7 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+                  <h1 className="hero-title font-bold tracking-tight text-white" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3)' }}>
                     Business Payment Processing
                   </h1>
                   <p className="text-xl md:text-2xl text-white font-semibold" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3)' }}>
