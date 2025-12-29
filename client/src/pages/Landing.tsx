@@ -466,15 +466,15 @@ export default function Landing() {
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto relative z-10"
               style={{ containerType: 'inline-size' }}
             >
-              <div className="hero-grid">
-                <div className="hero-text">
-                  <h1 className="hero-title font-bold tracking-tight text-white mb-2">
+              <div className="flex flex-col items-center text-center gap-6">
+                <div className="space-y-4">
+                  <h1 className="hero-title font-bold tracking-tight text-white">
                     Business Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/95 font-medium mb-6">
+                  <p className="text-xl md:text-2xl text-white/95 font-medium">
                     The last payment processor you'll ever need
                   </p>
-                  <div className="hero-cta">
+                  <div className="flex gap-4 justify-center pt-2">
                     <Button 
                       asChild 
                       size="lg" 
@@ -486,9 +486,9 @@ export default function Landing() {
                   </div>
                 </div>
                 
-                <div className="hero-image">
+                <div className="relative flex items-center justify-center mt-4">
                   <div 
-                    className="relative max-w-[680px] mx-auto"
+                    className="relative"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                   >
                     <div 
@@ -501,12 +501,12 @@ export default function Landing() {
                     <img 
                       src="/macbook-dashboard-new.png" 
                       alt="PigBank Dashboard on MacBook" 
-                      className="w-full max-w-[620px] h-auto mx-auto"
+                      className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
                     />
                     <img 
                       src="/iphone-payouts.png" 
                       alt="PigBank Payouts on iPhone" 
-                      className="absolute w-[15%] max-w-[100px] h-auto z-20 bottom-0 right-0"
+                      className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                     />
                   </div>
                 </div>
@@ -1324,66 +1324,16 @@ export default function Landing() {
         </div>
       </footer>
       <style>{`
-        /* Hero Container Query Styles */
+        /* Hero Styles */
         .hero-title {
-          font-size: clamp(1.75rem, 5cqi, 3.5rem);
-          line-height: 1.05;
-          letter-spacing: -0.015em;
+          font-size: clamp(1.75rem, 5vw, 3.5rem);
+          line-height: 1.1;
+          letter-spacing: -0.02em;
         }
         
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          align-items: center;
-        }
-        
-        .hero-text {
-          text-align: center;
-          max-width: 100%;
-          margin: 0 auto;
-        }
-        
-        .hero-text p {
-          max-width: 40rem;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        
-        .hero-cta {
-          display: flex;
-          justify-content: center;
-        }
-        
-        .hero-image {
-          display: flex;
-          justify-content: center;
-        }
-        
-        @container (min-width: 980px) {
-          .hero-grid {
-            grid-template-columns: 60fr 40fr;
-            gap: 3rem;
-          }
-          
-          .hero-text {
-            text-align: left;
-            max-width: none;
-            margin: 0;
-          }
-          
-          .hero-text p {
-            max-width: none;
-            margin-left: 0;
-            margin-right: 0;
-          }
-          
-          .hero-cta {
-            justify-content: flex-start;
-          }
-          
-          .hero-image {
-            justify-content: flex-end;
+        @media (min-width: 640px) {
+          .hero-title {
+            white-space: nowrap;
           }
         }
         
