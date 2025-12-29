@@ -1,0 +1,55 @@
+Build a React component for my landing page section called “Payment Methods” with 5 cards: Credit Cards, ACH Transfers, Cryptocurrency, eChecks, Click to Pay.
+
+Goal:
+- Make the section communicate instantly with minimal reading.
+- Each card is a “flip card”: the FRONT shows a big bold icon + short title. The BACK shows the detailed text (the same text I already have under each card today).
+- DO NOT rely on hover-only. I want an automatic, one-time reveal so users don’t have to guess.
+
+Interaction requirements:
+1) Auto-flip ONCE when the section first enters the viewport (use IntersectionObserver).  
+   - Flip each card sequentially with a stagger (e.g., 120ms between cards).
+   - Keep cards flipped for ~1.2–1.8 seconds (pick something reasonable), then flip back.
+   - This auto-flip should happen only one time per page load.
+
+2) After the one-time auto-flip:
+   - Desktop: hover flips to back; hover out flips to front.
+   - Mobile/touch: tap toggles flip; tapping again flips back.
+   - Keyboard accessibility: cards should be focusable; Enter/Space toggles flip.
+
+Design requirements:
+- Use a dark green background (#1A4320).
+- Use accent green (#51AB37) where appropriate (icons, subtle accents).
+- Cards should be white with rounded corners and soft shadow.
+- Each icon should be large and bold (no thin strokes). Use inline SVG icons or a simple icon library (your choice), but keep them consistent and modern fintech style.
+- Reduce reading: the section headline and subheadline should be short and high-impact.
+
+Copy requirements:
+Section headline: “Accept payments your way”
+Section subheadline (short): “Support cards, bank payments, crypto, checks, and payment links.”
+
+Card content (exact):
+- Credit Cards (back text): “Visa, Mastercard, Amex, Discover”
+- ACH Transfers (back text): “Direct bank payments”
+- Cryptocurrency (back text): “Bitcoin, Ethereum & more”
+- eChecks (back text): “Digital check processing”
+- Click to Pay (back text): “Send payment links via text or email”
+
+Implementation requirements:
+- Use CSS 3D transforms for the flip (perspective + rotateY).
+- Keep the animation “bank-grade”: 300–400ms ease-out, no bouncy spring.
+- Respect prefers-reduced-motion:
+  - If reduced motion is enabled, do NOT do a 3D flip. Instead, crossfade front/back.
+  - Also skip the auto-flip sequence when reduced motion is enabled.
+
+Deliverables:
+- Provide a single React component file (e.g., PaymentMethodsSection.jsx) plus any CSS (CSS module or styled components is fine).
+- Include the full code in the answer.
+- The code must run in a standard React app without special setup.
+- Make it responsive:
+  - Desktop: 5 cards in a row if space allows; otherwise wrap nicely.
+  - Mobile: 1–2 columns with comfortable spacing.
+- Add small polish: on hover, slightly lift the card (translateY) and increase shadow.
+
+Notes:
+- I will paste your code into Replit. Please don’t add unrelated dependencies.
+- Keep it clean and production-ready.
