@@ -97,25 +97,25 @@ function FlipCard({
         data-testid={`flip-card-${card.id}`}
       >
         <div
-          className={`absolute inset-0 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
-            isFlipped ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-[#1a4320]" />
-          </div>
-          <h4 className="font-semibold text-gray-900 text-center">{title}</h4>
-        </div>
-        <div
           className={`absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
-            isFlipped ? "opacity-100" : "opacity-0"
+            isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
           <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-4">
             <Icon className="h-8 w-8 text-white" />
           </div>
-          <h4 className="font-semibold text-white text-center mb-2">{title}</h4>
-          <p className="text-white/90 text-sm text-center">{backText}</p>
+          <h4 className="font-semibold text-white text-center">{title}</h4>
+        </div>
+        <div
+          className={`absolute inset-0 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
+            isFlipped ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
+            <Icon className="h-8 w-8 text-[#1a4320]" />
+          </div>
+          <h4 className="font-semibold text-gray-900 text-center mb-2">{title}</h4>
+          <p className="text-gray-600 text-sm text-center">{backText}</p>
         </div>
       </div>
     );
@@ -142,26 +142,26 @@ function FlipCard({
         }}
       >
         <div
-          className="absolute inset-0 bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-[#1a4320]" />
+          <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+            <Icon className="h-8 w-8 text-white" />
           </div>
-          <h4 className="font-semibold text-gray-900 text-center">{title}</h4>
+          <h4 className="font-semibold text-white text-center">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
-          <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-white" />
+          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
+            <Icon className="h-8 w-8 text-[#1a4320]" />
           </div>
-          <h4 className="font-semibold text-white text-center mb-2">{title}</h4>
-          <p className="text-white/90 text-sm text-center">{backText}</p>
+          <h4 className="font-semibold text-gray-900 text-center mb-2">{title}</h4>
+          <p className="text-gray-600 text-sm text-center">{backText}</p>
         </div>
       </div>
     </div>
