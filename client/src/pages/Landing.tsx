@@ -553,7 +553,7 @@ export default function Landing() {
                 <div 
                   className="space-y-4 max-w-3xl transition-transform duration-300 ease-out"
                   style={{ 
-                    transform: `translateY(${-animationProgress * 80}px)`
+                    transform: `translateY(${80 - animationProgress * 160}px)`
                   }}
                 >
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
