@@ -1,36 +1,94 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { CreditCard, Building2, Coins, FileCheck, Link } from "lucide-react";
+
+const CreditCardIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="12" width="56" height="40" rx="4" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <rect x="4" y="20" width="56" height="10" fill="currentColor" opacity="0.3"/>
+    <rect x="10" y="36" width="20" height="4" rx="1" fill="currentColor"/>
+    <rect x="10" y="44" width="12" height="3" rx="1" fill="currentColor" opacity="0.5"/>
+    <circle cx="46" cy="40" r="6" fill="currentColor" opacity="0.7"/>
+    <circle cx="52" cy="40" r="6" fill="currentColor" opacity="0.5"/>
+  </svg>
+);
+
+const ACHIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M32 6L4 22V26H60V22L32 6Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <rect x="8" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
+    <rect x="18" y="26" width="6" height="24" fill="currentColor" opacity="0.5"/>
+    <rect x="29" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
+    <rect x="40" y="26" width="6" height="24" fill="currentColor" opacity="0.5"/>
+    <rect x="50" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
+    <rect x="4" y="50" width="56" height="8" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <circle cx="32" cy="16" r="4" fill="currentColor"/>
+  </svg>
+);
+
+const CryptoIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <path d="M32 14V18M32 46V50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+    <path d="M24 22H38C41 22 44 24 44 28C44 32 41 34 38 34H24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <path d="M24 34H40C43 34 46 36 46 40C46 44 43 46 40 46H24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <path d="M24 18V50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+    <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1" opacity="0.3" fill="none"/>
+  </svg>
+);
+
+const ECheckIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="14" width="50" height="36" rx="3" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <path d="M4 26H54" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
+    <rect x="10" y="32" width="24" height="3" rx="1" fill="currentColor" opacity="0.5"/>
+    <rect x="10" y="38" width="16" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+    <path d="M40 44L46 50L58 38" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="50" cy="44" r="12" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
+  </svg>
+);
+
+const ClickToPayIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="18" y="4" width="28" height="50" rx="4" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <rect x="22" y="10" width="20" height="32" rx="2" fill="currentColor" opacity="0.15"/>
+    <circle cx="32" cy="48" r="3" fill="currentColor"/>
+    <path d="M32 24L32 32M32 32L28 28M32 32L36 28" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 40C8 40 12 36 16 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <path d="M4 44C4 44 10 38 18 44" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
+    <path d="M48 40C48 40 52 36 56 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <path d="M46 44C46 44 52 38 60 44" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
+  </svg>
+);
 
 const cards = [
   {
     id: "credit-cards",
     title: "Credit Cards",
     backText: "Visa, Mastercard, Amex, Discover",
-    Icon: CreditCard,
+    Icon: CreditCardIcon,
   },
   {
     id: "ach",
     title: "ACH Transfers",
     backText: "Direct bank payments",
-    Icon: Building2,
+    Icon: ACHIcon,
   },
   {
     id: "crypto",
     title: "Cryptocurrency",
     backText: "Bitcoin, Ethereum & more",
-    Icon: Coins,
+    Icon: CryptoIcon,
   },
   {
     id: "echecks",
     title: "eChecks",
     backText: "Digital check processing",
-    Icon: FileCheck,
+    Icon: ECheckIcon,
   },
   {
     id: "click-to-pay",
     title: "Click to Pay",
     backText: "Send payment links via text or email",
-    Icon: Link,
+    Icon: ClickToPayIcon,
   },
 ];
 
@@ -97,25 +155,21 @@ function FlipCard({
         data-testid={`flip-card-${card.id}`}
       >
         <div
-          className={`absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
-          <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-white" />
-          </div>
-          <h4 className="font-semibold text-white text-center">{title}</h4>
+          <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
+          <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className={`absolute inset-0 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-[#1a4320]" />
-          </div>
-          <h4 className="font-semibold text-gray-900 text-center mb-2">{title}</h4>
-          <p className="text-gray-600 text-sm text-center">{backText}</p>
+          <Icon className="w-12 h-12 md:w-14 md:h-14 text-[#1a4320] mb-2" />
+          <h4 className="font-semibold text-gray-900 text-center text-sm mb-1">{title}</h4>
+          <p className="text-gray-600 text-xs text-center">{backText}</p>
         </div>
       </div>
     );
@@ -142,26 +196,22 @@ function FlipCard({
         }}
       >
         <div
-          className="absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-white" />
-          </div>
-          <h4 className="font-semibold text-white text-center">{title}</h4>
+          <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
+          <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-white rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
-          <div className="w-16 h-16 rounded-xl bg-[#1a4320]/10 flex items-center justify-center mb-4">
-            <Icon className="h-8 w-8 text-[#1a4320]" />
-          </div>
-          <h4 className="font-semibold text-gray-900 text-center mb-2">{title}</h4>
-          <p className="text-gray-600 text-sm text-center">{backText}</p>
+          <Icon className="w-12 h-12 md:w-14 md:h-14 text-[#1a4320] mb-2" />
+          <h4 className="font-semibold text-gray-900 text-center text-sm mb-1">{title}</h4>
+          <p className="text-gray-600 text-xs text-center">{backText}</p>
         </div>
       </div>
     </div>
