@@ -465,13 +465,30 @@ export default function Landing() {
             <div className="container px-6 md:px-12 max-w-6xl mx-auto relative z-10">
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4 max-w-3xl">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                  <h1 
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white transition-transform duration-300 ease-out"
+                    style={{ 
+                      transform: `translateY(${Math.max(0, 60 - scrollY * 0.5)}px)` 
+                    }}
+                  >
                     The last payment processor you'll ever need
                   </h1>
-                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                  <p 
+                    className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto transition-all duration-300 ease-out"
+                    style={{ 
+                      opacity: Math.min(1, Math.max(0, (scrollY - 40) / 80)),
+                      transform: `translateY(${Math.max(0, 30 - scrollY * 0.3)}px)`
+                    }}
+                  >
                     Fast approvals, secure data, real customer support, & custom built to fit your business.
                   </p>
-                  <div className="flex gap-4 justify-center pt-2">
+                  <div 
+                    className="flex gap-4 justify-center pt-2 transition-all duration-300 ease-out"
+                    style={{ 
+                      opacity: Math.min(1, Math.max(0, (scrollY - 60) / 80)),
+                      transform: `translateY(${Math.max(0, 25 - scrollY * 0.25)}px)`
+                    }}
+                  >
                     <Button 
                       asChild 
                       size="lg" 
@@ -483,7 +500,13 @@ export default function Landing() {
                   </div>
                 </div>
                 
-                <div className="relative flex items-center justify-center mt-4">
+                <div 
+                  className="relative flex items-center justify-center mt-4 transition-all duration-300 ease-out"
+                  style={{ 
+                    opacity: Math.min(1, Math.max(0, (scrollY - 80) / 100)),
+                    transform: `translateY(${Math.max(0, 40 - scrollY * 0.35)}px)`
+                  }}
+                >
                   <div 
                     className="relative"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
@@ -742,7 +765,7 @@ export default function Landing() {
                     High risk industries
                   </h3>
                   
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {[
                       "CBD & Hemp",
                       "Adult products",
@@ -761,12 +784,10 @@ export default function Landing() {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                <div className="absolute bottom-8 left-8 right-8">
-                  <span className="text-white/60 text-sm italic">
+                  
+                  <p className="text-white/60 text-sm italic group-hover:opacity-0 transition-opacity duration-300">
                     Just because a bank deems your business risky, doesn't mean you can't prosper.
-                  </span>
+                  </p>
                 </div>
               </div>
 
@@ -844,7 +865,7 @@ export default function Landing() {
                     ))}
                   </div>
                   
-                  <p className="text-white/80 text-sm max-w-xs">
+                  <p className="text-white/80 text-sm max-w-xs group-hover:opacity-0 transition-opacity duration-300">
                     Your business will be supported by a dedicated team of merchant service specialists.
                   </p>
                 </div>
