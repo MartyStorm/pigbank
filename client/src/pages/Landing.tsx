@@ -458,7 +458,9 @@ export default function Landing() {
         <section 
           className="overflow-hidden relative"
           style={{
-            background: 'radial-gradient(ellipse at center, #9ee068 0%, #73cb43 40%, #5ab032 70%, #4a9a2a 100%)'
+            backgroundImage: 'url(/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_19_21_PM_1767050375367.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom'
           }}
         >
           <div className="min-h-[650px] md:min-h-[700px] flex items-center py-12 md:py-16">
