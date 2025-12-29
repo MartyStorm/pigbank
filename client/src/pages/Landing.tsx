@@ -1354,7 +1354,7 @@ export default function Landing() {
           justify-content: center;
         }
         
-        @container (min-width: 980px) {
+        @container (min-width: 1150px) {
           .hero-grid {
             grid-template-columns: 55fr 45fr;
             gap: 3rem;
