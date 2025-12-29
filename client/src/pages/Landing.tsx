@@ -468,7 +468,7 @@ export default function Landing() {
             >
               <div className="hero-grid">
                 <div className="hero-text">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2 whitespace-nowrap">
+                  <h1 className="hero-title font-bold tracking-tight text-white mb-2">
                     Business Payment Processing
                   </h1>
                   <p className="text-xl md:text-2xl text-white/95 font-medium mb-6">
@@ -1325,6 +1325,11 @@ export default function Landing() {
       </footer>
       <style>{`
         /* Hero Container Query Styles */
+        .hero-title {
+          font-size: clamp(2rem, 6cqi, 3.75rem);
+          line-height: 1.1;
+        }
+        
         .hero-grid {
           display: grid;
           grid-template-columns: 1fr;
