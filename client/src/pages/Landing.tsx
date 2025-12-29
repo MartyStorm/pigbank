@@ -468,11 +468,11 @@ export default function Landing() {
             >
               <div className="hero-grid">
                 <div className="hero-text">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
-                    The last payment processor you'll ever need
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-2">
+                    Business Payment Processing
                   </h1>
-                  <p className="text-lg md:text-xl text-white/90 mb-6">
-                    Fast approvals, secure data, real customer support, & custom built to fit your business.
+                  <p className="text-xl md:text-2xl text-white/95 font-medium mb-6">
+                    The last payment processor you'll ever need
                   </p>
                   <div className="hero-cta">
                     <Button 
