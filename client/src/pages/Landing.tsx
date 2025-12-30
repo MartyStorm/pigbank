@@ -1150,15 +1150,14 @@ export default function Landing() {
         {/* Customer Service Strip */}
         <section className="py-12 md:py-16 relative overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_19_21_PM_1767070019676.png')` }}
+            className="absolute inset-0 bg-[#e6f8d0]"
           />
           <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
                 Your success is our business
               </h3>
-              <p className="text-base md:text-lg text-white/90 max-w-4xl mx-auto" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.15)' }}>
+              <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
@@ -1173,8 +1172,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Marty</h4>
-                <p className="text-white/80 text-sm">Founder</p>
+                <h4 className="text-lg font-bold text-[#1a4320]">Marty</h4>
+                <p className="text-gray-600 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1187,8 +1186,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Patricia</h4>
-                <p className="text-white/80 text-sm">Operations</p>
+                <h4 className="text-lg font-bold text-[#1a4320]">Patricia</h4>
+                <p className="text-gray-600 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1200,8 +1199,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Kat</h4>
-                <p className="text-white/80 text-sm">Accounting</p>
+                <h4 className="text-lg font-bold text-[#1a4320]">Kat</h4>
+                <p className="text-gray-600 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1213,8 +1212,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Darth Maul</h4>
-                <p className="text-white/80 text-sm">Sales</p>
+                <h4 className="text-lg font-bold text-[#1a4320]">Darth Maul</h4>
+                <p className="text-gray-600 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1226,8 +1225,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Oink</h4>
-                <p className="text-white/80 text-sm">AI Team Lead</p>
+                <h4 className="text-lg font-bold text-[#1a4320]">Oink</h4>
+                <p className="text-gray-600 text-sm">AI Team Lead</p>
               </div>
             </div>
           </div>
