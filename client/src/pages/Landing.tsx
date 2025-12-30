@@ -228,9 +228,9 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <div className="mt-16">
-      <div className="text-center mb-6">
-        <p className="text-xs md:text-sm font-semibold text-[#1a4320] uppercase tracking-[0.2em]">
+    <div className="mt-10">
+      <div className="text-center mb-4">
+        <p className="text-xs font-semibold text-[#1a4320] uppercase tracking-[0.2em]">
           TRUSTED BY MERCHANTS
         </p>
       </div>
@@ -238,18 +238,18 @@ function TestimonialsCarousel() {
       <div className="relative">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
           data-testid="button-testimonial-prev"
         >
-          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+          <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
         </button>
         
         <button
           onClick={scrollNext}
-          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
           data-testid="button-testimonial-next"
         >
-          <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
+          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
         </button>
 
         <Carousel
@@ -258,25 +258,25 @@ function TestimonialsCarousel() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto px-12 md:px-16"
+          className="w-full max-w-5xl mx-auto px-10 md:px-14"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
                   <div className="order-2 lg:order-1">
-                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-[#1a4320] leading-relaxed mb-6">
+                    <blockquote className="text-lg md:text-xl lg:text-2xl font-light text-[#1a4320] leading-relaxed mb-3">
                       "{testimonial.quote}"
                     </blockquote>
                     <div>
-                      <p className="text-[#39870E] font-semibold uppercase tracking-wider text-sm">
+                      <p className="text-[#39870E] font-semibold uppercase tracking-wider text-xs">
                         {testimonial.name}, {testimonial.title}
                       </p>
                     </div>
                   </div>
                   <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                     <div 
-                      className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-6 shadow-lg"
+                      className="relative w-36 h-44 md:w-48 md:h-56 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
                     >
                       <img 
                         src={testimonial.image}
@@ -293,12 +293,12 @@ function TestimonialsCarousel() {
         </Carousel>
       </div>
 
-      <div className="flex items-center justify-center gap-2 mt-6">
+      <div className="flex items-center justify-center gap-2 mt-4">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${
+            className={`w-2 h-2 rounded-full transition-colors ${
               index === current ? 'bg-[#39870E]' : 'bg-[#1a4320]/30'
             }`}
             data-testid={`button-testimonial-dot-${index}`}
