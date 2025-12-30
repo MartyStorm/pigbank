@@ -100,7 +100,7 @@ function FlipCard({
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
-          <img src={image} alt={title} className="w-24 h-24 md:w-28 md:h-28 object-contain mb-2" />
+          <img src={image} alt={title} className="w-32 h-32 md:w-36 md:h-36 object-contain mb-1" />
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
@@ -108,7 +108,7 @@ function FlipCard({
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img src={image} alt={title} className="w-20 h-20 md:w-24 md:h-24 object-contain mb-1" />
+          <img src={image} alt={title} className="w-28 h-28 md:w-32 md:h-32 object-contain mb-1" />
           <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
           <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
@@ -140,7 +140,7 @@ function FlipCard({
           className="absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <img src={image} alt={title} className="w-24 h-24 md:w-28 md:h-28 object-contain mb-2" />
+          <img src={image} alt={title} className="w-32 h-32 md:w-36 md:h-36 object-contain mb-1" />
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
@@ -150,7 +150,7 @@ function FlipCard({
             transform: "rotateY(180deg)",
           }}
         >
-          <img src={image} alt={title} className="w-20 h-20 md:w-24 md:h-24 object-contain mb-1" />
+          <img src={image} alt={title} className="w-28 h-28 md:w-32 md:h-32 object-contain mb-1" />
           <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
           <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
