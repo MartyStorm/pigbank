@@ -861,16 +861,16 @@ export default function Landing() {
                   <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Dashboard</span>
-                        <BarChart3 className="h-5 w-5 text-[#73cb43]" />
+                        <span className="text-sm font-medium text-gray-600">Payment Gateway</span>
+                        <CreditCard className="h-5 w-5 text-[#73cb43]" />
                       </div>
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-gray-500">Today's Revenue</span>
-                          <span className="font-semibold text-gray-900">$4,285</span>
+                          <span className="text-gray-500">Processed Today</span>
+                          <span className="font-semibold text-gray-900">$24,850</span>
                         </div>
                         <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                          <div className="h-full w-3/4 bg-[#73cb43] rounded-full" />
+                          <div className="h-full w-4/5 bg-[#73cb43] rounded-full" />
                         </div>
                       </div>
                       <div className="space-y-2">
@@ -879,14 +879,14 @@ export default function Landing() {
                             <CheckCircle2 className="h-3 w-3 text-[#73cb43]" />
                             <span className="text-xs text-gray-700">Approved</span>
                           </div>
-                          <span className="text-xs font-semibold text-gray-900">142</span>
+                          <span className="text-xs font-semibold text-gray-900">98.2%</span>
                         </div>
                         <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-2">
-                            <Clock className="h-3 w-3 text-gray-400" />
-                            <span className="text-xs text-gray-700">Pending</span>
+                            <RefreshCcw className="h-3 w-3 text-gray-400" />
+                            <span className="text-xs text-gray-700">Refunds</span>
                           </div>
-                          <span className="text-xs font-semibold text-gray-900">8</span>
+                          <span className="text-xs font-semibold text-gray-900">1.8%</span>
                         </div>
                       </div>
                     </div>
@@ -895,12 +895,13 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Payment processing, all in one place
+                  Your complete payment gateway
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  Track every transaction, monitor your revenue in real-time, 
-                  and manage disputes from one powerful dashboard. Built for 
-                  merchants who want complete visibility over their payments.
+                  A powerful payment gateway built for high-risk merchants. 
+                  Manage transactions, handle disputes, process refunds, and 
+                  track every payment from a single management system designed 
+                  for speed and reliability.
                 </p>
                 <Button 
                   asChild
@@ -909,7 +910,7 @@ export default function Landing() {
                   data-testid="button-learn-more-gateway"
                 >
                   <a href="/register">
-                    Explore dashboard
+                    Learn more
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
