@@ -1,94 +1,35 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const CreditCardIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="4" y="12" width="56" height="40" rx="4" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <rect x="4" y="20" width="56" height="10" fill="currentColor" opacity="0.3"/>
-    <rect x="10" y="36" width="20" height="4" rx="1" fill="currentColor"/>
-    <rect x="10" y="44" width="12" height="3" rx="1" fill="currentColor" opacity="0.5"/>
-    <circle cx="46" cy="40" r="6" fill="currentColor" opacity="0.7"/>
-    <circle cx="52" cy="40" r="6" fill="currentColor" opacity="0.5"/>
-  </svg>
-);
-
-const ACHIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32 6L4 22V26H60V22L32 6Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <rect x="8" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
-    <rect x="18" y="26" width="6" height="24" fill="currentColor" opacity="0.5"/>
-    <rect x="29" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
-    <rect x="40" y="26" width="6" height="24" fill="currentColor" opacity="0.5"/>
-    <rect x="50" y="26" width="6" height="24" fill="currentColor" opacity="0.3"/>
-    <rect x="4" y="50" width="56" height="8" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <circle cx="32" cy="16" r="4" fill="currentColor"/>
-  </svg>
-);
-
-const CryptoIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <path d="M32 14V18M32 46V50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-    <path d="M24 22H38C41 22 44 24 44 28C44 32 41 34 38 34H24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-    <path d="M24 34H40C43 34 46 36 46 40C46 44 43 46 40 46H24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-    <path d="M24 18V50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-    <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1" opacity="0.3" fill="none"/>
-  </svg>
-);
-
-const ECheckIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="4" y="14" width="50" height="36" rx="3" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <path d="M4 26H54" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-    <rect x="10" y="32" width="24" height="3" rx="1" fill="currentColor" opacity="0.5"/>
-    <rect x="10" y="38" width="16" height="3" rx="1" fill="currentColor" opacity="0.3"/>
-    <path d="M40 44L46 50L58 38" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="50" cy="44" r="12" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
-  </svg>
-);
-
-const ClickToPayIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="18" y="4" width="28" height="50" rx="4" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-    <rect x="22" y="10" width="20" height="32" rx="2" fill="currentColor" opacity="0.15"/>
-    <circle cx="32" cy="48" r="3" fill="currentColor"/>
-    <path d="M32 24L32 32M32 32L28 28M32 32L36 28" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8 40C8 40 12 36 16 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-    <path d="M4 44C4 44 10 38 18 44" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
-    <path d="M48 40C48 40 52 36 56 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-    <path d="M46 44C46 44 52 38 60 44" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
-  </svg>
-);
-
 const cards = [
   {
     id: "credit-cards",
     title: "Credit Cards",
     backText: "Visa, Mastercard, Amex, Discover",
-    Icon: CreditCardIcon,
+    image: "/attached_assets/ChatGPT_Image_Dec_29,_2025,_06_07_44_PM_1767074862782.png",
   },
   {
     id: "ach",
     title: "ACH Transfers",
     backText: "Direct bank payments",
-    Icon: ACHIcon,
+    image: "/attached_assets/ChatGPT_Image_Dec_29,_2025,_06_14_12_PM_1767074862781.png",
   },
   {
     id: "crypto",
     title: "Cryptocurrency",
     backText: "Bitcoin, Ethereum & more",
-    Icon: CryptoIcon,
+    image: "/attached_assets/ChatGPT_Image_Dec_29,_2025,_06_11_53_PM_1767074862781.png",
   },
   {
     id: "echecks",
     title: "eChecks",
     backText: "Digital check processing",
-    Icon: ECheckIcon,
+    image: "/attached_assets/ChatGPT_Image_Dec_29,_2025,_06_13_19_PM_1767074862781.png",
   },
   {
     id: "click-to-pay",
     title: "Click to Pay",
     backText: "Send payment links via text or email",
-    Icon: ClickToPayIcon,
+    image: "/attached_assets/ChatGPT_Image_Dec_30,_2025,_12_07_25_AM_1767074862780.png",
   },
 ];
 
@@ -109,7 +50,7 @@ function FlipCard({
   prefersReducedMotion: boolean;
   isAutoFlipping: boolean;
 }) {
-  const { Icon, title, backText } = card;
+  const { image, title, backText } = card;
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
@@ -159,7 +100,7 @@ function FlipCard({
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
-          <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
+          <img src={image} alt={title} className="w-16 h-16 md:w-20 md:h-20 object-contain mb-3" />
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
@@ -167,7 +108,7 @@ function FlipCard({
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Icon className="w-12 h-12 md:w-14 md:h-14 text-white mb-2" />
+          <img src={image} alt={title} className="w-12 h-12 md:w-14 md:h-14 object-contain mb-2" />
           <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
           <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
@@ -199,7 +140,7 @@ function FlipCard({
           className="absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
+          <img src={image} alt={title} className="w-16 h-16 md:w-20 md:h-20 object-contain mb-3" />
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
@@ -209,7 +150,7 @@ function FlipCard({
             transform: "rotateY(180deg)",
           }}
         >
-          <Icon className="w-12 h-12 md:w-14 md:h-14 text-white mb-2" />
+          <img src={image} alt={title} className="w-12 h-12 md:w-14 md:h-14 object-contain mb-2" />
           <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
           <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
