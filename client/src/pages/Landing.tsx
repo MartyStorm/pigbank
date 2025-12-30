@@ -1238,11 +1238,11 @@ export default function Landing() {
 
         <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
           <div 
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-25"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
+                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)
               `,
               backgroundSize: '40px 40px'
             }}
