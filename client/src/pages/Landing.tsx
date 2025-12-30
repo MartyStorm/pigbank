@@ -468,10 +468,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-[#2f8a2b]" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
+                  <h1 className="hero-title font-bold tracking-tight text-[#1a4320]" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
                     5-Star Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-[#2f8a2b] font-semibold" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
+                  <p className="text-xl md:text-2xl text-[#1a4320] font-semibold" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
