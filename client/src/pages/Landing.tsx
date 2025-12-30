@@ -276,7 +276,7 @@ function TestimonialsCarousel() {
                   </div>
                   <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                     <div 
-                      className="relative w-36 h-44 md:w-48 md:h-56 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
+                      className="relative w-36 h-36 md:w-44 md:h-44 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
                     >
                       <img 
                         src={testimonial.image}
