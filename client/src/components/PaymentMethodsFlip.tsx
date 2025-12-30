@@ -240,7 +240,7 @@ export default function PaymentMethodsFlip() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-16 bg-[#e6f8d0]"
+      className="py-12 md:py-16 bg-[#ffffff]"
       data-testid="section-payment-methods"
     >
       <div className="container px-4 md:px-6 max-w-6xl mx-auto">
