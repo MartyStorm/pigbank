@@ -469,7 +469,7 @@ export default function Landing() {
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
                   <h1 className="hero-title font-bold tracking-tight text-[#1a4320]" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
-                    Payment Processing, Simplified
+                    Payments Done Right
                   </h1>
                   <p className="text-xl md:text-2xl text-[#1a4320] font-semibold" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.3)' }}>
                     The last payment processor you'll ever need
