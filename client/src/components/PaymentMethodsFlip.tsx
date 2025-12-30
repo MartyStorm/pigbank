@@ -104,13 +104,12 @@ function FlipCard({
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className={`absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img src={image} alt={title} className="w-28 h-28 md:w-32 md:h-32 object-contain mb-1" />
-          <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
-          <p className="text-white/80 text-xs text-center">{backText}</p>
+          <h4 className="font-bold text-white text-center text-base md:text-lg mb-2">{title}</h4>
+          <p className="text-white/90 text-sm text-center">{backText}</p>
         </div>
       </div>
     );
@@ -144,15 +143,14 @@ function FlipCard({
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
-          <img src={image} alt={title} className="w-28 h-28 md:w-32 md:h-32 object-contain mb-1" />
-          <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
-          <p className="text-white/80 text-xs text-center">{backText}</p>
+          <h4 className="font-bold text-white text-center text-base md:text-lg mb-2">{title}</h4>
+          <p className="text-white/90 text-sm text-center">{backText}</p>
         </div>
       </div>
     </div>
