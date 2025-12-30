@@ -269,7 +269,7 @@ function TestimonialsCarousel() {
                       "{testimonial.quote}"
                     </blockquote>
                     <div>
-                      <p className="text-[#39870E] font-semibold uppercase tracking-wider text-xs">
+                      <p className="text-white font-semibold uppercase tracking-wider text-xs">
                         {testimonial.name}, {testimonial.title}
                       </p>
                     </div>
