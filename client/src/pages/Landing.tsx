@@ -816,12 +816,13 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  In-person payment processing hardware
+                  POS hardware & tablet software
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  From sleek countertop terminals to portable card readers and 
-                  iPad swivel stands, we've got the hardware for every business. 
-                  Tap, swipe, or dip—we accept it all.
+                  Powerful iPad POS software paired with sleek hardware. 
+                  Our tablet app handles sales, inventory, and customer management 
+                  while our terminals, card readers, and swivel stands 
+                  make checkout seamless.
                 </p>
                 <Button 
                   asChild
@@ -830,7 +831,7 @@ export default function Landing() {
                   data-testid="button-learn-more-terminals"
                 >
                   <a href="/register">
-                    View hardware
+                    Explore POS
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -895,13 +896,13 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Your complete payment gateway
+                  Payment gateway & management system
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  A powerful payment gateway built for high-risk merchants. 
-                  Manage transactions, handle disputes, process refunds, and 
-                  track every payment from a single management system designed 
-                  for speed and reliability.
+                  A secure payment gateway with a complete merchant management 
+                  system. Real-time transaction routing, chargeback management, 
+                  fraud monitoring, and detailed reporting—all from one 
+                  centralized dashboard built for high-risk merchants.
                 </p>
                 <Button 
                   asChild
