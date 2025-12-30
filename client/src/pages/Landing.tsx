@@ -1232,7 +1232,7 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32 bg-[#73cb43]">
+        <section className="py-20 md:py-32 bg-[#1a4320]">
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to bring home the bacon?
@@ -1245,7 +1245,7 @@ export default function Landing() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[#1a4320] hover:bg-[#143318] text-white rounded-lg px-8"
+                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
                 data-testid="button-get-started-cta"
               >
                 <a href="/register">
