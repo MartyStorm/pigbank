@@ -228,86 +228,84 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="py-10 md:py-14 relative bg-[#e6f8d0]">
-      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-6">
-          <p className="text-xs md:text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em]">
-            TRUSTED BY MERCHANTS
-          </p>
-        </div>
+    <div className="mt-16">
+      <div className="text-center mb-6">
+        <p className="text-xs md:text-sm font-semibold text-[#1a4320] uppercase tracking-[0.2em]">
+          TRUSTED BY MERCHANTS
+        </p>
+      </div>
+      
+      <div className="relative">
+        <button
+          onClick={scrollPrev}
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          data-testid="button-testimonial-prev"
+        >
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+        </button>
         
-        <div className="relative">
-          <button
-            onClick={scrollPrev}
-            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:border-gray-400 transition-colors"
-            data-testid="button-testimonial-prev"
-          >
-            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-          </button>
-          
-          <button
-            onClick={scrollNext}
-            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:border-gray-400 transition-colors"
-            data-testid="button-testimonial-next"
-          >
-            <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
-          </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          data-testid="button-testimonial-next"
+        >
+          <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
+        </button>
 
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-6xl mx-auto px-12 md:px-16"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div className="order-2 lg:order-1">
-                      <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-gray-800 leading-relaxed mb-6">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <div>
-                        <p className="text-[#73cb43] font-semibold uppercase tracking-wider text-sm">
-                          {testimonial.name}, {testimonial.title}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                      <div 
-                        className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-6"
-                      >
-                        <img 
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="max-w-full max-h-full object-contain"
-                          data-testid={`img-testimonial-${testimonial.id}`}
-                        />
-                      </div>
+        <Carousel
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto px-12 md:px-16"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial) => (
+              <CarouselItem key={testimonial.id}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                  <div className="order-2 lg:order-1">
+                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-[#1a4320] leading-relaxed mb-6">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div>
+                      <p className="text-[#39870E] font-semibold uppercase tracking-wider text-sm">
+                        {testimonial.name}, {testimonial.title}
+                      </p>
                     </div>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div>
-
-        <div className="flex items-center justify-center gap-2 mt-6">
-          {Array.from({ length: count }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                index === current ? 'bg-[#73cb43]' : 'bg-gray-400/40'
-              }`}
-              data-testid={`button-testimonial-dot-${index}`}
-            />
-          ))}
-        </div>
+                  <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div 
+                      className="relative w-48 h-60 md:w-64 md:h-72 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-6 shadow-lg"
+                    >
+                      <img 
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="max-w-full max-h-full object-contain"
+                        data-testid={`img-testimonial-${testimonial.id}`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
-    </section>
+
+      <div className="flex items-center justify-center gap-2 mt-6">
+        {Array.from({ length: count }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${
+              index === current ? 'bg-[#39870E]' : 'bg-[#1a4320]/30'
+            }`}
+            data-testid={`button-testimonial-dot-${index}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -1147,17 +1145,21 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Customer Service Strip */}
-        <section className="py-12 md:py-16 relative overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-[#e6f8d0]"
-          />
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
+        {/* Team & Testimonials Section */}
+        <section 
+          className="py-12 md:py-20 relative overflow-hidden"
+          style={{
+            backgroundImage: 'url(/attached_assets/ChatGPT_Image_Dec_30,_2025,_01_53_09_AM_1767081274801.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
                 Your success is our business
               </h3>
-              <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto">
+              <p className="text-base md:text-lg text-[#1a4320]/80 max-w-4xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
@@ -1173,7 +1175,7 @@ export default function Landing() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold text-[#1a4320]">Marty</h4>
-                <p className="text-gray-600 text-sm">Founder</p>
+                <p className="text-[#1a4320]/70 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1187,7 +1189,7 @@ export default function Landing() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold text-[#1a4320]">Patricia</h4>
-                <p className="text-gray-600 text-sm">Operations</p>
+                <p className="text-[#1a4320]/70 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1200,7 +1202,7 @@ export default function Landing() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold text-[#1a4320]">Kat</h4>
-                <p className="text-gray-600 text-sm">Accounting</p>
+                <p className="text-[#1a4320]/70 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1213,7 +1215,7 @@ export default function Landing() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold text-[#1a4320]">Darth Maul</h4>
-                <p className="text-gray-600 text-sm">Sales</p>
+                <p className="text-[#1a4320]/70 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1226,13 +1228,13 @@ export default function Landing() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold text-[#1a4320]">Oink</h4>
-                <p className="text-gray-600 text-sm">AI Team Lead</p>
+                <p className="text-[#1a4320]/70 text-sm">AI Team Lead</p>
               </div>
             </div>
+            
+            <TestimonialsCarousel />
           </div>
         </section>
-
-        <TestimonialsCarousel />
 
         <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
           <div 
