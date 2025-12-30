@@ -228,7 +228,7 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="py-10 md:py-14 relative bg-white">
+    <section className="py-10 md:py-14 relative bg-[#e6f8d0]">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-6">
           <p className="text-xs md:text-sm font-semibold text-[#73cb43] uppercase tracking-[0.2em]">
