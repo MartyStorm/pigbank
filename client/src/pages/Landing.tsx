@@ -702,9 +702,14 @@ export default function Landing() {
                 </div>
                 
                 <div className="mt-16 space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    High risk industries
-                  </h3>
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                      High risk industries
+                    </h3>
+                    <p className="text-gray-500 text-sm mt-2">
+                      Just because a bank deems your business risky, doesn't mean you can't prosper.
+                    </p>
+                  </div>
                   
                   <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {[
@@ -725,10 +730,6 @@ export default function Landing() {
                       </div>
                     ))}
                   </div>
-                  
-                  <p className="text-gray-500 text-sm italic group-hover:opacity-0 transition-opacity duration-300">
-                    Just because a bank deems your business risky, doesn't mean you can't prosper.
-                  </p>
                 </div>
               </div>
 
@@ -783,9 +784,14 @@ export default function Landing() {
                 </div>
                 
                 <div className="mt-16 space-y-6 relative z-10">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
-                    Medium & Low risk
-                  </h3>
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white">
+                      Medium & Low risk
+                    </h3>
+                    <p className="text-white/80 text-sm mt-2 max-w-xs">
+                      Your business will be supported by a dedicated team of merchant service specialists.
+                    </p>
+                  </div>
                   
                   {/* Industry list - visible on hover */}
                   <div className="grid grid-cols-2 gap-x-6 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -805,10 +811,6 @@ export default function Landing() {
                       </div>
                     ))}
                   </div>
-                  
-                  <p className="text-white/80 text-sm max-w-xs group-hover:opacity-0 transition-opacity duration-300">
-                    Your business will be supported by a dedicated team of merchant service specialists.
-                  </p>
                 </div>
               </div>
             </div>
