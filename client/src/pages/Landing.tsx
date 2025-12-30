@@ -679,7 +679,7 @@ export default function Landing() {
           />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                 Payment processing for every risk level
               </h2>
               <p className="text-lg text-white/70 max-w-2xl mx-auto">
