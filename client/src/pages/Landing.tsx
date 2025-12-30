@@ -689,7 +689,7 @@ export default function Landing() {
             
             <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2] bg-white"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2] bg-[#f5f5f5]"
                 data-testid="card-high-risk"
               >
                 {/* Decorative image - shows on hover */}
