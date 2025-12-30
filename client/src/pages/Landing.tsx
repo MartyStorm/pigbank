@@ -1232,8 +1232,18 @@ export default function Landing() {
 
         <TestimonialsCarousel />
 
-        <section className="py-20 md:py-32 bg-[#1a4320]">
-          <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
+        <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
+          <div 
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px'
+            }}
+          />
+          <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to bring home the bacon?
             </h2>
