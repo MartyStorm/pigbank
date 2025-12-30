@@ -301,15 +301,15 @@ export default function PaymentMethodsFlip() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-16 bg-[#1a4320]"
+      className="py-12 md:py-16 bg-[#f9fafb]"
       data-testid="section-payment-methods"
     >
       <div className="container px-4 md:px-6 max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Accept payments your way
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Support cards, bank payments, crypto, checks, and payment links.
           </p>
         </div>
