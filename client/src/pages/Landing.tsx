@@ -298,8 +298,8 @@ function TestimonialsCarousel() {
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === current ? 'bg-[#39870E]' : 'bg-[#1a4320]/30'
+            className={`h-1 rounded-full transition-all ${
+              index === current ? 'w-8 bg-white' : 'w-4 bg-white/40'
             }`}
             data-testid={`button-testimonial-dot-${index}`}
           />
