@@ -661,6 +661,8 @@ export default function Landing() {
           </div>
         </section>
 
+        <HorizontalScrollText />
+
         <PaymentMethodsFlip />
 
         <section className="bg-[#f9fafb]">
@@ -805,8 +807,6 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
-        <HorizontalScrollText />
 
         {/* POS Terminals Section */}
         <section className="py-20 md:py-32 bg-[#f9fafb] relative overflow-hidden">
