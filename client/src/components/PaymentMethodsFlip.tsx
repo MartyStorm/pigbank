@@ -155,7 +155,7 @@ function FlipCard({
         data-testid={`flip-card-${card.id}`}
       >
         <div
-          className={`absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -196,7 +196,7 @@ function FlipCard({
         }}
       >
         <div
-          className="absolute inset-0 bg-[#51AB37] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
           <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
