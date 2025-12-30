@@ -920,7 +920,7 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 overflow-hidden bg-[#f9fafb] relative">
+        <section className="py-20 md:py-32 overflow-hidden relative bg-[#ffffff]">
           <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
