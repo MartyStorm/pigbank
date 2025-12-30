@@ -1149,30 +1149,20 @@ export default function Landing() {
         </section>
 
         {/* Customer Service Strip */}
-        <section className="py-12 md:py-16 bg-[#1a4320] relative overflow-hidden">
-          <div 
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-          />
+        <section className="py-12 md:py-16 bg-white relative overflow-hidden">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                 Your success is our business
               </h3>
-              <p className="text-base md:text-lg text-white/70 max-w-4xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-gray-200 shadow-xl">
                     <img 
                       src="/attached_assets/founder_photo.png" 
                       alt="Founder" 
@@ -1180,12 +1170,12 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white">Marty</h4>
-                <p className="text-white/60 text-sm">Founder</p>
+                <h4 className="text-lg font-bold text-gray-900">Marty</h4>
+                <p className="text-gray-500 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-gray-200 shadow-xl">
                     <img 
                       src="/attached_assets/4080994360202994240_1766076263672.png" 
                       alt="Patricia - Operations" 
@@ -1194,12 +1184,12 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white">Patricia</h4>
-                <p className="text-white/60 text-sm">Operations</p>
+                <h4 className="text-lg font-bold text-gray-900">Patricia</h4>
+                <p className="text-gray-500 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-gray-200 shadow-xl">
                     <img 
                       src="/attached_assets/accounting_team.png" 
                       alt="Accounting" 
@@ -1207,12 +1197,12 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white">Kat</h4>
-                <p className="text-white/60 text-sm">Accounting</p>
+                <h4 className="text-lg font-bold text-gray-900">Kat</h4>
+                <p className="text-gray-500 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-gray-200 shadow-xl">
                     <img 
                       src="/attached_assets/sales_darth_maul.png" 
                       alt="Darth Maul - Sales" 
@@ -1220,12 +1210,12 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white">Darth Maul</h4>
-                <p className="text-white/60 text-sm">Sales</p>
+                <h4 className="text-lg font-bold text-gray-900">Darth Maul</h4>
+                <p className="text-gray-500 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-gray-200 shadow-xl">
                     <img 
                       src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_31_02_AM_1766053868295.png" 
                       alt="Oink - AI Team Lead" 
@@ -1233,8 +1223,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-white">Oink</h4>
-                <p className="text-white/60 text-sm">AI Team Lead</p>
+                <h4 className="text-lg font-bold text-gray-900">Oink</h4>
+                <p className="text-gray-500 text-sm">AI Team Lead</p>
               </div>
             </div>
           </div>
