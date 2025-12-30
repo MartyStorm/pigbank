@@ -1263,17 +1263,15 @@ export default function Landing() {
                 data-testid="button-get-started-cta"
               >
                 <a href="/register">
-                  Get started free
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  Get started
                 </a>
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="rounded-lg px-8 border-white/40 text-white hover:bg-white/10"
-                data-testid="button-talk-to-sales"
+                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100"
+                data-testid="button-contact-us"
               >
-                Talk to sales
+                Contact us
               </Button>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-sm text-white/80">
