@@ -667,7 +667,7 @@ export default function Landing() {
 
         <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' }}>
           <div 
-            className="absolute inset-0 opacity-20 bg-[#c3c1bf]"
+            className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `
                 radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
