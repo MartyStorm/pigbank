@@ -230,7 +230,7 @@ function TestimonialsCarousel() {
   return (
     <div className="mt-10">
       <div className="text-center mb-4">
-        <p className="text-xs font-semibold text-white uppercase tracking-[0.2em]">
+        <p className="text-xs font-semibold text-[#1a4320] uppercase tracking-[0.2em]">
           DON'T TAKE OUR WORD FOR IT — HERE'S WHAT OUR PARTNERS SAY
         </p>
       </div>
