@@ -357,7 +357,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-white">
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-6 lg:px-10 xl:px-16 2xl:px-24 max-w-[1800px] mx-auto">
+        <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
               src="/pig-bank-logo-white.png" 
@@ -434,7 +434,7 @@ export default function Landing() {
               ))}
             </nav>
           </div>
-          <div className="flex items-center gap-5" style={{ marginRight: '11px' }}>
+          <div className="flex items-center gap-5">
             <a 
               href="/login" 
               className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"
