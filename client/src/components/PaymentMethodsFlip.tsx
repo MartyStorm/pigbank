@@ -163,13 +163,13 @@ function FlipCard({
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className={`absolute inset-0 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Icon className="w-12 h-12 md:w-14 md:h-14 text-[#1a4320] mb-2" />
-          <h4 className="font-semibold text-gray-900 text-center text-sm mb-1">{title}</h4>
-          <p className="text-gray-600 text-xs text-center">{backText}</p>
+          <Icon className="w-12 h-12 md:w-14 md:h-14 text-white mb-2" />
+          <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
+          <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
       </div>
     );
@@ -203,15 +203,15 @@ function FlipCard({
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-white rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
-          <Icon className="w-12 h-12 md:w-14 md:h-14 text-[#1a4320] mb-2" />
-          <h4 className="font-semibold text-gray-900 text-center text-sm mb-1">{title}</h4>
-          <p className="text-gray-600 text-xs text-center">{backText}</p>
+          <Icon className="w-12 h-12 md:w-14 md:h-14 text-white mb-2" />
+          <h4 className="font-semibold text-white text-center text-sm mb-1">{title}</h4>
+          <p className="text-white/80 text-xs text-center">{backText}</p>
         </div>
       </div>
     </div>
