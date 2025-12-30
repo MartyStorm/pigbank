@@ -238,7 +238,7 @@ function TestimonialsCarousel() {
       <div className="relative">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center text-[#1a4320] shadow-md transition-colors"
           data-testid="button-testimonial-prev"
         >
           <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
@@ -246,10 +246,10 @@ function TestimonialsCarousel() {
         
         <button
           onClick={scrollNext}
-          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#1a4320]/30 flex items-center justify-center text-[#1a4320]/70 hover:text-[#1a4320] hover:border-[#1a4320]/50 transition-colors"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center text-[#1a4320] shadow-md transition-colors"
           data-testid="button-testimonial-next"
         >
-          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+          <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
         </button>
 
         <Carousel
