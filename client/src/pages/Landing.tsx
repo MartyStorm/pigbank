@@ -1268,7 +1268,7 @@ export default function Landing() {
               </Button>
               <Button 
                 size="lg" 
-                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100"
+                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100 border-0"
                 data-testid="button-contact-us"
               >
                 Contact us
