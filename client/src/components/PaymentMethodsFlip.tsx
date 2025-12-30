@@ -155,7 +155,7 @@ function FlipCard({
         data-testid={`flip-card-${card.id}`}
       >
         <div
-          className={`absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -163,7 +163,7 @@ function FlipCard({
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className={`absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -196,14 +196,14 @@ function FlipCard({
         }}
       >
         <div
-          className="absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
           <Icon className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" />
           <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-[#1a4320] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#75c947] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
