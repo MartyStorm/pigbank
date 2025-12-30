@@ -688,23 +688,23 @@ export default function Landing() {
             
             <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2] bg-white"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2] bg-[#3b3a3a]"
                 data-testid="card-high-risk"
               >
                 {/* Decorative image - shows on hover */}
                 <div className="absolute top-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="w-full h-full bg-gradient-to-bl from-[#75C947]/20 to-transparent rounded-bl-[100px]" />
-                  <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center">
+                  <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center">
                     <TrendingUp className="h-8 w-8 text-[#75C947]" />
                   </div>
                 </div>
 
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                  <ArrowUpRight className="h-5 w-5 text-gray-700" />
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
                 <div className="mt-16 space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
                     High risk industries
                   </h3>
                   
@@ -721,14 +721,14 @@ export default function Landing() {
                       "Vape & E-cig",
                       "Collections",
                     ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-gray-700">
+                      <div key={industry} className="flex items-center gap-2 text-white/80">
                         <CheckCircle2 className="h-4 w-4 text-[#75C947]" />
                         <span className="text-sm">{industry}</span>
                       </div>
                     ))}
                   </div>
                   
-                  <p className="text-gray-500 text-sm italic group-hover:opacity-0 transition-opacity duration-300">
+                  <p className="text-white/60 text-sm italic group-hover:opacity-0 transition-opacity duration-300">
                     Just because a bank deems your business risky, doesn't mean you can't prosper.
                   </p>
                 </div>
