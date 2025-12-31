@@ -461,7 +461,7 @@ export default function Landing() {
             backgroundPosition: 'center bottom'
           }}
         >
-          <div className="min-h-[650px] md:min-h-[700px] flex items-center py-12 md:py-16">
+          <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16">
             <div 
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto relative z-10"
               style={{ containerType: 'inline-size' }}
