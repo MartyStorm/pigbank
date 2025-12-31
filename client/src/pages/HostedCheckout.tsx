@@ -569,13 +569,13 @@ export default function HostedCheckout() {
           <div className="xl:flex-1 xl:overflow-y-auto p-4 md:p-8 flex items-start justify-center" style={{ backgroundColor }}>
             <div 
               className={cn(
-                "shadow-xl rounded-lg transition-all duration-300 overflow-hidden",
-                previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2" : "w-[375px] flex flex-col"
+                "transition-all duration-300",
+                previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-xl rounded-lg overflow-hidden" : "w-[375px] flex flex-col gap-4"
               )}
-              style={{ borderColor: inputBorderColor, borderWidth: '1px' }}
+              style={previewMode === "desktop" ? { borderColor: inputBorderColor, borderWidth: '1px' } : {}}
             >
               {/* Checkout Left: Order Summary */}
-              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-1 border-b" : "order-1 border-r")} style={{ backgroundColor: summaryBackgroundColor, borderColor: inputBorderColor }}>
+              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-1 rounded-lg shadow-xl" : "order-1 border-r")} style={{ backgroundColor: summaryBackgroundColor, borderColor: inputBorderColor, ...(previewMode === "mobile" ? { borderWidth: '1px' } : {}) }}>
                 <div className="flex items-center gap-3 mb-8">
                   {logoUrl ? (
                     <img src={logoUrl} alt="Logo" style={{ height: `${logoSize}px` }} className="object-contain" />
@@ -617,7 +617,7 @@ export default function HostedCheckout() {
               </div>
 
               {/* Checkout Right: Payment Form */}
-              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-2" : "order-2")} style={{ backgroundColor: formBackgroundColor }}>
+              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-2 rounded-lg shadow-xl" : "order-2")} style={{ backgroundColor: formBackgroundColor, ...(previewMode === "mobile" ? { borderColor: inputBorderColor, borderWidth: '1px' } : {}) }}>
                 <div className="space-y-4">
                   <h2 className="font-semibold text-lg" style={{ color: headingTextColor }}>Payment Details</h2>
                   
