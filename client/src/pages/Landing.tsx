@@ -693,28 +693,28 @@ export default function Landing() {
             
             <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[500px]">
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#e5e7ec]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#74747d]"
                 data-testid="card-high-risk"
               >
                 {/* Decorative image - shows on hover (desktop only) */}
                 <div className="absolute top-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden lg:block">
                   <div className="w-full h-full bg-gradient-to-bl from-[#75C947]/20 to-transparent rounded-bl-[100px]" />
-                  <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-gray-200 border border-gray-300 flex items-center justify-center">
+                  <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center">
                     <TrendingUp className="h-8 w-8 text-[#75C947]" />
                   </div>
                 </div>
 
                 {/* Arrow - desktop only */}
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-gray-200 items-center justify-center group-hover:bg-gray-300 transition-colors hidden lg:flex">
-                  <ArrowUpRight className="h-5 w-5 text-gray-700" />
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/20 items-center justify-center group-hover:bg-white/30 transition-colors hidden lg:flex">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
                 <div className="lg:mt-16 space-y-4 lg:space-y-6">
                   <div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                       High risk industries
                     </h3>
-                    <p className="text-gray-500 text-sm mt-2">
+                    <p className="text-white/70 text-sm mt-2">
                       Just because a bank deems your business risky, doesn't mean you can't prosper.
                     </p>
                   </div>
@@ -733,7 +733,7 @@ export default function Landing() {
                       "Vape & E-cig",
                       "Collections",
                     ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-gray-700">
+                      <div key={industry} className="flex items-center gap-2 text-white/90">
                         <CheckCircle2 className="h-4 w-4 text-[#75C947]" />
                         <span className="text-sm">{industry}</span>
                       </div>
