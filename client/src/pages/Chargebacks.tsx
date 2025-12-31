@@ -312,7 +312,7 @@ export default function Chargebacks() {
                   <TableHead className="text-white">Reason</TableHead>
                   <TableHead className="text-white">Status</TableHead>
                   <TableHead className="text-white">Deadline</TableHead>
-                  <TableHead className="text-right text-white">Action</TableHead>
+                  <TableHead className="text-center text-white">Action</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -352,11 +352,11 @@ export default function Chargebacks() {
                           <span className="text-muted-foreground">—</span>
                         )}
                       </TableCell>
-                      <TableCell className="text-right">
+                      <TableCell className="text-center">
                         {cb.actionRequired ? (
                           <Button 
                             size="sm" 
-                            className="bg-[#b91c1c]/75 hover:bg-[#b91c1c] text-white border border-[#b91c1c]/20"
+                            className="bg-[#b91c1c] hover:bg-[#991b1b] text-white"
                             onClick={() => handleAction(cb)}
                           >
                             Action
