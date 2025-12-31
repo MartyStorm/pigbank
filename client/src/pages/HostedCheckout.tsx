@@ -741,7 +741,7 @@ export default function HostedCheckout() {
                       {showPoweredByPigBank && (
                         <div className="flex items-center justify-center gap-1.5 pt-2 border-t" style={{ borderColor: inputBorderColor }}>
                           <span className="text-xs" style={{ color: bodyTextColor }}>Payment processed by</span>
-                          <img src="/pig-bank-logo-dark.png" alt="PigBank" className="h-4 object-contain" />
+                          <img src="/pig-bank-logo-light.png" alt="PigBank" className="h-4 object-contain" />
                         </div>
                       )}
                     </div>
