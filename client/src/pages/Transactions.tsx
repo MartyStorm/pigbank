@@ -71,7 +71,10 @@ export default function Transactions() {
     status: true,
     risk: true,
     transactionId: true,
+    refund: true,
   });
+  
+  const [refundAmounts, setRefundAmounts] = useState<Record<string, string>>({});
 
   const toggleColumn = (column: keyof typeof columns) => {
     setColumns(prev => ({ ...prev, [column]: !prev[column] }));
@@ -157,6 +160,16 @@ export default function Transactions() {
         description: `Transaction ${selectedTxn?.transactionId} has been refunded for $${refundAmount}.`,
       });
     }, 1500);
+  };
+
+  const handleInlineRefund = (txn: Transaction, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const amount = refundAmounts[txn.id] || txn.amount;
+    toast({
+      title: "Refund Processed",
+      description: `Transaction ${txn.transactionId} has been refunded for $${parseFloat(amount).toFixed(2)}.`,
+    });
+    setRefundAmounts(prev => ({ ...prev, [txn.id]: "" }));
   };
 
   const getStatusColor = (status: string) => {
@@ -262,6 +275,10 @@ export default function Transactions() {
                     <div className="flex items-center space-x-2">
                       <Checkbox id="col-transactionId" checked={columns.transactionId} onCheckedChange={() => toggleColumn('transactionId')} />
                       <label htmlFor="col-transactionId" className="text-sm cursor-pointer">Transaction ID</label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="col-refund" checked={columns.refund} onCheckedChange={() => toggleColumn('refund')} />
+                      <label htmlFor="col-refund" className="text-sm cursor-pointer">Refund</label>
                     </div>
                   </div>
                 </div>
@@ -429,6 +446,7 @@ export default function Transactions() {
                 {columns.status && <TableHead className="text-white">Status</TableHead>}
                 {columns.risk && <TableHead className="text-white">Risk</TableHead>}
                 {columns.transactionId && <TableHead className="text-white">Transaction ID</TableHead>}
+                {columns.refund && <TableHead className="text-white">Refund</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -501,6 +519,28 @@ export default function Transactions() {
                       </TableCell>
                     )}
                     {columns.transactionId && <TableCell className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>}
+                    {columns.refund && (
+                      <TableCell onClick={(e) => e.stopPropagation()}>
+                        <div className="flex items-center gap-2">
+                          <div className="relative w-20">
+                            <span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">$</span>
+                            <Input 
+                              className="h-7 pl-5 text-xs"
+                              placeholder={parseFloat(txn.amount).toFixed(2)}
+                              value={refundAmounts[txn.id] || ""}
+                              onChange={(e) => setRefundAmounts(prev => ({ ...prev, [txn.id]: e.target.value }))}
+                            />
+                          </div>
+                          <Button 
+                            size="sm" 
+                            className="h-7 px-2 bg-[#b91c1c] hover:bg-[#991b1b] text-white text-xs"
+                            onClick={(e) => handleInlineRefund(txn, e)}
+                          >
+                            Refund
+                          </Button>
+                        </div>
+                      </TableCell>
+                    )}
                   </TableRow>
                 ))
               )}
