@@ -1189,7 +1189,7 @@ export default function Landing() {
           <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Bank-level security you can trust
+                Your payments are safe in the pen
               </h2>
               <p className="text-lg text-white/70 max-w-2xl mx-auto">
                 Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
