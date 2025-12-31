@@ -123,7 +123,6 @@ export default function InvoicesList() {
           <Table>
             <TableHeader className="bg-[#74747d] dark:bg-[#262626]">
               <TableRow className="border-b-[#74747d] dark:border-b-gray-700 hover:bg-[#74747d] dark:hover:bg-[#262626]">
-                <TableHead className="text-white text-center w-[50px] border-r border-white/30"></TableHead>
                 <TableHead className="text-white text-center border-r border-white/30">Invoice</TableHead>
                 <TableHead className="text-white text-center border-r border-white/30">Customer</TableHead>
                 <TableHead className="text-white text-center border-r border-white/30">Amount</TableHead>
@@ -136,13 +135,13 @@ export default function InvoicesList() {
             <TableBody>
               {isLoading ? (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center py-8 text-muted-foreground">
+                  <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
                     Loading invoices...
                   </TableCell>
                 </TableRow>
               ) : invoices.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center py-8 text-muted-foreground">
+                  <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
                     No invoices yet. Create your first invoice to get started.
                   </TableCell>
                 </TableRow>
@@ -156,11 +155,6 @@ export default function InvoicesList() {
                       className="cursor-pointer hover:bg-muted/30 transition-colors"
                       data-testid={`row-invoice-${invoice.id}`}
                     >
-                      <TableCell>
-                        <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-[#73cb43]">
-                          <Eye className="h-4 w-4" />
-                        </Button>
-                      </TableCell>
                       <TableCell>
                         <div className="flex flex-col">
                           <span className="font-mono font-medium text-sm">{invoice.invoiceNumber}</span>
