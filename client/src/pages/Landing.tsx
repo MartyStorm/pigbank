@@ -672,7 +672,7 @@ export default function Landing() {
         <PaymentMethodsFlip />
 
         {/* POS Hardware Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e2e6e5]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
           <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -714,7 +714,7 @@ export default function Landing() {
         </section>
 
         {/* POS Software Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#ffffff]">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -1256,7 +1256,7 @@ export default function Landing() {
           <div className="container px-4 md:px-6 max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Your payments are safe in the pen
+                Enterprise-grade security
               </h2>
               <p className="text-lg text-white/70 max-w-2xl mx-auto">
                 Your data is protected with the same encryption used by major banks. We're PCI DSS Level 1 compliant—the highest security standard in the payment industry.
