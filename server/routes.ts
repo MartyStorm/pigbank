@@ -13,6 +13,7 @@ import {
 } from "@shared/schema";
 import { z } from "zod";
 import { testBankfulConnection, fetchBankfulTransactions } from "./bankful";
+import { getChatResponse, type ChatHistoryMessage } from "./chatService";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -1976,6 +1977,196 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Error fetching user events:", error);
       res.status(500).json({ error: "Failed to fetch user events" });
+    }
+  });
+
+  // ============ CHAT API ============
+
+  // Start or get existing chat conversation
+  app.post("/api/chat/start", async (req, res) => {
+    try {
+      const { sessionId, userId } = req.body;
+      if (!sessionId) {
+        return res.status(400).json({ error: "Session ID required" });
+      }
+
+      // Check for existing open conversation
+      let conversation = await storage.getChatConversationBySession(sessionId);
+      
+      if (!conversation) {
+        conversation = await storage.createChatConversation({
+          sessionId,
+          userId: userId || null,
+          status: 'open',
+        });
+      }
+
+      const messages = await storage.getChatMessages(conversation.id);
+      res.json({ conversation, messages });
+    } catch (error) {
+      console.error("Error starting chat:", error);
+      res.status(500).json({ error: "Failed to start chat" });
+    }
+  });
+
+  // Send message to chat (AI responds)
+  app.post("/api/chat/:conversationId/message", async (req, res) => {
+    try {
+      const { conversationId } = req.params;
+      const { content, senderId } = req.body;
+
+      if (!content) {
+        return res.status(400).json({ error: "Message content required" });
+      }
+
+      const conversation = await storage.getChatConversation(conversationId);
+      if (!conversation) {
+        return res.status(404).json({ error: "Conversation not found" });
+      }
+
+      // Save user message
+      const userMessage = await storage.createChatMessage({
+        conversationId,
+        senderType: 'user',
+        senderId: senderId || null,
+        content,
+      });
+
+      // Get conversation history for context
+      const allMessages = await storage.getChatMessages(conversationId);
+      const history: ChatHistoryMessage[] = allMessages.slice(-10).map(msg => ({
+        role: msg.senderType === 'user' ? 'user' : 'assistant',
+        content: msg.content,
+      }));
+
+      // Get AI response
+      const aiResponse = await getChatResponse(content, history.slice(0, -1));
+
+      // Save AI message
+      const aiMessage = await storage.createChatMessage({
+        conversationId,
+        senderType: 'ai',
+        senderId: null,
+        content: aiResponse,
+      });
+
+      res.json({ userMessage, aiMessage });
+    } catch (error) {
+      console.error("Error sending chat message:", error);
+      res.status(500).json({ error: "Failed to send message" });
+    }
+  });
+
+  // Request human support
+  app.post("/api/chat/:conversationId/request-human", async (req, res) => {
+    try {
+      const { conversationId } = req.params;
+
+      const conversation = await storage.getChatConversation(conversationId);
+      if (!conversation) {
+        return res.status(404).json({ error: "Conversation not found" });
+      }
+
+      const updated = await storage.updateChatConversationStatus(
+        conversationId, 
+        'awaiting_human',
+        new Date()
+      );
+
+      // Add system message
+      await storage.createChatMessage({
+        conversationId,
+        senderType: 'ai',
+        senderId: null,
+        content: "I've notified our support team that you'd like to speak with a human representative. They will review this conversation and respond as soon as possible. You can continue chatting here, and they'll see the full conversation history.",
+      });
+
+      res.json({ success: true, conversation: updated });
+    } catch (error) {
+      console.error("Error requesting human support:", error);
+      res.status(500).json({ error: "Failed to request human support" });
+    }
+  });
+
+  // Get chat conversation (for staff)
+  app.get("/api/chat/conversations", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+
+      const status = req.query.status as string;
+      const limit = parseInt(req.query.limit as string) || 50;
+      const conversations = await storage.getChatConversations(status, limit);
+      res.json(conversations);
+    } catch (error) {
+      console.error("Error fetching conversations:", error);
+      res.status(500).json({ error: "Failed to fetch conversations" });
+    }
+  });
+
+  // Get messages for a conversation (for staff)
+  app.get("/api/chat/:conversationId/messages", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+
+      const messages = await storage.getChatMessages(req.params.conversationId);
+      res.json(messages);
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+      res.status(500).json({ error: "Failed to fetch messages" });
+    }
+  });
+
+  // Staff reply to conversation
+  app.post("/api/chat/:conversationId/staff-reply", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+
+      const { conversationId } = req.params;
+      const { content } = req.body;
+
+      if (!content) {
+        return res.status(400).json({ error: "Message content required" });
+      }
+
+      const message = await storage.createChatMessage({
+        conversationId,
+        senderType: 'staff',
+        senderId: user.id,
+        content,
+      });
+
+      // Update status back to open (staff has responded)
+      await storage.updateChatConversationStatus(conversationId, 'open');
+
+      res.json(message);
+    } catch (error) {
+      console.error("Error sending staff reply:", error);
+      res.status(500).json({ error: "Failed to send reply" });
+    }
+  });
+
+  // Close conversation
+  app.post("/api/chat/:conversationId/close", isAuthenticated, async (req, res) => {
+    try {
+      const user = (req as any).user;
+      if (user.role !== 'pigbank_staff' && user.role !== 'pigbank_admin') {
+        return res.status(403).json({ error: "Staff access required" });
+      }
+
+      const updated = await storage.updateChatConversationStatus(req.params.conversationId, 'closed');
+      res.json({ success: true, conversation: updated });
+    } catch (error) {
+      console.error("Error closing conversation:", error);
+      res.status(500).json({ error: "Failed to close conversation" });
     }
   });
 

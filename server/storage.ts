@@ -1,7 +1,7 @@
 import { 
   users, transactions, customers, invoices, invoiceItems, payouts, bankfulImports, wixIntegrations,
   merchants, merchantOwners, merchantUsers, onboardingTasks, merchantNotes, merchantEvents, checkoutSettings,
-  analyticsEvents, analyticsSessions,
+  analyticsEvents, analyticsSessions, chatConversations, chatMessages,
   type User, type UpsertUser,
   type Transaction, type InsertTransaction,
   type Customer, type InsertCustomer,
@@ -18,7 +18,9 @@ import {
   type MerchantEvent, type InsertMerchantEvent,
   type CheckoutSettings, type InsertCheckoutSettings,
   type AnalyticsEvent, type InsertAnalyticsEvent,
-  type AnalyticsSession, type InsertAnalyticsSession
+  type AnalyticsSession, type InsertAnalyticsSession,
+  type ChatConversation, type InsertChatConversation,
+  type ChatMessage, type InsertChatMessage
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, like, sql, ne } from "drizzle-orm";
@@ -136,6 +138,17 @@ export interface IStorage {
   getAnalyticsEventsBySession(sessionId: string, limit?: number): Promise<AnalyticsEvent[]>;
   getAnalyticsEventsByUser(userId: string, limit?: number): Promise<AnalyticsEvent[]>;
   getTrackedUsers(): Promise<{ userId: string | null; sessionId: string; isAuthenticated: boolean; user?: User | null; clickCount: number; lastSeen: Date }[]>;
+
+  // Chat Conversations
+  createChatConversation(data: InsertChatConversation): Promise<ChatConversation>;
+  getChatConversation(id: string): Promise<ChatConversation | undefined>;
+  getChatConversationBySession(sessionId: string): Promise<ChatConversation | undefined>;
+  getChatConversations(status?: string, limit?: number): Promise<(ChatConversation & { user?: User | null; messageCount: number })[]>;
+  updateChatConversationStatus(id: string, status: string, humanRequestedAt?: Date): Promise<ChatConversation | undefined>;
+
+  // Chat Messages
+  createChatMessage(data: InsertChatMessage): Promise<ChatMessage>;
+  getChatMessages(conversationId: string): Promise<ChatMessage[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -982,6 +995,74 @@ export class DatabaseStorage implements IStorage {
       clickCount: s.clickCount,
       lastSeen: s.session.lastSeen,
     }));
+  }
+
+  // Chat Conversations
+  async createChatConversation(data: InsertChatConversation): Promise<ChatConversation> {
+    const [conversation] = await db.insert(chatConversations).values(data).returning();
+    return conversation;
+  }
+
+  async getChatConversation(id: string): Promise<ChatConversation | undefined> {
+    const [conversation] = await db.select().from(chatConversations).where(eq(chatConversations.id, id));
+    return conversation || undefined;
+  }
+
+  async getChatConversationBySession(sessionId: string): Promise<ChatConversation | undefined> {
+    const [conversation] = await db.select().from(chatConversations)
+      .where(and(eq(chatConversations.sessionId, sessionId), ne(chatConversations.status, 'closed')))
+      .orderBy(desc(chatConversations.createdAt))
+      .limit(1);
+    return conversation || undefined;
+  }
+
+  async getChatConversations(status?: string, limit: number = 50): Promise<(ChatConversation & { user?: User | null; messageCount: number })[]> {
+    let query = db.select({
+      conversation: chatConversations,
+      user: users,
+      messageCount: sql<number>`(SELECT count(*)::int FROM chat_messages WHERE chat_messages.conversation_id = ${chatConversations.id})`,
+    })
+    .from(chatConversations)
+    .leftJoin(users, eq(chatConversations.userId, users.id))
+    .orderBy(desc(chatConversations.updatedAt))
+    .limit(limit);
+
+    if (status) {
+      query = query.where(eq(chatConversations.status, status)) as typeof query;
+    }
+
+    const results = await query;
+    return results.map(r => ({
+      ...r.conversation,
+      user: r.user,
+      messageCount: r.messageCount,
+    }));
+  }
+
+  async updateChatConversationStatus(id: string, status: string, humanRequestedAt?: Date): Promise<ChatConversation | undefined> {
+    const updateData: Record<string, any> = { status, updatedAt: new Date() };
+    if (humanRequestedAt) updateData.humanRequestedAt = humanRequestedAt;
+    
+    const [conversation] = await db.update(chatConversations)
+      .set(updateData)
+      .where(eq(chatConversations.id, id))
+      .returning();
+    return conversation || undefined;
+  }
+
+  // Chat Messages
+  async createChatMessage(data: InsertChatMessage): Promise<ChatMessage> {
+    const [message] = await db.insert(chatMessages).values(data).returning();
+    await db.update(chatConversations)
+      .set({ updatedAt: new Date() })
+      .where(eq(chatConversations.id, data.conversationId));
+    return message;
+  }
+
+  async getChatMessages(conversationId: string): Promise<ChatMessage[]> {
+    return await db.select().from(chatMessages)
+      .where(eq(chatMessages.conversationId, conversationId))
+      .orderBy(chatMessages.createdAt);
   }
 }
 
