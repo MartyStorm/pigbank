@@ -508,18 +508,18 @@ export default function Dashboard() {
             "w-full rounded-xl p-4 flex items-center justify-between gap-3",
             chargebackCount > 0 
               ? "bg-[#f0b100]/20 border border-[#f0b100]" 
-              : "bg-[#73cb43]/20 border border-[#39870E]"
+              : "bg-[#d4edda] border border-[#39870E]"
           )}>
             <div className="flex items-center gap-2 min-w-0">
-              <AlertTriangle className={cn("h-5 w-5 flex-shrink-0", chargebackCount > 0 ? "text-warning-text" : "text-success-text")} />
+              <AlertTriangle className={cn("h-5 w-5 flex-shrink-0", chargebackCount > 0 ? "text-warning-text" : "text-[#39870E]")} />
               <div className="min-w-0">
-                <h3 className="font-semibold text-foreground text-sm truncate">Chargeback Alert</h3>
-                <span className={cn("text-[10px] font-medium block", chargebackCount > 0 ? "text-warning-text" : "text-success-text")}>
+                <h3 className={cn("font-semibold text-sm truncate", chargebackCount > 0 ? "text-foreground" : "text-gray-900")}>Chargeback Alert</h3>
+                <span className={cn("text-[10px] font-medium block", chargebackCount > 0 ? "text-warning-text" : "text-[#39870E]")}>
                   {chargebackCount > 0 ? "Action Required" : "No Action Required"}
                 </span>
               </div>
             </div>
-            <span className="font-bold text-foreground text-lg flex-shrink-0">{chargebackCount}</span>
+            <span className={cn("font-bold text-lg flex-shrink-0", chargebackCount > 0 ? "text-foreground" : "text-gray-900")}>{chargebackCount}</span>
           </div>
 
           {/* Account Health Widget */}
