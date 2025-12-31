@@ -728,11 +728,31 @@ export default function HostedCheckout() {
                       {/* Accepted Cards */}
                       {showAcceptedCards && (
                         <div className="flex items-center justify-center gap-2">
-                          <div className="flex items-center gap-1.5 px-2 py-1 rounded border text-xs" style={{ borderColor: inputBorderColor, color: bodyTextColor }}>
-                            <span className="font-bold text-blue-600">VISA</span>
-                            <span className="font-bold text-red-500">MC</span>
-                            <span className="font-bold text-blue-500">AMEX</span>
-                            <span className="font-bold text-orange-500">DISC</span>
+                          <div className="flex items-center gap-2">
+                            {/* Visa */}
+                            <svg className="h-8 w-auto" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="50" height="16" rx="2" fill="#1A1F71"/>
+                              <path d="M19.5 4.5L17 11.5H15L13.5 6C13.4 5.6 13.3 5.4 13 5.2C12.4 4.9 11.5 4.6 10.7 4.4L10.8 4H14C14.5 4 14.9 4.3 15 4.9L15.8 9L17.8 4H19.5V4.5ZM24.5 11.5H22.9L23.9 4.5H25.5L24.5 11.5ZM32 4.5L30.3 11.5H28.6L27.3 6.3L26 11.5H24.3L26.5 4.5H28.1L29.3 9.5L30.5 4.5H32ZM37.5 9.2C37.5 10.7 36.2 11.7 34.3 11.7C33.4 11.7 32.5 11.5 32 11.2L32.3 9.8C32.9 10.1 33.6 10.3 34.4 10.3C35 10.3 35.5 10.1 35.5 9.6C35.5 9.2 35.2 9 34.4 8.7C33.1 8.2 32.5 7.5 32.5 6.6C32.5 5.2 33.7 4.2 35.5 4.2C36.3 4.2 37 4.4 37.4 4.6L37.1 5.9C36.7 5.7 36.1 5.5 35.4 5.5C34.8 5.5 34.4 5.8 34.4 6.2C34.4 6.5 34.7 6.7 35.5 7C36.9 7.5 37.5 8.2 37.5 9.2Z" fill="white"/>
+                            </svg>
+                            {/* Mastercard */}
+                            <svg className="h-8 w-auto" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="50" height="16" rx="2" fill="#000"/>
+                              <circle cx="20" cy="8" r="5" fill="#EB001B"/>
+                              <circle cx="30" cy="8" r="5" fill="#F79E1B"/>
+                              <path d="M25 4.17C26.27 5.17 27.1 6.5 27.1 8C27.1 9.5 26.27 10.83 25 11.83C23.73 10.83 22.9 9.5 22.9 8C22.9 6.5 23.73 5.17 25 4.17Z" fill="#FF5F00"/>
+                            </svg>
+                            {/* Amex */}
+                            <svg className="h-8 w-auto" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="50" height="16" rx="2" fill="#006FCF"/>
+                              <path d="M8 11L10.5 4H12.5L15 11H13L12.5 9.5H10.5L10 11H8ZM11 6L10.8 8H12.2L11.5 6H11ZM16 11V4H18.5L20 8L21.5 4H24V11H22V6.5L20.3 11H19.7L18 6.5V11H16ZM26 11V4H31V5.5H28V6.8H31V8.3H28V9.5H31V11H26ZM33 11L30.5 7.5L33 4H35.5L33 7.5L35.5 11H33ZM36 11V4H38.5L40 8L41.5 4H44V11H42V6.5L40.3 11H39.7L38 6.5V11H36Z" fill="white"/>
+                            </svg>
+                            {/* Discover */}
+                            <svg className="h-8 w-auto" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="50" height="16" rx="2" fill="#FF6000"/>
+                              <ellipse cx="30" cy="8" rx="6" ry="5" fill="#FF6000"/>
+                              <path d="M30 3C27.2 3 25 5.2 25 8C25 10.8 27.2 13 30 13C32.8 13 35 10.8 35 8C35 5.2 32.8 3 30 3Z" fill="#F9A533"/>
+                              <path d="M7 11V4H9.5C11.5 4 13 5.3 13 7.5C13 9.7 11.5 11 9.5 11H7ZM9 9.5H9.5C10.6 9.5 11.3 8.7 11.3 7.5C11.3 6.3 10.6 5.5 9.5 5.5H9V9.5ZM14 11V4H16V11H14ZM17 9.5C17.5 9.8 18.2 10 19 10C19.8 10 20.2 9.7 20.2 9.3C20.2 8.8 19.7 8.6 18.8 8.3C17.5 7.8 17 7.2 17 6.3C17 5 18 4 19.8 4C20.6 4 21.3 4.2 21.8 4.4L21.5 5.8C21.1 5.6 20.5 5.4 19.8 5.4C19.2 5.4 18.8 5.7 18.8 6.1C18.8 6.5 19.2 6.7 20 7C21.4 7.5 22 8.1 22 9.1C22 10.5 20.9 11.5 19 11.5C18.1 11.5 17.3 11.3 16.8 11L17 9.5Z" fill="white"/>
+                            </svg>
                           </div>
                         </div>
                       )}
