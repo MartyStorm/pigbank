@@ -671,21 +671,20 @@ export default function Landing() {
 
         <PaymentMethodsFlip />
 
-        {/* POS Terminals Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#ffffff]">
+        {/* POS Hardware Section */}
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e2e6e5]">
           <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  POS hardware & tablet software
+                  POS hardware
                 </h2>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  Powerful iPad POS software paired with sleek hardware. 
-                  Our tablet app handles sales, inventory, and customer management 
-                  while our terminals, card readers, and swivel stands 
-                  make checkout seamless.
+                  Sleek, durable hardware built for busy retail environments. 
+                  Our terminals, card readers, and swivel stands 
+                  make in-person checkout fast and seamless.
                 </p>
                 <Button 
                   asChild
@@ -694,7 +693,7 @@ export default function Landing() {
                   data-testid="button-learn-more-terminals"
                 >
                   <a href="/register">
-                    Explore POS
+                    Explore hardware
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -709,6 +708,74 @@ export default function Landing() {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* POS Software Section */}
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm font-medium text-gray-600">POS Dashboard</span>
+                        <Monitor className="h-5 w-5 text-[#73cb43]" />
+                      </div>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500">Today's Sales</span>
+                          <span className="font-semibold text-gray-900">$4,280</span>
+                        </div>
+                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full w-3/4 bg-[#73cb43] rounded-full" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between p-2 bg-green-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <Receipt className="h-3 w-3 text-[#73cb43]" />
+                            <span className="text-xs text-gray-700">Orders</span>
+                          </div>
+                          <span className="text-xs font-semibold text-gray-900">142</span>
+                        </div>
+                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <Users className="h-3 w-3 text-gray-400" />
+                            <span className="text-xs text-gray-700">Customers</span>
+                          </div>
+                          <span className="text-xs font-semibold text-gray-900">89</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  POS software
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg">
+                  Powerful iPad POS software that handles sales, inventory, 
+                  and customer management. Track orders, manage staff, 
+                  and get real-time analytics—all from one intuitive app.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-learn-more-pos-software"
+                >
+                  <a href="/register">
+                    Explore software
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
