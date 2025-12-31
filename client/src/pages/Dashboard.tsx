@@ -510,8 +510,13 @@ export default function Dashboard() {
               ? "bg-[#f0b100]/20 border border-[#f0b100]" 
               : "bg-[#d4edda] border border-[#39870E]"
           )}>
-            <div className="flex items-center gap-2 min-w-0">
-              <AlertTriangle className={cn("h-5 w-5 flex-shrink-0", chargebackCount > 0 ? "text-warning-text" : "text-[#39870E]")} />
+            <div className="flex items-center gap-3 min-w-0">
+              <div className={cn(
+                "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0",
+                chargebackCount > 0 ? "bg-[#f0b100]/30" : "bg-[#73cb43]/30"
+              )}>
+                <AlertTriangle className={cn("h-5 w-5", chargebackCount > 0 ? "text-warning-text" : "text-[#39870E]")} />
+              </div>
               <div className="min-w-0">
                 <h3 className={cn("font-semibold text-sm truncate", chargebackCount > 0 ? "text-foreground" : "text-gray-900")}>Chargeback Alert</h3>
                 <span className={cn("text-[10px] font-medium block", chargebackCount > 0 ? "text-warning-text" : "text-[#39870E]")}>
@@ -524,8 +529,10 @@ export default function Dashboard() {
 
           {/* Account Health Widget */}
           <div className="w-full bg-[#d4edda] border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2 min-w-0">
-              <ShieldCheck className="h-5 w-5 text-[#39870E] flex-shrink-0" />
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="h-5 w-5 text-[#39870E]" />
+              </div>
               <div className="min-w-0">
                 <h3 className="font-semibold text-gray-900 text-sm truncate">Account Health</h3>
                 <span className="text-[10px] text-[#39870E] font-medium block">Status</span>
