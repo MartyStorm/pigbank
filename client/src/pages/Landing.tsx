@@ -437,14 +437,21 @@ export default function Landing() {
           <div className="flex items-center gap-5">
             <a 
               href="/login" 
-              className="text-base text-white/90 hover:text-[#73cb43] transition-colors"
+              className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"
               data-testid="link-login"
             >
               Log in
             </a>
             <a 
+              href="/login"
+              className="bg-[#75C947] hover:bg-[#67b83c] text-white font-medium px-5 py-2 rounded-md transition-colors sm:hidden"
+              data-testid="button-login-mobile"
+            >
+              Log in
+            </a>
+            <a 
               href="/register"
-              className="bg-[#75C947] hover:bg-[#67b83c] text-white font-medium px-5 py-2 rounded-md transition-colors"
+              className="bg-[#75C947] hover:bg-[#67b83c] text-white font-medium px-5 py-2 rounded-md transition-colors hidden sm:block"
               data-testid="button-get-started-header"
             >
               Get started
