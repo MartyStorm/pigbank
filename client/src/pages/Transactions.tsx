@@ -76,7 +76,7 @@ export default function Transactions() {
     refund: 'Refund',
   };
 
-  const [columns, setColumns] = useState({
+  const defaultColumns = {
     customer: true,
     date: true,
     amount: true,
@@ -84,11 +84,39 @@ export default function Transactions() {
     risk: true,
     transactionId: true,
     refund: true,
+  };
+
+  const defaultColumnOrder: ColumnKey[] = [
+    'customer', 'date', 'amount', 'status', 'risk', 'transactionId', 'refund'
+  ];
+
+  const [columns, setColumns] = useState<Record<ColumnKey, boolean>>(() => {
+    try {
+      const saved = localStorage.getItem('pigbank_transaction_columns');
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {}
+    return defaultColumns;
   });
   
-  const [columnOrder, setColumnOrder] = useState<ColumnKey[]>([
-    'customer', 'date', 'amount', 'status', 'risk', 'transactionId', 'refund'
-  ]);
+  const [columnOrder, setColumnOrder] = useState<ColumnKey[]>(() => {
+    try {
+      const saved = localStorage.getItem('pigbank_transaction_column_order');
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {}
+    return defaultColumnOrder;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('pigbank_transaction_columns', JSON.stringify(columns));
+  }, [columns]);
+
+  useEffect(() => {
+    localStorage.setItem('pigbank_transaction_column_order', JSON.stringify(columnOrder));
+  }, [columnOrder]);
   
   const [refundAmounts, setRefundAmounts] = useState<Record<string, string>>({});
 
