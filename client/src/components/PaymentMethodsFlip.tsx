@@ -35,37 +35,37 @@ const cards = [
     id: "subscriptions",
     title: "Subscriptions",
     backText: "Recurring billing & memberships",
-    image: "/attached_assets/generated_images/subscription_recurring_payment_icon.png",
+    image: "/attached_assets/generated_images/subscription_icon_dark_bg.png",
   },
   {
     id: "tap-to-pay",
     title: "Tap to Pay",
     backText: "Phone to phone contactless payments",
-    image: "/attached_assets/generated_images/phone_tap_to_pay_icon.png",
+    image: "/attached_assets/generated_images/tap_to_pay_dark_bg.png",
   },
   {
     id: "apple-pay",
     title: "Apple Pay",
     backText: "Fast, secure mobile payments",
-    image: "/attached_assets/generated_images/apple_pay_mobile_payment_icon.png",
+    image: "/attached_assets/generated_images/apple_pay_icon_dark_bg.png",
   },
   {
     id: "direct-input",
     title: "Direct Input",
     backText: "Manual card entry via virtual terminal",
-    image: "/attached_assets/generated_images/manual_card_entry_icon.png",
+    image: "/attached_assets/generated_images/direct_input_icon_dark_bg.png",
   },
   {
     id: "bnpl",
     title: "Buy Now Pay Later",
     backText: "Flexible installment payments",
-    image: "/attached_assets/generated_images/buy_now_pay_later_icon.png",
+    image: "/attached_assets/generated_images/bnpl_icon_dark_bg.png",
   },
   {
     id: "ipad-terminal",
     title: "iPad Terminal",
     backText: "In-person POS payments",
-    image: "/attached_assets/generated_images/ipad_pos_terminal_icon.png",
+    image: "/attached_assets/generated_images/ipad_terminal_dark_bg.png",
   },
 ];
 
