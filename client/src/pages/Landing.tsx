@@ -804,6 +804,55 @@ export default function Landing() {
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
 
+                {/* Faded Graph Line Effect - Behind Images - Hidden until hover */}
+                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <svg viewBox="0 0 200 100" className="w-full h-full opacity-20">
+                    <defs>
+                      <linearGradient id="graphGradientLow" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="transparent" />
+                        <stop offset="30%" stopColor="#ffffff" stopOpacity="0.3" />
+                        <stop offset="70%" stopColor="#ffffff" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
+                      </linearGradient>
+                    </defs>
+                    <path 
+                      d="M 0 80 Q 30 70 50 60 T 80 45 T 120 35 T 160 20 T 200 10" 
+                      stroke="url(#graphGradientLow)" 
+                      strokeWidth="2" 
+                      fill="none"
+                    />
+                    <path 
+                      d="M 0 90 Q 40 85 60 75 T 100 60 T 140 45 T 180 30 T 200 25" 
+                      stroke="url(#graphGradientLow)" 
+                      strokeWidth="1.5" 
+                      fill="none"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
+
+                {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
+                <div className="absolute top-1/2 -translate-y-1/2 right-[-20px] hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="relative w-72 h-72">
+                    {/* Back image - Coffee shop */}
+                    <div className="absolute top-0 left-0 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-8deg] transform">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_23_24_AM_1767177394146.png" 
+                        alt="Coffee Shop Payment" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Front image - Tap to Pay */}
+                    <div className="absolute top-[-16px] left-28 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[8deg] transform z-10">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png" 
+                        alt="Tap to Pay" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 {/* Content */}
                 <div className="flex flex-col h-full pt-14 relative z-10">
                   <div>
@@ -815,23 +864,25 @@ export default function Landing() {
                     </p>
                   </div>
                   
-                  {/* Industry list - visible on mobile only */}
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 mt-6 lg:hidden">
-                    {[
-                      "Subscription",
-                      "Accounting",
-                      "Dropshipping",
-                      "High volume",
-                      "Apparel",
-                      "Home goods",
-                      "Pet supplies",
-                      "Beauty products",
-                    ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-white/90">
-                        <Check className="h-4 w-4 text-white" />
-                        <span className="text-sm">{industry}</span>
-                      </div>
-                    ))}
+                  {/* Industry list - Hidden until hover on desktop */}
+                  <div className="mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
+                    <div className="flex flex-col gap-y-1.5">
+                      {[
+                        "Subscription",
+                        "Accounting",
+                        "Dropshipping",
+                        "High volume",
+                        "Apparel",
+                        "Home goods",
+                        "Pet supplies",
+                        "Beauty products",
+                      ].map((industry) => (
+                        <div key={industry} className="flex items-center gap-2 text-white/90">
+                          <Check className="h-3.5 w-3.5 text-white flex-shrink-0" />
+                          <span className="text-sm">{industry}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
