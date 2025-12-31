@@ -113,7 +113,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'radial-gradient(circle at center, #5aa55a 0%, #3d6b3d 35%, #1a3d1a 100%)' }}>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[#1a4320]">
       {/* Confirmation Dialog */}
       <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
         <DialogContent className="sm:max-w-md">
