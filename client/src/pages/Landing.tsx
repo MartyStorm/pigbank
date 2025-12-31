@@ -695,7 +695,7 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[520px]">
               {/* High Risk Card */}
               <div 
-                className="group relative flex-[1.5] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#74747d]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#74747d]"
                 data-testid="card-high-risk"
               >
                 {/* Arrow Icon - Top Left */}
@@ -762,15 +762,17 @@ export default function Landing() {
 
                 {/* Content */}
                 <div className="flex flex-col h-full pt-14">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-auto">
-                    High risk industries
-                  </h3>
-                  
-                  {/* Industry list - Bottom - Hidden until hover on desktop */}
-                  <div className="mt-auto space-y-4 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white/60 text-sm italic max-w-xs">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                      High risk industries
+                    </h3>
+                    <p className="text-white/70 text-sm mt-4 max-w-xs">
                       Just because a bank deems your business risky, doesn't mean you can't prosper.
                     </p>
+                  </div>
+                  
+                  {/* Industry list - Bottom - Hidden until hover on desktop */}
+                  <div className="mt-auto lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                     <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                       {[
                         "CBD",
