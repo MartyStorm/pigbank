@@ -86,7 +86,7 @@ export default function Payouts() {
         </div>
         
         <div className="grid gap-4 md:grid-cols-2">
-          <Card className="border border-blue-400 shadow-sm bg-blue-50 dark:bg-blue-950/30 dark:border-blue-700 rounded-xl">
+          <Card className="border border-blue-400 shadow-sm bg-[#dbeaff] dark:bg-blue-950/30 dark:border-blue-700 rounded-xl">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
