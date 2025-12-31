@@ -266,8 +266,8 @@ export function Sidebar({ className }: { className?: string }) {
   const isLightMode = !isDark;
 
   return (
-    <div className={cn("flex h-screen w-64 flex-col bg-[#1a4320] dark:bg-[#262626] text-sidebar-foreground", className)}>
-      <div className="hidden md:flex h-20 items-center justify-center bg-[#1a4320] dark:bg-[#262626]">
+    <div className={cn("flex h-full md:h-screen w-64 flex-col bg-[#1a4320] dark:bg-[#262626] text-sidebar-foreground overflow-hidden", className)}>
+      <div className="hidden md:flex h-20 items-center justify-center bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
         <Link href="/dashboard">
           <img 
             src="/pig-bank-logo-dark.png" 
@@ -281,7 +281,7 @@ export function Sidebar({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <div className="flex-1 overflow-y-auto pb-4 pt-0 bg-[#1a4320] dark:bg-[#262626]">
+      <div className="flex-1 overflow-y-auto pb-4 pt-0 bg-[#1a4320] dark:bg-[#262626] overscroll-contain">
         <nav className="space-y-1 px-3 mt-4 md:mt-0">
           {navItems.map((item) => {
             const isActive = location === item.href;
@@ -378,11 +378,176 @@ export function Sidebar({ className }: { className?: string }) {
             );
           })}
         </nav>
+        
+        {/* PigBank Staff Section - inside scrollable area on mobile */}
+        {pigBankItems.length > 0 && (
+          <div className="border-t border-white/10 px-3 py-3 mt-2 md:hidden">
+            <div className="text-[10px] uppercase tracking-wider text-white/40 font-semibold mb-2 px-3">
+              PigBank Staff
+            </div>
+            <nav className="space-y-1">
+              {pigBankItems.map((item) => {
+                const isActive = location === item.href;
+                const hasChildren = item.children && item.children.length > 0;
+                const isOpen = openMenus[item.label];
+                const isChildActive = item.children?.some(child => location === child.href);
+
+                if (hasChildren) {
+                  return (
+                    <div key={item.label} className="space-y-1">
+                      <div
+                        onClick={() => toggleMenu(item.label)}
+                        className={cn(
+                          "group flex items-center gap-3 rounded-md px-3 py-3 text-base font-medium transition-all duration-200 cursor-pointer",
+                          (isActive || isChildActive)
+                            ? "text-white"
+                            : "text-white/80 hover:bg-white/10 hover:text-white dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white"
+                        )}
+                      >
+                        <item.icon className={cn("h-4 w-4", 
+                          (isActive || isChildActive) ? "text-white" : "text-white/70 group-hover:text-white"
+                        )} />
+                        <span className="flex-1">{item.label}</span>
+                        {isOpen ? (
+                          <ChevronDown className="h-3 w-3 opacity-50" />
+                        ) : (
+                          <ChevronRight className="h-3 w-3 opacity-50" />
+                        )}
+                      </div>
+                      
+                      {isOpen && (
+                        <div className="pl-9 space-y-1">
+                          {item.children?.map((child) => {
+                            const isChildItemActive = location === child.href;
+                            return (
+                              <Link key={child.label} href={child.href}>
+                                <div
+                                  className={cn(
+                                    "group flex items-center gap-3 rounded-md px-3 py-3 text-base font-medium transition-all duration-200",
+                                    isChildItemActive
+                                      ? "bg-white/20 text-white shadow-sm"
+                                      : "text-white/70 hover:bg-white/10 hover:text-white dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white"
+                                  )}
+                                >
+                                  <span className="flex-1">{child.label}</span>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link key={item.label} href={item.href}>
+                    <div
+                      className={cn(
+                        "group flex items-center gap-3 rounded-md px-3 py-3 text-base font-medium transition-all duration-200",
+                        isActive
+                          ? "bg-white/20 text-white shadow-sm"
+                          : "text-white/80 hover:bg-white/10 hover:text-white dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white"
+                      )}
+                    >
+                      <item.icon className={cn("h-4 w-4", 
+                        isActive ? "text-white" : "text-white/70 group-hover:text-white"
+                      )} />
+                      <span>{item.label}</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
+
+        {/* Mobile bottom links - inside scrollable area */}
+        <div className="border-t border-white/10 p-2 mt-2 md:hidden">
+          <a 
+            href="/landing" 
+            className="flex items-center gap-2 px-3 py-2 mb-1 text-xs text-white/60 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+            data-testid="link-back-to-landing-mobile"
+          >
+            <ChevronRight className="h-3 w-3 rotate-180" />
+            <span>Back to Landing Page</span>
+          </a>
+          <a 
+            href="/onboarding" 
+            className="flex items-center gap-2 px-3 py-2 mb-2 text-xs text-white/60 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+            data-testid="link-back-to-onboarding-mobile"
+          >
+            <ChevronRight className="h-3 w-3 rotate-180" />
+            <span>Back to Onboarding</span>
+          </a>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="w-full flex items-center gap-3 px-2 hover:bg-white/10 dark:hover:bg-white/10 text-white dark:text-gray-300 justify-start h-auto py-3">
+                <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
+                  {!isAuthenticated ? (
+                    <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
+                  ) : user?.profileImageUrl ? (
+                    <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
+                  ) : null}
+                  <AvatarFallback>{getUserInitials()}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col items-start text-sm overflow-hidden">
+                  <span className="font-medium truncate w-full">{getUserDisplayName()}</span>
+                </div>
+                <ChevronDown className="h-4 w-4 opacity-70 ml-auto" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-56" side="top" sideOffset={8}>
+              <DropdownMenuItem asChild>
+                <a href="/admin" data-testid="link-admin-console">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Admin Console
+                </a>
+              </DropdownMenuItem>
+              {isAuthenticated && (
+                <>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem 
+                    onClick={handleToggleDemo} 
+                    disabled={isLoadingDemoState}
+                    className={isDemoActive ? "text-red-500 focus:text-red-500" : "text-[#73cb43] focus:text-[#73cb43]"}
+                    data-testid="sidebar-button-demo"
+                  >
+                    {isLoadingDemoState ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        {isLoadingDemo ? (isDemoActive ? "Exiting Demo..." : "Loading Demo...") : "Loading..."}
+                      </>
+                    ) : isDemoActive ? (
+                      <>
+                        <Square className="mr-2 h-4 w-4" />
+                        Exit Demo Account
+                      </>
+                    ) : (
+                      <>
+                        <Play className="mr-2 h-4 w-4" />
+                        View Demo Account
+                      </>
+                    )}
+                  </DropdownMenuItem>
+                </>
+              )}
+              <DropdownMenuSeparator />
+              {isAuthenticated ? (
+                <DropdownMenuItem onClick={handleLogout} data-testid="button-logout">Log out</DropdownMenuItem>
+              ) : (
+                <DropdownMenuItem asChild>
+                  <a href="/login" data-testid="button-login">Log in</a>
+                </DropdownMenuItem>
+              )}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
 
-      {/* PigBank Staff Section */}
+      {/* Desktop PigBank Staff Section - fixed at bottom */}
       {pigBankItems.length > 0 && (
-        <div className="border-t border-white/10 px-3 py-3 bg-[#1a4320] dark:bg-[#262626]">
+        <div className="hidden md:block border-t border-white/10 px-3 py-3 bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
           <div className="text-[10px] uppercase tracking-wider text-white/40 font-semibold mb-2 px-3">
             PigBank Staff
           </div>
@@ -463,7 +628,8 @@ export function Sidebar({ className }: { className?: string }) {
         </div>
       )}
 
-      <div className="border-t border-white/10 p-2 bg-[#1a4320] dark:bg-[#262626]">
+      {/* Desktop bottom links - fixed at bottom */}
+      <div className="hidden md:block border-t border-white/10 p-2 bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
         <a 
           href="/landing" 
           className="flex items-center gap-2 px-3 py-2 mb-1 text-xs text-white/60 hover:text-white hover:bg-white/10 rounded-md transition-colors"

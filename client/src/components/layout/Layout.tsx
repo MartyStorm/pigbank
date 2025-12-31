@@ -59,9 +59,9 @@ export function Layout({ children, title }: LayoutProps) {
                 animate={{ y: 0 }}
                 exit={{ y: "100%" }}
                 transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                className="fixed inset-x-0 bottom-0 top-[73px] bg-white dark:bg-[#262626] z-40 overflow-hidden border-t border-border/50 shadow-2xl"
+                className="fixed inset-x-0 bottom-0 top-[73px] bg-[#1a4320] dark:bg-[#262626] z-40 overflow-hidden border-t border-border/50 shadow-2xl"
               >
-                <Sidebar className="w-full h-full" />
+                <Sidebar className="w-full h-full overflow-y-auto overscroll-contain" />
               </motion.div>
             )}
           </AnimatePresence>
