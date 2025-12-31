@@ -186,8 +186,8 @@ export default function Settings() {
             {/* Email Notifications */}
             <div className="flex items-center justify-between">
               <div className="flex items-start gap-3">
-                <div className="bg-[#73cb43]/20 p-2 rounded-lg">
-                  <Mail className="h-5 w-5 text-[#73cb43]" />
+                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                  <Mail className="h-5 w-5 text-[#39870E]" />
                 </div>
                 <div>
                   <Label htmlFor="email-notifications" className="text-base font-medium">
@@ -268,8 +268,8 @@ export default function Settings() {
               {/* SMS Notifications */}
               <div className="flex items-center justify-between">
                 <div className="flex items-start gap-3">
-                  <div className="bg-[#73cb43]/20 p-2 rounded-lg">
-                    <MessageSquare className="h-5 w-5 text-[#73cb43]" />
+                  <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                    <MessageSquare className="h-5 w-5 text-[#39870E]" />
                   </div>
                   <div>
                     <Label htmlFor="sms-notifications" className="text-base font-medium">
