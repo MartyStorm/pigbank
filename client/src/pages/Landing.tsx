@@ -698,18 +698,6 @@ export default function Landing() {
                 className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#74747d]"
                 data-testid="card-high-risk"
               >
-                {/* Light Grid Pattern - Fades in on hover */}
-                <div 
-                  className="absolute inset-0 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '30px 30px'
-                  }}
-                />
-
                 {/* Arrow Icon - Top Left */}
                 <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
                   <ArrowUpRight className="h-5 w-5 text-white" />
