@@ -170,7 +170,6 @@ export default function Register() {
             </a>
           </div>
           <CardTitle className="text-3xl font-bold text-gray-900" data-testid="text-register-title">Create an account</CardTitle>
-          <CardDescription className="text-gray-500">Start processing payments with PigBank</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
@@ -189,11 +188,12 @@ export default function Register() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
+              <p className="text-xs text-gray-500 mb-1">Must include 8+ characters, uppercase letter, and special character</p>
               <div className="relative">
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="At least 8 characters"
+                  placeholder="Enter a strong password"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   required
