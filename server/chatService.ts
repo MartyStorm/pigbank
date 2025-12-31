@@ -48,6 +48,25 @@ export interface ChatHistoryMessage {
   content: string;
 }
 
+const PIGBANK_KEYWORDS = [
+  'pigbank', 'payment', 'transaction', 'payout', 'invoice', 'chargeback',
+  'fraud', 'merchant', 'account', 'card', 'ach', 'wire', 'crypto',
+  'fee', 'pricing', 'rate', 'processing', 'gateway', 'checkout',
+  'refund', 'dispute', 'settlement', 'deposit', 'withdraw', 'balance',
+  'customer', 'support', 'help', 'setup', 'apply', 'application',
+  'onboarding', 'dashboard', 'report', 'analytics', 'security',
+  'verification', 'risk', 'approval', 'documentation', 'api', 'integration',
+  'hello', 'hi', 'hey', 'thanks', 'thank', 'yes', 'no', 'okay', 'please'
+];
+
+function isLikelyPigBankRelated(message: string): boolean {
+  const lowerMessage = message.toLowerCase();
+  return PIGBANK_KEYWORDS.some(keyword => lowerMessage.includes(keyword)) ||
+    lowerMessage.length < 20;
+}
+
+const OFF_TOPIC_RESPONSE = "I'm here specifically to help with PigBank and payment processing questions. I can assist with transactions, chargebacks, payouts, fraud protection, invoicing, account setup, and other PigBank-related topics. Is there anything about your PigBank account or our payment services I can help you with?";
+
 export async function getChatResponse(
   userMessage: string,
   conversationHistory: ChatHistoryMessage[] = []
@@ -56,6 +75,10 @@ export async function getChatResponse(
   
   if (!openai) {
     return getFallbackResponse(userMessage);
+  }
+
+  if (!isLikelyPigBankRelated(userMessage) && conversationHistory.length > 0) {
+    return OFF_TOPIC_RESPONSE;
   }
   
   try {

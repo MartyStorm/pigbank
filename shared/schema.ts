@@ -516,3 +516,7 @@ export type InsertChatConversation = z.infer<typeof insertChatConversationSchema
 
 export type ChatMessage = typeof chatMessages.$inferSelect;
 export type InsertChatMessage = z.infer<typeof insertChatMessageSchema>;
+
+// Aliases for integration compatibility
+export const conversations = chatConversations;
+export const messages = chatMessages;
