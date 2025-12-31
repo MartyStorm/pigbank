@@ -46,7 +46,7 @@ export default function Terminal() {
           </div>
         </div>
 
-        <Card className="border-border shadow-sm">
+        <Card className="border-border shadow-sm h-fit">
           <CardHeader className="py-4 bg-[#74747d] rounded-t-xl flex flex-row items-center justify-between">
             <div>
               <CardTitle className="text-white">New Transaction</CardTitle>
