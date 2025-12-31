@@ -93,11 +93,10 @@ export default function Login() {
             />
           </a>
           
-          <div className="text-center space-y-2">
+          <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900" data-testid="text-login-title">
               Welcome back!
             </h1>
-            <p className="text-gray-500">Sign in to your account.</p>
           </div>
         </div>
 
