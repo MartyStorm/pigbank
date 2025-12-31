@@ -719,7 +719,28 @@ export default function Landing() {
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  POS software
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg">
+                  Powerful iPad POS software that handles sales, inventory, 
+                  and customer management. Track orders, manage staff, 
+                  and get real-time analytics—all from one intuitive app.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-learn-more-pos-software"
+                >
+                  <a href="/register">
+                    Explore software
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
@@ -755,27 +776,6 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  POS software
-                </h2>
-                <p className="text-lg text-gray-600 max-w-lg">
-                  Powerful iPad POS software that handles sales, inventory, 
-                  and customer management. Track orders, manage staff, 
-                  and get real-time analytics—all from one intuitive app.
-                </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-learn-more-pos-software"
-                >
-                  <a href="/register">
-                    Explore software
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>
