@@ -437,7 +437,7 @@ export default function Landing() {
           <div className="flex items-center gap-5">
             <a 
               href="/login" 
-              className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"
+              className="text-base text-white/90 hover:text-[#73cb43] transition-colors"
               data-testid="link-login"
             >
               Log in
