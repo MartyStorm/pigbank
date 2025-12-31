@@ -1111,7 +1111,7 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'radial-gradient(circle at center, #5aa55a 0%, #3d6b3d 35%, #1a3d1a 100%)' }}>
+    <div className="min-h-screen bg-[#1a4320]">
       <header className="px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <button onClick={() => setLocation("/landing")} className="cursor-pointer bg-transparent border-0 p-0">
