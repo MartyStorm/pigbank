@@ -547,8 +547,10 @@ export default function Dashboard() {
             className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:bg-muted/50 transition-colors text-left"
             data-testid="button-payout-balance-card"
           >
-            <div className="flex items-center gap-2 min-w-0">
-              <DollarSign className="h-5 w-5 text-success-text flex-shrink-0" />
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
+                <DollarSign className="h-5 w-5 text-[#39870E]" />
+              </div>
               <div className="min-w-0">
                 <h3 className="font-semibold text-foreground text-sm truncate">Payout Balance</h3>
                 <span className="text-[10px] text-muted-foreground block">{payoutBalance > 0 ? "Processing" : "No balance"}</span>
