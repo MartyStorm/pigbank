@@ -703,8 +703,8 @@ export default function Landing() {
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
 
-                {/* Floating Payment Notifications - Right Side (Desktop) */}
-                <div className="absolute top-24 right-6 space-y-3 hidden lg:block">
+                {/* Floating Payment Notifications - Right Side (Desktop) - Hidden until hover */}
+                <div className="absolute top-24 right-6 space-y-3 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 min-w-[200px]">
                     <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
                       <ArrowDownLeft className="h-3 w-3 text-gray-600" />
@@ -725,8 +725,8 @@ export default function Landing() {
                   </div>
                 </div>
 
-                {/* Product Images - Bottom Right (Desktop) */}
-                <div className="absolute bottom-6 right-6 flex gap-2 hidden lg:flex">
+                {/* Product Images - Bottom Right (Desktop) - Hidden until hover */}
+                <div className="absolute bottom-6 right-6 flex gap-2 hidden lg:flex opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg">
                     <img 
                       src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
