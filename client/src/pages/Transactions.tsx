@@ -38,7 +38,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Search, Download, Filter, Eye, RefreshCw, Share, CreditCard, ShieldAlert, Loader2, Calendar, ChevronDown, ChevronUp, Settings2 } from "lucide-react";
+import { Search, Download, Filter, Eye, RefreshCw, Share, CreditCard, ShieldAlert, Loader2, Calendar, ChevronDown, ChevronUp, Settings2, ArrowUp, ArrowDown, GripVertical } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
@@ -64,6 +64,18 @@ export default function Transactions() {
   const { getApiUrl, getQueryKey, isStaffViewingMerchant, isInitialized } = useStaffApi();
   const { isPigBankStaff } = useAuth();
   
+  type ColumnKey = 'customer' | 'date' | 'amount' | 'status' | 'risk' | 'transactionId' | 'refund';
+  
+  const columnLabels: Record<ColumnKey, string> = {
+    customer: 'Customer',
+    date: 'Date & Time',
+    amount: 'Amount',
+    status: 'Status',
+    risk: 'Risk',
+    transactionId: 'Transaction ID',
+    refund: 'Refund',
+  };
+
   const [columns, setColumns] = useState({
     customer: true,
     date: true,
@@ -74,10 +86,32 @@ export default function Transactions() {
     refund: true,
   });
   
+  const [columnOrder, setColumnOrder] = useState<ColumnKey[]>([
+    'customer', 'date', 'amount', 'status', 'risk', 'transactionId', 'refund'
+  ]);
+  
   const [refundAmounts, setRefundAmounts] = useState<Record<string, string>>({});
 
   const toggleColumn = (column: keyof typeof columns) => {
     setColumns(prev => ({ ...prev, [column]: !prev[column] }));
+  };
+
+  const moveColumnUp = (index: number) => {
+    if (index === 0) return;
+    setColumnOrder(prev => {
+      const newOrder = [...prev];
+      [newOrder[index - 1], newOrder[index]] = [newOrder[index], newOrder[index - 1]];
+      return newOrder;
+    });
+  };
+
+  const moveColumnDown = (index: number) => {
+    if (index === columnOrder.length - 1) return;
+    setColumnOrder(prev => {
+      const newOrder = [...prev];
+      [newOrder[index], newOrder[index + 1]] = [newOrder[index + 1], newOrder[index]];
+      return newOrder;
+    });
   };
 
   const visibleColumnCount = Object.values(columns).filter(Boolean).length;
@@ -248,38 +282,45 @@ export default function Transactions() {
                   <span>Toggle Columns</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent align="end" className="w-48">
+              <PopoverContent align="end" className="w-64">
                 <div className="space-y-3">
-                  <p className="text-sm font-medium">Toggle Columns</p>
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-customer" checked={columns.customer} onCheckedChange={() => toggleColumn('customer')} />
-                      <label htmlFor="col-customer" className="text-sm cursor-pointer">Customer</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-date" checked={columns.date} onCheckedChange={() => toggleColumn('date')} />
-                      <label htmlFor="col-date" className="text-sm cursor-pointer">Date & Time</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-amount" checked={columns.amount} onCheckedChange={() => toggleColumn('amount')} />
-                      <label htmlFor="col-amount" className="text-sm cursor-pointer">Amount</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-status" checked={columns.status} onCheckedChange={() => toggleColumn('status')} />
-                      <label htmlFor="col-status" className="text-sm cursor-pointer">Status</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-risk" checked={columns.risk} onCheckedChange={() => toggleColumn('risk')} />
-                      <label htmlFor="col-risk" className="text-sm cursor-pointer">Risk</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-transactionId" checked={columns.transactionId} onCheckedChange={() => toggleColumn('transactionId')} />
-                      <label htmlFor="col-transactionId" className="text-sm cursor-pointer">Transaction ID</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="col-refund" checked={columns.refund} onCheckedChange={() => toggleColumn('refund')} />
-                      <label htmlFor="col-refund" className="text-sm cursor-pointer">Refund</label>
-                    </div>
+                  <p className="text-sm font-medium">Toggle & Reorder Columns</p>
+                  <div className="space-y-1">
+                    {columnOrder.map((colKey, index) => (
+                      <div key={colKey} className="flex items-center gap-2 py-1 px-2 rounded hover:bg-muted/50 group">
+                        <GripVertical className="h-3 w-3 text-muted-foreground/50" />
+                        <Checkbox 
+                          id={`col-${colKey}`} 
+                          checked={columns[colKey]} 
+                          onCheckedChange={() => toggleColumn(colKey)} 
+                        />
+                        <label htmlFor={`col-${colKey}`} className="text-sm cursor-pointer flex-1">
+                          {columnLabels[colKey]}
+                        </label>
+                        <div className="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-6 w-6"
+                            onClick={() => moveColumnUp(index)}
+                            disabled={index === 0}
+                            data-testid={`button-move-column-up-${colKey}`}
+                          >
+                            <ArrowUp className="h-3 w-3" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-6 w-6"
+                            onClick={() => moveColumnDown(index)}
+                            disabled={index === columnOrder.length - 1}
+                            data-testid={`button-move-column-down-${colKey}`}
+                          >
+                            <ArrowDown className="h-3 w-3" />
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </PopoverContent>
@@ -440,13 +481,17 @@ export default function Transactions() {
           <Table>
             <TableHeader className="bg-[#74747d] dark:bg-[#262626] [&_tr]:hover:bg-[#74747d] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
               <TableRow className="border-b-[#74747d] dark:border-b-gray-700">
-                {columns.customer && <TableHead className="text-white text-center border-r border-white/30">Customer</TableHead>}
-                {columns.date && <TableHead className="text-white text-center border-r border-white/30">Date & Time</TableHead>}
-                {columns.amount && <TableHead className="text-white text-center border-r border-white/30">Amount</TableHead>}
-                {columns.status && <TableHead className="text-white text-center border-r border-white/30">Status</TableHead>}
-                {columns.risk && <TableHead className="text-white text-center border-r border-white/30">Risk</TableHead>}
-                {columns.transactionId && <TableHead className="text-white text-center border-r border-white/30">Transaction ID</TableHead>}
-                {columns.refund && <TableHead className="text-white text-center">Refund</TableHead>}
+                {columnOrder.filter(col => columns[col]).map((col, index, visibleCols) => (
+                  <TableHead 
+                    key={col} 
+                    className={cn(
+                      "text-white text-center",
+                      index < visibleCols.length - 1 && "border-r border-white/30"
+                    )}
+                  >
+                    {columnLabels[col]}
+                  </TableHead>
+                ))}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -487,62 +532,79 @@ export default function Transactions() {
                   </TableCell>
                 </TableRow>
               ) : (
-                formattedTransactions.map((txn) => (
-                  <TableRow 
-                    key={txn.id} 
-                    className="cursor-pointer hover:bg-muted/30 transition-colors"
-                    onClick={() => setSelectedTxn(txn)}
-                    data-testid={`row-transaction-${txn.transactionId}`}
-                  >
-                    {columns.customer && (
-                      <TableCell>
-                        <div className="flex flex-col">
-                          <span className="font-medium text-sm">{txn.customerName}</span>
-                          <span className="text-xs text-muted-foreground">{txn.customerEmail}</span>
-                        </div>
-                      </TableCell>
-                    )}
-                    {columns.date && <TableCell className="text-muted-foreground text-sm">{txn.displayDate}</TableCell>}
-                    {columns.amount && <TableCell className="font-medium">{txn.displayAmount}</TableCell>}
-                    {columns.status && (
-                      <TableCell>
-                        <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getStatusColor(txn.status))}>
-                          {txn.status}
-                        </span>
-                      </TableCell>
-                    )}
-                    {columns.risk && (
-                      <TableCell>
-                        <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getRiskColor(txn.risk))}>
-                          {txn.risk}
-                        </span>
-                      </TableCell>
-                    )}
-                    {columns.transactionId && <TableCell className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>}
-                    {columns.refund && (
-                      <TableCell onClick={(e) => e.stopPropagation()}>
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="relative w-20">
-                            <span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">$</span>
-                            <Input 
-                              className="h-7 pl-5 text-xs"
-                              placeholder={parseFloat(txn.amount).toFixed(2)}
-                              value={refundAmounts[txn.id] || ""}
-                              onChange={(e) => setRefundAmounts(prev => ({ ...prev, [txn.id]: e.target.value }))}
-                            />
-                          </div>
-                          <Button 
-                            size="sm" 
-                            className="h-7 px-2 bg-[#b91c1c] hover:bg-[#991b1b] text-white text-xs"
-                            onClick={(e) => handleInlineRefund(txn, e)}
-                          >
-                            Refund
-                          </Button>
-                        </div>
-                      </TableCell>
-                    )}
-                  </TableRow>
-                ))
+                formattedTransactions.map((txn) => {
+                  const renderCell = (col: ColumnKey) => {
+                    switch (col) {
+                      case 'customer':
+                        return (
+                          <TableCell key={col}>
+                            <div className="flex flex-col">
+                              <span className="font-medium text-sm">{txn.customerName}</span>
+                              <span className="text-xs text-muted-foreground">{txn.customerEmail}</span>
+                            </div>
+                          </TableCell>
+                        );
+                      case 'date':
+                        return <TableCell key={col} className="text-muted-foreground text-sm">{txn.displayDate}</TableCell>;
+                      case 'amount':
+                        return <TableCell key={col} className="font-medium">{txn.displayAmount}</TableCell>;
+                      case 'status':
+                        return (
+                          <TableCell key={col}>
+                            <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getStatusColor(txn.status))}>
+                              {txn.status}
+                            </span>
+                          </TableCell>
+                        );
+                      case 'risk':
+                        return (
+                          <TableCell key={col}>
+                            <span className={cn("px-2.5 py-0.5 rounded-md text-xs font-medium border", getRiskColor(txn.risk))}>
+                              {txn.risk}
+                            </span>
+                          </TableCell>
+                        );
+                      case 'transactionId':
+                        return <TableCell key={col} className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>;
+                      case 'refund':
+                        return (
+                          <TableCell key={col} onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center justify-center gap-2">
+                              <div className="relative w-20">
+                                <span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">$</span>
+                                <Input 
+                                  className="h-7 pl-5 text-xs"
+                                  placeholder={parseFloat(txn.amount).toFixed(2)}
+                                  value={refundAmounts[txn.id] || ""}
+                                  onChange={(e) => setRefundAmounts(prev => ({ ...prev, [txn.id]: e.target.value }))}
+                                />
+                              </div>
+                              <Button 
+                                size="sm" 
+                                className="h-7 px-2 bg-[#b91c1c] hover:bg-[#991b1b] text-white text-xs"
+                                onClick={(e) => handleInlineRefund(txn, e)}
+                              >
+                                Refund
+                              </Button>
+                            </div>
+                          </TableCell>
+                        );
+                      default:
+                        return null;
+                    }
+                  };
+
+                  return (
+                    <TableRow 
+                      key={txn.id} 
+                      className="cursor-pointer hover:bg-muted/30 transition-colors"
+                      onClick={() => setSelectedTxn(txn)}
+                      data-testid={`row-transaction-${txn.transactionId}`}
+                    >
+                      {columnOrder.filter(col => columns[col]).map(col => renderCell(col))}
+                    </TableRow>
+                  );
+                })
               )}
             </TableBody>
           </Table>
