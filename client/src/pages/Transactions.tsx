@@ -446,7 +446,7 @@ export default function Transactions() {
                 {columns.status && <TableHead className="text-white">Status</TableHead>}
                 {columns.risk && <TableHead className="text-white">Risk</TableHead>}
                 {columns.transactionId && <TableHead className="text-white">Transaction ID</TableHead>}
-                {columns.refund && <TableHead className="text-white">Refund</TableHead>}
+                {columns.refund && <TableHead className="text-white text-center">Refund</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -521,7 +521,7 @@ export default function Transactions() {
                     {columns.transactionId && <TableCell className="font-mono text-xs font-medium">{txn.transactionId}</TableCell>}
                     {columns.refund && (
                       <TableCell onClick={(e) => e.stopPropagation()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center gap-2">
                           <div className="relative w-20">
                             <span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">$</span>
                             <Input 
