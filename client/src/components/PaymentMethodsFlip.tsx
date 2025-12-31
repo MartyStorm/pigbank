@@ -31,6 +31,36 @@ const cards = [
     backText: "Send payment links via text or email",
     image: "/attached_assets/ChatGPT_Image_Dec_30,_2025,_12_07_25_AM_1767074862780.png",
   },
+  {
+    id: "subscriptions",
+    title: "Subscriptions",
+    backText: "Recurring billing & memberships",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
+  },
+  {
+    id: "tap-to-pay",
+    title: "Tap to Pay",
+    backText: "Phone to phone contactless payments",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
+  },
+  {
+    id: "apple-pay",
+    title: "Apple Pay",
+    backText: "Fast, secure mobile payments",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
+  },
+  {
+    id: "direct-input",
+    title: "Direct Input",
+    backText: "Manual card entry via virtual terminal",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
+  },
+  {
+    id: "bnpl",
+    title: "Buy Now Pay Later",
+    backText: "Flexible installment payments",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
+  },
 ];
 
 function FlipCard({
@@ -249,7 +279,7 @@ export default function PaymentMethodsFlip() {
             Accept payments your way
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Support cards, bank payments, crypto, checks, and payment links.
+            Support cards, bank payments, crypto, subscriptions, tap-to-pay, and more.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
