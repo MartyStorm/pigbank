@@ -353,7 +353,7 @@ export default function Chargebacks() {
                         )}
                       </TableCell>
                       <TableCell className="text-right">
-                        {cb.actionRequired && (
+                        {cb.actionRequired ? (
                           <Button 
                             size="sm" 
                             className="bg-[#b91c1c]/75 hover:bg-[#b91c1c] text-white border border-[#b91c1c]/20"
@@ -361,6 +361,8 @@ export default function Chargebacks() {
                           >
                             Action
                           </Button>
+                        ) : (
+                          <span className="text-muted-foreground text-sm">—</span>
                         )}
                       </TableCell>
                     </TableRow>
