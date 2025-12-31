@@ -123,14 +123,14 @@ export default function InvoicesList() {
           <Table>
             <TableHeader className="bg-[#74747d] dark:bg-[#262626]">
               <TableRow className="border-b-[#74747d] dark:border-b-gray-700 hover:bg-[#74747d] dark:hover:bg-[#262626]">
-                <TableHead className="text-white w-[50px]"></TableHead>
-                <TableHead className="text-white">Invoice</TableHead>
-                <TableHead className="text-white">Customer</TableHead>
-                <TableHead className="text-white">Amount</TableHead>
-                <TableHead className="text-white">Status</TableHead>
-                <TableHead className="text-white">Due Date</TableHead>
-                <TableHead className="text-white">Created</TableHead>
-                <TableHead className="text-white w-[50px]"></TableHead>
+                <TableHead className="text-white text-center w-[50px]"></TableHead>
+                <TableHead className="text-white text-center">Invoice</TableHead>
+                <TableHead className="text-white text-center">Customer</TableHead>
+                <TableHead className="text-white text-center">Amount</TableHead>
+                <TableHead className="text-white text-center">Status</TableHead>
+                <TableHead className="text-white text-center">Due Date</TableHead>
+                <TableHead className="text-white text-center">Created</TableHead>
+                <TableHead className="text-white text-center w-[50px]"></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
