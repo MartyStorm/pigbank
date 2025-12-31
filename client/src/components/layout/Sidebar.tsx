@@ -497,7 +497,7 @@ export function Sidebar({ className }: { className?: string }) {
               <ChevronDown className="h-4 w-4 opacity-70 ml-auto" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="w-56" side="right" sideOffset={10}>
+          <DropdownMenuContent align="start" className="w-56" side="top" sideOffset={8}>
             <DropdownMenuItem asChild>
               <a href="/admin" data-testid="link-admin-console">
                 <Settings className="mr-2 h-4 w-4" />
