@@ -172,7 +172,7 @@ export default function PigBankTeam() {
         </div>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <CardTitle className="flex items-center gap-2">
                 <Building2 className="h-5 w-5" />
@@ -185,7 +185,7 @@ export default function PigBankTeam() {
             {isAdmin && (
               <Dialog open={inviteOpen} onOpenChange={setInviteOpen}>
                 <DialogTrigger asChild>
-                  <Button data-testid="button-invite-pigbank-member">
+                  <Button className="w-full sm:w-auto" data-testid="button-invite-pigbank-member">
                     <UserPlus className="h-4 w-4 mr-2" />
                     Add Team Member
                   </Button>
