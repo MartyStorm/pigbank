@@ -570,7 +570,7 @@ export default function HostedCheckout() {
             <div 
               className={cn(
                 "transition-all duration-300",
-                previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-xl rounded-lg overflow-hidden" : "w-[375px] flex flex-col"
+                previewMode === "desktop" ? "w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-xl rounded-lg overflow-hidden" : "w-[375px] flex flex-col gap-6"
               )}
               style={previewMode === "desktop" ? { borderColor: inputBorderColor, borderWidth: '1px' } : {}}
             >
@@ -617,7 +617,7 @@ export default function HostedCheckout() {
               </div>
 
               {/* Checkout Right: Payment Form */}
-              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-2 rounded-xl shadow-lg border mt-4" : "order-2")} style={{ backgroundColor: formBackgroundColor, borderColor: inputBorderColor }}>
+              <div className={cn("p-6 md:p-8 space-y-6", previewMode === "mobile" ? "order-2 rounded-xl shadow-lg border" : "order-2")} style={{ backgroundColor: formBackgroundColor, borderColor: inputBorderColor }}>
                 <div className="space-y-4">
                   <h2 className="font-semibold text-lg" style={{ color: headingTextColor }}>Payment Details</h2>
                   
