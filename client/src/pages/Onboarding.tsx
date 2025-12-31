@@ -1112,31 +1112,6 @@ export default function Onboarding() {
 
   return (
     <div className="min-h-screen bg-[#1a4320]">
-      <header className="px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <button onClick={() => setLocation("/landing")} className="cursor-pointer bg-transparent border-0 p-0">
-            <img src="/pig-bank-logo-dark.png" alt="PigBank" className="h-12" data-testid="logo-onboarding" />
-          </button>
-          <div className="flex items-center gap-4">
-            {saveMutation.isPending && (
-              <span className="text-sm text-white/70 flex items-center gap-1">
-                <Loader2 className="h-3 w-3 animate-spin" />
-                Saving...
-              </span>
-            )}
-            <Button
-              onClick={handleExit}
-              disabled={isExiting}
-              className="bg-[#73cb43] hover:bg-[#65b53b] text-white px-6 border-0 ring-0 outline-none focus:ring-0 focus-visible:ring-0"
-              data-testid="button-exit-onboarding"
-            >
-              {isExiting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-              Save & Exit
-            </Button>
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-white" data-testid="text-onboarding-title">
@@ -1203,7 +1178,7 @@ export default function Onboarding() {
                   {renderStepContent()}
                 </div>
 
-                <div className="flex justify-between mt-6 pt-6 border-t">
+                <div className="flex justify-between items-center mt-6 pt-6 border-t">
                   <Button
                     variant="outline"
                     onClick={handlePrevious}
@@ -1212,26 +1187,43 @@ export default function Onboarding() {
                   >
                     Previous
                   </Button>
-                  {currentStep === steps.length - 1 ? (
+                  <div className="flex items-center gap-3">
+                    {saveMutation.isPending && (
+                      <span className="text-sm text-gray-500 flex items-center gap-1">
+                        <Loader2 className="h-3 w-3 animate-spin" />
+                        Saving...
+                      </span>
+                    )}
                     <Button
-                      onClick={handleSubmit}
-                      disabled={submitMutation.isPending || isSubmitted}
-                      className="bg-[#73cb43] hover:bg-[#65b53b]"
-                      data-testid="button-submit-application"
+                      variant="outline"
+                      onClick={handleExit}
+                      disabled={isExiting}
+                      data-testid="button-exit-onboarding"
                     >
-                      {submitMutation.isPending && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                      {isSubmitted ? "Application Submitted" : "Submit Application"}
+                      {isExiting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
+                      Save & Exit
                     </Button>
-                  ) : (
-                    <Button
-                      onClick={handleNext}
-                      disabled={isSubmitted}
-                      className="bg-[#73cb43] hover:bg-[#65b53b]"
-                      data-testid="button-next-step"
-                    >
-                      Continue
-                    </Button>
-                  )}
+                    {currentStep === steps.length - 1 ? (
+                      <Button
+                        onClick={handleSubmit}
+                        disabled={submitMutation.isPending || isSubmitted}
+                        className="bg-[#73cb43] hover:bg-[#65b53b]"
+                        data-testid="button-submit-application"
+                      >
+                        {submitMutation.isPending && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
+                        {isSubmitted ? "Application Submitted" : "Submit Application"}
+                      </Button>
+                    ) : (
+                      <Button
+                        onClick={handleNext}
+                        disabled={isSubmitted}
+                        className="bg-[#73cb43] hover:bg-[#65b53b]"
+                        data-testid="button-next-step"
+                      >
+                        Continue
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>
