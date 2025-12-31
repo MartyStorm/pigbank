@@ -440,12 +440,12 @@ export default function Transactions() {
           <Table>
             <TableHeader className="bg-[#74747d] dark:bg-[#262626] [&_tr]:hover:bg-[#74747d] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
               <TableRow className="border-b-[#74747d] dark:border-b-gray-700">
-                {columns.customer && <TableHead className="text-white text-center">Customer</TableHead>}
-                {columns.date && <TableHead className="text-white text-center">Date & Time</TableHead>}
-                {columns.amount && <TableHead className="text-white text-center">Amount</TableHead>}
-                {columns.status && <TableHead className="text-white text-center">Status</TableHead>}
-                {columns.risk && <TableHead className="text-white text-center">Risk</TableHead>}
-                {columns.transactionId && <TableHead className="text-white text-center">Transaction ID</TableHead>}
+                {columns.customer && <TableHead className="text-white text-center border-r border-white/30">Customer</TableHead>}
+                {columns.date && <TableHead className="text-white text-center border-r border-white/30">Date & Time</TableHead>}
+                {columns.amount && <TableHead className="text-white text-center border-r border-white/30">Amount</TableHead>}
+                {columns.status && <TableHead className="text-white text-center border-r border-white/30">Status</TableHead>}
+                {columns.risk && <TableHead className="text-white text-center border-r border-white/30">Risk</TableHead>}
+                {columns.transactionId && <TableHead className="text-white text-center border-r border-white/30">Transaction ID</TableHead>}
                 {columns.refund && <TableHead className="text-white text-center">Refund</TableHead>}
               </TableRow>
             </TableHeader>
