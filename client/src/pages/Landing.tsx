@@ -703,8 +703,8 @@ export default function Landing() {
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
 
-                {/* Faded Graph Line Effect - Behind Images */}
-                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none">
+                {/* Faded Graph Line Effect - Behind Images - Hidden until hover */}
+                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   <svg viewBox="0 0 200 100" className="w-full h-full opacity-20">
                     <defs>
                       <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -730,8 +730,8 @@ export default function Landing() {
                   </svg>
                 </div>
 
-                {/* Layered Product Images - Bottom Right (Desktop) - Always visible */}
-                <div className="absolute bottom-6 right-6 hidden lg:block z-10">
+                {/* Layered Product Images - Bottom Right (Desktop) - Hidden until hover */}
+                <div className="absolute bottom-6 right-6 hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   <div className="relative w-64 h-56">
                     {/* Back image - CBD (top left) */}
                     <div className="absolute top-0 left-0 w-36 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-[-6deg] transform">
