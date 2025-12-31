@@ -97,7 +97,7 @@ export default function Payouts() {
                   </div>
                   <div>
                     <p className="text-lg font-semibold text-gray-900 dark:text-white">Next Payout</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-blue-600 dark:text-blue-400">
                       {processingPayouts.length > 0 ? formatDate(processingPayouts[0].arrivalDate) : (nextPayout ? formatDate(nextPayout.arrivalDate) : "—")}
                     </p>
                   </div>
