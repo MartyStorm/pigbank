@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { queryClient } from "@/lib/queryClient";
-import { Loader2, CheckCircle, Mail, Lock, ArrowRight, Eye, EyeOff } from "lucide-react";
+import { Loader2, CheckCircle, Mail, Lock, ArrowRight, Eye, EyeOff, Check, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -33,6 +33,14 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // Password validation
+  const passwordRequirements = {
+    minLength: formData.password.length >= 8,
+    hasUppercase: /[A-Z]/.test(formData.password),
+    hasSymbol: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(formData.password),
+  };
+  const isPasswordValid = passwordRequirements.minLength && passwordRequirements.hasUppercase && passwordRequirements.hasSymbol;
+
   // Force light theme on register page
   useEffect(() => {
     setTheme("light");
@@ -50,10 +58,10 @@ export default function Register() {
       return;
     }
 
-    if (formData.password.length < 8) {
+    if (!isPasswordValid) {
       toast({
-        title: "Password too short",
-        description: "Password must be at least 8 characters.",
+        title: "Password requirements not met",
+        description: "Password must be at least 8 characters with an uppercase letter and a symbol.",
         variant: "destructive",
       });
       return;
@@ -201,6 +209,40 @@ export default function Register() {
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
               </div>
+              {formData.password && (
+                <div className="mt-2 space-y-1">
+                  <div className="flex items-center gap-2 text-sm">
+                    {passwordRequirements.minLength ? (
+                      <Check className="h-4 w-4 text-[#73cb43]" />
+                    ) : (
+                      <X className="h-4 w-4 text-gray-400" />
+                    )}
+                    <span className={passwordRequirements.minLength ? "text-[#73cb43]" : "text-gray-500"}>
+                      At least 8 characters
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    {passwordRequirements.hasUppercase ? (
+                      <Check className="h-4 w-4 text-[#73cb43]" />
+                    ) : (
+                      <X className="h-4 w-4 text-gray-400" />
+                    )}
+                    <span className={passwordRequirements.hasUppercase ? "text-[#73cb43]" : "text-gray-500"}>
+                      At least 1 uppercase letter
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    {passwordRequirements.hasSymbol ? (
+                      <Check className="h-4 w-4 text-[#73cb43]" />
+                    ) : (
+                      <X className="h-4 w-4 text-gray-400" />
+                    )}
+                    <span className={passwordRequirements.hasSymbol ? "text-[#73cb43]" : "text-gray-500"}>
+                      At least 1 special character (!@#$%...)
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirmPassword">Confirm password</Label>
