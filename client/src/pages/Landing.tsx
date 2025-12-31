@@ -730,11 +730,11 @@ export default function Landing() {
                   </svg>
                 </div>
 
-                {/* Layered Product Images - Bottom Right (Desktop) - Hidden until hover */}
-                <div className="absolute bottom-6 right-6 hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="relative w-64 h-56">
+                {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
+                <div className="absolute top-1/2 -translate-y-1/2 right-8 hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="relative w-72 h-72">
                     {/* Back image - CBD (top left) */}
-                    <div className="absolute top-0 left-0 w-36 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-[-6deg] transform">
+                    <div className="absolute top-0 left-0 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-8deg] transform">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
                         alt="CBD Products" 
@@ -742,7 +742,7 @@ export default function Landing() {
                       />
                     </div>
                     {/* Middle image - Casino/Gambling (top right, overlapping) */}
-                    <div className="absolute top-[-8px] left-24 w-36 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-[6deg] transform z-10">
+                    <div className="absolute top-[-16px] left-28 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[8deg] transform z-10">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_30_41_AM_1767173536473.png" 
                         alt="Casino Gambling" 
@@ -750,7 +750,7 @@ export default function Landing() {
                       />
                     </div>
                     {/* Front image - Firearms (bottom center, overlapping both) */}
-                    <div className="absolute bottom-[-20px] left-8 w-36 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-[-2deg] transform z-20">
+                    <div className="absolute bottom-[-24px] left-10 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-3deg] transform z-20">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_25_52_AM_1767173536473.png" 
                         alt="Firearms Store" 
@@ -771,11 +771,11 @@ export default function Landing() {
                     </p>
                   </div>
                   
-                  {/* Industry list - Bottom - Hidden until hover on desktop */}
-                  <div className="mt-auto lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                  {/* Industry list - Bottom Left - Hidden until hover on desktop */}
+                  <div className="mt-auto lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
+                    <div className="flex flex-col gap-y-1.5">
                       {[
-                        "CBD",
+                        "CBD & Hemp",
                         "Adult products",
                         "Bail bonds",
                         "Guns & firearms",
@@ -785,7 +785,7 @@ export default function Landing() {
                         "Tobacco",
                       ].map((industry) => (
                         <div key={industry} className="flex items-center gap-2 text-white/90">
-                          <Check className="h-3.5 w-3.5 text-[#75C947]" />
+                          <Check className="h-3.5 w-3.5 text-[#75C947] flex-shrink-0" />
                           <span className="text-sm">{industry}</span>
                         </div>
                       ))}
