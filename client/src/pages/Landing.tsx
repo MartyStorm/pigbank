@@ -961,7 +961,28 @@ export default function Landing() {
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Fast and automatic payouts
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg">
+                  No waiting for your funds. Get same-day or next-day payouts 
+                  directly to your bank account. You can even access funds 
+                  instantly with our Express Payout feature.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-learn-more-3"
+                >
+                  <a href="/register">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="lg:w-1/2">
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
@@ -994,27 +1015,6 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Fast and automatic payouts
-                </h2>
-                <p className="text-lg text-gray-600 max-w-lg">
-                  No waiting for your funds. Get same-day or next-day payouts 
-                  directly to your bank account. You can even access funds 
-                  instantly with our Express Payout feature.
-                </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-learn-more-3"
-                >
-                  <a href="/register">
-                    Learn more
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </div>
           </div>
