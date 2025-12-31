@@ -13,6 +13,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   ArrowDown,
+  ArrowDownLeft,
   FileText,
   Globe,
   Wallet,
@@ -691,60 +692,112 @@ export default function Landing() {
               </p>
             </div>
             
-            <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[500px]">
+            <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[520px]">
+              {/* High Risk Card */}
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#74747d]"
+                className="group relative flex-[1.5] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#74747d]"
                 data-testid="card-high-risk"
               >
-                <div className="space-y-4 lg:space-y-6">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                      High risk industries
-                    </h3>
-                    <p className="text-white/70 text-sm mt-2">
+                {/* Arrow Icon - Top Left */}
+                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </div>
+
+                {/* Floating Payment Notifications - Right Side (Desktop) */}
+                <div className="absolute top-24 right-6 space-y-3 hidden lg:block">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 min-w-[200px]">
+                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      <ArrowDownLeft className="h-3 w-3 text-gray-600" />
+                    </div>
+                    <div className="text-sm">
+                      <span className="font-semibold text-gray-900">$29.52</span>
+                      <span className="text-gray-500"> received from Henry</span>
+                    </div>
+                  </div>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 min-w-[200px]">
+                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      <ArrowDownLeft className="h-3 w-3 text-gray-600" />
+                    </div>
+                    <div className="text-sm">
+                      <span className="font-semibold text-gray-900">$213.05</span>
+                      <span className="text-gray-500"> received from Stella</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Product Images - Bottom Right (Desktop) */}
+                <div className="absolute bottom-6 right-6 flex gap-2 hidden lg:flex">
+                  <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
+                      alt="CBD Products" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_25_52_AM_1767173536473.png" 
+                      alt="Firearms Store" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col h-full pt-14">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-auto">
+                    High risk industries
+                  </h3>
+                  
+                  {/* Industry list - Bottom */}
+                  <div className="mt-auto space-y-4">
+                    <p className="text-white/60 text-sm italic max-w-xs">
                       Just because a bank deems your business risky, doesn't mean you can't prosper.
                     </p>
-                  </div>
-                  
-                  {/* Industry list - always visible on mobile, hover on desktop */}
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                    {[
-                      "CBD & Hemp",
-                      "Adult products",
-                      "Bail bonds",
-                      "Guns & firearms",
-                      "Nutraceuticals",
-                      "Fantasy sports",
-                      "Tech support",
-                      "Kratom",
-                      "Vape & E-cig",
-                      "Collections",
-                    ].map((industry) => (
-                      <div key={industry} className="flex items-center gap-2 text-white/90">
-                        <CheckCircle2 className="h-4 w-4 text-[#75C947]" />
-                        <span className="text-sm">{industry}</span>
-                      </div>
-                    ))}
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                      {[
+                        "CBD",
+                        "Adult products",
+                        "Bail bonds",
+                        "Guns & firearms",
+                        "Nutraceuticals",
+                        "Tech support",
+                        "Dating sites",
+                        "Tobacco",
+                      ].map((industry) => (
+                        <div key={industry} className="flex items-center gap-2 text-white/90">
+                          <Check className="h-3.5 w-3.5 text-[#75C947]" />
+                          <span className="text-sm">{industry}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* Medium & Low Risk Card */}
               <div 
-                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2]"
+                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5]"
                 data-testid="card-low-risk"
               >
-                <div className="space-y-4 lg:space-y-6 relative z-10">
+                {/* Arrow Icon - Top Left */}
+                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col h-full pt-14 relative z-10">
                   <div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                      Medium & Low risk
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                      Medium & low<br />risk industries
                     </h3>
-                    <p className="text-white/80 text-sm mt-2 max-w-xs">
+                    <p className="text-white/80 text-sm mt-4 max-w-xs">
                       Your business will be supported by a dedicated team of merchant service specialists.
                     </p>
                   </div>
                   
-                  {/* Industry list - always visible on mobile, hover on desktop */}
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Industry list - visible on mobile only */}
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 mt-6 lg:hidden">
                     {[
                       "Subscription",
                       "Accounting",
