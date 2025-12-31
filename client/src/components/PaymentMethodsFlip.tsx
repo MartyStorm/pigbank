@@ -67,6 +67,12 @@ const cards = [
     backText: "In-person POS payments",
     image: "/attached_assets/generated_images/ipad_terminal_dark_bg.png",
   },
+  {
+    id: "google-pay",
+    title: "Google Pay",
+    backText: "Fast Android & web payments",
+    image: "/attached_assets/generated_images/google_pay_icon_dark_bg.png",
+  },
 ];
 
 function FlipCard({
@@ -288,7 +294,7 @@ export default function PaymentMethodsFlip() {
             Support cards, bank payments, crypto, subscriptions, tap-to-pay, and more.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
           {cards.map((card) => (
             <FlipCard
               key={card.id}
