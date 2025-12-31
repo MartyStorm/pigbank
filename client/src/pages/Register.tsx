@@ -188,7 +188,6 @@ export default function Register() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <p className="text-xs text-gray-500 mb-1">Must include 8+ characters, uppercase letter, and special character</p>
               <div className="relative">
                 <Input
                   id="password"
