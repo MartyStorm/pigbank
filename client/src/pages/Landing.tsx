@@ -704,10 +704,10 @@ export default function Landing() {
                 </div>
 
                 {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
-                <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden lg:block opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="relative w-48 h-64">
+                <div className="absolute top-1/2 right-6 -translate-y-1/2 hidden lg:block opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="relative w-72 h-80">
                     {/* Back image - CBD */}
-                    <div className="absolute top-0 right-0 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-6 transform transition-transform duration-300 group-hover:rotate-12">
+                    <div className="absolute top-0 left-0 w-28 h-36 rounded-xl overflow-hidden shadow-xl rotate-[-8deg] transform">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
                         alt="CBD Products" 
@@ -715,15 +715,15 @@ export default function Landing() {
                       />
                     </div>
                     {/* Middle image - Casino/Gambling */}
-                    <div className="absolute top-8 right-8 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl -rotate-3 transform transition-transform duration-300 group-hover:-rotate-6 z-10">
+                    <div className="absolute top-2 left-24 w-28 h-36 rounded-xl overflow-hidden shadow-xl rotate-[3deg] transform z-10">
                       <img 
-                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_26_47_AM_1767173536473.png" 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_30_41_AM_1767173536473.png" 
                         alt="Casino Gambling" 
                         className="w-full h-full object-cover"
                       />
                     </div>
                     {/* Front image - Firearms */}
-                    <div className="absolute bottom-0 right-4 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-2 transform transition-transform duration-300 group-hover:rotate-6 z-20">
+                    <div className="absolute bottom-4 left-12 w-28 h-36 rounded-xl overflow-hidden shadow-xl rotate-[-3deg] transform z-20">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_25_52_AM_1767173536473.png" 
                         alt="Firearms Store" 
