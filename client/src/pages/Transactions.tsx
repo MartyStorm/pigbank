@@ -275,7 +275,7 @@ export default function Transactions() {
           <div className="relative w-full sm:w-auto sm:min-w-72 sm:max-w-96">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search Transaction ID, name, or email..."
+              placeholder="Search name or email..."
               className="pl-9 bg-background border-muted-foreground/20"
               value={searchQuery}
               onChange={(e) => handleSearchChange(e.target.value)}
