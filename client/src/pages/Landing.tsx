@@ -1243,7 +1243,12 @@ export default function Landing() {
                 <p className="text-[#1a4320]/70 text-sm">AI Team Lead</p>
               </div>
             </div>
-            
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-12 md:py-20 bg-white">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <TestimonialsCarousel />
           </div>
         </section>
