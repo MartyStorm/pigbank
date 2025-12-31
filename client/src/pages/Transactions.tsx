@@ -421,14 +421,14 @@ export default function Transactions() {
         {/* Table */}
         <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-[#d4edda] dark:bg-green-950/30 [&_tr]:hover:bg-[#d4edda] dark:[&_tr]:hover:bg-green-950/30 [&_th]:text-[#39870E]">
-              <TableRow className="border-b-[#39870E] dark:border-b-green-700">
-                {columns.customer && <TableHead className="text-[#39870E] dark:text-green-400">Customer</TableHead>}
-                {columns.date && <TableHead className="text-[#39870E] dark:text-green-400">Date & Time</TableHead>}
-                {columns.amount && <TableHead className="text-[#39870E] dark:text-green-400">Amount</TableHead>}
-                {columns.status && <TableHead className="text-[#39870E] dark:text-green-400">Status</TableHead>}
-                {columns.risk && <TableHead className="text-[#39870E] dark:text-green-400">Risk</TableHead>}
-                {columns.transactionId && <TableHead className="text-[#39870E] dark:text-green-400">Transaction ID</TableHead>}
+            <TableHeader className="bg-[#74747d] dark:bg-[#262626] [&_tr]:hover:bg-[#74747d] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableRow className="border-b-[#74747d] dark:border-b-gray-700">
+                {columns.customer && <TableHead className="text-white">Customer</TableHead>}
+                {columns.date && <TableHead className="text-white">Date & Time</TableHead>}
+                {columns.amount && <TableHead className="text-white">Amount</TableHead>}
+                {columns.status && <TableHead className="text-white">Status</TableHead>}
+                {columns.risk && <TableHead className="text-white">Risk</TableHead>}
+                {columns.transactionId && <TableHead className="text-white">Transaction ID</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
