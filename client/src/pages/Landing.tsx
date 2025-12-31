@@ -703,8 +703,35 @@ export default function Landing() {
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
 
+                {/* Faded Graph Line Effect - Behind Images */}
+                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none">
+                  <svg viewBox="0 0 200 100" className="w-full h-full opacity-20">
+                    <defs>
+                      <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="transparent" />
+                        <stop offset="30%" stopColor="#75C947" stopOpacity="0.3" />
+                        <stop offset="70%" stopColor="#75C947" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#75C947" stopOpacity="0.2" />
+                      </linearGradient>
+                    </defs>
+                    <path 
+                      d="M 0 80 Q 30 70 50 60 T 80 45 T 120 35 T 160 20 T 200 10" 
+                      stroke="url(#graphGradient)" 
+                      strokeWidth="2" 
+                      fill="none"
+                    />
+                    <path 
+                      d="M 0 90 Q 40 85 60 75 T 100 60 T 140 45 T 180 30 T 200 25" 
+                      stroke="url(#graphGradient)" 
+                      strokeWidth="1.5" 
+                      fill="none"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
+
                 {/* Layered Product Images - Bottom Right (Desktop) - Always visible */}
-                <div className="absolute bottom-6 right-6 hidden lg:block">
+                <div className="absolute bottom-6 right-6 hidden lg:block z-10">
                   <div className="relative w-64 h-56">
                     {/* Back image - CBD (top left) */}
                     <div className="absolute top-0 left-0 w-36 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-[-6deg] transform">
@@ -739,8 +766,8 @@ export default function Landing() {
                     High risk industries
                   </h3>
                   
-                  {/* Industry list - Bottom */}
-                  <div className="mt-auto space-y-4">
+                  {/* Industry list - Bottom - Hidden until hover on desktop */}
+                  <div className="mt-auto space-y-4 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white/60 text-sm italic max-w-xs">
                       Just because a bank deems your business risky, doesn't mean you can't prosper.
                     </p>
