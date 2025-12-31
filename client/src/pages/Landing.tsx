@@ -731,7 +731,7 @@ export default function Landing() {
                 </div>
 
                 {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-8 hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-1/2 -translate-y-1/2 right-[-20px] hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   <div className="relative w-72 h-72">
                     {/* Back image - CBD (top left) */}
                     <div className="absolute top-0 left-0 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-8deg] transform">
@@ -771,8 +771,8 @@ export default function Landing() {
                     </p>
                   </div>
                   
-                  {/* Industry list - Bottom Left - Hidden until hover on desktop */}
-                  <div className="mt-auto lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
+                  {/* Industry list - Below subtitle - Hidden until hover on desktop */}
+                  <div className="mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
                     <div className="flex flex-col gap-y-1.5">
                       {[
                         "CBD & Hemp",
