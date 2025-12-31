@@ -523,15 +523,15 @@ export default function Dashboard() {
           </div>
 
           {/* Account Health Widget */}
-          <div className="w-full bg-[#73cb43]/20 border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-3">
+          <div className="w-full bg-[#d4edda] border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 min-w-0">
-              <ShieldCheck className="h-5 w-5 text-success-text flex-shrink-0" />
+              <ShieldCheck className="h-5 w-5 text-[#39870E] flex-shrink-0" />
               <div className="min-w-0">
-                <h3 className="font-semibold text-foreground text-sm truncate">Account Health</h3>
-                <span className="text-[10px] text-success-text font-medium block">Status</span>
+                <h3 className="font-semibold text-gray-900 text-sm truncate">Account Health</h3>
+                <span className="text-[10px] text-[#39870E] font-medium block">Status</span>
               </div>
             </div>
-            <span className="font-bold text-foreground text-lg flex-shrink-0">Good</span>
+            <span className="font-bold text-gray-900 text-lg flex-shrink-0">Good</span>
           </div>
 
           {/* Total Payout Balance Widget */}
