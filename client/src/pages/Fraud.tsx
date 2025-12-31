@@ -27,8 +27,10 @@ export default function Fraud() {
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary" />
+              <CardTitle className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-[#39870E]" />
+                </div>
                 Active Protection Rules
               </CardTitle>
               <CardDescription>Configure automated risk blocking rules.</CardDescription>
@@ -67,8 +69,10 @@ export default function Fraud() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Ban className="h-5 w-5 text-[#f0b100]" />
+              <CardTitle className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f0b100]/30 flex items-center justify-center">
+                  <Ban className="h-5 w-5 text-[#f0b100]" />
+                </div>
                 Recent Blocks
               </CardTitle>
               <CardDescription>Transactions automatically blocked by rules.</CardDescription>
