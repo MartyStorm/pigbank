@@ -18,9 +18,10 @@ import {
   Plus, 
   Link as LinkIcon, 
   QrCode, 
-  ExternalLink,
-  Copy
+  Copy,
+  Download
 } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
@@ -92,6 +93,8 @@ export default function PayByLink() {
   
   const [links, setLinks] = useState<PaymentLink[]>([]);
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [qrDialogOpen, setQrDialogOpen] = useState(false);
+  const [selectedLinkForQr, setSelectedLinkForQr] = useState<PaymentLink | null>(null);
   const [newLink, setNewLink] = useState({
     name: "",
     description: "",
@@ -123,6 +126,33 @@ export default function PayByLink() {
 
   const copyToClipboard = (linkId: string) => {
     navigator.clipboard.writeText(`https://pay.pigbank.com/${linkId}`);
+  };
+
+  const openQrDialog = (link: PaymentLink) => {
+    setSelectedLinkForQr(link);
+    setQrDialogOpen(true);
+  };
+
+  const downloadQrCode = () => {
+    if (!selectedLinkForQr) return;
+    const svg = document.getElementById('qr-code-svg');
+    if (svg) {
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx?.drawImage(img, 0, 0);
+        const pngFile = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        downloadLink.download = `qr-${selectedLinkForQr.linkId}.png`;
+        downloadLink.href = pngFile;
+        downloadLink.click();
+      };
+      img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+    }
   };
 
   const generateLinkId = (name: string) => {
@@ -247,6 +277,44 @@ export default function PayByLink() {
           </DialogContent>
         </Dialog>
 
+        {/* QR Code Dialog */}
+        <Dialog open={qrDialogOpen} onOpenChange={setQrDialogOpen}>
+          <DialogContent className="sm:max-w-[350px]">
+            <DialogHeader>
+              <DialogTitle>QR Code</DialogTitle>
+              <DialogDescription>
+                {selectedLinkForQr?.name}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex flex-col items-center py-6">
+              {selectedLinkForQr && (
+                <QRCodeSVG
+                  id="qr-code-svg"
+                  value={`https://pay.pigbank.com/${selectedLinkForQr.linkId}`}
+                  size={200}
+                  level="H"
+                  includeMargin
+                />
+              )}
+              <p className="text-sm text-muted-foreground mt-4">
+                pay.pigbank.com/{selectedLinkForQr?.linkId}
+              </p>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setQrDialogOpen(false)}>
+                Close
+              </Button>
+              <Button 
+                className="bg-[#73cb43] hover:bg-[#65b538] text-white gap-2"
+                onClick={downloadQrCode}
+              >
+                <Download className="h-4 w-4" />
+                Download
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
         {/* Links List */}
         <div className="space-y-3">
           {links.map((link) => (
@@ -272,11 +340,20 @@ export default function PayByLink() {
                     <p className="text-sm text-muted-foreground line-clamp-1 mb-2">
                       {link.description}
                     </p>
-                    <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-2 text-sm">
                       <span className="font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded">
                         pay.pigbank.com/{link.linkId}
                       </span>
-                      <span className="font-semibold text-[#4a9c22] dark:text-[#73cb43]">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="h-6 w-6"
+                        onClick={() => copyToClipboard(link.linkId)}
+                        title="Copy Link"
+                      >
+                        <Copy className="h-3.5 w-3.5" />
+                      </Button>
+                      <span className="font-semibold text-[#4a9c22] dark:text-[#73cb43] ml-2">
                         ${link.price.toFixed(2)}
                       </span>
                     </div>
@@ -287,16 +364,6 @@ export default function PayByLink() {
                     <div className="text-center">
                       <div className="font-semibold">{link.clicks}</div>
                       <div className="text-xs text-muted-foreground">Clicks</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-semibold">{link.conversions}</div>
-                      <div className="text-xs text-muted-foreground">Sales</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-semibold">
-                        {link.clicks > 0 ? ((link.conversions / link.clicks) * 100).toFixed(1) : 0}%
-                      </div>
-                      <div className="text-xs text-muted-foreground">Rate</div>
                     </div>
                   </div>
 
@@ -313,29 +380,11 @@ export default function PayByLink() {
                       variant="ghost" 
                       size="icon" 
                       className="h-8 w-8"
-                      onClick={() => copyToClipboard(link.linkId)}
-                      title="Copy Link"
-                    >
-                      <Copy className="h-4 w-4" />
-                    </Button>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      className="h-8 w-8"
+                      onClick={() => openQrDialog(link)}
                       title="Get QR Code"
                     >
                       <QrCode className="h-4 w-4" />
                     </Button>
-                    <Link href={`/pay-by-link/${link.id}`}>
-                      <Button 
-                        variant="ghost" 
-                        size="icon" 
-                        className="h-8 w-8"
-                        title="View Details"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </Link>
                   </div>
                 </div>
               </CardContent>
