@@ -81,27 +81,27 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-start md:items-center justify-center pt-6 md:pt-0 px-4 pb-4 bg-[#1a4320]">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 md:p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
-        <div className="flex flex-col items-center space-y-6">
+    <div className="min-h-screen flex items-center justify-center px-4 py-6 bg-[#1a4320]">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-5 md:p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
+        <div className="flex flex-col items-center space-y-3 md:space-y-6">
           <a href="/">
             <img 
               src="/pig-bank-logo-light.png" 
               alt="PigBank" 
-              className="h-14 w-auto cursor-pointer"
+              className="h-10 md:h-14 w-auto cursor-pointer"
               data-testid="logo-login"
             />
           </a>
           
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900" data-testid="text-login-title">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900" data-testid="text-login-title">
               Welcome back!
             </h1>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <div className="space-y-2">
+        <form onSubmit={handleSubmit} className="mt-5 md:mt-8 space-y-4 md:space-y-6">
+          <div className="space-y-1.5">
             <Label htmlFor="username" className="text-sm font-medium text-gray-900">
               <span className="text-red-500">*</span> Username
             </Label>
@@ -112,12 +112,12 @@ export default function Login() {
               value={formData.username}
               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
               required
-              className="h-12 rounded-lg border-gray-300 focus:border-[#73cb43] focus:ring-[#73cb43]"
+              className="h-11 md:h-12 rounded-lg border-gray-300 focus:border-[#73cb43] focus:ring-[#73cb43]"
               data-testid="input-username"
             />
           </div>
           
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <Label htmlFor="password" className="text-sm font-medium text-gray-900">
               <span className="text-red-500">*</span> Password
             </Label>
@@ -129,7 +129,7 @@ export default function Login() {
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
-                className="h-12 rounded-lg border-gray-300 focus:border-[#73cb43] focus:ring-[#73cb43] pr-12"
+                className="h-11 md:h-12 rounded-lg border-gray-300 focus:border-[#73cb43] focus:ring-[#73cb43] pr-12"
                 data-testid="input-password"
               />
               <button
@@ -170,7 +170,7 @@ export default function Login() {
 
           <Button 
             type="submit" 
-            className="w-full h-12 bg-[#73cb43] hover:bg-[#65b53b] text-white font-medium rounded-lg text-base"
+            className="w-full h-11 md:h-12 bg-[#73cb43] hover:bg-[#65b53b] text-white font-medium rounded-lg text-base"
             disabled={isLoading}
             data-testid="button-login"
           >
