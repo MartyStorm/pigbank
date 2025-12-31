@@ -61,6 +61,12 @@ const cards = [
     backText: "Flexible installment payments",
     image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png",
   },
+  {
+    id: "ipad-terminal",
+    title: "iPad Terminal",
+    backText: "In-person POS payments",
+    image: "/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_23_24_AM_1767177394146.png",
+  },
 ];
 
 function FlipCard({
