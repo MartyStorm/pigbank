@@ -703,43 +703,33 @@ export default function Landing() {
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
 
-                {/* Floating Payment Notifications - Right Side (Desktop) - Hidden until hover */}
-                <div className="absolute top-24 right-6 space-y-3 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 min-w-[200px]">
-                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
-                      <ArrowDownLeft className="h-3 w-3 text-gray-600" />
+                {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
+                <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden lg:block opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="relative w-48 h-64">
+                    {/* Back image - CBD */}
+                    <div className="absolute top-0 right-0 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-6 transform transition-transform duration-300 group-hover:rotate-12">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
+                        alt="CBD Products" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="text-sm">
-                      <span className="font-semibold text-gray-900">$29.52</span>
-                      <span className="text-gray-500"> received from Henry</span>
+                    {/* Middle image - Casino/Gambling */}
+                    <div className="absolute top-8 right-8 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl -rotate-3 transform transition-transform duration-300 group-hover:-rotate-6 z-10">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_26_47_AM_1767173536473.png" 
+                        alt="Casino Gambling" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  </div>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 min-w-[200px]">
-                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
-                      <ArrowDownLeft className="h-3 w-3 text-gray-600" />
+                    {/* Front image - Firearms */}
+                    <div className="absolute bottom-0 right-4 w-32 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-2 transform transition-transform duration-300 group-hover:rotate-6 z-20">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_25_52_AM_1767173536473.png" 
+                        alt="Firearms Store" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="text-sm">
-                      <span className="font-semibold text-gray-900">$213.05</span>
-                      <span className="text-gray-500"> received from Stella</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Product Images - Bottom Right (Desktop) - Hidden until hover */}
-                <div className="absolute bottom-6 right-6 flex gap-2 hidden lg:flex opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_29_04_AM_1767173536473.png" 
-                      alt="CBD Products" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-28 h-28 rounded-xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_03_25_52_AM_1767173536473.png" 
-                      alt="Firearms Store" 
-                      className="w-full h-full object-cover"
-                    />
                   </div>
                 </div>
 
