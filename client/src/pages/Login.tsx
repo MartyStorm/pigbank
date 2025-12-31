@@ -81,8 +81,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-[#1a4320]">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
+    <div className="min-h-screen flex items-start md:items-center justify-center pt-6 md:pt-0 px-4 pb-4 bg-[#1a4320]">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 md:p-8 [&_input]:text-gray-900 [&_input]:bg-white [&_input]:border-gray-300 [&_input::placeholder]:text-gray-400">
         <div className="flex flex-col items-center space-y-6">
           <a href="/">
             <img 
