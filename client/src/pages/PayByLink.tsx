@@ -3,6 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { 
   Plus, 
   Link as LinkIcon, 
@@ -80,6 +91,13 @@ export default function PayByLink() {
   const isDemoActive = user?.demoActive ?? false;
   
   const [links, setLinks] = useState<PaymentLink[]>([]);
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [newLink, setNewLink] = useState({
+    name: "",
+    description: "",
+    price: "",
+    linkId: ""
+  });
   
   // Update links based on demo mode and viewing context
   // When a payment links API is added, this should fetch real merchant links
@@ -106,6 +124,31 @@ export default function PayByLink() {
   const copyToClipboard = (linkId: string) => {
     navigator.clipboard.writeText(`https://pay.pigbank.com/${linkId}`);
   };
+
+  const generateLinkId = (name: string) => {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 6) || 'link';
+  };
+
+  const handleCreateLink = () => {
+    if (!newLink.name || !newLink.price) return;
+    
+    const linkId = newLink.linkId || generateLinkId(newLink.name);
+    const newPaymentLink: PaymentLink = {
+      id: Date.now().toString(),
+      name: newLink.name,
+      description: newLink.description,
+      price: parseFloat(newLink.price) || 0,
+      linkId: linkId,
+      active: true,
+      createdAt: new Date().toISOString().split('T')[0],
+      clicks: 0,
+      conversions: 0
+    };
+    
+    setLinks(prev => [newPaymentLink, ...prev]);
+    setNewLink({ name: "", description: "", price: "", linkId: "" });
+    setIsCreateDialogOpen(false);
+  };
   
   return (
     <Layout title="Pay by Link">
@@ -120,11 +163,89 @@ export default function PayByLink() {
               Create and manage payment links for your products and services
             </p>
           </div>
-          <Button className="bg-[#73cb43e6] hover:bg-[#65b538] text-white gap-2">
+          <Button 
+            className="bg-[#73cb43e6] hover:bg-[#65b538] text-white gap-2"
+            onClick={() => setIsCreateDialogOpen(true)}
+            data-testid="button-create-link"
+          >
             <Plus className="h-4 w-4" />
             Create New Link
           </Button>
         </div>
+
+        {/* Create Link Dialog */}
+        <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Create Payment Link</DialogTitle>
+              <DialogDescription>
+                Create a new payment link for your product or service.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <Label htmlFor="name">Name *</Label>
+                <Input
+                  id="name"
+                  placeholder="e.g., Premium Subscription"
+                  value={newLink.name}
+                  onChange={(e) => setNewLink(prev => ({ ...prev, name: e.target.value }))}
+                  data-testid="input-link-name"
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="description">Description</Label>
+                <Textarea
+                  id="description"
+                  placeholder="Describe what this payment is for..."
+                  value={newLink.description}
+                  onChange={(e) => setNewLink(prev => ({ ...prev, description: e.target.value }))}
+                  data-testid="input-link-description"
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="price">Price ($) *</Label>
+                <Input
+                  id="price"
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  placeholder="0.00"
+                  value={newLink.price}
+                  onChange={(e) => setNewLink(prev => ({ ...prev, price: e.target.value }))}
+                  data-testid="input-link-price"
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="linkId">Custom Link ID (optional)</Label>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">pay.pigbank.com/</span>
+                  <Input
+                    id="linkId"
+                    placeholder="auto-generated"
+                    value={newLink.linkId}
+                    onChange={(e) => setNewLink(prev => ({ ...prev, linkId: e.target.value.toLowerCase().replace(/[^a-z0-9]/g, '') }))}
+                    className="flex-1"
+                    data-testid="input-link-id"
+                  />
+                </div>
+              </div>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
+                Cancel
+              </Button>
+              <Button 
+                className="bg-[#73cb43] hover:bg-[#65b538] text-white"
+                onClick={handleCreateLink}
+                disabled={!newLink.name || !newLink.price}
+                data-testid="button-submit-link"
+              >
+                Create Link
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
 
         {/* Links List */}
         <div className="space-y-3">
@@ -231,7 +352,10 @@ export default function PayByLink() {
               <p className="text-muted-foreground mb-4">
                 Create your first payment link to start accepting payments
               </p>
-              <Button className="bg-[#73cb43e6] hover:bg-[#65b538] text-white gap-2">
+              <Button 
+                className="bg-[#73cb43e6] hover:bg-[#65b538] text-white gap-2"
+                onClick={() => setIsCreateDialogOpen(true)}
+              >
                 <Plus className="h-4 w-4" />
                 Create New Link
               </Button>
