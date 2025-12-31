@@ -691,26 +691,27 @@ export default function Landing() {
               </p>
             </div>
             
-            <div className="flex flex-col lg:flex-row gap-4 min-h-[500px]">
+            <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[500px]">
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2] bg-[#e5e7ec]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2] bg-[#e5e7ec]"
                 data-testid="card-high-risk"
               >
-                {/* Decorative image - shows on hover */}
-                <div className="absolute top-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Decorative image - shows on hover (desktop only) */}
+                <div className="absolute top-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden lg:block">
                   <div className="w-full h-full bg-gradient-to-bl from-[#75C947]/20 to-transparent rounded-bl-[100px]" />
                   <div className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-gray-200 border border-gray-300 flex items-center justify-center">
                     <TrendingUp className="h-8 w-8 text-[#75C947]" />
                   </div>
                 </div>
 
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center group-hover:bg-gray-300 transition-colors">
+                {/* Arrow - desktop only */}
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-gray-200 items-center justify-center group-hover:bg-gray-300 transition-colors hidden lg:flex">
                   <ArrowUpRight className="h-5 w-5 text-gray-700" />
                 </div>
                 
-                <div className="mt-16 space-y-6">
+                <div className="lg:mt-16 space-y-4 lg:space-y-6">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
                       High risk industries
                     </h3>
                     <p className="text-gray-500 text-sm mt-2">
@@ -718,7 +719,8 @@ export default function Landing() {
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Industry list - always visible on mobile, hover on desktop */}
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                     {[
                       "CBD & Hemp",
                       "Adult products",
@@ -741,11 +743,11 @@ export default function Landing() {
               </div>
 
               <div 
-                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden cursor-pointer transition-all duration-500 hover:flex-[2] lg:hover:flex-[2]"
+                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[2]"
                 data-testid="card-low-risk"
               >
-                {/* Decorative elements - image placeholder and UI mockup */}
-                <div className="absolute top-0 right-0 w-72 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                {/* Decorative elements - desktop only */}
+                <div className="absolute top-0 right-0 w-72 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden hidden lg:block">
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#75C947] via-transparent to-transparent z-10" />
                   
@@ -786,13 +788,14 @@ export default function Landing() {
                   </div>
                 </div>
 
-                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                {/* Arrow - desktop only */}
+                <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/20 items-center justify-center group-hover:bg-white/30 transition-colors hidden lg:flex">
                   <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
                 
-                <div className="mt-16 space-y-6 relative z-10">
+                <div className="lg:mt-16 space-y-4 lg:space-y-6 relative z-10">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                       Medium & Low risk
                     </h3>
                     <p className="text-white/80 text-sm mt-2 max-w-xs">
@@ -800,8 +803,8 @@ export default function Landing() {
                     </p>
                   </div>
                   
-                  {/* Industry list - visible on hover */}
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Industry list - always visible on mobile, hover on desktop */}
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                     {[
                       "Subscription",
                       "Accounting",
