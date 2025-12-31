@@ -1340,7 +1340,7 @@ export default function Landing() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8 ring-0 outline-none focus-visible:ring-0"
                 data-testid="button-get-started-cta"
               >
                 <a href="/register">
