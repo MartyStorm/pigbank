@@ -1268,7 +1268,7 @@ export default function Landing() {
                   <Lock className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
-                <p className="text-white/60 text-sm">Every transaction is protected with military-grade encryption</p>
+                <p className="text-white/60 text-sm">Your data is scrambled into unbreakable code before traveling online</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
                 <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
