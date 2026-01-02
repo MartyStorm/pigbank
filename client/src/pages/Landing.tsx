@@ -1043,6 +1043,99 @@ export default function Landing() {
             </div>
             
             <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[520px]">
+              {/* Medium & Low Risk Card */}
+              <div 
+                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5]"
+                data-testid="card-low-risk"
+              >
+                {/* Arrow Icon - Top Left */}
+                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </div>
+
+                {/* Faded Graph Line Effect - Behind Images - Hidden until hover */}
+                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <svg viewBox="0 0 200 100" className="w-full h-full opacity-20">
+                    <defs>
+                      <linearGradient id="graphGradientLow2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="transparent" />
+                        <stop offset="30%" stopColor="#ffffff" stopOpacity="0.3" />
+                        <stop offset="70%" stopColor="#ffffff" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
+                      </linearGradient>
+                    </defs>
+                    <path 
+                      d="M 0 80 Q 30 70 50 60 T 80 45 T 120 35 T 160 20 T 200 10" 
+                      stroke="url(#graphGradientLow2)" 
+                      strokeWidth="2" 
+                      fill="none"
+                    />
+                    <path 
+                      d="M 0 90 Q 40 85 60 75 T 100 60 T 140 45 T 180 30 T 200 25" 
+                      stroke="url(#graphGradientLow2)" 
+                      strokeWidth="1.5" 
+                      fill="none"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
+
+                {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
+                <div className="absolute top-1/2 -translate-y-1/2 right-[-20px] hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="relative w-72 h-72">
+                    {/* Back image - Coffee shop */}
+                    <div className="absolute top-0 left-0 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-8deg] transform">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_23_24_AM_1767177394146.png" 
+                        alt="Coffee Shop Payment" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Front image - Tap to Pay */}
+                    <div className="absolute top-[-16px] left-28 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[8deg] transform z-10">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png" 
+                        alt="Tap to Pay" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col h-full pt-14 relative z-10">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                      Medium & low<br />risk industries
+                    </h3>
+                    <p className="text-white/80 text-sm mt-4 max-w-xs">
+                      Your business will be supported by a dedicated team of merchant service specialists.
+                    </p>
+                  </div>
+                  
+                  {/* Industry list - Hidden until hover on desktop */}
+                  <div className="mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
+                    <div className="flex flex-col gap-y-1.5">
+                      {[
+                        "Subscription",
+                        "Accounting",
+                        "Dropshipping",
+                        "High volume",
+                        "Apparel",
+                        "Home goods",
+                        "Pet supplies",
+                        "Beauty products",
+                      ].map((industry) => (
+                        <div key={industry} className="flex items-center gap-2 text-white/90">
+                          <Check className="h-3.5 w-3.5 text-white flex-shrink-0" />
+                          <span className="text-sm">{industry}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* High Risk Card */}
               <div 
                 className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#1b1b1b]"
@@ -1136,99 +1229,6 @@ export default function Landing() {
                       ].map((industry) => (
                         <div key={industry} className="flex items-center gap-2 text-white/90">
                           <Check className="h-3.5 w-3.5 text-[#75C947] flex-shrink-0" />
-                          <span className="text-sm">{industry}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Medium & Low Risk Card */}
-              <div 
-                className="group relative flex-1 bg-[#75C947] rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5]"
-                data-testid="card-low-risk"
-              >
-                {/* Arrow Icon - Top Left */}
-                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-                  <ArrowUpRight className="h-5 w-5 text-white" />
-                </div>
-
-                {/* Faded Graph Line Effect - Behind Images - Hidden until hover */}
-                <div className="absolute bottom-0 right-0 w-80 h-64 hidden lg:block pointer-events-none lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                  <svg viewBox="0 0 200 100" className="w-full h-full opacity-20">
-                    <defs>
-                      <linearGradient id="graphGradientLow2" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="transparent" />
-                        <stop offset="30%" stopColor="#ffffff" stopOpacity="0.3" />
-                        <stop offset="70%" stopColor="#ffffff" stopOpacity="0.5" />
-                        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
-                      </linearGradient>
-                    </defs>
-                    <path 
-                      d="M 0 80 Q 30 70 50 60 T 80 45 T 120 35 T 160 20 T 200 10" 
-                      stroke="url(#graphGradientLow2)" 
-                      strokeWidth="2" 
-                      fill="none"
-                    />
-                    <path 
-                      d="M 0 90 Q 40 85 60 75 T 100 60 T 140 45 T 180 30 T 200 25" 
-                      stroke="url(#graphGradientLow2)" 
-                      strokeWidth="1.5" 
-                      fill="none"
-                      opacity="0.6"
-                    />
-                  </svg>
-                </div>
-
-                {/* Layered Product Images - Right Side (Desktop) - Hidden until hover */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-[-20px] hidden lg:block z-10 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="relative w-72 h-72">
-                    {/* Back image - Coffee shop */}
-                    <div className="absolute top-0 left-0 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-8deg] transform">
-                      <img 
-                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_23_24_AM_1767177394146.png" 
-                        alt="Coffee Shop Payment" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    {/* Front image - Tap to Pay */}
-                    <div className="absolute top-[-16px] left-28 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[8deg] transform z-10">
-                      <img 
-                        src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png" 
-                        alt="Tap to Pay" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col h-full pt-14 relative z-10">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                      Medium & low<br />risk industries
-                    </h3>
-                    <p className="text-white/80 text-sm mt-4 max-w-xs">
-                      Your business will be supported by a dedicated team of merchant service specialists.
-                    </p>
-                  </div>
-                  
-                  {/* Industry list - Hidden until hover on desktop */}
-                  <div className="mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 max-w-[50%]">
-                    <div className="flex flex-col gap-y-1.5">
-                      {[
-                        "Subscription",
-                        "Accounting",
-                        "Dropshipping",
-                        "High volume",
-                        "Apparel",
-                        "Home goods",
-                        "Pet supplies",
-                        "Beauty products",
-                      ].map((industry) => (
-                        <div key={industry} className="flex items-center gap-2 text-white/90">
-                          <Check className="h-3.5 w-3.5 text-white flex-shrink-0" />
                           <span className="text-sm">{industry}</span>
                         </div>
                       ))}
