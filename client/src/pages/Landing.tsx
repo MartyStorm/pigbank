@@ -1045,7 +1045,7 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[520px]">
               {/* High Risk Card */}
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#74747d]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#1b1b1b]"
                 data-testid="card-high-risk"
               >
                 {/* Arrow Icon - Top Left */}
