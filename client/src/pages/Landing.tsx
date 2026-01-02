@@ -1274,8 +1274,8 @@ export default function Landing() {
                 <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
                   <ShieldCheck className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Level 1</h4>
-                <p className="text-white/60 text-sm">The highest security certification in the payments industry</p>
+                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Compliant</h4>
+                <p className="text-white/60 text-sm">Meeting industry security standards for payment processing</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
                 <div className="w-14 h-14 rounded-xl bg-[#75C947] flex items-center justify-center mx-auto mb-4">
