@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ChatWidget } from "@/components/ChatWidget";
 import { MerchantViewBanner } from "@/components/MerchantViewBanner";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { useAuth } from "@/hooks/useAuth";
 import { MerchantViewProvider, useMerchantView } from "@/hooks/useMerchantView";
 import NotFound from "@/pages/not-found";
@@ -223,6 +224,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <MerchantViewProvider>
           <TooltipProvider>
+            <LoadingScreen minDisplayTime={1500} />
             <Toaster />
             <AppContent />
           </TooltipProvider>
