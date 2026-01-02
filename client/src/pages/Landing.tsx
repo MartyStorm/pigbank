@@ -1402,7 +1402,7 @@ export default function Landing() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8 ring-0 outline-none focus-visible:ring-0"
+                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none border-0"
                 data-testid="button-get-started-cta"
               >
                 <a href="/register">
@@ -1411,7 +1411,7 @@ export default function Landing() {
               </Button>
               <Button 
                 size="lg" 
-                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100 border-0"
+                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100 border-0 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none"
                 data-testid="button-contact-us"
               >
                 Contact us
