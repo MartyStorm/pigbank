@@ -1,20 +1,29 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 
 interface LoadingScreenProps {
   minDisplayTime?: number;
 }
 
 export function LoadingScreen({ minDisplayTime = 1800 }: LoadingScreenProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [location] = useLocation();
+  const isLandingPage = location === "/" || location === "/landing";
+  const hasSeenLoading = sessionStorage.getItem("pigbank_loading_shown") === "true";
+  
+  const [isVisible, setIsVisible] = useState(isLandingPage && !hasSeenLoading);
 
   useEffect(() => {
+    if (!isVisible) return;
+    
+    sessionStorage.setItem("pigbank_loading_shown", "true");
+    
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, minDisplayTime);
 
     return () => clearTimeout(timer);
-  }, [minDisplayTime]);
+  }, [minDisplayTime, isVisible]);
 
   return (
     <AnimatePresence>
