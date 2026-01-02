@@ -1138,7 +1138,7 @@ export default function Landing() {
 
               {/* High Risk Card */}
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#75c946]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#2D5A3D]"
                 data-testid="card-high-risk"
               >
                 {/* Arrow Icon - Top Left */}
@@ -1152,9 +1152,9 @@ export default function Landing() {
                     <defs>
                       <linearGradient id="graphGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="transparent" />
-                        <stop offset="30%" stopColor="#75C947" stopOpacity="0.3" />
-                        <stop offset="70%" stopColor="#75C947" stopOpacity="0.5" />
-                        <stop offset="100%" stopColor="#75C947" stopOpacity="0.2" />
+                        <stop offset="30%" stopColor="#ffffff" stopOpacity="0.3" />
+                        <stop offset="70%" stopColor="#ffffff" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
                       </linearGradient>
                     </defs>
                     <path 
@@ -1228,7 +1228,7 @@ export default function Landing() {
                         "Tobacco",
                       ].map((industry) => (
                         <div key={industry} className="flex items-center gap-2 text-white/90">
-                          <Check className="h-3.5 w-3.5 text-[#75C947] flex-shrink-0" />
+                          <Check className="h-3.5 w-3.5 text-white flex-shrink-0" />
                           <span className="text-sm">{industry}</span>
                         </div>
                       ))}
