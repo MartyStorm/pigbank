@@ -48,6 +48,10 @@ import PigBankMessages from "@/pages/PigBankMessages";
 import ComplianceHub from "@/pages/ComplianceHub";
 import Settings from "@/pages/Settings";
 import Heatmaps from "@/pages/Heatmaps";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
+import RefundPolicy from "@/pages/RefundPolicy";
+import CookiePolicy from "@/pages/CookiePolicy";
 import { useAnalyticsTracker } from "@/hooks/use-analytics-tracker";
 
 function Router() {
@@ -75,6 +79,10 @@ function Router() {
           <Route path="/public-integrations" component={PublicIntegrations} />
           <Route path="/public-pricing" component={PublicPricing} />
           <Route path="/public-contact" component={PublicContact} />
+          <Route path="/privacy" component={PrivacyPolicy} />
+          <Route path="/terms" component={TermsOfService} />
+          <Route path="/refund-policy" component={RefundPolicy} />
+          <Route path="/cookie-policy" component={CookiePolicy} />
           <Route path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/transactions" component={Transactions} />
@@ -110,6 +118,10 @@ function Router() {
         <Route path="/public-integrations" component={PublicIntegrations} />
         <Route path="/public-pricing" component={PublicPricing} />
         <Route path="/public-contact" component={PublicContact} />
+        <Route path="/privacy" component={PrivacyPolicy} />
+        <Route path="/terms" component={TermsOfService} />
+        <Route path="/refund-policy" component={RefundPolicy} />
+        <Route path="/cookie-policy" component={CookiePolicy} />
         <Route path="/team/merchants/approved" component={TeamApprovedMerchants} />
         <Route path="/team/merchants/:id" component={TeamMerchantDetail} />
         <Route path="/team/merchants" component={TeamMerchants} />
@@ -152,6 +164,10 @@ function Router() {
         <Route path="/public-integrations" component={PublicIntegrations} />
         <Route path="/public-pricing" component={PublicPricing} />
         <Route path="/public-contact" component={PublicContact} />
+        <Route path="/privacy" component={PrivacyPolicy} />
+        <Route path="/terms" component={TermsOfService} />
+        <Route path="/refund-policy" component={RefundPolicy} />
+        <Route path="/cookie-policy" component={CookiePolicy} />
         <Route path="/onboarding" component={Onboarding} />
         <Route path="/themes" component={Themes} />
         <Route path="/login" component={Login} />
@@ -169,6 +185,10 @@ function Router() {
       <Route path="/public-integrations" component={PublicIntegrations} />
       <Route path="/public-pricing" component={PublicPricing} />
       <Route path="/public-contact" component={PublicContact} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfService} />
+      <Route path="/refund-policy" component={RefundPolicy} />
+      <Route path="/cookie-policy" component={CookiePolicy} />
       <Route path="/" component={Dashboard} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/landing" component={Landing} />

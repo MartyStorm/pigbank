@@ -1469,12 +1469,23 @@ export default function Landing() {
               <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="#" className="hover:text-gray-900">About</a></li>
                 <li><a href="#" className="hover:text-gray-900">Blog</a></li>
-                <li><a href="#" className="hover:text-gray-900">Contact</a></li>
+                <li><a href="/public-contact" className="hover:text-gray-900">Contact</a></li>
               </ul>
             </div>
           </div>
+          <div className="border-t border-gray-200 pt-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+              <a href="/privacy" className="hover:text-gray-900" data-testid="link-privacy-policy">Privacy Policy</a>
+              <a href="/terms" className="hover:text-gray-900" data-testid="link-terms-of-service">Terms of Service</a>
+              <a href="/refund-policy" className="hover:text-gray-900" data-testid="link-refund-policy">Refund Policy</a>
+              <a href="/cookie-policy" className="hover:text-gray-900" data-testid="link-cookie-policy">Cookie Policy</a>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
-            <p className="text-sm text-gray-500">© 2026 PigBank Payments. All rights reserved.</p>
+            <div className="text-sm text-gray-500">
+              <p>© 2026 PigBank Payments. All rights reserved.</p>
+              <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
+            </div>
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <span>Made in the USA</span>
               <span className="text-lg">🇺🇸</span>
