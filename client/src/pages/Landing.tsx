@@ -721,7 +721,7 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-sm font-medium text-gray-600">POS Dashboard</span>
