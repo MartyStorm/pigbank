@@ -244,7 +244,7 @@ function TestimonialsCarousel() {
       <div className="relative">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-[#1a1a1a] hover:text-[#1a1a1a]/80 transition-colors"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-[#73cb43] hover:text-[#73cb43]/80 transition-colors"
           data-testid="button-testimonial-prev"
         >
           <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
@@ -252,7 +252,7 @@ function TestimonialsCarousel() {
         
         <button
           onClick={scrollNext}
-          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-[#1a1a1a] hover:text-[#1a1a1a]/80 transition-colors"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-[#73cb43] hover:text-[#73cb43]/80 transition-colors"
           data-testid="button-testimonial-next"
         >
           <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
@@ -264,12 +264,12 @@ function TestimonialsCarousel() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto px-10 md:px-14"
+          className="w-full max-w-5xl mx-auto px-8 md:px-10"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="bg-[#1a4320] rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 h-[280px] md:h-[260px] lg:h-[240px] flex items-center">
+                <div className="bg-[#1a4320] rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 h-[300px] md:h-[280px] lg:h-[260px] flex items-center">
                   <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center w-full">
                     <div className="flex-shrink-0">
                       <div 
