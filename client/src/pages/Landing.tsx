@@ -719,7 +719,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/Pig-Transparent-06_1767518220191.png"
                     alt="PigBank mascot with phone"
-                    className="absolute left-[-30px] md:left-[-50px] lg:left-[-70px] xl:left-[-90px] bottom-[-25px] w-[100px] md:w-[130px] lg:w-[160px] xl:w-[180px] h-auto z-10"
+                    className="absolute left-[-10px] md:left-[-15px] lg:left-[-20px] xl:left-[-25px] bottom-[5px] w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
