@@ -262,11 +262,11 @@ export default function PaymentMethodsFlip() {
       data-testid="section-payment-methods"
     >
       <div 
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0"
         style={{
-          backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767524080630.png')`,
-          backgroundSize: '400px',
-          backgroundRepeat: 'repeat'
+          backgroundImage: `url('/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_47_04_PM_1767524790503.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom'
         }}
       />
       <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
