@@ -1586,16 +1586,8 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
-          <div 
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_35_18_AM_1767522927021.png')`,
-              backgroundSize: '400px',
-              backgroundRepeat: 'repeat'
-            }}
-          />
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
+        <section className="py-20 md:py-32 bg-[#1a4320]">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="flex-1 text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
