@@ -480,7 +480,7 @@ export default function Landing() {
           }}
         >
           <div 
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0"
             style={{
               backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_05_02_20_AM_1767524564717.png')`,
               backgroundSize: '400px',
