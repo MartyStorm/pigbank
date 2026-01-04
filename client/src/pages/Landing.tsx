@@ -713,7 +713,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-lg px-8"
                   data-testid="button-learn-more-pos-software"
                 >
                   <a href="/register">
@@ -771,7 +771,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-lg px-8"
                   data-testid="button-learn-more-terminals"
                 >
                   <a href="/register">
@@ -803,7 +803,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-lg px-8"
                   data-testid="button-learn-more-gateway"
                 >
                   <a href="/register">
@@ -1144,7 +1144,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-lg px-8"
                   data-testid="button-view-integrations"
                 >
                   <a href="/register">
@@ -1175,7 +1175,7 @@ export default function Landing() {
                 <Button 
                   asChild
                   size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-lg px-8"
                   data-testid="button-learn-more-3"
                 >
                   <a href="/register">
