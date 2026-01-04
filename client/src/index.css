@@ -267,33 +267,34 @@ input[type="number"] {
   }
 }
 
-/* Vertical scrolling animations for integration icons */
-@keyframes scroll-up {
+/* Vertical scrolling animations for integration icons - icons enter from outside bottom, exit outside top */
+/* With 3x duplicated content: start at -33.33% (middle set visible), end at -66.67% (next set visible) */
+@keyframes scroll-up-infinite {
   0% {
-    transform: translateY(0);
+    transform: translateY(calc(-100% / 3));
   }
   100% {
-    transform: translateY(-50%);
+    transform: translateY(calc(-200% / 3));
   }
 }
 
-@keyframes scroll-down {
+@keyframes scroll-down-infinite {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(calc(-200% / 3));
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(calc(-100% / 3));
   }
 }
 
 .animate-scroll-up {
-  animation: scroll-up 20s linear infinite;
+  animation: scroll-up-infinite 18s linear infinite;
 }
 
 .animate-scroll-down {
-  animation: scroll-down 22s linear infinite;
+  animation: scroll-down-infinite 20s linear infinite;
 }
 
 .animate-scroll-up-slow {
-  animation: scroll-up 24s linear infinite;
+  animation: scroll-up-infinite 22s linear infinite;
 }
