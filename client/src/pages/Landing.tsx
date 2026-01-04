@@ -1572,8 +1572,16 @@ export default function Landing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-[#85bb65]">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-12 md:py-20 bg-[#85bb65] relative overflow-hidden">
+          <div 
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767524224637.png')`,
+              backgroundSize: '400px',
+              backgroundRepeat: 'repeat'
+            }}
+          />
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <TestimonialsCarousel />
           </div>
         </section>
