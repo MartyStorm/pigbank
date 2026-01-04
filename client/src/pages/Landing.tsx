@@ -1587,45 +1587,56 @@ export default function Landing() {
               backgroundRepeat: 'repeat'
             }}
           />
-          <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to bring home the bacon?
-            </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of merchants who trust PigBank to power their payments. 
-              Start accepting payments in minutes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none border-0"
-                data-testid="button-get-started-cta"
-              >
-                <a href="/register">
-                  Get started
-                </a>
-              </Button>
-              <Button 
-                size="lg" 
-                className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100 border-0 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none"
-                data-testid="button-contact-us"
-              >
-                Contact us
-              </Button>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-sm text-white/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-white" />
-                <span>No setup fees</span>
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="hidden md:block flex-shrink-0">
+                <img 
+                  src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
+                  alt="PigBank superhero mascot"
+                  className="w-[200px] lg:w-[280px] xl:w-[320px] h-auto"
+                />
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-white" />
-                <span>No monthly minimums</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-white" />
-                <span>Cancel anytime</span>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                  Ready to bring home the bacon?
+                </h2>
+                <p className="text-lg text-white/90 mb-8 max-w-2xl">
+                  Join thousands of merchants who trust PigBank to power their payments. 
+                  Start accepting payments in minutes.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none border-0"
+                    data-testid="button-get-started-cta"
+                  >
+                    <a href="/register">
+                      Get started
+                    </a>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    className="rounded-lg px-8 bg-white text-[#1a4320] hover:bg-gray-100 border-0 ring-0 outline-none focus-visible:ring-0 focus:ring-0 focus:outline-none"
+                    data-testid="button-contact-us"
+                  >
+                    Contact us
+                  </Button>
+                </div>
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-8 text-sm text-white/80">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                    <span>No setup fees</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                    <span>No monthly minimums</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                    <span>Cancel anytime</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
