@@ -57,6 +57,7 @@ import testimonial3 from "@assets/stock_images/professional_busines_1f8f6e40.jpg
 import testimonial4 from "@assets/stock_images/professional_busines_8f8097a7.jpg";
 import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
 import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_with_Person_Visitor_1766103263637.webp";
+import iphoneMockup from "@assets/Free_iPhone_16_Pro_Mockup_copy_1767511434936.png";
 import PaymentMethodsFlip from "@/components/PaymentMethodsFlip";
 
 const floatingCards = [
@@ -702,40 +703,12 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
-                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">POS Dashboard</span>
-                        <Monitor className="h-5 w-5 text-[#73cb43]" />
-                      </div>
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="text-gray-500">Today's Sales</span>
-                          <span className="font-semibold text-gray-900">$4,280</span>
-                        </div>
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                          <div className="h-full w-3/4 bg-[#73cb43] rounded-full" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between p-2 bg-green-50 rounded-lg">
-                          <div className="flex items-center gap-2">
-                            <Receipt className="h-3 w-3 text-[#73cb43]" />
-                            <span className="text-xs text-gray-700">Orders</span>
-                          </div>
-                          <span className="text-xs font-semibold text-gray-900">142</span>
-                        </div>
-                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
-                          <div className="flex items-center gap-2">
-                            <Users className="h-3 w-3 text-gray-400" />
-                            <span className="text-xs text-gray-700">Customers</span>
-                          </div>
-                          <span className="text-xs font-semibold text-gray-900">89</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative flex justify-center">
+                  <img 
+                    src={iphoneMockup} 
+                    alt="PigBank mobile app showing payouts dashboard" 
+                    className="w-64 md:w-80 h-auto object-contain"
+                  />
                 </div>
               </div>
             </div>
