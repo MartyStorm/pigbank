@@ -494,10 +494,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-[#101828]">
+                  <h1 className="hero-title font-bold tracking-tight text-[#1a1a1a]">
                     Built for Business, Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-[#101828] font-semibold">
+                  <p className="text-xl md:text-2xl text-[#1a1a1a] font-semibold">
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
