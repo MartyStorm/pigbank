@@ -60,7 +60,7 @@ const cards = [
     id: "bnpl",
     title: "Buy Now Pay Later",
     backText: "Flexible installment payments",
-    image: "/attached_assets/generated_images/bnpl_icon_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_08_13_13_PM_1767492806460.png",
   },
   {
     id: "ipad-terminal",
