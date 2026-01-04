@@ -547,7 +547,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-8 bg-[#1a4320]">
+        <section className="py-8 bg-[#3c3a3b]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
               <div className="text-center">
