@@ -860,8 +860,8 @@ export default function Landing() {
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
-                {/* Container sized to match payouts section */}
-                <div className="relative h-56 md:h-72 overflow-hidden">
+                {/* Container matches payouts circle exactly */}
+                <div className="relative h-64 md:h-80 overflow-hidden">
                   <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
@@ -1160,8 +1160,7 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-              <div className="lg:w-1/2 order-1 lg:order-2 flex items-center justify-center py-20 md:py-32">
-                <div className="space-y-6 text-center flex flex-col items-center">
+              <div className="lg:w-1/2 order-1 lg:order-2 space-y-6 text-center flex flex-col items-center">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                     Integrations that power your growth
                   </h2>
@@ -1181,7 +1180,6 @@ export default function Landing() {
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
-                </div>
               </div>
             </div>
           </div>
