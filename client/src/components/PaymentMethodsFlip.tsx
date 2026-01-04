@@ -72,7 +72,7 @@ const cards = [
     id: "google-pay",
     title: "Google Pay",
     backText: "Fast Android & web payments",
-    image: "/attached_assets/generated_images/google_pay_icon_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_07_41_37_PM_1767490909224.png",
   },
 ];
 
