@@ -1640,59 +1640,59 @@ export default function Landing() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-white/10 bg-[#1a4320] py-12">
+      <footer className="border-t border-gray-200 bg-white py-12">
         <div className="container px-4 md:px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-semibold text-white mb-4">Products</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">Payments</a></li>
-                <li><a href="#" className="hover:text-white">Invoicing</a></li>
-                <li><a href="#" className="hover:text-white">Payouts</a></li>
-                <li><a href="#" className="hover:text-white">Fraud Protection</a></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Products</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Payments</a></li>
+                <li><a href="#" className="hover:text-gray-900">Invoicing</a></li>
+                <li><a href="#" className="hover:text-gray-900">Payouts</a></li>
+                <li><a href="#" className="hover:text-gray-900">Fraud Protection</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">E-commerce</a></li>
-                <li><a href="#" className="hover:text-white">SaaS</a></li>
-                <li><a href="#" className="hover:text-white">Marketplaces</a></li>
-                <li><a href="#" className="hover:text-white">Platforms</a></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Solutions</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">E-commerce</a></li>
+                <li><a href="#" className="hover:text-gray-900">SaaS</a></li>
+                <li><a href="#" className="hover:text-gray-900">Marketplaces</a></li>
+                <li><a href="#" className="hover:text-gray-900">Platforms</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Developers</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">Documentation</a></li>
-                <li><a href="#" className="hover:text-white">API Reference</a></li>
-                <li><a href="#" className="hover:text-white">SDKs</a></li>
-                <li><a href="#" className="hover:text-white">Webhooks</a></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Developers</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Documentation</a></li>
+                <li><a href="#" className="hover:text-gray-900">API Reference</a></li>
+                <li><a href="#" className="hover:text-gray-900">SDKs</a></li>
+                <li><a href="#" className="hover:text-gray-900">Webhooks</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-                <li><a href="/public-contact" className="hover:text-white">Contact</a></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">About</a></li>
+                <li><a href="#" className="hover:text-gray-900">Blog</a></li>
+                <li><a href="/public-contact" className="hover:text-gray-900">Contact</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 mb-8">
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
-              <a href="/privacy" className="hover:text-white" data-testid="link-privacy-policy">Privacy Policy</a>
-              <a href="/terms" className="hover:text-white" data-testid="link-terms-of-service">Terms of Service</a>
-              <a href="/refund-policy" className="hover:text-white" data-testid="link-refund-policy">Refund Policy</a>
-              <a href="/cookie-policy" className="hover:text-white" data-testid="link-cookie-policy">Cookie Policy</a>
+          <div className="border-t border-gray-200 pt-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+              <a href="/privacy" className="hover:text-gray-900" data-testid="link-privacy-policy">Privacy Policy</a>
+              <a href="/terms" className="hover:text-gray-900" data-testid="link-terms-of-service">Terms of Service</a>
+              <a href="/refund-policy" className="hover:text-gray-900" data-testid="link-refund-policy">Refund Policy</a>
+              <a href="/cookie-policy" className="hover:text-gray-900" data-testid="link-cookie-policy">Cookie Policy</a>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10">
-            <div className="text-sm text-white/60">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
+            <div className="text-sm text-gray-500">
               <p>© 2026 PigBank Payments. All rights reserved.</p>
               <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
             </div>
-            <div className="flex items-center gap-2 text-sm text-white/60">
+            <div className="flex items-center gap-2 text-sm text-gray-500">
               <span>Made in the USA</span>
               <span className="text-lg">🇺🇸</span>
             </div>
