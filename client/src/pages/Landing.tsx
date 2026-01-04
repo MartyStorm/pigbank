@@ -493,22 +493,25 @@ export default function Landing() {
               style={{ containerType: 'inline-size' }}
             >
               <div className="flex flex-col items-center text-center gap-6">
-                <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-[#1a1a1a]">
-                    Built for Business, Payment Processing
-                  </h1>
-                  <p className="text-xl md:text-2xl text-[#1a1a1a] font-semibold">
-                    The last payment processor you'll ever need
-                  </p>
-                  <div className="flex gap-4 justify-center pt-2">
-                    <Button 
-                      asChild 
-                      size="lg" 
-                      className="bg-[#1a4320] hover:bg-[#0f2912] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                      data-testid="button-get-started-hero"
-                    >
-                      <a href="/register">Get started</a>
-                    </Button>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-2xl -m-6 md:-m-8" />
+                  <div className="space-y-4 relative z-10 p-2">
+                    <h1 className="hero-title font-bold tracking-tight text-[#1a1a1a]">
+                      Built for Business, Payment Processing
+                    </h1>
+                    <p className="text-xl md:text-2xl text-[#1a1a1a] font-semibold">
+                      The last payment processor you'll ever need
+                    </p>
+                    <div className="flex gap-4 justify-center pt-2">
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        className="bg-[#1a4320] hover:bg-[#0f2912] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
+                        data-testid="button-get-started-hero"
+                      >
+                        <a href="/register">Get started</a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
                 
