@@ -1580,7 +1580,7 @@ export default function Landing() {
 
         <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
           <div 
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-40"
             style={{
               backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_27_15_AM_1767522519824.png')`,
               backgroundSize: '400px',
