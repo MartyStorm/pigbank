@@ -244,7 +244,7 @@ function TestimonialsCarousel() {
       <div className="relative">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-[#4576c9] hover:text-[#4576c9]/80 transition-colors"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-[#1a1a1a] hover:text-[#1a1a1a]/80 transition-colors"
           data-testid="button-testimonial-prev"
         >
           <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
@@ -252,7 +252,7 @@ function TestimonialsCarousel() {
         
         <button
           onClick={scrollNext}
-          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-[#4576c9] hover:text-[#4576c9]/80 transition-colors"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-[#1a1a1a] hover:text-[#1a1a1a]/80 transition-colors"
           data-testid="button-testimonial-next"
         >
           <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
