@@ -733,7 +733,7 @@ export default function Landing() {
                     <img 
                       src={iphoneMockup} 
                       alt="PigBank mobile app showing payouts dashboard" 
-                      className="w-40 md:w-52 h-auto object-contain translate-y-[40%]"
+                      className="w-40 md:w-52 h-auto object-contain translate-y-[15%]"
                     />
                   </div>
                 </div>
