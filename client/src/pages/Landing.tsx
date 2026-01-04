@@ -1171,8 +1171,8 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
+                <div className="relative flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-sm font-medium text-gray-600">Express Payout</span>
@@ -1202,6 +1202,11 @@ export default function Landing() {
                       </Button>
                     </div>
                   </div>
+                  <img 
+                    src="/attached_assets/Pig-Transparent-0144_copy_1767516573130.png"
+                    alt="PigBank mascot with money"
+                    className="absolute right-[10px] md:right-[0px] bottom-[-20px] w-40 md:w-52 h-auto z-10"
+                  />
                 </div>
               </div>
             </div>
