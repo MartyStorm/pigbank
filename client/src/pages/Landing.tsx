@@ -715,11 +715,11 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2">
-                <div className="relative flex items-center justify-center">
+                <div className="relative inline-flex items-center justify-center">
                   <img 
                     src="/attached_assets/Pig-Transparent-06_1767518220191.png"
                     alt="PigBank mascot with phone"
-                    className="absolute left-[-10px] md:left-[-15px] lg:left-[-20px] xl:left-[-25px] bottom-[5px] w-[70px] md:w-[90px] lg:w-[110px] xl:w-[130px] h-auto z-10"
+                    className="absolute left-[-85px] md:left-[-115px] lg:left-[-135px] xl:left-[-155px] bottom-[-20px] w-[120px] md:w-[150px] lg:w-[180px] xl:w-[200px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
