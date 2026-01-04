@@ -1047,7 +1047,7 @@ export default function Landing() {
                       </div>
                     </div>
                     {/* Right Column - Scrolls Up */}
-                    <div className="flex flex-col gap-4 animate-scroll-up-slow">
+                    <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
                       <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-14 h-8">
