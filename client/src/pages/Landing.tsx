@@ -180,7 +180,7 @@ function HorizontalScrollText() {
           {[...Array(4)].map((_, i) => (
             <span 
               key={i}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mx-4 text-[#c4cbc3]"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold mx-4 text-white"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               Why PigBank - 
