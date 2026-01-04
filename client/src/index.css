@@ -244,7 +244,7 @@ input[type="number"] {
 
 /* Integration section mask for fading icons at section edges */
 .integration-mask {
-  --fade-edge: 5rem;
+  --fade-edge: 1rem;
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0,
@@ -263,7 +263,7 @@ input[type="number"] {
 
 @media (min-width: 768px) {
   .integration-mask {
-    --fade-edge: 8rem;
+    --fade-edge: 1.5rem;
   }
 }
 
@@ -273,13 +273,13 @@ input[type="number"] {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(calc(-100% / 3));
+    transform: translateY(-50%);
   }
 }
 
 @keyframes scroll-down {
   0% {
-    transform: translateY(calc(-100% / 3));
+    transform: translateY(-50%);
   }
   100% {
     transform: translateY(0);
@@ -287,13 +287,13 @@ input[type="number"] {
 }
 
 .animate-scroll-up {
-  animation: scroll-up 12s linear infinite;
+  animation: scroll-up 20s linear infinite;
 }
 
 .animate-scroll-down {
-  animation: scroll-down 14s linear infinite;
+  animation: scroll-down 22s linear infinite;
 }
 
 .animate-scroll-up-slow {
-  animation: scroll-up 16s linear infinite;
+  animation: scroll-up 24s linear infinite;
 }
