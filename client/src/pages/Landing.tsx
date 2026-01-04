@@ -865,25 +865,25 @@ export default function Landing() {
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-[#7f54b3] font-bold text-lg tracking-tight">woo</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M32.5 8.5c-.1-.5-.5-.8-1-.8s-2.5-.2-2.5-.2-1.7-1.7-1.9-1.9c-.2-.2-.5-.1-.7-.1l-1 .3c-.1-.4-.3-.8-.6-1.2-.8-1.2-2-1.8-3.4-1.8h-.2c-.4-.5-.9-.7-1.3-.7-3.3 0-4.8 4.1-5.3 6.2l-2.3.7c-.7.2-.7.2-.8.9-.1.5-2 15.2-2 15.2l15.8 3 8.6-2.1s-1.2-8.4-1.4-9.5zM23.3 7.4l-1.8.5c0-.5 0-1.3-.2-2.2 1 .2 1.6 1.1 2 1.7zM20.7 5c.2.9.2 2.1.2 2.7l-3.7 1.1c.7-2.8 2.1-4.1 3.3-4.2.1.1.2.2.2.4zM19.2 3c.2 0 .4.1.5.2-1.6.7-3.3 2.6-4 6.3l-2.9.9c.8-2.7 2.7-7.4 6.4-7.4z" fill="#95bf47"/>
                           <path d="M31.5 7.7c-.5 0-2.5-.2-2.5-.2s-1.7-1.7-1.9-1.9c-.1-.1-.2-.1-.3-.1l-1.2 24.6 8.6-2.1s-1.2-8.4-1.4-9.5c-.1-.5-.5-.8-1.3-.8z" fill="#5e8e3e"/>
                           <path d="M21.4 13.3l-1.2 3.6s-1-.5-2.3-.5c-1.9 0-2 1.2-2 1.5 0 1.6 4.2 2.2 4.2 6 0 3-1.9 4.9-4.4 4.9-3.1 0-4.6-1.9-4.6-1.9l.8-2.7s1.6 1.4 3 1.4c.9 0 1.3-.7 1.3-1.2 0-2.1-3.5-2.2-3.5-5.6 0-2.9 2.1-5.7 6.3-5.7 1.7 0 2.4.2 2.4.2z" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-black font-bold text-xl tracking-tight">WIX</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M8 12h8l-4 8h8l-12 12 4-12h-8z" fill="#34313f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 40 40" className="w-12 h-8">
                           <path d="M24.5 28.5c-5.5 4-13.5 6.2-20.5 6.2-1.5 0-3-.1-4.5-.4-.3-.1-.6.2-.3.5 6.5 4.5 14.5 7.2 23 7.2 5.5 0 11.5-1.2 17-3.5.8-.4.2-1.2-.7-.8" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
                           <path d="M26.5 26c-.5-.6-3-.3-4.5-.1-.4 0-.4-.3-.1-.5 2-1.4 5.5-1 6-.5.4.4-.1 3.5-2 5-.3.3-.6.1-.5-.2.5-1.2 1.5-3.1 1.1-3.7" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
@@ -891,25 +891,25 @@ export default function Landing() {
                         </svg>
                       </div>
                       {/* Duplicate set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-[#7f54b3] font-bold text-lg tracking-tight">woo</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M32.5 8.5c-.1-.5-.5-.8-1-.8s-2.5-.2-2.5-.2-1.7-1.7-1.9-1.9c-.2-.2-.5-.1-.7-.1l-1 .3c-.1-.4-.3-.8-.6-1.2-.8-1.2-2-1.8-3.4-1.8h-.2c-.4-.5-.9-.7-1.3-.7-3.3 0-4.8 4.1-5.3 6.2l-2.3.7c-.7.2-.7.2-.8.9-.1.5-2 15.2-2 15.2l15.8 3 8.6-2.1s-1.2-8.4-1.4-9.5zM23.3 7.4l-1.8.5c0-.5 0-1.3-.2-2.2 1 .2 1.6 1.1 2 1.7zM20.7 5c.2.9.2 2.1.2 2.7l-3.7 1.1c.7-2.8 2.1-4.1 3.3-4.2.1.1.2.2.2.4zM19.2 3c.2 0 .4.1.5.2-1.6.7-3.3 2.6-4 6.3l-2.9.9c.8-2.7 2.7-7.4 6.4-7.4z" fill="#95bf47"/>
                           <path d="M31.5 7.7c-.5 0-2.5-.2-2.5-.2s-1.7-1.7-1.9-1.9c-.1-.1-.2-.1-.3-.1l-1.2 24.6 8.6-2.1s-1.2-8.4-1.4-9.5c-.1-.5-.5-.8-1.3-.8z" fill="#5e8e3e"/>
                           <path d="M21.4 13.3l-1.2 3.6s-1-.5-2.3-.5c-1.9 0-2 1.2-2 1.5 0 1.6 4.2 2.2 4.2 6 0 3-1.9 4.9-4.4 4.9-3.1 0-4.6-1.9-4.6-1.9l.8-2.7s1.6 1.4 3 1.4c.9 0 1.3-.7 1.3-1.2 0-2.1-3.5-2.2-3.5-5.6 0-2.9 2.1-5.7 6.3-5.7 1.7 0 2.4.2 2.4.2z" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-black font-bold text-xl tracking-tight">WIX</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M8 12h8l-4 8h8l-12 12 4-12h-8z" fill="#34313f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 40 40" className="w-12 h-8">
                           <path d="M24.5 28.5c-5.5 4-13.5 6.2-20.5 6.2-1.5 0-3-.1-4.5-.4-.3-.1-.6.2-.3.5 6.5 4.5 14.5 7.2 23 7.2 5.5 0 11.5-1.2 17-3.5.8-.4.2-1.2-.7-.8" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
                           <path d="M26.5 26c-.5-.6-3-.3-4.5-.1-.4 0-.4-.3-.1-.5 2-1.4 5.5-1 6-.5.4.4-.1 3.5-2 5-.3.3-.6.1-.5-.2.5-1.2 1.5-3.1 1.1-3.7" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
@@ -917,25 +917,25 @@ export default function Landing() {
                         </svg>
                       </div>
                       {/* Third set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-[#7f54b3] font-bold text-lg tracking-tight">woo</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M32.5 8.5c-.1-.5-.5-.8-1-.8s-2.5-.2-2.5-.2-1.7-1.7-1.9-1.9c-.2-.2-.5-.1-.7-.1l-1 .3c-.1-.4-.3-.8-.6-1.2-.8-1.2-2-1.8-3.4-1.8h-.2c-.4-.5-.9-.7-1.3-.7-3.3 0-4.8 4.1-5.3 6.2l-2.3.7c-.7.2-.7.2-.8.9-.1.5-2 15.2-2 15.2l15.8 3 8.6-2.1s-1.2-8.4-1.4-9.5zM23.3 7.4l-1.8.5c0-.5 0-1.3-.2-2.2 1 .2 1.6 1.1 2 1.7zM20.7 5c.2.9.2 2.1.2 2.7l-3.7 1.1c.7-2.8 2.1-4.1 3.3-4.2.1.1.2.2.2.4zM19.2 3c.2 0 .4.1.5.2-1.6.7-3.3 2.6-4 6.3l-2.9.9c.8-2.7 2.7-7.4 6.4-7.4z" fill="#95bf47"/>
                           <path d="M31.5 7.7c-.5 0-2.5-.2-2.5-.2s-1.7-1.7-1.9-1.9c-.1-.1-.2-.1-.3-.1l-1.2 24.6 8.6-2.1s-1.2-8.4-1.4-9.5c-.1-.5-.5-.8-1.3-.8z" fill="#5e8e3e"/>
                           <path d="M21.4 13.3l-1.2 3.6s-1-.5-2.3-.5c-1.9 0-2 1.2-2 1.5 0 1.6 4.2 2.2 4.2 6 0 3-1.9 4.9-4.4 4.9-3.1 0-4.6-1.9-4.6-1.9l.8-2.7s1.6 1.4 3 1.4c.9 0 1.3-.7 1.3-1.2 0-2.1-3.5-2.2-3.5-5.6 0-2.9 2.1-5.7 6.3-5.7 1.7 0 2.4.2 2.4.2z" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <span className="text-black font-bold text-xl tracking-tight">WIX</span>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M8 12h8l-4 8h8l-12 12 4-12h-8z" fill="#34313f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 40 40" className="w-12 h-8">
                           <path d="M24.5 28.5c-5.5 4-13.5 6.2-20.5 6.2-1.5 0-3-.1-4.5-.4-.3-.1-.6.2-.3.5 6.5 4.5 14.5 7.2 23 7.2 5.5 0 11.5-1.2 17-3.5.8-.4.2-1.2-.7-.8" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
                           <path d="M26.5 26c-.5-.6-3-.3-4.5-.1-.4 0-.4-.3-.1-.5 2-1.4 5.5-1 6-.5.4.4-.1 3.5-2 5-.3.3-.6.1-.5-.2.5-1.2 1.5-3.1 1.1-3.7" fill="#f90" transform="translate(0 -10) scale(0.8)"/>
@@ -946,100 +946,100 @@ export default function Landing() {
                     {/* Middle Column - Scrolls Down */}
                     <div className="flex flex-col gap-4 animate-scroll-down">
                       {/* First set */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="20" rx="2" fill="#333"/>
                           <circle cx="16" cy="18" r="3" fill="#fff"/>
                           <circle cx="24" cy="18" r="3" fill="#fff"/>
                           <path d="M12 30h4v2h-4zM24 30h4v2h-4z" fill="#333"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 8c-2 4-1 8 2 10-1-4 0-7 3-9-2 5 0 9 4 11-2-5-1-9 3-12-4 6-2 11 2 14-3-2-6-6-6-10 0-2 1-4 2-6-3 2-5 5-5 9 0 3 2 6 5 8-4-1-7-4-8-8 0-3 1-6 3-8-4 3-6 7-5 11" fill="#7cb342"/>
                           <path d="M14 18c2 3 1 6-1 8 1-3 0-5-2-7 2 4 0 7-3 9 2-4 1-7-2-10 3 5 1 9-2 12 2-2 5-5 5-8 0-2-1-3-2-5 2 2 4 4 4 7 0 2-2 5-4 6 3-1 5-3 6-6 0-2-1-5-3-6 3 2 5 5 4 9" fill="#43a047"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6L6 14v16l4 2.5V16.5L20 11l10 5.5v16L34 30V14L20 6z" fill="#f26322"/>
                           <path d="M20 11l-6 3.5v16l6 3.5 6-3.5v-16L20 11zm-2 16.5l-2-1.2V17l4-2.3 4 2.3v9.3l-2 1.2v-8L20 18l-2 1.5v8z" fill="#f26322"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="24" rx="4" fill="#000"/>
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
                         </svg>
                       </div>
                       {/* Duplicate set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="20" rx="2" fill="#333"/>
                           <circle cx="16" cy="18" r="3" fill="#fff"/>
                           <circle cx="24" cy="18" r="3" fill="#fff"/>
                           <path d="M12 30h4v2h-4zM24 30h4v2h-4z" fill="#333"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 8c-2 4-1 8 2 10-1-4 0-7 3-9-2 5 0 9 4 11-2-5-1-9 3-12-4 6-2 11 2 14-3-2-6-6-6-10 0-2 1-4 2-6-3 2-5 5-5 9 0 3 2 6 5 8-4-1-7-4-8-8 0-3 1-6 3-8-4 3-6 7-5 11" fill="#7cb342"/>
                           <path d="M14 18c2 3 1 6-1 8 1-3 0-5-2-7 2 4 0 7-3 9 2-4 1-7-2-10 3 5 1 9-2 12 2-2 5-5 5-8 0-2-1-3-2-5 2 2 4 4 4 7 0 2-2 5-4 6 3-1 5-3 6-6 0-2-1-5-3-6 3 2 5 5 4 9" fill="#43a047"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6L6 14v16l4 2.5V16.5L20 11l10 5.5v16L34 30V14L20 6z" fill="#f26322"/>
                           <path d="M20 11l-6 3.5v16l6 3.5 6-3.5v-16L20 11zm-2 16.5l-2-1.2V17l4-2.3 4 2.3v9.3l-2 1.2v-8L20 18l-2 1.5v8z" fill="#f26322"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="24" rx="4" fill="#000"/>
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
                         </svg>
                       </div>
                       {/* Third set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="20" rx="2" fill="#333"/>
                           <circle cx="16" cy="18" r="3" fill="#fff"/>
                           <circle cx="24" cy="18" r="3" fill="#fff"/>
                           <path d="M12 30h4v2h-4zM24 30h4v2h-4z" fill="#333"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 8c-2 4-1 8 2 10-1-4 0-7 3-9-2 5 0 9 4 11-2-5-1-9 3-12-4 6-2 11 2 14-3-2-6-6-6-10 0-2 1-4 2-6-3 2-5 5-5 9 0 3 2 6 5 8-4-1-7-4-8-8 0-3 1-6 3-8-4 3-6 7-5 11" fill="#7cb342"/>
                           <path d="M14 18c2 3 1 6-1 8 1-3 0-5-2-7 2 4 0 7-3 9 2-4 1-7-2-10 3 5 1 9-2 12 2-2 5-5 5-8 0-2-1-3-2-5 2 2 4 4 4 7 0 2-2 5-4 6 3-1 5-3 6-6 0-2-1-5-3-6 3 2 5 5 4 9" fill="#43a047"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6L6 14v16l4 2.5V16.5L20 11l10 5.5v16L34 30V14L20 6z" fill="#f26322"/>
                           <path d="M20 11l-6 3.5v16l6 3.5 6-3.5v-16L20 11zm-2 16.5l-2-1.2V17l4-2.3 4 2.3v9.3l-2 1.2v-8L20 18l-2 1.5v8z" fill="#f26322"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="24" rx="4" fill="#000"/>
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
                         </svg>
@@ -1048,13 +1048,13 @@ export default function Landing() {
                     {/* Right Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-14 h-8">
                           <path d="M9.5 3.5c-.6.7-1.5 1.2-2.4 1.1-.1-.9.3-1.9.9-2.5.6-.7 1.6-1.2 2.4-1.1.1 1-.3 1.9-.9 2.5zm.9 1.3c-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2.1.8-1.2 1.1-2.3 1.1-2.4-.1 0-2.2-.8-2.2-3.3 0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7z" fill="#000"/>
                           <text x="22" y="15" fontSize="11" fontWeight="600" fill="#000">Pay</text>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-12 h-8">
                           <path d="M22.5 12.3v4.5h-1.4V6.9h3.8c.9 0 1.7.3 2.4.9.7.6 1 1.4 1 2.3s-.3 1.7-1 2.3c-.6.6-1.4.9-2.4.9h-2.4zm0-4.3v3.1h2.4c.5 0 1-.2 1.3-.5.4-.3.5-.8.5-1.3 0-.4-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5h-2.4z" fill="#5f6368"/>
                           <path d="M32.5 9.5c1 0 1.8.3 2.4.8.6.6.9 1.4.9 2.4v4.1h-1.3v-.9h-.1c-.6.8-1.3 1.1-2.2 1.1-.8 0-1.4-.2-2-.7-.5-.4-.8-1-.8-1.7 0-.7.3-1.3.8-1.7.6-.4 1.3-.6 2.2-.6.8 0 1.4.1 1.9.4v-.3c0-.5-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5-.7 0-1.3.3-1.7.9l-1.2-.8c.6-.9 1.5-1.3 2.9-1.3zm-1.7 5.6c0 .4.2.7.5.9.3.2.7.4 1.1.4.6 0 1.1-.2 1.5-.6.5-.4.7-.9.7-1.4-.4-.3-.9-.4-1.6-.4-.5 0-1 .1-1.4.4-.5.2-.8.5-.8.7z" fill="#5f6368"/>
@@ -1065,32 +1065,32 @@ export default function Landing() {
                           <path d="M9.2 6.3c.9 0 1.8.3 2.5 1l1.8-1.8C12.3 4.5 10.9 4 9.2 4 6.7 4 4.6 5.4 3.5 7.5l2.1 1.6c.5-1.5 1.9-2.8 3.6-2.8z" fill="#ea4335"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8-.1.2c.1-.5.5-.9 1-.9h2.2c4.2 0 7.5-1.7 8.4-6.7.3-1.5.1-2.7-.5-3.5" fill="#27346a"/>
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8 1.5-5.2c.2-.5.6-.8 1.1-.8h.7c4.6 0 8.2-1.9 9.2-7.3-.4-1.2-.9-2.2-1.5-2.7" fill="#2790c3"/>
                           <path d="M18.5 14.7c.1-.3.3-.5.5-.7.2-.1.5-.2.7-.2h5.1c.6 0 1.2 0 1.7.1.1 0 .3.1.5.1.1 0 .3.1.4.1.1 0 .2.1.3.1.4.1.7.3 1 .5.4-2.3 0-3.9-1.2-5.4-1.4-1.6-3.8-2.3-6.9-2.3h-8c-.7 0-1.3.5-1.4 1.2l-3.3 21.6c-.1.5.3 1 .8 1h5.8l1.5-9.4 1-6.7z" fill="#1f264f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M18.5 15.2c0-1 .8-1.4 2.2-1.4 2 0 4.4.6 6.4 1.7V10c-2.1-.9-4.3-1.2-6.4-1.2-5.2 0-8.7 2.7-8.7 7.3 0 7.1 9.8 6 9.8 9.1 0 1.2-1 1.6-2.4 1.6-2.1 0-4.8-.9-6.9-2v5.6c2.3 1 4.7 1.4 6.9 1.4 5.3 0 9-2.6 9-7.3 0-7.7-9.9-6.3-9.9-9.3z" fill="#635bff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6l-12 6v12c0 5.5 5.1 10.7 12 12 6.9-1.3 12-6.5 12-12V12l-12-6z" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <path d="M15 20l3 3 7-7" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       {/* Duplicate set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-14 h-8">
                           <path d="M9.5 3.5c-.6.7-1.5 1.2-2.4 1.1-.1-.9.3-1.9.9-2.5.6-.7 1.6-1.2 2.4-1.1.1 1-.3 1.9-.9 2.5zm.9 1.3c-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2.1.8-1.2 1.1-2.3 1.1-2.4-.1 0-2.2-.8-2.2-3.3 0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7z" fill="#000"/>
                           <text x="22" y="15" fontSize="11" fontWeight="600" fill="#000">Pay</text>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-12 h-8">
                           <path d="M22.5 12.3v4.5h-1.4V6.9h3.8c.9 0 1.7.3 2.4.9.7.6 1 1.4 1 2.3s-.3 1.7-1 2.3c-.6.6-1.4.9-2.4.9h-2.4zm0-4.3v3.1h2.4c.5 0 1-.2 1.3-.5.4-.3.5-.8.5-1.3 0-.4-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5h-2.4z" fill="#5f6368"/>
                           <path d="M32.5 9.5c1 0 1.8.3 2.4.8.6.6.9 1.4.9 2.4v4.1h-1.3v-.9h-.1c-.6.8-1.3 1.1-2.2 1.1-.8 0-1.4-.2-2-.7-.5-.4-.8-1-.8-1.7 0-.7.3-1.3.8-1.7.6-.4 1.3-.6 2.2-.6.8 0 1.4.1 1.9.4v-.3c0-.5-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5-.7 0-1.3.3-1.7.9l-1.2-.8c.6-.9 1.5-1.3 2.9-1.3zm-1.7 5.6c0 .4.2.7.5.9.3.2.7.4 1.1.4.6 0 1.1-.2 1.5-.6.5-.4.7-.9.7-1.4-.4-.3-.9-.4-1.6-.4-.5 0-1 .1-1.4.4-.5.2-.8.5-.8.7z" fill="#5f6368"/>
@@ -1101,32 +1101,32 @@ export default function Landing() {
                           <path d="M9.2 6.3c.9 0 1.8.3 2.5 1l1.8-1.8C12.3 4.5 10.9 4 9.2 4 6.7 4 4.6 5.4 3.5 7.5l2.1 1.6c.5-1.5 1.9-2.8 3.6-2.8z" fill="#ea4335"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8-.1.2c.1-.5.5-.9 1-.9h2.2c4.2 0 7.5-1.7 8.4-6.7.3-1.5.1-2.7-.5-3.5" fill="#27346a"/>
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8 1.5-5.2c.2-.5.6-.8 1.1-.8h.7c4.6 0 8.2-1.9 9.2-7.3-.4-1.2-.9-2.2-1.5-2.7" fill="#2790c3"/>
                           <path d="M18.5 14.7c.1-.3.3-.5.5-.7.2-.1.5-.2.7-.2h5.1c.6 0 1.2 0 1.7.1.1 0 .3.1.5.1.1 0 .3.1.4.1.1 0 .2.1.3.1.4.1.7.3 1 .5.4-2.3 0-3.9-1.2-5.4-1.4-1.6-3.8-2.3-6.9-2.3h-8c-.7 0-1.3.5-1.4 1.2l-3.3 21.6c-.1.5.3 1 .8 1h5.8l1.5-9.4 1-6.7z" fill="#1f264f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M18.5 15.2c0-1 .8-1.4 2.2-1.4 2 0 4.4.6 6.4 1.7V10c-2.1-.9-4.3-1.2-6.4-1.2-5.2 0-8.7 2.7-8.7 7.3 0 7.1 9.8 6 9.8 9.1 0 1.2-1 1.6-2.4 1.6-2.1 0-4.8-.9-6.9-2v5.6c2.3 1 4.7 1.4 6.9 1.4 5.3 0 9-2.6 9-7.3 0-7.7-9.9-6.3-9.9-9.3z" fill="#635bff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6l-12 6v12c0 5.5 5.1 10.7 12 12 6.9-1.3 12-6.5 12-12V12l-12-6z" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <path d="M15 20l3 3 7-7" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       {/* Third set for seamless loop */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-14 h-8">
                           <path d="M9.5 3.5c-.6.7-1.5 1.2-2.4 1.1-.1-.9.3-1.9.9-2.5.6-.7 1.6-1.2 2.4-1.1.1 1-.3 1.9-.9 2.5zm.9 1.3c-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2.1.8-1.2 1.1-2.3 1.1-2.4-.1 0-2.2-.8-2.2-3.3 0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7z" fill="#000"/>
                           <text x="22" y="15" fontSize="11" fontWeight="600" fill="#000">Pay</text>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 50 24" className="w-12 h-8">
                           <path d="M22.5 12.3v4.5h-1.4V6.9h3.8c.9 0 1.7.3 2.4.9.7.6 1 1.4 1 2.3s-.3 1.7-1 2.3c-.6.6-1.4.9-2.4.9h-2.4zm0-4.3v3.1h2.4c.5 0 1-.2 1.3-.5.4-.3.5-.8.5-1.3 0-.4-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5h-2.4z" fill="#5f6368"/>
                           <path d="M32.5 9.5c1 0 1.8.3 2.4.8.6.6.9 1.4.9 2.4v4.1h-1.3v-.9h-.1c-.6.8-1.3 1.1-2.2 1.1-.8 0-1.4-.2-2-.7-.5-.4-.8-1-.8-1.7 0-.7.3-1.3.8-1.7.6-.4 1.3-.6 2.2-.6.8 0 1.4.1 1.9.4v-.3c0-.5-.2-.9-.5-1.2-.4-.3-.8-.5-1.3-.5-.7 0-1.3.3-1.7.9l-1.2-.8c.6-.9 1.5-1.3 2.9-1.3zm-1.7 5.6c0 .4.2.7.5.9.3.2.7.4 1.1.4.6 0 1.1-.2 1.5-.6.5-.4.7-.9.7-1.4-.4-.3-.9-.4-1.6-.4-.5 0-1 .1-1.4.4-.5.2-.8.5-.8.7z" fill="#5f6368"/>
@@ -1137,20 +1137,20 @@ export default function Landing() {
                           <path d="M9.2 6.3c.9 0 1.8.3 2.5 1l1.8-1.8C12.3 4.5 10.9 4 9.2 4 6.7 4 4.6 5.4 3.5 7.5l2.1 1.6c.5-1.5 1.9-2.8 3.6-2.8z" fill="#ea4335"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8-.1.2c.1-.5.5-.9 1-.9h2.2c4.2 0 7.5-1.7 8.4-6.7.3-1.5.1-2.7-.5-3.5" fill="#27346a"/>
                           <path d="M31.5 12c-.5-2.5-2.5-4-5.5-4h-8c-.5 0-1 .4-1.1.9l-3.3 21c-.1.4.3.8.7.8h5l1.2-8 1.5-5.2c.2-.5.6-.8 1.1-.8h.7c4.6 0 8.2-1.9 9.2-7.3-.4-1.2-.9-2.2-1.5-2.7" fill="#2790c3"/>
                           <path d="M18.5 14.7c.1-.3.3-.5.5-.7.2-.1.5-.2.7-.2h5.1c.6 0 1.2 0 1.7.1.1 0 .3.1.5.1.1 0 .3.1.4.1.1 0 .2.1.3.1.4.1.7.3 1 .5.4-2.3 0-3.9-1.2-5.4-1.4-1.6-3.8-2.3-6.9-2.3h-8c-.7 0-1.3.5-1.4 1.2l-3.3 21.6c-.1.5.3 1 .8 1h5.8l1.5-9.4 1-6.7z" fill="#1f264f"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M18.5 15.2c0-1 .8-1.4 2.2-1.4 2 0 4.4.6 6.4 1.7V10c-2.1-.9-4.3-1.2-6.4-1.2-5.2 0-8.7 2.7-8.7 7.3 0 7.1 9.8 6 9.8 9.1 0 1.2-1 1.6-2.4 1.6-2.1 0-4.8-.9-6.9-2v5.6c2.3 1 4.7 1.4 6.9 1.4 5.3 0 9-2.6 9-7.3 0-7.7-9.9-6.3-9.9-9.3z" fill="#635bff"/>
                         </svg>
                       </div>
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-10 h-10">
+                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
+                        <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <path d="M20 6l-12 6v12c0 5.5 5.1 10.7 12 12 6.9-1.3 12-6.5 12-12V12l-12-6z" fill="none" stroke="#3b82f6" strokeWidth="2"/>
                           <path d="M15 20l3 3 7-7" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
