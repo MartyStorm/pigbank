@@ -709,14 +709,19 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
+                <div className="relative flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={iphoneMockup} 
                       alt="PigBank mobile app showing payouts dashboard" 
                       className="w-40 md:w-52 h-auto object-contain"
                     />
                   </div>
+                  <img 
+                    src="/attached_assets/Pig-Transparent-06_1767516269865.png"
+                    alt="PigBank mascot"
+                    className="absolute -right-4 md:-right-8 bottom-0 w-32 md:w-44 h-auto z-10"
+                  />
                 </div>
               </div>
             </div>
