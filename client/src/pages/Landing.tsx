@@ -494,10 +494,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-[#1a1a1a]">
+                  <h1 className="hero-title font-bold tracking-tight text-[#e2f9b5]">
                     <span className="bg-white/60 backdrop-blur-sm rounded-lg px-3 py-1 inline-block">Built for Business, Payment Processing</span>
                   </h1>
-                  <p className="text-xl md:text-2xl text-[#1a1a1a] font-semibold">
+                  <p className="text-xl md:text-2xl text-[#e2f9b5] font-semibold">
                     <span className="bg-white/60 backdrop-blur-sm rounded-lg px-3 py-1 inline-block">The last payment processor you'll ever need</span>
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
