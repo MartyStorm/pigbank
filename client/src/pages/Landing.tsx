@@ -1177,7 +1177,7 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2 flex justify-center">
-                <div className="relative pl-[60px] md:pl-[75px] lg:pl-[90px] xl:pl-[100px]">
+                <div className="relative pl-[75px] md:pl-[95px] lg:pl-[115px] xl:pl-[130px]">
                   <img 
                     src="/attached_assets/Pig-Transparent-0144_copy_1767516573130.png"
                     alt="PigBank mascot with money"
