@@ -288,7 +288,7 @@ input[type="number"] {
 }
 
 .animate-scroll-up {
-  animation: scroll-up-infinite 18s linear infinite;
+  animation: scroll-up-infinite 20s linear infinite;
 }
 
 .animate-scroll-down {
@@ -296,5 +296,5 @@ input[type="number"] {
 }
 
 .animate-scroll-up-slow {
-  animation: scroll-up-infinite 22s linear infinite;
+  animation: scroll-up-infinite 20s linear infinite;
 }

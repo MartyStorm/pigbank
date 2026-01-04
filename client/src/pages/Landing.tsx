@@ -854,14 +854,14 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="relative bg-white overflow-hidden">
+        <section className="py-20 md:py-32 relative bg-white overflow-hidden">
           <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row items-stretch min-h-[600px] md:min-h-[700px]">
-              <div className="lg:w-1/2 order-2 lg:order-1 flex items-stretch">
-                {/* Full height container - icons scroll from outside bottom to outside top */}
-                <div className="relative flex-1 overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                {/* Fixed height container - icons scroll from outside bottom to outside top */}
+                <div className="relative h-[400px] md:h-[450px] overflow-hidden">
                   <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
