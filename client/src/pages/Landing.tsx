@@ -726,7 +726,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/Pig-Transparent-06_1767516269865.png"
                     alt="PigBank mascot"
-                    className="absolute right-[20px] md:right-[10px] bottom-[-20px] w-40 md:w-52 h-auto z-10"
+                    className="absolute right-[20px] md:right-[10px] bottom-[-20px] w-[80px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-auto z-10"
                   />
                 </div>
               </div>
@@ -1181,7 +1181,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/Pig-Transparent-0144_copy_1767516573130.png"
                     alt="PigBank mascot with money"
-                    className="absolute left-[-80px] md:left-[-100px] bottom-[-10px] w-32 md:w-40 h-auto z-10"
+                    className="absolute left-[-80px] md:left-[-100px] bottom-[-10px] w-[80px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
