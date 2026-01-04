@@ -1465,26 +1465,26 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#2f8a2b] flex items-center justify-center mx-auto mb-4">
                   <Lock className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-white text-lg mb-2">256-bit encryption</h4>
-                <p className="text-white/60 text-sm">Your data is scrambled into unbreakable code before traveling online</p>
+                <h4 className="font-semibold text-[#1a1a1a] text-lg mb-2">256-bit encryption</h4>
+                <p className="text-[#1a1a1a]/70 text-sm">Your data is scrambled into unbreakable code before traveling online</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#2f8a2b] flex items-center justify-center mx-auto mb-4">
                   <ShieldCheck className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-white text-lg mb-2">PCI DSS Compliant</h4>
-                <p className="text-white/60 text-sm">Meeting industry security standards for payment processing</p>
+                <h4 className="font-semibold text-[#1a1a1a] text-lg mb-2">PCI DSS Compliant</h4>
+                <p className="text-[#1a1a1a]/70 text-sm">Meeting industry security standards for payment processing</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
+              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#2f8a2b] flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold text-white text-lg mb-2">We never sell your data</h4>
-                <p className="text-white/60 text-sm">Your business data stays private—period. No exceptions.</p>
+                <h4 className="font-semibold text-[#1a1a1a] text-lg mb-2">We never sell your data</h4>
+                <p className="text-[#1a1a1a]/70 text-sm">Your business data stays private—period. No exceptions.</p>
               </div>
             </div>
           </div>
