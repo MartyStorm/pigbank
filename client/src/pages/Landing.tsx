@@ -1487,8 +1487,16 @@ export default function Landing() {
 
         {/* Team & Testimonials Section */}
         <section 
-          className="py-12 md:py-20 relative overflow-hidden bg-[#eef9d6]"
+          className="py-12 md:py-20 relative overflow-hidden bg-[#e3f9b5]"
         >
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url('/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_19_21_PM_1767527196918.png')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center bottom'
+            }}
+          />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
