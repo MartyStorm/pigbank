@@ -812,9 +812,14 @@ export default function Landing() {
                   </a>
                 </Button>
               </div>
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
+              <div className="lg:w-1/2 flex justify-center">
+                <div className="relative pl-[40px] md:pl-[55px] lg:pl-[70px] xl:pl-[80px]">
+                  <img 
+                    src="/attached_assets/Pig-Transparent-04_1767534752378.png"
+                    alt="PigBank mascot"
+                    className="absolute left-0 bottom-[-10px] w-[85px] md:w-[110px] lg:w-[135px] xl:w-[155px] h-auto z-10"
+                  />
+                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={macbookMockup} 
                       alt="PigBank dashboard on MacBook showing payment processing analytics" 
