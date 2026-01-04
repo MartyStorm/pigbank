@@ -716,6 +716,11 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative flex items-center justify-center">
+                  <img 
+                    src="/attached_assets/Pig-Transparent-06_1767518220191.png"
+                    alt="PigBank mascot with phone"
+                    className="absolute left-[-30px] md:left-[-50px] lg:left-[-70px] xl:left-[-90px] bottom-[-25px] w-[100px] md:w-[130px] lg:w-[160px] xl:w-[180px] h-auto z-10"
+                  />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={iphoneMockup} 
@@ -723,11 +728,6 @@ export default function Landing() {
                       className="w-40 md:w-52 h-auto object-contain"
                     />
                   </div>
-                  <img 
-                    src="/attached_assets/Pig-Transparent-06_1767516269865.png"
-                    alt="PigBank mascot"
-                    className="absolute right-[-20px] md:right-[-40px] lg:right-[-50px] xl:right-[-60px] bottom-[-20px] w-[80px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-auto z-10"
-                  />
                 </div>
               </div>
             </div>
