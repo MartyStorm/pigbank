@@ -135,16 +135,16 @@ const featureCards = [
 const testimonials = [
   {
     id: 1,
-    quote: "As a nutraceuticals company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
+    quote: "As a harm reduction company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
     name: "TN Scientific",
-    title: "Nutraceuticals & Research Products",
+    title: "Harm Reduction & Drug Testing Supplies",
     image: "/attached_assets/tn_scientific_logo.png",
   },
   {
     id: 2,
     quote: "Other processors treated us like a liability. PigBank treated us like a partner. Fast approvals, fair rates, and they actually answer the phone when we call.",
     name: "TN Scientific",
-    title: "Nutraceuticals & Research Products",
+    title: "Harm Reduction & Drug Testing Supplies",
     image: "/attached_assets/tn_scientific_logo.png",
   },
 ];
