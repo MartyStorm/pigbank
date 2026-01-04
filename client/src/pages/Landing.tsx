@@ -233,10 +233,10 @@ function TestimonialsCarousel() {
   return (
     <div>
       <div className="text-center mb-8 md:mb-10">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#101828] mb-3">
           What our partners say
         </h3>
-        <p className="text-base md:text-lg text-[#1a4320] max-w-4xl mx-auto">
+        <p className="text-base md:text-lg text-[#101828] max-w-4xl mx-auto">
           Don't take our word for it — here's what merchants across industries have to say about working with PigBank.
         </p>
       </div>
@@ -494,10 +494,10 @@ export default function Landing() {
             >
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
-                  <h1 className="hero-title font-bold tracking-tight text-[#1a4320]">
+                  <h1 className="hero-title font-bold tracking-tight text-[#101828]">
                     Built for Business, Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-[#1a4320] font-semibold">
+                  <p className="text-xl md:text-2xl text-[#101828] font-semibold">
                     The last payment processor you'll ever need
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
