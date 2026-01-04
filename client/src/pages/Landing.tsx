@@ -273,7 +273,7 @@ function TestimonialsCarousel() {
                   <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
                     <div className="flex-shrink-0">
                       <div 
-                        className="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-3"
+                        className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center p-4"
                       >
                         <img 
                           src={testimonial.image}
