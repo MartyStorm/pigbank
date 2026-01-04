@@ -860,8 +860,8 @@ export default function Landing() {
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
-                {/* Container matches payouts section circle height */}
-                <div className="relative h-64 md:h-80 overflow-hidden">
+                {/* Container sized to match payouts section */}
+                <div className="relative h-56 md:h-72 overflow-hidden">
                   <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
