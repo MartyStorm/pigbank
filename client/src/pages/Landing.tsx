@@ -269,27 +269,32 @@ function TestimonialsCarousel() {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                  <div className="order-2 lg:order-1">
-                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-3">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div>
-                      <p className="text-white font-semibold uppercase tracking-wider text-xs">
-                        {testimonial.name}, {testimonial.title}
-                      </p>
+                <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-3"
+                      >
+                        <img 
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="max-w-full max-h-full object-contain"
+                          data-testid={`img-testimonial-${testimonial.id}`}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                    <div 
-                      className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
-                    >
-                      <img 
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="max-w-full max-h-full object-contain"
-                        data-testid={`img-testimonial-${testimonial.id}`}
-                      />
+                    <div className="flex-1 text-center lg:text-left">
+                      <blockquote className="text-lg md:text-xl lg:text-2xl font-light text-gray-800 leading-relaxed mb-4">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div>
+                        <p className="text-[#1a4320] font-semibold text-sm">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          {testimonial.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
