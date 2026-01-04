@@ -261,14 +261,6 @@ export default function PaymentMethodsFlip() {
       className="py-12 md:py-16 bg-[#effad6] relative overflow-hidden"
       data-testid="section-payment-methods"
     >
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url('/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_47_04_PM_1767524790503.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom'
-        }}
-      />
       <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#101828] mb-4">
