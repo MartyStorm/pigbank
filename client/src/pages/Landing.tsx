@@ -244,7 +244,7 @@ function TestimonialsCarousel() {
       <div className="relative">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-white/80 transition-colors"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 text-[#4576c9] hover:text-[#4576c9]/80 transition-colors"
           data-testid="button-testimonial-prev"
         >
           <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
@@ -252,7 +252,7 @@ function TestimonialsCarousel() {
         
         <button
           onClick={scrollNext}
-          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-white/80 transition-colors"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 text-[#4576c9] hover:text-[#4576c9]/80 transition-colors"
           data-testid="button-testimonial-next"
         >
           <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
@@ -305,7 +305,7 @@ function TestimonialsCarousel() {
             key={index}
             onClick={() => scrollTo(index)}
             className={`h-1 rounded-full transition-all ${
-              index === current ? 'w-8 bg-white' : 'w-4 bg-white/40'
+              index === current ? 'w-8 bg-[#4576c9]' : 'w-4 bg-[#4576c9]/40'
             }`}
             data-testid={`button-testimonial-dot-${index}`}
           />
@@ -1551,7 +1551,7 @@ export default function Landing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-[#80b770]">
+        <section className="py-12 md:py-20 bg-[#85bb65]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <TestimonialsCarousel />
           </div>
