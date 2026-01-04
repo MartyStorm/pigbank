@@ -720,7 +720,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/Pig-Transparent-06_1767516269865.png"
                     alt="PigBank mascot"
-                    className="absolute right-[-60px] md:right-[-80px] bottom-[-20px] w-40 md:w-52 h-auto z-10"
+                    className="absolute right-[20px] md:right-[10px] bottom-[-20px] w-40 md:w-52 h-auto z-10"
                   />
                 </div>
               </div>
