@@ -710,7 +710,7 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={iphoneMockup} 
                       alt="PigBank mobile app showing payouts dashboard" 
@@ -795,7 +795,7 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={macbookMockup} 
                       alt="PigBank dashboard on MacBook showing payment processing analytics" 
@@ -1167,7 +1167,7 @@ export default function Landing() {
               </div>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-sm font-medium text-gray-600">Express Payout</span>
@@ -1556,7 +1556,7 @@ export default function Landing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-[#85bb65]">
+        <section className="py-12 md:py-20 bg-[#2f8a2b]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <TestimonialsCarousel />
           </div>
