@@ -859,7 +859,7 @@ export default function Landing() {
               <div className="lg:w-1/2 order-2 lg:order-1">
                 {/* Mask wrapper extends to section edges with negative margins */}
                 <div className="relative -my-20 md:-my-32 py-20 md:py-32 integration-mask">
-                  <div className="h-[400px] md:h-[500px] flex gap-4 md:gap-6 justify-center">
+                  <div className="h-64 md:h-80 flex gap-4 md:gap-6 justify-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {[...Array(2)].map((_, setIndex) => (
