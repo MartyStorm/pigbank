@@ -35,7 +35,7 @@ const cards = [
     id: "subscriptions",
     title: "Subscriptions",
     backText: "Recurring billing & memberships",
-    image: "/attached_assets/generated_images/subscription_icon_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_12_18_17_AM_1767489858976.png",
   },
   {
     id: "tap-to-pay",
