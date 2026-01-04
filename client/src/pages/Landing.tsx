@@ -269,11 +269,11 @@ function TestimonialsCarousel() {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
+                <div className="bg-[#e2f9b5] rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 h-[280px] md:h-[260px] lg:h-[240px] flex items-center">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center w-full">
                     <div className="flex-shrink-0">
                       <div 
-                        className="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-3"
+                        className="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden bg-white flex items-center justify-center p-3"
                       >
                         <img 
                           src={testimonial.image}
@@ -291,7 +291,7 @@ function TestimonialsCarousel() {
                         <p className="text-[#1a4320] font-semibold text-sm">
                           {testimonial.name}
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-600 text-sm">
                           {testimonial.title}
                         </p>
                       </div>
