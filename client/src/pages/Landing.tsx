@@ -1246,8 +1246,8 @@ export default function Landing() {
                 data-testid="card-low-risk"
               >
                 {/* Arrow Icon - Top Left */}
-                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-                  <ArrowUpRight className="h-5 w-5 text-white" />
+                <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-[#1a4320]/20 flex items-center justify-center">
+                  <ArrowUpRight className="h-5 w-5 text-[#1a4320]" />
                 </div>
 
                 {/* Faded Graph Line Effect - Behind Images - Hidden until hover */}
@@ -1256,9 +1256,9 @@ export default function Landing() {
                     <defs>
                       <linearGradient id="graphGradientLow2" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="transparent" />
-                        <stop offset="30%" stopColor="#ffffff" stopOpacity="0.3" />
-                        <stop offset="70%" stopColor="#ffffff" stopOpacity="0.5" />
-                        <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
+                        <stop offset="30%" stopColor="#1a4320" stopOpacity="0.3" />
+                        <stop offset="70%" stopColor="#1a4320" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#1a4320" stopOpacity="0.2" />
                       </linearGradient>
                     </defs>
                     <path 
@@ -1302,10 +1302,10 @@ export default function Landing() {
                 {/* Content */}
                 <div className="flex flex-col h-full pt-14 relative z-10">
                   <div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] leading-tight">
                       Medium & low<br />risk industries
                     </h3>
-                    <p className="text-white/80 text-sm mt-4 max-w-xs">
+                    <p className="text-[#1a4320]/80 text-sm mt-4 max-w-xs">
                       Your business will be supported by a dedicated team of merchant service specialists.
                     </p>
                   </div>
@@ -1323,8 +1323,8 @@ export default function Landing() {
                         "Pet supplies",
                         "Beauty products",
                       ].map((industry) => (
-                        <div key={industry} className="flex items-center gap-2 text-white/90">
-                          <Check className="h-3.5 w-3.5 text-white flex-shrink-0" />
+                        <div key={industry} className="flex items-center gap-2 text-[#1a4320]/90">
+                          <Check className="h-3.5 w-3.5 text-[#1a4320] flex-shrink-0" />
                           <span className="text-sm">{industry}</span>
                         </div>
                       ))}
