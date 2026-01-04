@@ -1316,7 +1316,7 @@ export default function Landing() {
 
               {/* High Risk Card */}
               <div 
-                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#85BB65]"
+                className="group relative flex-1 rounded-3xl p-8 md:p-10 overflow-hidden lg:cursor-pointer transition-all duration-500 lg:hover:flex-[1.5] bg-[#70c244]"
                 data-testid="card-high-risk"
               >
                 {/* Arrow Icon - Top Left */}
