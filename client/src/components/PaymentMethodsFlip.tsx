@@ -119,20 +119,20 @@ function FlipCard({
         data-testid={`flip-card-${card.id}`}
       >
         <div
-          className={`absolute inset-0 bg-[#3c3a3b] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 overflow-hidden ${
+          className={`absolute inset-0 bg-[#e0e6e3] rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center transition-opacity duration-300 overflow-hidden ${
             isFlipped ? "opacity-0" : "opacity-100"
           }`}
         >
           <img src={image} alt={title} className="w-32 h-32 md:w-36 md:h-36 object-contain mb-1" style={scale ? { transform: `scale(${scale})` } : undefined} />
-          <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
+          <h4 className="font-semibold text-[#1a4320] text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className={`absolute inset-0 bg-[#3c3a3b] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-[#e0e6e3] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center transition-opacity duration-300 ${
             isFlipped ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h4 className="font-bold text-white text-center text-base md:text-lg mb-2">{title}</h4>
-          <p className="text-white/80 text-sm text-center">{backText}</p>
+          <h4 className="font-bold text-[#1a4320] text-center text-base md:text-lg mb-2">{title}</h4>
+          <p className="text-[#1a4320]/80 text-sm text-center">{backText}</p>
         </div>
       </div>
     );
@@ -154,21 +154,21 @@ function FlipCard({
         }}
       >
         <div
-          className="absolute inset-0 bg-[#3c3a3b] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center overflow-hidden"
+          className="absolute inset-0 bg-[#e0e6e3] rounded-2xl shadow-lg hover:shadow-xl p-4 flex flex-col items-center justify-center overflow-hidden"
           style={{ backfaceVisibility: "hidden" }}
         >
           <img src={image} alt={title} className="w-32 h-32 md:w-36 md:h-36 object-contain mb-1" style={scale ? { transform: `scale(${scale})` } : undefined} />
-          <h4 className="font-semibold text-white text-center text-sm md:text-base">{title}</h4>
+          <h4 className="font-semibold text-[#1a4320] text-center text-sm md:text-base">{title}</h4>
         </div>
         <div
-          className="absolute inset-0 bg-[#3c3a3b] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
+          className="absolute inset-0 bg-[#e0e6e3] rounded-2xl shadow-lg hover:shadow-xl p-6 flex flex-col items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
-          <h4 className="font-bold text-white text-center text-base md:text-lg mb-2">{title}</h4>
-          <p className="text-white/80 text-sm text-center">{backText}</p>
+          <h4 className="font-bold text-[#1a4320] text-center text-base md:text-lg mb-2">{title}</h4>
+          <p className="text-[#1a4320]/80 text-sm text-center">{backText}</p>
         </div>
       </div>
     </div>
