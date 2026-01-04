@@ -47,7 +47,7 @@ const cards = [
     id: "apple-pay",
     title: "Apple Pay",
     backText: "Fast, secure mobile payments",
-    image: "/attached_assets/generated_images/apple_pay_icon_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_07_39_44_PM_1767490792724.png",
   },
   {
     id: "direct-input",
