@@ -479,9 +479,17 @@ export default function Landing() {
             backgroundPosition: 'center bottom'
           }}
         >
-          <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16">
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_05_02_20_AM_1767524564717.png')`,
+              backgroundSize: '400px',
+              backgroundRepeat: 'repeat'
+            }}
+          />
+          <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
-              className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto relative z-10"
+              className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto"
               style={{ containerType: 'inline-size' }}
             >
               <div className="flex flex-col items-center text-center gap-6">
