@@ -81,7 +81,6 @@ function FlipCard({
   isFlipped,
   onFlip,
   onUnflip,
-  onToggle,
   prefersReducedMotion,
   isAutoFlipping,
 }: {
@@ -89,7 +88,6 @@ function FlipCard({
   isFlipped: boolean;
   onFlip: () => void;
   onUnflip: () => void;
-  onToggle: () => void;
   prefersReducedMotion: boolean;
   isAutoFlipping: boolean;
 }) {
@@ -99,13 +97,6 @@ function FlipCard({
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
   }, []);
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      onToggle();
-    }
-  };
 
   const handleMouseEnter = () => {
     if (!isTouchDevice && !isAutoFlipping) {
@@ -119,23 +110,12 @@ function FlipCard({
     }
   };
 
-  const handleClick = () => {
-    if (isTouchDevice) {
-      onToggle();
-    }
-  };
-
   if (prefersReducedMotion) {
     return (
       <div
-        className="relative w-full aspect-square cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#51AB37] focus:ring-offset-2 rounded-2xl"
-        onClick={handleClick}
+        className="relative w-full aspect-square rounded-2xl"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onKeyDown={handleKeyDown}
-        tabIndex={0}
-        role="button"
-        aria-pressed={isFlipped}
         data-testid={`flip-card-${card.id}`}
       >
         <div
@@ -160,14 +140,9 @@ function FlipCard({
 
   return (
     <div
-      className="relative w-full aspect-square cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#51AB37] focus:ring-offset-2 rounded-2xl group"
-      onClick={handleClick}
+      className="relative w-full aspect-square rounded-2xl group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
-      aria-pressed={isFlipped}
       data-testid={`flip-card-${card.id}`}
       style={{ perspective: "1000px" }}
     >
@@ -268,7 +243,7 @@ export default function PaymentMethodsFlip() {
     });
   }, []);
 
-  const toggleCard = useCallback((cardId: string) => {
+  const _toggleCard = useCallback((cardId: string) => {
     setFlippedCards((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(cardId)) {
@@ -303,7 +278,6 @@ export default function PaymentMethodsFlip() {
               isFlipped={flippedCards.has(card.id)}
               onFlip={() => flipCard(card.id)}
               onUnflip={() => unflipCard(card.id)}
-              onToggle={() => toggleCard(card.id)}
               prefersReducedMotion={prefersReducedMotion}
               isAutoFlipping={isAutoFlipping}
             />

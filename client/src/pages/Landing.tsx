@@ -1589,11 +1589,6 @@ export default function Landing() {
               backgroundSize: '40px 40px'
             }}
           />
-          <img 
-            src="/attached_assets/Pig-Transparent-01_copy_1767519777553.png"
-            alt="PigBank superhero mascot"
-            className="absolute bottom-[-20px] right-[-20px] md:bottom-[-30px] md:right-[5%] lg:right-[10%] w-[120px] md:w-[180px] lg:w-[220px] h-auto z-20 opacity-90"
-          />
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to bring home the bacon?
