@@ -1580,13 +1580,11 @@ export default function Landing() {
 
         <section className="py-20 md:py-32 bg-[#1a4320] relative overflow-hidden">
           <div 
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-20"
             style={{
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
+              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_12_04_AM_1767521537733.png')`,
+              backgroundSize: '400px',
+              backgroundRepeat: 'repeat'
             }}
           />
           <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center relative z-10">
