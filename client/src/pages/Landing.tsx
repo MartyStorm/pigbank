@@ -703,12 +703,14 @@ export default function Landing() {
                 </Button>
               </div>
               <div className="lg:w-1/2">
-                <div className="relative flex justify-center">
-                  <img 
-                    src={iphoneMockup} 
-                    alt="PigBank mobile app showing payouts dashboard" 
-                    className="w-64 md:w-80 h-auto object-contain"
-                  />
+                <div className="relative">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
+                    <img 
+                      src={iphoneMockup} 
+                      alt="PigBank mobile app showing payouts dashboard" 
+                      className="w-40 md:w-52 h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
