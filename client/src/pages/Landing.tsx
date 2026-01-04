@@ -862,7 +862,7 @@ export default function Landing() {
                   <div className="h-64 md:h-80 flex gap-4 md:gap-6 justify-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
-                      {[...Array(2)].map((_, setIndex) => (
+                      {[...Array(3)].map((_, setIndex) => (
                         <div key={setIndex} className="flex flex-col gap-4">
                           <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                             <span className="text-purple-600 font-bold text-lg">WOO</span>
@@ -884,7 +884,7 @@ export default function Landing() {
                     </div>
                     {/* Middle Column - Scrolls Down */}
                     <div className="flex flex-col gap-4 animate-scroll-down">
-                      {[...Array(2)].map((_, setIndex) => (
+                      {[...Array(3)].map((_, setIndex) => (
                         <div key={setIndex} className="flex flex-col gap-4">
                           <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                             <Monitor className="h-8 w-8 text-gray-800" />
@@ -906,7 +906,7 @@ export default function Landing() {
                     </div>
                     {/* Right Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up-slow">
-                      {[...Array(2)].map((_, setIndex) => (
+                      {[...Array(3)].map((_, setIndex) => (
                         <div key={setIndex} className="flex flex-col gap-4">
                           <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                             <Smartphone className="h-8 w-8 text-gray-800" />
@@ -1540,15 +1540,15 @@ export default function Landing() {
         }
         
         .animate-scroll-up {
-          animation: scroll-up 20s linear infinite;
+          animation: scroll-up 8s linear infinite;
         }
         
         .animate-scroll-down {
-          animation: scroll-down 20s linear infinite;
+          animation: scroll-down 8s linear infinite;
         }
         
         .animate-scroll-up-slow {
-          animation: scroll-up 25s linear infinite;
+          animation: scroll-up 10s linear infinite;
         }
         
         @keyframes pulse-slow {
