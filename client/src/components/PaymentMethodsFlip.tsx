@@ -41,7 +41,7 @@ const cards = [
     id: "tap-to-pay",
     title: "Tap to Pay",
     backText: "Phone to phone contactless payments",
-    image: "/attached_assets/Jan_3,_2026,_12_31_38_AM_1767490312176.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_07_58_49_PM_1767491937340.png",
   },
   {
     id: "apple-pay",
