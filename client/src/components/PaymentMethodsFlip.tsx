@@ -66,7 +66,7 @@ const cards = [
     id: "ipad-terminal",
     title: "iPad Terminal",
     backText: "In-person POS payments",
-    image: "/attached_assets/generated_images/ipad_terminal_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_07_54_57_PM_1767491702896.png",
   },
   {
     id: "google-pay",
