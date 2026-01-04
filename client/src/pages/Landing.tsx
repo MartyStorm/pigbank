@@ -236,7 +236,7 @@ function TestimonialsCarousel() {
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#101828] mb-3">
           What our partners say
         </h3>
-        <p className="text-base md:text-lg text-[#101828] max-w-4xl mx-auto">
+        <p className="text-base md:text-lg text-[#101828] max-w-5xl mx-auto">
           Don't take our word for it — here's what merchants across industries have to say about working with PigBank.
         </p>
       </div>
