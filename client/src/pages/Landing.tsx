@@ -1506,7 +1506,7 @@ export default function Landing() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-[#2e8a2b] shadow-xl">
                     <img 
                       src="/attached_assets/founder_photo.png" 
                       alt="Founder" 
@@ -1519,7 +1519,7 @@ export default function Landing() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-[#2e8a2b] shadow-xl">
                     <img 
                       src="/attached_assets/4080994360202994240_1766076263672.png" 
                       alt="Patricia - Operations" 
@@ -1533,7 +1533,7 @@ export default function Landing() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-[#2e8a2b] shadow-xl">
                     <img 
                       src="/attached_assets/accounting_team.png" 
                       alt="Accounting" 
@@ -1546,7 +1546,7 @@ export default function Landing() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-[#2e8a2b] shadow-xl">
                     <img 
                       src="/attached_assets/sales_darth_maul.png" 
                       alt="Darth Maul - Sales" 
@@ -1559,7 +1559,7 @@ export default function Landing() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
-                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-36 h-48 md:w-44 md:h-56 rounded-xl overflow-hidden border-4 border-[#2e8a2b] shadow-xl">
                     <img 
                       src="/attached_assets/ChatGPT_Image_Dec_18,_2025,_04_31_02_AM_1766053868295.png" 
                       alt="Oink - AI Team Lead" 
