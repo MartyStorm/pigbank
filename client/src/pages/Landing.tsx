@@ -858,35 +858,10 @@ export default function Landing() {
           <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                {/* Icons positioned at section level to fill full height */}
-              </div>
-              <div className="lg:w-1/2 order-1 lg:order-2 space-y-6 text-center flex flex-col items-center justify-center py-12 lg:py-0">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                  Integrations that power your growth
-                </h2>
-                <p className="text-lg text-gray-600 max-w-lg">
-                  Connect with the industry's leading platforms instantly. Whether you need 
-                  plug-and-play solutions or custom connections, our payment technology 
-                  fits seamlessly into your existing workflow.
-                </p>
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
-                  data-testid="button-view-integrations"
-                >
-                  <a href="/register">
-                    View integrations
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-            </div>
-            {/* Icons positioned absolutely to fill full section height */}
-            <div className="absolute left-4 md:left-6 lg:left-[calc(50%-20rem)] top-0 bottom-0 w-[280px] md:w-[340px] overflow-hidden hidden lg:flex">
-              <div className="h-full flex gap-4 md:gap-6 justify-center items-center">
+            <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1 relative h-[300px] lg:h-auto overflow-hidden flex justify-center -my-20 md:-my-32 py-20 md:py-32">
+                {/* Icons fill full section height by extending into padding with negative margins */}
+                <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
@@ -1182,6 +1157,28 @@ export default function Landing() {
                       </div>
                     </div>
                   </div>
+              </div>
+              <div className="lg:w-1/2 order-1 lg:order-2 space-y-6 text-center flex flex-col items-center justify-center py-12 lg:py-0">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                  Integrations that power your growth
+                </h2>
+                <p className="text-lg text-gray-600 max-w-lg">
+                  Connect with the industry's leading platforms instantly. Whether you need 
+                  plug-and-play solutions or custom connections, our payment technology 
+                  fits seamlessly into your existing workflow.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-[#75C947] hover:bg-[#67b83c] text-white rounded-lg px-8"
+                  data-testid="button-view-integrations"
+                >
+                  <a href="/register">
+                    View integrations
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
