@@ -1627,11 +1627,17 @@ export default function Landing() {
                 </div>
               </div>
               <div className="hidden md:block flex-shrink-0">
-                <img 
-                  src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
-                  alt="PigBank superhero mascot"
-                  className="w-[140px] lg:w-[180px] xl:w-[200px] h-auto"
-                />
+                <div className="relative w-[180px] lg:w-[220px] xl:w-[260px] h-[180px] lg:h-[220px] xl:h-[260px] rounded-full border-4 border-[#75C947] overflow-hidden" style={{ background: 'linear-gradient(to bottom, #87CEEB 0%, #b8e6b8 100%)' }}>
+                  <div className="absolute top-4 left-4 w-8 h-4 bg-white/80 rounded-full"></div>
+                  <div className="absolute top-3 left-10 w-6 h-3 bg-white/60 rounded-full"></div>
+                  <div className="absolute top-6 right-6 w-10 h-5 bg-white/70 rounded-full"></div>
+                  <div className="absolute top-4 right-12 w-5 h-3 bg-white/50 rounded-full"></div>
+                  <img 
+                    src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
+                    alt="PigBank superhero mascot"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120px] lg:w-[150px] xl:w-[180px] h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
