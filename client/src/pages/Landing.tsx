@@ -745,6 +745,17 @@ export default function Landing() {
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="lg:w-1/2">
+                <div className="relative">
+                  <div className="w-72 h-72 md:w-96 md:h-96 mx-auto rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={posTerminalImage} 
+                      alt="iPad POS terminal swivel stand for in-person payment processing" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="lg:w-1/2 space-y-6 text-center flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   POS hardware
@@ -765,17 +776,6 @@ export default function Landing() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-              </div>
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="w-72 h-72 md:w-96 md:h-96 mx-auto rounded-3xl overflow-hidden shadow-2xl">
-                    <img 
-                      src={posTerminalImage} 
-                      alt="iPad POS terminal swivel stand for in-person payment processing" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
