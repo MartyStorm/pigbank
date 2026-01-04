@@ -505,6 +505,12 @@ export default function Landing() {
                 </div>
                 
                 <div className="relative flex items-center justify-center mt-4">
+                  <img 
+                    src="/attached_assets/Pig-Transparent-02_copy_1767516617648.png"
+                    alt="PigBank mascot"
+                    className="hidden md:block absolute left-[-80px] lg:left-[-120px] xl:left-[-140px] bottom-0 w-[100px] md:w-[120px] lg:w-[150px] xl:w-[180px] h-auto z-20"
+                    style={{ transform: `translateY(${scrollY * 0.015}px)` }}
+                  />
                   <div 
                     className="relative"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
