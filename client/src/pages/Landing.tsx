@@ -785,7 +785,7 @@ export default function Landing() {
         </section>
 
         {/* Payment Gateway Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#ffffff]">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -862,7 +862,7 @@ export default function Landing() {
               <div className="lg:w-1/2 order-2 lg:order-1">
                 {/* Mask wrapper extends to section edges with negative margins */}
                 <div className="relative -my-20 md:-my-32 py-20 md:py-32 integration-mask">
-                  <div className="h-64 md:h-80 flex gap-4 md:gap-6 justify-center">
+                  <div className="h-64 md:h-80 flex gap-4 md:gap-6 justify-center overflow-hidden">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {[...Array(3)].map((_, setIndex) => (

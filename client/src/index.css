@@ -266,3 +266,34 @@ input[type="number"] {
     --fade-edge: 8rem;
   }
 }
+
+/* Vertical scrolling animations for integration icons */
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% / 3));
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(calc(-100% / 3));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 12s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 14s linear infinite;
+}
+
+.animate-scroll-up-slow {
+  animation: scroll-up 16s linear infinite;
+}
