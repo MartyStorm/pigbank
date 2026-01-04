@@ -233,10 +233,10 @@ function TestimonialsCarousel() {
   return (
     <div>
       <div className="text-center mb-8 md:mb-10">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
           What our partners say
         </h3>
-        <p className="text-base md:text-lg text-[#1a4320]/80 max-w-4xl mx-auto">
+        <p className="text-base md:text-lg text-white/90 max-w-4xl mx-auto">
           Don't take our word for it — here's what merchants across industries have to say about working with PigBank.
         </p>
       </div>
@@ -271,7 +271,7 @@ function TestimonialsCarousel() {
               <CarouselItem key={testimonial.id}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
                   <div className="order-2 lg:order-1">
-                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-[#1a4320] leading-relaxed mb-3">
+                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-3">
                       "{testimonial.quote}"
                     </blockquote>
                     <div>
