@@ -229,10 +229,13 @@ function TestimonialsCarousel() {
   }, [api]);
 
   return (
-    <div className="mt-10">
-      <div className="text-center mb-4">
-        <p className="text-xs font-semibold text-[#1a4320] uppercase tracking-[0.2em]">
-          DON'T TAKE OUR WORD FOR IT — HERE'S WHAT OUR PARTNERS SAY
+    <div>
+      <div className="text-center mb-8 md:mb-10">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
+          What our partners say
+        </h3>
+        <p className="text-base md:text-lg text-[#1a4320]/80 max-w-4xl mx-auto">
+          Don't take our word for it — here's what merchants across industries have to say about working with PigBank.
         </p>
       </div>
       
@@ -266,7 +269,7 @@ function TestimonialsCarousel() {
               <CarouselItem key={testimonial.id}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
                   <div className="order-2 lg:order-1">
-                    <blockquote className="text-lg md:text-xl lg:text-2xl font-light text-[#1a4320] leading-relaxed mb-3">
+                    <blockquote className="text-xl md:text-2xl lg:text-3xl font-light text-[#1a4320] leading-relaxed mb-3">
                       "{testimonial.quote}"
                     </blockquote>
                     <div>
@@ -277,7 +280,7 @@ function TestimonialsCarousel() {
                   </div>
                   <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                     <div 
-                      className="relative w-36 h-36 md:w-44 md:h-44 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
+                      className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4 shadow-lg"
                     >
                       <img 
                         src={testimonial.image}
