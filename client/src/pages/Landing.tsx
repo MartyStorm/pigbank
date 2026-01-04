@@ -725,11 +725,11 @@ export default function Landing() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-72 h-72 md:w-96 md:h-96 mx-auto rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden bg-[#85bb65] flex items-center justify-center">
                     <img 
                       src={posTerminalImage} 
                       alt="iPad POS terminal swivel stand for in-person payment processing" 
-                      className="w-full h-full object-cover"
+                      className="w-48 md:w-64 h-auto object-contain"
                     />
                   </div>
                 </div>
