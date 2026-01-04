@@ -859,10 +859,9 @@ export default function Landing() {
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1 relative min-h-[400px] md:min-h-[500px]">
-                {/* Container fills full section height */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div className="h-full flex gap-4 md:gap-6 justify-center items-center">
+              <div className="lg:w-1/2 order-2 lg:order-1 relative overflow-hidden min-h-[300px] lg:min-h-0">
+                {/* Icons fill full section height - container stretches to match text column */}
+                <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
@@ -1158,7 +1157,6 @@ export default function Landing() {
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
               <div className="lg:w-1/2 order-1 lg:order-2 space-y-6 text-center flex flex-col items-center justify-center py-12 lg:py-0">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
