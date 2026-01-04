@@ -367,7 +367,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
+      <header className="border-b border-[#1a1a1a]/20 bg-[#1a1a1a]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
@@ -409,7 +409,7 @@ export default function Landing() {
                               <div className="space-y-3">
                                 {productMenuItems.paymentTypes.map((product) => (
                                   <a key={product.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                                    <div className="w-10 h-10 rounded-lg bg-[#1a4320] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center flex-shrink-0">
                                       <product.icon className="h-5 w-5 text-white" />
                                     </div>
                                     <div>
@@ -425,7 +425,7 @@ export default function Landing() {
                               <div className="space-y-3">
                                 {productMenuItems.valueAddedServices.map((service) => (
                                   <a key={service.title} href="#" className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                                    <div className="w-10 h-10 rounded-lg bg-[#1a4320] flex items-center justify-center flex-shrink-0">
+                                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center flex-shrink-0">
                                       <service.icon className="h-5 w-5 text-white" />
                                     </div>
                                     <div>
