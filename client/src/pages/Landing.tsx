@@ -1220,18 +1220,8 @@ export default function Landing() {
         </section>
 
         {/* Risk Level Section */}
-        <section className="py-16 md:py-24 relative overflow-hidden bg-[#1a4320]">
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-          />
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+        <section className="py-16 md:py-24 bg-[#1a4320]">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                 Payment processing for every risk level
