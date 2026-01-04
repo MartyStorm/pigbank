@@ -482,7 +482,7 @@ export default function Landing() {
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_05_02_20_AM_1767524564717.png')`,
+              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767525114453.png')`,
               backgroundSize: '400px',
               backgroundRepeat: 'repeat'
             }}
