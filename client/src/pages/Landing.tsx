@@ -851,14 +851,15 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 relative bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative bg-white overflow-hidden">
           <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="relative h-[400px] md:h-[500px] overflow-visible -my-20">
-                  <div className="flex gap-4 md:gap-6 justify-center">
+                {/* Mask wrapper extends to section edges with negative margins */}
+                <div className="relative -my-20 md:-my-32 py-20 md:py-32 integration-mask">
+                  <div className="h-[400px] md:h-[500px] flex gap-4 md:gap-6 justify-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {[...Array(2)].map((_, setIndex) => (
@@ -926,8 +927,6 @@ export default function Landing() {
                       ))}
                     </div>
                   </div>
-                  <div className="absolute inset-x-0 -top-20 h-40 bg-gradient-to-b from-[#e5e7ec] to-transparent pointer-events-none z-10" />
-                  <div className="absolute inset-x-0 -bottom-20 h-40 bg-gradient-to-t from-[#e5e7ec] to-transparent pointer-events-none z-10" />
                 </div>
               </div>
               <div className="lg:w-1/2 space-y-6 order-1 lg:order-2 text-center flex flex-col items-center">

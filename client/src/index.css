@@ -241,3 +241,28 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
+/* Integration section mask for fading icons at section edges */
+.integration-mask {
+  --fade-edge: 5rem;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black var(--fade-edge),
+    black calc(100% - var(--fade-edge)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black var(--fade-edge),
+    black calc(100% - var(--fade-edge)),
+    transparent 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .integration-mask {
+    --fade-edge: 8rem;
+  }
+}
