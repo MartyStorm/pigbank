@@ -1496,10 +1496,10 @@ export default function Landing() {
         >
                     <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a4320] mb-3">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2e8a2b] mb-3">
                 Your success is our business
               </h3>
-              <p className="text-base md:text-lg text-[#1a4320]/80 max-w-4xl mx-auto">
+              <p className="text-base md:text-lg text-[#2e8a2b]/80 max-w-4xl mx-auto">
                 We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
@@ -1514,8 +1514,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-[#1a4320]">Marty</h4>
-                <p className="text-[#1a4320]/70 text-sm">Founder</p>
+                <h4 className="text-lg font-bold text-[#2e8a2b]">Marty</h4>
+                <p className="text-[#2e8a2b]/70 text-sm">Founder</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1528,8 +1528,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-[#1a4320]">Patricia</h4>
-                <p className="text-[#1a4320]/70 text-sm">Operations</p>
+                <h4 className="text-lg font-bold text-[#2e8a2b]">Patricia</h4>
+                <p className="text-[#2e8a2b]/70 text-sm">Operations</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1541,8 +1541,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-[#1a4320]">Kat</h4>
-                <p className="text-[#1a4320]/70 text-sm">Accounting</p>
+                <h4 className="text-lg font-bold text-[#2e8a2b]">Kat</h4>
+                <p className="text-[#2e8a2b]/70 text-sm">Accounting</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1554,8 +1554,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-[#1a4320]">Darth Maul</h4>
-                <p className="text-[#1a4320]/70 text-sm">Sales</p>
+                <h4 className="text-lg font-bold text-[#2e8a2b]">Darth Maul</h4>
+                <p className="text-[#2e8a2b]/70 text-sm">Sales</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="mb-3">
@@ -1567,8 +1567,8 @@ export default function Landing() {
                     />
                   </div>
                 </div>
-                <h4 className="text-lg font-bold text-[#1a4320]">Oink</h4>
-                <p className="text-[#1a4320]/70 text-sm">AI Team Lead</p>
+                <h4 className="text-lg font-bold text-[#2e8a2b]">Oink</h4>
+                <p className="text-[#2e8a2b]/70 text-sm">AI Team Lead</p>
               </div>
             </div>
           </div>
