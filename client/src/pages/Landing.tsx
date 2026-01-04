@@ -516,7 +516,7 @@ export default function Landing() {
                   <img 
                     src="/attached_assets/Pig-Transparent-05_1767543506805.png"
                     alt="PigBank mascot"
-                    className="hidden md:block absolute left-[10px] lg:left-[0px] xl:left-[-10px] bottom-0 w-[80px] md:w-[100px] lg:w-[120px] xl:w-[140px] h-auto z-20"
+                    className="hidden md:block absolute left-[10px] lg:left-[0px] xl:left-[-10px] bottom-0 w-[100px] md:w-[120px] lg:w-[145px] xl:w-[170px] h-auto z-20"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                   />
                   <div 
