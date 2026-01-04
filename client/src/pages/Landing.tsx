@@ -1487,7 +1487,7 @@ export default function Landing() {
 
         {/* Team & Testimonials Section */}
         <section 
-          className="py-12 md:py-20 relative overflow-hidden bg-[#e8f5e0]"
+          className="py-12 md:py-20 relative overflow-hidden bg-[#eef9d6]"
         >
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
