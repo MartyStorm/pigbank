@@ -1091,11 +1091,19 @@ export default function Landing() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    {/* Front image - Tap to Pay */}
+                    {/* Middle image - Tap to Pay */}
                     <div className="absolute top-[-16px] left-28 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[8deg] transform z-10">
                       <img 
                         src="/attached_assets/ChatGPT_Image_Dec_31,_2025,_04_36_23_AM_1767177394146.png" 
                         alt="Tap to Pay" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Front image - Subscriptions */}
+                    <div className="absolute bottom-[-24px] left-10 w-40 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-3deg] transform z-20">
+                      <img 
+                        src="/attached_assets/ChatGPT_Image_Jan_3,_2026,_12_18_17_AM_1767489858976.png" 
+                        alt="Subscriptions" 
                         className="w-full h-full object-cover"
                       />
                     </div>
