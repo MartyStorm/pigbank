@@ -1531,11 +1531,11 @@ export default function Landing() {
         
         @keyframes scroll-up {
           0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); }
+          100% { transform: translateY(calc(-100% / 3)); }
         }
         
         @keyframes scroll-down {
-          0% { transform: translateY(-50%); }
+          0% { transform: translateY(calc(-100% / 3)); }
           100% { transform: translateY(0); }
         }
         
