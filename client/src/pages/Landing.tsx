@@ -269,7 +269,7 @@ function TestimonialsCarousel() {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="bg-[#e2f9b5] rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 h-[280px] md:h-[260px] lg:h-[240px] flex items-center">
+                <div className="bg-[#1a4320] rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 h-[280px] md:h-[260px] lg:h-[240px] flex items-center">
                   <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center w-full">
                     <div className="flex-shrink-0">
                       <div 
@@ -284,14 +284,14 @@ function TestimonialsCarousel() {
                       </div>
                     </div>
                     <div className="flex-1 text-center lg:text-left">
-                      <blockquote className="text-lg md:text-xl lg:text-2xl font-light text-gray-800 leading-relaxed mb-4">
+                      <blockquote className="text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed mb-4">
                         "{testimonial.quote}"
                       </blockquote>
                       <div>
-                        <p className="text-[#1a4320] font-semibold text-sm">
+                        <p className="text-[#75c946] font-semibold text-sm">
                           {testimonial.name}
                         </p>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-white/70 text-sm">
                           {testimonial.title}
                         </p>
                       </div>
