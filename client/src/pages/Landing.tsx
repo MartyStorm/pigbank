@@ -1551,7 +1551,7 @@ export default function Landing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-[#e5e7ec]">
+        <section className="py-12 md:py-20 bg-[#80b770]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <TestimonialsCarousel />
           </div>
