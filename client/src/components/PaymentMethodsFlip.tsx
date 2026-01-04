@@ -258,7 +258,7 @@ export default function PaymentMethodsFlip() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-16 bg-[#e3f9b4] relative overflow-hidden"
+      className="py-12 md:py-16 bg-[#effad6] relative overflow-hidden"
       data-testid="section-payment-methods"
     >
       <div 
