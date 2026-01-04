@@ -1589,13 +1589,6 @@ export default function Landing() {
           />
           <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              <div className="hidden md:block flex-shrink-0">
-                <img 
-                  src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
-                  alt="PigBank superhero mascot"
-                  className="w-[200px] lg:w-[280px] xl:w-[320px] h-auto"
-                />
-              </div>
               <div className="flex-1 text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                   Ready to bring home the bacon?
@@ -1637,6 +1630,13 @@ export default function Landing() {
                     <span>Cancel anytime</span>
                   </div>
                 </div>
+              </div>
+              <div className="hidden md:block flex-shrink-0">
+                <img 
+                  src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
+                  alt="PigBank superhero mascot"
+                  className="w-[140px] lg:w-[180px] xl:w-[200px] h-auto"
+                />
               </div>
             </div>
           </div>
