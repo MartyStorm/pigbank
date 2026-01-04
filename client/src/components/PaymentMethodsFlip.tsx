@@ -54,7 +54,7 @@ const cards = [
     id: "direct-input",
     title: "Direct Input",
     backText: "Manual card entry via virtual terminal",
-    image: "/attached_assets/generated_images/direct_input_icon_dark_bg.png",
+    image: "/attached_assets/ChatGPT_Image_Jan_3,_2026,_08_26_34_PM_1767493603352.png",
   },
   {
     id: "bnpl",
