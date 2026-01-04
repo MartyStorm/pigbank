@@ -271,10 +271,10 @@ export default function PaymentMethodsFlip() {
       />
       <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a4320] mb-4">
             Accept payments your way
           </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg text-[#1a4320] max-w-2xl mx-auto">
             Support cards, bank payments, crypto, subscriptions, tap-to-pay, and more.
           </p>
         </div>
