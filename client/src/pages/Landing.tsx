@@ -367,7 +367,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-[#424041]/20 bg-[#424041]">
+      <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
@@ -1640,7 +1640,7 @@ export default function Landing() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-white/10 bg-[#424041] py-12">
+      <footer className="border-t border-white/10 bg-[#1a4320] py-12">
         <div className="container px-4 md:px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div>
