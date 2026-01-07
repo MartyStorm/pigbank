@@ -123,11 +123,11 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               ease: [0.4, 0, 0.2, 1]
             }}
           >
-            <div className="text-center max-w-5xl">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center lg:gap-4 gap-2">
+            <div className="text-center w-full px-4">
+              <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-center lg:gap-3 gap-2">
                 {phase >= 1 && (
                   <motion.h1 
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white"
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-white whitespace-nowrap"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -137,7 +137,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
                 
                 {phase >= 2 && (
                   <motion.h1 
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white"
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-white whitespace-nowrap"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -148,7 +148,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               
               {phase >= 3 && (
                 <motion.p 
-                  className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
+                  className="text-lg md:text-xl lg:text-2xl text-white/90 mt-6 md:mt-8"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
