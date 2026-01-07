@@ -144,7 +144,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
           </motion.div>
           
           <motion.div
-            className="fixed z-[10001] flex items-center gap-2"
+            className="fixed z-[10001] flex items-center"
             initial={{ 
               left: "50%",
               top: "50%",
@@ -154,20 +154,20 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               scale: 1.5
             }}
             animate={{
-              left: isCollapsing ? "16px" : "50%",
-              top: isCollapsing ? "40px" : "50%",
+              left: isCollapsing ? "1rem" : "50%",
+              top: isCollapsing ? "1rem" : "50%",
               x: isCollapsing ? 0 : "-50%",
-              y: isCollapsing ? "-50%" : 40,
+              y: isCollapsing ? 0 : 40,
               opacity: phase >= 4 ? 1 : 0,
               scale: isCollapsing ? 1 : 1.5,
             }}
             transition={{
-              left: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              top: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              x: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              y: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+              left: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
+              top: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
+              x: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
+              y: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
               opacity: { duration: 0.5 },
-              scale: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+              scale: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
             }}
           >
             <motion.img
