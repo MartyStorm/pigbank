@@ -326,7 +326,10 @@ export default function Landing() {
   const [scrollY, setScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
   const [introComplete, setIntroComplete] = useState(false);
+  const [introPhase, setIntroPhase] = useState(0);
   const lastScrollY = useRef(0);
+  const heroHeadlineRef = useRef<HTMLSpanElement>(null);
+  const heroSubtitleRef = useRef<HTMLSpanElement>(null);
   const { setTheme } = useTheme();
   
   // Force light theme on landing page
@@ -369,7 +372,12 @@ export default function Landing() {
 
   return (
     <>
-      <HeroIntroAnimation onComplete={() => setIntroComplete(true)} />
+      <HeroIntroAnimation 
+        onComplete={() => setIntroComplete(true)} 
+        onPhaseChange={setIntroPhase}
+        heroHeadlineRef={heroHeadlineRef}
+        heroSubtitleRef={heroSubtitleRef}
+      />
       <div className="min-h-screen bg-white">
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
@@ -494,10 +502,22 @@ export default function Landing() {
               <div className="flex flex-col items-center text-center gap-6">
                 <div className="space-y-4">
                   <h1 className="hero-title font-bold tracking-tight text-white">
-                    <span className="bg-[#3c3a3b] rounded-lg px-4 pt-2 pb-3 inline-block">Built for Business, Payment Processing</span>
+                    <span 
+                      ref={heroHeadlineRef}
+                      className="bg-[#3c3a3b] rounded-lg px-4 pt-2 pb-3 inline-block transition-opacity duration-300"
+                      style={{ opacity: introPhase >= 5 ? 1 : 0 }}
+                    >
+                      Built for Business, Payment Processing
+                    </span>
                   </h1>
                   <p className="text-xl md:text-2xl text-white font-semibold">
-                    <span className="bg-[#3c3a3b] rounded-lg px-3 py-1 inline-block">The last payment processor you'll ever need</span>
+                    <span 
+                      ref={heroSubtitleRef}
+                      className="bg-[#3c3a3b] rounded-lg px-3 py-1 inline-block transition-opacity duration-300"
+                      style={{ opacity: introPhase >= 5 ? 1 : 0 }}
+                    >
+                      The last payment processor you'll ever need
+                    </span>
                   </p>
                   <div className="flex gap-4 justify-center pt-2">
                     <Button 
