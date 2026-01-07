@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MessageSquare, Settings, ArrowRight, Plus, Minus } from "lucide-react";
+import { Phone, MessageSquare, Settings, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const contactOptions = [
@@ -33,27 +33,7 @@ const contactOptions = [
   },
 ];
 
-const faqs = [
-  {
-    question: "What is PigBank?",
-    answer: "PigBank is a high-risk payment processor that helps merchants accept payments securely. We specialize in industries that traditional processors often decline, providing reliable payment solutions with advanced fraud protection.",
-  },
-  {
-    question: "How do I get started?",
-    answer: "Getting started is easy! Click 'Get Started' to create your account, complete the simple application form, and our team will review your information. Most accounts are approved within 24-48 hours.",
-  },
-  {
-    question: "Which industries does PigBank support?",
-    answer: "We support a wide range of high-risk industries including e-commerce, subscription services, CBD, nutraceuticals, travel, gaming, and many more. Contact our sales team to discuss your specific industry needs.",
-  },
-  {
-    question: "How can I integrate PigBank with my current eCommerce platform?",
-    answer: "PigBank offers pre-built integrations with popular platforms like Shopify, WooCommerce, Wix, BigCommerce, and more. We also provide a comprehensive API for custom integrations. Visit our Integrations page to learn more.",
-  },
-];
-
 export default function PublicContact() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -110,7 +90,7 @@ export default function PublicContact() {
       </header>
 
       <main className="pt-20">
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #e8d5f0 0%, #fde8d3 100%)' }}>
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               How can we help you?
@@ -250,58 +230,6 @@ export default function PublicContact() {
                 </form>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24">
-          <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-              Frequently asked questions
-            </h2>
-            
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div 
-                  key={index}
-                  className="border-b border-gray-200"
-                >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between py-6 text-left"
-                  >
-                    <span className="font-medium text-gray-900">{faq.question}</span>
-                    {openFaq === index ? (
-                      <Minus className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                    ) : (
-                      <Plus className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                    )}
-                  </button>
-                  {openFaq === index && (
-                    <div className="pb-6 text-gray-600">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #e8d5f0 0%, #fde8d3 100%)' }}>
-          <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Partner with payment experts who understand your business
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl">
-              Payment processing doesn't have to be complicated. Our team understands the challenges you're facing and we're here to help find solutions that actually work.
-            </p>
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-[#1a4320] hover:bg-[#1a3319] text-white rounded-md px-8"
-            >
-              <a href="/register">Get started</a>
-            </Button>
           </div>
         </section>
       </main>
