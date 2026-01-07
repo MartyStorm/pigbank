@@ -382,7 +382,7 @@ export default function Landing() {
               className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
             />
-            <nav className={`hidden lg:flex items-center gap-8 transition-all duration-500 delay-300 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+            <nav className={`hidden lg:flex items-center gap-8 transition-all duration-500 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.hasDropdown ? (
@@ -451,7 +451,7 @@ export default function Landing() {
               ))}
             </nav>
           </div>
-          <div className={`flex items-center gap-5 transition-all duration-500 delay-300 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+          <div className={`flex items-center gap-5 transition-all duration-500 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
             <a 
               href="/login" 
               className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"

@@ -14,6 +14,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [hasHandedOff, setHasHandedOff] = useState(false);
   const [targetPosition, setTargetPosition] = useState<{ left: number; top: number } | null>(null);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
     });
     
     const completeTimer = setTimeout(() => {
+      setHasHandedOff(true);
       onComplete();
     }, 7500);
     timers.push(completeTimer);
@@ -109,22 +111,25 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
             initial={{ height: "100vh" }}
             animate={{ 
               height: isCollapsing ? "80px" : "100vh",
+              opacity: hasHandedOff ? 0 : 1,
             }}
             exit={{ 
               height: "80px",
+              opacity: 0,
               transition: { duration: 0.1 }
             }}
             transition={{ 
-              height: { duration: 1, ease: [0.4, 0, 0.2, 1] }
+              height: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              opacity: { duration: 0.2 }
             }}
-            className="fixed top-0 left-0 right-0 z-[9999] overflow-hidden"
+            className={`fixed top-0 left-0 right-0 overflow-hidden ${hasHandedOff ? 'z-[1]' : 'z-[9999]'}`}
             style={{ backgroundColor: "#1a4320" }}
             data-testid="hero-intro-animation"
           >
             </motion.div>
           
           <motion.div 
-            className="fixed inset-0 z-[10000] flex items-center justify-center px-6 pointer-events-none"
+            className={`fixed inset-0 flex items-center justify-center px-6 pointer-events-none ${hasHandedOff ? 'z-[1]' : 'z-[10000]'}`}
             initial={{ opacity: 1 }}
             animate={{
               opacity: isCollapsing ? 0 : 1,
