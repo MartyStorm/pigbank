@@ -1,18 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 
 interface HeroIntroAnimationProps {
   onComplete: () => void;
+  headerLogoRef?: React.RefObject<HTMLImageElement | null>;
 }
 
-export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
+export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnimationProps) {
   const [location] = useLocation();
   const isLandingPage = location === "/" || location === "/landing";
   
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [targetPosition, setTargetPosition] = useState<{ left: number; top: number } | null>(null);
+
+  useEffect(() => {
+    if (headerLogoRef?.current && isCollapsing) {
+      const rect = headerLogoRef.current.getBoundingClientRect();
+      setTargetPosition({ left: rect.left, top: rect.top });
+    }
+  }, [headerLogoRef, isCollapsing]);
 
   useEffect(() => {
     if (!isVisible) {
@@ -154,8 +163,8 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               scale: 1.5
             }}
             animate={{
-              left: isCollapsing ? "1rem" : "50%",
-              top: isCollapsing ? "1rem" : "50%",
+              left: isCollapsing && targetPosition ? targetPosition.left : "50%",
+              top: isCollapsing && targetPosition ? targetPosition.top : "50%",
               x: isCollapsing ? 0 : "-50%",
               y: isCollapsing ? 0 : 55,
               opacity: phase >= 4 ? 1 : 0,

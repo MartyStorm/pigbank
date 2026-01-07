@@ -327,6 +327,7 @@ export default function Landing() {
   const [headerVisible, setHeaderVisible] = useState(true);
   const [introComplete, setIntroComplete] = useState(false);
   const lastScrollY = useRef(0);
+  const headerLogoRef = useRef<HTMLImageElement>(null);
   const { setTheme } = useTheme();
   
   // Force light theme on landing page
@@ -369,12 +370,13 @@ export default function Landing() {
 
   return (
     <>
-      <HeroIntroAnimation onComplete={() => setIntroComplete(true)} />
+      <HeroIntroAnimation onComplete={() => setIntroComplete(true)} headerLogoRef={headerLogoRef} />
       <div className="min-h-screen bg-white">
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
+              ref={headerLogoRef}
               src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
               alt="PigBank" 
               className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
