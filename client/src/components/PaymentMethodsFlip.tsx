@@ -270,7 +270,7 @@ export default function PaymentMethodsFlip() {
             Support cards, bank payments, crypto, subscriptions, tap-to-pay, and more.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
           {cards.map((card) => (
             <FlipCard
               key={card.id}
