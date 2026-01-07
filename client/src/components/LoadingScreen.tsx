@@ -29,7 +29,7 @@ export function LoadingScreen({ minDisplayTime = 1800 }: LoadingScreenProps) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ y: "100%" }}
+          initial={{ y: 0 }}
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{
