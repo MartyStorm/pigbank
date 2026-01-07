@@ -819,11 +819,11 @@ export default function Landing() {
                     alt="PigBank mascot"
                     className="absolute left-0 bottom-[10px] w-[70px] md:w-[90px] lg:w-[110px] xl:w-[125px] h-auto z-10"
                   />
-                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
+                  <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={macbookMockup} 
                       alt="PigBank dashboard on MacBook showing payment processing analytics" 
-                      className="w-56 md:w-72 h-auto object-contain"
+                      className="w-64 md:w-[22rem] h-auto object-contain"
                     />
                   </div>
                 </div>
