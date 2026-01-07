@@ -102,7 +102,6 @@ const floatingCards = [
 ];
 
 const navItems = [
-  { label: "Products", hasDropdown: true, href: "#" },
   { label: "Integrations", hasDropdown: false, href: "/public-integrations" },
   { label: "Pricing", hasDropdown: false, href: "/public-pricing" },
   { label: "Contact", hasDropdown: false, href: "/public-contact" },
