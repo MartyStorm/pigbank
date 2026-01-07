@@ -144,7 +144,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
           </motion.div>
           
           <motion.div
-            className="fixed z-[10001] flex items-center"
+            className="fixed z-[10001] flex items-center gap-3"
             initial={{ 
               left: "50%", 
               top: "50%",
@@ -170,10 +170,27 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               scale: { duration: 0.5 },
             }}
           >
+            <motion.img
+              src="/attached_assets/Favacon_Pigbank_1767785903584.png"
+              alt="Pig"
+              className="h-14 w-auto object-contain"
+              initial={{ rotate: 0 }}
+              animate={{
+                rotate: phase >= 4 && !isCollapsing ? [0, -10, 10, -10, 10, 0] : 0,
+              }}
+              transition={{
+                rotate: { 
+                  delay: 0.5,
+                  duration: 0.5, 
+                  ease: "easeInOut",
+                  times: [0, 0.2, 0.4, 0.6, 0.8, 1]
+                },
+              }}
+            />
             <img
               src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
               alt="PigBank"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </motion.div>
         </>
