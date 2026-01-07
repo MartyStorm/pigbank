@@ -114,7 +114,7 @@ export default function PublicPricing() {
       </header>
       <main className="pt-20">
         <section 
-          className="py-16 md:py-24 bg-[#256f23]"
+          className="py-16 md:py-24 bg-[#75c947]"
           style={{ background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #1a4320 70%, #1a3319 100%)' }}
         >
           <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
