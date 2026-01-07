@@ -153,7 +153,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
               </h1>
               
               <p className={`text-lg md:text-xl lg:text-2xl text-white/90 mt-6 md:mt-8 ${phase >= 3 ? '' : 'invisible'}`}>
-                {phase >= 3 ? renderAnimatedText("The last payment processor you'll ever need") : "The last payment processor you'll ever need"}
+                {phase >= 3 ? renderAnimatedText("The last payment processor you'll ever need.") : "The last payment processor you'll ever need."}
               </p>
               
               <div className="mt-8 h-12" />
