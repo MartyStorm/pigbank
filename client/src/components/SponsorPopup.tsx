@@ -54,7 +54,7 @@ export function SponsorPopup({ show, delay = 500 }: SponsorPopupProps) {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-xl">Coming Soon</h3>
-                      <p className="text-white/80 text-sm">Now Seeking Bank Sponsors</p>
+                      <p className="text-white/80 text-sm">In Development</p>
                     </div>
                   </div>
                   <button
@@ -69,7 +69,7 @@ export function SponsorPopup({ show, delay = 500 }: SponsorPopupProps) {
               
               <div className="p-5 space-y-4">
                 <p className="text-gray-700 text-base leading-relaxed">
-                  This platform is currently in development. We are actively seeking bank sponsorships to bring this payment processing solution to market.
+                  This website and our systems are still in development. For inquiries, please reach out to us.
                 </p>
                 
                 <div className="space-y-3 pt-2">
