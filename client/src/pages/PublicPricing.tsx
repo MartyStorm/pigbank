@@ -128,7 +128,7 @@ export default function PublicPricing() {
           </div>
         </section>
 
-        <section className="pb-16 md:pb-24">
+        <section className="py-16 md:py-24">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex justify-center mb-12">
               <div className="inline-flex bg-gray-100 rounded-full p-1">
@@ -178,29 +178,6 @@ export default function PublicPricing() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              All plans include
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              {[
-                "PCI Compliance",
-                "SSL Encryption",
-                "Fraud Monitoring",
-                "24/7 Uptime",
-              ].map((item) => (
-                <div key={item} className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#73cb43]/10 flex items-center justify-center">
-                    <Check className="h-6 w-6 text-[#73cb43]" />
-                  </div>
-                  <span className="text-gray-700 font-medium">{item}</span>
                 </div>
               ))}
             </div>
