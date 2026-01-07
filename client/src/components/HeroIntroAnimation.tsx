@@ -149,7 +149,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               left: "50%",
               top: "50%",
               x: "-50%",
-              y: 70,
+              y: 55,
               opacity: 0,
               scale: 1.5
             }}
@@ -157,7 +157,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               left: isCollapsing ? "1rem" : "50%",
               top: isCollapsing ? "1rem" : "50%",
               x: isCollapsing ? 0 : "-50%",
-              y: isCollapsing ? 0 : 70,
+              y: isCollapsing ? 0 : 55,
               opacity: phase >= 4 ? 1 : 0,
               scale: isCollapsing ? 1 : 1.5,
             }}
