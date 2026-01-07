@@ -380,7 +380,7 @@ export default function Landing() {
               className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
             />
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className={`hidden lg:flex items-center gap-8 transition-all duration-500 delay-300 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.hasDropdown ? (
@@ -449,7 +449,7 @@ export default function Landing() {
               ))}
             </nav>
           </div>
-          <div className="flex items-center gap-5">
+          <div className={`flex items-center gap-5 transition-all duration-500 delay-300 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
             <a 
               href="/login" 
               className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"
@@ -491,7 +491,7 @@ export default function Landing() {
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto"
               style={{ containerType: 'inline-size' }}
             >
-              <div className="flex flex-col items-center text-center gap-6">
+              <div className={`flex flex-col items-center text-center gap-6 transition-all duration-700 delay-500 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="space-y-4">
                   <h1 className="hero-title font-bold tracking-tight text-white">
                     <span className="bg-[#3c3a3b] rounded-lg px-4 pt-2 pb-3 inline-block">Built for Business, Payment Processing</span>
