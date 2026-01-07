@@ -473,11 +473,6 @@ export default function Landing() {
       <main>
         <section 
           className="overflow-hidden relative"
-          style={{
-            backgroundImage: 'url(/attached_assets/ChatGPT_Image_Dec_29,_2025,_05_19_21_PM_1767050375367.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center bottom'
-          }}
         >
           <div 
             className="absolute inset-0"
