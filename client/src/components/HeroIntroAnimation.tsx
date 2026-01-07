@@ -14,7 +14,6 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
   const [isCollapsing, setIsCollapsing] = useState(false);
-  const [logoFadingOut, setLogoFadingOut] = useState(false);
   const [targetPosition, setTargetPosition] = useState<{ left: number; top: number } | null>(null);
 
   useEffect(() => {
@@ -26,7 +25,6 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
 
   useEffect(() => {
     if (!isVisible) {
-      onComplete();
       return;
     }
     
@@ -45,19 +43,14 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
         setPhase(nextPhase);
         if (nextPhase === 5) {
           setIsCollapsing(true);
+          onComplete();
         }
       }, delay);
       timers.push(timer);
     });
     
-    const fadeOutTimer = setTimeout(() => {
-      setLogoFadingOut(true);
-    }, 7300);
-    timers.push(fadeOutTimer);
-    
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
-      onComplete();
     }, 7600);
     timers.push(exitTimer);
     
@@ -173,7 +166,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
               top: isCollapsing && targetPosition ? targetPosition.top : "50%",
               x: isCollapsing ? 0 : "-50%",
               y: isCollapsing ? 0 : 55,
-              opacity: logoFadingOut ? 0 : phase >= 4 ? 1 : 0,
+              opacity: phase >= 4 ? 1 : 0,
               scale: isCollapsing ? 1 : 1.5,
             }}
             transition={{
