@@ -1,4 +1,4 @@
-import { useState, useEffect, RefObject } from "react";
+import { useState, useEffect, useRef, RefObject, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 
@@ -22,25 +22,29 @@ export function HeroIntroAnimation({
   const [phase, setPhase] = useState(0);
   const [headlineRect, setHeadlineRect] = useState<DOMRect | null>(null);
   const [subtitleRect, setSubtitleRect] = useState<DOMRect | null>(null);
+  const hasStartedRef = useRef(false);
+
+  const measureElements = useCallback(() => {
+    if (heroHeadlineRef?.current) {
+      setHeadlineRect(heroHeadlineRef.current.getBoundingClientRect());
+    }
+    if (heroSubtitleRef?.current) {
+      setSubtitleRect(heroSubtitleRef.current.getBoundingClientRect());
+    }
+  }, [heroHeadlineRef, heroSubtitleRef]);
 
   useEffect(() => {
-    if (!isVisible) {
-      onComplete();
-      onPhaseChange?.(5);
+    if (!isVisible || hasStartedRef.current) {
+      if (!isVisible) {
+        onComplete();
+        onPhaseChange?.(5);
+      }
       return;
     }
     
-    const measureElements = () => {
-      if (heroHeadlineRef?.current) {
-        setHeadlineRect(heroHeadlineRef.current.getBoundingClientRect());
-      }
-      if (heroSubtitleRef?.current) {
-        setSubtitleRect(heroSubtitleRef.current.getBoundingClientRect());
-      }
-    };
-
-    measureElements();
-    window.addEventListener('resize', measureElements);
+    hasStartedRef.current = true;
+    
+    setTimeout(measureElements, 100);
     
     const timings = [
       { delay: 300, nextPhase: 1 },
@@ -56,6 +60,9 @@ export function HeroIntroAnimation({
       const timer = setTimeout(() => {
         setPhase(nextPhase);
         onPhaseChange?.(nextPhase);
+        if (nextPhase === 4) {
+          measureElements();
+        }
       }, delay);
       timers.push(timer);
     });
@@ -68,28 +75,8 @@ export function HeroIntroAnimation({
     
     return () => {
       timers.forEach(clearTimeout);
-      window.removeEventListener('resize', measureElements);
     };
-  }, [isVisible, onComplete, onPhaseChange, heroHeadlineRef, heroSubtitleRef]);
-
-  const renderAnimatedText = (text: string) => {
-    return text.split("").map((char, i) => (
-      <motion.span
-        key={i}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: i * 0.03,
-          duration: 0.2,
-          ease: "easeOut"
-        }}
-        className="inline-block"
-        style={{ whiteSpace: char === " " ? "pre" : "normal" }}
-      >
-        {char}
-      </motion.span>
-    ));
-  };
+  }, [isVisible, onComplete, onPhaseChange, measureElements]);
 
   if (!isVisible && phase === 0) return null;
 
@@ -139,70 +126,74 @@ export function HeroIntroAnimation({
           >
             <motion.div
               className="text-center whitespace-nowrap"
+              initial={{ backgroundColor: "rgba(60, 58, 59, 0)" }}
               animate={{
-                backgroundColor: isTransitioning ? "#3c3a3b" : "transparent",
-                paddingLeft: isTransitioning ? "16px" : "0px",
-                paddingRight: isTransitioning ? "16px" : "0px",
-                paddingTop: isTransitioning ? "8px" : "0px",
-                paddingBottom: isTransitioning ? "12px" : "0px",
-                borderRadius: isTransitioning ? "8px" : "0px",
+                backgroundColor: isTransitioning ? "rgba(60, 58, 59, 1)" : "rgba(60, 58, 59, 0)",
+                paddingLeft: isTransitioning ? 16 : 0,
+                paddingRight: isTransitioning ? 16 : 0,
+                paddingTop: isTransitioning ? 8 : 0,
+                paddingBottom: isTransitioning ? 12 : 0,
+                borderRadius: isTransitioning ? 8 : 0,
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              {phase >= 1 && (
-                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                  {renderAnimatedText("Built for Business,")}
-                </span>
-              )}
-              {phase >= 2 && (
-                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white ml-2">
-                  {renderAnimatedText("Payment Processing")}
-                </span>
-              )}
+              <motion.span 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: phase >= 1 ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                Built for Business,
+              </motion.span>
+              <motion.span 
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white ml-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: phase >= 2 ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                Payment Processing
+              </motion.span>
             </motion.div>
           </motion.div>
           
-          {phase >= 3 && (
-            <motion.div 
-              className="fixed z-[10000] pointer-events-none"
-              initial={{ 
-                top: "55%",
-                left: "50%",
-                x: "-50%",
-                opacity: 0,
-              }}
+          <motion.div 
+            className="fixed z-[10000] pointer-events-none"
+            initial={{ 
+              top: "55%",
+              left: "50%",
+              x: "-50%",
+              opacity: 0,
+            }}
+            animate={{
+              top: isTransitioning && subtitleRect ? `${subtitleRect.top}px` : "55%",
+              left: isTransitioning && subtitleRect ? `${subtitleRect.left + subtitleRect.width / 2}px` : "50%",
+              x: "-50%",
+              y: isTransitioning ? "0%" : "0%",
+              opacity: phase >= 3 ? (phase >= 5 ? 0 : 1) : 0,
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.4, 0, 0.2, 1]
+            }}
+          >
+            <motion.div
+              className="text-center whitespace-nowrap"
+              initial={{ backgroundColor: "rgba(60, 58, 59, 0)" }}
               animate={{
-                top: isTransitioning && subtitleRect ? `${subtitleRect.top}px` : "55%",
-                left: isTransitioning && subtitleRect ? `${subtitleRect.left + subtitleRect.width / 2}px` : "50%",
-                x: "-50%",
-                y: isTransitioning ? "0%" : "0%",
-                opacity: phase >= 5 ? 0 : 1,
+                backgroundColor: isTransitioning ? "rgba(60, 58, 59, 1)" : "rgba(60, 58, 59, 0)",
+                paddingLeft: isTransitioning ? 12 : 0,
+                paddingRight: isTransitioning ? 12 : 0,
+                paddingTop: isTransitioning ? 4 : 0,
+                paddingBottom: isTransitioning ? 4 : 0,
+                borderRadius: isTransitioning ? 8 : 0,
               }}
-              transition={{ 
-                duration: 0.8, 
-                ease: [0.4, 0, 0.2, 1]
-              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <motion.div
-                className="text-center whitespace-nowrap"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  backgroundColor: isTransitioning ? "#3c3a3b" : "transparent",
-                  paddingLeft: isTransitioning ? "12px" : "0px",
-                  paddingRight: isTransitioning ? "12px" : "0px",
-                  paddingTop: isTransitioning ? "4px" : "0px",
-                  paddingBottom: isTransitioning ? "4px" : "0px",
-                  borderRadius: isTransitioning ? "8px" : "0px",
-                }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <span className="text-lg sm:text-xl md:text-2xl text-white font-semibold">
-                  {renderAnimatedText("The last payment processor you'll ever need")}
-                </span>
-              </motion.div>
+              <span className="text-lg sm:text-xl md:text-2xl text-white font-semibold">
+                The last payment processor you'll ever need
+              </span>
             </motion.div>
-          )}
+          </motion.div>
         </>
       )}
     </AnimatePresence>
