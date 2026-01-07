@@ -543,7 +543,7 @@ export default function HostedCheckout() {
 
         {/* Preview Panel */}
         <div className="flex-1 bg-muted/30 rounded-xl border border-border flex flex-col xl:overflow-hidden min-h-[600px] xl:min-h-0">
-          <div className="h-12 border-b border-border bg-[#2d883d] dark:bg-[#262626] rounded-t-xl flex items-center justify-between px-4">
+          <div className="h-12 border-b border-border dark:bg-[#262626] rounded-t-xl flex items-center justify-between px-4 bg-[#1a4320]">
             <div className="flex items-center gap-2 text-sm text-white">
               <Globe className="h-4 w-4" />
               <span className="font-mono">checkout.pigbank.com/pay/demo-123</span>
