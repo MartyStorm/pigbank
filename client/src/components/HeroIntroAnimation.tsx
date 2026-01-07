@@ -124,37 +124,18 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
             }}
           >
             <div className="text-center w-full px-4">
-              <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-center lg:gap-3 gap-2">
-                {phase >= 1 && (
-                  <motion.h1 
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-white whitespace-nowrap"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    {renderAnimatedText("Built for Business,")}
-                  </motion.h1>
-                )}
-                
-                {phase >= 2 && (
-                  <motion.h1 
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-white whitespace-nowrap"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    {renderAnimatedText("Payment Processing")}
-                  </motion.h1>
-                )}
-              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white flex flex-col lg:flex-row lg:items-baseline justify-center lg:gap-3 gap-2">
+                <span className={`whitespace-nowrap ${phase >= 1 ? '' : 'invisible'}`}>
+                  {phase >= 1 ? renderAnimatedText("Built for Business,") : "Built for Business,"}
+                </span>
+                <span className={`whitespace-nowrap ${phase >= 2 ? '' : 'invisible'}`}>
+                  {phase >= 2 ? renderAnimatedText("Payment Processing") : "Payment Processing"}
+                </span>
+              </h1>
               
-              {phase >= 3 && (
-                <motion.p 
-                  className="text-lg md:text-xl lg:text-2xl text-white/90 mt-6 md:mt-8"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  {renderAnimatedText("The last payment processor you'll ever need")}
-                </motion.p>
-              )}
+              <p className={`text-lg md:text-xl lg:text-2xl text-white/90 mt-6 md:mt-8 ${phase >= 3 ? '' : 'invisible'}`}>
+                {phase >= 3 ? renderAnimatedText("The last payment processor you'll ever need") : "The last payment processor you'll ever need"}
+              </p>
             </div>
           </motion.div>
         </>
