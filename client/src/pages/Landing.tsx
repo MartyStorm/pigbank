@@ -1237,13 +1237,13 @@ export default function Landing() {
         </section>
 
         {/* Risk Level Section */}
-        <section className="py-16 md:py-24 bg-[#1a4320]">
+        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #e8d5f0 0%, #fde8d3 100%)' }}>
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                 Payment processing for every risk level
               </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 We specialize in providing tailored payment solutions for merchants operating across all risk levels.
               </p>
             </div>

@@ -90,7 +90,7 @@ export default function PublicContact() {
       </header>
 
       <main className="pt-20">
-        <section className="py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #e8d5f0 0%, #fde8d3 100%)' }}>
+        <section className="py-16 md:py-24">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               How can we help you?
