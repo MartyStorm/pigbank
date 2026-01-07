@@ -405,7 +405,7 @@ export default function Landing() {
                     </a>
                   )}
                   {item.label === "Products" && (
-                    <div className="absolute top-full -left-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="absolute top-full -left-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                       <div className="bg-white rounded-b-xl shadow-2xl min-w-[600px]">
                         <div className="flex justify-center pt-1 pb-3">
                           <div className="w-[90%] h-0.5 bg-[#73cb43] rounded-full"></div>
