@@ -823,7 +823,7 @@ export default function Landing() {
                     <img 
                       src={macbookMockup} 
                       alt="PigBank dashboard on MacBook showing payment processing analytics" 
-                      className="w-56 md:w-72 h-auto object-contain scale-[1.6] translate-x-[10%] translate-y-[2%]"
+                      className="w-56 md:w-72 h-auto object-contain scale-[1.6] translate-x-[20%] translate-y-[2%]"
                     />
                   </div>
                 </div>
