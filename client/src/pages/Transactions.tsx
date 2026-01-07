@@ -512,10 +512,7 @@ export default function Transactions() {
                 {columnOrder.filter(col => columns[col]).map((col, index, visibleCols) => (
                   <TableHead 
                     key={col} 
-                    className={cn(
-                      "text-white text-center",
-                      index < visibleCols.length - 1 && "border-r border-white/30"
-                    )}
+                    className="h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-white text-center border-r border-white/30 bg-[#1a4320]"
                   >
                     {columnLabels[col]}
                   </TableHead>
@@ -638,7 +635,6 @@ export default function Transactions() {
           </Table>
         </div>
       </div>
-
       {/* Detail Drawer */}
       <Sheet open={!!selectedTxn} onOpenChange={() => setSelectedTxn(null)}>
         <SheetContent className="w-[400px] sm:w-[540px] overflow-y-auto">
@@ -759,7 +755,6 @@ export default function Transactions() {
           )}
         </SheetContent>
       </Sheet>
-
     </Layout>
   );
 }
