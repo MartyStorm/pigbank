@@ -828,18 +828,18 @@ export default function Landing() {
         </section>
 
         {/* Integrations Section */}
-        <section className="py-20 md:py-32 relative bg-white overflow-hidden">
+        <section className="py-12 md:py-16 lg:py-32 relative bg-white overflow-hidden">
           <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-gradient-to-b from-[#75C947]/8 to-lime-200/5 blur-3xl -translate-y-1/2" />
           <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-gradient-to-r from-emerald-300/10 to-[#75C947]/5 blur-3xl -translate-x-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20">
-              <div className="lg:w-1/2 order-2 lg:order-1 relative h-[280px] md:h-[320px] lg:h-auto overflow-hidden flex justify-center -my-12 md:-my-16 lg:-my-32 py-12 md:py-16 lg:py-32">
-                {/* Top fade gradient for tablet */}
-                <div className="absolute top-0 left-0 right-0 h-16 md:h-20 lg:h-0 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-                {/* Bottom fade gradient for tablet */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 lg:h-0 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+            <div className="flex flex-col lg:flex-row items-stretch gap-6 md:gap-8 lg:gap-20">
+              <div className="lg:w-1/2 order-2 lg:order-1 relative h-[280px] md:h-[320px] lg:h-auto overflow-hidden flex justify-center my-4 md:my-6 lg:-my-32 lg:py-32">
+                {/* Top fade gradient for mobile/tablet */}
+                <div className="absolute top-0 left-0 right-0 h-12 md:h-16 lg:h-0 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+                {/* Bottom fade gradient for mobile/tablet */}
+                <div className="absolute bottom-0 left-0 right-0 h-12 md:h-16 lg:h-0 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
                 {/* Icons fill full section height by extending into padding with negative margins */}
-                <div className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-center">
+                <div className="absolute inset-y-4 md:inset-y-6 lg:inset-y-0 inset-x-0 flex gap-4 md:gap-6 justify-center items-center">
                     {/* Left Column - Scrolls Up */}
                     <div className="flex flex-col gap-4 animate-scroll-up">
                       {/* First set */}
@@ -1136,7 +1136,7 @@ export default function Landing() {
                     </div>
                   </div>
               </div>
-              <div className="lg:w-1/2 order-1 lg:order-2 space-y-6 text-center flex flex-col items-center justify-center py-6 md:py-8 lg:py-0">
+              <div className="lg:w-1/2 order-1 lg:order-2 space-y-4 md:space-y-5 lg:space-y-6 text-center flex flex-col items-center justify-start lg:justify-center pt-0 pb-2 md:pb-4 lg:py-0">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   Integrations that power your growth
                 </h2>
