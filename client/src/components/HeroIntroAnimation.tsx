@@ -162,12 +162,12 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               scale: isCollapsing ? 1 : 1.5,
             }}
             transition={{
-              left: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
-              top: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
-              x: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
-              y: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
+              left: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              top: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              x: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              y: { duration: 1, ease: [0.4, 0, 0.2, 1] },
               opacity: { duration: 0.5 },
-              scale: { duration: 1.1, ease: [0.32, 0, 0.67, 0] },
+              scale: { duration: 1, ease: [0.4, 0, 0.2, 1] },
             }}
           >
             <motion.img
