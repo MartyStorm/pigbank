@@ -171,12 +171,12 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
             }}
           >
             <motion.img
-              src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
-              alt="PigBank"
-              className="h-16 w-auto object-contain"
+              src="/attached_assets/Favacon_Pigbank_1767785903584.png"
+              alt="PigBank mascot"
+              className="h-12 w-auto object-contain"
               initial={{ rotate: 0 }}
               animate={{
-                rotate: phase >= 4 && !isCollapsing ? [0, -5, 5, -5, 5, 0] : 0,
+                rotate: phase >= 4 && !isCollapsing ? [0, -8, 8, -8, 8, 0] : 0,
               }}
               transition={{
                 rotate: { 
@@ -187,6 +187,9 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
                 },
               }}
             />
+            <span className="text-white text-3xl font-bold">
+              Pig<span className="text-[#73cb43]">Bank</span>
+            </span>
           </motion.div>
         </>
       )}
