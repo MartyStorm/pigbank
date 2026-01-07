@@ -170,23 +170,30 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               scale: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
             }}
           >
-            <motion.img
-              src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png"
-              alt="PigBank"
-              className="h-12 w-auto object-contain"
-              initial={{ rotate: 0 }}
-              animate={{
-                rotate: phase >= 4 && !isCollapsing ? [0, -3, 3, -3, 3, 0] : 0,
-              }}
-              transition={{
-                rotate: { 
-                  delay: 0.5,
-                  duration: 0.5, 
-                  ease: "easeInOut",
-                  times: [0, 0.2, 0.4, 0.6, 0.8, 1]
-                },
-              }}
-            />
+            <div className="relative">
+              <img
+                src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png"
+                alt="PigBank"
+                className="h-12 w-auto object-contain"
+              />
+              <motion.img
+                src="/attached_assets/Favacon_Pigbank_1767785903584.png"
+                alt=""
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-[85%] w-auto object-contain"
+                initial={{ rotate: 0 }}
+                animate={{
+                  rotate: phase >= 4 && !isCollapsing ? [0, -8, 8, -8, 8, 0] : 0,
+                }}
+                transition={{
+                  rotate: { 
+                    delay: 0.5,
+                    duration: 0.5, 
+                    ease: "easeInOut",
+                    times: [0, 0.2, 0.4, 0.6, 0.8, 1]
+                  },
+                }}
+              />
+            </div>
           </motion.div>
         </>
       )}
