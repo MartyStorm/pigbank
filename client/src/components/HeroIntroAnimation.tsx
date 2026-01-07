@@ -1,57 +1,30 @@
-import { useState, useEffect, useRef, RefObject, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 
 interface HeroIntroAnimationProps {
   onComplete: () => void;
-  onPhaseChange?: (phase: number) => void;
-  heroHeadlineRef?: RefObject<HTMLSpanElement | null>;
-  heroSubtitleRef?: RefObject<HTMLSpanElement | null>;
 }
 
-export function HeroIntroAnimation({ 
-  onComplete, 
-  onPhaseChange,
-  heroHeadlineRef,
-  heroSubtitleRef 
-}: HeroIntroAnimationProps) {
+export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   const [location] = useLocation();
   const isLandingPage = location === "/" || location === "/landing";
   
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
-  const [headlineRect, setHeadlineRect] = useState<DOMRect | null>(null);
-  const [subtitleRect, setSubtitleRect] = useState<DOMRect | null>(null);
-  const hasStartedRef = useRef(false);
-
-  const measureElements = useCallback(() => {
-    if (heroHeadlineRef?.current) {
-      setHeadlineRect(heroHeadlineRef.current.getBoundingClientRect());
-    }
-    if (heroSubtitleRef?.current) {
-      setSubtitleRect(heroSubtitleRef.current.getBoundingClientRect());
-    }
-  }, [heroHeadlineRef, heroSubtitleRef]);
+  const [isCollapsing, setIsCollapsing] = useState(false);
 
   useEffect(() => {
-    if (!isVisible || hasStartedRef.current) {
-      if (!isVisible) {
-        onComplete();
-        onPhaseChange?.(5);
-      }
+    if (!isVisible) {
+      onComplete();
       return;
     }
-    
-    hasStartedRef.current = true;
-    
-    setTimeout(measureElements, 100);
     
     const timings = [
       { delay: 300, nextPhase: 1 },
       { delay: 1200, nextPhase: 2 },
       { delay: 2100, nextPhase: 3 },
       { delay: 3500, nextPhase: 4 },
-      { delay: 4500, nextPhase: 5 },
     ];
     
     const timers: NodeJS.Timeout[] = [];
@@ -59,9 +32,8 @@ export function HeroIntroAnimation({
     timings.forEach(({ delay, nextPhase }) => {
       const timer = setTimeout(() => {
         setPhase(nextPhase);
-        onPhaseChange?.(nextPhase);
         if (nextPhase === 4) {
-          measureElements();
+          setIsCollapsing(true);
         }
       }, delay);
       timers.push(timer);
@@ -70,18 +42,40 @@ export function HeroIntroAnimation({
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 4800);
+    }, 4600);
     timers.push(exitTimer);
     
-    return () => {
-      timers.forEach(clearTimeout);
-    };
-  }, [isVisible, onComplete, onPhaseChange, measureElements]);
+    return () => timers.forEach(clearTimeout);
+  }, [isVisible, onComplete]);
+
+  const renderAnimatedText = (text: string, startDelay: number = 0) => {
+    return text.split("").map((char, i) => (
+      <motion.span
+        key={i}
+        custom={i}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: startDelay + i * 0.04,
+              duration: 0.3,
+              ease: "easeOut"
+            }
+          }
+        }}
+        className="inline-block"
+        style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
 
   if (!isVisible && phase === 0) return null;
-
-  const isTransitioning = phase >= 4;
-  const headerHeight = 80;
 
   return (
     <AnimatePresence>
@@ -90,10 +84,10 @@ export function HeroIntroAnimation({
           <motion.div
             initial={{ height: "100vh" }}
             animate={{ 
-              height: isTransitioning ? `${headerHeight}px` : "100vh",
+              height: isCollapsing ? "80px" : "100vh",
             }}
             exit={{ 
-              height: `${headerHeight}px`,
+              height: "80px",
               transition: { duration: 0.1 }
             }}
             transition={{ 
@@ -105,94 +99,52 @@ export function HeroIntroAnimation({
           />
           
           <motion.div 
-            className="fixed z-[10000] pointer-events-none"
-            initial={{ 
-              top: "50%",
-              left: "50%",
-              x: "-50%",
-              y: "-50%",
-            }}
+            className="fixed inset-0 z-[10000] flex items-center justify-center px-6 pointer-events-none"
+            initial={{ opacity: 1 }}
             animate={{
-              top: isTransitioning && headlineRect ? `${headlineRect.top}px` : "50%",
-              left: isTransitioning && headlineRect ? `${headlineRect.left + headlineRect.width / 2}px` : "50%",
-              x: "-50%",
-              y: isTransitioning ? "0%" : "-50%",
-              opacity: phase >= 5 ? 0 : 1,
+              opacity: isCollapsing ? 0 : 1,
+              y: isCollapsing ? "-30vh" : 0,
+              scale: isCollapsing ? 0.85 : 1,
             }}
+            exit={{ opacity: 0 }}
             transition={{ 
               duration: 0.8, 
               ease: [0.4, 0, 0.2, 1]
             }}
           >
-            <motion.div
-              className="text-center whitespace-nowrap"
-              initial={{ backgroundColor: "rgba(60, 58, 59, 0)" }}
-              animate={{
-                backgroundColor: isTransitioning ? "rgba(60, 58, 59, 1)" : "rgba(60, 58, 59, 0)",
-                paddingLeft: isTransitioning ? 16 : 0,
-                paddingRight: isTransitioning ? 16 : 0,
-                paddingTop: isTransitioning ? 8 : 0,
-                paddingBottom: isTransitioning ? 12 : 0,
-                borderRadius: isTransitioning ? 8 : 0,
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <motion.span 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: phase >= 1 ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                Built for Business,
-              </motion.span>
-              <motion.span 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white ml-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: phase >= 2 ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                Payment Processing
-              </motion.span>
-            </motion.div>
-          </motion.div>
-          
-          <motion.div 
-            className="fixed z-[10000] pointer-events-none"
-            initial={{ 
-              top: "55%",
-              left: "50%",
-              x: "-50%",
-              opacity: 0,
-            }}
-            animate={{
-              top: isTransitioning && subtitleRect ? `${subtitleRect.top}px` : "55%",
-              left: isTransitioning && subtitleRect ? `${subtitleRect.left + subtitleRect.width / 2}px` : "50%",
-              x: "-50%",
-              y: isTransitioning ? "0%" : "0%",
-              opacity: phase >= 3 ? (phase >= 5 ? 0 : 1) : 0,
-            }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.4, 0, 0.2, 1]
-            }}
-          >
-            <motion.div
-              className="text-center whitespace-nowrap"
-              initial={{ backgroundColor: "rgba(60, 58, 59, 0)" }}
-              animate={{
-                backgroundColor: isTransitioning ? "rgba(60, 58, 59, 1)" : "rgba(60, 58, 59, 0)",
-                paddingLeft: isTransitioning ? 12 : 0,
-                paddingRight: isTransitioning ? 12 : 0,
-                paddingTop: isTransitioning ? 4 : 0,
-                paddingBottom: isTransitioning ? 4 : 0,
-                borderRadius: isTransitioning ? 8 : 0,
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <span className="text-lg sm:text-xl md:text-2xl text-white font-semibold">
-                The last payment processor you'll ever need
-              </span>
-            </motion.div>
+            <div className="text-center max-w-4xl">
+              <div className="space-y-4 md:space-y-6">
+                {phase >= 1 && (
+                  <motion.h1 
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("Built for Business,")}
+                  </motion.h1>
+                )}
+                
+                {phase >= 2 && (
+                  <motion.h1 
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("Payment Processing")}
+                  </motion.h1>
+                )}
+                
+                {phase >= 3 && (
+                  <motion.p 
+                    className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("The last payment processor you'll ever need")}
+                  </motion.p>
+                )}
+              </div>
+            </div>
           </motion.div>
         </>
       )}
