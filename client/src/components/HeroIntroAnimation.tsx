@@ -22,9 +22,9 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     
     const timings = [
       { delay: 300, nextPhase: 1 },
-      { delay: 1200, nextPhase: 2 },
-      { delay: 2100, nextPhase: 3 },
-      { delay: 3500, nextPhase: 4 },
+      { delay: 1800, nextPhase: 2 },
+      { delay: 2800, nextPhase: 3 },
+      { delay: 4200, nextPhase: 4 },
     ];
     
     const timers: NodeJS.Timeout[] = [];
@@ -42,7 +42,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 4600);
+    }, 5300);
     timers.push(exitTimer);
     
     return () => timers.forEach(clearTimeout);
@@ -112,11 +112,11 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               ease: [0.4, 0, 0.2, 1]
             }}
           >
-            <div className="text-center max-w-4xl">
-              <div className="space-y-4 md:space-y-6">
+            <div className="text-center max-w-5xl">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center lg:gap-4 gap-2">
                 {phase >= 1 && (
                   <motion.h1 
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -126,24 +126,24 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
                 
                 {phase >= 2 && (
                   <motion.h1 
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
                     {renderAnimatedText("Payment Processing")}
                   </motion.h1>
                 )}
-                
-                {phase >= 3 && (
-                  <motion.p 
-                    className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    {renderAnimatedText("The last payment processor you'll ever need")}
-                  </motion.p>
-                )}
               </div>
+              
+              {phase >= 3 && (
+                <motion.p 
+                  className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  {renderAnimatedText("The last payment processor you'll ever need")}
+                </motion.p>
+              )}
             </div>
           </motion.div>
         </>
