@@ -49,29 +49,40 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   }, [isVisible, onComplete]);
 
   const renderAnimatedText = (text: string, startDelay: number = 0) => {
-    return text.split("").map((char, i) => (
-      <motion.span
-        key={i}
-        custom={i}
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, y: 10 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              delay: startDelay + i * 0.04,
-              duration: 0.3,
-              ease: "easeOut"
-            }
-          }
-        }}
-        className="inline-block"
-        style={{ whiteSpace: char === " " ? "pre" : "normal" }}
-      >
-        {char}
-      </motion.span>
+    const words = text.split(" ");
+    let charIndex = 0;
+    
+    return words.map((word, wordIndex) => (
+      <span key={wordIndex} className="inline-block whitespace-nowrap">
+        {word.split("").map((char, i) => {
+          const currentCharIndex = charIndex++;
+          return (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: startDelay + currentCharIndex * 0.04,
+                duration: 0.3,
+                ease: "easeOut"
+              }}
+              className="inline-block"
+            >
+              {char}
+            </motion.span>
+          );
+        })}
+        {wordIndex < words.length - 1 && (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: startDelay + charIndex++ * 0.04, duration: 0.1 }}
+            className="inline-block"
+          >
+            &nbsp;
+          </motion.span>
+        )}
+      </span>
     ));
   };
 
