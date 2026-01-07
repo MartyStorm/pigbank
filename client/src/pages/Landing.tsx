@@ -733,7 +733,7 @@ export default function Landing() {
                     <img 
                       src="/attached_assets/ChatGPT_Image_Jan_7,_2026,_03_22_33_PM_1767821035266.png" 
                       alt="PigBank POS software on iPad and iPhone" 
-                      className="w-full h-full object-contain scale-[1.15]"
+                      className="w-full h-full object-contain scale-[1.25] -translate-x-[5%]"
                     />
                   </div>
                 </div>
