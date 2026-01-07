@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { useLocation } from "wouter";
 
 interface HeroIntroAnimationProps {
@@ -13,6 +13,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [showCombinedLogo, setShowCombinedLogo] = useState(false);
 
   useEffect(() => {
     if (!isVisible) {
@@ -25,16 +26,21 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
       { delay: 1800, nextPhase: 2 },
       { delay: 2800, nextPhase: 3 },
       { delay: 5200, nextPhase: 4 },
+      { delay: 6200, action: 'showCombinedLogo' },
       { delay: 6500, nextPhase: 5 },
     ];
     
     const timers: NodeJS.Timeout[] = [];
     
-    timings.forEach(({ delay, nextPhase }) => {
+    timings.forEach(({ delay, nextPhase, action }) => {
       const timer = setTimeout(() => {
-        setPhase(nextPhase);
-        if (nextPhase === 5) {
-          setIsCollapsing(true);
+        if (action === 'showCombinedLogo') {
+          setShowCombinedLogo(true);
+        } else if (nextPhase !== undefined) {
+          setPhase(nextPhase);
+          if (nextPhase === 5) {
+            setIsCollapsing(true);
+          }
         }
       }, delay);
       timers.push(timer);
@@ -143,54 +149,78 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
             </div>
           </motion.div>
           
-          <motion.div
-            className="fixed z-[10001] flex items-center gap-2"
-            initial={{ 
-              left: "50%",
-              top: "50%",
-              x: "-50%",
-              y: 60,
-              opacity: 0,
-              scale: 1.2
-            }}
-            animate={{
-              left: isCollapsing ? "16px" : "50%",
-              top: isCollapsing ? "40px" : "50%",
-              x: isCollapsing ? 0 : "-50%",
-              y: isCollapsing ? "-50%" : 60,
-              opacity: phase >= 4 ? 1 : 0,
-              scale: isCollapsing ? 1 : 1.2,
-            }}
-            transition={{
-              left: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              top: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              x: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              y: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-              opacity: { duration: 0.5 },
-              scale: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
-            }}
-          >
-            <motion.img
-              src="/attached_assets/Favacon_Pigbank_1767785903584.png"
-              alt="PigBank mascot"
-              className="h-12 w-auto object-contain"
-              initial={{ rotate: 0 }}
+          <LayoutGroup>
+            <motion.div
+              className="fixed z-[10001] flex items-center gap-2"
+              initial={{ 
+                left: "50%",
+                top: "50%",
+                x: "-50%",
+                y: 60,
+                opacity: 0,
+                scale: 1.2
+              }}
               animate={{
-                rotate: phase >= 4 && !isCollapsing ? [0, -8, 8, -8, 8, 0] : 0,
+                left: isCollapsing ? "16px" : "50%",
+                top: isCollapsing ? "40px" : "50%",
+                x: isCollapsing ? 0 : "-50%",
+                y: isCollapsing ? "-50%" : 60,
+                opacity: phase >= 4 ? 1 : 0,
+                scale: isCollapsing ? 1 : 1.2,
               }}
               transition={{
-                rotate: { 
-                  delay: 0.5,
-                  duration: 0.5, 
-                  ease: "easeInOut",
-                  times: [0, 0.2, 0.4, 0.6, 0.8, 1]
-                },
+                left: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+                top: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+                x: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+                y: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+                opacity: { duration: 0.5 },
+                scale: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
               }}
-            />
-            <span className="text-white text-2xl font-bold whitespace-nowrap">
-              Pig<span className="text-[#73cb43]">Bank</span>
-            </span>
-          </motion.div>
+            >
+              <AnimatePresence mode="wait">
+                {!showCombinedLogo ? (
+                  <motion.div 
+                    key="separate"
+                    className="flex items-center gap-2"
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <motion.img
+                      src="/attached_assets/Favacon_Pigbank_1767785903584.png"
+                      alt="PigBank mascot"
+                      className="h-12 w-auto object-contain"
+                      initial={{ rotate: 0 }}
+                      animate={{
+                        rotate: phase >= 4 && !showCombinedLogo ? [0, -8, 8, -8, 8, 0] : 0,
+                      }}
+                      transition={{
+                        rotate: { 
+                          delay: 0.5,
+                          duration: 0.5, 
+                          ease: "easeInOut",
+                          times: [0, 0.2, 0.4, 0.6, 0.8, 1]
+                        },
+                      }}
+                    />
+                    <span className="text-white text-2xl font-bold whitespace-nowrap">
+                      Pig<span className="text-[#73cb43]">Bank</span>
+                    </span>
+                  </motion.div>
+                ) : (
+                  <motion.img
+                    key="combined"
+                    layoutId="pigbank-header-logo"
+                    src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
+                    alt="PigBank"
+                    className="h-12 w-auto object-contain"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </LayoutGroup>
         </>
       )}
     </AnimatePresence>

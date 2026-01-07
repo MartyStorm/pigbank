@@ -377,7 +377,7 @@ export default function Landing() {
             <img 
               src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png" 
               alt="PigBank" 
-              className="h-12 w-auto object-contain" 
+              className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
             />
             <nav className="hidden lg:flex items-center gap-8">
