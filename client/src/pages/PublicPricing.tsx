@@ -112,10 +112,9 @@ export default function PublicPricing() {
           </div>
         </div>
       </header>
-
       <main className="pt-20">
         <section 
-          className="py-16 md:py-24"
+          className="py-16 md:py-24 bg-[#256f23]"
           style={{ background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #1a4320 70%, #1a3319 100%)' }}
         >
           <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
@@ -184,7 +183,6 @@ export default function PublicPricing() {
           </div>
         </section>
       </main>
-
       <footer className="border-t border-gray-200 bg-white py-12">
         <div className="container px-4 md:px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
