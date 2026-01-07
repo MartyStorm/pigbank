@@ -149,17 +149,17 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               left: "50%",
               top: "50%",
               x: "-50%",
-              y: 60,
+              y: 40,
               opacity: 0,
-              scale: 1.2
+              scale: 1.5
             }}
             animate={{
               left: isCollapsing ? "16px" : "50%",
               top: isCollapsing ? "40px" : "50%",
               x: isCollapsing ? 0 : "-50%",
-              y: isCollapsing ? "-50%" : 60,
+              y: isCollapsing ? "-50%" : 40,
               opacity: phase >= 4 ? 1 : 0,
-              scale: isCollapsing ? 1 : 1.2,
+              scale: isCollapsing ? 1 : 1.5,
             }}
             transition={{
               left: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
