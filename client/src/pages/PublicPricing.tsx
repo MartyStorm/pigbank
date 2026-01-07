@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 
 const plans = [
   {
@@ -72,6 +73,8 @@ const navItems = [
 ];
 
 export default function PublicPricing() {
+  const [activeTab, setActiveTab] = useState<'standard' | 'alternative'>('standard');
+
   return (
     <div className="min-h-screen bg-white">
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320] fixed top-0 left-0 right-0 z-50">
@@ -128,16 +131,50 @@ export default function PublicPricing() {
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="flex justify-center mb-12">
               <div className="inline-flex bg-gray-100 rounded-full p-1">
-                <button className="px-6 py-2 rounded-full bg-[#1a4320] text-white font-medium text-sm">
+                <button 
+                  onClick={() => setActiveTab('standard')}
+                  className={`px-6 py-2 rounded-full font-medium text-sm transition-colors ${
+                    activeTab === 'standard' 
+                      ? 'bg-[#1a4320] text-white' 
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  data-testid="button-tab-standard"
+                >
                   Standard plans
                 </button>
-                <button className="px-6 py-2 rounded-full text-gray-600 font-medium text-sm hover:text-gray-900">
+                <button 
+                  onClick={() => setActiveTab('alternative')}
+                  className={`px-6 py-2 rounded-full font-medium text-sm transition-colors ${
+                    activeTab === 'alternative' 
+                      ? 'bg-[#1a4320] text-white' 
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  data-testid="button-tab-alternative"
+                >
                   Alternative payment methods
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {activeTab === 'alternative' ? (
+              <div className="flex flex-col items-center justify-center py-20">
+                <div className="w-20 h-20 rounded-full bg-[#effad6] flex items-center justify-center mb-6">
+                  <Clock className="w-10 h-10 text-[#1a4320]" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Coming Soon</h3>
+                <p className="text-gray-600 text-center max-w-md">
+                  Alternative payment methods including ACH, cryptocurrency, and eChecks are coming soon. 
+                  Contact us for early access.
+                </p>
+                <Button 
+                  asChild
+                  className="mt-6 bg-[#73cb43] hover:bg-[#65b53b] text-white"
+                >
+                  <a href="/public-contact">Contact us</a>
+                </Button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {plans.map((plan) => (
                 <div 
                   key={plan.name}
@@ -176,7 +213,8 @@ export default function PublicPricing() {
                   </ul>
                 </div>
               ))}
-            </div>
+              </div>
+            )}
           </div>
         </section>
       </main>
