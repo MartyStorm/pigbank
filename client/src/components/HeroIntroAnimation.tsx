@@ -109,28 +109,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
             style={{ backgroundColor: "#1a4320" }}
             data-testid="hero-intro-animation"
           >
-            <motion.div
-              className="absolute left-4 md:left-6 lg:left-8 flex items-center"
-              style={{ top: "50%", marginTop: "-24px" }}
-              initial={{ opacity: 0, scale: 0.8, y: "calc(50vh - 64px)" }}
-              animate={{
-                opacity: phase >= 4 ? 1 : 0,
-                scale: phase >= 4 ? 1 : 0.8,
-                y: isCollapsing ? 0 : "calc(50vh - 64px)",
-              }}
-              transition={{
-                opacity: { duration: 0.5 },
-                scale: { duration: 0.5 },
-                y: { duration: 1, ease: [0.4, 0, 0.2, 1] },
-              }}
-            >
-              <img
-                src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
-                alt="PigBank"
-                className="h-12 w-auto object-contain"
-              />
             </motion.div>
-          </motion.div>
           
           <motion.div 
             className="fixed inset-0 z-[10000] flex items-center justify-center px-6 pointer-events-none"
@@ -159,7 +138,43 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
               <p className={`text-lg md:text-xl lg:text-2xl text-white/90 mt-6 md:mt-8 ${phase >= 3 ? '' : 'invisible'}`}>
                 {phase >= 3 ? renderAnimatedText("The last payment processor you'll ever need") : "The last payment processor you'll ever need"}
               </p>
+              
+              <div className="mt-8 h-12" />
             </div>
+          </motion.div>
+          
+          <motion.div
+            className="fixed z-[10001] flex items-center"
+            initial={{ 
+              left: "50%", 
+              top: "50%",
+              x: "-50%",
+              y: "60px",
+              opacity: 0,
+              scale: 0.8 
+            }}
+            animate={{
+              left: isCollapsing ? "16px" : "50%",
+              top: isCollapsing ? "40px" : "50%",
+              x: isCollapsing ? "0%" : "-50%",
+              y: isCollapsing ? "-50%" : "60px",
+              opacity: phase >= 4 ? 1 : 0,
+              scale: phase >= 4 ? 1 : 0.8,
+            }}
+            transition={{
+              left: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              top: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              x: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              y: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              opacity: { duration: 0.5 },
+              scale: { duration: 0.5 },
+            }}
+          >
+            <img
+              src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
+              alt="PigBank"
+              className="h-12 w-auto object-contain"
+            />
           </motion.div>
         </>
       )}
