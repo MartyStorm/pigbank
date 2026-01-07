@@ -1237,7 +1237,7 @@ export default function Landing() {
         </section>
 
         {/* Risk Level Section */}
-        <section className="py-16 md:py-24 bg-[#effad6]" style={{ background: 'linear-gradient(135deg, #e8d5f0 0%, #fde8d3 100%)' }}>
+        <section className="py-16 md:py-24 bg-[#effad6]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
