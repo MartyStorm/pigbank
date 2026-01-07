@@ -507,8 +507,8 @@ export default function Transactions() {
         {/* Table */}
         <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-[#3c3a3b] dark:bg-[#262626] [&_tr]:hover:bg-[#3c3a3b] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
-              <TableRow className="border-b-[#3c3a3b] dark:border-b-gray-700">
+            <TableHeader className="bg-[#2d883d] dark:bg-[#262626] [&_tr]:hover:bg-[#2d883d] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableRow className="border-b-[#2d883d] dark:border-b-gray-700">
                 {columnOrder.filter(col => columns[col]).map((col, index, visibleCols) => (
                   <TableHead 
                     key={col} 
