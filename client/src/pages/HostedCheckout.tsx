@@ -231,7 +231,7 @@ export default function HostedCheckout() {
         
         {/* Editor Panel */}
         <div className="w-full xl:w-96 flex flex-col gap-4 bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-visible xl:overflow-hidden">
-          <div className="p-4 border-b border-border dark:bg-[#262626] rounded-t-xl bg-[#2e883c]">
+          <div className="p-4 border-b border-border dark:bg-[#262626] rounded-t-xl bg-[#1a4320]">
             <div className="flex flex-col gap-1">
               <h2 className="font-semibold text-lg text-white">Customize Checkout</h2>
               <p className="text-sm text-white/80">
