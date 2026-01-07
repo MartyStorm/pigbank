@@ -113,15 +113,12 @@ export default function PublicPricing() {
         </div>
       </header>
       <main className="pt-20">
-        <section 
-          className="py-16 md:py-24 bg-[#75c947]"
-          style={{ background: 'radial-gradient(ellipse at center, #2d5a2d 0%, #264a26 40%, #1a4320 70%, #1a3319 100%)' }}
-        >
+        <section className="py-16 md:py-24 bg-[#effad6]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Flexible plans that grow with your business
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Choose the plan that's right for you.
             </p>
           </div>
