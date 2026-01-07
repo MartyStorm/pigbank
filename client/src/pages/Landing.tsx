@@ -60,6 +60,7 @@ import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_
 import iphoneMockup from "@assets/Free_iPhone_16_Pro_Mockup_copy_1767511434936.png";
 import macbookMockup from "@assets/MacBook_Pro_16_copy_1767512077595.png";
 import PaymentMethodsFlip from "@/components/PaymentMethodsFlip";
+import { HeroIntroAnimation } from "@/components/HeroIntroAnimation";
 
 const floatingCards = [
   {
@@ -324,6 +325,7 @@ export default function Landing() {
   const [transactionVolume, setTransactionVolume] = useState(50000);
   const [scrollY, setScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const [introComplete, setIntroComplete] = useState(false);
   const lastScrollY = useRef(0);
   const { setTheme } = useTheme();
   
@@ -366,7 +368,9 @@ export default function Landing() {
   const { fees, saved } = calculateFees(transactionVolume);
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <HeroIntroAnimation onComplete={() => setIntroComplete(true)} />
+      <div className="min-h-screen bg-white">
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
@@ -1791,5 +1795,6 @@ export default function Landing() {
         }
       `}</style>
     </div>
+    </>
   );
 }
