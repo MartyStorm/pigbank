@@ -1167,7 +1167,7 @@ export default function Landing() {
         </section>
 
         {/* Payouts Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#fdfefd]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#ffffff]">
           <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -1496,7 +1496,7 @@ export default function Landing() {
 
         {/* Team & Testimonials Section */}
         <section 
-          className="py-12 md:py-20 relative overflow-hidden bg-[#fefffe]"
+          className="py-12 md:py-20 relative overflow-hidden bg-[#ffffff]"
         >
                     <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
