@@ -43,15 +43,19 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
         setPhase(nextPhase);
         if (nextPhase === 5) {
           setIsCollapsing(true);
-          onComplete();
         }
       }, delay);
       timers.push(timer);
     });
     
+    const completeTimer = setTimeout(() => {
+      onComplete();
+    }, 7500);
+    timers.push(completeTimer);
+    
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
-    }, 7600);
+    }, 7800);
     timers.push(exitTimer);
     
     return () => timers.forEach(clearTimeout);

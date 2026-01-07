@@ -379,7 +379,7 @@ export default function Landing() {
               ref={headerLogoRef}
               src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
               alt="PigBank" 
-              className={`h-12 w-auto object-contain ${introComplete ? 'opacity-100' : 'opacity-0'}`}
+              className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
             />
             <nav className={`hidden lg:flex items-center gap-8 transition-all duration-500 delay-300 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
