@@ -696,7 +696,7 @@ export default function Landing() {
         <PaymentMethodsFlip />
 
         {/* POS Software Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#effad6]">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -785,7 +785,7 @@ export default function Landing() {
         </section>
 
         {/* Payment Gateway Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#effad6]">
           <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-[#75C947]/10 to-lime-300/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#75C947]/8 to-emerald-200/5 blur-3xl translate-x-1/3 translate-y-1/3" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -1167,7 +1167,7 @@ export default function Landing() {
         </section>
 
         {/* Payouts Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-[#e5e7ec]">
+        <section className="py-20 md:py-32 relative overflow-hidden bg-[#effad6]">
           <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-lime-300/10 to-[#75C947]/5 blur-3xl translate-x-1/2" />
           <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-gradient-to-t from-emerald-300/8 to-[#75C947]/5 blur-3xl translate-y-1/2" />
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
@@ -1469,21 +1469,21 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
+              <div className="bg-[#effad6] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#75c946] flex items-center justify-center mx-auto mb-4">
                   <Lock className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-[#1a1a1a] text-lg mb-2">256-bit encryption</h4>
                 <p className="text-[#1a1a1a]/70 text-sm">Your data is scrambled into unbreakable code before traveling online</p>
               </div>
-              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
+              <div className="bg-[#effad6] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#75c946] flex items-center justify-center mx-auto mb-4">
                   <ShieldCheck className="h-7 w-7 text-white" />
                 </div>
                 <h4 className="font-semibold text-[#1a1a1a] text-lg mb-2">PCI DSS Compliant</h4>
                 <p className="text-[#1a1a1a]/70 text-sm">Meeting industry security standards for payment processing</p>
               </div>
-              <div className="bg-[#e5e7ec] rounded-2xl p-6 text-center">
+              <div className="bg-[#effad6] rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#75c946] flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-7 w-7 text-white" />
                 </div>
