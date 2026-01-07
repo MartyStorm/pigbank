@@ -24,7 +24,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
       { delay: 300, nextPhase: 1 },
       { delay: 1800, nextPhase: 2 },
       { delay: 2800, nextPhase: 3 },
-      { delay: 4200, nextPhase: 4 },
+      { delay: 5500, nextPhase: 4 },
     ];
     
     const timers: NodeJS.Timeout[] = [];
@@ -42,7 +42,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 5300);
+    }, 6600);
     timers.push(exitTimer);
     
     return () => timers.forEach(clearTimeout);
