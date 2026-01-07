@@ -111,12 +111,12 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
           >
             <motion.div
               className="absolute left-4 md:left-6 lg:left-8 flex items-center"
-              style={{ bottom: isCollapsing ? "auto" : "40px", top: isCollapsing ? "50%" : "auto" }}
-              initial={{ opacity: 0, scale: 0.8 }}
+              style={{ top: "50%", marginTop: "-24px" }}
+              initial={{ opacity: 0, scale: 0.8, y: "calc(50vh - 64px)" }}
               animate={{
                 opacity: phase >= 4 ? 1 : 0,
                 scale: phase >= 4 ? 1 : 0.8,
-                y: isCollapsing ? "-50%" : 0,
+                y: isCollapsing ? 0 : "calc(50vh - 64px)",
               }}
               transition={{
                 opacity: { duration: 0.5 },
