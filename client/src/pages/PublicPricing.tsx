@@ -65,28 +65,47 @@ const plans = [
   },
 ];
 
+const navItems = [
+  { label: "Integrations", href: "/public-integrations" },
+  { label: "Pricing", href: "/public-pricing" },
+  { label: "Contact", href: "/public-contact" },
+];
+
 export default function PublicPricing() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 bg-white fixed top-0 left-0 right-0 z-50">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-6 max-w-7xl mx-auto">
-          <a href="/landing">
-            <img 
-              src="/pig-bank-logo-light.png" 
-              alt="PigBank" 
-              className="h-12 w-auto object-contain" 
-            />
-          </a>
+      <header className="border-b border-[#1a4320]/20 bg-[#1a4320] fixed top-0 left-0 right-0 z-50">
+        <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
+          <div className="flex items-center gap-10">
+            <a href="/landing">
+              <img 
+                src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
+                alt="PigBank" 
+                className="h-12 w-auto object-contain"
+              />
+            </a>
+            <nav className="hidden lg:flex items-center gap-8">
+              {navItems.map((item) => (
+                <a 
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center gap-1 text-base text-white/90 hover:text-[#73cb43] transition-all py-6 border-b-2 border-transparent hover:border-[#73cb43]"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
           <div className="flex items-center gap-5">
             <a 
               href="/login" 
-              className="text-base text-gray-700 hover:text-gray-900 transition-colors hidden sm:block"
+              className="text-base text-white/90 hover:text-[#73cb43] transition-colors hidden sm:block"
             >
               Log in
             </a>
             <a 
               href="/register"
-              className="bg-[#73cb43] hover:bg-[#65b53b] text-white font-medium px-5 py-2 rounded-md transition-colors"
+              className="bg-[#75C947] hover:bg-[#67b83c] text-white font-medium px-5 py-2 rounded-md transition-colors"
             >
               Get started
             </a>
