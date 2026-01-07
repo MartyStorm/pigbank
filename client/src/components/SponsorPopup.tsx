@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Building2, Rocket } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { X, Rocket, Phone, Mail } from "lucide-react";
 
 interface SponsorPopupProps {
   show: boolean;
@@ -29,56 +28,75 @@ export function SponsorPopup({ show, delay = 500 }: SponsorPopupProps) {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-6 right-6 z-[9998] max-w-sm"
-          data-testid="sponsor-popup"
-        >
-          <div className="bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
-            <div className="bg-gradient-to-r from-[#1a4320] to-[#2d5a34] p-4">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                    <Rocket className="w-5 h-5 text-white" />
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/50 z-[9997]"
+            onClick={handleDismiss}
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9998] w-full max-w-md mx-4"
+            data-testid="sponsor-popup"
+          >
+            <div className="bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-r from-[#1a4320] to-[#2d5a34] p-5">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                      <Rocket className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-xl">Coming Soon</h3>
+                      <p className="text-white/80 text-sm">Now Seeking Bank Sponsors</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-lg">Coming Soon</h3>
-                    <p className="text-white/80 text-sm">Now Seeking Bank Sponsors</p>
-                  </div>
+                  <button
+                    onClick={handleDismiss}
+                    className="text-white/70 hover:text-white transition-colors p-1"
+                    data-testid="button-dismiss-sponsor-popup"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={handleDismiss}
-                  className="text-white/70 hover:text-white transition-colors p-1"
-                  data-testid="button-dismiss-sponsor-popup"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-            
-            <div className="p-4 space-y-3">
-              <p className="text-gray-700 text-sm leading-relaxed">
-                This platform is currently in development. We are actively seeking bank sponsorships to bring this payment processing solution to market.
-              </p>
-              
-              <div className="flex items-center gap-2 text-xs text-gray-500">
-                <Building2 className="w-4 h-4" />
-                <span>Interested in partnering with us?</span>
               </div>
               
-              <Button 
-                asChild
-                className="w-full bg-[#1a4320] hover:bg-[#2d5a34] text-white"
-                data-testid="button-contact-sponsorship"
-              >
-                <a href="/public-contact">Contact for Sponsorship</a>
-              </Button>
+              <div className="p-5 space-y-4">
+                <p className="text-gray-700 text-base leading-relaxed">
+                  This platform is currently in development. We are actively seeking bank sponsorships to bring this payment processing solution to market.
+                </p>
+                
+                <div className="space-y-3 pt-2">
+                  <p className="text-gray-800 font-medium">Contact us:</p>
+                  
+                  <a 
+                    href="tel:865-243-6011" 
+                    className="flex items-center gap-3 text-gray-700 hover:text-[#1a4320] transition-colors"
+                    data-testid="link-phone"
+                  >
+                    <Phone className="w-5 h-5 text-[#73cb43]" />
+                    <span>865-243-6011</span>
+                  </a>
+                  
+                  <a 
+                    href="mailto:marty@pigbank.us" 
+                    className="flex items-center gap-3 text-gray-700 hover:text-[#1a4320] transition-colors"
+                    data-testid="link-email"
+                  >
+                    <Mail className="w-5 h-5 text-[#73cb43]" />
+                    <span>marty@pigbank.us</span>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
