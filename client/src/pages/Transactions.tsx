@@ -507,14 +507,14 @@ export default function Transactions() {
         {/* Table */}
         <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-[#effad6] dark:bg-[#262626] [&_tr]:hover:bg-[#effad6] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-gray-900 dark:[&_th]:text-white">
-              <TableRow className="border-b-[#d4e8b8] dark:border-b-gray-700">
+            <TableHeader className="bg-[#3c3a3b] dark:bg-[#262626] [&_tr]:hover:bg-[#3c3a3b] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+              <TableRow className="border-b-[#3c3a3b] dark:border-b-gray-700">
                 {columnOrder.filter(col => columns[col]).map((col, index, visibleCols) => (
                   <TableHead 
                     key={col} 
                     className={cn(
-                      "text-gray-900 dark:text-white text-center",
-                      index < visibleCols.length - 1 && "border-r border-[#c5daa6]/50"
+                      "text-white text-center",
+                      index < visibleCols.length - 1 && "border-r border-white/30"
                     )}
                   >
                     {columnLabels[col]}
