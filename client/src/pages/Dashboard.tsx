@@ -508,7 +508,7 @@ export default function Dashboard() {
             "w-full rounded-xl p-4 flex items-center justify-between gap-3",
             chargebackCount > 0 
               ? "bg-[#f0b100]/20 border border-[#f0b100]" 
-              : "bg-[#73cb43]/10 backdrop-blur-md border border-[#73cb43]/30 shadow-sm"
+              : "bg-[#d4edda] border border-[#39870E]"
           )}>
             <div className="flex items-center gap-3 min-w-0">
               <div className={cn(
@@ -528,7 +528,7 @@ export default function Dashboard() {
           </div>
 
           {/* Account Health Widget */}
-          <div className="w-full bg-[#73cb43]/10 backdrop-blur-md border border-[#73cb43]/30 shadow-sm rounded-xl p-4 flex items-center justify-between gap-3">
+          <div className="w-full bg-[#d4edda] border border-[#39870E] rounded-xl p-4 flex items-center justify-between gap-3">
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
                 <ShieldCheck className="h-5 w-5 text-[#39870E]" />
@@ -544,7 +544,7 @@ export default function Dashboard() {
           {/* Total Payout Balance Widget */}
           <button 
             onClick={() => setLocation("/payouts")}
-            className="w-full bg-[#73cb43]/10 backdrop-blur-md border border-[#73cb43]/30 shadow-sm rounded-xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:bg-[#73cb43]/15 transition-colors text-left"
+            className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:bg-muted/50 transition-colors text-left"
             data-testid="button-payout-balance-card"
           >
             <div className="flex items-center gap-3 min-w-0">
