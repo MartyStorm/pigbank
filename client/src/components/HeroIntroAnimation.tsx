@@ -24,7 +24,8 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
       { delay: 300, nextPhase: 1 },
       { delay: 1800, nextPhase: 2 },
       { delay: 2800, nextPhase: 3 },
-      { delay: 5500, nextPhase: 4 },
+      { delay: 5200, nextPhase: 4 },
+      { delay: 6500, nextPhase: 5 },
     ];
     
     const timers: NodeJS.Timeout[] = [];
@@ -32,7 +33,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     timings.forEach(({ delay, nextPhase }) => {
       const timer = setTimeout(() => {
         setPhase(nextPhase);
-        if (nextPhase === 4) {
+        if (nextPhase === 5) {
           setIsCollapsing(true);
         }
       }, delay);
@@ -42,7 +43,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 6600);
+    }, 7600);
     timers.push(exitTimer);
     
     return () => timers.forEach(clearTimeout);
@@ -107,7 +108,29 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
             className="fixed top-0 left-0 right-0 z-[9999] overflow-hidden"
             style={{ backgroundColor: "#1a4320" }}
             data-testid="hero-intro-animation"
-          />
+          >
+            <motion.div
+              className="absolute left-4 md:left-6 lg:left-8 flex items-center"
+              style={{ bottom: isCollapsing ? "auto" : "40px", top: isCollapsing ? "50%" : "auto" }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: phase >= 4 ? 1 : 0,
+                scale: phase >= 4 ? 1 : 0.8,
+                y: isCollapsing ? "-50%" : 0,
+              }}
+              transition={{
+                opacity: { duration: 0.5 },
+                scale: { duration: 0.5 },
+                y: { duration: 1, ease: [0.4, 0, 0.2, 1] },
+              }}
+            >
+              <img
+                src="/attached_assets/Pig_Bank_Logo_new_copy_1767532854610.png"
+                alt="PigBank"
+                className="h-12 w-auto object-contain"
+              />
+            </motion.div>
+          </motion.div>
           
           <motion.div 
             className="fixed inset-0 z-[10000] flex items-center justify-center px-6 pointer-events-none"
