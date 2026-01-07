@@ -374,21 +374,12 @@ export default function Landing() {
       <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
-            <div 
-              className={`flex items-center gap-2 transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
+            <img 
+              src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
+              alt="PigBank" 
+              className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
-            >
-              <img 
-                src="/attached_assets/Favacon_Pigbank_1767785903584.png" 
-                alt="PigBank mascot" 
-                className="h-12 w-auto object-contain"
-              />
-              <img 
-                src="/attached_assets/Pig_Bank_Logo_new_copy_no_icon_1767787497262.png" 
-                alt="PigBank" 
-                className="h-8 w-auto object-contain"
-              />
-            </div>
+            />
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
