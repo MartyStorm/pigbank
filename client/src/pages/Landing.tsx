@@ -1201,34 +1201,11 @@ export default function Landing() {
                     className="absolute left-0 bottom-[-20px] w-[120px] md:w-[150px] lg:w-[180px] xl:w-[200px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
-                    <div className="bg-white rounded-2xl shadow-xl p-5 w-52 md:w-64">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">Express Payout</span>
-                        <Zap className="h-5 w-5 text-[#73cb43]" />
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-[#73cb43]" />
-                            <span className="text-sm text-gray-700">Available</span>
-                          </div>
-                          <span className="font-semibold text-gray-900">$12,450</span>
-                        </div>
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-gray-400" />
-                            <span className="text-sm text-gray-700">Pending</span>
-                          </div>
-                          <span className="font-semibold text-gray-900">$3,200</span>
-                        </div>
-                      </div>
-                      <Button 
-                        className="w-full mt-4 bg-[#1a4320] hover:bg-[#1a3319] text-white rounded-xl"
-                        size="sm"
-                      >
-                        Transfer now
-                      </Button>
-                    </div>
+                    <img 
+                      src={iphoneMockup} 
+                      alt="PigBank mobile app showing payouts dashboard" 
+                      className="w-40 md:w-52 h-auto object-contain translate-y-[20%]"
+                    />
                   </div>
                 </div>
               </div>
