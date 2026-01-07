@@ -183,7 +183,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
               top: { duration: 1, ease: [0.4, 0, 0.2, 1] },
               x: { duration: 1, ease: [0.4, 0, 0.2, 1] },
               y: { duration: 1, ease: [0.4, 0, 0.2, 1] },
-              opacity: { duration: 0.2 },
+              opacity: { duration: 0.6, ease: "easeOut" },
               scale: { duration: 1, ease: [0.4, 0, 0.2, 1] },
             }}
           >
@@ -197,7 +197,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
               }}
               transition={{
                 rotate: { 
-                  delay: 0.5,
+                  delay: 0.7,
                   duration: 0.5, 
                   ease: "easeInOut",
                   times: [0, 0.2, 0.4, 0.6, 0.8, 1]
