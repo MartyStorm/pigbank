@@ -101,7 +101,7 @@ export default function PublicContact() {
           </div>
         </section>
 
-        <section className="pb-16 md:pb-24">
+        <section className="py-16 md:py-24">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {contactOptions.map((option) => (
