@@ -12,6 +12,7 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   
   const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
+  const [isCollapsing, setIsCollapsing] = useState(false);
 
   useEffect(() => {
     if (!isVisible) {
@@ -31,6 +32,9 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     timings.forEach(({ delay, nextPhase }) => {
       const timer = setTimeout(() => {
         setPhase(nextPhase);
+        if (nextPhase === 4) {
+          setIsCollapsing(true);
+        }
       }, delay);
       timers.push(timer);
     });
@@ -38,24 +42,11 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 4500);
+    }, 4600);
     timers.push(exitTimer);
     
     return () => timers.forEach(clearTimeout);
   }, [isVisible, onComplete]);
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.04,
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    })
-  };
 
   const renderAnimatedText = (text: string, startDelay: number = 0) => {
     return text.split("").map((char, i) => (
@@ -89,48 +80,73 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ 
-            opacity: 0,
-            transition: { duration: 0.8, ease: "easeInOut" }
-          }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center px-6"
-          style={{ backgroundColor: "#1a4320" }}
-          data-testid="hero-intro-animation"
-        >
-          <div className="text-center space-y-4 md:space-y-6 max-w-4xl">
-            {phase >= 1 && (
-              <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                {renderAnimatedText("Built for Business,")}
-              </motion.h1>
-            )}
-            
-            {phase >= 2 && (
-              <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                {renderAnimatedText("Payment Processing")}
-              </motion.h1>
-            )}
-            
-            {phase >= 3 && (
-              <motion.p 
-                className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                {renderAnimatedText("The last payment processor you'll ever need")}
-              </motion.p>
-            )}
-          </div>
-        </motion.div>
+        <>
+          <motion.div
+            initial={{ height: "100vh" }}
+            animate={{ 
+              height: isCollapsing ? "80px" : "100vh",
+            }}
+            exit={{ 
+              height: "80px",
+              transition: { duration: 0.1 }
+            }}
+            transition={{ 
+              height: { duration: 1, ease: [0.4, 0, 0.2, 1] }
+            }}
+            className="fixed top-0 left-0 right-0 z-[9999] overflow-hidden"
+            style={{ backgroundColor: "#1a4320" }}
+            data-testid="hero-intro-animation"
+          />
+          
+          <motion.div 
+            className="fixed inset-0 z-[10000] flex items-center justify-center px-6 pointer-events-none"
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: isCollapsing ? 0 : 1,
+              y: isCollapsing ? "-30vh" : 0,
+              scale: isCollapsing ? 0.85 : 1,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.4, 0, 0.2, 1]
+            }}
+          >
+            <div className="text-center max-w-4xl">
+              <div className="space-y-4 md:space-y-6">
+                {phase >= 1 && (
+                  <motion.h1 
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("Built for Business,")}
+                  </motion.h1>
+                )}
+                
+                {phase >= 2 && (
+                  <motion.h1 
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("Payment Processing")}
+                  </motion.h1>
+                )}
+                
+                {phase >= 3 && (
+                  <motion.p 
+                    className="text-xl md:text-2xl lg:text-3xl text-white/90 mt-6 md:mt-8"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {renderAnimatedText("The last payment processor you'll ever need")}
+                  </motion.p>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
