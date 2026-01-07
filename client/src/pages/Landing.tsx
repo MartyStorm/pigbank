@@ -389,7 +389,7 @@ export default function Landing() {
                 <div key={item.label} className="relative group">
                   {item.hasDropdown ? (
                     <button 
-                      className="flex items-center gap-1 text-base text-white/90 hover:text-[#73cb43] transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-white/90 hover:text-[#73cb43] transition-all py-6 border-b-2 border-transparent hover:border-[#73cb43]"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
@@ -398,7 +398,7 @@ export default function Landing() {
                   ) : (
                     <a 
                       href={item.href}
-                      className="flex items-center gap-1 text-base text-white/90 hover:text-[#73cb43] transition-colors py-6"
+                      className="flex items-center gap-1 text-base text-white/90 hover:text-[#73cb43] transition-all py-6 border-b-2 border-transparent hover:border-[#73cb43]"
                       data-testid={`nav-${item.label.toLowerCase()}`}
                     >
                       {item.label}
