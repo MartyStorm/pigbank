@@ -89,7 +89,7 @@ export default function PublicIntegrations() {
       </header>
 
       <main className="pt-20">
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-[#effad6]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Connect and grow with powerful integrations
