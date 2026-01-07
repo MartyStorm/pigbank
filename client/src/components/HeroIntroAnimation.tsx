@@ -9,9 +9,8 @@ interface HeroIntroAnimationProps {
 export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
   const [location] = useLocation();
   const isLandingPage = location === "/" || location === "/landing";
-  const hasSeenIntro = sessionStorage.getItem("pigbank_intro_shown") === "true";
   
-  const [isVisible, setIsVisible] = useState(isLandingPage && !hasSeenIntro);
+  const [isVisible, setIsVisible] = useState(isLandingPage);
   const [phase, setPhase] = useState(0);
 
   useEffect(() => {
@@ -19,8 +18,6 @@ export function HeroIntroAnimation({ onComplete }: HeroIntroAnimationProps) {
       onComplete();
       return;
     }
-    
-    sessionStorage.setItem("pigbank_intro_shown", "true");
     
     const timings = [
       { delay: 300, nextPhase: 1 },
