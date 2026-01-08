@@ -480,21 +480,13 @@ export default function Landing() {
           className="overflow-hidden relative"
         >
           <div 
-            className="absolute inset-0"
+            className="absolute inset-0 bg-[#effad6]"
             style={{
               backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767525114453.png')`,
               backgroundSize: '400px',
               backgroundRepeat: 'repeat'
             }}
           />
-          <video 
-            autoPlay 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-[1]"
-          >
-            <source src="/attached_assets/Combined_02_1_1767875932479.mp4" type="video/mp4" />
-          </video>
           <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto"
