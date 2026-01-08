@@ -729,7 +729,7 @@ export default function Landing() {
                     alt="PigBank mascot with phone"
                     className="absolute left-0 bottom-[-10px] w-[85px] md:w-[110px] lg:w-[135px] xl:w-[155px] h-auto z-10"
                   />
-                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#1a4320] flex items-center justify-center">
                     <img 
                       src="/attached_assets/ChatGPT_Image_Jan_7,_2026,_03_22_33_PM_1767821035266.png" 
                       alt="PigBank POS software on iPad and iPhone" 
