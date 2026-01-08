@@ -304,7 +304,7 @@ export default function Dashboard() {
           {/* Dark green header */}
           <div className="bg-[#1a4d1a] px-6 py-8 text-center">
             <div className="flex justify-center mb-4">
-              <img src="/pig-bank-logo-white.png" alt="PigBank" className="h-14" />
+              <img src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" alt="PigBank" className="h-14" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">Welcome!</h2>
             <p className="text-white/90 text-lg">

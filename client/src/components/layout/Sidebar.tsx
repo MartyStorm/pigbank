@@ -270,12 +270,12 @@ export function Sidebar({ className }: { className?: string }) {
       <div className="hidden md:flex h-20 items-center justify-center bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
         <Link href="/dashboard">
           <img 
-            src="/pig-bank-logo-dark.png" 
+            src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
             alt="PigBank" 
             className="h-14 object-contain block dark:hidden cursor-pointer" 
           />
           <img 
-            src="/pig-bank-logo-dark.png" 
+            src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
             alt="PigBank" 
             className="h-14 object-contain hidden dark:block cursor-pointer" 
           />

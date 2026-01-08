@@ -188,7 +188,7 @@ export function HeroIntroAnimation({ onComplete, headerLogoRef }: HeroIntroAnima
             }}
           >
             <motion.img
-              src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png"
+              src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png"
               alt="PigBank"
               className="h-12 w-auto object-contain"
               initial={{ rotate: 0 }}

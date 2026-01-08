@@ -376,7 +376,7 @@ export default function Landing() {
           <div className="flex items-center gap-10">
             <img 
               ref={headerLogoRef}
-              src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
+              src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
               alt="PigBank" 
               className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"

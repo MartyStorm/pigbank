@@ -162,7 +162,7 @@ export default function Register() {
           <div className="flex justify-center">
             <a href="/landing" data-testid="link-logo-home">
               <img 
-                src="/pig-bank-logo-light.png" 
+                src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
                 alt="PigBank" 
                 className="h-14 w-auto cursor-pointer"
                 data-testid="logo-register"
