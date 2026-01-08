@@ -58,7 +58,7 @@ import testimonial4 from "@assets/stock_images/professional_busines_8f8097a7.jpg
 import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
 import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_with_Person_Visitor_1766103263637.webp";
 import iphoneMockup from "@assets/Free_iPhone_16_Pro_Mockup_copy_1767511434936.png";
-import macbookMockup from "@assets/MacBook_Pro_16_copy_1767512077595.png";
+import macbookMockup from "@assets/generated_images/macbook_pigbank_dashboard_mockup.png";
 import PaymentMethodsFlip from "@/components/PaymentMethodsFlip";
 import { HeroIntroAnimation } from "@/components/HeroIntroAnimation";
 
