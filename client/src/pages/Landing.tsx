@@ -489,12 +489,11 @@ export default function Landing() {
           />
           <video 
             autoPlay 
-            loop 
             muted 
             playsInline
             className="absolute inset-0 w-full h-full object-cover z-[1]"
           >
-            <source src="/attached_assets/Combined_02_1767874805854.mp4" type="video/mp4" />
+            <source src="/attached_assets/Combined_02_1_1767875932479.mp4" type="video/mp4" />
           </video>
           <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
