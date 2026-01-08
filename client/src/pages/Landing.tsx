@@ -752,7 +752,7 @@ export default function Landing() {
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden">
                     <img 
-                      src="/attached_assets/ChatGPT_Image_Jan_7,_2026,_03_06_57_PM_1767820028590.png" 
+                      src="/attached_assets/generated_images/ipad_pos_swivel_stand_pigbank_mockup.png" 
                       alt="iPad POS terminal swivel stand for in-person payment processing" 
                       className="w-full h-full object-cover"
                     />
