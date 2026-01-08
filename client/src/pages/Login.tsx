@@ -87,7 +87,7 @@ export default function Login() {
           <a href="/">
             <img 
               src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-              alt="PigBank" 
+              alt="Pigbank" 
               className="h-14 w-auto cursor-pointer"
               data-testid="logo-login"
             />

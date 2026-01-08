@@ -8,7 +8,7 @@ const contactOptions = [
   {
     icon: Phone,
     title: "Sales",
-    description: "Contact our dedicated sales team to open your PigBank account today.",
+    description: "Contact our dedicated sales team to open your Pigbank account today.",
     links: [
       { label: "Schedule a meeting", href: "#" },
       { label: "Call +1 (888) 555-0123", href: "tel:+18885550123" },
@@ -25,7 +25,7 @@ const contactOptions = [
   {
     icon: Settings,
     title: "Support",
-    description: "Do you have a technical issue or a question about your PigBank account?",
+    description: "Do you have a technical issue or a question about your Pigbank account?",
     links: [
       { label: "Submit a ticket", href: "#" },
       { label: "Email our support team", href: "mailto:support@pigbank.com" },
@@ -56,7 +56,7 @@ export default function PublicContact() {
             <a href="/landing">
               <img 
                 src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-                alt="PigBank" 
+                alt="Pigbank" 
                 className="h-12 w-auto object-contain"
               />
             </a>
@@ -153,7 +153,7 @@ export default function PublicContact() {
                 <h3 className="text-sm font-semibold text-gray-900 mb-6 mt-12">Our offices</h3>
                 
                 <div className="mb-6">
-                  <p className="font-bold text-gray-900">PigBank US</p>
+                  <p className="font-bold text-gray-900">Pigbank US</p>
                   <p className="text-gray-600 text-sm">123 Business Park Drive, Suite 400</p>
                   <p className="text-gray-600 text-sm">San Francisco, CA 94105</p>
                   <p className="text-gray-500 text-sm mt-2">Hours: Mon – Thu 7am – 4:30pm (PST)</p>
@@ -217,7 +217,7 @@ export default function PublicContact() {
                       className="mt-1"
                     />
                     <label htmlFor="terms" className="text-sm text-gray-600">
-                      I agree to PigBank's <a href="#" className="text-[#73cb43] hover:underline">terms of service</a> and <a href="#" className="text-[#73cb43] hover:underline">privacy policy</a>.
+                      I agree to Pigbank's <a href="#" className="text-[#73cb43] hover:underline">terms of service</a> and <a href="#" className="text-[#73cb43] hover:underline">privacy policy</a>.
                     </label>
                   </div>
 
@@ -283,7 +283,7 @@ export default function PublicContact() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
             <div className="text-sm text-gray-500">
-              <p>© 2026 PigBank Payments. All rights reserved.</p>
+              <p>© 2026 Pigbank Payments. All rights reserved.</p>
               <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-500">

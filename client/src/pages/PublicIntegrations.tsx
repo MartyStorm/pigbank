@@ -6,37 +6,37 @@ const integrations = [
     name: "Square",
     logo: "□",
     logoColor: "bg-black",
-    description: "Accept payments seamlessly through Square's platform while leveraging PigBank's advanced payment processing capabilities.",
+    description: "Accept payments seamlessly through Square's platform while leveraging Pigbank's advanced payment processing capabilities.",
   },
   {
     name: "Shopify",
     logo: "🛍",
     logoColor: "bg-[#95bf47]",
-    description: "Power your Shopify store with PigBank's comprehensive payment solutions and enjoy simplified high-risk merchant processing.",
+    description: "Power your Shopify store with Pigbank's comprehensive payment solutions and enjoy simplified high-risk merchant processing.",
   },
   {
     name: "Wix",
     logo: "WIX",
     logoColor: "bg-gray-800",
-    description: "Integrate PigBank's payment processing directly into your Wix website for a seamless checkout experience.",
+    description: "Integrate Pigbank's payment processing directly into your Wix website for a seamless checkout experience.",
   },
   {
     name: "WooCommerce",
     logo: "woo",
     logoColor: "bg-[#7f54b3]",
-    description: "Connect your WooCommerce store to PigBank for powerful payment processing and fraud protection.",
+    description: "Connect your WooCommerce store to Pigbank for powerful payment processing and fraud protection.",
   },
   {
     name: "BigCommerce",
     logo: "B",
     logoColor: "bg-[#34313f]",
-    description: "Seamlessly integrate PigBank with BigCommerce to accept payments and manage transactions.",
+    description: "Seamlessly integrate Pigbank with BigCommerce to accept payments and manage transactions.",
   },
   {
     name: "Ecwid",
     logo: "🛒",
     logoColor: "bg-[#0070e0]",
-    description: "Add PigBank payment processing to your Ecwid store and start accepting payments globally.",
+    description: "Add Pigbank payment processing to your Ecwid store and start accepting payments globally.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function PublicIntegrations() {
             <a href="/landing">
               <img 
                 src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-                alt="PigBank" 
+                alt="Pigbank" 
                 className="h-12 w-auto object-contain"
               />
             </a>
@@ -206,7 +206,7 @@ export default function PublicIntegrations() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
             <div className="text-sm text-gray-500">
-              <p>© 2026 PigBank Payments. All rights reserved.</p>
+              <p>© 2026 Pigbank Payments. All rights reserved.</p>
               <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-500">

@@ -83,7 +83,7 @@ export default function PublicPricing() {
             <a href="/landing">
               <img 
                 src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-                alt="PigBank" 
+                alt="Pigbank" 
                 className="h-12 w-auto object-contain"
               />
             </a>
@@ -267,7 +267,7 @@ export default function PublicPricing() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
             <div className="text-sm text-gray-500">
-              <p>© 2026 PigBank Payments. All rights reserved.</p>
+              <p>© 2026 Pigbank Payments. All rights reserved.</p>
               <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-500">

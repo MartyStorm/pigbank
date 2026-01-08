@@ -63,7 +63,7 @@ export default function HostedCheckout() {
   const [showAcceptedCards, setShowAcceptedCards] = useState(true);
   const [showMoneyBackGuarantee, setShowMoneyBackGuarantee] = useState(false);
   const [showSecureMessage, setShowSecureMessage] = useState(true);
-  const [showPoweredByPigBank, setShowPoweredByPigBank] = useState(true);
+  const [showPoweredByPigbank, setShowPoweredByPigbank] = useState(true);
   const [badgeColor, setBadgeColor] = useState("#6b7280");
   const [backgroundStyle, setBackgroundStyle] = useState("light");
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop");
@@ -523,8 +523,8 @@ export default function HostedCheckout() {
                       <Switch id="show-secure-msg" checked={showSecureMessage} onCheckedChange={setShowSecureMessage} />
                     </div>
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="show-pigbank">Powered by PigBank</Label>
-                      <Switch id="show-pigbank" checked={showPoweredByPigBank} onCheckedChange={setShowPoweredByPigBank} />
+                      <Label htmlFor="show-pigbank">Powered by Pigbank</Label>
+                      <Switch id="show-pigbank" checked={showPoweredByPigbank} onCheckedChange={setShowPoweredByPigbank} />
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -757,11 +757,11 @@ export default function HostedCheckout() {
                         </div>
                       )}
 
-                      {/* Powered by PigBank */}
-                      {showPoweredByPigBank && (
+                      {/* Powered by Pigbank */}
+                      {showPoweredByPigbank && (
                         <div className="flex items-center justify-center gap-1.5 pt-2 border-t" style={{ borderColor: inputBorderColor }}>
                           <span className="text-xs" style={{ color: bodyTextColor }}>Payment processed by</span>
-                          <img src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" alt="PigBank" className="h-4 object-contain" />
+                          <img src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" alt="Pigbank" className="h-4 object-contain" />
                         </div>
                       )}
                     </div>

@@ -163,7 +163,7 @@ export default function Register() {
             <a href="/landing" data-testid="link-logo-home">
               <img 
                 src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-                alt="PigBank" 
+                alt="Pigbank" 
                 className="h-14 w-auto cursor-pointer"
                 data-testid="logo-register"
               />

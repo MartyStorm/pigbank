@@ -35,7 +35,7 @@ export function Layout({ children, title }: LayoutProps) {
               <div className="flex items-center gap-2 cursor-pointer">
                 <img 
                   src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
-                  alt="PigBank" 
+                  alt="Pigbank" 
                   className="h-14 w-auto object-contain block" 
                 />
               </div>
