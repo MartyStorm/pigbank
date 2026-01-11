@@ -454,7 +454,7 @@ export default function Dashboard() {
                     onClick={() => setLocation("/settings")}
                     data-testid="button-enable-sms"
                   >
-                    <Bell className="h-4 w-4 mr-2" />
+                    <Bell className="h-4 w-4 mr-2 hidden md:inline" />
                     Enable Text Alerts
                   </Button>
                 )}
