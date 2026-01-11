@@ -420,7 +420,7 @@ export default function Dashboard() {
                     const StatusIcon = status.icon;
                     return (
                       <>
-                        <div className={cn("p-3 rounded-full", status.bgColor)}>
+                        <div className={cn("p-3 rounded-full hidden md:block", status.bgColor)}>
                           <StatusIcon className={cn("h-6 w-6", status.color)} />
                         </div>
                         <div>
