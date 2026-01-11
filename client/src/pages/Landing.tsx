@@ -477,7 +477,10 @@ export default function Landing() {
       </header>
       <main>
         <section 
-          className="overflow-hidden relative bg-[#1a4320]"
+          className="overflow-hidden relative"
+          style={{
+            background: 'radial-gradient(ellipse at center, #2d5a30 0%, #1a4320 70%)'
+          }}
         >
           <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
