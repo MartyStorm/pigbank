@@ -491,7 +491,7 @@ export default function Landing() {
                   <h1 className="hero-title font-bold tracking-tight text-white">
                     Built for Business, Payment Processing
                   </h1>
-                  <p className="text-xl md:text-2xl text-white font-semibold">
+                  <p className="text-xl md:text-2xl text-[#75c946] font-semibold">
                     The last payment processor you'll ever need.
                   </p>
                 </div>
