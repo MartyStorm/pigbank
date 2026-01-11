@@ -531,13 +531,13 @@ export default function Landing() {
                       }}
                     />
                     <img 
-                      src="/macbook-dashboard-new.png" 
+                      src="/attached_assets/MacBook_Pro_16_copy_1768160238598.png" 
                       alt="PigBank Dashboard on MacBook" 
                       className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
                     />
                     <img 
-                      src="/iphone-payouts.png" 
-                      alt="PigBank Payouts on iPhone" 
+                      src="/attached_assets/Free_iPhone_16_Pro_Mockup_dd_copy_1768160262858.png" 
+                      alt="PigBank Transactions on iPhone" 
                       className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                     />
                   </div>
