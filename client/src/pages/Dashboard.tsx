@@ -143,11 +143,10 @@ export default function Dashboard() {
     }
   };
 
-  // Determine if we should show the application status card (hide in demo mode)
+  // Determine if we should show the application status card
   const showApplicationStatus = merchantData && 
     ['submitted', 'action_required', 'in_onboarding'].includes(merchantData.status) &&
-    !isPigBankStaff &&
-    !user?.demoActive;
+    !isPigBankStaff;
 
   const getStatusInfo = (status: string) => {
     switch (status) {
@@ -305,7 +304,7 @@ export default function Dashboard() {
           {/* Dark green header */}
           <div className="bg-[#1a4d1a] px-6 py-8 text-center">
             <div className="flex justify-center mb-4">
-              <img src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" alt="Pigbank" className="h-14" />
+              <img src="/pig-bank-logo-white.png" alt="PigBank" className="h-14" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">Welcome!</h2>
             <p className="text-white/90 text-lg">
@@ -451,12 +450,12 @@ export default function Dashboard() {
                 {merchantData.status === 'submitted' && (
                   <Button 
                     size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0 whitespace-nowrap"
+                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0"
                     onClick={() => setLocation("/settings")}
                     data-testid="button-enable-sms"
                   >
                     <Bell className="h-4 w-4 mr-2" />
-                    Text Alerts
+                    Enable Text Alerts
                   </Button>
                 )}
               </div>

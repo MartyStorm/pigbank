@@ -82,7 +82,7 @@ export function Header() {
             <Button variant="ghost" className="flex items-center gap-2 pl-0 hover:bg-gray-100 dark:hover:bg-white/10 text-gray-700 dark:text-gray-300">
               <Avatar className="h-8 w-8 bg-gray-200 dark:bg-gray-700 text-[#73cb43] border-none font-bold">
                 {!isAuthenticated ? (
-                  <AvatarImage src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" alt="Pigbank" className="p-1" />
+                  <AvatarImage src="/pig-bank-logo-dark.png" alt="PigBank" className="p-1" />
                 ) : user?.profileImageUrl ? (
                   <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
                 ) : null}

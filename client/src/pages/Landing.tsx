@@ -57,10 +57,8 @@ import testimonial3 from "@assets/stock_images/professional_busines_1f8f6e40.jpg
 import testimonial4 from "@assets/stock_images/professional_busines_8f8097a7.jpg";
 import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
 import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_with_Person_Visitor_1766103263637.webp";
-import iphoneMockup from "@assets/generated_images/iphone_pigbank_app_green_background.png";
-import macbookMockup from "@assets/generated_images/macbook_pigbank_dashboard_mockup.png";
-import macbookHeroMockup from "@assets/generated_images/macbook_pigbank_white_background.png";
-import iphoneHeroMockup from "@assets/generated_images/iphone_pigbank_white_background.png";
+import iphoneMockup from "@assets/Free_iPhone_16_Pro_Mockup_copy_1767511434936.png";
+import macbookMockup from "@assets/MacBook_Pro_16_copy_1767512077595.png";
 import PaymentMethodsFlip from "@/components/PaymentMethodsFlip";
 import { HeroIntroAnimation } from "@/components/HeroIntroAnimation";
 
@@ -137,14 +135,14 @@ const featureCards = [
 const testimonials = [
   {
     id: 1,
-    quote: "As a harm reduction company, finding a processor who understands our industry was tough. Pigbank made onboarding simple and their support team actually gets what we do.",
+    quote: "As a harm reduction company, finding a processor who understands our industry was tough. PigBank made onboarding simple and their support team actually gets what we do.",
     name: "TN Scientific",
     title: "Harm Reduction & Drug Testing Supplies",
     image: "/attached_assets/tn_scientific_logo.png",
   },
   {
     id: 2,
-    quote: "Other processors treated us like a liability. Pigbank treated us like a partner. Fast approvals, fair rates, and they actually answer the phone when we call.",
+    quote: "Other processors treated us like a liability. PigBank treated us like a partner. Fast approvals, fair rates, and they actually answer the phone when we call.",
     name: "TN Scientific",
     title: "Harm Reduction & Drug Testing Supplies",
     image: "/attached_assets/tn_scientific_logo.png",
@@ -185,7 +183,7 @@ function HorizontalScrollText() {
               className="text-5xl md:text-7xl lg:text-8xl font-bold mx-4 text-white"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
-              Why Pigbank - 
+              Why PigBank - 
             </span>
           ))}
         </motion.div>
@@ -239,7 +237,7 @@ function TestimonialsCarousel() {
           What our partners say
         </h3>
         <p className="text-base md:text-lg text-[#101828] max-w-5xl mx-auto">
-          Don't take our word for it — here's what merchants across industries have to say about working with Pigbank.
+          Don't take our word for it — here's what merchants across industries have to say about working with PigBank.
         </p>
       </div>
       
@@ -378,8 +376,8 @@ export default function Landing() {
           <div className="flex items-center gap-10">
             <img 
               ref={headerLogoRef}
-              src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" 
-              alt="Pigbank" 
+              src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
+              alt="PigBank" 
               className={`h-12 w-auto object-contain transition-opacity duration-300 ${introComplete ? 'opacity-100' : 'opacity-0'}`}
               data-testid="logo-header"
             />
@@ -482,7 +480,7 @@ export default function Landing() {
           className="overflow-hidden relative"
         >
           <div 
-            className="absolute inset-0 bg-[#effad6]"
+            className="absolute inset-0"
             style={{
               backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767525114453.png')`,
               backgroundSize: '400px',
@@ -517,7 +515,7 @@ export default function Landing() {
                 <div className="relative flex items-center justify-center mt-4">
                   <img 
                     src="/attached_assets/Pig-Transparent-05_1767543506805.png"
-                    alt="Pigbank mascot"
+                    alt="PigBank mascot"
                     className="hidden md:block absolute left-[10px] lg:left-[0px] xl:left-[-10px] bottom-0 w-[100px] md:w-[120px] lg:w-[145px] xl:w-[170px] h-auto z-20"
                     style={{ transform: `translateY(${scrollY * 0.015}px)` }}
                   />
@@ -534,12 +532,12 @@ export default function Landing() {
                     />
                     <img 
                       src="/macbook-dashboard-new.png" 
-                      alt="Pigbank Dashboard on MacBook" 
+                      alt="PigBank Dashboard on MacBook" 
                       className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
                     />
                     <img 
                       src="/iphone-payouts.png" 
-                      alt="Pigbank Payouts on iPhone" 
+                      alt="PigBank Payouts on iPhone" 
                       className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                     />
                   </div>
@@ -668,7 +666,7 @@ export default function Landing() {
                 Payment processing made simple
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Learn how Pigbank helps merchants like you accept payments, grow your business, and get the support you deserve.
+                Learn how PigBank helps merchants like you accept payments, grow your business, and get the support you deserve.
               </p>
             </div>
             <div 
@@ -728,14 +726,14 @@ export default function Landing() {
                 <div className="relative pl-[40px] md:pl-[55px] lg:pl-[70px] xl:pl-[80px]">
                   <img 
                     src="/attached_assets/Pig-Transparent-06_1767518220191.png"
-                    alt="Pigbank mascot with phone"
+                    alt="PigBank mascot with phone"
                     className="absolute left-0 bottom-[-10px] w-[85px] md:w-[110px] lg:w-[135px] xl:w-[155px] h-auto z-10"
                   />
-                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#1a4320] flex items-center justify-center">
+                  <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
-                      src="/attached_assets/generated_images/pigbank_ipad_iphone_dashboard_mockup.png" 
-                      alt="Pigbank POS software on iPad and iPhone" 
-                      className="w-full h-full object-contain scale-[1.25] -translate-x-[5%]"
+                      src={iphoneMockup} 
+                      alt="PigBank mobile app showing payouts dashboard" 
+                      className="w-40 md:w-52 h-auto object-contain translate-y-[20%]"
                     />
                   </div>
                 </div>
@@ -754,7 +752,7 @@ export default function Landing() {
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden">
                     <img 
-                      src="/attached_assets/generated_images/ipad_pos_swivel_stand_pigbank_mockup.png" 
+                      src="/attached_assets/ChatGPT_Image_Jan_7,_2026,_03_06_57_PM_1767820028590.png" 
                       alt="iPad POS terminal swivel stand for in-person payment processing" 
                       className="w-full h-full object-cover"
                     />
@@ -818,13 +816,13 @@ export default function Landing() {
                 <div className="relative pl-[35px] md:pl-[45px] lg:pl-[55px] xl:pl-[65px]">
                   <img 
                     src="/attached_assets/Pig-Transparent-04_1767534752378.png"
-                    alt="Pigbank mascot"
+                    alt="PigBank mascot"
                     className="absolute left-0 bottom-[10px] w-[70px] md:w-[90px] lg:w-[110px] xl:w-[125px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={macbookMockup} 
-                      alt="Pigbank dashboard on MacBook showing payment processing analytics" 
+                      alt="PigBank dashboard on MacBook showing payment processing analytics" 
                       className="w-56 md:w-72 h-auto object-contain scale-[1.6] translate-x-[30%] translate-y-[2%]"
                     />
                   </div>
@@ -1199,13 +1197,13 @@ export default function Landing() {
                 <div className="relative pl-[75px] md:pl-[95px] lg:pl-[115px] xl:pl-[130px]">
                   <img 
                     src="/attached_assets/Pig-Transparent-0144_copy_1767516573130.png"
-                    alt="Pigbank mascot with money"
+                    alt="PigBank mascot with money"
                     className="absolute left-0 bottom-[-20px] w-[120px] md:w-[150px] lg:w-[180px] xl:w-[200px] h-auto z-10"
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
                       src={iphoneMockup} 
-                      alt="Pigbank mobile app showing payouts dashboard" 
+                      alt="PigBank mobile app showing payouts dashboard" 
                       className="w-40 md:w-52 h-auto object-contain translate-y-[20%]"
                     />
                   </div>
@@ -1475,23 +1473,15 @@ export default function Landing() {
 
         {/* Team & Testimonials Section */}
         <section 
-          className="py-12 md:py-20 relative overflow-hidden bg-[#effad6]"
+          className="py-12 md:py-20 relative overflow-hidden bg-[#ffffff]"
         >
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767525114453.png')`,
-              backgroundSize: '400px',
-              backgroundRepeat: 'repeat'
-            }}
-          />
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+                    <div className="container px-4 md:px-6 max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a1a1a] mb-3">
                 Your success is our business
               </h3>
               <p className="text-base md:text-lg text-[#1a1a1a]/80 max-w-4xl mx-auto">
-                We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for Pigbank, ready to help 24/7.
+                We're a focused team that actually knows your business. Fast responses, personal service, and Oink—a custom AI built and trained specifically for PigBank, ready to help 24/7.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
@@ -1566,7 +1556,7 @@ export default function Landing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-[#ffffff]">
+        <section className="py-12 md:py-20 bg-[#effad6]">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <TestimonialsCarousel />
           </div>
@@ -1580,7 +1570,7 @@ export default function Landing() {
                   Ready to bring home the bacon?
                 </h2>
                 <p className="text-lg text-white/90 mb-8 max-w-2xl">
-                  Join thousands of merchants who trust Pigbank to power their payments. 
+                  Join thousands of merchants who trust PigBank to power their payments. 
                   Start accepting payments in minutes.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -1625,7 +1615,7 @@ export default function Landing() {
                   <div className="absolute top-6 right-16 w-6 h-4 bg-[#c5eaa5] rounded-full"></div>
                   <img 
                     src="/attached_assets/Pig-Transparent-01_copy_1767523044395.png"
-                    alt="Pigbank superhero mascot"
+                    alt="PigBank superhero mascot"
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] lg:w-[180px] xl:w-[220px] h-auto"
                   />
                 </div>
@@ -1683,7 +1673,7 @@ export default function Landing() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
             <div className="text-sm text-gray-500">
-              <p>© 2026 Pigbank Payments. All rights reserved.</p>
+              <p>© 2026 PigBank Payments. All rights reserved.</p>
               <p className="mt-1">910 Chartres Street, New Orleans, LA 70116 | (865) 243-6011</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-500">

@@ -105,19 +105,19 @@ const baseNavItems: NavItem[] = [
 
 const pigBankTeamItem: NavItem = {
   icon: Users,
-  label: "Pigbank Team",
+  label: "PigBank Team",
   href: "/pigbank-team",
 };
 
 const pigBankMerchantsItem: NavItem = { 
   icon: Users, 
-  label: "Pigbank Merchants", 
+  label: "PigBank Merchants", 
   href: "/team/merchants",
 };
 
 const pigBankMessagesItem: NavItem = {
   icon: MessageSquare,
-  label: "Pigbank Messages",
+  label: "PigBank Messages",
   href: "/pigbank-messages",
 };
 
@@ -231,7 +231,7 @@ export function Sidebar({ className }: { className?: string }) {
 
   const isTeamMember = user?.role === "pigbank_staff" || user?.role === "pigbank_admin";
   
-  // Pigbank staff items are rendered in a separate section at the bottom
+  // PigBank staff items are rendered in a separate section at the bottom
   const navItems = baseNavItems;
   const pigBankItems = isTeamMember ? [pigBankTeamItem, pigBankMerchantsItem, pigBankMessagesItem, pigBankComplianceItem, pigBankHeatmapsItem] : [];
 
@@ -270,13 +270,13 @@ export function Sidebar({ className }: { className?: string }) {
       <div className="hidden md:flex h-20 items-center justify-center bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
         <Link href="/dashboard">
           <img 
-            src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" 
-            alt="Pigbank" 
+            src="/pig-bank-logo-dark.png" 
+            alt="PigBank" 
             className="h-14 object-contain block dark:hidden cursor-pointer" 
           />
           <img 
-            src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" 
-            alt="Pigbank" 
+            src="/pig-bank-logo-dark.png" 
+            alt="PigBank" 
             className="h-14 object-contain hidden dark:block cursor-pointer" 
           />
         </Link>
@@ -379,11 +379,11 @@ export function Sidebar({ className }: { className?: string }) {
           })}
         </nav>
         
-        {/* Pigbank Staff Section - inside scrollable area on mobile */}
+        {/* PigBank Staff Section - inside scrollable area on mobile */}
         {pigBankItems.length > 0 && (
           <div className="border-t border-white/10 px-3 py-3 mt-2 md:hidden">
             <div className="text-[10px] uppercase tracking-wider text-white/40 font-semibold mb-2 px-3">
-              Pigbank Staff
+              PigBank Staff
             </div>
             <nav className="space-y-1">
               {pigBankItems.map((item) => {
@@ -485,7 +485,7 @@ export function Sidebar({ className }: { className?: string }) {
               <Button variant="ghost" className="w-full flex items-center gap-3 px-2 hover:bg-white/10 dark:hover:bg-white/10 text-white dark:text-gray-300 justify-start h-auto py-3">
                 <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
                   {!isAuthenticated ? (
-                    <AvatarImage src="/favicon.png" alt="Pigbank" className="p-1" />
+                    <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
                   ) : user?.profileImageUrl ? (
                     <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
                   ) : null}
@@ -545,11 +545,11 @@ export function Sidebar({ className }: { className?: string }) {
         </div>
       </div>
 
-      {/* Desktop Pigbank Staff Section - fixed at bottom */}
+      {/* Desktop PigBank Staff Section - fixed at bottom */}
       {pigBankItems.length > 0 && (
         <div className="hidden md:block border-t border-white/10 px-3 py-3 bg-[#1a4320] dark:bg-[#262626] flex-shrink-0">
           <div className="text-[10px] uppercase tracking-wider text-white/40 font-semibold mb-2 px-3">
-            Pigbank Staff
+            PigBank Staff
           </div>
           <nav className="space-y-1">
             {pigBankItems.map((item) => {
@@ -651,7 +651,7 @@ export function Sidebar({ className }: { className?: string }) {
             <Button variant="ghost" className="w-full flex items-center gap-3 px-2 hover:bg-white/10 dark:hover:bg-white/10 text-white dark:text-gray-300 justify-start h-auto py-3">
               <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
                 {!isAuthenticated ? (
-                  <AvatarImage src="/favicon.png" alt="Pigbank" className="p-1" />
+                  <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
                 ) : user?.profileImageUrl ? (
                   <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
                 ) : null}
