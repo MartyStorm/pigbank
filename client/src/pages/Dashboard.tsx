@@ -450,7 +450,7 @@ export default function Dashboard() {
                 {merchantData.status === 'submitted' && (
                   <Button 
                     size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0 w-full md:w-auto"
+                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0 text-xs md:text-sm px-3 py-1.5 h-auto"
                     onClick={() => setLocation("/settings")}
                     data-testid="button-enable-sms"
                   >
