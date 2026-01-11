@@ -477,7 +477,7 @@ export default function Landing() {
       </header>
       <main>
         <section 
-          className="overflow-hidden relative"
+          className="overflow-hidden relative bg-[#1a4320]"
         >
           <div 
             className="absolute inset-0"
