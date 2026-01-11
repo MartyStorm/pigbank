@@ -821,7 +821,7 @@ export default function Landing() {
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
-                      src={macbookMockup} 
+                      src="/attached_assets/MacBook_Pro_16_inch_copy_1768160906285.png" 
                       alt="PigBank dashboard on MacBook showing payment processing analytics" 
                       className="w-56 md:w-72 h-auto object-contain scale-[1.6] translate-x-[30%] translate-y-[2%]"
                     />
