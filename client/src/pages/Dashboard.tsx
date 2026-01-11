@@ -450,12 +450,12 @@ export default function Dashboard() {
                 {merchantData.status === 'submitted' && (
                   <Button 
                     size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0"
+                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0 whitespace-nowrap"
                     onClick={() => setLocation("/settings")}
                     data-testid="button-enable-sms"
                   >
                     <Bell className="h-4 w-4 mr-2" />
-                    Enable Text Alerts
+                    Text Alerts
                   </Button>
                 )}
               </div>
