@@ -479,14 +479,6 @@ export default function Landing() {
         <section 
           className="overflow-hidden relative bg-[#1a4320]"
         >
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url('/attached_assets/ChatGPT_Image_Jan_4,_2026,_04_54_10_AM_1767525114453.png')`,
-              backgroundSize: '400px',
-              backgroundRepeat: 'repeat'
-            }}
-          />
           <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto"
