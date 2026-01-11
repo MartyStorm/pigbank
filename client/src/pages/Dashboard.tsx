@@ -143,10 +143,11 @@ export default function Dashboard() {
     }
   };
 
-  // Determine if we should show the application status card
+  // Determine if we should show the application status card (hide in demo mode)
   const showApplicationStatus = merchantData && 
     ['submitted', 'action_required', 'in_onboarding'].includes(merchantData.status) &&
-    !isPigBankStaff;
+    !isPigBankStaff &&
+    !user?.demoActive;
 
   const getStatusInfo = (status: string) => {
     switch (status) {
