@@ -37,14 +37,27 @@ import {
   Bell,
   Scale,
   MoreHorizontal,
-  Settings2
+  Settings2,
+  GripVertical,
+  ChevronUp,
+  ChevronDown,
+  Columns3
 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuCheckboxItem,
   DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -172,12 +185,46 @@ export default function Chargebacks() {
     deadline: true,
     action: true,
   });
+  
+  type ColumnKey = 'caseId' | 'customer' | 'amount' | 'reason' | 'status' | 'deadline' | 'action';
+  
+  const columnLabels: Record<ColumnKey, string> = {
+    caseId: 'Case ID',
+    customer: 'Customer',
+    amount: 'Amount',
+    reason: 'Reason',
+    status: 'Status',
+    deadline: 'Deadline',
+    action: 'Action',
+  };
+  
+  const [columnOrder, setColumnOrder] = useState<ColumnKey[]>([
+    'caseId', 'customer', 'amount', 'reason', 'status', 'deadline', 'action'
+  ]);
+  
   const { toast } = useToast();
   const { user } = useAuth();
   const isDemoActive = user?.demoActive ?? false;
 
-  const toggleColumn = (column: keyof typeof visibleColumns) => {
+  const toggleColumn = (column: ColumnKey) => {
     setVisibleColumns(prev => ({ ...prev, [column]: !prev[column] }));
+  };
+  
+  const moveColumn = (column: ColumnKey, direction: 'up' | 'down') => {
+    setColumnOrder(prev => {
+      const index = prev.indexOf(column);
+      if (direction === 'up' && index > 0) {
+        const newOrder = [...prev];
+        [newOrder[index - 1], newOrder[index]] = [newOrder[index], newOrder[index - 1]];
+        return newOrder;
+      }
+      if (direction === 'down' && index < prev.length - 1) {
+        const newOrder = [...prev];
+        [newOrder[index], newOrder[index + 1]] = [newOrder[index + 1], newOrder[index]];
+        return newOrder;
+      }
+      return prev;
+    });
   };
 
   const handleAction = (cb: ChargebackCase) => {
@@ -316,57 +363,58 @@ export default function Chargebacks() {
                   <SelectItem value="refunded">Refunded</SelectItem>
                 </SelectContent>
               </Select>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="icon" className="flex-shrink-0">
-                    <Settings2 className="h-4 w-4" />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" className="flex-shrink-0 gap-2">
+                    <Columns3 className="h-4 w-4" />
+                    <span className="hidden sm:inline">Columns</span>
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.caseId}
-                    onCheckedChange={() => toggleColumn('caseId')}
-                  >
-                    Case ID
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.customer}
-                    onCheckedChange={() => toggleColumn('customer')}
-                  >
-                    Customer
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.amount}
-                    onCheckedChange={() => toggleColumn('amount')}
-                  >
-                    Amount
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.reason}
-                    onCheckedChange={() => toggleColumn('reason')}
-                  >
-                    Reason
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.status}
-                    onCheckedChange={() => toggleColumn('status')}
-                  >
-                    Status
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.deadline}
-                    onCheckedChange={() => toggleColumn('deadline')}
-                  >
-                    Deadline
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem
-                    checked={visibleColumns.action}
-                    onCheckedChange={() => toggleColumn('action')}
-                  >
-                    Action
-                  </DropdownMenuCheckboxItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </PopoverTrigger>
+                <PopoverContent align="end" className="w-64 p-3">
+                  <div className="space-y-1">
+                    <p className="text-sm font-medium mb-3">Show & Reorder Columns</p>
+                    <div className="space-y-1">
+                      {columnOrder.map((column, index) => (
+                        <div 
+                          key={column} 
+                          className="flex items-center justify-between py-1.5 px-2 rounded hover:bg-muted/50"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Checkbox
+                              id={column}
+                              checked={visibleColumns[column]}
+                              onCheckedChange={() => toggleColumn(column)}
+                            />
+                            <Label htmlFor={column} className="text-sm cursor-pointer">
+                              {columnLabels[column]}
+                            </Label>
+                          </div>
+                          <div className="flex items-center gap-0.5">
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-6 w-6"
+                              onClick={() => moveColumn(column, 'up')}
+                              disabled={index === 0}
+                            >
+                              <ChevronUp className="h-3 w-3" />
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-6 w-6"
+                              onClick={() => moveColumn(column, 'down')}
+                              disabled={index === columnOrder.length - 1}
+                            >
+                              <ChevronDown className="h-3 w-3" />
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
             </div>
           </CardContent>
         </Card>
@@ -378,78 +426,99 @@ export default function Chargebacks() {
               <Table>
                 <TableHeader className="bg-[#1a4320] dark:bg-[#262626] [&_tr]:hover:bg-[#1a4320] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
                   <TableRow className="border-b-[#1a4320] dark:border-b-gray-700">
-                    {visibleColumns.caseId && <TableHead className="text-white">Case ID</TableHead>}
-                    {visibleColumns.customer && <TableHead className="text-white">Customer</TableHead>}
-                    {visibleColumns.amount && <TableHead className="text-white">Amount</TableHead>}
-                    {visibleColumns.reason && <TableHead className="text-white">Reason</TableHead>}
-                    {visibleColumns.status && <TableHead className="text-white">Status</TableHead>}
-                    {visibleColumns.deadline && <TableHead className="text-white">Deadline</TableHead>}
-                    {visibleColumns.action && <TableHead className="text-center text-white">Action</TableHead>}
+                    {columnOrder.map(column => 
+                      visibleColumns[column] && (
+                        <TableHead 
+                          key={column} 
+                          className={`text-white ${column === 'action' ? 'text-center' : ''}`}
+                        >
+                          {columnLabels[column]}
+                        </TableHead>
+                      )
+                    )}
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {filteredChargebacks.map((cb) => {
-                    const StatusIcon = statusConfig[cb.status].icon;
                     const daysRemaining = getDaysRemaining(cb.deadline);
+                    
+                    const renderCell = (column: ColumnKey) => {
+                      switch (column) {
+                        case 'caseId':
+                          return (
+                            <TableCell key={column}>
+                              <div>
+                                <p className="font-medium">{cb.id}</p>
+                                <p className="text-xs text-muted-foreground">{cb.transactionId}</p>
+                              </div>
+                            </TableCell>
+                          );
+                        case 'customer':
+                          return (
+                            <TableCell key={column}>
+                              <div>
+                                <p className="font-medium">{cb.customer}</p>
+                                <p className="text-xs text-muted-foreground">{cb.email}</p>
+                              </div>
+                            </TableCell>
+                          );
+                        case 'amount':
+                          return (
+                            <TableCell key={column} className="font-semibold">
+                              ${cb.amount.toFixed(2)}
+                            </TableCell>
+                          );
+                        case 'reason':
+                          return (
+                            <TableCell key={column}>
+                              <p className="text-sm max-w-[200px] truncate">{cb.reason}</p>
+                            </TableCell>
+                          );
+                        case 'status':
+                          return (
+                            <TableCell key={column}>
+                              <Badge className={`${statusConfig[cb.status].color} gap-1`}>
+                                {statusConfig[cb.status].label}
+                              </Badge>
+                            </TableCell>
+                          );
+                        case 'deadline':
+                          return (
+                            <TableCell key={column}>
+                              {cb.deadline ? (
+                                <div className={`text-sm font-medium ${daysRemaining !== null && daysRemaining < 7 ? 'text-red-600' : ''}`}>
+                                  {new Date(cb.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                </div>
+                              ) : (
+                                <span className="text-muted-foreground">—</span>
+                              )}
+                            </TableCell>
+                          );
+                        case 'action':
+                          return (
+                            <TableCell key={column} className="text-center">
+                              {cb.actionRequired ? (
+                                <Button 
+                                  size="sm" 
+                                  className="bg-[#b91c1c] hover:bg-[#991b1b] text-white"
+                                  onClick={() => handleAction(cb)}
+                                >
+                                  Action
+                                </Button>
+                              ) : (
+                                <span className="text-muted-foreground text-sm">—</span>
+                              )}
+                            </TableCell>
+                          );
+                        default:
+                          return null;
+                      }
+                    };
                     
                     return (
                       <TableRow key={cb.id}>
-                        {visibleColumns.caseId && (
-                          <TableCell>
-                            <div>
-                              <p className="font-medium">{cb.id}</p>
-                              <p className="text-xs text-muted-foreground">{cb.transactionId}</p>
-                            </div>
-                          </TableCell>
-                        )}
-                        {visibleColumns.customer && (
-                          <TableCell>
-                            <div>
-                              <p className="font-medium">{cb.customer}</p>
-                              <p className="text-xs text-muted-foreground">{cb.email}</p>
-                            </div>
-                          </TableCell>
-                        )}
-                        {visibleColumns.amount && (
-                          <TableCell className="font-semibold">${cb.amount.toFixed(2)}</TableCell>
-                        )}
-                        {visibleColumns.reason && (
-                          <TableCell>
-                            <p className="text-sm max-w-[200px] truncate">{cb.reason}</p>
-                          </TableCell>
-                        )}
-                        {visibleColumns.status && (
-                          <TableCell>
-                            <Badge className={`${statusConfig[cb.status].color} gap-1`}>
-                              {statusConfig[cb.status].label}
-                            </Badge>
-                          </TableCell>
-                        )}
-                        {visibleColumns.deadline && (
-                          <TableCell>
-                            {cb.deadline ? (
-                              <div className={`text-sm font-medium ${daysRemaining !== null && daysRemaining < 7 ? 'text-red-600' : ''}`}>
-                                {new Date(cb.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                              </div>
-                            ) : (
-                              <span className="text-muted-foreground">—</span>
-                            )}
-                          </TableCell>
-                        )}
-                        {visibleColumns.action && (
-                          <TableCell className="text-center">
-                            {cb.actionRequired ? (
-                              <Button 
-                                size="sm" 
-                                className="bg-[#b91c1c] hover:bg-[#991b1b] text-white"
-                                onClick={() => handleAction(cb)}
-                              >
-                                Action
-                              </Button>
-                            ) : (
-                              <span className="text-muted-foreground text-sm">—</span>
-                            )}
-                          </TableCell>
+                        {columnOrder.map(column => 
+                          visibleColumns[column] && renderCell(column)
                         )}
                       </TableRow>
                     );
