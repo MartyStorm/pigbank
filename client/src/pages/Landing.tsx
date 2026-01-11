@@ -1184,7 +1184,7 @@ export default function Landing() {
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
-                      src={iphoneMockup} 
+                      src="/attached_assets/Free_iPhone_16_Pro_Mockup_copy_1768162089379.png" 
                       alt="PigBank mobile app showing payouts dashboard" 
                       className="w-40 md:w-52 h-auto object-contain translate-y-[20%]"
                     />
