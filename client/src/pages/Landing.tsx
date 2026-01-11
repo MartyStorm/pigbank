@@ -373,7 +373,7 @@ export default function Landing() {
       <div 
         className="relative"
         style={{
-          background: 'radial-gradient(ellipse at center, #3a6b3d 0%, #2d5a30 40%, #1a4320 100%)'
+          background: 'radial-gradient(ellipse at center, #4a8b4d 0%, #3a6b3d 35%, #2d5a30 60%, #1a4320 100%)'
         }}
       >
       <header className="bg-transparent relative z-20">
