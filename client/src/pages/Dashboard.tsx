@@ -413,7 +413,7 @@ export default function Dashboard() {
         {showApplicationStatus && (
           <Card className="border border-blue-200 bg-blue-50/50" data-testid="card-application-status">
             <CardContent className="p-4">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
                 <div className="flex items-center gap-4">
                   {(() => {
                     const status = getStatusInfo(merchantData.status);
@@ -425,10 +425,10 @@ export default function Dashboard() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg">Application Status</h3>
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap items-center gap-1 md:gap-2">
                             <span className={cn("font-medium", status.color)}>{status.label}</span>
                             {merchantData.legalBusinessName && (
-                              <span className="text-muted-foreground">• {merchantData.legalBusinessName}</span>
+                              <span className="text-muted-foreground text-sm md:text-base">• {merchantData.legalBusinessName}</span>
                             )}
                           </div>
                         </div>
@@ -439,7 +439,7 @@ export default function Dashboard() {
                 {merchantData.status === 'action_required' && (
                   <Button 
                     variant="outline"
-                    className="border-amber-300 text-amber-700 hover:bg-amber-50"
+                    className="border-amber-300 text-amber-700 hover:bg-amber-50 w-full md:w-auto"
                     onClick={() => setLocation("/onboarding")}
                     data-testid="button-complete-action"
                   >
@@ -450,7 +450,7 @@ export default function Dashboard() {
                 {merchantData.status === 'submitted' && (
                   <Button 
                     size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0"
+                    className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0 w-full md:w-auto"
                     onClick={() => setLocation("/settings")}
                     data-testid="button-enable-sms"
                   >
@@ -460,7 +460,7 @@ export default function Dashboard() {
                 )}
               </div>
               {merchantData.status === 'submitted' && (
-                <div className="mt-3 pl-16">
+                <div className="mt-3 md:pl-16">
                   <p className="text-sm text-muted-foreground">
                     Your application is being reviewed by our team. We'll notify you by email when there are updates.
                   </p>
