@@ -324,7 +324,7 @@ export default function Landing() {
   const [transactionVolume, setTransactionVolume] = useState(50000);
   const [scrollY, setScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
-  const [introComplete, setIntroComplete] = useState(false);
+  const [introComplete, setIntroComplete] = useState(true);
   const lastScrollY = useRef(0);
   const headerLogoRef = useRef<HTMLImageElement>(null);
   const { setTheme } = useTheme();
@@ -369,15 +369,14 @@ export default function Landing() {
 
   return (
     <>
-      <HeroIntroAnimation onComplete={() => setIntroComplete(true)} headerLogoRef={headerLogoRef} />
-      <div className="min-h-screen bg-white">
+            <div className="min-h-screen bg-white">
       <div 
         className="relative"
         style={{
           background: 'radial-gradient(ellipse at center top, #3a6b3d 0%, #2d5a30 30%, #1a4320 80%)'
         }}
       >
-      <header className="border-b border-white/10 bg-transparent relative z-20">
+      <header className="bg-transparent relative z-20">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
