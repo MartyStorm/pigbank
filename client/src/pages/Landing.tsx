@@ -487,21 +487,11 @@ export default function Landing() {
               <div className={`flex flex-col items-center text-center gap-6 transition-all duration-700 delay-500 ${introComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="space-y-4">
                   <h1 className="hero-title font-bold tracking-tight text-white">
-                    <span className="bg-[#3c3a3b] rounded-lg px-4 pt-2 pb-3 inline-block">Built for Business, Payment Processing</span>
+                    Built for Business, Payment Processing
                   </h1>
                   <p className="text-xl md:text-2xl text-white font-semibold">
-                    <span className="bg-[#3c3a3b] rounded-lg px-3 py-1 inline-block">The last payment processor you'll ever need.</span>
+                    The last payment processor you'll ever need.
                   </p>
-                  <div className="flex gap-4 justify-center pt-2">
-                    <Button 
-                      asChild 
-                      size="lg" 
-                      className="bg-[#2e8a2b] hover:bg-[#256f23] text-white rounded-md px-8 shadow-lg focus:outline-none focus:ring-0 outline-none ring-0 border-0"
-                      data-testid="button-get-started-hero"
-                    >
-                      <a href="/register">Get started</a>
-                    </Button>
-                  </div>
                 </div>
                 
                 <div className="relative flex items-center justify-center mt-4">
