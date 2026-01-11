@@ -955,12 +955,6 @@ export default function Landing() {
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-12 h-12">
-                          <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
-                          <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
-                        </svg>
-                      </div>
                       {/* Duplicate set for seamless loop */}
                       <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 40 40" className="w-12 h-12">
@@ -988,12 +982,6 @@ export default function Landing() {
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
                         </svg>
                       </div>
-                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-12 h-12">
-                          <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
-                          <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
-                        </svg>
-                      </div>
                       {/* Third set for seamless loop */}
                       <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
                         <svg viewBox="0 0 40 40" className="w-12 h-12">
@@ -1019,12 +1007,6 @@ export default function Landing() {
                         <svg viewBox="0 0 40 40" className="w-12 h-12">
                           <rect x="8" y="8" width="24" height="24" rx="4" fill="#000"/>
                           <rect x="14" y="14" width="12" height="12" rx="1" fill="#fff"/>
-                        </svg>
-                      </div>
-                      <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100">
-                        <svg viewBox="0 0 40 40" className="w-12 h-12">
-                          <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" strokeWidth="2"/>
-                          <text x="20" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">4</text>
                         </svg>
                       </div>
                     </div>
