@@ -59,6 +59,8 @@ import moneyImage from "@assets/stock_images/stack_of_money_cash__c01d6a2c.jpg";
 import posTerminalImage from "@assets/1x1_Day_Care_-_Three-Quarter_-_Eddy_White_with_Person_Visitor_1766103263637.webp";
 import iphoneMockup from "@assets/generated_images/iphone_pigbank_app_green_background.png";
 import macbookMockup from "@assets/generated_images/macbook_pigbank_dashboard_mockup.png";
+import macbookHeroMockup from "@assets/generated_images/macbook_pigbank_dashboard_hero.png";
+import iphoneHeroMockup from "@assets/generated_images/iphone_pigbank_payouts_hero.png";
 import PaymentMethodsFlip from "@/components/PaymentMethodsFlip";
 import { HeroIntroAnimation } from "@/components/HeroIntroAnimation";
 
@@ -531,12 +533,12 @@ export default function Landing() {
                       }}
                     />
                     <img 
-                      src="/macbook-dashboard-new.png" 
+                      src={macbookHeroMockup} 
                       alt="Pigbank Dashboard on MacBook" 
                       className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
                     />
                     <img 
-                      src="/iphone-payouts.png" 
+                      src={iphoneHeroMockup} 
                       alt="Pigbank Payouts on iPhone" 
                       className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                     />
