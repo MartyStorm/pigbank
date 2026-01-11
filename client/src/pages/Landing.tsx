@@ -371,7 +371,13 @@ export default function Landing() {
     <>
       <HeroIntroAnimation onComplete={() => setIntroComplete(true)} headerLogoRef={headerLogoRef} />
       <div className="min-h-screen bg-white">
-      <header className="border-b border-[#1a4320]/20 bg-[#1a4320]">
+      <div 
+        className="relative"
+        style={{
+          background: 'radial-gradient(ellipse at center top, #3a6b3d 0%, #2d5a30 30%, #1a4320 80%)'
+        }}
+      >
+      <header className="border-b border-white/10 bg-transparent relative z-20">
         <div className="flex h-20 items-center justify-between px-4 md:px-6 lg:px-8 w-full">
           <div className="flex items-center gap-10">
             <img 
@@ -475,13 +481,7 @@ export default function Landing() {
           </div>
         </div>
       </header>
-      <main>
-        <section 
-          className="overflow-hidden relative"
-          style={{
-            background: 'radial-gradient(ellipse at center, #2d5a30 0%, #1a4320 70%)'
-          }}
-        >
+        <section className="overflow-hidden relative">
           <div className="min-h-[520px] md:min-h-[700px] flex items-center py-4 md:py-16 relative z-10">
             <div 
               className="hero-container w-full px-6 md:px-12 max-w-[1200px] mx-auto"
@@ -531,7 +531,8 @@ export default function Landing() {
             </div>
           </div>
         </section>
-
+      </div>
+      <main>
         <section className="py-8 bg-[#3c3a3b]">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
