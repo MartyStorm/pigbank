@@ -731,8 +731,8 @@ export default function Landing() {
                   />
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#2f8a2b] flex items-center justify-center">
                     <img 
-                      src={iphoneMockup} 
-                      alt="PigBank mobile app showing payouts dashboard" 
+                      src="/attached_assets/ChatGPT_Image_Jan_7,_2026,_03_22_33_PM_1768162229344.png" 
+                      alt="PigBank POS system showing iPad and iPhone payment interface" 
                       className="w-40 md:w-52 h-auto object-contain translate-y-[20%]"
                     />
                   </div>
