@@ -486,6 +486,8 @@ export function Sidebar({ className }: { className?: string }) {
                 <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
                   {!isAuthenticated ? (
                     <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
+                  ) : isDemoActive ? (
+                    <AvatarImage src="/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1768157434389.png" alt="TN Scientific" />
                   ) : user?.profileImageUrl ? (
                     <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
                   ) : null}
@@ -652,6 +654,8 @@ export function Sidebar({ className }: { className?: string }) {
               <Avatar className="h-8 w-8 bg-[#73cb43]/30 text-white border-none font-black">
                 {!isAuthenticated ? (
                   <AvatarImage src="/favicon.png" alt="PigBank" className="p-1" />
+                ) : isDemoActive ? (
+                  <AvatarImage src="/attached_assets/PSD_New_TN_Square_wbr_logo_Gray_copy_1768157434389.png" alt="TN Scientific" />
                 ) : user?.profileImageUrl ? (
                   <AvatarImage src={user.profileImageUrl} alt={getUserDisplayName()} />
                 ) : null}
