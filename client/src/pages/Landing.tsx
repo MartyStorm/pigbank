@@ -533,12 +533,12 @@ export default function Landing() {
                       }}
                     />
                     <img 
-                      src={macbookHeroMockup} 
+                      src="/macbook-dashboard-new.png" 
                       alt="Pigbank Dashboard on MacBook" 
                       className="w-[340px] md:w-[450px] lg:w-[540px] xl:w-[620px] h-auto"
                     />
                     <img 
-                      src={iphoneHeroMockup} 
+                      src="/iphone-payouts.png" 
                       alt="Pigbank Payouts on iPhone" 
                       className="absolute w-[55px] md:w-[70px] lg:w-[85px] xl:w-[100px] h-auto z-20 bottom-0 right-0"
                     />
