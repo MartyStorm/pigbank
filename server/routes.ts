@@ -555,19 +555,17 @@ export async function registerRoutes(
         });
       }
       
-      // Create payouts - at least 51 payouts with variety
-      const payoutStatuses = ["Completed", "Completed", "Completed", "Completed", "Processing", "Pending"];
+      // Create payouts - at least 55 payouts, mostly Completed
       const payoutTypes = ["Standard", "Standard", "Standard", "Instant"];
       const bankAccounts = ["Bank Account ****4521", "Bank Account ****7832", "Bank Account ****2156"];
       
-      // First few payouts with specific amounts for realistic display
+      // First few recent payouts with specific amounts
       const fixedPayouts = [
         { status: "Processing", amount: "6847.52", daysAgo: 2 },
-        { status: "Processing", amount: "4589.23", daysAgo: 12 },
+        { status: "Processing", amount: "4589.23", daysAgo: 5 },
         { status: "Completed", amount: "7320.08", daysAgo: 15 },
         { status: "Completed", amount: "5420.15", daysAgo: 21 },
-        { status: "Completed", amount: "8932.44", daysAgo: 32 },
-        { status: "Completed", amount: "3156.89", daysAgo: 38 },
+        { status: "Completed", amount: "8932.44", daysAgo: 28 },
       ];
       
       for (const payout of fixedPayouts) {
@@ -585,18 +583,21 @@ export async function registerRoutes(
         }, payoutDate);
       }
       
-      // Generate additional payouts to reach 51+ total
+      // Generate 50 more historical payouts (mostly Completed - ~90%)
       for (let i = 0; i < 50; i++) {
-        const amount = (Math.random() * 8000 + 500).toFixed(2);
-        const daysAgo = 40 + (i * 3) + Math.floor(Math.random() * 3);
+        const amount = (Math.random() * 9000 + 1000).toFixed(2);
+        const daysAgo = 30 + (i * 2) + Math.floor(Math.random() * 2);
         const payoutDate = new Date(now.getTime() - daysAgo * 24 * 60 * 60 * 1000);
         const arrivalDate = new Date(payoutDate.getTime() + 2 * 24 * 60 * 60 * 1000);
+        
+        // 90% Completed, 10% Processing (no Pending in historical)
+        const status = Math.random() < 0.9 ? "Completed" : "Processing";
         
         await storage.createPayoutWithDate({
           userId,
           payoutId: `PAY-${Date.now()}-${Math.random().toString(36).substr(2, 6)}-${i}`,
           amount,
-          status: payoutStatuses[Math.floor(Math.random() * payoutStatuses.length)],
+          status,
           destination: bankAccounts[Math.floor(Math.random() * bankAccounts.length)],
           type: payoutTypes[Math.floor(Math.random() * payoutTypes.length)],
           arrivalDate,
