@@ -54,7 +54,7 @@ export default function PublicIntegrations() {
           <div className="flex items-center gap-10">
             <a href="/landing">
               <img 
-                src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
+                src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" 
                 alt="Pigbank" 
                 className="h-12 w-auto object-contain"
               />

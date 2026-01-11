@@ -86,7 +86,7 @@ export default function Login() {
         <div className="flex flex-col items-center space-y-6">
           <a href="/">
             <img 
-              src="/attached_assets/Pig_Bank_Logo_new_y_compliance_copy_1767877796184.png" 
+              src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768151065745.png" 
               alt="Pigbank" 
               className="h-14 w-auto cursor-pointer"
               data-testid="logo-login"
