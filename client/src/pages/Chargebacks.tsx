@@ -36,8 +36,15 @@ import {
   DollarSign,
   Bell,
   Scale,
-  MoreHorizontal
+  MoreHorizontal,
+  Settings2
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -156,9 +163,22 @@ export default function Chargebacks() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedChargeback, setSelectedChargeback] = useState<ChargebackCase | null>(null);
   const [isActionDialogOpen, setIsActionDialogOpen] = useState(false);
+  const [visibleColumns, setVisibleColumns] = useState({
+    caseId: true,
+    customer: true,
+    amount: true,
+    reason: true,
+    status: true,
+    deadline: true,
+    action: true,
+  });
   const { toast } = useToast();
   const { user } = useAuth();
   const isDemoActive = user?.demoActive ?? false;
+
+  const toggleColumn = (column: keyof typeof visibleColumns) => {
+    setVisibleColumns(prev => ({ ...prev, [column]: !prev[column] }));
+  };
 
   const handleAction = (cb: ChargebackCase) => {
     setSelectedChargeback(cb);
@@ -228,14 +248,14 @@ export default function Chargebacks() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
                   <Bell className="h-5 w-5 text-[#39870E]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-muted-foreground">Pending Alerts</p>
                   <p className="text-2xl font-bold">{alertCount}</p>
                 </div>
@@ -245,10 +265,10 @@ export default function Chargebacks() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
                   <Scale className="h-5 w-5 text-[#39870E]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-muted-foreground">Active Disputes</p>
                   <p className="text-2xl font-bold">{activeCount}</p>
                 </div>
@@ -258,10 +278,10 @@ export default function Chargebacks() {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#73cb43]/30 flex items-center justify-center flex-shrink-0">
                   <DollarSign className="h-5 w-5 text-[#39870E]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-muted-foreground">Total at Risk</p>
                   <p className="text-2xl font-bold">${totalAmount.toFixed(0)}</p>
                 </div>
@@ -296,6 +316,57 @@ export default function Chargebacks() {
                   <SelectItem value="refunded">Refunded</SelectItem>
                 </SelectContent>
               </Select>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon" className="flex-shrink-0">
+                    <Settings2 className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.caseId}
+                    onCheckedChange={() => toggleColumn('caseId')}
+                  >
+                    Case ID
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.customer}
+                    onCheckedChange={() => toggleColumn('customer')}
+                  >
+                    Customer
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.amount}
+                    onCheckedChange={() => toggleColumn('amount')}
+                  >
+                    Amount
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.reason}
+                    onCheckedChange={() => toggleColumn('reason')}
+                  >
+                    Reason
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.status}
+                    onCheckedChange={() => toggleColumn('status')}
+                  >
+                    Status
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.deadline}
+                    onCheckedChange={() => toggleColumn('deadline')}
+                  >
+                    Deadline
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={visibleColumns.action}
+                    onCheckedChange={() => toggleColumn('action')}
+                  >
+                    Action
+                  </DropdownMenuCheckboxItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </CardContent>
         </Card>
@@ -303,73 +374,89 @@ export default function Chargebacks() {
         {/* Chargebacks Table */}
         <Card className="overflow-hidden">
           <CardContent className="p-0">
-            <Table>
-              <TableHeader className="bg-[#1a4320] dark:bg-[#262626] [&_tr]:hover:bg-[#1a4320] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
-                <TableRow className="border-b-[#1a4320] dark:border-b-gray-700">
-                  <TableHead className="text-white">Case ID</TableHead>
-                  <TableHead className="text-white">Customer</TableHead>
-                  <TableHead className="text-white">Amount</TableHead>
-                  <TableHead className="text-white">Reason</TableHead>
-                  <TableHead className="text-white">Status</TableHead>
-                  <TableHead className="text-white">Deadline</TableHead>
-                  <TableHead className="text-center text-white">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredChargebacks.map((cb) => {
-                  const StatusIcon = statusConfig[cb.status].icon;
-                  const daysRemaining = getDaysRemaining(cb.deadline);
-                  
-                  return (
-                    <TableRow key={cb.id}>
-                      <TableCell>
-                        <div>
-                          <p className="font-medium">{cb.id}</p>
-                          <p className="text-xs text-muted-foreground">{cb.transactionId}</p>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div>
-                          <p className="font-medium">{cb.customer}</p>
-                          <p className="text-xs text-muted-foreground">{cb.email}</p>
-                        </div>
-                      </TableCell>
-                      <TableCell className="font-semibold">${cb.amount.toFixed(2)}</TableCell>
-                      <TableCell>
-                        <p className="text-sm max-w-[200px] truncate">{cb.reason}</p>
-                      </TableCell>
-                      <TableCell>
-                        <Badge className={`${statusConfig[cb.status].color} gap-1`}>
-                          {statusConfig[cb.status].label}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        {cb.deadline ? (
-                          <div className={`text-sm font-medium ${daysRemaining !== null && daysRemaining < 7 ? 'text-red-600' : ''}`}>
-                            {new Date(cb.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                          </div>
-                        ) : (
-                          <span className="text-muted-foreground">—</span>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader className="bg-[#1a4320] dark:bg-[#262626] [&_tr]:hover:bg-[#1a4320] dark:[&_tr]:hover:bg-[#262626] [&_th]:text-white">
+                  <TableRow className="border-b-[#1a4320] dark:border-b-gray-700">
+                    {visibleColumns.caseId && <TableHead className="text-white">Case ID</TableHead>}
+                    {visibleColumns.customer && <TableHead className="text-white">Customer</TableHead>}
+                    {visibleColumns.amount && <TableHead className="text-white">Amount</TableHead>}
+                    {visibleColumns.reason && <TableHead className="text-white">Reason</TableHead>}
+                    {visibleColumns.status && <TableHead className="text-white">Status</TableHead>}
+                    {visibleColumns.deadline && <TableHead className="text-white">Deadline</TableHead>}
+                    {visibleColumns.action && <TableHead className="text-center text-white">Action</TableHead>}
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredChargebacks.map((cb) => {
+                    const StatusIcon = statusConfig[cb.status].icon;
+                    const daysRemaining = getDaysRemaining(cb.deadline);
+                    
+                    return (
+                      <TableRow key={cb.id}>
+                        {visibleColumns.caseId && (
+                          <TableCell>
+                            <div>
+                              <p className="font-medium">{cb.id}</p>
+                              <p className="text-xs text-muted-foreground">{cb.transactionId}</p>
+                            </div>
+                          </TableCell>
                         )}
-                      </TableCell>
-                      <TableCell className="text-center">
-                        {cb.actionRequired ? (
-                          <Button 
-                            size="sm" 
-                            className="bg-[#b91c1c] hover:bg-[#991b1b] text-white"
-                            onClick={() => handleAction(cb)}
-                          >
-                            Action
-                          </Button>
-                        ) : (
-                          <span className="text-muted-foreground text-sm">—</span>
+                        {visibleColumns.customer && (
+                          <TableCell>
+                            <div>
+                              <p className="font-medium">{cb.customer}</p>
+                              <p className="text-xs text-muted-foreground">{cb.email}</p>
+                            </div>
+                          </TableCell>
                         )}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
+                        {visibleColumns.amount && (
+                          <TableCell className="font-semibold">${cb.amount.toFixed(2)}</TableCell>
+                        )}
+                        {visibleColumns.reason && (
+                          <TableCell>
+                            <p className="text-sm max-w-[200px] truncate">{cb.reason}</p>
+                          </TableCell>
+                        )}
+                        {visibleColumns.status && (
+                          <TableCell>
+                            <Badge className={`${statusConfig[cb.status].color} gap-1`}>
+                              {statusConfig[cb.status].label}
+                            </Badge>
+                          </TableCell>
+                        )}
+                        {visibleColumns.deadline && (
+                          <TableCell>
+                            {cb.deadline ? (
+                              <div className={`text-sm font-medium ${daysRemaining !== null && daysRemaining < 7 ? 'text-red-600' : ''}`}>
+                                {new Date(cb.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                              </div>
+                            ) : (
+                              <span className="text-muted-foreground">—</span>
+                            )}
+                          </TableCell>
+                        )}
+                        {visibleColumns.action && (
+                          <TableCell className="text-center">
+                            {cb.actionRequired ? (
+                              <Button 
+                                size="sm" 
+                                className="bg-[#b91c1c] hover:bg-[#991b1b] text-white"
+                                onClick={() => handleAction(cb)}
+                              >
+                                Action
+                              </Button>
+                            ) : (
+                              <span className="text-muted-foreground text-sm">—</span>
+                            )}
+                          </TableCell>
+                        )}
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </div>
             
             {filteredChargebacks.length === 0 && (
               <div className="text-center py-12 text-muted-foreground">
