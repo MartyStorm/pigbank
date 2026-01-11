@@ -82,7 +82,7 @@ export default function PublicPricing() {
           <div className="flex items-center gap-10">
             <a href="/landing">
               <img 
-                src="/attached_assets/Pig_Bank_Logo_new_y_copy_1767787947888.png" 
+                src="/attached_assets/Pig_Bank_Logo_new_white_y_copy_1768154720126.png" 
                 alt="PigBank" 
                 className="h-12 w-auto object-contain"
               />
